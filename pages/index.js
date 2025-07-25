@@ -1,16 +1,16 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import SynapseAI from '../components/SynapseAI'
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Home() {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+// Supondo que você tenha uma função scrollToSection em algum lugar
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
   }
+};
 
+export default function HomePage() {
   return (
     <>
       <Head>
@@ -21,14 +21,19 @@ export default function Home() {
       {/* Navegação */}
       <nav className="nav">
         <div className="nav-container">
-          <Link href="/">
+          {/* O Link agora tem display flex para alinhar a logo e o texto */}
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image 
               src="/logo/symbol_logo_synapseb2b_bg_black.png" 
-              alt="Synapse B2B" 
-              width={150} 
+              alt="Synapse B2B Logo" 
+              width={40}  // Dimensões ajustadas para manter a proporção original (1:1)
               height={40}
               className="nav-logo"
             />
+            {/* Texto adicionado ao lado da logo */}
+            <span style={{ color: '#64FFDA', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
+              Synapse B2B
+            </span>
           </Link>
           <ul className="nav-menu">
             <li><Link href="/" className="nav-link">Home</Link></li>
@@ -40,7 +45,8 @@ export default function Home() {
       </nav>
 
       {/* Seção Hero */}
-      <section className="hero">
+      {/* A section precisa de position: relative para que o z-index do vídeo funcione corretamente */}
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
             <h1>Sua Expertise Técnica é Brilhante. Nós a Transformamos em Receita Previsível.</h1>
@@ -70,12 +76,13 @@ export default function Home() {
           width: '100%',
           height: '100%',
           zIndex: -1,
-          opacity: 0.1
+          opacity: 0.2 // Opacidade levemente aumentada para melhor visualização
         }}>
           <video 
             autoPlay 
             muted 
             loop 
+            playsInline // Atributo importante para autoplay em alguns dispositivos móveis
             style={{
               width: '100%',
               height: '100%',
@@ -86,7 +93,9 @@ export default function Home() {
           </video>
         </div>
       </section>
-
+    </>
+  );
+}
       {/* Seção Problema */}
       <section className="section section-dark">
         <div className="container">
