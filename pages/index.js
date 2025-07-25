@@ -82,7 +82,7 @@ export default function Home() {
               objectFit: 'cover'
             }}
           >
-            <source src="/public/video/video_home.mp4" type="video/mp4" />
+            <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
