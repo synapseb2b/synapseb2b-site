@@ -23,7 +23,7 @@ export default function Home() {
         <div className="nav-container">
           <Link href="/">
             <Image 
-              src="/public/logo/symbol_logo_synapseb2b_bg_black.png" 
+              src="/logo/symbol_logo_synapseb2b_bg_black.png" 
               alt="Synapse B2B" 
               width={150} 
               height={40}
@@ -82,7 +82,7 @@ export default function Home() {
               objectFit: 'cover'
             }}
           >
-            <source src="/public/video/video_hero.mp4" type="video/mp4" />
+            <source src="/video/video_hero.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
@@ -151,147 +151,107 @@ export default function Home() {
                   <span style={{ color: '#64FFDA', fontSize: '1.5rem' }}>📊</span>
                 </div>
               </div>
-              <h3>A Síndrome do "Quase Lá"</h3>
-              <p>Estar sempre a um passo do crescimento exponencial, mas nunca conseguir dar esse salto definitivo.</p>
+              <h3>A Venda sem Narrativa</h3>
+              <p>Dificuldade em traduzir funcionalidades complexas em uma proposta de valor irrecusável para o C-Level.</p>
             </div>
           </div>
         </div>
       </section>
 
+      
       {/* Seção Framework */}
       <section id="framework" className="section section-darker">
         <div className="container">
           <div className="text-center mb-2">
-            <h2>Framework GTM Ignition™</h2>
+            <h2>O Framework GTM Ignition™</h2>
             <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
-              Nossa metodologia proprietária que transforma empresas B2B de alta complexidade em máquinas de crescimento previsível.
+              Nosso sistema operacional proprietário para construir e escalar sua máquina de receita de forma previsível e inteligente.
             </p>
           </div>
 
           <div className="grid grid-2" style={{ marginTop: '4rem', alignItems: 'center' }}>
             <div>
-              <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>4 Fases Integradas</h3>
-              
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>1</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Diagnóstico Estratégico</h4>
-                </div>
-                <p>Análise profunda do seu negócio, mercado e posicionamento atual.</p>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>2</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Decodificação de Mercado</h4>
-                </div>
-                <p>Construção de um posicionamento irrecusável e mensagem que ressoa.</p>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>3</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Engenharia de Receita</h4>
-                </div>
-                <p>Criação dos ativos e processos que aceleram a conversão.</p>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>4</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Aceleração Inteligente</h4>
-                </div>
-                <p>Otimização contínua baseada em dados e resultados mensuráveis.</p>
-              </div>
-
-              <Link href="/metodologia" className="btn btn-primary">
-                Conheça a Metodologia Completa
-              </Link>
+              <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>Passo 1: Decodificação de Mercado</h3>
+              <p>Decodificamos o DNA do seu cliente ideal e o cenário competitivo para construir um posicionamento irrecusável e uma proposta de valor que cria urgência.</p>
             </div>
-
             <div style={{ textAlign: 'center' }}>
               <Image 
-                src="/image/Nos_somos_o-neurotransmissor.png" 
-                alt="Framework GTM Ignition" 
+                src="/image/Decodificacao_de_Mercado.png" 
+                alt="Decodificação de Mercado" 
                 width={400} 
                 height={300}
                 style={{ borderRadius: '12px' }}
               />
             </div>
           </div>
+
+          <div className="grid grid-2" style={{ marginTop: '4rem', alignItems: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
+              <Image 
+                src="/image/Engenharia_de_Receita_e_Ativos_Digitais.png" 
+                alt="Engenharia de Receita e Ativos Digitais" 
+                width={400} 
+                height={300}
+                style={{ borderRadius: '12px' }}
+              />
+            </div>
+            <div>
+              <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>Passo 2: Engenharia de Receita e Ativos Digitais</h3>
+              <p>Construímos sua máquina de GTM com uma narrativa poderosa e os ativos de aceleração essenciais — de Pitch Decks estratégicos a Plataformas Digitais, Landing Pages de alta conversão e Aplicativos que potencializam seu processo de vendas.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-2" style={{ marginTop: '4rem', alignItems: 'center' }}>
+            <div>
+              <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>Passo 3: Aceleração Inteligente</h3>
+              <p>Ativamos um sistema de otimização contínua, usando dados para refinar a estratégia e garantir que seu crescimento não apenas aconteça, mas acelere de forma sustentável.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Image 
+                src="/image/Aceleracao_Inteligente.png" 
+                alt="Aceleração Inteligente" 
+                width={400} 
+                height={300}
+                style={{ borderRadius: '12px' }}
+              />
+            </div>
+          </div>
+
+          <div className="text-center mt-4">
+            <Link href="/metodologia" className="btn btn-primary">
+              Saiba mais sobre nossa metodologia
+            </Link>
+          </div>
         </div>
       </section>
 
+      
       {/* Seção FAQ */}
       <section className="section section-dark">
         <div className="container">
           <div className="text-center mb-2">
-            <h2>Perguntas Frequentes</h2>
+            <h2>Perguntas Frequentes (FAQ)</h2>
           </div>
 
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-              <h3>Quanto tempo leva para ver resultados?</h3>
-              <p>Nossos clientes começam a ver os primeiros insights em 2 semanas. Resultados mensuráveis aparecem entre 60-90 dias, dependendo da complexidade do negócio.</p>
+              <h3>Pergunta 1: Vocês são uma agência de marketing ou uma consultoria?</h3>
+              <p>Resposta: Nenhum dos dois. Agências executam táticas. Consultorias entregam relatórios. A Synapse B2B atua como uma plataforma de aceleração. Nós decodificamos sua estratégia (o trabalho intelectual da consultoria) e construímos os ativos e motores de receita para executá-la (a engenharia que uma agência tradicional não faz de forma integrada).</p>
             </div>
 
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-              <h3>Como vocês garantem que o framework funcionará para minha empresa?</h3>
-              <p>Começamos sempre com um Diagnóstico Estratégico gratuito. Só prosseguimos se identificarmos um potencial real de crescimento e fit com nossa metodologia.</p>
+              <h3>Pergunta 2: Meu negócio é extremamente técnico e de nicho. Como podem ajudar?</h3>
+              <p>Resposta: Essa é exatamente a nossa especialidade. Não precisamos ser especialistas no seu produto; somos especialistas em traduzir sua genialidade técnica em valor de negócio. Nossa função de "neurotransmissor" é conectar sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.</p>
             </div>
 
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-              <h3>Qual é o perfil ideal de empresa para o GTM Ignition™?</h3>
-              <p>Empresas B2B com produtos de alta complexidade, ticket médio elevado e que já possuem product-market fit, mas enfrentam desafios de escala e previsibilidade.</p>
+              <h3>Pergunta 3: Qual o perfil de empresa ideal para a Synapse B2B?</h3>
+              <p>Resposta: Trabalhamos com empresas B2B de alta complexidade que atingiram um platô de crescimento ou que precisam de um GTM estruturado para escalar. Isso inclui SaaS Scale-Ups, Deep Techs, e consultorias de alta especialização que entendem que um produto brilhante, por si só, não garante o domínio do mercado.</p>
             </div>
 
             <div className="card" style={{ textAlign: 'left' }}>
-              <h3>Vocês trabalham apenas com empresas de tecnologia?</h3>
-              <p>Não. Atendemos qualquer empresa B2B de alta complexidade: SaaS, manufatura avançada, serviços especializados, healthtech, fintech e outros setores.</p>
+              <h3>Pergunta 4: Em quanto tempo posso esperar resultados?</h3>
+              <p>Resposta: Go-to-Market não é um evento, é um sistema. Nos primeiros 60 dias, nosso foco é na construção de ativos de tração imediata (como o Sales One-Pager e o pitch) para capitalizar sobre oportunidades atuais. A aceleração sustentável é uma consequência da implementação contínua do framework, com melhorias mensuráveis nas métricas de eficiência (CAC, ciclo de vendas) a cada trimestre.</p>
             </div>
           </div>
 
@@ -308,4 +268,35 @@ export default function Home() {
     </>
   )
 }
+
+
+
+      {/* Seção Solução */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-2">
+            <h2>Nós somos o neurotransmissor do crescimento B2B.</h2>
+            <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+              A Synapse B2B atua como um laboratório de estratégia que decodifica a complexidade técnica em ativos de receita, conectando seu produto ao único resultado que importa: o sucesso do seu cliente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      {/* Seção CTA Final */}
+      <section className="section section-darker">
+        <div className="container text-center">
+          <h2>Pronto para construir seu próximo nível de crescimento?</h2>
+          <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', marginBottom: '2rem' }}>
+            Vamos transformar sua complexidade em sua maior vantagem competitiva.
+          </p>
+          <Link href="/contato" className="btn btn-primary">
+            Fale com um Estrategista
+          </Link>
+        </div>
+      </section>
+
 
