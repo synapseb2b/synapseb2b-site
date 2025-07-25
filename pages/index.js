@@ -23,7 +23,7 @@ export default function Home() {
         <div className="nav-container">
           <Link href="/">
             <Image 
-              src="/logo/logo_synapse_b2b_bg_transparent.png" 
+              src="/public/logo/symbol_logo_synapseb2b_bg_black.png" 
               alt="Synapse B2B" 
               width={150} 
               height={40}
@@ -82,7 +82,7 @@ export default function Home() {
               objectFit: 'cover'
             }}
           >
-            <source src="/video/video_hero.mp4" type="video/mp4" />
+            <source src="/public/video/video_hero.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
