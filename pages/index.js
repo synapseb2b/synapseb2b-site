@@ -2,15 +2,16 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Supondo que você tenha uma função scrollToSection em algum lugar
-const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
 export default function HomePage() {
+  // A função foi movida para dentro do componente
+  const scrollToSection = (id) => {
+    // Esta função só será chamada no navegador, onde 'document' existe
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -21,16 +22,14 @@ export default function HomePage() {
       {/* Navegação */}
       <nav className="nav">
         <div className="nav-container">
-          {/* O Link agora tem display flex para alinhar a logo e o texto */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image 
               src="/logo/symbol_logo_synapseb2b_bg_black.png" 
               alt="Synapse B2B Logo" 
-              width={40}  // Dimensões ajustadas para manter a proporção original (1:1)
+              width={40}
               height={40}
               className="nav-logo"
             />
-            {/* Texto adicionado ao lado da logo */}
             <span style={{ color: '#64FFDA', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
               Synapse B2B
             </span>
@@ -45,7 +44,6 @@ export default function HomePage() {
       </nav>
 
       {/* Seção Hero */}
-      {/* A section precisa de position: relative para que o z-index do vídeo funcione corretamente */}
       <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
@@ -76,13 +74,13 @@ export default function HomePage() {
           width: '100%',
           height: '100%',
           zIndex: -1,
-          opacity: 0.2 // Opacidade levemente aumentada para melhor visualização
+          opacity: 0.2
         }}>
           <video 
             autoPlay 
             muted 
             loop 
-            playsInline // Atributo importante para autoplay em alguns dispositivos móveis
+            playsInline
             style={{
               width: '100%',
               height: '100%',
@@ -96,6 +94,7 @@ export default function HomePage() {
     </>
   );
 }
+
       {/* Seção Problema */}
       <section className="section section-dark">
         <div className="container">
