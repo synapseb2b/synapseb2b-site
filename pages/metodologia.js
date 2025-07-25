@@ -75,7 +75,7 @@ export default function Metodologia() {
         </div>
       </section>
 
-      {/* Fase 1: Diagnóstico Estratégico */}
+{/* Fase 1: Diagnóstico Estratégico */}
       <section className="section section-dark">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
@@ -133,15 +133,12 @@ export default function Metodologia() {
               </div>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
               <Image 
                 src="/image/Diagnostico_Estrategico.png" 
                 alt="Diagnóstico Estratégico" 
-                position: 'relative',
-                width={100%} 
-                minHeight: '400px',
-                height={100%}
-                style={{ borderRadius: '12px' }}
+                fill
+                style={{ borderRadius: '12px', objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -152,15 +149,12 @@ export default function Metodologia() {
       <section className="section section-darker">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
               <Image 
                 src="/image/Decodificacao_de_Mercado.png" 
                 alt="Decodificação de Mercado" 
-                position: 'relative',
-                width={100%} 
-                minHeight: '400px',
-                height={100%}
-                style={{ borderRadius: '12px' }}
+                fill
+                style={{ borderRadius: '12px', objectFit: 'cover' }}
               />
             </div>
 
@@ -279,15 +273,12 @@ export default function Metodologia() {
               </div>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
               <Image 
                 src="/image/Engenharia_de_Receita.png" 
                 alt="Engenharia de Receita" 
-                position: 'relative',
-                width={100%} 
-                minHeight: '400px',
-                height={100%}
-                style={{ borderRadius: '12px' }}
+                fill
+                style={{ borderRadius: '12px', objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -298,15 +289,12 @@ export default function Metodologia() {
       <section className="section section-darker">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
               <Image 
                 src="/image/Aceleracao_Inteligente.png" 
                 alt="Aceleração Inteligente" 
-                position: 'relative',
-                width={100%} 
-                minHeight: '400px',
-                height={100%}
-                style={{ borderRadius: '12px' }}
+                fill
+                style={{ borderRadius: '12px', objectFit: 'cover' }}
               />
             </div>
 
