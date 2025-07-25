@@ -1,0 +1,359 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: #000000; /* Fundo preto conforme solicitado */
+  color: #CCD6F6; /* Cor de texto principal */
+  overflow-x: hidden;
+}
+
+/* Variáveis CSS para cores da identidade visual */
+:root {
+  --primary-color: #0A192F; /* Azul Meia-Noite */
+  --secondary-color: #1E2A3A; /* Grafite Estratégico */
+  --accent-color: #64FFDA; /* Ciano Sinapse */
+  --base-color: #F8F9FA; /* Branco Gelo */
+  --text-color: #CCD6F6; /* Cinza Claro */
+  --background-color: #000000; /* Fundo preto */
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--base-color);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--base-color);
+  text-decoration: underline;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--base-color);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* CTA específico "Agende um Diagnóstico Estratégico" */
+.btn-diagnostic {
+  background-color: var(--base-color);
+  color: var(--primary-color);
+  border: 2px solid var(--base-color);
+}
+
+.btn-diagnostic:hover {
+  background-color: var(--accent-color);
+  color: var(--base-color); /* Texto branco no hover */
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Seções */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-dark {
+  background-color: var(--primary-color);
+}
+
+.section-darker {
+  background-color: var(--secondary-color);
+}
+
+/* Grid responsivo */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Cards */
+.card {
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+  text-align: center; /* Centralização conforme solicitado */
+}
+
+.card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+.card h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  text-align: center; /* Centralização dos títulos */
+}
+
+.card p {
+  text-align: center; /* Centralização dos textos */
+}
+
+/* Navegação */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--background-color) 0%, var(--primary-color) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .nav-menu {
+    display: none; /* Simplificado para mobile */
+  }
+}
+
+/* Utilitários */
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Espaçamento generoso conforme identidade visual */
+.section {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
