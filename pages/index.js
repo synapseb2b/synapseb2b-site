@@ -287,12 +287,12 @@ export default function Home() {
 
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-              <h3>Vocês são uma agência de marketing ou uma consultoria?
+              <h3>Vocês são uma agência de marketing ou uma consultoria?<h3>
               <p>Nenhum dos dois. Agências executam táticas. Consultorias entregam relatórios. A Synapse B2B atua como uma plataforma de aceleração. Nós decodificamos sua estratégia (o trabalho intelectual da consultoria) e construímos os ativos e motores de receita para executá-la (a engenharia que uma agência tradicional não faz de forma integrada).</p>
             </div>
 
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-              <h3>Meu negócio é extremamente técnico e de nicho. Como podem ajudar?
+              <h3>Meu negócio é extremamente técnico e de nicho. Como podem ajudar?<h3>
               <p>Essa é exatamente a nossa especialidade. Não precisamos ser especialistas no seu produto; somos especialistas em traduzir sua genialidade técnica em valor de negócio. Nossa função de "neurotransmissor" é conectar sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.</p>
             </div>
 
