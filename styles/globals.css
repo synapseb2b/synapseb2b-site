@@ -240,8 +240,8 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, var(--background-color) 0%, var(--primary-color) 100%);
-  position: relative;
+  padding-top: 80px;
+    position: relative;
   overflow: hidden;
 }
 
