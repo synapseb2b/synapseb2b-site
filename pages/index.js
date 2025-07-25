@@ -23,7 +23,7 @@ export default function Home() {
         <div className="nav-container">
           <Link href="/">
             <Image 
-              src="/logo/logo_synapse_b2b_bg_transparent.png" 
+              src="/logo/symbol_logo_synapseb2b_bg_black.png" 
               alt="Synapse B2B" 
               width={150} 
               height={40}
@@ -148,7 +148,7 @@ export default function Home() {
                   justifyContent: 'center',
                   margin: '0 auto 1rem'
                 }}>
-                  <span style={{ color: '#64FFDA', fontSize: '1.5rem' }}>📊</span>
+                  <span style={{ color: '#64FFDA', fontSize: '1.5rem' }}>⛔</span>
                 </div>
               </div>
               <h3>A Síndrome do "Quase Lá"</h3>
@@ -217,7 +217,7 @@ export default function Home() {
             <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>1</div>
             <h4 style={{ margin: 0, color: '#F8F9FA' }}>Diagnóstico Estratégico</h4>
           </div>
-          <p>Análise profunda do seu negócio, mercado e posicionamento atual.</p>
+          <p>Análise profunda e estruturada do seu negócio, mercado e posicionamento atual para identificar as alavancas de crescimento mais promissoras.</p>
         </div>
 
         {/* Fase 2 */}
@@ -287,6 +287,21 @@ export default function Home() {
 
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+              <h3>Vocês são uma agência de marketing ou uma consultoria?
+              <p>Nenhum dos dois. Agências executam táticas. Consultorias entregam relatórios. A Synapse B2B atua como uma plataforma de aceleração. Nós decodificamos sua estratégia (o trabalho intelectual da consultoria) e construímos os ativos e motores de receita para executá-la (a engenharia que uma agência tradicional não faz de forma integrada).</p>
+            </div>
+
+            <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+              <h3>Meu negócio é extremamente técnico e de nicho. Como podem ajudar?
+              <p>Essa é exatamente a nossa especialidade. Não precisamos ser especialistas no seu produto; somos especialistas em traduzir sua genialidade técnica em valor de negócio. Nossa função de "neurotransmissor" é conectar sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.</p>
+            </div>
+
+            <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+              <h3>Qual é o perfil ideal de empresa para a Synapse B2B?</h3>
+              <p>rabalhamos com empresas B2B de alta complexidade que atingiram um platô de crescimento ou que precisam de um GTM estruturado para escalar. Isso inclui SaaS Scale-Ups, Deep Techs, e consultorias de alta especialização que entendem que um produto brilhante, por si só, não garante o domínio do mercado.</p>
+            </div>
+
+             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
               <h3>Quanto tempo leva para ver resultados?</h3>
               <p>Nossos clientes começam a ver os primeiros insights em 2 semanas. Resultados mensuráveis aparecem entre 60-90 dias, dependendo da complexidade do negócio.</p>
             </div>
@@ -294,11 +309,6 @@ export default function Home() {
             <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
               <h3>Como vocês garantem que o framework funcionará para minha empresa?</h3>
               <p>Começamos sempre com um Diagnóstico Estratégico gratuito. Só prosseguimos se identificarmos um potencial real de crescimento e fit com nossa metodologia.</p>
-            </div>
-
-            <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-              <h3>Qual é o perfil ideal de empresa para o GTM Ignition™?</h3>
-              <p>Empresas B2B com produtos de alta complexidade, ticket médio elevado e que já possuem product-market fit, mas enfrentam desafios de escala e previsibilidade.</p>
             </div>
 
             <div className="card" style={{ textAlign: 'left' }}>
