@@ -7,21 +7,24 @@ export default function CasosDeUso() {
   return (
     <>
       <Head>
-        <title>Casos de Uso - Resultados Comprovados | Synapse B2B</title>
-        <meta name="description" content="Conheça os resultados reais que nossos clientes alcançaram com o Framework GTM Ignition™. Cases de sucesso em empresas B2B de alta complexidade." />
+        <title>Casos de Uso - Cenários de Aplicação | Synapse B2B</title>
+        <meta name="description" content="Veja como nosso framework gera valor em cenários de alta complexidade, do SaaS Scale-Up à Deep Tech." />
       </Head>
 
       {/* Navegação */}
       <nav className="nav">
         <div className="nav-container">
-          <Link href="/">
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image 
-              src="/logo/logo_synapse_b2b_bg_transparent.png" 
-              alt="Synapse B2B" 
-              width={150} 
+              src="/logo/symbol_logo_synapseb2b_bg_black.png" 
+              alt="Synapse B2B Logo" 
+              width={40}
               height={40}
               className="nav-logo"
             />
+            <span style={{ color: '#64FFDA', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
+              Synapse B2B
+            </span>
           </Link>
           <ul className="nav-menu">
             <li><Link href="/" className="nav-link">Home</Link></li>
@@ -32,414 +35,93 @@ export default function CasosDeUso() {
         </div>
       </nav>
 
-      {/* Hero dos Casos */}
+      {/* Seção Hero */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
-            <h1>Resultados Comprovados</h1>
+            <h1>Cenários de Aplicação</h1>
             <p>
-              Conheça como empresas B2B de alta complexidade transformaram seus negócios 
-              com o Framework GTM Ignition™ e alcançaram crescimento previsível.
+              Desafios B2B complexos exigem mais do que táticas. Exigem um sistema.
+              <br />
+              Veja como nosso framework gera valor em cenários de alta complexidade.
             </p>
-            <div className="hero-ctas">
-              <Link href="/contato" className="btn btn-primary">
-                Quero Resultados Similares
-              </Link>
-            </div>
           </div>
         </div>
+
+                <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          opacity: 0.2,
+          background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
+        }}>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          >
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+        </div>
+
       </section>
 
-      {/* Métricas Gerais */}
+      {/* Seção de Casos */}
       <section className="section section-dark">
         <div className="container">
-          <div className="text-center mb-2">
-            <h2>Resultados Médios dos Nossos Clientes</h2>
-            <p style={{ fontSize: '1.2rem' }}>
-              Dados consolidados de mais de 50 empresas B2B que implementaram nossa metodologia
-            </p>
-          </div>
-
           <div className="grid grid-3">
-            <div className="card">
-              <div style={{
-                fontSize: '3rem',
-                fontWeight: 'bold',
-                color: '#64FFDA',
-                marginBottom: '1rem'
-              }}>280%</div>
-              <h3>Crescimento em Receita</h3>
-              <p>Aumento médio na receita recorrente em 12 meses de implementação do framework.</p>
-            </div>
-
-            <div className="card">
-              <div style={{
-                fontSize: '3rem',
-                fontWeight: 'bold',
-                color: '#64FFDA',
-                marginBottom: '1rem'
-              }}>60%</div>
-              <h3>Redução no Ciclo de Vendas</h3>
-              <p>Diminuição no tempo médio para fechamento de negócios através de processos otimizados.</p>
-            </div>
-
-            <div className="card">
-              <div style={{
-                fontSize: '3rem',
-                fontWeight: 'bold',
-                color: '#64FFDA',
-                marginBottom: '1rem'
-              }}>340%</div>
-              <h3>Aumento em Conversão</h3>
-              <p>Melhoria na taxa de conversão de leads qualificados para clientes pagantes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case 1: SaaS Enterprise */}
-      <section className="section section-darker">
-        <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center' }}>
-            <div>
-              <div style={{ 
-                backgroundColor: 'rgba(100, 255, 218, 0.1)', 
-                padding: '0.5rem 1rem', 
-                borderRadius: '20px', 
-                display: 'inline-block',
-                marginBottom: '1rem'
-              }}>
-                <span style={{ color: '#64FFDA', fontSize: '0.9rem', fontWeight: '600' }}>
-                  SaaS Enterprise
-                </span>
-              </div>
-              
-              <h2>Plataforma de Analytics B2B</h2>
-              <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                Empresa de analytics para grandes corporações enfrentava dificuldades para 
-                escalar além de $2M ARR devido a um ciclo de vendas longo e CAC elevado.
+            
+            {/* Caso de Uso 1: O SaaS Scale-Up */}
+            <div className="card" style={{ textAlign: 'left' }}>
+              <h3 style={{ color: '#64FFDA' }}>Caso de Uso 1: O SaaS Scale-Up</h3>
+              <p style={{ marginTop: '1.5rem' }}>
+                <strong>Desafio:</strong> Uma plataforma SaaS com forte tração em PLG (Product-Led Growth) precisa entrar no mercado Enterprise, mas seu modelo de autoatendimento não converte contratos de alto valor.
               </p>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <h3 style={{ color: '#64FFDA' }}>Desafios Iniciais:</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Ciclo de vendas de 18 meses
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    CAC 3x maior que LTV
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Taxa de conversão de 2%
-                  </li>
-                </ul>
-              </div>
-
-              <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Resultados em 8 meses:</h4>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>$6.2M ARR</strong> - Crescimento de 210%
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>9 meses</strong> - Redução de 50% no ciclo
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>8.5%</strong> - Taxa de conversão
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                backgroundColor: '#1E2A3A',
-                padding: '2rem',
-                borderRadius: '12px',
-                border: '1px solid rgba(100, 255, 218, 0.2)'
-              }}>
-                <blockquote style={{ 
-                  fontSize: '1.1rem', 
-                  fontStyle: 'italic', 
-                  marginBottom: '1.5rem',
-                  color: '#CCD6F6'
-                }}>
-                  "O Framework GTM Ignition™ não apenas triplicou nossa receita, 
-                  mas nos deu a previsibilidade que precisávamos para escalar com confiança."
-                </blockquote>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    backgroundColor: '#64FFDA',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0A192F',
-                    fontWeight: 'bold'
-                  }}>
-                    RS
-                  </div>
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontWeight: '600', color: '#F8F9FA' }}>Roberto Silva</div>
-                    <div style={{ fontSize: '0.9rem', color: '#CCD6F6' }}>CEO & Founder</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case 2: Manufatura Avançada */}
-      <section className="section section-dark">
-        <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                backgroundColor: '#1E2A3A',
-                padding: '2rem',
-                borderRadius: '12px',
-                border: '1px solid rgba(100, 255, 218, 0.2)'
-              }}>
-                <blockquote style={{ 
-                  fontSize: '1.1rem', 
-                  fontStyle: 'italic', 
-                  marginBottom: '1.5rem',
-                  color: '#CCD6F6'
-                }}>
-                  "Finalmente conseguimos comunicar o valor real da nossa tecnologia. 
-                  O resultado foi um crescimento de 400% em novos contratos."
-                </blockquote>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    backgroundColor: '#64FFDA',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0A192F',
-                    fontWeight: 'bold'
-                  }}>
-                    MC
-                  </div>
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontWeight: '600', color: '#F8F9FA' }}>Maria Costa</div>
-                    <div style={{ fontSize: '0.9rem', color: '#CCD6F6' }}>Diretora Comercial</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div style={{ 
-                backgroundColor: 'rgba(100, 255, 218, 0.1)', 
-                padding: '0.5rem 1rem', 
-                borderRadius: '20px', 
-                display: 'inline-block',
-                marginBottom: '1rem'
-              }}>
-                <span style={{ color: '#64FFDA', fontSize: '0.9rem', fontWeight: '600' }}>
-                  Manufatura Avançada
-                </span>
-              </div>
-              
-              <h2>Equipamentos Industriais IoT</h2>
-              <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                Fabricante de equipamentos industriais com tecnologia IoT avançada 
-                lutava para comunicar valor e justificar preços premium.
+              <p>
+                <strong>Solução Synapse B2B:</strong> Estruturação de um modelo híbrido (Product-Led Sales), refinamento do ICP para contas Enterprise, e construção de uma narrativa de vendas focada em ROI para o C-Level.
               </p>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <h3 style={{ color: '#64FFDA' }}>Desafios Iniciais:</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Competição por preço
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Dificuldade em demonstrar ROI
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Vendas reativas
-                  </li>
-                </ul>
-              </div>
-
-              <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Resultados em 6 meses:</h4>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>400%</strong> - Aumento em novos contratos
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>35%</strong> - Aumento no ticket médio
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>Pipeline</strong> - 3x mais qualificado
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case 3: FinTech */}
-      <section className="section section-darker">
-        <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center' }}>
-            <div>
-              <div style={{ 
-                backgroundColor: 'rgba(100, 255, 218, 0.1)', 
-                padding: '0.5rem 1rem', 
-                borderRadius: '20px', 
-                display: 'inline-block',
-                marginBottom: '1rem'
-              }}>
-                <span style={{ color: '#64FFDA', fontSize: '0.9rem', fontWeight: '600' }}>
-                  FinTech B2B
-                </span>
-              </div>
-              
-              <h2>Plataforma de Pagamentos Corporativos</h2>
-              <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                FinTech especializada em pagamentos B2B enfrentava alta concorrência 
-                e dificuldade para se diferenciar em um mercado saturado.
+              <p style={{ marginBottom: 0 }}>
+                <strong>Resultados Esperados:</strong> Aumento do ACV (Valor Anual do Contrato), redução do ciclo de vendas Enterprise e criação de um novo motor de receita previsível.
               </p>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <h3 style={{ color: '#64FFDA' }}>Desafios Iniciais:</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Mercado commoditizado
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Churn alto (25% ao ano)
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#ff6b6b', marginRight: '0.5rem' }}>✗</span>
-                    Crescimento estagnado
-                  </li>
-                </ul>
-              </div>
-
-              <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Resultados em 10 meses:</h4>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>180%</strong> - Crescimento em MRR
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>8%</strong> - Redução do churn para
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
-                    <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    <strong>Série A</strong> - $15M levantados
-                  </li>
-                </ul>
-              </div>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                backgroundColor: '#1E2A3A',
-                padding: '2rem',
-                borderRadius: '12px',
-                border: '1px solid rgba(100, 255, 218, 0.2)'
-              }}>
-                <blockquote style={{ 
-                  fontSize: '1.1rem', 
-                  fontStyle: 'italic', 
-                  marginBottom: '1.5rem',
-                  color: '#CCD6F6'
-                }}>
-                  "A Synapse nos ajudou a encontrar nosso oceano azul. 
-                  Saímos da guerra de preços e criamos uma categoria própria."
-                </blockquote>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    backgroundColor: '#64FFDA',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0A192F',
-                    fontWeight: 'bold'
-                  }}>
-                    AS
-                  </div>
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontWeight: '600', color: '#F8F9FA' }}>André Santos</div>
-                    <div style={{ fontSize: '0.9rem', color: '#CCD6F6' }}>Co-founder & CEO</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção de Setores */}
-      <section className="section section-dark">
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2>Setores que Atendemos</h2>
-            <p style={{ fontSize: '1.2rem' }}>
-              Nossa metodologia é adaptável para qualquer empresa B2B de alta complexidade
-            </p>
-          </div>
-
-          <div className="grid grid-3">
+            {/* Caso de Uso 2: A Deep Tech / IA */}
             <div className="card" style={{ textAlign: 'left' }}>
-              <h3>SaaS & Software</h3>
-              <p>Plataformas enterprise, ferramentas de produtividade, soluções de infraestrutura.</p>
+              <h3 style={{ color: '#64FFDA' }}>Caso de Uso 2: A Deep Tech / IA</h3>
+              <p style={{ marginTop: '1.5rem' }}>
+                <strong>Desafio:</strong> Uma startup de Inteligência Artificial com tecnologia revolucionária tem dificuldade em comunicar seu valor de negócio, sendo percebida como "muito complexa". Os pitch decks não conseguem demonstrar o poder real da solução.
+              </p>
+              <p>
+                <strong>Solução Synapse B2B:</strong> Além da criação da narrativa de valor, desenvolvemos uma Plataforma Digital de Demonstração Interativa. Este ativo digital traduz a complexidade da IA em uma experiência visual e guiada, permitindo que prospects e investidores simulem o uso e calculem o ROI potencial em tempo real, sem a necessidade de uma demorada prova de conceito.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                <strong>Resultados Esperados:</strong> Aumento drástico no engajamento de prospects, ciclo de vendas mais curto por meio da autoqualificação na plataforma, e maior confiança dos investidores ao visualizar o produto em ação.
+              </p>
             </div>
 
+            {/* Caso de Uso 3: A Consultoria de Alta Especialização */}
             <div className="card" style={{ textAlign: 'left' }}>
-              <h3>FinTech & InsurTech</h3>
-              <p>Soluções financeiras B2B, seguros corporativos, gestão de riscos.</p>
+              <h3 style={{ color: '#64FFDA' }}>Caso de Uso 3: A Consultoria de Alta Especialização</h3>
+              <p style={{ marginTop: '1.5rem' }}>
+                <strong>Desafio:</strong> Uma firma de serviços B2B (Engenharia, Jurídico, Financeiro) depende exclusivamente de indicações e networking pessoal, sem um motor de crescimento escalável para prospecção ativa.
+              </p>
+              <p>
+                <strong>Solução Synapse B2B:</strong> "Produtização" dos serviços em ofertas claras, definição de um nicho de mercado de alto valor, e construção de uma estratégia de GTM baseada em autoridade para gerar demanda previsível.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                <strong>Resultados Esperados:</strong> Redução da dependência de indicações, criação de um pipeline de vendas consistente e aumento da lucratividade.
+              </p>
             </div>
 
-            <div className="card" style={{ textAlign: 'left' }}>
-              <h3>HealthTech</h3>
-              <p>Dispositivos médicos, software hospitalar, telemedicina corporativa.</p>
-            </div>
-
-            <div className="card" style={{ textAlign: 'left' }}>
-              <h3>Manufatura Avançada</h3>
-              <p>Equipamentos industriais, automação, IoT industrial.</p>
-            </div>
-
-            <div className="card" style={{ textAlign: 'left' }}>
-              <h3>Serviços Especializados</h3>
-              <p>Consultoria técnica, engenharia, serviços profissionais de alto valor.</p>
-            </div>
-
-            <div className="card" style={{ textAlign: 'left' }}>
-              <h3>Infraestrutura & Energia</h3>
-              <p>Soluções energéticas, smart cities, infraestrutura digital.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -447,25 +129,11 @@ export default function CasosDeUso() {
       {/* CTA Final */}
       <section className="section section-darker">
         <div className="container text-center">
-          <h2>Pronto para Ser o Próximo Case de Sucesso?</h2>
-          <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
-            Agende uma consulta estratégica gratuita e descubra como podemos acelerar 
-            o crescimento da sua empresa B2B de alta complexidade.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contato" className="btn btn-primary">
-              Agendar Consulta Gratuita
-            </Link>
-            <Link href="/metodologia" className="btn btn-secondary">
-              Conhecer a Metodologia
-            </Link>
-          </div>
+          <Link href="/contato" className="btn btn-primary">
+            Seu desafio se parece com um destes? Agende um diagnóstico
+          </Link>
         </div>
       </section>
-
-      {/* Componente de IA */}
-      <SynapseAI />
-    </>
-  )
+         </>
+  );
 }
-
