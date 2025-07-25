@@ -71,7 +71,7 @@ export default function HomePage() {
           width: '100%',
           height: '100%',
           zIndex: -1,
-          opacity: 0.2
+          opacity: 0.2,
           background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
         }}>
           <video 
