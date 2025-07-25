@@ -16,7 +16,7 @@ export default function Metodologia() {
         <div className="nav-container">
           <Link href="/">
             <Image 
-              src="/logo/logo_synapse_b2b_bg_transparent.png" 
+              src="/logo/symbol_logo_synapseb2b_bg_black.png" 
               alt="Synapse B2B" 
               width={150} 
               height={40}
@@ -47,6 +47,31 @@ export default function Metodologia() {
               </Link>
             </div>
           </div>
+        </div>
+
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          opacity: 0.2,
+          background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
+        }}>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          >
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
@@ -110,10 +135,12 @@ export default function Metodologia() {
 
             <div style={{ textAlign: 'center' }}>
               <Image 
-                src="/image/Decodificacao_de_Mercado.png" 
+                src="/image/Diagnostico_Estrategico.png" 
                 alt="Diagnóstico Estratégico" 
-                width={400} 
-                height={300}
+                position: 'relative',
+                width={100%} 
+                minHeight: '400px',
+                height={100%}
                 style={{ borderRadius: '12px' }}
               />
             </div>
@@ -129,8 +156,10 @@ export default function Metodologia() {
               <Image 
                 src="/image/Decodificacao_de_Mercado.png" 
                 alt="Decodificação de Mercado" 
-                width={400} 
-                height={300}
+                position: 'relative',
+                width={100%} 
+                minHeight: '400px',
+                height={100%}
                 style={{ borderRadius: '12px' }}
               />
             </div>
@@ -163,7 +192,7 @@ export default function Metodologia() {
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                     <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    Mapeamento detalhado do ICP (Ideal Customer Profile)
+                    Mapeamento detalhado do ICP (Ideal Customer Profile) e RCP Real Customer Profile
                   </li>
                   <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                     <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
@@ -211,7 +240,7 @@ export default function Metodologia() {
                   fontSize: '1.5rem',
                   marginRight: '1rem'
                 }}>3</div>
-                <h2 style={{ margin: 0 }}>Engenharia de Receita</h2>
+                <h2 style={{ margin: 0 }}>Engenharia de Receita e Ativos Digitais</h2>
               </div>
               
               <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
@@ -224,11 +253,11 @@ export default function Metodologia() {
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                     <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    Sales enablement materials
+                    Sales enablement materials (ferramentas, conteúdos, processos e treinamentos)
                   </li>
                   <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                     <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
-                    Sequências de nurturing automatizadas
+                    Criação de Plataformas Digitais (Sites, Landing Pages) e Aplicativos que potencializam processos de vendas
                   </li>
                   <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
                     <span style={{ color: '#64FFDA', marginRight: '0.5rem' }}>✓</span>
@@ -252,10 +281,12 @@ export default function Metodologia() {
 
             <div style={{ textAlign: 'center' }}>
               <Image 
-                src="/image/Engenharia_de_receita.png" 
+                src="/image/Engenharia_de_Receita.png" 
                 alt="Engenharia de Receita" 
-                width={400} 
-                height={300}
+                position: 'relative',
+                width={100%} 
+                minHeight: '400px',
+                height={100%}
                 style={{ borderRadius: '12px' }}
               />
             </div>
@@ -271,8 +302,10 @@ export default function Metodologia() {
               <Image 
                 src="/image/Aceleracao_Inteligente.png" 
                 alt="Aceleração Inteligente" 
-                width={400} 
-                height={300}
+                position: 'relative',
+                width={100%} 
+                minHeight: '400px',
+                height={100%}
                 style={{ borderRadius: '12px' }}
               />
             </div>
@@ -352,10 +385,3 @@ export default function Metodologia() {
           </div>
         </div>
       </section>
-
-      {/* Componente de IA */}
-      <SynapseAI />
-    </>
-  )
-}
-
