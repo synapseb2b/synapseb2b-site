@@ -45,7 +45,8 @@ export default function HomePage() {
       <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
-            <h1>Sua Expertise Técnica é Brilhante. 
+            <h1>Sua Expertise Técnica é Brilhante.
+                <br /> 
                 Nós a Transformamos em Receita Previsível.</h1>
             <p>
               Somos a plataforma de aceleração que constrói o Go-to-Market para empresas B2B de alta complexidade, 
