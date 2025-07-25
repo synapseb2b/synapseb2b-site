@@ -343,14 +343,14 @@ export default function Contato() {
                   
                   <div style={{ marginBottom: '1.5rem' }}>
                     <h4 style={{ color: '#F8F9FA', marginBottom: '0.5rem' }}>WhatsApp</h4>
-                    <a href="https://wa.me/5511999999999" style={{ color: '#64FFDA', fontSize: '1.1rem' }}>
-                      +55 (11) 99999-9999
+                    <a href="https://wa.me/553139586192" style={{ color: '#64FFDA', fontSize: '1.1rem' }}>
+                      +55 (31) 3958-6192
                     </a>
                   </div>
                   
                   <div>
                     <h4 style={{ color: '#F8F9FA', marginBottom: '0.5rem' }}>LinkedIn</h4>
-                    <a href="https://linkedin.com/company/synapseb2b" style={{ color: '#64FFDA', fontSize: '1.1rem' }}>
+                    <a href="https://linkedin.com/company/synapse-b2b" style={{ color: '#64FFDA', fontSize: '1.1rem' }}>
                       /company/synapseb2b
                     </a>
                   </div>
