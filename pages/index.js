@@ -1,35 +1,3 @@
-O erro ocorre porque várias seções do seu código (`Problema`, `Solução`, `Framework` e `FAQ`) estão fora da estrutura do componente React `HomePage`, causando um erro de sintaxe.
-
-O componente e seu `return` foram fechados muito cedo no arquivo. Todo o conteúdo da página precisa estar dentro do `return` do componente.
-
------
-
-### A Correção
-
-Você precisa mover todas as seções para dentro do fragmento (`<>... </ >`) do `return` do seu componente `HomePage`.
-
-A linha problemática é o fechamento do fragmento (`</>`) que aparece logo após a "Seção Hero". Ele precisa ser movido para o final, logo antes do fechamento do `return`.
-
-  * **Linha Antecessora (Problemática):**
-    ```jsx
-      </section> 
-    </> // <-- ESTA LINHA ESTÁ NO LUGAR ERRADO
-    );
-    ```
-
-}
-\`\`\`
-
-  * **Linha Sucessora (Onde o conteúdo deveria estar):**
-    Todo o conteúdo, da "Seção Problema" até a "Seção FAQ", deve ser colocado **antes** da linha `</>` que fecha o `return` principal.
-
------
-
-### Código Completo Corrigido
-
-Para facilitar, aqui está o arquivo `index.js` completo e corrigido. Copie e cole este conteúdo para substituir o seu arquivo atual.
-
-```jsx
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -43,7 +11,6 @@ export default function HomePage() {
   };
 
   return (
-    // O RETORNO PRINCIPAL COMEÇA AQUI
     <>
       <Head>
         <title>Synapse B2B - Transformamos Expertise Técnica em Receita Previsível</title>
@@ -307,7 +274,7 @@ export default function HomePage() {
               <h3>Meu negócio é extremamente técnico e de nicho. Como podem ajudar?</h3>
               <p>Essa é exatamente a nossa especialidade. Não precisamos ser especialistas no seu produto; somos especialistas em traduzir sua genialidade técnica em valor de negócio. Nossa função de "neurotransmissor" é conectar sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.</p>
             </div>
-            <div className="card" style={{ marginBottom: '1.fiverem', textAlign: 'left' }}>
+            <div className="card" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
               <h3>Qual é o perfil ideal de empresa para a Synapse B2B?</h3>
               <p>Trabalhamos com empresas B2B de alta complexidade que atingiram um platô de crescimento ou que precisam de um GTM estruturado para escalar. Isso inclui SaaS Scale-Ups, Deep Techs, e consultorias de alta especialização que entendem que um produto brilhante, por si só, não garante o domínio do mercado.</p>
             </div>
@@ -331,9 +298,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-    {/* O FECHAMENTO DO FRAGMENTO AGORA ESTÁ AQUI, NO FINAL */}
     </>
   );
 }
-```
