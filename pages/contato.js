@@ -86,6 +86,32 @@ export default function Contato() {
             </p>
           </div>
         </div>
+
+                <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          opacity: 0.2,
+          background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
+        }}>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          >
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+        </div>
+
       </section>
 
       {/* Seção Principal de Contato */}
@@ -448,9 +474,6 @@ export default function Contato() {
           </div>
         </div>
       </section>
-
-      {/* Componente de IA */}
-      <SynapseAI />
     </>
   )
 }
