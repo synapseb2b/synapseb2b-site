@@ -59,7 +59,7 @@ export default function Contato() {
         <div className="nav-container">
           <Link href="/">
             <Image 
-              src="/logo/logo_synapse_b2b_bg_transparent.png" 
+              src="/logo/symbol_logo_synapse_b2b_bg_black.png" 
               alt="Synapse B2B" 
               width={150} 
               height={40}
