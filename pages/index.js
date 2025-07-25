@@ -260,7 +260,7 @@ export default function Home() {
                     fontWeight: 'bold',
                     marginRight: '1rem'
                   }}>3</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Engenharia de Receita</h4>
+                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Engenharia de Receita e Ativos Digitais</h4>
                 </div>
                 <p>Criação dos ativos e processos que aceleram a conversão.</p>
               </div>
@@ -291,7 +291,7 @@ export default function Home() {
 
             <div style={{ textAlign: 'center' }}>
               <Image 
-                src="/image/Nos_somos_o-neurotransmissor.png" 
+                src="/image/Framework_GTM_SynapsebB2B.png" 
                 alt="Framework GTM Ignition" 
                 width={400} 
                 height={300}
