@@ -158,6 +158,42 @@ export default function Home() {
         </div>
       </section>
 
+{/* Seção Solução */}
+<section 
+  className="section section-dark"
+  style={{
+    backgroundImage: "url('/image/Nos_somos_o_neurotransmissor_do_crescimento_B2B.png')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    position: 'relative' // Importante para o overlay abaixo
+  }}
+>
+  {/* Adiciona um overlay escuro para melhorar a legibilidade do texto sobre a imagem */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(9, 14, 26, 0.7)', // Cor escura com 70% de opacidade
+    zIndex: 1
+  }}></div>
+
+  <div 
+    className="container"
+    style={{ position: 'relative', zIndex: 2 }} // Garante que o conteúdo fique acima do overlay
+  >
+    <div className="text-center">
+      <h2>Nós somos o neurotransmissor do crescimento B2B.</h2>
+      <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '1rem auto 0' }}>
+        A Synapse B2B atua como um laboratório de estratégia que decodifica a complexidade técnica em ativos de receita, conectando seu produto ao único resultado que importa: o sucesso do seu cliente.
+      </p>
+    </div>
+
+  </div>
+</section>
+
       {/* Seção Framework */}
       <section id="framework" className="section section-darker">
         <div className="container">
