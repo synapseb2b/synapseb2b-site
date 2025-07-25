@@ -14,14 +14,17 @@ export default function Metodologia() {
       {/* Navegação */}
       <nav className="nav">
         <div className="nav-container">
-          <Link href="/">
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image 
               src="/logo/symbol_logo_synapseb2b_bg_black.png" 
-              alt="Synapse B2B" 
-              width={150} 
+              alt="Synapse B2B Logo" 
+              width={40}
               height={40}
               className="nav-logo"
             />
+            <span style={{ color: '#64FFDA', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
+              Synapse B2B
+            </span>
           </Link>
           <ul className="nav-menu">
             <li><Link href="/" className="nav-link">Home</Link></li>
@@ -48,7 +51,6 @@ export default function Metodologia() {
             </div>
           </div>
         </div>
-
         <div style={{
           position: 'absolute',
           top: 0,
@@ -75,7 +77,7 @@ export default function Metodologia() {
         </div>
       </section>
 
-{/* Fase 1: Diagnóstico Estratégico */}
+      {/* Fase 1: Diagnóstico Estratégico */}
       <section className="section section-dark">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
@@ -96,12 +98,10 @@ export default function Metodologia() {
                 }}>1</div>
                 <h2 style={{ margin: 0 }}>Diagnóstico Estratégico</h2>
               </div>
-              
               <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
                 Análise profunda e estruturada do seu negócio, mercado e posicionamento atual 
                 para identificar as alavancas de crescimento mais promissoras.
               </p>
-
               <div style={{ marginBottom: '2rem' }}>
                 <h3 style={{ color: '#64FFDA' }}>O que analisamos:</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -123,7 +123,6 @@ export default function Metodologia() {
                   </li>
                 </ul>
               </div>
-
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
                 <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Entregável:</h4>
                 <p style={{ margin: 0 }}>
@@ -132,7 +131,6 @@ export default function Metodologia() {
                 </p>
               </div>
             </div>
-
             <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
               <Image 
                 src="/image/Diagnostico_Estrategico.png" 
@@ -157,7 +155,6 @@ export default function Metodologia() {
                 style={{ borderRadius: '12px', objectFit: 'cover' }}
               />
             </div>
-
             <div>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
                 <div style={{
@@ -175,12 +172,10 @@ export default function Metodologia() {
                 }}>2</div>
                 <h2 style={{ margin: 0 }}>Decodificação de Mercado</h2>
               </div>
-              
               <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
                 Construção de um posicionamento irrecusável e mensagem que ressoa profundamente 
                 com seu mercado-alvo, diferenciando você da concorrência.
               </p>
-
               <div style={{ marginBottom: '2rem' }}>
                 <h3 style={{ color: '#64FFDA' }}>Como fazemos:</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -202,7 +197,6 @@ export default function Metodologia() {
                   </li>
                 </ul>
               </div>
-
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
                 <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Entregável:</h4>
                 <p style={{ margin: 0 }}>
@@ -236,12 +230,10 @@ export default function Metodologia() {
                 }}>3</div>
                 <h2 style={{ margin: 0 }}>Engenharia de Receita e Ativos Digitais</h2>
               </div>
-              
               <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
                 Criação dos ativos, processos e sistemas que aceleram a conversão 
                 e tornam o crescimento previsível e escalável.
               </p>
-
               <div style={{ marginBottom: '2rem' }}>
                 <h3 style={{ color: '#64FFDA' }}>Ativos que criamos:</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -263,7 +255,6 @@ export default function Metodologia() {
                   </li>
                 </ul>
               </div>
-
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
                 <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Entregável:</h4>
                 <p style={{ margin: 0 }}>
@@ -272,7 +263,6 @@ export default function Metodologia() {
                 </p>
               </div>
             </div>
-
             <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
               <Image 
                 src="/image/Engenharia_de_Receita.png" 
@@ -297,7 +287,6 @@ export default function Metodologia() {
                 style={{ borderRadius: '12px', objectFit: 'cover' }}
               />
             </div>
-
             <div>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
                 <div style={{
@@ -315,12 +304,10 @@ export default function Metodologia() {
                 }}>4</div>
                 <h2 style={{ margin: 0 }}>Aceleração Inteligente</h2>
               </div>
-              
               <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
                 Otimização contínua baseada em dados e resultados mensuráveis, 
                 garantindo que o crescimento seja sustentável e previsível.
               </p>
-
               <div style={{ marginBottom: '2rem' }}>
                 <h3 style={{ color: '#64FFDA' }}>Como otimizamos:</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -342,7 +329,6 @@ export default function Metodologia() {
                   </li>
                 </ul>
               </div>
-
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
                 <h4 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Entregável:</h4>
                 <p style={{ margin: 0 }}>
@@ -373,3 +359,6 @@ export default function Metodologia() {
           </div>
         </div>
       </section>
+    </>
+  )
+}
