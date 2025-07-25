@@ -194,113 +194,89 @@ export default function Home() {
   </div>
 </section>
 
-      {/* Seção Framework */}
-      <section id="framework" className="section section-darker">
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2>Framework GTM Ignition™</h2>
-            <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
-              Nossa metodologia proprietária que transforma empresas B2B de alta complexidade em máquinas de crescimento previsível.
-            </p>
+{/* Seção Framework */}
+<section id="framework" className="section section-darker">
+  <div className="container">
+    <div className="text-center mb-2">
+      <h2>Framework GTM Ignition™</h2>
+      <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+        Nossa metodologia proprietária que transforma empresas B2B de alta complexidade em máquinas de crescimento previsível.
+      </p>
+    </div>
+
+    {/* O grid agora tem alignItems: 'stretch' por padrão, o que ajuda as colunas a terem a mesma altura */}
+    <div className="grid grid-2" style={{ marginTop: '4rem' }}>
+      
+      {/* Coluna de Texto (com mais conteúdo como você mencionou) */}
+      <div>
+        <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>4 Fases Integradas</h3>
+        
+        {/* Fase 1 */}
+        <div style={{ marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+            <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>1</div>
+            <h4 style={{ margin: 0, color: '#F8F9FA' }}>Diagnóstico Estratégico</h4>
           </div>
-
-          <div className="grid grid-2" style={{ marginTop: '4rem', alignItems: 'center' }}>
-            <div>
-              <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>4 Fases Integradas</h3>
-              
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>1</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Diagnóstico Estratégico</h4>
-                </div>
-                <p>Análise profunda do seu negócio, mercado e posicionamento atual.</p>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>2</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Decodificação de Mercado</h4>
-                </div>
-                <p>Construção de um posicionamento irrecusável e mensagem que ressoa.</p>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>3</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Engenharia de Receita e Ativos Digitais</h4>
-                </div>
-                <p>Criação dos ativos e processos que aceleram a conversão.</p>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#64FFDA',
-                    color: '#0A192F',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    marginRight: '1rem'
-                  }}>4</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Aceleração Inteligente</h4>
-                </div>
-                <p>Otimização contínua baseada em dados e resultados mensuráveis.</p>
-              </div>
-
-              <Link href="/metodologia" className="btn btn-primary">
-                Conheça a Metodologia Completa
-              </Link>
-            </div>
-
-            <div style={{ textAlign: 'center' }}>
-              <Image 
-                src="/image/Framework_GTM_SynapsebB2B.png" 
-                alt="Framework GTM Ignition" 
-                width={400} 
-                height={300}
-                style={{ borderRadius: '12px' }}
-              />
-            </div>
-          </div>
+          <p>Análise profunda do seu negócio, mercado e posicionamento atual.</p>
         </div>
-      </section>
+
+        {/* Fase 2 */}
+        <div style={{ marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+            <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>2</div>
+            <h4 style={{ margin: 0, color: '#F8F9FA' }}>Decodificação de Mercado</h4>
+          </div>
+          <p>Decodificamos o DNA do seu cliente ideal e o cenário competitivo para construir um posicionamento irrecusável e uma proposta de valor que cria urgência.</p>
+        </div>
+
+        {/* Fase 3 */}
+        <div style={{ marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+            <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>3</div>
+            <h4 style={{ margin: 0, color: '#F8F9FA' }}>Engenharia de Receita e Ativos Digitais</h4>
+          </div>
+          <p>Construímos sua máquina de GTM com uma narrativa poderosa e os ativos de aceleração essenciais — de Pitch Decks estratégicos a Plataformas Digitais, Landing Pages de alta conversão e Aplicativos que potencializam seu processo de vendas.</p>
+        </div>
+        
+        {/* Fase 4 */}
+        <div style={{ marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+            <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>4</div>
+            <h4 style={{ margin: 0, color: '#F8F9FA' }}>Aceleração Inteligente</h4>
+          </div>
+          <p>Ativamos um sistema de otimização contínua, usando dados para refinar a estratégia e garantir que seu crescimento não apenas aconteça, mas acelere de forma sustentável.</p>
+        </div>
+
+        {/* O botão foi movido para o final da coluna de texto */}
+        <div style={{ marginTop: '2rem' }}>
+           <Link href="/metodologia" className="btn btn-primary">
+             Saiba mais sobre nossa metodologia
+           </Link>
+        </div>
+      </div>
+
+      {/* ===== COLUNA DA IMAGEM CORRIGIDA ===== */}
+      <div style={{
+        position: 'relative', // Necessário para o `fill` do componente Image
+        width: '100%',
+        minHeight: '400px', // Define uma altura mínima para a imagem
+        height: '100%' // Faz o container da imagem esticar
+      }}>
+        <Image 
+          src="/image/Framework_GTM_SynapsebB2B.png" 
+          alt="Framework GTM Ignition" 
+          fill // Propriedade que faz a imagem preencher o container pai
+          style={{
+            borderRadius: '12px',
+            objectFit: 'cover' // Garante que a imagem cubra o espaço sem distorcer
+          }}
+        />
+      </div>
+      {/* ======================================= */}
+
+    </div>
+  </div>
+</section>
 
       {/* Seção FAQ */}
       <section className="section section-dark">
