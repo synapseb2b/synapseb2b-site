@@ -10,30 +10,9 @@ export default function Metodologia() {
         <title>Metodologia - Framework GTM Ignition™ | Synapse B2B</title>
         <meta name="description" content="Conheça em detalhes nossa metodologia proprietária que transforma empresas B2B de alta complexidade em máquinas de crescimento previsível." />
       </Head>
-
-      {/* Navegação */}
-      <nav className="nav">
-        <div className="nav-container">
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image 
-              src="/logo/symbol_logo_synapseb2b_bg_black.png" 
-              alt="Synapse B2B Logo" 
-              width={40}
-              height={40}
-              className="nav-logo"
-            />
-            <span style={{ color: '#64FFDA', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
-              Synapse B2B
-            </span>
-          </Link>
-          <ul className="nav-menu">
-            <li><Link href="/" className="nav-link">Home</Link></li>
-            <li><Link href="/metodologia" className="nav-link" style={{ color: '#64FFDA' }}>Metodologia</Link></li>
-            <li><Link href="/casos-de-uso" className="nav-link">Casos de Uso</Link></li>
-            <li><Link href="/contato" className="nav-link">Contato</Link></li>
-          </ul>
-        </div>
-      </nav>
+    </>
+  );
+}
 
       {/* Hero da Metodologia */}
       <section className="hero" style={{ minHeight: '70vh' }}>

@@ -16,30 +16,9 @@ export default function HomePage() {
         <title>Synapse B2B - Transformamos Expertise Técnica em Receita Previsível</title>
         <meta name="description" content="Somos a plataforma de aceleração que constrói o Go-to-Market para empresas B2B de alta complexidade, transformando superioridade técnica em domínio de mercado." />
       </Head>
-
-      {/* Navegação */}
-      <nav className="nav">
-        <div className="nav-container">
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image 
-              src="/logo/symbol_logo_synapseb2b_bg_black.png" 
-              alt="Synapse B2B Logo" 
-              width={40}
-              height={40}
-              className="nav-logo"
-            />
-            <span style={{ color: '#64FFDA', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
-              Synapse B2B
-            </span>
-          </Link>
-          <ul className="nav-menu">
-            <li><Link href="/" className="nav-link">Home</Link></li>
-            <li><Link href="/metodologia" className="nav-link">Metodologia</Link></li>
-            <li><Link href="/casos-de-uso" className="nav-link">Casos de Uso</Link></li>
-            <li><Link href="/contato" className="nav-link">Contato</Link></li>
-          </ul>
-        </div>
-      </nav>
+    </>
+  );
+}
 
       {/* Seção Hero */}
       <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -206,7 +185,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-2" style={{ marginTop: '4rem' }}>
-            <div>
+            <div style={{ textAlign: 'center' }}>
               <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>4 Fases Integradas</h3>
               <div style={{ marginBottom: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>

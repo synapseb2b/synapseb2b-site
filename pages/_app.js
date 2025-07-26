@@ -1,9 +1,10 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import Layout from '../components/Layout'
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Synapse B2B - Framework GTM Ignition™</title>
         <meta name="description" content="Transformamos expertise técnica em receita previsível para empresas B2B de alta complexidade" />
@@ -21,7 +22,6 @@ export default function App({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </Layout>
   )
 }
-

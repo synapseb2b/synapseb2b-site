@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import SynapseAI from '../components/SynapseAI'
 
 export default function Contato() {
   const [formData, setFormData] = useState({
@@ -53,27 +52,9 @@ export default function Contato() {
         <title>Contato - Agende sua Consulta Estratégica | Synapse B2B</title>
         <meta name="description" content="Entre em contato conosco e agende uma consulta estratégica gratuita. Descubra como acelerar o crescimento da sua empresa B2B." />
       </Head>
-
-      {/* Navegação */}
-      <nav className="nav">
-        <div className="nav-container">
-          <Link href="/">
-            <Image 
-              src="/logo/symbol_logo_synapse_b2b_bg_black.png" 
-              alt="Synapse B2B" 
-              width={150} 
-              height={40}
-              className="nav-logo"
-            />
-          </Link>
-          <ul className="nav-menu">
-            <li><Link href="/" className="nav-link">Home</Link></li>
-            <li><Link href="/metodologia" className="nav-link">Metodologia</Link></li>
-            <li><Link href="/casos-de-uso" className="nav-link">Casos de Uso</Link></li>
-            <li><Link href="/contato" className="nav-link" style={{ color: '#64FFDA' }}>Contato</Link></li>
-          </ul>
-        </div>
-      </nav>
+    </>
+  );
+}
 
       {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
