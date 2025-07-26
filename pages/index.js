@@ -16,10 +16,7 @@ export default function HomePage() {
         <title>Synapse B2B - Transformamos Expertise Técnica em Receita Previsível</title>
         <meta name="description" content="Somos a plataforma de aceleração que constrói o Go-to-Market para empresas B2B de alta complexidade, transformando superioridade técnica em domínio de mercado." />
       </Head>
-    </>
-  );
-}
-
+ 
       {/* Seção Hero */}
       <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
@@ -280,6 +277,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </>
-  );
+</>
+);
 }

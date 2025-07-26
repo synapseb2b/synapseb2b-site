@@ -10,10 +10,6 @@ export default function CasosDeUso() {
         <title>Casos de Uso - Cenários de Aplicação | Synapse B2B</title>
         <meta name="description" content="Veja como nosso framework gera valor em cenários de alta complexidade, do SaaS Scale-Up à Deep Tech." />
       </Head>
-    </>
-  );
-}
-
       {/* Seção Hero */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
@@ -113,6 +109,6 @@ export default function CasosDeUso() {
           </Link>
         </div>
       </section>
-         </>
-  );
+</>
+);
 }

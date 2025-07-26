@@ -52,10 +52,7 @@ export default function Contato() {
         <title>Contato - Agende sua Consulta Estratégica | Synapse B2B</title>
         <meta name="description" content="Entre em contato conosco e agende uma consulta estratégica gratuita. Descubra como acelerar o crescimento da sua empresa B2B." />
       </Head>
-    </>
-  );
-}
-
+ 
       {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
@@ -455,7 +452,7 @@ export default function Contato() {
           </div>
         </div>
       </section>
-    </>
-  )
+</>
+);
 }
 

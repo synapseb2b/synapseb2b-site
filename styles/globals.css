@@ -16,18 +16,18 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  background-color: #000000; /* Fundo preto conforme solicitado */
-  color: #CCD6F6; /* Cor de texto principal */
+  background-color: #000000;
+  color: #CCD6F6;
   overflow-x: hidden;
 }
 
 /* Variáveis CSS para cores da identidade visual */
 :root {
-  --primary-color: #0A192F; /* Azul Meia-Noite */
+  --primary-color: #0A192F;    /* Azul Meia-Noite */
   --secondary-color: #1E2A3A; /* Grafite Estratégico */
-  --accent-color: #64FFDA; /* Ciano Sinapse */
-  --base-color: #F8F9FA; /* Branco Gelo */
-  --text-color: #CCD6F6; /* Cinza Claro */
+  --accent-color: #64FFDA;     /* Ciano Sinapse */
+  --base-color: #F8F9FA;       /* Branco Gelo */
+  --text-color: #CCD6F6;       /* Cinza Claro */
   --background-color: #000000; /* Fundo preto */
 }
 
@@ -115,7 +115,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* CTA específico "Agende um Diagnóstico Estratégico" */
 .btn-diagnostic {
   background-color: var(--base-color);
   color: var(--primary-color);
@@ -124,7 +123,7 @@ a:hover {
 
 .btn-diagnostic:hover {
   background-color: var(--accent-color);
-  color: var(--base-color); /* Texto branco no hover */
+  color: var(--base-color);
   border-color: var(--accent-color);
   text-decoration: none;
 }
@@ -138,7 +137,7 @@ a:hover {
 
 /* Seções */
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0;
   position: relative;
 }
 
@@ -171,7 +170,7 @@ a:hover {
   padding: 2rem;
   border: 1px solid rgba(100, 255, 218, 0.1);
   transition: all 0.3s ease;
-  text-align: center; /* Centralização conforme solicitado */
+  text-align: center;
 }
 
 .card:hover {
@@ -183,11 +182,11 @@ a:hover {
 .card h3 {
   color: var(--accent-color);
   margin-bottom: 1rem;
-  text-align: center; /* Centralização dos títulos */
+  text-align: center;
 }
 
 .card p {
-  text-align: center; /* Centralização dos textos */
+  text-align: center;
 }
 
 /* Navegação */
@@ -241,7 +240,7 @@ a:hover {
   justify-content: center;
   text-align: center;
   padding-top: 80px;
-    position: relative;
+  position: relative;
   overflow: hidden;
 }
 
@@ -288,43 +287,6 @@ a:hover {
   animation: fadeInUp 0.8s ease-out;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  h2 {
-    font-size: 2rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-  
-  .hero p {
-    font-size: 1.1rem;
-  }
-  
-  .hero-ctas {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .nav-menu {
-    display: none; /* Simplificado para mobile */
-  }
-}
-
 /* Utilitários */
 .text-center {
   text-align: center;
@@ -344,17 +306,6 @@ a:hover {
 
 .hidden {
   display: none;
-}
-
-/* Espaçamento generoso conforme identidade visual */
-.section {
-  padding: 6rem 0;
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
-  }
 }
 
 /* Estilos para o Botão Sanduíche */
@@ -433,16 +384,6 @@ a:hover {
   cursor: pointer;
 }
 
-/* Responsividade da Navbar */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none; /* Esconde o menu desktop */
-  }
-
-  .nav-hamburger {
-    display: flex; /* Mostra o botão sanduíche */
-  }
-}
 /* Estilos do Footer */
 .footer {
   background-color: var(--secondary-color);
@@ -495,6 +436,51 @@ a:hover {
 
 .footer-bottom p {
   font-size: 0.8rem;
-  color: #8892B0; /* Um cinza mais claro para o copyright */
+  color: #8892B0;
   margin: 0;
+}
+
+/* ===== Bloco Único de Responsividade ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .nav-menu {
+    display: none; /* Esconde o menu desktop */
+  }
+
+  .nav-hamburger {
+    display: flex; /* Mostra o botão sanduíche */
+  }
 }
