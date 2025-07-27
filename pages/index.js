@@ -156,7 +156,7 @@ export default function HomePage() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(9, 14, 26, 0.7)',
+          backgroundColor: 'rgba(9, 14, 26, 0.85)',
           zIndex: 1
         }}></div>
         <div 
@@ -164,7 +164,7 @@ export default function HomePage() {
           style={{ position: 'relative', zIndex: 2 }}
         >
           <div className="text-center">
-            <h2>Nós somos o neurotransmissor do crescimento B2B.</h2>
+            <h2 style={{ textShadow: '0px 2px 8px rgba(0, 0, 0, 0.7)' }}>Nós somos o neurotransmissor do crescimento B2B.</h2>
             <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '1rem auto 0' }}>
               A Synapse B2B atua como um laboratório de estratégia que decodifica a complexidade técnica em ativos de receita, conectando seu produto ao único resultado que importa: o sucesso do seu cliente.
             </p>
