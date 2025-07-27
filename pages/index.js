@@ -28,7 +28,7 @@ export default function HomePage() {
               Somos a plataforma de aceleração que constrói o Go-to-Market para empresas B2B de alta complexidade, 
               transformando superioridade técnica em domínio de mercado.
             </p>
-            <div className="hero-ctas">
+            <div className="hero-ctas" style={{ marginBottom: '2rem' }}>
               <button 
                 onClick={() => scrollToSection('framework')}
                 className="btn btn-primary"
