@@ -22,8 +22,8 @@ export default function Footer() {
           <div className="footer-legal">
             <h4>Legal</h4>
             <ul>
-              <li><Link href="/politica-de-privacidade">Política de Privacidade</Link></li>
-              <li><Link href="/termos-de-uso">Termos de Uso</Link></li>
+             <li><Link href="/politica-de-privacidade">Política de Privacidade</Link></li>
+             <li><Link href="/termos-de-uso">Termos de Uso</Link></li>
             </ul>
           </div>
         </div>
