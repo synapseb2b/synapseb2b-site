@@ -172,7 +172,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção Framework */}
+{/* Seção Framework */}
       <section id="framework" className="section section-darker">
         <div className="container">
           <div className="text-center mb-2">
@@ -181,43 +181,48 @@ export default function HomePage() {
               Nossa metodologia proprietária que transforma empresas B2B de alta complexidade em máquinas de crescimento previsível.
             </p>
           </div>
-          <div className="grid grid-2" style={{ marginTop: '4rem' }}>
+          
+          <div className="grid grid-2" style={{ marginTop: '4rem', alignItems: 'center' }}>
+            {/* Coluna de Texto Reestilizada */}
             <div style={{ textAlign: 'center' }}>
-              <h3 style={{ color: '#64FFDA', marginBottom: '2rem' }}>4 Fases Integradas</h3>
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>1</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Diagnóstico Estratégico</h4>
-                </div>
-                <p>Análise profunda e estruturada do seu negócio, mercado e posicionamento atual para identificar as alavancas de crescimento mais promissoras.</p>
+              <h3 style={{ color: '#64FFDA', marginBottom: '3rem' }}>4 Fases Integradas</h3>
+
+              {/* Fase 1 */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <h4 style={{ color: '#64FFDA', fontFamily: 'monospace', fontSize: '1rem', marginBottom: '0.5rem' }}>FASE 01</h4>
+                <h3 style={{ margin: 0, color: '#F8F9FA', marginBottom: '0.75rem' }}>Diagnóstico Estratégico</h3>
+                <p style={{ margin: 0 }}>Análise profunda e estruturada do seu negócio, mercado e posicionamento atual para identificar as alavancas de crescimento mais promissoras.</p>
               </div>
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>2</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Decodificação de Mercado</h4>
-                </div>
-                <p>Decodificamos o DNA do seu cliente ideal e o cenário competitivo para construir um posicionamento irrecusável e uma proposta de valor que cria urgência.</p>
+
+              {/* Fase 2 */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <h4 style={{ color: '#64FFDA', fontFamily: 'monospace', fontSize: '1rem', marginBottom: '0.5rem' }}>FASE 02</h4>
+                <h3 style={{ margin: 0, color: '#F8F9FA', marginBottom: '0.75rem' }}>Decodificação de Mercado</h3>
+                <p style={{ margin: 0 }}>Decodificamos o DNA do seu cliente ideal e o cenário competitivo para construir um posicionamento irrecusável e uma proposta de valor que cria urgência.</p>
               </div>
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>3</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Engenharia de Receita e Ativos Digitais</h4>
-                </div>
-                <p>Construímos sua máquina de GTM com uma narrativa poderosa e os ativos de aceleração essenciais — de Pitch Decks estratégicos a Plataformas Digitais, Landing Pages de alta conversão e Aplicativos que potencializam seu processo de vendas.</p>
+
+              {/* Fase 3 */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <h4 style={{ color: '#64FFDA', fontFamily: 'monospace', fontSize: '1rem', marginBottom: '0.5rem' }}>FASE 03</h4>
+                <h3 style={{ margin: 0, color: '#F8F9FA', marginBottom: '0.75rem' }}>Engenharia de Receita e Ativos Digitais</h3>
+                <p style={{ margin: 0 }}>Construímos sua máquina de GTM com uma narrativa poderosa e os ativos de aceleração essenciais — de Pitch Decks estratégicos a Plataformas Digitais.</p>
               </div>
-              <div style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ width: '40px', height: '40px', backgroundColor: '#64FFDA', color: '#0A192F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', marginRight: '1rem', flexShrink: 0 }}>4</div>
-                  <h4 style={{ margin: 0, color: '#F8F9FA' }}>Aceleração Inteligente</h4>
-                </div>
-                <p>Ativamos um sistema de otimização contínua, usando dados para refinar a estratégia e garantir que seu crescimento não apenas aconteça, mas acelere de forma sustentável.</p>
+
+              {/* Fase 4 */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <h4 style={{ color: '#64FFDA', fontFamily: 'monospace', fontSize: '1rem', marginBottom: '0.5rem' }}>FASE 04</h4>
+                <h3 style={{ margin: 0, color: '#F8F9FA', marginBottom: '0.75rem' }}>Aceleração Inteligente</h3>
+                <p style={{ margin: 0 }}>Ativamos um sistema de otimização contínua, usando dados para refinar a estratégia e garantir que seu crescimento não apenas aconteça, mas acelere.</p>
               </div>
-              <div style={{ marginTop: '2rem' }}>
-                 <Link href="/metodologia" className="btn btn-primary">
-                   Saiba mais sobre nossa metodologia
-                 </Link>
+
+              <div style={{ marginTop: '3rem' }}>
+                <Link href="/metodologia" className="btn btn-primary">
+                  Saiba mais sobre nossa metodologia
+                </Link>
               </div>
             </div>
+
+            {/* Coluna da Imagem (inalterada) */}
             <div style={{
               position: 'relative',
               width: '100%',
