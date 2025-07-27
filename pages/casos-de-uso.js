@@ -53,22 +53,18 @@ export default function CasosDeUso() {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
             <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>Caso de Uso 1: A Healthtech na Armadilha do "Melhor Produto"</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>1. A Healthtech na Armadilha do "Melhor Produto"</h2>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>O Desafio:</h4>
-                <p>Uma plataforma de IA para logística de ensaios clínicos possui uma tecnologia superior, comprovadamente capaz de otimizar a distribuição de insumos e reduzir o tempo de estudos em 30%. No entanto, as vendas não decolam. A equipe comercial apresenta "algoritmos preditivos" e "integração de dados" para gestores de pesquisa clínica que, apesar de impressionados, não detêm o orçamento. O C-Level das grandes farmacêuticas, o comprador real, percebe a solução apenas como mais uma "ferramenta de TI" complexa, e não como uma alavanca estratégica para o negócio.</p>
+                <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
+                <p>Uma Healthtech possui uma plataforma de IA com potencial para revolucionar a indústria farmacêutica, mas sua mensagem não conecta com o C-Level. A equipe vende features para pesquisadores, enquanto o comprador real enxerga apenas um custo complexo. O resultado é um produto genial, mas que não consegue converter seu potencial em receita.</p>
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>A Solução Synapse B2B:</h4>
-                <p>Aplicamos nosso processo para transformar a genialidade técnica em uma proposta de valor irrecusável.<br/><br/>
-                  <strong>Diagnóstico Estratégico:</strong> Identificamos o desalinhamento fatal: a conversa estava focada em features para o usuário, não em impacto financeiro para o comprador.<br/><br/>
-                  <strong>Decodificação de Mercado:</strong> Redefinimos o value proposition para o C-Level. A mensagem deixou de ser "otimizamos sua logística" para se tornar "aceleramos seu time-to-market e destravamos milhões em receita patenteada".<br/><br/>
-                  <strong>Engenharia de Receita:</strong> Construímos os ativos para essa nova narrativa: um pitch deck executivo e uma calculadora de ROI interativa que traduzia a eficiência logística em dias de patente economizados e impacto direto no Ebitda.
-                </p>
+                <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
+                <p>Atuamos como o neurotransmissor que traduz genialidade técnica em valor de negócio. Decodificamos a solução em uma narrativa de impacto financeiro para o C-Level e construímos os ativos de venda (pitch deck, ROI calculator) que provam o valor de forma irrecusável, criando urgência na decisão de compra.</p>
               </div>
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA' }}>O Resultado da Transformação:</h4>
-                <p style={{ margin: 0 }}>A Healthtech parou de vender um software e passou a vender o ativo mais valioso para uma farmacêutica: tempo. O ciclo de vendas para contas enterprise foi reduzido, o valor médio dos contratos quintuplicou, e a empresa se posicionou como um parceiro estratégico indispensável, garantindo uma nova rodada de investimentos com base em um Go-to-Market previsível.</p>
+                <h4 style={{ color: '#64FFDA' }}>Resultados Esperados:</h4>
+                <p style={{ margin: 0 }}>Aumento exponencial do valor dos contratos (ACV), redução do ciclo de vendas e um novo posicionamento como parceiro estratégico. A empresa deixa de ser uma "ferramenta de TI" e se torna um ativo indispensável para a indústria.</p>
               </div>
             </div>
             <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
@@ -96,22 +92,18 @@ export default function CasosDeUso() {
               />
             </div>
             <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>Caso de Uso 2: A Regtech com o "Funil Quebrado"</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>2. A Regtech com o "Funil Quebrado"</h2>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>O Desafio:</h4>
-                <p>Uma startup de Regtech (Tecnologia Regulatória) desenvolveu um SaaS que automatiza a conformidade com normas financeiras complexas. Seu marketing de conteúdo é um sucesso, gerando centenas de leads mensais. O problema? A taxa de conversão é inferior a 1% e o Custo de Aquisição (CAC) está sufocando o negócio. Eles atraem analistas de conformidade que baixam e-books, mas as reuniões de vendas nunca passam do nível tático. O Vendedor ouve "muito interessante, preciso validar internamente" — uma frase que se tornou o atestado de óbito de todos os negócios.</p>
+                <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
+                <p>Uma Regtech possui um funil quebrado: atrai centenas de leads (analistas) com conteúdo rico, mas a conversão é mínima e o CAC, insustentável. A equipe de vendas perde tempo com usuários sem poder de compra, enquanto o negócio queima caixa em um modelo de aquisição que não gera crescimento real.</p>
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>A Solução Synapse B2B:</h4>
-                <p>O foco foi reconstruir o motor de aquisição para atrair quem assina o cheque, não apenas quem usa a ferramenta.<br/><br/>
-                  <strong>Diagnóstico Estratégico:</strong> A análise de dados foi clara: o funil não estava quebrado, ele foi construído para o público errado.<br/><br/>
-                  <strong>Decodificação de Mercado:</strong> Mapeamos as dores e os jobs-to-be-done do verdadeiro ICP: o Diretor de Riscos, cuja preocupação não é a tarefa, mas a exposição a multas milionárias e o risco à sua reputação.<br/><br/>
-                  <strong>Engenharia de Receita e Ativos Digitais:</strong> Lançamos uma nova estratégia de conteúdo focada em insights provocativos (Challenger Sale) para o C-Level e treinamos a equipe de vendas para transformar a conversa de "automação de tarefas" para "gestão estratégica de risco corporativo".
-                </p>
+                <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
+                <p>Reconstruímos o motor de aquisição com foco cirúrgico no comprador real: o Diretor de Riscos. Desenvolvemos uma nova estratégia de conteúdo e uma narrativa de vendas que eleva a conversa de "automação de tarefas" para "gestão de risco estratégico e impacto no resultado financeiro".</p>
               </div>
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA' }}>O Resultado da Transformação:</h4>
-                <p style={{ margin: 0 }}>A qualidade superou a quantidade. O volume de leads caiu 70%, mas o valor do pipeline qualificado dobrou em seis meses. O CAC foi reduzido pela metade, tornando o modelo de negócio sustentável e preparando a empresa para uma escala real e lucrativa.</p>
+                <h4 style={{ color: '#64FFDA' }}>Resultados Esperados:</h4>
+                <p style={{ margin: 0 }}>Redução drástica do CAC e a criação de um pipeline de vendas qualificado e previsível. O motor de aquisição é reorientado para gerar valor, não volume, garantindo a viabilidade e a escalabilidade do negócio.</p>
               </div>
             </div>
           </div>
@@ -123,22 +115,18 @@ export default function CasosDeUso() {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
             <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>Caso de Uso 3: A Engenharia de Referência (que ninguém encontra)</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>3. A Engenharia de Referência (que ninguém encontra)</h2>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>O Desafio:</h4>
-                <p>Uma firma de engenharia multidisciplinar é a arma secreta por trás de projetos complexos para gigantes da indústria. Seu portfólio é irretocável, e suas certificações (ISO 9001, normas de segurança) são barreiras de entrada para a concorrência. Contudo, seu crescimento depende exclusivamente da rede de contatos dos sócios e de indicações esporádicas. Eles sofrem de "invisibilidade qualificada": são a melhor solução do mercado, mas não são encontrados.</p>
+                <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
+                <p>Empresas de Engenharia, apesar de terem um portfólio impecável e certificações de elite, muitas vezes sofrem por "invisibilidade digital". Seu crescimento é refém da rede de contatos dos sócios, sem um motor de aquisição previsível. Concorrentes menos qualificados, mas com melhor presença online, capturam as oportunidades que deveriam ser suas por direito.</p>
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>A Solução Synapse B2B:</h4>
-                <p>Nossa missão foi transformar a autoridade offline em um motor de crescimento digital escalável. O processo não foi construir um "site-brochura", mas sim um ecossistema de atração.<br/><br/>
-                  <strong>Diagnóstico e Decodificação:</strong> Mapeamos a jornada de compra do cliente industrial, que começa meses antes do primeiro contato. A proposta de valor foi refinada de "serviços de engenharia" para "parceria estratégica que anula o risco em projetos de infraestrutura industrial complexa".<br/><br/>
-                  <strong>Engenharia de Receita e Ativos Digitais:</strong> "Produtizamos" a expertise da firma em um ativo digital central — uma plataforma que não apenas exibe, mas prova a sua autoridade, com certificações e logos de clientes em destaque. Transformamos conhecimento técnico em conteúdo estratégico que atrai o ICP de forma orgânica.<br/><br/>
-                  <strong>Aceleração Inteligente:</strong> Implementamos uma estratégia de GEO (Growth Engine Optimization) e GPO (Generative Presence Optimization), garantindo que a empresa se tornasse a resposta de autoridade para as perguntas complexas que seus clientes fazem.
-                </p>
+                <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
+                <p>Através da nossa metodologia, convertemos autoridade offline em um ativo digital que gera demanda. Potencializamos a expertise das empresas através de plataformas digitais que não apenas exibem, mas provam seu valor, com conteúdo estratégico que atrai e educa o cliente industrial ideal, posicionando a empresa como a referência definitiva em seu nicho.</p>
               </div>
               <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA' }}>O Resultado da Transformação:</h4>
-                <p style={{ margin: 0 }}>A firma deixou de ser o segredo mais bem guardado da indústria para se tornar a referência visível do setor. A dependência do networking foi drasticamente reduzida e substituída por um fluxo constante de leads qualificados vindos da plataforma digital. O ativo digital se tornou o seu melhor vendedor, trabalhando 24/7 para educar o mercado, validar sua competência e iniciar conversas de negócio de alto valor.</p>
+                <h4 style={{ color: '#64FFDA' }}>Resultados Esperados:</h4>
+                <p style={{ margin: 0 }}>A criação de um pipeline de vendas consistente e a redução da dependência de indicações. O foco é no fator principal: motor de crescimento, solidificando a liderança da empresa no mercado através de resultados, não apenas por reputação.</p>
               </div>
             </div>
             <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
