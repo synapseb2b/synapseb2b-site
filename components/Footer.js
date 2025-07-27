@@ -9,6 +9,7 @@ export default function Footer() {
             <h4>Synapse B2B</h4>
             <p>Transformando Expertise Técnica em Receita Previsível.</p>
             <a href="mailto:contato@synapseb2b.com">contato@synapseb2b.com</a>
+            <a href="tel:+553139586192">+55 31 3958-6192</a>
           </div>
           <div className="footer-links">
             <h4>Navegação</h4>
