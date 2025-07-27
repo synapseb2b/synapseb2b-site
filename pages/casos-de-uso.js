@@ -48,7 +48,7 @@ export default function CasosDeUso() {
         </div>
       </section>
 
-      {/* Caso de Uso 1: A Healthtech */}
+      {/* 1: A Healthtech */}
       <section className="section section-dark">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
@@ -79,7 +79,7 @@ export default function CasosDeUso() {
         </div>
       </section>
 
-      {/* Caso de Uso 2: A Regtech */}
+      {/* 2: A Regtech */}
       <section className="section section-darker">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
@@ -110,7 +110,7 @@ export default function CasosDeUso() {
         </div>
       </section>
 
-      {/* Caso de Uso 3: A Engenharia de Referência */}
+      {/* 3: A Engenharia de Referência */}
       <section className="section section-dark">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
