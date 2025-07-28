@@ -6,17 +6,17 @@ export default function Contato() {
   return (
     <>
       <Head>
-        <title>Contato - Fale Conosco | Synapse B2B</title>
-        <meta name="description" content="Entre em contato por e-mail ou WhatsApp para agendar uma consulta estratégica gratuita e descobrir como acelerar o crescimento da sua empresa B2B." />
+        <title>Vamos Construir seu Próximo Salto de Crescimento | Synapse B2B</title>
+        <meta name="description" content="Agende um diagnóstico estratégico de 21 minutos e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
       </Head>
  
       {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
-            <h1>Vamos Construir seu Próximo Salto de Crescimento</h1>
+            <h1>Vamos Construir seu Próximo Salto de Crescimento.</h1>
+            <h2>Agende um diagnóstico estratégico de 21 minutos.</h2>
             <p>
-              Entre em contato por E-mail ou WhatsApp para agendar uma consulta estratégica gratuita.
               O primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva.
             </p>
           </div>

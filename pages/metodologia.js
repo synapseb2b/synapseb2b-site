@@ -7,7 +7,7 @@ export default function Metodologia() {
     <>
       <Head>
         <title>Metodologia - Framework GTM Ignition™ | Synapse B2B</title>
-        <meta name="description" content="Conheça em detalhes nossa metodologia proprietária que transforma empresas B2B de alta complexidade em máquinas de crescimento previsível." />
+        <meta name="description" content=" Conheça o Framework GTM Ignition™, nossa metodologia proprietária para construir e escalar sua máquina de receita de forma inteligente e totalmente previsível. " />
       </Head>
 
       {/* Hero da Metodologia */}

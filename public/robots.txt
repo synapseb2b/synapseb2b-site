@@ -1,0 +1,6 @@
+# Permitir que todos os robôs acessem todo o site
+User-agent: *
+Allow: /
+
+# Localização do Sitemap (adicione quando tiver um)
+Sitemap: https://synapseb2b.com/sitemap.xml
