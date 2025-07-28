@@ -1,0 +1,47 @@
+const BASE_URL = 'https://synapseb2b.com';
+
+function generateSiteMap(pages) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     ${pages
+       .map((page) => {
+         return `
+           <url>
+               <loc>${`${BASE_URL}${page.path}`}</loc>
+               <lastmod>${page.lastModified}</lastmod>
+               <changefreq>${page.changeFreq}</changefreq>
+               <priority>${page.priority}</priority>
+           </url>
+         `;
+       })
+       .join('')}
+   </urlset>
+ `;
+}
+
+export async function getServerSideProps({ res }) {
+  const today = new Date().toISOString().split('T')[0];
+
+  // Lista de todas as páginas do seu site com prioridades
+  const pages = [
+    { path: '/', lastModified: today, changeFreq: 'weekly', priority: '1.0' },
+    { path: '/metodologia', lastModified: today, changeFreq: 'monthly', priority: '0.8' },
+    { path: '/casos-de-uso', lastModified: today, changeFreq: 'monthly', priority: '0.8' },
+    { path: '/contato', lastModified: today, changeFreq: 'yearly', priority: '0.7' },
+    { path: '/termos-de-uso', lastModified: today, changeFreq: 'yearly', priority: '0.3' },
+    { path: '/politica-de-privacidade', lastModified: today, changeFreq: 'yearly', priority: '0.3' },
+  ];
+
+  const sitemap = generateSiteMap(pages);
+
+  res.setHeader('Content-Type', 'text/xml');
+  res.write(sitemap);
+  res.end();
+
+  return {
+    props: {},
+  };
+}
+
+// Componente dummy que não renderiza nada na tela
+export default function SiteMap() {}
