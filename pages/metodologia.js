@@ -316,6 +316,34 @@ export default function Metodologia() {
         </div>
       </section>
 
+ {/* Seção Modelos de Parceria */}
+      <section className="section section-dark">
+        <div className="container">
+          <div className="text-center mb-2">
+            <h2>Da Estratégia à Execução: Nossos Modelos de Parceria</h2>
+            <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+              O Framework GTM Ignition™ define a estratégia. Nossos Modelos de Parceria definem como a implementamos juntos para construir e escalar sua máquina de receita.
+            </p>
+          </div>
+          
+          <div className="grid grid-2" style={{ marginTop: '4rem', maxWidth: '900px', margin: '4rem auto 0' }}>
+            
+            {/* Card 1: CRO as a Service */}
+            <div className="card" style={{ textAlign: 'left', height: '100%' }}>
+              <h3 style={{ color: '#64FFDA', marginBottom: '1rem' }}>CRO as a Service: Sua Diretoria de Receita sob Demanda</h3>
+              <p>Para startups e empresas em crescimento, atuamos como um Chief Revenue Officer interino ou fracionado. Assumimos a responsabilidade de alinhar marketing, vendas e sucesso do cliente, desenhando e implementando a máquina de receita completa da empresa, desde a definição de metas e KPIs até a estruturação da equipe de vendas.</p>
+            </div>
+
+            {/* Card 2: Ativação de Go-to-Market */}
+            <div className="card" style={{ textAlign: 'left', height: '100%' }}>
+              <h3 style={{ color: '#64FFDA', marginBottom: '1rem' }}>Ativação de Go-to-Market: Do Plano à Execução</h3>
+              <p>Transformamos planos estratégicos em execução no mercado. Isso envolve o detalhamento do plano de canais, a estratégia de preços, o desenvolvimento de parcerias estratégicas e a criação dos playbooks de vendas necessários para que a equipe comercial execute a estratégia com precisão e consistência.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="section section-dark">
         <div className="container text-center">

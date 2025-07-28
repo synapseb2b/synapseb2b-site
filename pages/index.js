@@ -23,8 +23,7 @@ export default function HomePage() {
           <div className="hero-content fade-in-up">
             <h1>Seu Produto é Genial. Sua Receita Também?</h1>
             <p>
-              Somos a plataforma de aceleração que constrói o Go-to-Market para empresas B2B de alta complexidade, 
-              transformando superioridade técnica em domínio de mercado.
+              Somos uma plataforma de aceleração de negócios B2B de Alta Complexidade, fundada sobre 20 anos de experiência em transformar visão estratégica em receita real e previsível.
             </p>
             <div className="hero-ctas" style={{ marginBottom: '2rem' }}>
               <button 
@@ -93,7 +92,7 @@ export default function HomePage() {
                 </div>
               </div>
               <h3>A Armadilha do "Melhor Produto"</h3>
-              <p>Acreditar que a genialidade técnica, por si só, garantirá a vitória no mercado.</p>
+              <p>Sua equipe vende features. Seu cliente C-Level compra impacto no resultado. Nós traduzimos sua genialidade técnica para a linguagem da receita.</p>
             </div>
 
             <div className="card">
@@ -112,7 +111,7 @@ export default function HomePage() {
                 </div>
               </div>
               <h3>O Funil Quebrado</h3>
-              <p>Gerar leads que não convertem e ter um Custo de Aquisição (CAC) que inviabiliza a escala.</p>
+              <p>Você atrai curiosos, mas não compradores. Seu CAC está nas alturas e o pipeline, vazio. Nós reconstruímos seu motor de aquisição com foco cirúrgico no cliente ideal.</p>
             </div>
 
             <div className="card">
@@ -131,7 +130,7 @@ export default function HomePage() {
                 </div>
               </div>
               <h3>A Síndrome do "Quase Lá"</h3>
-              <p>Estar sempre a um passo do crescimento exponencial, mas nunca conseguir dar esse salto definitivo.</p>
+              <p>Você sente o potencial, mas os resultados não decolam. Nós instalamos o sistema que transforma potencial em crescimento previsível e escalável.</p>
             </div>
           </div>
         </div>
