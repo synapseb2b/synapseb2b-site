@@ -1,22 +1,20 @@
 import Head from 'next/head';
-// O Script do Zcal não é mais necessário aqui.
 
 export default function Contato() {
   return (
     <>
       <Head>
         <title>Agende seu Diagnóstico Estratégico | Synapse B2B</title>
-        <meta name="description" content="Agende um diagnóstico estratégico de 21 minutos e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
+        <meta name="description" content="Agende um diagnóstico estratégico gratuito e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
       </Head>
  
-      {/* Hero do Contato */}
+      {/* Hero do Contato Otimizado */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
             <h1>Vamos Construir seu Próximo Salto de Crescimento.</h1>
-            <h2>Agende seu diagnóstico estratégico de 21 minutos.</h2>
             <p>
-              O primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva.
+              O primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva é um diagnóstico preciso. Agende sua sessão estratégica gratuita abaixo.
             </p>
           </div>
         </div>
@@ -46,19 +44,19 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* Seção Principal de Agendamento */}
+      {/* Seção Principal de Agendamento Otimizada */}
       <section className="section section-dark">
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
 
-            {/* Coluna "O que esperar" - Cabeçalho de valor */}
+            {/* Cabeçalho de Valor */}
             <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
               <h2 style={{ color: '#64FFDA', marginBottom: '1.5rem' }}>Seu Diagnóstico de 21 Minutos: O Que Esperar</h2>
               <ul style={{ listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left' }}>
                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
                   <span style={{ color: '#64FFDA', marginRight: '0.75rem', marginTop: '0.2rem' }}>✓</span>
                   <div>
-                    <strong style={{ color: '#F8F9FA' }}>Análise Rápida (21 min)</strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem' }}>Avaliação focada dos seus principais desafios de Go-to-Market.</p>
+                    <strong style={{ color: '#F8F9FA' }}>Análise Rápida e Focada</strong>
+                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem' }}>Avaliação dos seus principais desafios de Go-to-Market.</p>
                   </div>
                 </li>
                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
@@ -78,43 +76,15 @@ export default function Contato() {
               </ul>
             </div>
 
-            {/* Widget de Agendamento Google Calendar */}
-            <iframe 
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
-                style={{ border: 0, width: '100%', height: '600px' }} 
-                frameBorder="0"
-            ></iframe>
-
-        </div>
-      </section>
-
-      {/* FAQ Rápido */}
-      <section className="section section-darker">
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2>Perguntas Frequentes sobre o Diagnóstico</h2>
-          </div>
-
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <div className="grid grid-2" style={{ gap: '2rem' }}>
-              <div className="card" style={{ textAlign: 'left' }}>
-                <h3>O diagnóstico é realmente gratuito?</h3>
-                <p>Sim, 100% gratuito. É nossa forma de entregar valor primeiro e avaliar se há um alinhamento estratégico para uma parceria.</p>
-              </div>
-              <div className="card" style={{ textAlign: 'left' }}>
-                <h3>Quanto tempo dura?</h3>
-                <p>Exatos 21 minutos. Respeitamos seu tempo. O objetivo é máxima densidade de valor no menor tempo possível.</p>
-              </div>
-              <div className="card" style={{ textAlign: 'left' }}>
-                <h3>Preciso me preparar?</h3>
-                <p>Apenas tenha clareza sobre seu principal desafio de crescimento atual. Nós cuidamos do resto.</p>
-              </div>
-              <div className="card" style={{ textAlign: 'left' }}>
-                <h3>Qual o perfil de empresa ideal?</h3>
-                <p>Focamos em empresas B2B de alta complexidade, tipicamente com um produto/serviço já validado, que buscam escalar sua receita de forma previsível.</p>
-              </div>
+            {/* Container do Widget com Ajuste Estético */}
+            <div style={{ backgroundColor: '#FFFFFF', padding: '1rem', borderRadius: '12px' }}>
+                <iframe 
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
+                    style={{ border: 0, width: '100%', height: '600px' }} 
+                    frameBorder="0"
+                ></iframe>
             </div>
-          </div>
+
         </div>
       </section>
     </>
