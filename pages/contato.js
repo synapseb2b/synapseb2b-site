@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Script from 'next/script'; // Importe o componente Script do Next.js
+// O Script do Zcal não é mais necessário aqui.
 
 export default function Contato() {
   return (
@@ -8,12 +8,6 @@ export default function Contato() {
         <title>Agende seu Diagnóstico Estratégico | Synapse B2B</title>
         <meta name="description" content="Agende um diagnóstico estratégico de 21 minutos e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
       </Head>
-
-      {/* Script do Zcal - Carregado de forma otimizada */}
-      <Script 
-        src="https://static.zcal.co/embed/v1/embed.js" 
-        strategy="lazyOnload" 
-      />
  
       {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
@@ -56,7 +50,7 @@ export default function Contato() {
       <section className="section section-dark">
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
 
-            {/* Coluna "O que esperar" - Agora como um cabeçalho de valor */}
+            {/* Coluna "O que esperar" - Cabeçalho de valor */}
             <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
               <h2 style={{ color: '#64FFDA', marginBottom: '1.5rem' }}>Seu Diagnóstico de 21 Minutos: O Que Esperar</h2>
               <ul style={{ listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left' }}>
@@ -84,10 +78,12 @@ export default function Contato() {
               </ul>
             </div>
 
-            {/* Widget de Agendamento Zcal */}
-            <div className="zcal-inline-widget">
-                <a href="https://zcal.co/i/20R_uDNW">Diagnóstico Estratégico GTM - 21 Minutos | SYNAPSE B2B - Schedule a meeting</a>
-            </div>
+            {/* Widget de Agendamento Google Calendar */}
+            <iframe 
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
+                style={{ border: 0, width: '100%', height: '600px' }} 
+                frameBorder="0"
+            ></iframe>
 
         </div>
       </section>
