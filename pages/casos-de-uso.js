@@ -6,7 +6,7 @@ export default function CasosDeUso() {
   return (
     <>
       <Head>
-        <title>Casos de Uso - Cenários de Aplicação | Synapse B2B</title>
+        <title>Cenários de Aplicação | Synapse B2B</title>
         <meta name="description" content="Veja como nosso framework gera valor em cenários de alta complexidade, do SaaS Scale-Up à Deep Tech." />
       </Head>
 
@@ -48,15 +48,15 @@ export default function CasosDeUso() {
         </div>
       </section>
 
-      {/* 1: A Healthtech */}
+      {/* Cenário 1: A Genialidade Técnica */}
       <section className="section section-dark">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
             <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>1. A Genialidade Técnica que Não Vira Receita</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>A Genialidade Técnica que Não Vira Receita</h2>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
-                <p>Uma Healthtech possui uma plataforma de IA com potencial para revolucionar a indústria farmacêutica, mas sua mensagem não conecta com o C-Level. A equipe vende features para pesquisadores, enquanto o comprador real enxerga apenas um custo complexo. O resultado é um produto genial, mas que não consegue converter seu potencial em receita.</p>
+                <p><strong>Você</strong> possui uma plataforma de IA com potencial para revolucionar a indústria farmacêutica, mas sua mensagem não conecta com o C-Level. Sua equipe vende features para pesquisadores, enquanto o comprador real enxerga apenas um custo complexo. O resultado é um produto genial, mas que não consegue converter seu potencial em receita.</p>
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
@@ -79,7 +79,7 @@ export default function CasosDeUso() {
         </div>
       </section>
 
-      {/* 2: A Regtech */}
+      {/* Cenário 2: O Funil Quebrado */}
       <section className="section section-darker">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
@@ -92,10 +92,10 @@ export default function CasosDeUso() {
               />
             </div>
             <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>2. O Funil que Gera Leads, Mas Não Vendas</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>O Funil que Gera Leads, Mas Não Vendas</h2>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
-                <p>Uma Regtech possui um funil quebrado: atrai centenas de leads (analistas) com conteúdo rico, mas a conversão é mínima e o CAC, insustentável. A equipe de vendas perde tempo com usuários sem poder de compra, enquanto o negócio queima caixa em um modelo de aquisição que não gera crescimento real.</p>
+                <p><strong>Seu</strong> funil está quebrado: atrai centenas de leads (analistas) com conteúdo rico, mas a conversão é mínima e o CAC, insustentável. Sua equipe de vendas perde tempo com usuários sem poder de compra, enquanto o negócio queima caixa em um modelo de aquisição que não gera crescimento real.</p>
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
@@ -110,15 +110,15 @@ export default function CasosDeUso() {
         </div>
       </section>
 
-      {/* 3: A Engenharia de Referência */}
+      {/* Cenário 3: A Autoridade Offline */}
       <section className="section section-dark">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
             <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>3. A Autoridade Offline com Invisibilidade</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>A Autoridade Offline com Invisibilidade Digital</h2>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
-                <p>Empresas de Engenharia, apesar de terem um portfólio impecável e certificações de elite, muitas vezes sofrem por "invisibilidade digital". Seu crescimento é refém da rede de contatos dos sócios, sem um motor de aquisição previsível. Concorrentes menos qualificados, mas com melhor presença online, capturam as oportunidades que deveriam ser suas por direito.</p>
+                <p><strong>Sua empresa</strong>, apesar de ter um portfólio impecável e certificações de elite, sofre por "invisibilidade digital". Seu crescimento é refém da rede de contatos dos sócios, sem um motor de aquisição previsível. Concorrentes menos qualificados, mas com melhor presença online, capturam as oportunidades que deveriam ser suas por direito.</p>
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
