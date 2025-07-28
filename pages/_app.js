@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-9DHV8B62S5');
+          gtag('config', 'G-Y1HMBX2S33');
         `}
       </Script>
     </>
