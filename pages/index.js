@@ -33,7 +33,7 @@ export default function HomePage() {
                 Conheça o Framework GTM Ignition™
               </button>
               <Link href="/contato" className="btn btn-diagnostic">
-                Agende um Diagnóstico Estratégico
+                Agendar Diagnóstico Direto
               </Link>
             </div>
           </div>
@@ -274,7 +274,7 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-2">
             <Link href="/contato" className="btn btn-primary">
-              Tire Suas Dúvidas Conosco
+              Agendar para Esclarecer
             </Link>
           </div>
         </div>
