@@ -50,7 +50,9 @@ export default function Contato() {
 
             {/* Cabeçalho de Valor */}
             <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-              <h2 style={{ color: '#64FFDA', marginBottom: '1.5rem' }}>Seu Diagnóstico de 21 Minutos: O Que Esperar</h2>
+              <h2 style={{ color: '#64FFDA', marginBottom: '1.5rem' }}>
+                Seu Diagnóstico de 21 Minutos: <br /> O Que Esperar
+              </h2>
               <ul style={{ listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left' }}>
                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
                   <span style={{ color: '#64FFDA', marginRight: '0.75rem', marginTop: '0.2rem' }}>✓</span>
