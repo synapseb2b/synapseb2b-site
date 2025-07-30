@@ -74,7 +74,7 @@ export default function HomePage() {
           <div className="mb-28">
             <h2 className="text-3xl md:text-4xl font-bold mb-16">Nossa Plataforma</h2>
             
-            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mt-8 mb-8">Do Diagnóstico ao Domínio de Mercado</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16">Do Diagnóstico ao Domínio de Mercado</h3>
             <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6">
               <p>
                 Somos uma <strong>Plataforma de Aceleração de Negócios B2B</strong> que conecta sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.
@@ -122,7 +122,7 @@ export default function HomePage() {
           
           {/* Bloco 3: Modelos de Atuação (Ajustado) */}
           <div>
-            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-12">Nossos Modelos de Atuação</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16">Nossos Modelos de Atuação</h3>
             <div className="grid grid-2 gap-6">
               
               {/* Container 1 */}
