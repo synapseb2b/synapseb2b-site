@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       <Head>
         <title>Expertise Técnica em Receita Previsível | Synapse B2B</title>
-        <meta name="description" content="Somos a plataforma de aceleração que constrói o Go-to-Market para empresas B2B de alta complexidade, transformando superioridade técnica em domínio de mercado." />
+        <meta name="description" content="Somos a Plataforma de Aceleração de Negócios B2B que cria a ponte entre sua genialidade técnica e a receita previsível que ela merece." />
       </Head>
  
       {/* Seção Hero */}
@@ -24,7 +24,7 @@ export default function HomePage() {
           <div className="hero-content fade-in-up">
             <h1>Seu Produto é Genial. Sua Receita Também?</h1>
             <p>
-              Somos uma plataforma de aceleração de negócios B2B de Alta Complexidade, fundada sobre 20 anos de experiência em transformar visão estratégica em receita real e previsível.
+              Somos a Plataforma de Aceleração de Negócios B2B que cria a ponte entre sua genialidade técnica e a receita previsível que ela merece.
             </p>
             <div className="hero-ctas" style={{ marginBottom: '2rem' }}>
               <button 
@@ -112,10 +112,10 @@ export default function HomePage() {
           </h3>
           <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6" style={{ marginTop: '4rem' }}>
             <p>
-              Somos uma <strong>Plataforma de Aceleração de Negócios B2B</strong> que conecta sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.
+              <strong> Nós projetamos e construímos o sistema que transforma a complexidade do seu negócio em uma máquina de crescimento escalável. </strong>
             </p>
             <p>
-              Nosso foco são empresas B2B de alta complexidade que atingiram um platô de crescimento ou que precisam de um GTM (Go-to-Market) estruturado para construir e/ou escalar sua máquina de receita.
+              Nossa plataforma executa esta jornada completa, da clareza do diagnóstico ao domínio de mercado, e foi feita para empresas B2B de alta complexidade que precisam de um sistema GTM estruturado, seja para <strong> construir sua primeira estrutura de receita ou para escalar uma operação que atingiu um platô. </strong>
             </p>
           </div>
         </div>
