@@ -86,8 +86,8 @@ export default function HomePage() {
       {/* Bloco 2: Abordagem */}
       <section className="section section-darker">
         <div className="container text-center" style={{ maxWidth: '900px' }}>
-          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-2">Nossa Abordagem:</h3>
-          <h3 className="text-2xl md:text-3xl font-bold text-teal-400 mb-16">A Construção da Fundação Estratégica</h3>
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-2">Nossa Abordagem</h2>
+          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16">A Construção da Fundação Estratégica</h3>
           
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
             {/* Container 1 */}
@@ -123,7 +123,7 @@ export default function HomePage() {
       {/* Bloco 3: Modelos de Atuação */}
       <section className="section section-darker">
         <div className="container text-center" style={{ maxWidth: '900px' }}>
-          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-12">Nossos Modelos de Atuação</h3>
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-12">Nossos Modelos de Atuação</h2>
           
           <div className="grid grid-2 gap-6">
             {/* Container 1 */}
