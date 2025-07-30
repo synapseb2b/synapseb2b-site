@@ -3,7 +3,7 @@ import Script from 'next/script'; // Importamos o Script do Next.js para o widge
 
 export default function Contato() {
   // ATENÇÃO: Substitua pela sua URL real do evento do Calendly
-  const calendlyUrl = 'https://calendly.com/SEU_USUARIO/SEU_EVENTO';
+  const calendlyUrl = 'https://calendly.com/julio-synapseb2b/21min';
 
   return (
     <>
