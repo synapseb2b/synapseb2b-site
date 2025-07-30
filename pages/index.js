@@ -85,16 +85,19 @@ export default function HomePage() {
           <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-8">Nossa Abordagem: A Construção da Fundação Estratégica</h3>
             <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div>
-                <strong className="text-slate-100 text-lg block mb-2">Diagnóstico Profundo</strong>
+              {/* Container 1 */}
+              <div className="space-y-2">
+                <strong className="text-slate-100 text-lg block">Diagnóstico Profundo</strong>
                 <p className="text-slate-400 text-base m-0">Análise estruturada do seu negócio, mercado e posicionamento para identificar as alavancas de crescimento.</p>
               </div>
+              {/* Container 2 */}
               <div>
-                <strong className="text-slate-100 text-lg block mb-2">Posicionamento Irrecusável</strong>
+                <strong className="text-slate-100 text-lg block">Posicionamento Irrecusável</strong>
                 <p className="text-slate-400 text-base m-0">Construção de uma mensagem que ressoa com seu mercado-alvo, diferenciando você da concorrência.</p>
               </div>
+              {/* Container 3 */}
               <div>
-                <strong className="text-slate-100 text-lg block mb-2">Engenharia de Receita</strong>
+                <strong className="text-slate-100 text-lg block">Engenharia de Receita</strong>
                 <p className="text-slate-400 text-base m-0">Criação dos ativos e processos que aceleram a conversão e tornam o crescimento previsível.</p>
               </div>
             </div>
@@ -104,6 +107,7 @@ export default function HomePage() {
           <div>
             <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-8">Nossos Modelos de Atuação</h3>
             <div className="grid md:grid-cols-2 gap-6">
+               {/* Container 1 */}
               <div className="card h-full flex flex-col items-center text-center p-8">
                 <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 border border-gray-700">
                   <Target className="w-8 h-8 text-teal-400" />
@@ -111,6 +115,7 @@ export default function HomePage() {
                 <h4 className="font-bold text-xl text-slate-100 mb-2">Ativação de Estratégia Go-to-Market</h4>
                 <p className="text-slate-400 text-base mb-0">Desenvolvemos e implementamos seu plano de entrada ou escala no mercado de ponta a ponta.</p>
               </div>
+               {/* Container 2 */}
               <div className="card h-full flex flex-col items-center text-center p-8">
                 <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 border border-gray-700">
                   <BarChart className="w-8 h-8 text-teal-400" />
@@ -123,7 +128,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção Problema */}
+            {/* Seção Problema */}
       <section className="section section-dark">
         <div className="container">
           <div className="text-center mb-2">
