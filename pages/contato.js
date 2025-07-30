@@ -1,20 +1,32 @@
 import Head from 'next/head';
+import Script from 'next/script'; // Importamos o Script do Next.js para o widget do Calendly
 
 export default function Contato() {
+  // ATENÇÃO: Substitua pela sua URL real do evento do Calendly
+  const calendlyUrl = 'https://calendly.com/SEU_USUARIO/SEU_EVENTO';
+
   return (
     <>
       <Head>
         <title>Agende seu Diagnóstico Estratégico | Synapse B2B</title>
         <meta name="description" content="Agende um diagnóstico estratégico gratuito e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
+        {/* Adiciona o CSS do Calendly ao Head */}
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </Head>
+
+      {/* Script do Calendly - Carregado de forma otimizada */}
+      <Script 
+        src="https://assets.calendly.com/assets/external/widget.js" 
+        strategy="lazyOnload" 
+      />
  
-      {/* Hero do Contato Otimizado */}
+      {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
             <h1>Vamos Construir seu Próximo Salto de Crescimento.</h1>
             <p>
-              O primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva é um diagnóstico preciso. Agende sua sessão estratégica gratuita abaixo.
+              O primeiro passo é um diagnóstico preciso. Agende sua sessão estratégica gratuita abaixo.
             </p>
           </div>
         </div>
@@ -44,14 +56,14 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* Seção Principal de Agendamento Otimizada */}
+      {/* Seção Principal de Agendamento */}
       <section className="section section-dark">
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
 
             {/* Cabeçalho de Valor */}
             <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
               <h2 style={{ color: '#64FFDA', marginBottom: '1.5rem' }}>
-                Seu Diagnóstico de 21 Minutos: <br /> O Que Esperar
+                Seu Diagnóstico de 21 Minutos: O Que Esperar
               </h2>
               <ul style={{ listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left' }}>
                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
@@ -78,15 +90,14 @@ export default function Contato() {
               </ul>
             </div>
 
-            {/* Container do Widget com Ajuste Estético */}
-            <div style={{ backgroundColor: '#FFFFFF', padding: '1rem', borderRadius: '12px' }}>
-                <iframe 
-                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
-                    style={{ border: 0, width: '100%', height: '600px' }} 
-                    frameBorder="0"
-                ></iframe>
+            {/* Container do Widget Calendly */}
+            <div 
+              className="calendly-inline-widget" 
+              data-url={calendlyUrl} 
+              style={{ minWidth: '320px', height: '700px', borderRadius: '12px', overflow: 'hidden' }}
+            >
             </div>
-
+            
         </div>
       </section>
     </>
