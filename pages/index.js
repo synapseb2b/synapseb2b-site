@@ -66,79 +66,84 @@ export default function HomePage() {
         </div>
       </section>
 
-{/* Seção Plataforma / Abordagem / Modelos (Unificada e Ajustada) */}
+{/* Seção: Nossa Plataforma (Ajustes de Espaçamento) */}
+      <section className="section section-darker">
+        <div className="container text-center" style={{ maxWidth: '900px' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-16">Nossa Plataforma</h2>
+          
+          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-12">Do Diagnóstico ao Domínio de Mercado</h3>
+          <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6">
+            <p>
+              Somos uma <strong>Plataforma de Aceleração de Negócios B2B</strong> que conecta sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.
+            </p>
+            <p>
+              Nosso foco são empresas B2B de alta complexidade que atingiram um platô de crescimento ou que precisam de um GTM (Go-to-Market) estruturado para construir e/ou escalar sua máquina de receita.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bloco 2: Abordagem */}
       <section className="section section-dark">
         <div className="container text-center" style={{ maxWidth: '900px' }}>
-
-          {/* Bloco 1: Nossa Plataforma */}
-          <div className="mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold mb-16">Nossa Plataforma</h2>
-            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-12">Do Diagnóstico ao Domínio de Mercado</h3>
-            <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6">
-              <p>
-                Somos uma <strong>Plataforma de Aceleração de Negócios B2B</strong> que conecta sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.
-              </p>
-              <p>
-                Nosso foco são empresas B2B de alta complexidade que atingiram um platô de crescimento ou que precisam de um GTM (Go-to-Market) estruturado para construir e/ou escalar sua máquina de receita.
-              </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-2">Nossa Abordagem</h2>
+          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16">A Construção da Fundação Estratégica</h3>
+          
+          <div className="grid grid-3" style={{ gap: '1.5rem' }}>
+            {/* Container 1 */}
+            <div className="card">
+              <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
+                <Search className="w-8 h-8 text-teal-400" />
+              </div>
+              <h3 className="font-bold text-xl text-teal-400 mb-2">Diagnóstico Profundo</h3>
+              <p className="text-slate-400 text-base m-0">Análise estruturada do seu negócio, mercado e posicionamento para identificar as alavancas de crescimento.</p>
+            </div>
+            
+            {/* Container 2 */}
+            <div className="card">
+              <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
+                <ClipboardCheck className="w-8 h-8 text-teal-400" />
+              </div>
+              <h3 className="font-bold text-xl text-teal-400 mb-2">Posicionamento Irrecusável</h3>
+              <p className="text-slate-400 text-base m-0">Construção de uma mensagem que ressoa com seu mercado-alvo, diferenciando você da concorrência.</p>
+            </div>
+            
+            {/* Container 3 */}
+            <div className="card">
+              <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
+                <TrendingUp className="w-8 h-8 text-teal-400" />
+              </div>
+              <h3 className="font-bold text-xl text-teal-400 mb-2">Engenharia de Receita</h3>
+              <p className="text-slate-400 text-base m-0">Criação dos ativos e processos que aceleram a conversão e tornam o crescimento previsível.</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Bloco 2: Nossa Abordagem */}
-          <div className="mb-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-2">Nossa Abordagem</h2>
-            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16">A Construção da Fundação Estratégica</h3>
-            <div className="grid grid-3" style={{ gap: '1.5rem' }}>
-              {/* Card 1 */}
-              <div className="card">
-                <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
-                  <Search className="w-8 h-8 text-teal-400" />
-                </div>
-                <h3 className="font-bold text-xl text-teal-400 mb-2">Diagnóstico Profundo</h3>
-                <p className="text-slate-400 text-base m-0">Análise estruturada do seu negócio, mercado e posicionamento para identificar as alavancas de crescimento.</p>
+      {/* Bloco 3: Modelos de Atuação */}
+      <section className="section section-darker">
+        <div className="container text-center" style={{ maxWidth: '900px' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-16">Nossos Modelos de Atuação</h2>
+          
+          <div className="grid grid-2 gap-6">
+            {/* Container 1 */}
+            <div className="card h-full p-8">
+              <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
+                <Target className="w-8 h-8 text-teal-400" />
               </div>
-              {/* Card 2 */}
-              <div className="card">
-                <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
-                  <ClipboardCheck className="w-8 h-8 text-teal-400" />
-                </div>
-                <h3 className="font-bold text-xl text-teal-400 mb-2">Posicionamento Irrecusável</h3>
-                <p className="text-slate-400 text-base m-0">Construção de uma mensagem que ressoa com seu mercado-alvo, diferenciando você da concorrência.</p>
+              <h3 className="text-xl font-bold text-teal-400 mb-2">Ativação de Estratégia Go-to-Market</h3>
+              <p className="text-slate-400 text-base mb-0">Desenvolvemos e implementamos seu plano de entrada ou escala no mercado de ponta a ponta.</p>
+            </div>
+
+            {/* Container 2 */}
+            <div className="card h-full p-8">
+              <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
+                <BarChart className="w-8 h-8 text-teal-400" />
               </div>
-              {/* Card 3 */}
-              <div className="card">
-                <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
-                  <TrendingUp className="w-8 h-8 text-teal-400" />
-                </div>
-                <h3 className="font-bold text-xl text-teal-400 mb-2">Engenharia de Receita</h3>
-                <p className="text-slate-400 text-base m-0">Criação dos ativos e processos que aceleram a conversão e tornam o crescimento previsível.</p>
-              </div>
+              <h3 className="text-xl font-bold text-teal-400 mb-2">CRO as a Service</h3>
+              <p className="text-slate-400 text-base mb-0">Atuamos como sua diretoria de receita interina ou fracionada, desenhando e executando sua máquina de vendas completa.</p>
             </div>
           </div>
-
-          {/* Bloco 3: Nossos Modelos de Atuação */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-16">Nossos Modelos de Atuação</h2>
-            <div className="grid grid-2 gap-6">
-              {/* Card 1 */}
-              <div className="card h-full p-8">
-                <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
-                  <Target className="w-8 h-8 text-teal-400" />
-                </div>
-                <h3 className="text-xl font-bold text-teal-400 mb-2">Ativação de Estratégia Go-to-Market</h3>
-                <p className="text-slate-400 text-base mb-0">Desenvolvemos e implementamos seu plano de entrada ou escala no mercado de ponta a ponta.</p>
-              </div>
-              {/* Card 2 */}
-              <div className="card h-full p-8">
-                <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
-                  <BarChart className="w-8 h-8 text-teal-400" />
-                </div>
-                <h3 className="text-xl font-bold text-teal-400 mb-2">CRO as a Service</h3>
-                <p className="text-slate-400 text-base mb-0">Atuamos como sua diretoria de receita interina ou fracionada, desenhando e executando sua máquina de vendas completa.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
       
