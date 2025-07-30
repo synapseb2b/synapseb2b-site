@@ -105,12 +105,12 @@ export default function HomePage() {
           </h2>
           
           <h3 
-            className="text-2xl md:text-3xl font-semibold text-teal-400 mb-20"
+            className="text-2xl md:text-3xl font-semibold text-teal-400"
             style={{ textShadow: '0px 2px 8px rgba(0, 0, 0, 0.7)' }}
           >
             Do Diagnóstico ao Domínio de Mercado
           </h3>
-          <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6">
+          <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6" style={{ marginTop: '4rem' }}>
             <p>
               Somos uma <strong>Plataforma de Aceleração de Negócios B2B</strong> que conecta sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.
             </p>
@@ -125,9 +125,9 @@ export default function HomePage() {
       <section className="section section-dark">
         <div className="container text-center" style={{ maxWidth: '900px' }}>
           <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-2">Nossa Abordagem</h2>
-          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-20">A Construção da Fundação Estratégica</h3>
+          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400">A Construção da Fundação Estratégica</h3>
           
-          <div className="grid grid-3" style={{ gap: '1.5rem' }}>
+          <div className="grid grid-3" style={{ marginTop: '4rem', gap: '1.5rem' }}>
             {/* Container 1 */}
             <div className="card">
               <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
@@ -161,9 +161,9 @@ export default function HomePage() {
       {/* Bloco 3: Modelos de Atuação */}
       <section className="section section-darker">
         <div className="container text-center" style={{ maxWidth: '900px' }}>
-          <h2 className="text-2xl md:text-3xl font-bold text-teal-400 mb-20">Nossos Modelos de Atuação</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-400">Nossos Modelos de Atuação</h2>
           
-          <div className="grid grid-2 gap-6">
+          <div className="grid grid-2 gap-6" style={{ marginTop: '4rem' }}>
             {/* Container 1 */}
             <div className="card h-full p-8">
               <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
