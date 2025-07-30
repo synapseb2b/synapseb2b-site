@@ -66,14 +66,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção: Nossa Plataforma */}
+{/* Seção: Nossa Plataforma */}
       <section className="section section-darker">
         <div className="container text-center" style={{ maxWidth: '900px' }}>
           
-          {/* Bloco 1: Definição da Plataforma */}
+          {/* Bloco 1: Definição da Plataforma (Ajustado) */}
           <div className="mb-20">
             <h2 className="text-3xl md:text-4xl font-bold">Nossa Plataforma</h2>
-            <div className="mt-8">
+            <div className="mt-14">
               <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-6">Do Diagnóstico ao Domínio de Mercado</h3>
               <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-4">
                 <p>
@@ -86,13 +86,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Bloco 2: Abordagem */}
+          {/* Bloco 2: Abordagem (Ajustado) */}
           <div className="mb-20">
-            <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-12">Nossa Abordagem: A Construção da Fundação Estratégica</h3>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-2">Nossa Abordagem:</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-teal-400 mb-12">A Construção da Fundação Estratégica</h3>
+            <div className="grid grid-3" style={{ marginTop: '4rem' }}>
               
               {/* Container 1 */}
-              <div>
+              <div className="card">
                 <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
                   <Search className="w-8 h-8 text-teal-400" />
                 </div>
@@ -101,7 +102,7 @@ export default function HomePage() {
               </div>
               
               {/* Container 2 */}
-              <div>
+              <div className="card">
                 <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
                   <ClipboardCheck className="w-8 h-8 text-teal-400" />
                 </div>
@@ -110,7 +111,7 @@ export default function HomePage() {
               </div>
               
               {/* Container 3 */}
-              <div>
+              <div className="card">
                 <div className="w-16 h-16 bg-slate-800/50 rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-700">
                   <TrendingUp className="w-8 h-8 text-teal-400" />
                 </div>
@@ -120,10 +121,10 @@ export default function HomePage() {
             </div>
           </div>
           
-          {/* Bloco 3: Modelos de Atuação */}
+          {/* Bloco 3: Modelos de Atuação (Ajustado) */}
           <div>
             <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-12">Nossos Modelos de Atuação</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-2 gap-6">
               
               {/* Container 1 */}
               <div className="card h-full p-8">
@@ -146,7 +147,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      
             {/* Seção Problema */}
       <section className="section section-dark">
         <div className="container">
