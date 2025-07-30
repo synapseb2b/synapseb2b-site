@@ -66,12 +66,50 @@ export default function HomePage() {
         </div>
       </section>
 
-{/* Seção: Nossa Plataforma (Ajustes Finais) */}
-      <section className="section section-darker">
-        <div className="container text-center" style={{ maxWidth: '900px' }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-16">Nossa Plataforma</h2>
+{/* Seção: Nossa Plataforma com Background */}
+      <section 
+        className="section section-dark"
+        style={{
+          backgroundImage: "url('/image/Plataforma.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          position: 'relative'
+        }}
+      >
+        {/* Div de sobreposição para escurecer o fundo */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(9, 14, 26, 0.85)',
+          zIndex: 1
+        }}></div>
+
+        {/* Conteúdo da seção */}
+        <div 
+          className="container text-center"
+          style={{ 
+            maxWidth: '900px',
+            position: 'relative', 
+            zIndex: 2 
+          }}
+        >
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-16"
+            style={{ textShadow: '0px 2px 8px rgba(0, 0, 0, 0.7)' }}
+          >
+            Nossa Plataforma
+          </h2>
           
-          <h3 className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16">Do Diagnóstico ao Domínio de Mercado</h3>
+          <h3 
+            className="text-2xl md:text-3xl font-semibold text-teal-400 mb-16"
+            style={{ textShadow: '0px 2px 8px rgba(0, 0, 0, 0.7)' }}
+          >
+            Do Diagnóstico ao Domínio de Mercado
+          </h3>
           <div className="max-w-3xl mx-auto text-lg text-slate-300 space-y-6">
             <p>
               Somos uma <strong>Plataforma de Aceleração de Negócios B2B</strong> que conecta sua solução complexa às dores e aos KPIs do seu cliente C-Level, criando uma proposta de valor que gera receita.
