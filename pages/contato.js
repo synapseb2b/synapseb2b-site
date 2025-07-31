@@ -26,7 +26,7 @@ export default function Contato() {
           height: '100%',
           zIndex: -1,
           opacity: 0.2,
-          background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
+          background: 'linear-gradient(135deg, #000000 0%, #e6e9ecff 100%)'
         }}>
           <video 
             autoPlay 
