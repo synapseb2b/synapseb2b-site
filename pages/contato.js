@@ -8,14 +8,13 @@ export default function Contato() {
         <meta name="description" content="Agende um diagnóstico estratégico gratuito e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
       </Head>
  
-      {/* Hero do Contato (MANTIDO IGUAL) */}
+      {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
             <h1>Vamos Construir seu Próximo Salto de Crescimento.</h1>
-            <p>
-              O primeiro passo é um diagnóstico preciso. Agende sua sessão estratégica gratuita abaixo.
-            </p>
+            <p>O primeiro passo é um diagnóstico preciso.</p>
+            <p>Agende sua sessão estratégica gratuita abaixo.</p>
           </div>
         </div>
         <div style={{
@@ -44,14 +43,57 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* Seção Principal de Agendamento (FUNDO BRANCO) */}
-      <section className="section bg-white">
+      {/* Seção Principal de Agendamento */}
+      <section 
+        className="section" 
+        style={{ 
+          backgroundImage: "url('/image/contato.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-            {/* Container do Widget Google Agenda */}
-            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #FFFFFF' }}>
+
+            {/* Cabeçalho de Valor */}
+            <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+              <h2 style={{ color: '#0D9488', marginBottom: '1.5rem', fontSize: '1.875rem', fontWeight: 'bold' }}>
+                Seu Diagnóstico de 21 Minutos: O Que Esperar
+              </h2>
+              <ul style={{ listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left' }}>
+                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
+                  <span style={{ color: '#0D9488', marginRight: '0.75rem', marginTop: '0.2rem', fontWeight: 'bold' }}>✓</span>
+                  <div>
+                    <strong style={{ color: '#1E293B' }}>Análise Rápida e Focada</strong>
+                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem', color: '#475569' }}>Avaliação dos seus principais desafios de Go-to-Market.</p>
+                  </div>
+                </li>
+                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
+                  <span style={{ color: '#0D9488', marginRight: '0.75rem', marginTop: '0.2rem', fontWeight: 'bold' }}>✓</span>
+                  <div>
+                    <strong style={{ color: '#1E293B' }}>Identificação de Alavancas</strong>
+                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem', color: '#475569' }}>Identificaremos 1 ou 2 alavancas de crescimento de alto impacto imediato.</p>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <span style={{ color: '#0D9488', marginRight: '0.75rem', marginTop: '0.2rem', fontWeight: 'bold' }}>✓</span>
+                  <div>
+                    <strong style={{ color: '#1E293B' }}>Sem Compromisso</strong>
+                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem', color: '#475569' }}>Diagnóstico 100% gratuito, focado em entregar valor, não em vender.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Container ESCURO para o Widget do Google Agenda */}
+            <div style={{ 
+              backgroundColor: '#0a192f', // Fundo escuro para o card
+              padding: '1rem', 
+              borderRadius: '12px', 
+              boxShadow: '0 10px 25px rgba(0,0,0,0.1)' 
+            }}>
               <iframe 
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
-                style={{ border: 0 }} 
+                style={{ border: 0, borderRadius: '8px' }} // Borda arredondada no iframe
                 width="100%" 
                 height="700"
                 frameBorder="0"
