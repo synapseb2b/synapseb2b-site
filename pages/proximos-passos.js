@@ -1,26 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Importar o useRouter para ler os dados da URL
-import { useEffect, useState } from 'react';
 
-export default function AgendamentoConfirmado() {
-  const router = useRouter();
-  const [inviteeName, setInviteeName] = useState('');
-
-  useEffect(() => {
-    // Esta função roda no navegador e captura o nome do convidado da URL
-    if (router.query.invitee_full_name) {
-      // O nome vem com codificação de URL (ex: "Júlio%20Figueiredo"), então decodificamos
-      // e pegamos apenas o primeiro nome para uma saudação mais pessoal.
-      const firstName = decodeURIComponent(router.query.invitee_full_name).split(' ')[0];
-      setInviteeName(firstName);
-    }
-  }, [router.query]); // Roda sempre que os parâmetros da URL mudam
-
+export default function ProximosPassos() {
   return (
     <>
       <Head>
-        <title>Diagnóstico Confirmado | Synapse B2B</title>
+        <title>Próximos Passos Para o Seu Diagnóstico | Synapse B2B</title>
+        {/* Mantemos o noindex para que esta página não apareça nos resultados de busca */}
         <meta name="robots" content="noindex, nofollow" />
       </Head>
 
@@ -28,21 +14,20 @@ export default function AgendamentoConfirmado() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
             
-            {/* Ícone de Sucesso com Tailwind CSS */}
+            {/* Ícone de Sucesso */}
             <div className="w-20 h-20 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <span className="text-4xl font-bold text-teal-400">✓</span>
             </div>
 
-            {/* Mensagem Principal Personalizada */}
+            {/* Mensagem Principal */}
             <h1 className="text-teal-400">
-              {/* Se tivermos o nome, personalizamos a mensagem */}
-              {inviteeName ? `Diagnóstico Confirmado, ${inviteeName}.` : 'Diagnóstico Confirmado.'}
+              Tudo Pronto Para o Nosso Diagnóstico.
             </h1>
             <p className="text-xl mt-4 mb-10 text-slate-300">
-              Excelente decisão. Você receberá os detalhes do nosso encontro de 21 minutos no e-mail que informou.
+              Excelente decisão. Os detalhes do nosso encontro de 21 minutos já estão no seu e-mail e na sua agenda.
             </p>
 
-            {/* Próximos Passos / Pós-Conversão */}
+            {/* Seção de Preparação (Briefing) */}
             <div className="border-t border-teal-500/20 pt-10 text-left">
               <h3 className="text-center mb-6 text-slate-100">Enquanto Você Espera:</h3>
               <p className="text-slate-400">

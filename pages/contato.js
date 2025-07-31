@@ -1,24 +1,12 @@
 import Head from 'next/head';
-import Script from 'next/script'; // Importamos o Script do Next.js para o widget do Calendly
 
 export default function Contato() {
-  // ATENÇÃO: URL atualizada com os novos parâmetros de estilo do Calendly
-  const calendlyUrl = 'https://calendly.com/julio-synapseb2b?background_color=0a192f&text_color=ffffff&primary_color=24ff00';
-
   return (
     <>
       <Head>
         <title>Agende seu Diagnóstico Estratégico | Synapse B2B</title>
         <meta name="description" content="Agende um diagnóstico estratégico gratuito e dê o primeiro passo para transformar sua complexidade técnica em sua maior vantagem competitiva." />
-        {/* Adiciona o CSS do Calendly ao Head */}
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </Head>
-
-      {/* Script do Calendly - Carregado de forma otimizada */}
-      <Script 
-        src="https://assets.calendly.com/assets/external/widget.js" 
-        strategy="lazyOnload" 
-      />
  
       {/* Hero do Contato */}
       <section className="hero" style={{ minHeight: '70vh' }}>
@@ -90,12 +78,15 @@ export default function Contato() {
               </ul>
             </div>
 
-            {/* Container do Widget Calendly */}
-            <div 
-              className="calendly-inline-widget" 
-              data-url={calendlyUrl} 
-              style={{ minWidth: '320px', height: '700px', borderRadius: '12px', overflow: 'hidden' }}
-            >
+            {/* Container do Widget Google Agenda */}
+            <div style={{ borderRadius: '12px', overflow: 'hidden' }}>
+              <iframe 
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
+                style={{ border: 0 }} 
+                width="100%" 
+                height="700" // Ajustei a altura para 700 para melhor visualização
+                frameBorder="0"
+              ></iframe>
             </div>
             
         </div>
