@@ -44,7 +44,7 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* Seção Principal de Agendamento (FUNDO CLARO) */}
+      {/* Seção Principal de Agendamento (FUNDO BRANCO) */}
       <section className="section bg-white">
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
 
