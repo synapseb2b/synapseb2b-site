@@ -78,13 +78,13 @@ export default function Contato() {
               </ul>
             </div>
 
-            {/* Container do Widget Google Agenda */}
-            <div style={{ borderRadius: '12px', overflow: 'hidden' }}>
+            {/* Container do Widget Google Agenda - COM AJUSTE DE TESTE */}
+            <div style={{ borderRadius: '12px', overflow: 'hidden', color: '#FFFFFF' }}>
               <iframe 
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
                 style={{ border: 0 }} 
                 width="100%" 
-                height="700" // Ajustei a altura para 700 para melhor visualização
+                height="700" 
                 frameBorder="0"
               ></iframe>
             </div>
