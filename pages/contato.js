@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Script from 'next/script'; // Importamos o Script do Next.js para o widget do Calendly
 
 export default function Contato() {
-  // ATENÇÃO: Substitua pela sua URL real do evento do Calendly
-  const calendlyUrl = 'https://calendly.com/julio-synapseb2b/21min';
+  // ATENÇÃO: URL atualizada com os novos parâmetros de estilo do Calendly
+  const calendlyUrl = 'https://calendly.com/julio-synapseb2b?background_color=0a192f&text_color=ffffff&primary_color=24ff00';
 
   return (
     <>
