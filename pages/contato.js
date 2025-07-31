@@ -84,16 +84,15 @@ export default function Contato() {
               </ul>
             </div>
 
-            {/* Container ESCURO para o Widget do Google Agenda */}
+            {/* Container para o Widget do Google Agenda */}
             <div style={{ 
-              backgroundColor: '#0a192f', // Fundo escuro para o card
               padding: '1rem', 
               borderRadius: '12px', 
               boxShadow: '0 10px 25px rgba(0,0,0,0.1)' 
             }}>
               <iframe 
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
-                style={{ border: 0, borderRadius: '8px' }} // Borda arredondada no iframe
+                style={{ border: 0, borderRadius: '8px' }}
                 width="100%" 
                 height="700"
                 frameBorder="0"
