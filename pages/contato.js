@@ -47,38 +47,6 @@ export default function Contato() {
       {/* Seção Principal de Agendamento */}
       <section className="section section-dark">
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-
-            {/* Cabeçalho de Valor */}
-            <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-              <h2 style={{ color: '#64FFDA', marginBottom: '1.5rem' }}>
-                Seu Diagnóstico de 21 Minutos: O Que Esperar
-              </h2>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left' }}>
-                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                  <span style={{ color: '#64FFDA', marginRight: '0.75rem', marginTop: '0.2rem' }}>✓</span>
-                  <div>
-                    <strong style={{ color: '#F8F9FA' }}>Análise Rápida e Focada</strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem' }}>Avaliação dos seus principais desafios de Go-to-Market.</p>
-                  </div>
-                </li>
-                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                  <span style={{ color: '#64FFDA', marginRight: '0.75rem', marginTop: '0.2rem' }}>✓</span>
-                  <div>
-                    <strong style={{ color: '#F8F9FA' }}>Identificação de Alavancas</strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem' }}>Identificaremos 1 ou 2 alavancas de crescimento de alto impacto imediato.</p>
-                  </div>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                  <span style={{ color: '#64FFDA', marginRight: '0.75rem', marginTop: '0.2rem' }}>✓</span>
-                  <div>
-                    <strong style={{ color: '#F8F9FA' }}>Sem Compromisso</strong>
-                    <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem' }}>Diagnóstico 100% gratuito, focado em entregar valor, não em vender.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Container do Widget Google Agenda - COM AJUSTE DE TESTE */}
             <div style={{ borderRadius: '12px', overflow: 'hidden', color: '#FFFFFF' }}>
               <iframe 
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3XscLHMxtGRcre8_fN-LLjWYyDxLgcm-BUKqXpbdx5eEun7o5mMmrpqo8wj6kvgTSeFpSw-Md-?gv=true" 
