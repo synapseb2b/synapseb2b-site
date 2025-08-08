@@ -47,7 +47,7 @@ export default function Contato() {
       <section 
         className="section" 
         style={{ 
-          backgroundImage: "url('/image/contato.png')",
+          backgroundImage: "url('/image/Plataforma2.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
