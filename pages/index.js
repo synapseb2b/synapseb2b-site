@@ -14,18 +14,22 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Expertise Técnica em Receita Previsível | Synapse B2B</title>
+        <title>Receita Previsível para Produtos Complexos | Synapse B2B</title>
         <meta name="description" content="Somos a Plataforma de Aceleração de Negócios B2B que cria a ponte entre sua genialidade técnica e a receita previsível que ela merece." />
       </Head>
  
       {/* Seção Hero */}
       <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div className="hero-content fade-in-up">
-            <h1>Seu Produto é Genial. Sua Receita Também?</h1>
-            <p>
-              Somos a Plataforma de Aceleração de Negócios B2B que cria a ponte entre sua genialidade técnica e a receita previsível que ela merece.
-            </p>
+      <div className="hero-content fade-in-up">
+        <h1>Seu produto é incrível. Por que a receita não é?</h1>
+        <p>
+          Produtos geniais morrem todos os dias.<br />
+          Não por falha técnica.<br />
+          <span className="text-highlight">
+            Mas por uma fatal falha de tradução.
+          </span>
+        </p>
             <div className="hero-ctas" style={{ marginBottom: '2rem' }}>
               <button 
                 onClick={() => scrollToSection('framework')}
