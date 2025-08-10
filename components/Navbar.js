@@ -17,7 +17,7 @@ export default function Navbar() {
               height={40}
               className="nav-logo"
             />
-            <span style={{ color: '#000000', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
+            <span style={{ color: '#009681', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
               Synapse B2B
             </span>
           </Link>
