@@ -23,9 +23,9 @@ body {
 
 /* Variáveis CSS para cores da identidade visual */
 :root {
-  --primary-color: #0A192F;    /* Azul Meia-Noite */
+  --primary-color: #000000;    /* Azul Meia-Noite */
   --secondary-color: #1E2A3A; /* Grafite Estratégico */
-  --accent-color: #64FFDA;     /* Ciano Sinapse */
+  --accent-color: #009681;     /* Ciano Sinapse */
   --base-color: #F8F9FA;       /* Branco Gelo */
   --text-color: #CCD6F6;       /* Cinza Claro */
   --background-color: #000000; /* Fundo preto */
