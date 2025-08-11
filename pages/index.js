@@ -18,43 +18,65 @@ export default function HomePage() {
         <meta name="description" content="Somos a Plataforma de Aceleração de Negócios B2B que cria a ponte entre sua genialidade técnica e a receita previsível que ela merece." />
       </Head>
  
-{/* --- SEÇÃO HERO --- */}
-      <section className="hero">
+      {/* Seção Hero */}
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <div className="hero-content fade-in-up">
-
-            {/* Ato 1: A Equação Quebrada */}
-            <p className="hero-equation">
-              Genialidade Técnica <span className="not-equal">≠</span> Receita Previsível
-            </p>
-
-            {/* Ato 2: O Diagnóstico (O Título Principal) */}
-            <h1>Esta é a "falha de tradução".</h1>
-
-            {/* Ato 3: A Explicação e a Solução */}
-            <p className="hero-explanation">
-              O abismo onde produtos incríveis morrem por não conseguirem comunicar seu valor e onde funis de venda falham em converter.
-              <br /><br />
-              Nós somos a sinapse. A Plataforma de Aceleração que projeta e constrói a variável que falta na sua equação: 
-              <span className="text-highlight">
-                uma estrutura de Go-to-Market que transforma potencial em domínio de mercado.
-              </span>
-            </p>
-            
-            {/* Seus botões de CTA permanecem aqui */}
-            <div className="hero-ctas">
-              <a href="#framework" className="btn btn-primary">Conheça o Framework</a>
-              <a href="/contato" className="btn btn-secondary">Agende um Diagnóstico</a>
+      <div className="hero-content fade-in-up">
+        <h1>
+          <span>Seu produto é genial.</span>
+          <span>Por que a receita não é?</span>
+        </h1>
+          <p className="hero-subheadline">
+            <span className="subheadline-statement">
+              Produtos geniais morrem todos os dias.
+            </span>
+            <span className="subheadline-negation">
+              Não por falha técnica.
+            </span>
+           <span className="subheadline-thesis text-highlight">
+              Mas por uma fatal falha de tradução.
+            </span>
+          </p>
+            <div className="hero-ctas" style={{ marginBottom: '2rem' }}>
+              <button 
+                onClick={() => scrollToSection('framework')}
+                className="btn btn-primary"
+              >
+                Conheça o Framework GTM Ignition™
+              </button>
+              <Link href="/contato" className="btn btn-diagnostic">
+                Agendar Diagnóstico Direto
+              </Link>
             </div>
-
           </div>
         </div>
-        {/* O vídeo de fundo continua aqui */}
-        <video autoPlay loop muted playsInline className="hero-video">
-            <source src="/video/video_hero.mp4" type="video/mp4" />
-        </video>
+        
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          opacity: 0.2,
+          background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
+        }}>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          >
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
-      
+
 {/* Seção: Nossa Plataforma com Background */}
       <section 
         className="section section-dark"
