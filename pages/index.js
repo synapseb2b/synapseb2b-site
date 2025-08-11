@@ -26,13 +26,17 @@ export default function HomePage() {
           <span>Seu produto é genial.</span>
           <span>Por que a receita não é?</span>
         </h1>
-        <p>
-          Produtos geniais morrem todos os dias.<br />
-          Não por falha técnica.<br />
-          <span className="text-highlight">
-            Mas por uma fatal falha de tradução.
-          </span>
-        </p>
+          <p className="hero-subheadline">
+            <span className="subheadline-statement">
+              Produtos geniais morrem todos os dias.
+            </span>
+            <span className="subheadline-negation">
+              Não por falha técnica.
+            </span>
+           <span className="subheadline-thesis text-highlight">
+              Mas por uma fatal falha de tradução.
+            </span>
+          </p>
             <div className="hero-ctas" style={{ marginBottom: '2rem' }}>
               <button 
                 onClick={() => scrollToSection('framework')}
