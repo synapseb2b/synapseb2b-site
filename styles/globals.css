@@ -277,6 +277,15 @@ a:hover {
     text-align: center;
 }
 
+.hero-content h1 span {
+  display: block; 
+  white-space: nowrap; 
+}
+
+.hero-content h1 {
+  text-align: center;
+}
+
 /* Animações */
 @keyframes fadeInUp {
   from {
