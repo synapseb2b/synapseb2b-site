@@ -270,6 +270,13 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.hero-content h1 span {
+  display: block; 
+}
+.hero-content h1 {
+    text-align: center;
+}
+
 /* Animações */
 @keyframes fadeInUp {
   from {
