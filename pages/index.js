@@ -22,7 +22,10 @@ export default function HomePage() {
       <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
       <div className="hero-content fade-in-up">
-        <h1>Seu produto é genial. Por que a receita não é?</h1>
+        <h1>
+          <span>Seu produto é genial.</span>
+          <span>Por que a receita não é?</span>
+        </h1>
         <p>
           Produtos geniais morrem todos os dias.<br />
           Não por falha técnica.<br />
