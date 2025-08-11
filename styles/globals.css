@@ -237,19 +237,20 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding-top: 80px;
   position: relative;
   overflow: hidden;
+  padding-top: 80px; /* Mantido do seu código original */
 }
 
 .hero-content {
   max-width: 800px;
   z-index: 2;
+  text-align: center; /* Centraliza todo o conteúdo dentro do hero-content */
 }
 
-.hero h1 {
-  font-size: 4rem;
+/* --- Estilos Base (Mobile First) para o Título --- */
+.hero-content h1 {
+  font-size: 2.5rem; /* Um tamanho de fonte impactante para mobile */
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
   -webkit-background-clip: text;
@@ -257,8 +258,13 @@ a:hover {
   background-clip: text;
 }
 
-.hero p {
-  font-size: 1.3rem;
+.hero-content h1 span {
+  display: block; /* Garante que cada span ocupe sua própria linha */
+  /* Propositalmente não usamos 'white-space: nowrap' aqui para permitir a quebra no mobile */
+}
+
+.hero-content p {
+  font-size: 1.2rem; /* Ajuste leve para melhor leitura no mobile */
   margin-bottom: 2rem;
   color: var(--text-color);
 }
@@ -270,20 +276,20 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.hero-content h1 span {
-  display: block; 
-}
-.hero-content h1 {
-    text-align: center;
-}
 
-.hero-content h1 span {
-  display: block; 
-  white-space: nowrap; 
-}
+/* --- Ajustes para Telas Maiores (Tablet e Desktop) --- */
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 4rem; /* Retorna ao tamanho grande para desktop */
+  }
 
-.hero-content h1 {
-  text-align: center;
+  .hero-content h1 span {
+    white-space: nowrap; /* Impede a quebra de linha APENAS em telas maiores */
+  }
+
+  .hero-content p {
+    font-size: 1.3rem; /* Retorna ao tamanho original no desktop */
+  }
 }
 
 /* Animações */
