@@ -231,7 +231,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -239,34 +239,67 @@ a:hover {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: 80px; /* Mantido do seu código original */
+  padding: 120px 20px 80px 20px; /* Padding para espaço no topo/base */
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.1; /* Opacidade sutil para o vídeo de fundo */
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 850px; /* Aumenta um pouco a largura para acomodar o texto */
   z-index: 2;
-  text-align: center; /* Centraliza todo o conteúdo dentro do hero-content */
+  text-align: center;
+  color: var(--text-color);
 }
 
-/* --- Estilos Base (Mobile First) para o Título --- */
+/* --- Estilos da Nova Estrutura (Mobile First) --- */
+
+/* Ato 1: A Equação */
+.hero-equation {
+  font-size: 1.5rem; /* Tamanho base para mobile */
+  font-weight: 300; /* Leve para dar um tom sofisticado */
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.hero-equation .not-equal {
+  font-weight: 700;
+  color: var(--accent-color); /* Cor de destaque da sua marca */
+  margin: 0 0.5rem;
+  font-size: 2rem; /* Símbolo maior para impacto */
+}
+
+/* Ato 2: O Diagnóstico (H1) */
 .hero-content h1 {
-  font-size: 2.5rem; /* Um tamanho de fonte impactante para mobile */
+  font-size: 2.2rem; /* Tamanho impactante para mobile */
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding: 0; /* Limpando padding extra */
 }
 
-.hero-content h1 span {
-  display: block; /* Garante que cada span ocupe sua própria linha */
-  /* Propositalmente não usamos 'white-space: nowrap' aqui para permitir a quebra no mobile */
+/* Ato 3: A Explicação e Solução */
+.hero-explanation {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto; /* Centraliza e adiciona espaço antes dos botões */
 }
 
-.hero-content p {
-  font-size: 1.2rem; /* Ajuste leve para melhor leitura no mobile */
-  margin-bottom: 2rem;
-  color: var(--text-color);
+.hero-explanation .text-highlight {
+  font-weight: 600;
+  color: var(--base-color); /* Dando destaque à promessa final */
 }
 
 .hero-ctas {
@@ -277,18 +310,22 @@ a:hover {
 }
 
 
-/* --- Ajustes para Telas Maiores (Tablet e Desktop) --- */
+/* --- Ajustes para Telas Maiores (Desktop) --- */
 @media (min-width: 768px) {
+  .hero-equation {
+    font-size: 2.5rem; /* Aumenta a fonte da equação */
+  }
+
+  .hero-equation .not-equal {
+    font-size: 3rem; /* Símbolo ainda maior */
+  }
+  
   .hero-content h1 {
-    font-size: 4rem; /* Retorna ao tamanho grande para desktop */
+    font-size: 3.5rem; /* Título principal maior */
   }
 
-  .hero-content h1 span {
-    white-space: nowrap; /* Impede a quebra de linha APENAS em telas maiores */
-  }
-
-  .hero-content p {
-    font-size: 1.3rem; /* Retorna ao tamanho original no desktop */
+  .hero-explanation {
+    font-size: 1.3rem; /* Texto de apoio maior */
   }
 }
 
