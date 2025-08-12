@@ -1,158 +1,347 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
+import { Target, BarChart, Search, TrendingUp, Zap, ArrowRight, CheckCircle, Eye, Users, Award, MessageSquareWarning, Timer, ShieldOff, Unlink, Scaling, Wrench, HeartPulse, Laptop } from 'lucide-react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
-export default function CasosDeUso() {
+export default function CasosDeUsoPage() {
+  const [isVisible, setIsVisible] = useState({});
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(prev => ({
+              ...prev,
+              [entry.target.id]: true
+            }));
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const elements = document.querySelectorAll('[data-animate]');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 2 - 1,
+        y: (e.clientY / window.innerHeight) * 2 - 1
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <>
       <Head>
-        <title>Cenários de Aplicação | Synapse B2B</title>
-        <meta name="description" content="Veja como nosso framework gera valor em cenários de alta complexidade, do SaaS Scale-Up à Deep Tech." />
+        <title>Casos de Uso – GTM Ignition™ aplicado em empresas B2B</title>
+        <meta name="description" content="Veja como o GTM Ignition™ transforma desafios B2B em crescimento previsível, com clareza comercial e métricas de impacto reais." />
+        <meta property="og:title" content="Casos de Uso – GTM Ignition™ aplicado em empresas B2B" />
+        <meta property="og:description" content="Veja como o GTM Ignition™ transforma desafios B2B em crescimento previsível, com clareza comercial e métricas de impacto reais." />
+        <link rel="canonical" href="https://synapseb2b.com/casos-de-uso" />
       </Head>
 
-      {/* Seção Hero */}
-      <section className="hero" style={{ minHeight: '70vh' }}>
+      <div className="particles-container">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 20}s`,
+              animationDuration: `${20 + Math.random() * 20}s`
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="synapse-line synapse-line-top"></div>
+ 
+      <section 
+        ref={heroRef}
+        className="hero modern-hero" 
+        style={{ 
+          position: 'relative', 
+          overflow: 'hidden'
+        }}
+      >
         <div className="container">
           <div className="hero-content fade-in-up">
-            <h1>Cenários de Aplicação</h1>
-            <p>
-              Desafios B2B complexos exigem mais do que táticas. Exigem um sistema.
-              <br />
-              Veja como nosso framework gera valor em cenários de alta complexidade.
+            <h1 className="hero-headline">
+              E se estivermos descrevendo exatamente o seu desafio?
+            </h1>
+            <p className="hero-subheadline">
+              Se ao ler os cenários abaixo você se enxergar, é porque já sabemos como ajudar — e como provar o resultado.
             </p>
           </div>
         </div>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1,
-          opacity: 0.2,
-          background: 'linear-gradient(135deg, #000000 0%, #0A192F 100%)'
-        }}>
+        
+        <div className="hero-video-container">
+          <div className="hero-video-overlay"></div>
           <video 
             autoPlay 
             muted 
             loop 
             playsInline
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover'
-            }}
+            className="hero-video"
           >
-            <source src="/video/video_home.mp4" type="video/mp4" />
+            <source src="/video/video_home_metodologia.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
 
-      {/* Cenário 1: A Genialidade Técnica */}
-      <section className="section section-dark">
-        <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
-            <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>A Genialidade Técnica que Não Vira Receita</h2>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
-                <p><strong>Você</strong> possui uma plataforma de IA com potencial para revolucionar a indústria farmacêutica, mas sua mensagem não conecta com o C-Level. Sua equipe vende features para pesquisadores, enquanto o comprador real enxerga apenas um custo complexo. O resultado é um produto genial, mas que não consegue converter seu potencial em receita.</p>
-              </div>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
-                <p>Atuamos como o neurotransmissor que traduz genialidade técnica em valor de negócio. Decodificamos a solução em uma narrativa de impacto financeiro para o C-Level e construímos os ativos de venda (pitch deck, ROI calculator) que provam o valor de forma irrecusável, criando urgência na decisão de compra.</p>
-              </div>
-              <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA' }}>Resultados Esperados:</h4>
-                <p style={{ margin: 0 }}>Aumento exponencial do valor dos contratos (ACV), redução do ciclo de vendas e um novo posicionamento como parceiro estratégico. A empresa deixa de ser uma "ferramenta de TI" e se torna um ativo indispensável para a indústria.</p>
-              </div>
-            </div>
-            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
-              <Image 
-                src="/image/Caso-Healthtech-SaaS.png" 
-                alt="Healthtech SaaS" 
-                fill
-                style={{ borderRadius: '12px', objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="synapse-line"></div>
 
-      {/* Cenário 2: O Funil Quebrado */}
-      <section className="section section-darker">
+      <section 
+        className="section section-dark modern-section"
+        id="para-quem"
+      >
         <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
-            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
-              <Image 
-                src="/image/Caso-Regtech-Funil-Quebrado.png" 
-                alt="Regtech com Funil Quebrado" 
-                fill
-                style={{ borderRadius: '12px', objectFit: 'cover' }}
-              />
-            </div>
-            <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>O Funil que Gera Leads, Mas Não Vendas</h2>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
-                <p><strong>Seu</strong> funil está quebrado: atrai centenas de leads (analistas) com conteúdo rico, mas a conversão é mínima e o CAC, insustentável. Sua equipe de vendas perde tempo com usuários sem poder de compra, enquanto o negócio queima caixa em um modelo de aquisição que não gera crescimento real.</p>
-              </div>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
-                <p>Reconstruímos o motor de aquisição com foco cirúrgico no comprador real: o Diretor de Riscos. Desenvolvemos uma nova estratégia de conteúdo e uma narrativa de vendas que eleva a conversa de "automação de tarefas" para "gestão de risco estratégico e impacto no resultado financeiro".</p>
-              </div>
-              <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA' }}>Resultados Esperados:</h4>
-                <p style={{ margin: 0 }}>Redução drástica do CAC e a criação de um pipeline de vendas qualificado e previsível. O motor de aquisição é reorientado para gerar valor, não volume, garantindo a viabilidade e a escalabilidade do negócio.</p>
+          <div className="text-center mb-2">
+            <h2 className="section-title">Empresas técnicas que…</h2>
+            <div className="section-content">
+              <div className="challenges-grid">
+                <div className="challenge-item glass-card-contrast">
+                  <MessageSquareWarning className="challenge-icon" />
+                  <p>São especialistas no que fazem, mas têm dificuldade de explicar por que são a melhor escolha.</p>
+                </div>
+                <div className="challenge-item glass-card-contrast">
+                  <Timer className="challenge-icon" />
+                  <p>Vivem ciclos de vendas longos e perdem timing de oportunidade.</p>
+                </div>
+                <div className="challenge-item glass-card-contrast">
+                  <ShieldOff className="challenge-icon" />
+                  <p>Veem concorrentes menos preparados fechando contratos estratégicos.</p>
+                </div>
+                <div className="challenge-item glass-card-contrast">
+                  <Unlink className="challenge-icon" />
+                  <p>Sentem desalinhamento entre marketing, vendas e áreas técnicas.</p>
+                </div>
+                <div className="challenge-item glass-card-contrast">
+                  <Scaling className="challenge-icon" />
+                  <p>Perdem oportunidades porque o valor percebido não supera o preço.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cenário 3: A Autoridade Offline */}
-      <section className="section section-dark">
+      <div className="synapse-line"></div>
+      
+      <section 
+        className="section section-darker modern-section"
+        id="cenarios"
+      >
         <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
-            <div>
-              <h2 style={{ color: '#64FFDA', marginBottom: '2rem' }}>A Autoridade Offline com Invisibilidade Digital</h2>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>Desafio:</h4>
-                <p><strong>Sua empresa</strong>, apesar de ter um portfólio impecável e certificações de elite, sofre por "invisibilidade digital". Seu crescimento é refém da rede de contatos dos sócios, sem um motor de aquisição previsível. Concorrentes menos qualificados, mas com melhor presença online, capturam as oportunidades que deveriam ser suas por direito.</p>
-              </div>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#F8F9FA' }}>Solução Synapse B2B:</h4>
-                <p>Através da nossa metodologia, convertemos autoridade offline em um ativo digital que gera demanda. Potencializamos a expertise das empresas através de plataformas digitais que não apenas exibem, mas provam seu valor, com conteúdo estratégico que atrai e educa o cliente industrial ideal, posicionando a empresa como a referência definitiva em seu nicho.</p>
-              </div>
-              <div style={{ backgroundColor: 'rgba(100, 255, 218, 0.1)', padding: '1.5rem', borderRadius: '8px' }}>
-                <h4 style={{ color: '#64FFDA' }}>Resultados Esperados:</h4>
-                <p style={{ margin: 0 }}>A criação de um pipeline de vendas consistente e a redução da dependência de indicações. O foco é no fator principal: motor de crescimento, solidificando a liderança da empresa no mercado através de resultados, não apenas por reputação.</p>
+          <div className="text-center mb-2">
+            <h2 className="section-title">Desafios que já conhecemos — e resultados que já entregamos</h2>
+            <div className="section-content">
+              <div className="scenarios-grid">
+                
+                <div className="scenario-card glass-card-contrast">
+                  <div className="scenario-header">
+                    <Wrench className="scenario-icon" />
+                    <h3>Engenharia & Infraestrutura</h3>
+                  </div>
+                  <div className="scenario-body">
+                    <div className="scenario-part">
+                      <h4>Antes:</h4>
+                      <p>Décadas de excelência técnica, mas mensagens densas e pouco acessíveis para decisores. O valor real se perdia antes da primeira reunião terminar.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Virada:</h4>
+                      <p>Reescrevemos a narrativa para falar o idioma de CFOs, CTOs e COOs — vinculando cada atributo técnico a métricas de ROI, eficiência e mitigação de risco.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Depois:</h4>
+                      <p>Ciclo de vendas reduzido, maior taxa de conversão em propostas e novas portas abertas em contas estratégicas.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="scenario-card glass-card-contrast">
+                  <div className="scenario-header">
+                    <HeartPulse className="scenario-icon" />
+                    <h3>Saúde & Bem-Estar Corporativo</h3>
+                  </div>
+                  <div className="scenario-body">
+                    <div className="scenario-part">
+                      <h4>Antes:</h4>
+                      <p>Proposta inovadora em saúde integrativa, mas percebida como “conceitual demais” pelas empresas. Os benefícios práticos ficavam ofuscados.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Virada:</h4>
+                      <p>Criamos um posicionamento irrecusável, com benefícios claros para RH, gestores financeiros e executivos de operação.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Depois:</h4>
+                      <p>Novas conversas com tomadores de decisão, aumento da taxa de resposta e início de negociações em clientes-alvo estratégicos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="scenario-card glass-card-contrast">
+                  <div className="scenario-header">
+                    <Laptop className="scenario-icon" />
+                    <h3>Tecnologia & SaaS</h3>
+                  </div>
+                   <div className="scenario-body">
+                    <div className="scenario-part">
+                      <h4>Antes:</h4>
+                      <p>Produto robusto e escalável, mas sem clareza no ICP e com funil desorganizado. Leads desqualificados inflavam o CAC e desperdiçavam esforço de vendas.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Virada:</h4>
+                      <p>Implementamos PQLs, organizamos o funil com RevOps e ajustamos a proposta de valor para maximizar conversão.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Depois:</h4>
+                      <p>Redução de 30% no CAC, aumento no volume de leads qualificados e previsibilidade no pipeline.</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
-            <div style={{ position: 'relative', width: '100%', minHeight: '400px', height: '100%' }}>
-              <Image 
-                src="/image/Caso-Engenharia-de-Referencia.png" 
-                alt="Engenharia de Referência" 
-                fill
-                style={{ borderRadius: '12px', objectFit: 'cover' }}
-              />
+          </div>
+        </div>
+      </section>
+      
+      <div className="synapse-line"></div>
+
+      <section 
+        className="section section-dark modern-section"
+        id="onde-entra-gtm"
+      >
+        <div className="container">
+          <div className="text-center mb-2">
+            <h2 className="section-title">Da leitura à ação</h2>
+            <div className="section-content" style={{maxWidth: '800px', margin: '0 auto'}}>
+              <p className="lead-text">
+                Em todos esses cenários, a base foi a mesma: <strong>Diagnóstico Estratégico</strong>, <strong>Decodificação de Mercado</strong> e <strong>Engenharia de Receita</strong>.
+              </p>
+              <p className="lead-text">
+                O que muda é a forma como adaptamos cada fase à realidade do negócio, usando dados, benchmarks e métricas de impacto para garantir que cada ação tenha efeito mensurável.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="section section-darker">
-        <div className="container text-center">
-          <h2>Seu desafio se parece com um destes?</h2>
-          <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
-            Agende um diagnóstico estratégico e descubra como podemos construir seu próximo nível de crescimento.
-          </p>
-          <Link href="/contato" className="btn btn-primary">
-            Agende um Diagnóstico
-          </Link>
+      <div className="synapse-line"></div>
+
+      <section 
+        className="section section-darker modern-section final-cta"
+        id="chamada-final"
+      >
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-title">Então o próximo caso pode ser o seu</h2>
+            <div className="section-content">
+              <div className="final-ctas">
+                <Link href="/contato" className="btn btn-primary btn-modern btn-large btn-white-text">
+                  <span>Quero entender como o GTM Ignition™ se aplica ao meu negócio</span>
+                  <ArrowRight className="btn-icon" />
+                </Link>
+                <Link href="/metodologia" className="btn btn-secondary-contrast btn-modern">
+                  <Eye className="btn-icon" />
+                  <span>Ver a metodologia completa</span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <style jsx global>{`
+        /* ==========================================================================
+           ESTILOS PARA A PÁGINA DE CASOS DE USO
+           ========================================================================== */
+
+        /* Seção "Para quem é" */
+        .challenges-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 1.5rem;
+          margin-top: 3rem;
+        }
+        .challenge-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 2.5rem 2rem;
+          text-align: center;
+        }
+        .challenge-icon {
+          width: 50px;
+          height: 50px;
+          color: var(--accent-color);
+          margin-bottom: 1.5rem;
+        }
+
+        /* Seção "Cenários" */
+        .scenarios-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+        .scenario-card {
+          padding: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+        .scenario-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 2rem;
+          border-bottom: 1px solid rgba(0, 255, 224, 0.2);
+          padding-bottom: 1.5rem;
+        }
+        .scenario-icon {
+          width: 40px;
+          height: 40px;
+          color: var(--accent-color);
+        }
+        .scenario-header h3 {
+          font-size: 1.4rem;
+          color: var(--base-color);
+        }
+        .scenario-body {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .scenario-part h4 {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          color: var(--accent-color);
+          letter-spacing: 1px;
+          margin-bottom: 0.5rem;
+        }
+        .scenario-part p {
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: var(--base-color-light);
+        }
+      `}</style>
     </>
   );
 }
