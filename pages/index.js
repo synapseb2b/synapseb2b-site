@@ -106,7 +106,7 @@ export default function HomePage() {
                 <span>Descubra como acelerar seu crescimento</span>
                 <ArrowRight className="btn-icon" />
               </button>
-              <Link href="/casos-de-uso" className="btn btn-secondary btn-modern">
+              <Link href="/casos-de-uso" className="btn btn-secondary-contrast btn-modern">
                 <Eye className="btn-icon" />
                 <span>Veja nossos Casos de Uso</span>
               </Link>
@@ -148,19 +148,19 @@ export default function HomePage() {
               <p className="lead-text">O desafio vai além da linguagem técnica:</p>
               
               <div className="problem-list-three">
-                <div className="problem-item-square glass-card-filled">
+                <div className="problem-item-square glass-card-contrast">
                   <div className="problem-icon">
                     <Ban className="icon" />
                   </div>
                   <p>Mensagens que não conectam com decisores.</p>
                 </div>
-                <div className="problem-item-square glass-card-filled">
+                <div className="problem-item-square glass-card-contrast">
                   <div className="problem-icon">
                     <TrendingUp className="icon" />
                   </div>
                   <p>Estratégias comerciais desalinhadas com o processo real de compra.</p>
                 </div>
-                <div className="problem-item-square glass-card-filled">
+                <div className="problem-item-square glass-card-contrast">
                   <div className="problem-icon">
                     <Wrench className="icon" />
                   </div>
@@ -207,8 +207,8 @@ export default function HomePage() {
               {/* Layout com cards à esquerda e imagem à direita */}
               <div className="process-layout">
                 <div className="process-steps-vertical">
-                  <div className="step-item-vertical glass-card-filled">
-                    <div className="step-number">1</div>
+                  {/* AJUSTE 1: Cards mais altos sem números */}
+                  <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Diagnóstico Profundo</h3>
                       <p>Mapeamos negócio, mercado e concorrência para identificar as alavancas reais de crescimento.</p>
@@ -216,8 +216,7 @@ export default function HomePage() {
                     <Search className="step-icon" />
                   </div>
                   
-                  <div className="step-item-vertical glass-card-filled">
-                    <div className="step-number">2</div>
+                  <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Posicionamento Irrecusável</h3>
                       <p>Criamos uma mensagem que não só diferencia, mas obriga o decisor a prestar atenção — falando exatamente com as dores e prioridades dele.</p>
@@ -225,8 +224,7 @@ export default function HomePage() {
                     <Target className="step-icon" />
                   </div>
                   
-                  <div className="step-item-vertical glass-card-filled">
-                    <div className="step-number">3</div>
+                  <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Engenharia de Receita</h3>
                       <p>Implementamos ativos e processos que aceleram a conversão e constroem crescimento previsível.</p>
@@ -252,13 +250,16 @@ export default function HomePage() {
               <div className="formats-section">
                 <h3 className="formats-title">Formatos de atuação:</h3>
                 <div className="formats-grid-square">
-                  <div className="format-item-square glass-card-filled">
+                  <div className="format-item-square glass-card-contrast">
                     <Target className="format-icon-large" />
                     <h4>Estratégia Go-to-Market completa</h4>
                   </div>
-                  <div className="format-item-square glass-card-filled">
+                  <div className="format-item-square glass-card-contrast">
                     <Users className="format-icon-large" />
-                    <h4>Diretoria de Aceleração de Receita B2B — interina ou fracionada</h4>
+                    <h4>
+                      Diretoria de Aceleração de Receita B2B<br />
+                      <span className="subtitle-small">(interina ou fracionada)</span>
+                    </h4>
                   </div>
                 </div>
               </div>
@@ -286,7 +287,7 @@ export default function HomePage() {
           
           <div className="cases-grid">
             {/* Microcase 1 */}
-            <div className="case-item glass-card-filled">
+            <div className="case-item glass-card-contrast">
               <div className="case-header">
                 <div className="case-icon">
                   <Wrench className="icon" />
@@ -316,7 +317,7 @@ export default function HomePage() {
             </div>
 
             {/* Microcase 2 */}
-            <div className="case-item glass-card-filled">
+            <div className="case-item glass-card-contrast">
               <div className="case-header">
                 <div className="case-icon">
                   <Lightbulb className="icon" />
@@ -404,7 +405,7 @@ export default function HomePage() {
                   <span>Fale com a Synapse B2B</span>
                   <ArrowRight className="btn-icon" />
                 </Link>
-                <Link href="/casos-de-uso" className="btn btn-secondary btn-modern">
+                <Link href="/casos-de-uso" className="btn btn-secondary-contrast btn-modern">
                   <Eye className="btn-icon" />
                   <span>Explore nossos Casos de Uso</span>
                 </Link>

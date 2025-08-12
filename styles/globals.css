@@ -17,7 +17,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   background-color: #000000;
-  color: #FFFFFF; /* AJUSTE 1: Textos em branco */
+  color: #FFFFFF;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,20 +28,20 @@ body {
   --primary-color: #000000;    /* Preto Profundo */
   --secondary-color: #012a24; /* verde-petróleo muito escuro */
   --accent-color: #009681;     /* Ciano Sinapse */
-  --base-color: #FFFFFF;       /* AJUSTE 1: Branco para textos */
-  --text-color: #FFFFFF;       /* AJUSTE 1: Textos em branco */
+  --base-color: #FFFFFF;       /* Branco para textos */
+  --text-color: #FFFFFF;       /* Textos em branco */
   --background-color: #000000; /* Fundo preto */
   
-  /* Novas variáveis para efeitos modernos */
-  --glass-bg: rgba(255, 255, 255, 0.08); /* AJUSTE 5: Mais opaco para contraste */
-  --glass-bg-filled: rgba(0, 150, 129, 0.15); /* AJUSTE 5: Preenchimento com cor */
-  --glass-border: rgba(0, 150, 129, 0.3);
+  /* AJUSTE 3: Variáveis para melhor contraste */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-contrast: rgba(0, 150, 129, 0.2); /* Mais contraste */
+  --glass-border: rgba(0, 150, 129, 0.4); /* Bordas mais visíveis */
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   --gradient-primary: linear-gradient(135deg, var(--accent-color) 0%, #00b894 100%);
   --gradient-secondary: linear-gradient(135deg, var(--secondary-color) 0%, #0a3d35 100%);
 }
 
-/* Tipografia - AJUSTE 2: Fonte mais legível */
+/* Tipografia */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -68,11 +68,10 @@ h3 {
   font-weight: 600;
 }
 
-/* AJUSTE 1 e 2: Parágrafos em branco com fonte legível */
 p {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  color: var(--base-color); /* Branco */
+  color: var(--base-color);
   margin-bottom: 1rem;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
@@ -142,7 +141,6 @@ a:hover {
   border: 1px solid var(--accent-color);
 }
 
-/* AJUSTE 4: CTAs com texto branco */
 .btn-white-text {
   color: var(--base-color) !important;
 }
@@ -163,6 +161,31 @@ a:hover {
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
   backdrop-filter: blur(10px);
+}
+
+/* AJUSTE 4: Botão secundário com melhor contraste */
+.btn-secondary-contrast {
+  background: var(--glass-bg-contrast);
+  color: var(--base-color);
+  border: 2px solid var(--accent-color);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 150, 129, 0.2);
+}
+
+.btn-secondary-contrast:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 150, 129, 0.4);
+}
+
+.btn-secondary-contrast .btn-icon {
+  color: var(--base-color);
+}
+
+.btn-secondary-contrast:hover .btn-icon {
+  color: var(--primary-color);
 }
 
 .btn-secondary:hover {
@@ -271,7 +294,7 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* AJUSTE 5: Cards com preenchimento que contrasta */
+/* AJUSTE 3: Cards com melhor contraste */
 .card, .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -279,24 +302,25 @@ a:hover {
   padding: 2rem;
   border: 1px solid var(--glass-border);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center; /* AJUSTE 3: Centralizado */
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.glass-card-filled {
-  background: var(--glass-bg-filled);
+.glass-card-contrast {
+  background: var(--glass-bg-contrast);
   backdrop-filter: blur(20px);
   border-radius: 16px;
   padding: 2rem;
   border: 1px solid var(--glass-border);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center; /* AJUSTE 3: Centralizado */
+  text-align: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 150, 129, 0.1);
 }
 
-.card::before, .glass-card::before, .glass-card-filled::before {
+.card::before, .glass-card::before, .glass-card-contrast::before {
   content: '';
   position: absolute;
   top: 0;
@@ -308,23 +332,23 @@ a:hover {
   transition: opacity 0.3s ease;
 }
 
-.card:hover, .glass-card:hover, .glass-card-filled:hover {
+.card:hover, .glass-card:hover, .glass-card-contrast:hover {
   border-color: var(--accent-color);
   transform: translateY(-8px);
   box-shadow: var(--glass-shadow);
 }
 
-.card:hover::before, .glass-card:hover::before, .glass-card-filled:hover::before {
+.card:hover::before, .glass-card:hover::before, .glass-card-contrast:hover::before {
   opacity: 1;
 }
 
-.card h3, .glass-card h3, .glass-card-filled h3 {
+.card h3, .glass-card h3, .glass-card-contrast h3 {
   color: var(--accent-color);
   margin-bottom: 1rem;
   text-align: center;
 }
 
-.card p, .glass-card p, .glass-card-filled p {
+.card p, .glass-card p, .glass-card-contrast p {
   text-align: center;
   color: var(--base-color);
 }
@@ -372,7 +396,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* AJUSTE 10: Linha de pulso elétrico */
+/* Linha de pulso elétrico */
 .synapse-line {
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
@@ -383,7 +407,7 @@ a:hover {
 
 .synapse-line-top {
   position: fixed;
-  top: 80px; /* Altura da navbar */
+  top: 80px;
   left: 0;
   right: 0;
   z-index: 999;
@@ -525,7 +549,7 @@ a:hover {
   }
 }
 
-/* AJUSTE 6: Lista de problemas com 3 cards lado a lado quadrados */
+/* Lista de problemas com 3 cards lado a lado quadrados */
 .problem-list-three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -565,7 +589,7 @@ a:hover {
   color: var(--primary-color);
 }
 
-/* AJUSTE 7: Layout com cards à esquerda e imagem à direita */
+/* Layout com cards à esquerda e imagem à direita */
 .process-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -581,28 +605,16 @@ a:hover {
   height: 100%;
 }
 
-.step-item-vertical {
+/* AJUSTE 1: Cards mais altos sem números */
+.step-item-vertical-tall {
   position: relative;
-  padding: 2rem;
-  text-align: center; /* AJUSTE 3: Centralizado */
+  padding: 3rem 2rem; /* Mais padding para altura */
+  text-align: center;
   flex: 1;
-}
-
-.step-number {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
+  min-height: 160px; /* Altura mínima maior */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-weight: bold;
-  color: var(--primary-color);
-  font-size: 1.2rem;
 }
 
 .step-icon {
@@ -616,16 +628,16 @@ a:hover {
 }
 
 .step-content h3 {
-  margin-top: 1rem;
   margin-bottom: 1rem;
   color: var(--accent-color);
 }
 
 .step-content p {
   color: var(--base-color);
+  margin: 0;
 }
 
-/* AJUSTE 7: Imagem do framework ao lado */
+/* Imagem do framework ao lado */
 .framework-image-side {
   position: relative;
   width: 100%;
@@ -636,7 +648,7 @@ a:hover {
   box-shadow: var(--glass-shadow);
 }
 
-/* AJUSTE 8: Formatos quadrados */
+/* Formatos quadrados */
 .formats-section {
   margin-top: 3rem;
 }
@@ -681,6 +693,13 @@ a:hover {
   margin: 0;
 }
 
+/* AJUSTE 2: Texto menor para subtítulo */
+.subtitle-small {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
 /* Cases Grid */
 .cases-grid {
   display: grid;
@@ -690,7 +709,7 @@ a:hover {
 }
 
 .case-item {
-  text-align: center; /* AJUSTE 3: Centralizado */
+  text-align: center;
   padding: 2rem;
 }
 
@@ -770,14 +789,15 @@ a:hover {
 
 /* Highlight Box */
 .highlight-box {
-  background: var(--glass-bg-filled);
+  background: var(--glass-bg-contrast);
   backdrop-filter: blur(20px);
   border: 1px solid var(--accent-color);
   border-radius: 12px;
   padding: 2rem;
   margin: 2rem 0;
   position: relative;
-  text-align: center; /* AJUSTE 3: Centralizado */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 150, 129, 0.1);
 }
 
 .highlight-box::before {
@@ -1021,7 +1041,6 @@ a:hover {
     display: flex;
   }
 
-  /* AJUSTE 6: Mobile - cards empilhados */
   .problem-list-three {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -1032,7 +1051,6 @@ a:hover {
     min-height: 200px;
   }
 
-  /* AJUSTE 7: Mobile - layout empilhado */
   .process-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1042,7 +1060,11 @@ a:hover {
     min-height: 300px;
   }
 
-  /* AJUSTE 8: Mobile - cards empilhados */
+  .step-item-vertical-tall {
+    min-height: 140px;
+    padding: 2rem;
+  }
+
   .formats-grid-square {
     grid-template-columns: 1fr;
     gap: 1rem;
