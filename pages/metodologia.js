@@ -133,8 +133,8 @@ export default function MetodologiaPage() {
         <div className="container">
           <div className="text-center mb-2">
             <div className="dual-title">
-              <h2 className="section-title-line">Estratégia sem execução é teoria.</h2>
-              <h2 className="section-title-line">Execução sem estratégia é desperdício.</h2>
+              <h2 className="section-title">Estratégia sem execução é teoria.</h2>
+              <h2 className="section-title">Execução sem estratégia é desperdício.</h2>
             </div>
             <div className="section-content">
               <p className="lead-text">
@@ -151,7 +151,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 2: Framework GTM Ignition™ */}
+{/* Seção 2: Framework GTM Ignition™ - VERSÃO CORRIGIDA */}
       <section 
         className="section section-darker modern-section"
         style={{
@@ -174,63 +174,75 @@ export default function MetodologiaPage() {
                 {/* 1ª Linha: Imagem + Card */}
                 <div className="framework-row">
                   <div className="framework-image-container">
-                    <Image src="/Diagnostico_Estrategico.png" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
+                    {/* CORREÇÃO 1: Caminho da imagem ajustado */}
+                    <Image src="/image/Diagnostico_Estrategico.png" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
+                    {/* CORREÇÃO 2: Layout interno do card reorganizado */}
                     <div className="step-content">
-                      <h3>Diagnóstico Estratégico</h3>
-                      <div className="phase-text-list">
-                        <p>Mapeamento profundo de negócio, mercado e posicionamento</p>
-                        <p>Identificação de alavancas reais de crescimento</p>
-                        <p>Benchmark de performance e margens</p>
+                      <div className="card-main-content">
+                        <h3>Diagnóstico Estratégico</h3>
+                        <div className="phase-text-list">
+                          <p>Mapeamento profundo de negócio, mercado e posicionamento.</p>
+                          <p>Identificação de alavancas reais de crescimento.</p>
+                          <p>Benchmark de performance e margens.</p>
+                        </div>
                       </div>
-                      <div className="phase-deliverable">
-                        <strong>Entregável:</strong> Roadmap de crescimento priorizado
+                      <div className="phase-deliverable-highlight">
+                        <CheckCircle className="deliverable-icon" />
+                        <span><strong>Entregável:</strong> Roadmap de crescimento priorizado.</span>
                       </div>
                     </div>
-                    <Search className="step-icon" />
                   </div>
                 </div>
                 
                 {/* 2ª Linha: Card + Imagem */}
                 <div className="framework-row-reverse">
                   <div className="step-item-vertical-tall glass-card-contrast">
+                    {/* CORREÇÃO 2: Layout interno do card reorganizado */}
                     <div className="step-content">
-                      <h3>Decodificação de Mercado</h3>
-                      <div className="phase-text-list">
-                        <p>Tradução da complexidade técnica em narrativa de valor irresistível</p>
-                        <p>Definição e validação de ICP e RCP</p>
-                        <p>Framework de mensagens para vendas, marketing e parceiros</p>
+                      <div className="card-main-content">
+                        <h3>Decodificação de Mercado</h3>
+                        <div className="phase-text-list">
+                          <p>Tradução da complexidade técnica em narrativa de valor.</p>
+                          <p>Definição e validação de ICP (Ideal Customer Profile) e RCP.</p>
+                          <p>Framework de mensagens para vendas, marketing e parceiros.</p>
+                        </div>
                       </div>
-                      <div className="phase-deliverable">
-                        <strong>Entregável:</strong> Playbook de posicionamento
+                      <div className="phase-deliverable-highlight">
+                        <CheckCircle className="deliverable-icon" />
+                        <span><strong>Entregável:</strong> Playbook de posicionamento.</span>
                       </div>
                     </div>
-                    <Target className="step-icon" />
                   </div>
                   <div className="framework-image-container">
-                    <Image src="/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
+                    {/* CORREÇÃO 1: Caminho da imagem ajustado */}
+                    <Image src="/image/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                 </div>
 
                 {/* 3ª Linha: Imagem + Card */}
                 <div className="framework-row">
                    <div className="framework-image-container">
-                    <Image src="/Engenharia_de_Receita.png" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
+                    {/* CORREÇÃO 1: Caminho da imagem ajustado */}
+                    <Image src="/image/Engenharia_de_Receita.png" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
+                    {/* CORREÇÃO 2: Layout interno do card reorganizado */}
                     <div className="step-content">
-                      <h3>Engenharia de Receita</h3>
-                      <div className="phase-text-list">
-                        <p>Criação e integração de ativos e processos comerciais</p>
-                        <p>Playbooks, scripts, apresentações, automações</p>
-                        <p>Funil e métricas de RevOps</p>
+                       <div className="card-main-content">
+                        <h3>Engenharia de Receita</h3>
+                        <div className="phase-text-list">
+                          <p>Criação e integração de ativos e processos comerciais.</p>
+                          <p>Playbooks, scripts, apresentações e automações.</p>
+                          <p>Estruturação do funil e métricas de RevOps.</p>
+                        </div>
                       </div>
-                      <div className="phase-deliverable">
-                        <strong>Entregável:</strong> Kit operacional do motor de receita
+                      <div className="phase-deliverable-highlight">
+                        <CheckCircle className="deliverable-icon" />
+                        <span><strong>Entregável:</strong> Kit operacional do motor de receita.</span>
                       </div>
                     </div>
-                    <BarChart className="step-icon" />
                   </div>
                 </div>
 
@@ -436,161 +448,205 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* ============================================================================================ */}
-      {/* ======================= INÍCIO DO CSS EMBUTIDO PARA CORREÇÃO =============================== */}
-      {/* ============================================================================================ */}
-      <style jsx global>{`
-        /* PEDIDO 1: LAYOUT DA SEÇÃO "PROCESSO PROPRIETÁRIO" (Framework) */
-        .framework-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 3rem;
-          max-width: 1100px;
-          margin: 2rem auto 0 auto;
-        }
-        .framework-row,
-        .framework-row-reverse {
-          display: grid !important; /* Força o display grid */
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          align-items: stretch;
-        }
-        .framework-row-reverse .step-item-vertical-tall {
-          grid-column: 1;
-        }
-        .framework-row-reverse .framework-image-container {
-          grid-column: 2;
-        }
-        .framework-image-container {
-          position: relative;
-          width: 100%;
-          min-height: 450px;
-          border-radius: 16px;
-          overflow: hidden;
-        }
+<style jsx global>{`
+  /*
+    SYNAPSE B2B - METODOLOGIA PAGE STYLES
+    Este bloco contém todos os estilos necessários para os layouts da página Metodologia.
+    O código foi refatorado para clareza, correção e manutenibilidade.
+  */
 
-        /* PEDIDO 2: LAYOUT E ESTILO DA SEÇÃO "DIFERENCIAL" */
-        .diferencial-grid-221 {
-          display: grid !important; /* Força o display grid */
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          max-width: 900px;
-          margin: 2rem auto 0 auto;
-        }
-        .diferencial-item-card.diferencial-single { 
-          grid-column: 1 / -1;
-          justify-self: center;
-          width: 100%;
-          max-width: calc(50% - 1rem);
-        }
+  /* ==========================================================================
+     1. LAYOUTS DE GRID DAS SEÇÕES PRINCIPAIS
+     ========================================================================== */
 
-        /* PEDIDO 3: LAYOUT E ESTILO DA SEÇÃO "RESULTADOS" */
-        .resultados-grid-222 {
-          display: grid !important; /* Força o display grid */
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          max-width: 900px;
-          margin: 2rem auto 0 auto;
-        }
+  /* Seção "Nosso Processo Proprietário" (Framework) */
+  .framework-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 2rem auto 0 auto;
+  }
+  .framework-row,
+  .framework-row-reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .framework-row-reverse .step-item-vertical-tall {
+    grid-column: 1;
+  }
+  .framework-row-reverse .framework-image-container {
+    grid-column: 2;
+  }
+  .framework-image-container {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
 
-        /* ESTILO PADRONIZADO (seguindo o card de referência da seção "Formatos") */
-        .diferencial-item-card,
-        .resultado-item-card {
-          padding: 2.5rem;
-          text-align: center;
-          min-height: 320px;
-          display: flex !important; /* Força o display flex */
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-        }
-        .diferencial-icon,
-        .resultado-icon {
-          width: 80px;
-          height: 80px;
-          background: var(--gradient-primary);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          margin-bottom: 1.5rem;
-        }
-        .diferencial-icon .icon,
-        .resultado-icon .icon {
-          width: 36px;
-          height: 36px;
-          color: var(--primary-color);
-        }
-        .diferencial-item-card h3,
-        .resultado-item-card h3 {
-          font-size: 1.3rem;
-          line-height: 1.4;
-        }
-        .diferencial-item-card p,
-        .resultado-item-card p {
-          font-size: 0.95rem;
-        }
-        
-        /* Estilos de referência para a seção "Formatos" */
-        .formats-grid-square {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 900px;
-            margin: 2rem auto 0 auto;
-        }
-        .format-item-square {
-            padding: 2.5rem;
-            text-align: center;
-            min-height: 320px;
-            display: flex !important;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .format-icon-large {
-            width: 80px;
-            height: 80px;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-        }
-        .format-item-square h4 {
-            font-size: 1.3rem;
-            line-height: 1.4;
-        }
+  /* Seções "Diferencial", "Resultados" e "Formatos" */
+  .diferencial-grid-221,
+  .resultados-grid-222,
+  .formats-grid-square {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+  }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-          .framework-row, 
-          .framework-row-reverse,
-          .diferencial-grid-221,
-          .resultados-grid-222,
-          .formats-grid-square {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-          .framework-row-reverse .step-item-vertical-tall,
-          .framework-row-reverse .framework-image-container {
-            grid-column: 1;
-          }
-          .framework-image-container { min-height: 300px; }
-          .diferencial-item-card.diferencial-single {
-            max-width: none;
-            justify-self: stretch;
-          }
-          .diferencial-item-card,
-          .resultado-item-card,
-          .format-item-square {
-            min-height: auto;
-            padding: 2rem;
-          }
-        }
-      `}</style>
-      {/* ============================================================================================ */}
-      {/* ======================== FIM DO CSS EMBUTIDO PARA CORREÇÃO ================================= */}
-      {/* ============================================================================================ */}
+  /* Card único na seção "Diferencial" */
+  .diferencial-item-card.diferencial-single { 
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - 1rem);
+  }
 
-    </>
-  );
-}
+  /* ==========================================================================
+     2. ESTILIZAÇÃO DOS CARDS E SEU CONTEÚDO
+     ========================================================================== */
+  
+  /* ESTILOS DE BASE (Diferencial, Resultados, Formatos) */
+  .diferencial-item-card,
+  .resultado-item-card,
+  .format-item-square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2.5rem;
+    text-align: center;
+    min-height: 320px;
+  }
+  .diferencial-icon,
+  .resultado-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+  }
+  .diferencial-icon .icon,
+  .resultado-icon .icon {
+    width: 36px;
+    height: 36px;
+    color: var(--primary-color);
+  }
+  .diferencial-item-card h3,
+  .resultado-item-card h3,
+  .format-item-square h4 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+  .diferencial-item-card p,
+  .resultado-item-card p {
+    font-size: 0.95rem;
+  }
+  .format-item-square {
+      justify-content: center; /* Centraliza verticalmente o conteúdo no card de formato */
+  }
+  .format-icon-large {
+    width: 80px;
+    height: 80px;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ESTILOS ESPECÍFICOS (Layout Interno dos Cards do Framework) */
+  .step-item-vertical-tall .step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+  }
+  .step-item-vertical-tall .card-main-content {
+    flex-grow: 1;
+  }
+  .step-item-vertical-tall h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .step-item-vertical-tall .phase-text-list {
+    margin: 0;
+    padding: 0;
+  }
+  .step-item-vertical-tall .phase-text-list p {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .step-item-vertical-tall .phase-text-list p::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  .phase-deliverable-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(0, 255, 224, 0.07);
+    border: 1px solid rgba(0, 255, 224, 0.2);
+  }
+  .phase-deliverable-highlight .deliverable-icon {
+    flex-shrink: 0;
+    color: var(--accent-color);
+  }
+
+  /* ==========================================================================
+     3. AJUSTES DE RESPONSIVIDADE
+     ========================================================================== */
+
+  @media (max-width: 768px) {
+    /* Converte todos os grids para uma única coluna */
+    .framework-row, 
+    .framework-row-reverse,
+    .diferencial-grid-221,
+    .resultados-grid-222,
+    .formats-grid-square {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    /* Reseta a ordem da linha reversa para empilhamento correto */
+    .framework-row-reverse .step-item-vertical-tall,
+    .framework-row-reverse .framework-image-container {
+      grid-column: 1;
+    }
+    .framework-image-container { 
+      min-height: 300px; 
+    }
+    
+    /* Ajusta o card único para ocupar toda a largura */
+    .diferencial-item-card.diferencial-single {
+      max-width: none;
+      justify-self: stretch;
+    }
+
+    /* Reduz o padding e altura mínima dos cards em telas menores */
+    .diferencial-item-card,
+    .resultado-item-card,
+    .format-item-square {
+      min-height: auto;
+      padding: 2rem;
+    }
+  }
+`}</style>
