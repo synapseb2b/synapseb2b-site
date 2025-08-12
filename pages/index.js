@@ -63,7 +63,7 @@ export default function HomePage() {
 
       {/* Partículas de fundo animadas */}
       <div className="particles-container">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="particle"
@@ -76,6 +76,9 @@ export default function HomePage() {
           />
         ))}
       </div>
+
+      {/* Linha de pulso elétrico entre navbar e hero */}
+      <div className="synapse-line synapse-line-top"></div>
  
       {/* Seção Hero */}
       <section 
@@ -98,7 +101,7 @@ export default function HomePage() {
             <div className="hero-ctas modern-ctas" style={{ marginBottom: '2rem' }}>
               <button 
                 onClick={() => scrollToSection('crescimento')}
-                className="btn btn-primary btn-modern"
+                className="btn btn-primary btn-modern btn-white-text"
               >
                 <span>Descubra como acelerar seu crescimento</span>
                 <ArrowRight className="btn-icon" />
@@ -126,6 +129,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Linha de pulso elétrico entre seções */}
+      <div className="synapse-line"></div>
+
       {/* Bloco 2: O problema que resolvemos */}
       <section 
         className="section section-dark modern-section"
@@ -141,20 +147,20 @@ export default function HomePage() {
               </p>
               <p className="lead-text">O desafio vai além da linguagem técnica:</p>
               
-              <div className="problem-list">
-                <div className="problem-item glass-card">
+              <div className="problem-list-three">
+                <div className="problem-item-square glass-card-filled">
                   <div className="problem-icon">
                     <Ban className="icon" />
                   </div>
                   <p>Mensagens que não conectam com decisores.</p>
                 </div>
-                <div className="problem-item glass-card">
+                <div className="problem-item-square glass-card-filled">
                   <div className="problem-icon">
                     <TrendingUp className="icon" />
                   </div>
                   <p>Estratégias comerciais desalinhadas com o processo real de compra.</p>
                 </div>
-                <div className="problem-item glass-card">
+                <div className="problem-item-square glass-card-filled">
                   <div className="problem-icon">
                     <Wrench className="icon" />
                   </div>
@@ -173,6 +179,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Linha de pulso elétrico entre seções */}
+      <div className="synapse-line"></div>
 
       {/* Bloco 3: Nossa resposta */}
       <section 
@@ -195,44 +204,60 @@ export default function HomePage() {
                 Unimos <strong>clareza estratégica</strong> e <strong>execução de alto impacto</strong> em três etapas:
               </p>
               
-              <div className="process-steps">
-                <div className="step-item glass-card">
-                  <div className="step-number">1</div>
-                  <div className="step-content">
-                    <h3>Diagnóstico Profundo</h3>
-                    <p>mapeamos negócio, mercado e concorrência para identificar as alavancas reais de crescimento.</p>
+              {/* Layout com cards à esquerda e imagem à direita */}
+              <div className="process-layout">
+                <div className="process-steps-vertical">
+                  <div className="step-item-vertical glass-card-filled">
+                    <div className="step-number">1</div>
+                    <div className="step-content">
+                      <h3>Diagnóstico Profundo</h3>
+                      <p>Mapeamos negócio, mercado e concorrência para identificar as alavancas reais de crescimento.</p>
+                    </div>
+                    <Search className="step-icon" />
                   </div>
-                  <Search className="step-icon" />
+                  
+                  <div className="step-item-vertical glass-card-filled">
+                    <div className="step-number">2</div>
+                    <div className="step-content">
+                      <h3>Posicionamento Irrecusável</h3>
+                      <p>Criamos uma mensagem que não só diferencia, mas obriga o decisor a prestar atenção — falando exatamente com as dores e prioridades dele.</p>
+                    </div>
+                    <Target className="step-icon" />
+                  </div>
+                  
+                  <div className="step-item-vertical glass-card-filled">
+                    <div className="step-number">3</div>
+                    <div className="step-content">
+                      <h3>Engenharia de Receita</h3>
+                      <p>Implementamos ativos e processos que aceleram a conversão e constroem crescimento previsível.</p>
+                    </div>
+                    <BarChart className="step-icon" />
+                  </div>
                 </div>
-                
-                <div className="step-item glass-card">
-                  <div className="step-number">2</div>
-                  <div className="step-content">
-                    <h3>Posicionamento Irrecusável</h3>
-                    <p>criamos uma mensagem que não só diferencia, mas obriga o decisor a prestar atenção — falando exatamente com as dores e prioridades dele.</p>
-                  </div>
-                  <Target className="step-icon" />
-                </div>
-                
-                <div className="step-item glass-card">
-                  <div className="step-number">3</div>
-                  <div className="step-content">
-                    <h3>Engenharia de Receita</h3>
-                    <p>implementamos ativos e processos que aceleram a conversão e constroem crescimento previsível.</p>
-                  </div>
-                  <BarChart className="step-icon" />
+
+                {/* Imagem do Framework */}
+                <div className="framework-image-side">
+                  <Image 
+                    src="/image/Framework_GTM_SynapsebB2B.png" 
+                    alt="Framework GTM Synapse B2B" 
+                    fill
+                    style={{
+                      borderRadius: '12px',
+                      objectFit: 'cover'
+                    }}
+                  />
                 </div>
               </div>
 
               <div className="formats-section">
                 <h3 className="formats-title">Formatos de atuação:</h3>
-                <div className="formats-grid">
-                  <div className="format-item glass-card">
-                    <Target className="format-icon" />
+                <div className="formats-grid-square">
+                  <div className="format-item-square glass-card-filled">
+                    <Target className="format-icon-large" />
                     <h4>Estratégia Go-to-Market completa</h4>
                   </div>
-                  <div className="format-item glass-card">
-                    <Users className="format-icon" />
+                  <div className="format-item-square glass-card-filled">
+                    <Users className="format-icon-large" />
                     <h4>Diretoria de Aceleração de Receita B2B — interina ou fracionada</h4>
                   </div>
                 </div>
@@ -241,6 +266,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Linha de pulso elétrico entre seções */}
+      <div className="synapse-line"></div>
 
       {/* Bloco 4: Casos que inspiram */}
       <section 
@@ -258,7 +286,7 @@ export default function HomePage() {
           
           <div className="cases-grid">
             {/* Microcase 1 */}
-            <div className="case-item glass-card">
+            <div className="case-item glass-card-filled">
               <div className="case-header">
                 <div className="case-icon">
                   <Wrench className="icon" />
@@ -268,15 +296,15 @@ export default function HomePage() {
               <div className="case-content">
                 <div className="case-section">
                   <h4>Desafio:</h4>
-                  <p>expertise técnica consolidada, mas dificuldade em comunicar valor para decisores estratégicos.</p>
+                  <p>Expertise técnica consolidada, mas dificuldade em comunicar valor para decisores estratégicos.</p>
                 </div>
                 <div className="case-section">
                   <h4>Ação:</h4>
-                  <p>diagnóstico profundo, reposicionamento e plano de <strong>go-to-market B2B</strong> direcionado.</p>
+                  <p>Diagnóstico profundo, reposicionamento e plano de <strong>go-to-market B2B</strong> direcionado.</p>
                 </div>
                 <div className="case-section">
                   <h4>Status:</h4>
-                  <p>implementação em andamento, com sinais iniciais de maior engajamento e abertura de novas conversas comerciais.</p>
+                  <p>Implementação em andamento, com sinais iniciais de maior engajamento e abertura de novas conversas comerciais.</p>
                 </div>
               </div>
               <div className="case-footer">
@@ -288,7 +316,7 @@ export default function HomePage() {
             </div>
 
             {/* Microcase 2 */}
-            <div className="case-item glass-card">
+            <div className="case-item glass-card-filled">
               <div className="case-header">
                 <div className="case-icon">
                   <Lightbulb className="icon" />
@@ -298,15 +326,15 @@ export default function HomePage() {
               <div className="case-content">
                 <div className="case-section">
                   <h4>Desafio:</h4>
-                  <p>modelo inovador pouco compreendido por empresas.</p>
+                  <p>Modelo inovador pouco compreendido por empresas.</p>
                 </div>
                 <div className="case-section">
                   <h4>Ação:</h4>
-                  <p>criação de proposta de valor clara, arquitetura de ativos estratégicos e plano de entrada no mercado corporativo.</p>
+                  <p>Criação de proposta de valor clara, arquitetura de ativos estratégicos e plano de entrada no mercado corporativo.</p>
                 </div>
                 <div className="case-section">
                   <h4>Status:</h4>
-                  <p>primeiras ativações já geram mais clareza na mensagem e novas oportunidades de abordagem.</p>
+                  <p>Primeiras ativações já geram mais clareza na mensagem e novas oportunidades de abordagem.</p>
                 </div>
               </div>
               <div className="case-footer">
@@ -319,6 +347,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Linha de pulso elétrico entre seções */}
+      <div className="synapse-line"></div>
 
       {/* Bloco 5: Como garantimos impacto */}
       <section 
@@ -350,24 +381,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Framework Section - Mantendo a imagem original */}
-      <section className="section section-dark modern-section" id="framework">
-        <div className="container">
-          <div className="framework-content">
-            <div className="framework-image">
-              <Image 
-                src="/image/Framework_GTM_SynapsebB2B.png" 
-                alt="Framework GTM Synapse B2B" 
-                fill
-                style={{
-                  borderRadius: '12px',
-                  objectFit: 'cover'
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Linha de pulso elétrico entre seções */}
+      <div className="synapse-line"></div>
 
       {/* Bloco 6: Chamada final */}
       <section 
@@ -385,7 +400,7 @@ export default function HomePage() {
               </p>
               
               <div className="final-ctas">
-                <Link href="/contato" className="btn btn-primary btn-modern btn-large">
+                <Link href="/contato" className="btn btn-primary btn-modern btn-large btn-white-text">
                   <span>Fale com a Synapse B2B</span>
                   <ArrowRight className="btn-icon" />
                 </Link>
