@@ -1,16 +1,12 @@
-/* CSS específico para página Metodologia - Complementa o globals.css */
+/* CSS Ultra Qualidade para Metodologia - Complementa globals.css */
+/* Seguindo EXATAMENTE o padrão da home */
 
-/* Framework Video Container - Formato 9:16 */
-.framework-video-container {
-  display: flex;
-  justify-content: center;
-  margin: 3rem 0;
-}
-
-.framework-video-wrapper {
+/* Framework Video Side - Substituindo a imagem por vídeo no layout lado a lado */
+.framework-video-side {
   position: relative;
-  width: 300px;
-  height: 533px; /* Proporção 9:16 */
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--glass-shadow);
@@ -18,64 +14,19 @@
   border: 1px solid var(--glass-border);
 }
 
-.framework-video {
+.framework-video-main {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-/* Framework Phases */
-.framework-phases {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.phase-item {
-  padding: 2.5rem;
-  text-align: left;
-}
-
-.phase-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.phase-number {
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.phase-header h3 {
-  color: var(--accent-color);
-  margin: 0;
-  font-size: 1.4rem;
-}
-
-.phase-content {
-  margin-left: 0;
-}
-
+/* Phase List - Estilização das listas dentro dos cards */
 .phase-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0;
+  text-align: left;
 }
 
 .phase-list li {
@@ -84,6 +35,7 @@
   margin-bottom: 0.8rem;
   color: var(--base-color);
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .phase-list li::before {
@@ -94,163 +46,221 @@
   font-weight: bold;
 }
 
+/* Phase Deliverable - Box de entregáveis */
 .phase-deliverable {
   background: var(--glass-bg);
   border: 1px solid var(--accent-color);
   border-radius: 8px;
   padding: 1rem;
   color: var(--base-color);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 .phase-deliverable strong {
   color: var(--accent-color);
 }
 
-/* Diferencial Layout */
-.diferencial-layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 4rem;
-  align-items: start;
+/* Diferencial Header - Para títulos alinhados à esquerda */
+.diferencial-header {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
 }
 
-.diferencial-content {
-  text-align: left;
-}
-
-.diferencial-content .section-title {
-  text-align: left;
-  margin-bottom: 3rem;
-}
-
-.diferencial-list {
+/* Quiz Cards - Interatividade melhorada */
+.quiz-card {
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 280px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.diferencial-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-}
-
-.diferencial-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  align-items: center;
 }
 
-.diferencial-icon .icon {
-  width: 24px;
-  height: 24px;
-  color: var(--primary-color);
+.quiz-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 40px rgba(0, 150, 129, 0.3);
 }
 
-.diferencial-item p {
-  margin: 0;
-  color: var(--base-color);
-  font-weight: 500;
-}
-
-/* Diferencial Video - Formato 9:16 */
-.diferencial-video-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.diferencial-video-wrapper {
-  position: relative;
-  width: 250px;
-  height: 444px; /* Proporção 9:16 */
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--glass-shadow);
-  background: var(--glass-bg-contrast);
-  border: 1px solid var(--glass-border);
-}
-
-.diferencial-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Quiz Container */
-.quiz-container {
-  max-width: 800px;
-  margin: 0 auto 3rem auto;
-}
-
-.quiz-questions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.quiz-question {
-  padding: 2.5rem;
+.quiz-card h3 {
   text-align: center;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.quiz-card .btn {
+  margin-top: auto;
+  width: auto;
+  padding: 0.8rem 1.5rem;
+}
+
+/* Format Highlighted - Destaque para formato selecionado */
+.format-highlighted {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 30px rgba(0, 150, 129, 0.4) !important;
+  transform: scale(1.05);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(0, 150, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 150, 129, 0.6);
+  }
+}
+
+/* Melhorias nos Step Items para maior altura e melhor espaçamento */
+.step-item-vertical-tall {
+  position: relative;
+  padding: 3rem 2rem;
+  text-align: center;
+  flex: 1;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.step-item-vertical-tall .step-content {
+  text-align: left;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-item-vertical-tall .step-content h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.step-item-vertical-tall .step-content p {
+  color: var(--base-color);
+  margin: 0;
+  line-height: 1.6;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.step-item-vertical-tall .step-content ul {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+/* Step Icon - Posicionamento melhorado */
+.step-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 32px;
+  height: 32px;
+  color: var(--accent-color);
+  opacity: 0.8;
   transition: all 0.3s ease;
 }
 
-.quiz-question h3 {
-  color: var(--base-color);
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-  line-height: 1.4;
+.step-item-vertical-tall:hover .step-icon {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-.quiz-question:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-}
-
-/* Format Cards Grid */
-.formats-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+/* Process Steps Vertical - Melhor espaçamento */
+.process-steps-vertical {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  max-width: 900px;
+  height: 100%;
+}
+
+/* Formats Section - Espaçamento consistente */
+.formats-section {
+  margin-top: 4rem;
+}
+
+.formats-grid-square {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.format-card {
-  padding: 2.5rem;
-  text-align: center;
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.format-card-highlighted {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 30px rgba(0, 150, 129, 0.3);
-  transform: scale(1.02);
-}
-
-.format-card-highlighted::before {
-  opacity: 1;
-}
-
-.format-card-header {
+.format-item-square {
+  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  min-height: 280px;
 }
 
-.format-card-icon {
+.format-icon-large {
+  width: 60px;
+  height: 60px;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+
+.format-item-square h4 {
+  color: var(--base-color);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+}
+
+.format-item-square p {
+  color: var(--base-color);
+  opacity: 0.9;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Subtitle Small - Para textos menores */
+.subtitle-small {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.8;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Problem List Three - Grid de 3 colunas para quiz */
+.problem-list-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problem-item-square {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  min-height: 280px;
+}
+
+.problem-icon {
   width: 60px;
   height: 60px;
   background: var(--gradient-primary);
@@ -258,223 +268,206 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
-.format-card-icon .icon {
+.problem-icon .icon {
   width: 28px;
   height: 28px;
   color: var(--primary-color);
 }
 
-.format-card-header h3 {
-  color: var(--accent-color);
-  margin: 0;
-  font-size: 1.3rem;
-  line-height: 1.3;
+/* Hover Effects Aprimorados */
+.glass-card-contrast:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 150, 129, 0.2);
 }
 
-.format-card-content p {
-  color: var(--base-color);
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
+.glass-card-contrast:hover::before {
+  opacity: 1;
 }
 
-/* Resultados Layout */
-.resultados-layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 4rem;
-  align-items: start;
-}
-
-.resultados-content {
-  text-align: left;
-}
-
-.resultados-content .section-title {
-  text-align: left;
-  margin-bottom: 3rem;
-}
-
-.resultados-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.resultado-item {
+/* Final CTAs - Espaçamento consistente */
+.final-ctas {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-}
-
-.resultado-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
+  gap: 2rem;
   justify-content: center;
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  margin-top: 3rem;
 }
 
-.resultado-icon .icon {
-  width: 24px;
-  height: 24px;
-  color: var(--primary-color);
+/* Section Content - Melhor espaçamento */
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.resultado-item p {
-  margin: 0;
+/* Lead Text - Tipografia aprimorada */
+.lead-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
   color: var(--base-color);
-  font-weight: 500;
+  text-align: center;
 }
 
-/* Logo Video - Formato 9:16 */
-.logo-video-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+/* Section Title - Consistência */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
 }
 
-.logo-video-wrapper {
-  position: relative;
-  width: 250px;
-  height: 444px; /* Proporção 9:16 */
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--glass-shadow);
-  background: var(--glass-bg-contrast);
-  border: 1px solid var(--glass-border);
-}
-
-.logo-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Animações específicas */
-@keyframes pulse-highlight {
-  0% {
-    box-shadow: 0 0 20px rgba(0, 150, 129, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 150, 129, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(0, 150, 129, 0.3);
-  }
-}
-
-.format-card-highlighted {
-  animation: pulse-highlight 2s ease-in-out infinite;
-}
-
-/* Responsividade específica da metodologia */
+/* Responsividade Ultra Qualidade */
 @media (max-width: 768px) {
-  .framework-video-wrapper {
-    width: 250px;
-    height: 444px;
-  }
-
-  .framework-phases {
+  .process-layout {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
-  .phase-item {
-    padding: 2rem;
+  .framework-video-side {
+    min-height: 300px;
+    order: -1;
   }
 
-  .diferencial-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .diferencial-content .section-title {
+  .diferencial-header .section-title {
     text-align: center;
   }
 
-  .diferencial-video-wrapper {
-    width: 200px;
-    height: 356px;
+  .step-item-vertical-tall {
+    min-height: 160px;
+    padding: 2.5rem 2rem;
   }
 
-  .quiz-questions {
+  .problem-list-three {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .quiz-question {
-    padding: 2rem;
+  .problem-item-square {
+    aspect-ratio: auto;
+    min-height: 240px;
   }
 
-  .formats-cards-grid {
+  .formats-grid-square {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .resultados-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .format-item-square {
+    aspect-ratio: auto;
+    min-height: 240px;
   }
 
-  .resultados-content .section-title {
-    text-align: center;
+  .final-ctas {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .resultados-list {
-    grid-template-columns: 1fr;
+  .quiz-card {
+    min-height: 240px;
   }
 
-  .logo-video-wrapper {
-    width: 200px;
-    height: 356px;
+  .quiz-card h3 {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .framework-video-wrapper {
-    width: 200px;
-    height: 356px;
+  .step-item-vertical-tall {
+    padding: 2rem 1.5rem;
+    min-height: 140px;
   }
 
-  .diferencial-video-wrapper {
-    width: 180px;
-    height: 320px;
+  .step-icon {
+    top: 1rem;
+    right: 1rem;
+    width: 28px;
+    height: 28px;
   }
 
-  .logo-video-wrapper {
-    width: 180px;
-    height: 320px;
+  .problem-item-square,
+  .format-item-square {
+    padding: 1.5rem;
+    min-height: 200px;
   }
 
-  .phase-header {
-    flex-direction: column;
-    text-align: center;
+  .problem-icon,
+  .format-icon-large {
+    width: 50px;
+    height: 50px;
   }
 
-  .phase-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+  .problem-icon .icon {
+    width: 24px;
+    height: 24px;
   }
 
-  .diferencial-item,
-  .resultado-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+  .format-icon-large {
+    width: 50px;
+    height: 50px;
   }
 
-  .quiz-question h3 {
-    font-size: 1.1rem;
+  .quiz-card {
+    min-height: 200px;
+    padding: 1.5rem;
   }
+
+  .quiz-card .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .phase-deliverable {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .phase-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* Animações Suaves */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-item-vertical-tall {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.step-item-vertical-tall:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.step-item-vertical-tall:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.step-item-vertical-tall:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.step-item-vertical-tall:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.step-item-vertical-tall:nth-child(6) {
+  animation-delay: 0.5s;
 }
 
