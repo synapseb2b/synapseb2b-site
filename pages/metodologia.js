@@ -440,10 +440,12 @@ export default function MetodologiaPage() {
         .section-title-line {
           font-size: 2.5rem;
           margin-bottom: 1rem;
-          color: var(--accent-color);
-          font-weight: 600;
           text-align: center;
           line-height: 1.3;
+          background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         /* ==========================================================================
