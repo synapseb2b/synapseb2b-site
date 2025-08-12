@@ -1,4 +1,4 @@
-import { Target, BarChart, Search, TrendingUp, Zap, ArrowRight, CheckCircle, Eye, Users, Award, MessageSquareQuestion, Timer, ShieldOff, Unlink, Scaling, Wrench, HeartPulse, Laptop } from 'lucide-react';
+import { Target, BarChart, Search, TrendingUp, Zap, ArrowRight, CheckCircle, Eye, Users, Award, HelpCircle, Timer, ShieldOff, Unlink, Scaling, Wrench, HeartPulse, Laptop } from 'lucide-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -115,8 +115,8 @@ export default function CasosDeUsoPage() {
             <div className="section-content">
               <div className="challenges-grid">
                 <div className="challenge-item glass-card-contrast">
-                  {/* CORREÇÃO: Ícone inválido substituído */}
-                  <MessageSquareQuestion className="challenge-icon" />
+                  {/* CORREÇÃO FINAL: Ícone inválido substituído por um nome válido da biblioteca. */}
+                  <HelpCircle className="challenge-icon" />
                   <p>São especialistas no que fazem, mas têm dificuldade de explicar por que são a melhor escolha.</p>
                 </div>
                 <div className="challenge-item glass-card-contrast">
