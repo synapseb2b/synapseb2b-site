@@ -173,7 +173,7 @@ export default function CasosDeUsoPage() {
                 <div className="scenario-card glass-card-contrast">
                   <div className="scenario-header">
                     <HeartPulse className="scenario-icon" />
-                    <h3>Healthtech</h3>
+                    <h3>HealthTech</h3>
                   </div>
                   <div className="scenario-body">
                     <div className="scenario-part">
