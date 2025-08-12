@@ -1,6 +1,149 @@
-/* CSS Ajustes Finais para Metodologia - Complementa globals.css */
+/* CSS Correções Específicas para Metodologia - Complementa globals.css */
 
-/* AJUSTE 1: Títulos em linhas separadas */
+/* CORREÇÃO 1: Vídeo Framework com altura exata dos 3 cards */
+.framework-video-side-tall {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Altura calculada: 3 cards (200px cada) + 2 gaps (2rem cada) = 200px + 200px + 200px + 32px + 32px = 664px */
+  min-height: 664px;
+  max-height: 664px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  background: var(--glass-bg-contrast);
+  border: 1px solid var(--glass-border);
+}
+
+.framework-video-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Ajuste dos cards para altura consistente */
+.step-item-vertical-tall {
+  position: relative;
+  padding: 3rem 2rem;
+  text-align: center;
+  flex: 1;
+  min-height: 200px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.process-steps-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 664px; /* Altura total fixa */
+}
+
+/* CORREÇÃO 2: Grid Diferenciais 2-2-1 CORRETO */
+.diferencial-grid-221 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Primeiros 4 cards ocupam 2 linhas de 2 colunas cada */
+.diferencial-item-card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.diferencial-item-card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.diferencial-item-card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.diferencial-item-card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* 5º card centralizado na 3ª linha */
+.diferencial-item-card:nth-child(5) {
+  grid-column: 1 / -1; /* Ocupa as 2 colunas */
+  grid-row: 3;
+  max-width: 400px;
+  justify-self: center; /* Centraliza horizontalmente */
+}
+
+.diferencial-item-card {
+  padding: 2.5rem;
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* CORREÇÃO 3: Grid Resultados 2-2-2 CORRETO */
+.resultados-grid-222 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Posicionamento explícito dos 6 cards */
+.resultado-item-card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.resultado-item-card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.resultado-item-card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.resultado-item-card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.resultado-item-card:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.resultado-item-card:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.resultado-item-card {
+  padding: 2.5rem;
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Títulos em linhas separadas */
 .dual-title {
   margin-bottom: 3rem;
 }
@@ -20,19 +163,7 @@
   margin-bottom: 0;
 }
 
-/* AJUSTE 2: Vídeo com altura ajustada e texto sem bullets */
-.framework-video-side-tall {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 600px; /* Altura maior para alinhar com os 3 cards */
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--glass-shadow);
-  background: var(--glass-bg-contrast);
-  border: 1px solid var(--glass-border);
-}
-
+/* Texto sem bullets */
 .phase-text-list {
   margin: 1rem 0;
 }
@@ -49,7 +180,7 @@
   margin-bottom: 0;
 }
 
-/* Phase Deliverable - Ajustado */
+/* Phase Deliverable */
 .phase-deliverable {
   background: var(--glass-bg);
   border: 1px solid var(--accent-color);
@@ -65,84 +196,8 @@
   color: var(--accent-color);
 }
 
-/* AJUSTE 3: Grid 2-2-1 para diferenciais */
-.diferencial-grid-221 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.diferencial-item-card {
-  padding: 2.5rem;
-  text-align: center;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.diferencial-single {
-  grid-column: 1 / -1;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.diferencial-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-bottom: 1.5rem;
-}
-
-.diferencial-icon .icon {
-  width: 28px;
-  height: 28px;
-  color: var(--primary-color);
-}
-
-.diferencial-item-card h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  line-height: 1.3;
-  text-align: center;
-}
-
-.diferencial-item-card p {
-  color: var(--base-color);
-  margin: 0;
-  line-height: 1.6;
-  text-align: center;
-  flex-grow: 1;
-}
-
-/* AJUSTE 4: Grid 2-2-2 para resultados */
-.resultados-grid-222 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.resultado-item-card {
-  padding: 2.5rem;
-  text-align: center;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
+/* Ícones */
+.diferencial-icon,
 .resultado-icon {
   width: 60px;
   height: 60px;
@@ -155,12 +210,15 @@
   margin-bottom: 1.5rem;
 }
 
+.diferencial-icon .icon,
 .resultado-icon .icon {
   width: 28px;
   height: 28px;
   color: var(--primary-color);
 }
 
+/* Títulos dos cards */
+.diferencial-item-card h3,
 .resultado-item-card h3 {
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -169,6 +227,8 @@
   text-align: center;
 }
 
+/* Textos dos cards */
+.diferencial-item-card p,
 .resultado-item-card p {
   color: var(--base-color);
   margin: 0;
@@ -177,35 +237,7 @@
   flex-grow: 1;
 }
 
-/* Melhorias nos Step Items */
-.step-item-vertical-tall {
-  position: relative;
-  padding: 3rem 2rem;
-  text-align: center;
-  flex: 1;
-  min-height: 200px; /* Altura ajustada */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.step-item-vertical-tall .step-content {
-  text-align: center;
-  width: 100%;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.step-item-vertical-tall .step-content h3 {
-  color: var(--accent-color);
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
-  text-align: center;
-}
-
-/* Step Icon - Posicionamento */
+/* Step Icon */
 .step-icon {
   position: absolute;
   top: 1.5rem;
@@ -222,69 +254,21 @@
   transform: scale(1.1);
 }
 
-/* Process Steps Vertical */
-.process-steps-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  height: 100%;
-}
-
-/* Formats Section */
-.formats-section {
-  margin-top: 2rem;
-}
-
-.formats-grid-square {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.format-item-square {
-  aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2.5rem;
+/* Step Content */
+.step-item-vertical-tall .step-content {
   text-align: center;
-  min-height: 280px;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.format-icon-large {
-  width: 60px;
-  height: 60px;
+.step-item-vertical-tall .step-content h3 {
   color: var(--accent-color);
-  flex-shrink: 0;
   margin-bottom: 1rem;
-}
-
-.format-item-square h4 {
-  color: var(--base-color);
-  font-size: 1.1rem;
-  line-height: 1.4;
-  margin: 0;
+  font-size: 1.3rem;
   text-align: center;
-}
-
-.format-item-square p {
-  color: var(--base-color);
-  opacity: 0.9;
-  text-align: center;
-  line-height: 1.5;
-}
-
-/* Subtitle Small */
-.subtitle-small {
-  font-size: 0.85rem;
-  font-weight: 400;
-  opacity: 0.8;
-  display: block;
-  margin-top: 0.5rem;
 }
 
 /* Hover Effects */
@@ -296,41 +280,6 @@
 
 .glass-card-contrast:hover::before {
   opacity: 1;
-}
-
-/* Final CTAs */
-.final-ctas {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
-/* Section Content */
-.section-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Lead Text */
-.lead-text {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: var(--base-color);
-  text-align: center;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
 }
 
 /* Responsividade */
@@ -346,47 +295,59 @@
 
   .framework-video-side-tall {
     min-height: 300px;
+    max-height: none;
     order: -1;
+  }
+
+  .process-steps-vertical {
+    height: auto;
   }
 
   .step-item-vertical-tall {
     min-height: 160px;
+    max-height: none;
     padding: 2.5rem 2rem;
   }
 
+  /* Grid diferenciais em mobile */
   .diferencial-grid-221 {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 1.5rem;
   }
 
-  .diferencial-single {
+  .diferencial-item-card:nth-child(1),
+  .diferencial-item-card:nth-child(2),
+  .diferencial-item-card:nth-child(3),
+  .diferencial-item-card:nth-child(4),
+  .diferencial-item-card:nth-child(5) {
     grid-column: 1;
+    grid-row: auto;
+    max-width: none;
+    justify-self: stretch;
   }
 
+  /* Grid resultados em mobile */
   .resultados-grid-222 {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 1.5rem;
   }
 
-  .formats-grid-square {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .format-item-square {
-    aspect-ratio: auto;
-    min-height: 240px;
+  .resultado-item-card:nth-child(1),
+  .resultado-item-card:nth-child(2),
+  .resultado-item-card:nth-child(3),
+  .resultado-item-card:nth-child(4),
+  .resultado-item-card:nth-child(5),
+  .resultado-item-card:nth-child(6) {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .diferencial-item-card,
   .resultado-item-card {
     min-height: 240px;
     padding: 2rem;
-  }
-
-  .final-ctas {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -408,15 +369,13 @@
   }
 
   .diferencial-item-card,
-  .resultado-item-card,
-  .format-item-square {
+  .resultado-item-card {
     padding: 1.5rem;
     min-height: 200px;
   }
 
   .diferencial-icon,
-  .resultado-icon,
-  .format-icon-large {
+  .resultado-icon {
     width: 50px;
     height: 50px;
   }
@@ -425,11 +384,6 @@
   .resultado-icon .icon {
     width: 24px;
     height: 24px;
-  }
-
-  .format-icon-large {
-    width: 50px;
-    height: 50px;
   }
 
   .phase-deliverable {
@@ -446,48 +400,5 @@
   .resultado-item-card h3 {
     font-size: 1.1rem;
   }
-}
-
-/* Animações */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.step-item-vertical-tall,
-.diferencial-item-card,
-.resultado-item-card {
-  animation: slideInUp 0.6s ease-out;
-}
-
-.diferencial-item-card:nth-child(2),
-.resultado-item-card:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.diferencial-item-card:nth-child(3),
-.resultado-item-card:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.diferencial-item-card:nth-child(4),
-.resultado-item-card:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.diferencial-item-card:nth-child(5),
-.resultado-item-card:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.diferencial-item-card:nth-child(6),
-.resultado-item-card:nth-child(6) {
-  animation-delay: 0.5s;
 }
 
