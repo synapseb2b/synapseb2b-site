@@ -128,10 +128,6 @@ export default function CasosDeUsoPage() {
                   <p>Veem concorrentes menos preparados fechando contratos estratégicos.</p>
                 </div>
                 <div className="challenge-item glass-card-contrast">
-                  <Unlink className="challenge-icon" />
-                  <p>Sentem desalinhamento entre marketing, vendas e áreas técnicas.</p>
-                </div>
-                <div className="challenge-item glass-card-contrast">
                   <Scaling className="challenge-icon" />
                   <p>Perdem oportunidades porque o valor percebido não supera o preço.</p>
                 </div>
