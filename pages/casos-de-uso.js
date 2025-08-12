@@ -1,6 +1,5 @@
-import { Target, BarChart, Search, TrendingUp, Zap, ArrowRight, CheckCircle, Eye, Users, Award, HelpCircle, Timer, ShieldOff, Unlink, Scaling, Wrench, HeartPulse, Laptop, Layers, Briefcase } from 'lucide-react';
+import { ArrowRight, Eye, Gem, Trophy, LineChart, Hourglass, Megaphone, KeyRound, RefreshCw, ArrowRightCircle } from 'lucide-react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
@@ -17,10 +16,8 @@ export default function CasosDeUsoPage() {
             entry.target.classList.add('animate-in');
           }
         });
-      },
-      { threshold: 0.1, rootMargin: '50px' }
+      }, { threshold: 0.1, rootMargin: '50px' }
     );
-
     const elements = document.querySelectorAll('[data-animate]');
     elements.forEach(el => observer.observe(el));
     return () => observer.disconnect();
@@ -44,136 +41,80 @@ export default function CasosDeUsoPage() {
 
       <div className="synapse-line synapse-line-top"></div>
  
-      <section ref={heroRef} className="hero modern-hero">
+      <section ref={heroRef} className="hero modern-hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <div className="hero-content fade-in-up">
             <h1 className="hero-headline">E se estivermos descrevendo exatamente o seu desafio?</h1>
             <p className="hero-subheadline">Se ao ler os cenários abaixo você se enxergar, é porque já sabemos como ajudar — e como provar o resultado.</p>
           </div>
         </div>
-        
         <div className="hero-video-container">
           <div className="hero-video-overlay"></div>
           <video autoPlay muted loop playsInline className="hero-video">
-            <source src="/video/video_home_metodologia.mp4" type="video/mp4" />
+            <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
 
       <div className="synapse-line"></div>
 
-      <section className="section section-dark modern-section" id="cenarios">
+      <section className="section section-dark modern-section" id="cenarios-b2b">
         <div className="container">
           <div className="text-center mb-2">
-            <h2 className="section-title">Empresas técnicas que vivem esses cenários…</h2>
-            <div className="section-content">
-              <p className="lead-text">Você domina o que faz. Seu produto ou serviço é tecnicamente sólido, mas o mercado ainda não enxerga todo o potencial.</p>
-              <p className="lead-text" style={{marginBottom: '4rem'}}>Veja se alguma dessas situações soa familiar:</p>
+            <h2 className="section-title">Empresas B2B que vivem esses cenários…</h2>
+            <div className="section-content" style={{ maxWidth: '1000px' }}>
+              <p className="lead-text">Você domina o que faz. Seu produto ou serviço é tecnicamente sólido, mas o mercado ainda não enxerga todo o potencial. Veja se alguma dessas situações soa familiar — e se projete no próximo passo: resolvê-las.</p>
               
-              <div className="symptoms-grid">
-                <div className="symptom-card glass-card-contrast">
-                  <div className="symptom-header"><HelpCircle className="symptom-icon" /><h4>São especialistas, mas têm dificuldade em explicar por que são a melhor escolha.</h4></div>
-                  <ul>
-                    <li>A apresentação para investidores ou clientes vira um excesso de detalhes técnicos.</li>
-                    <li>O diferencial fica diluído no meio de especificações.</li>
-                    <li>O cliente entende o que você faz, mas não por que deveria escolher você.</li>
-                  </ul>
+              <div className="challenges-grid-new">
+                {/* Card 1 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><Gem className="card-icon" /></div>
+                  <p className="challenge-text">Falam mais sobre o produto do que sobre o valor que entregam.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Transformamos jargão técnico em mensagens que conquistam atenção e fecham negócios.</p>
                 </div>
-                <div className="symptom-card glass-card-contrast">
-                  <div className="symptom-header"><Timer className="symptom-icon" /><h4>Vivem ciclos de vendas longos e perdem o timing.</h4></div>
-                  <ul>
-                    <li>Conversas promissoras esfriam porque o valor não ficou claro logo no início.</li>
-                    <li>O decisor adia a decisão porque não vê urgência.</li>
-                    <li>A concorrência chega com uma narrativa mais simples e leva o contrato.</li>
-                  </ul>
+                {/* Card 2 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><Trophy className="card-icon" /></div>
+                  <p className="challenge-text">Perdem negócios para concorrentes com soluções inferiores.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Posicionamos sua solução de forma irrecusável, eliminando comparações puramente de preço.</p>
                 </div>
-                <div className="symptom-card glass-card-contrast">
-                  <div className="symptom-header"><ShieldOff className="symptom-icon" /><h4>Veem concorrentes menos preparados fechando contratos.</h4></div>
-                  <ul>
-                    <li>Você sabe que o concorrente não entrega o mesmo nível de solução.</li>
-                    <li>Mas ele conseguiu falar a língua do cliente.</li>
-                    <li>E isso foi suficiente para ganhar espaço — e receita — que poderia ser sua.</li>
-                  </ul>
+                {/* Card 3 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><LineChart className="card-icon" /></div>
+                  <p className="challenge-text">Investem em marketing e vendas sem retorno previsível.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Criamos um motor de receita previsível, com métricas que provam o ROI.</p>
                 </div>
-                <div className="symptom-card glass-card-contrast">
-                  <div className="symptom-header"><Scaling className="symptom-icon" /><h4>Perdem oportunidades porque o valor percebido não supera o preço.</h4></div>
-                  <ul>
-                    <li>O cliente compara apenas pelo custo, porque não entendeu o impacto que você gera.</li>
-                    <li>Suas reuniões viram discussões de desconto, e não de ROI.</li>
-                    <li>Negócios de alto valor ficam de fora do funil por falta de clareza comercial.</li>
-                  </ul>
+                {/* Card 4 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><Hourglass className="card-icon" /></div>
+                  <p className="challenge-text">Enfrentam ciclos de venda longos e desgastantes.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Reduzimos o tempo de decisão, encurtando o caminho entre interesse e contrato assinado.</p>
+                </div>
+                {/* Card 5 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><Megaphone className="card-icon" /></div>
+                  <p className="challenge-text">Ficam presas no “boca a boca” para crescer.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Abrimos canais consistentes de aquisição e expansão, para crescimento escalável.</p>
+                </div>
+                {/* Card 6 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><KeyRound className="card-icon" /></div>
+                  <p className="challenge-text">Perdem oportunidades porque não falam a língua do decisor.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Ajustamos a narrativa para que seu valor seja percebido e priorizado no comitê de compras.</p>
+                </div>
+                {/* Card 7 */}
+                <div className="challenge-card-new glass-card-contrast">
+                  <div className="card-icon-wrapper"><RefreshCw className="card-icon" /></div>
+                  <p className="challenge-text">Sentem que estão correndo, mas sem sair do lugar.</p>
+                  <p className="solution-text"><ArrowRightCircle className="solution-arrow" />Organizamos esforços, alinhamos equipes e eliminamos desperdício no funil comercial.</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <div className="synapse-line"></div>
-      
-      <section className="section section-darker modern-section" id="aplicacao">
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2 className="section-title">Como aplicamos estratégia e execução em diferentes mercados.</h2>
-            <div className="section-content">
-              <div className="application-grid">
-                
-                <div className="application-card glass-card-contrast">
-                  <div className="application-header"><Wrench className="application-icon" /><h3>Engenharia & Facilities</h3><span className="case-type-tag">Caso Real</span></div>
-                  <div className="application-body">
-                    <p><strong>Desafio:</strong> expertise técnica consolidada, mas dificuldade em comunicar valor para decisores estratégicos.</p>
-                    <p><strong>Ação:</strong> diagnóstico profundo, reposicionamento e plano de go-to-market direcionado.</p>
-                    <p><strong>Status:</strong> implementação em andamento, já com sinais iniciais de maior engajamento e novas conversas comerciais.</p>
-                  </div>
-                </div>
-
-                <div className="application-card glass-card-contrast">
-                  <div className="application-header"><HeartPulse className="application-icon" /><h3>Health & Wellness B2B</h3><span className="case-type-tag">Caso Real</span></div>
-                  <div className="application-body">
-                    <p><strong>Desafio:</strong> modelo inovador pouco compreendido por empresas.</p>
-                    <p><strong>Ação:</strong> criação de proposta de valor clara, arquitetura de ativos estratégicos e plano de entrada no mercado corporativo.</p>
-                    <p><strong>Status:</strong> primeiras ativações gerando mais clareza na mensagem e novas oportunidades de abordagem.</p>
-                  </div>
-                </div>
-
-                <div className="application-card glass-card-contrast">
-                  <div className="application-header"><Layers className="application-icon" /><h3>Tech & SaaS</h3><span className="case-type-tag">Modelo Inspirador</span></div>
-                  <div className="application-body">
-                    <p><strong>Desafio típico:</strong> solução tecnológica avançada, mas sem mensagem que traduza o impacto para decisores não técnicos.</p>
-                    <p><strong>Abordagem:</strong> mapeamento de ICP real, narrativa de valor conectada ao ROI e criação de kit de vendas escalável.</p>
-                    <p><strong>Resultado esperado:</strong> aumento de conversão nas primeiras reuniões e redução de churn por alinhamento de expectativas.</p>
-                  </div>
-                </div>
-
-                <div className="application-card glass-card-contrast">
-                  <div className="application-header"><Briefcase className="application-icon" /><h3>Serviços Profissionais</h3><span className="case-type-tag">Modelo Inspirador</span></div>
-                  <div className="application-body">
-                    <p><strong>Desafio típico:</strong> alto nível técnico e credibilidade, mas dificuldade em transformar reputação em contratos recorrentes.</p>
-                    <p><strong>Abordagem:</strong> reposicionamento como autoridade de mercado, integração marketing-vendas e processos de prospecção ativa.</p>
-                    <p><strong>Resultado esperado:</strong> funil previsível com pipeline constante de oportunidades qualificadas.</p>
-                  </div>
-                </div>
-
-              </div>
             </div>
           </div>
         </div>
       </section>
       
-      <div className="synapse-line"></div>
-
-      <section className="section section-dark modern-section" id="caminho">
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2 className="section-title">Do diagnóstico à receita: o caminho para acelerar o seu crescimento.</h2>
-            <div className="section-content" style={{maxWidth: '800px', margin: '0 auto'}}>
-              <p className="lead-text">Em todos os cenários, a base é a mesma: <strong>Diagnóstico Estratégico</strong>, <strong>Decodificação de Mercado</strong> e <strong>Engenharia de Receita</strong>.</p>
-              <p className="lead-text">O que muda é a forma como adaptamos cada fase à realidade do negócio, usando dados, benchmarks e métricas de impacto para garantir que cada ação tenha efeito mensurável.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div className="synapse-line"></div>
 
       <section className="section section-darker modern-section final-cta" id="chamada-final">
@@ -181,7 +122,7 @@ export default function CasosDeUsoPage() {
           <div className="text-center">
             <h2 className="section-title">Então o próximo caso pode ser o seu.</h2>
             <div className="section-content">
-              <p className="lead-text">Quer entender como o GTM Ignition™ se aplica no seu negócio?</p>
+              <p className="lead-text" style={{marginBottom: '2rem'}}>Quer entender como o GTM Ignition™ se aplica no seu negócio?</p>
               <div className="final-ctas">
                 <Link href="/contato" className="btn btn-primary">
                   <span>Agendar consulta estratégica</span>
@@ -198,101 +139,59 @@ export default function CasosDeUsoPage() {
       </section>
 
       <style jsx global>{`
-        /* ==========================================================================
-           ESTILOS PARA A NOVA PÁGINA DE CASOS DE USO
-           ========================================================================== */
-
-        /* Seção "Empresas técnicas que..." */
-        .symptoms-grid {
+        .challenges-grid-new {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           gap: 2rem;
+          margin-top: 4rem;
         }
-        .symptom-card {
-          padding: 2.5rem;
-          text-align: left;
-        }
-        .symptom-header {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          margin-bottom: 1.5rem;
-        }
-        .symptom-icon {
-          width: 32px;
-          height: 32px;
-          color: var(--accent-color);
-          flex-shrink: 0;
-        }
-        .symptom-header h4 {
-          font-size: 1.2rem;
-          color: var(--base-color);
-          margin-bottom: 0;
-        }
-        .symptom-card ul {
-          list-style: none;
-          padding-left: 0;
-        }
-        .symptom-card ul li {
-          position: relative;
-          padding-left: 1.75rem;
-          margin-bottom: 0.75rem;
-          color: var(--base-color-light);
-        }
-        .symptom-card ul li::before {
-          content: '→';
-          position: absolute;
-          left: 0;
-          color: var(--accent-color);
-        }
-
-        /* Seção "Casos reais e modelos" */
-        .application-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-        .application-card {
-          padding: 2.5rem;
+        .challenge-card-new {
           display: flex;
           flex-direction: column;
+          text-align: center;
+          padding: 2.5rem;
+          min-height: 350px;
         }
-        .application-header {
+        .card-icon-wrapper {
+          width: 60px;
+          height: 60px;
+          margin: 0 auto 1.5rem auto;
+          border-radius: 50%;
+          background: rgba(0, 150, 129, 0.1);
           display: flex;
           align-items: center;
-          gap: 1rem;
-          margin-bottom: 1.5rem;
+          justify-content: center;
         }
-        .application-icon {
-          width: 32px;
-          height: 32px;
+        .card-icon {
+          width: 30px;
+          height: 30px;
           color: var(--accent-color);
         }
-        .application-header h3 {
-          font-size: 1.3rem;
-          color: var(--base-color);
-          margin: 0;
-          flex-grow: 1;
+        .challenge-text {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          flex-grow: 1; /* Empurra a solução para baixo */
+          margin-bottom: 2rem;
         }
-        .case-type-tag {
-          font-size: 0.75rem;
-          font-weight: 600;
-          padding: 0.25rem 0.75rem;
-          border-radius: 99px;
-          background-color: var(--accent-color);
-          color: var(--primary-color);
-          white-space: nowrap;
-        }
-        .application-body p {
+        .solution-text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
           font-size: 0.95rem;
-          line-height: 1.7;
-          color: var(--base-color-light);
-        }
-        .application-body p strong {
+          font-weight: 500;
           color: var(--base-color);
+          background-color: rgba(0, 150, 129, 0.2);
+          padding: 1rem;
+          border-radius: 8px;
+          line-height: 1.5;
         }
-        
+        .solution-arrow {
+          flex-shrink: 0;
+          color: var(--accent-color);
+          width: 1.2rem;
+          height: 1.2rem;
+        }
       `}</style>
     </>
   );
