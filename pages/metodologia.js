@@ -151,7 +151,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 2: Framework GTM Ignition™ - AJUSTE 2: Vídeo com altura dos cards e sem bullets */}
+      {/* Seção 2: Framework GTM Ignition™ - ALTERAÇÃO 1: Imagens e cards em 3 linhas */}
       <section 
         className="section section-darker modern-section"
         style={{
@@ -169,9 +169,14 @@ export default function MetodologiaPage() {
             <h2 className="section-title">Nosso processo proprietário em três fases</h2>
             <div className="section-content">
               
-              {/* Layout com cards à esquerda e vídeo à direita */}
-              <div className="process-layout">
-                <div className="process-steps-vertical">
+              {/* Layout com imagens e cards */}
+              <div className="framework-grid">
+                
+                {/* 1ª Linha: Imagem + Card */}
+                <div className="framework-row">
+                  <div className="framework-image-container">
+                    <Image src="/Diagnostico_Estrategico.jpg" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
+                  </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Diagnóstico Estratégico</h3>
@@ -186,7 +191,10 @@ export default function MetodologiaPage() {
                     </div>
                     <Search className="step-icon" />
                   </div>
-                  
+                </div>
+                
+                {/* 2ª Linha: Card + Imagem */}
+                <div className="framework-row-reverse">
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Decodificação de Mercado</h3>
@@ -201,7 +209,16 @@ export default function MetodologiaPage() {
                     </div>
                     <Target className="step-icon" />
                   </div>
-                  
+                  <div className="framework-image-container">
+                    <Image src="/Decodificacao_de_Mercado.jpg" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
+                  </div>
+                </div>
+
+                {/* 3ª Linha: Imagem + Card */}
+                <div className="framework-row">
+                   <div className="framework-image-container">
+                    <Image src="/Engenharia_de_Receita.jpg" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
+                  </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Engenharia de Receita</h3>
@@ -218,24 +235,6 @@ export default function MetodologiaPage() {
                   </div>
                 </div>
 
-                {/* Vídeo do Framework com altura ajustada */}
-                <div className="framework-video-side-tall">
-                  <video 
-                    autoPlay 
-                    muted 
-                    loop 
-                    playsInline
-                    className="framework-video-main"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      borderRadius: '12px'
-                    }}
-                  >
-                    <source src="/video/Framework_GTM_SynapsebB2B.mp4" type="video/mp4" />
-                  </video>
-                </div>
               </div>
             </div>
           </div>
@@ -245,7 +244,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 3: O que nos diferencia - AJUSTE 3: Título centralizado e cards 2-2-1 */}
+      {/* Seção 3: O que nos diferencia - ALTERAÇÃO 2: Ajuste de Estilo dos Cards */}
       <section 
         className="section section-dark modern-section"
         id="diferencial"
@@ -305,7 +304,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 4: Formatos de atuação - Removendo cards de cima */}
+      {/* Seção 4: Formatos de atuação - Card Referência */}
       <section 
         className="section section-darker modern-section"
         id="formatos"
@@ -315,7 +314,6 @@ export default function MetodologiaPage() {
             <h2 className="section-title">Duas formas de colocar o GTM Ignition™ para trabalhar</h2>
             <div className="section-content">
               
-              {/* Apenas os cards dos formatos */}
               <div className="formats-section" id="formatos-cards">
                 <div className="formats-grid-square">
                   <div className="format-item-square glass-card-contrast">
@@ -345,7 +343,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 5: Resultados - AJUSTE 4: Cards 2-2-2 sem vídeo */}
+      {/* Seção 5: Resultados - ALTERAÇÃO 3: Ajuste de Estilo dos Cards */}
       <section 
         className="section section-dark modern-section"
         id="resultados"
@@ -443,4 +441,3 @@ export default function MetodologiaPage() {
     </>
   );
 }
-

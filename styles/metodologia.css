@@ -1,72 +1,88 @@
-/* SOLUÇÃO DIRETA - CSS para corrigir os 3 problemas específicos */
+/* PARTE 1: Estilos para o novo layout da seção Framework (Processo Proprietário) */
 
-/* PROBLEMA 1: Vídeo Framework muito pequeno */
-/* Forçar altura do vídeo para coincidir com os 3 cards */
-.framework-video-side,
-.framework-video-side-tall {
+/* Container geral para as 3 linhas */
+.framework-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Espaçamento entre as linhas */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Estilo para cada linha (combinação de imagem e card) */
+.framework-row,
+.framework-row-reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch; /* Garante que a imagem e o card tenham a mesma altura */
+}
+
+/* Container da imagem */
+.framework-image-container {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 700px !important; /* Força altura maior */
+  min-height: 450px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--glass-shadow);
-  background: var(--glass-bg-contrast);
   border: 1px solid var(--glass-border);
 }
 
-/* Garantir que o container dos cards tenha altura fixa */
-.process-steps-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  height: 700px; /* Altura fixa para alinhar com vídeo */
+.framework-image {
+  border-radius: 16px;
 }
 
-/* Cards com altura distribuída igualmente */
+/* Reordena os itens na segunda linha (Card + Imagem) */
+.framework-row-reverse .step-item-vertical-tall {
+  order: 1;
+}
+.framework-row-reverse .framework-image-container {
+  order: 2;
+}
+
+/* Card individual da seção Framework */
 .step-item-vertical-tall {
   position: relative;
   padding: 2.5rem 2rem;
   text-align: center;
-  flex: 1; /* Distribui altura igualmente */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* PROBLEMA 2: Diferenciais não estão em 2-2-1 */
-/* Forçar grid 2-2-1 para diferenciais */
+
+/* PARTE 2 e 3: Ajustes de layout e estilo para seções Diferencial e Resultados */
+
+/* Grid 2-2-1 para diferenciais (Layout já estava correto, mantido) */
 .diferencial-grid-221 {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important; /* 2 colunas */
+  grid-template-columns: 1fr 1fr !important;
   gap: 2rem !important;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Forçar posicionamento específico dos cards diferenciais */
 .diferencial-item-card:nth-child(1) { grid-area: 1 / 1; }
 .diferencial-item-card:nth-child(2) { grid-area: 1 / 2; }
 .diferencial-item-card:nth-child(3) { grid-area: 2 / 1; }
 .diferencial-item-card:nth-child(4) { grid-area: 2 / 2; }
 .diferencial-item-card:nth-child(5) { 
-  grid-area: 3 / 1 / 3 / 3; /* Ocupa toda a 3ª linha */
-  max-width: 400px;
+  grid-area: 3 / 1 / 3 / 3;
+  max-width: 430px; /* Metade do max-width do grid, menos o gap */
   justify-self: center;
 }
 
-/* PROBLEMA 3: Resultados não estão em 2-2-2 */
-/* Forçar grid 2-2-2 para resultados */
+/* Grid 2-2-2 para resultados (Layout já estava correto, mantido) */
 .resultados-grid-222 {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important; /* 2 colunas */
+  grid-template-columns: 1fr 1fr !important;
   gap: 2rem !important;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Forçar posicionamento específico dos cards resultados */
 .resultado-item-card:nth-child(1) { grid-area: 1 / 1; }
 .resultado-item-card:nth-child(2) { grid-area: 1 / 2; }
 .resultado-item-card:nth-child(3) { grid-area: 2 / 1; }
@@ -74,12 +90,15 @@
 .resultado-item-card:nth-child(5) { grid-area: 3 / 1; }
 .resultado-item-card:nth-child(6) { grid-area: 3 / 2; }
 
-/* Estilos base para os cards */
+
+/* ESTILOS UNIFICADOS (Diferencial e Resultados) para seguir o card de referência */
+
+/* Estilos base dos cards */
 .diferencial-item-card,
 .resultado-item-card {
   padding: 2.5rem;
   text-align: center;
-  min-height: 280px;
+  min-height: 320px; /* Altura ajustada para consistência */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,8 +108,8 @@
 /* Ícones dos cards */
 .diferencial-icon,
 .resultado-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px; /* Tamanho ajustado */
+  height: 80px; /* Tamanho ajustado */
   background: var(--gradient-primary);
   border-radius: 50%;
   display: flex;
@@ -102,8 +121,8 @@
 
 .diferencial-icon .icon,
 .resultado-icon .icon {
-  width: 28px;
-  height: 28px;
+  width: 36px; /* Tamanho ajustado */
+  height: 36px; /* Tamanho ajustado */
   color: var(--primary-color);
 }
 
@@ -112,9 +131,10 @@
 .resultado-item-card h3 {
   color: var(--accent-color);
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  line-height: 1.3;
+  font-size: 1.3rem; /* Tamanho ajustado */
+  line-height: 1.4;
   text-align: center;
+  flex-grow: 0;
 }
 
 /* Textos dos cards */
@@ -124,14 +144,45 @@
   margin: 0;
   line-height: 1.6;
   text-align: center;
+  font-size: 0.95rem; /* Tamanho ajustado */
   flex-grow: 1;
 }
 
-/* Títulos em linhas separadas */
+/* Estilos do card de referência para formatos */
+.formats-grid-square {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.format-item-square {
+    padding: 2.5rem;
+    text-align: center;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.format-icon-large {
+    width: 80px;
+    height: 80px;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+.format-item-square h4 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+
+/* DEMAIS ESTILOS (Mantidos como no original) */
+
 .dual-title {
   margin-bottom: 3rem;
 }
-
 .section-title-line {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -142,16 +193,12 @@
   text-align: center;
   line-height: 1.3;
 }
-
 .section-title-line:last-child {
   margin-bottom: 0;
 }
-
-/* Texto sem bullets nos cards do framework */
 .phase-text-list {
   margin: 1rem 0;
 }
-
 .phase-text-list p {
   margin-bottom: 0.8rem;
   color: var(--base-color);
@@ -159,12 +206,9 @@
   font-size: 0.95rem;
   text-align: center;
 }
-
 .phase-text-list p:last-child {
   margin-bottom: 0;
 }
-
-/* Phase Deliverable */
 .phase-deliverable {
   background: var(--glass-bg);
   border: 1px solid var(--accent-color);
@@ -175,12 +219,9 @@
   margin-top: 1.5rem;
   text-align: center;
 }
-
 .phase-deliverable strong {
   color: var(--accent-color);
 }
-
-/* Step Icon */
 .step-icon {
   position: absolute;
   top: 1.5rem;
@@ -190,8 +231,6 @@
   color: var(--accent-color);
   opacity: 0.8;
 }
-
-/* Step Content */
 .step-item-vertical-tall .step-content {
   text-align: center;
   width: 100%;
@@ -200,15 +239,12 @@
   flex-direction: column;
   justify-content: center;
 }
-
 .step-item-vertical-tall .step-content h3 {
   color: var(--accent-color);
   margin-bottom: 1rem;
   font-size: 1.3rem;
   text-align: center;
 }
-
-/* Hover Effects */
 .glass-card-contrast:hover {
   border-color: var(--accent-color);
   transform: translateY(-8px);
@@ -222,32 +258,24 @@
   }
 
   /* Framework em mobile */
-  .process-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .framework-row, .framework-row-reverse {
+    grid-template-columns: 1fr !important;
   }
-
-  .framework-video-side,
-  .framework-video-side-tall {
-    min-height: 300px !important;
-    order: -1;
+  .framework-row-reverse .step-item-vertical-tall {
+    order: 2;
   }
-
-  .process-steps-vertical {
-    height: auto;
+  .framework-row-reverse .framework-image-container {
+    order: 1;
   }
-
-  .step-item-vertical-tall {
-    min-height: 160px;
-    padding: 2rem;
+  .framework-image-container {
+    min-height: 300px;
   }
 
   /* Diferenciais em mobile - coluna única */
-  .diferencial-grid-221 {
+  .diferencial-grid-221, .formats-grid-square {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }
-
   .diferencial-item-card:nth-child(1),
   .diferencial-item-card:nth-child(2),
   .diferencial-item-card:nth-child(3),
@@ -263,7 +291,6 @@
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }
-
   .resultado-item-card:nth-child(1),
   .resultado-item-card:nth-child(2),
   .resultado-item-card:nth-child(3),
@@ -274,8 +301,9 @@
   }
 
   .diferencial-item-card,
-  .resultado-item-card {
-    min-height: 240px;
+  .resultado-item-card,
+  .format-item-square {
+    min-height: auto;
     padding: 2rem;
   }
 }
@@ -284,40 +312,34 @@
   .section-title-line {
     font-size: 1.8rem;
   }
-
   .step-item-vertical-tall {
     padding: 1.5rem;
-    min-height: 140px;
   }
-
   .step-icon {
     top: 1rem;
     right: 1rem;
     width: 28px;
     height: 28px;
   }
-
   .diferencial-item-card,
-  .resultado-item-card {
+  .resultado-item-card,
+  .format-item-square {
     padding: 1.5rem;
-    min-height: 200px;
   }
-
   .diferencial-icon,
-  .resultado-icon {
-    width: 50px;
-    height: 50px;
+  .resultado-icon,
+  .format-icon-large {
+    width: 60px;
+    height: 60px;
   }
-
   .diferencial-icon .icon,
   .resultado-icon .icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
-
   .diferencial-item-card h3,
-  .resultado-item-card h3 {
-    font-size: 1.1rem;
+  .resultado-item-card h3,
+  .format-item-square h4 {
+    font-size: 1.2rem;
   }
 }
-
