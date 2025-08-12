@@ -82,7 +82,7 @@ export default function ContatoPage() {
             playsInline
             className="hero-video"
           >
-            <source src="/video/video_home_metodologia.mp4" type="video/mp4" />
+            <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
@@ -210,14 +210,22 @@ export default function ContatoPage() {
           border-radius: 16px;
         }
 
-        /* Seção "Agenda" */
+/* Seção "Agenda" */
         .calendar-container {
           max-width: 1000px;
           margin: 0 auto;
           border-radius: 16px;
           overflow: hidden;
-          box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          
+          /* TRATAMENTO ADICIONADO ABAIXO */
+          background-color: #FFFFFF; /* Fundo branco sólido para garantir contraste máximo */
+          padding: 1.5rem; /* Espaçamento interno que cria uma moldura */
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+        }
+
+        .calendar-container iframe {
+           border-radius: 8px; /* Arredonda as bordas do iframe para um encaixe suave */
         }
         
         /* Ajustes de Responsividade */
