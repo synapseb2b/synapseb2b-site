@@ -423,208 +423,208 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      <style jsx global>{`
-        /*
-          SYNAPSE B2B - METODOLOGIA PAGE STYLES
-          Este bloco contém todos os estilos necessários para os layouts da página Metodologia.
-          O código foi refatorado para clareza, correção e manutenibilidade.
-        */
+<style jsx global>{`
+  /*
+    SYNAPSE B2B - METODOLOGIA PAGE STYLES
+    Bloco de estilos final com os últimos ajustes.
+  */
 
-        /* ==========================================================================
-           1. LAYOUTS DE GRID DAS SEÇÕES PRINCIPAIS
-           ========================================================================== */
+  /* ==========================================================================
+     1. ESTILOS GERAIS E DE TÍTULOS
+     ========================================================================== */
 
-        /* Seção "Nosso Processo Proprietário" (Framework) */
-        .framework-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 3rem;
-          max-width: 1100px;
-          margin: 2rem auto 0 auto;
-        }
-        .framework-row,
-        .framework-row-reverse {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          align-items: stretch;
-        }
-        .framework-row-reverse .step-item-vertical-tall {
-          grid-column: 1;
-        }
-        .framework-row-reverse .framework-image-container {
-          grid-column: 2;
-        }
-        .framework-image-container {
-          position: relative;
-          width: 100%;
-          min-height: 450px;
-          border-radius: 16px;
-          overflow: hidden;
-        }
+  /* AJUSTE 1: As frases do topo agora têm o mesmo estilo dos outros títulos H2 */
+  .section-title-line {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color); /* Usa a cor de destaque padrão */
+    font-weight: 600; /* Garante o mesmo peso da fonte */
+    text-align: center;
+    line-height: 1.3;
+    /* Efeito de gradiente removido para igualar aos outros H2 */
+  }
 
-        /* Seções "Diferencial", "Resultados" e "Formatos" */
-        .diferencial-grid-221,
-        .resultados-grid-222,
-        .formats-grid-square {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          max-width: 900px;
-          margin: 2rem auto 0 auto;
-        }
+  /* ==========================================================================
+     2. LAYOUTS DE GRID DAS SEÇÕES
+     ========================================================================== */
+  
+  /* Seção "Nosso Processo Proprietário" (Framework) */
+  .framework-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 2rem auto 0 auto;
+  }
+  .framework-row,
+  .framework-row-reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .framework-row-reverse .step-item-vertical-tall {
+    grid-column: 1;
+  }
+  .framework-row-reverse .framework-image-container {
+    grid-column: 2;
+  }
+  .framework-image-container {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
 
-        /* Card único na seção "Diferencial" */
-        .diferencial-item-card.diferencial-single { 
-          grid-column: 1 / -1;
-          justify-self: center;
-          width: 100%;
-          max-width: calc(50% - 1rem);
-        }
+  /* Seções "Diferencial", "Resultados" e "Formatos" */
+  .diferencial-grid-221,
+  .resultados-grid-222,
+  .formats-grid-square {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+  }
+  .diferencial-item-card.diferencial-single { 
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - 1rem);
+  }
 
-        /* ==========================================================================
-           2. ESTILIZAÇÃO DOS CARDS E SEU CONTEÚDO
-           ========================================================================== */
-        
-        /* ESTILOS DE BASE (Diferencial, Resultados, Formatos) */
-        .diferencial-item-card,
-        .resultado-item-card,
-        .format-item-square {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          padding: 2.5rem;
-          text-align: center;
-          min-height: 320px;
-        }
-        .diferencial-icon,
-        .resultado-icon {
-          width: 80px;
-          height: 80px;
-          background: var(--gradient-primary);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          margin-bottom: 1.5rem;
-        }
-        .diferencial-icon .icon,
-        .resultado-icon .icon {
-          width: 36px;
-          height: 36px;
-          color: var(--primary-color);
-        }
-        .diferencial-item-card h3,
-        .resultado-item-card h3,
-        .format-item-square h4 {
-          font-size: 1.3rem;
-          line-height: 1.4;
-        }
-        .diferencial-item-card p,
-        .resultado-item-card p {
-          font-size: 0.95rem;
-        }
-        .format-item-square {
-            justify-content: center;
-        }
-        .format-icon-large {
-          width: 80px;
-          height: 80px;
-          color: var(--accent-color);
-          margin-bottom: 1.5rem;
-        }
+  /* ==========================================================================
+     3. ESTILIZAÇÃO DOS CARDS E SEU CONTEÚDO
+     ========================================================================== */
+  
+  /* ESTILOS DE BASE (Diferencial, Resultados, Formatos) */
+  .diferencial-item-card,
+  .resultado-item-card,
+  .format-item-square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2.5rem;
+    text-align: center;
+    min-height: 320px;
+  }
+  .diferencial-icon,
+  .resultado-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+  }
+  .diferencial-icon .icon,
+  .resultado-icon .icon {
+    width: 36px;
+    height: 36px;
+    color: var(--primary-color);
+  }
+  .diferencial-item-card h3,
+  .resultado-item-card h3,
+  .format-item-square h4 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+  .diferencial-item-card p,
+  .resultado-item-card p {
+    font-size: 0.95rem;
+  }
+  .format-item-square {
+      justify-content: center;
+  }
+  .format-icon-large {
+    width: 80px;
+    height: 80px;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+  }
 
-        /* ESTILOS ESPECÍFICOS (Layout Interno dos Cards do Framework) */
-        .step-item-vertical-tall .step-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 100%;
-          width: 100%;
-          text-align: left;
-          padding: 1rem;
-        }
-        .step-item-vertical-tall .card-main-content {
-          flex-grow: 1;
-        }
-        .step-item-vertical-tall h3 {
-          font-size: 1.5rem;
-          margin-bottom: 1.5rem;
-        }
-        .step-item-vertical-tall .phase-text-list {
-          margin: 0;
-          padding: 0;
-        }
-        .step-item-vertical-tall .phase-text-list p {
-          position: relative;
-          padding-left: 1.5rem;
-          margin-bottom: 1rem;
-          line-height: 1.6;
-        }
-        .step-item-vertical-tall .phase-text-list p::before {
-          content: '✓';
-          position: absolute;
-          left: 0;
-          top: 4px;
-          color: var(--accent-color);
-          font-weight: bold;
-        }
-        .phase-deliverable-highlight {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 1rem;
-          margin-top: 1.5rem;
-          border-radius: 8px;
-          background-color: rgba(0, 255, 224, 0.07);
-          border: 1px solid rgba(0, 255, 224, 0.2);
-        }
-        .phase-deliverable-highlight .deliverable-icon {
-          flex-shrink: 0;
-          color: var(--accent-color);
-        }
+  /* ESTILOS ESPECÍFICOS (Layout Interno dos Cards do Framework) */
+  .step-item-vertical-tall .step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: center; /* AJUSTE 2: Texto centralizado */
+    padding: 1rem;
+  }
+  .step-item-vertical-tall .card-main-content {
+    flex-grow: 1;
+  }
+  .step-item-vertical-tall h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .step-item-vertical-tall .phase-text-list {
+    margin: 0;
+    padding: 0;
+  }
+  .step-item-vertical-tall .phase-text-list p {
+    position: relative;
+    padding-left: 0; /* AJUSTE 2: Padding removido */
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  /* AJUSTE 2: Bloco '::before' que criava os bullet points foi removido. */
 
-        /* ==========================================================================
-           3. AJUSTES DE RESPONSIVIDADE
-           ========================================================================== */
+  .phase-deliverable-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo do entregável */
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(0, 255, 224, 0.07);
+    border: 1px solid rgba(0, 255, 224, 0.2);
+  }
+  .phase-deliverable-highlight .deliverable-icon {
+    flex-shrink: 0;
+    color: var(--accent-color);
+  }
 
-        @media (max-width: 768px) {
-          /* Converte todos os grids para uma única coluna */
-          .framework-row, 
-          .framework-row-reverse,
-          .diferencial-grid-221,
-          .resultados-grid-222,
-          .formats-grid-square {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-          
-          /* Reseta a ordem da linha reversa para empilhamento correto */
-          .framework-row-reverse .step-item-vertical-tall,
-          .framework-row-reverse .framework-image-container {
-            grid-column: 1;
-          }
-          .framework-image-container { 
-            min-height: 300px; 
-          }
-          
-          /* Ajusta o card único para ocupar toda a largura */
-          .diferencial-item-card.diferencial-single {
-            max-width: none;
-            justify-self: stretch;
-          }
+  /* ==========================================================================
+     4. AJUSTES DE RESPONSIVIDADE
+     ========================================================================== */
 
-          /* Reduz o padding e altura mínima dos cards em telas menores */
-          .diferencial-item-card,
-          .resultado-item-card,
-          .format-item-square {
-            min-height: auto;
-            padding: 2rem;
-          }
-        }
-      `}</style>
-    </>
-  );
-}
+  @media (max-width: 768px) {
+    .section-title-line {
+      font-size: 2rem;
+    }
+    .framework-row, 
+    .framework-row-reverse,
+    .diferencial-grid-221,
+    .resultados-grid-222,
+    .formats-grid-square {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .framework-row-reverse .step-item-vertical-tall,
+    .framework-row-reverse .framework-image-container {
+      grid-column: 1;
+    }
+    .framework-image-container { 
+      min-height: 300px; 
+    }
+    .diferencial-item-card.diferencial-single {
+      max-width: none;
+      justify-self: stretch;
+    }
+    .diferencial-item-card,
+    .resultado-item-card,
+    .format-item-square {
+      min-height: auto;
+      padding: 2rem;
+    }
+  }
+`}</style>
