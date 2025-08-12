@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear(); // Pega o ano atual dinamicamente
+
   return (
     <footer className="footer">
       <div className="container">
@@ -30,7 +32,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Synapse B2B. Todos os direitos reservados. Desenvolvido por Synapse B2B</p>
+          {/* Ano agora é dinâmico */}
+          <p>© {currentYear} Synapse B2B. Todos os direitos reservados. Desenvolvido por Synapse B2B</p>
         </div>
       </div>
     </footer>
