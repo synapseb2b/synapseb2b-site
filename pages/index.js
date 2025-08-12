@@ -19,6 +19,7 @@ export default function HomePage() {
               ...prev,
               [entry.target.id]: true
             }));
+            entry.target.classList.add('animate-in');
           }
         });
       },
@@ -62,7 +63,7 @@ export default function HomePage() {
 
       {/* Partículas de fundo animadas */}
       <div className="particles-container">
-        {[...Array(50)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
             className="particle"
@@ -82,12 +83,11 @@ export default function HomePage() {
         className="hero modern-hero" 
         style={{ 
           position: 'relative', 
-          overflow: 'hidden',
-          transform: `translate3d(${mousePosition.x * 10}px, ${mousePosition.y * 10}px, 0)`
+          overflow: 'hidden'
         }}
       >
         <div className="container">
-          <div className="hero-content fade-in-up" data-animate id="hero-content">
+          <div className="hero-content fade-in-up">
             <h1 className="hero-headline">
               No B2B, não basta ter a melhor solução. É preciso torná-la impossível de ignorar.
             </h1>
@@ -129,7 +129,6 @@ export default function HomePage() {
       {/* Bloco 2: O problema que resolvemos */}
       <section 
         className="section section-dark modern-section"
-        data-animate 
         id="problema"
       >
         <div className="container">
@@ -185,7 +184,6 @@ export default function HomePage() {
           backgroundRepeat: 'no-repeat',
           position: 'relative'
         }}
-        data-animate 
         id="resposta"
       >
         <div className="section-overlay"></div>
@@ -247,7 +245,6 @@ export default function HomePage() {
       {/* Bloco 4: Casos que inspiram */}
       <section 
         className="section section-dark modern-section"
-        data-animate 
         id="casos"
       >
         <div className="container">
@@ -333,7 +330,6 @@ export default function HomePage() {
           backgroundRepeat: 'no-repeat',
           position: 'relative'
         }}
-        data-animate 
         id="crescimento"
       >
         <div className="section-overlay"></div>
@@ -355,7 +351,7 @@ export default function HomePage() {
       </section>
 
       {/* Framework Section - Mantendo a imagem original */}
-      <section className="section section-dark modern-section" data-animate id="framework">
+      <section className="section section-dark modern-section" id="framework">
         <div className="container">
           <div className="framework-content">
             <div className="framework-image">
@@ -376,7 +372,6 @@ export default function HomePage() {
       {/* Bloco 6: Chamada final */}
       <section 
         className="section section-darker modern-section final-cta"
-        data-animate 
         id="chamada-final"
       >
         <div className="container">

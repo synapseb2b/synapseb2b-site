@@ -252,7 +252,7 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* Cards com Glassmorphism */
+/* Cards com Glassmorphism - REMOVIDO OPACITY INICIAL */
 .card, .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -263,6 +263,7 @@ a:hover {
   text-align: center;
   position: relative;
   overflow: hidden;
+  /* REMOVIDO: opacity: 0; transform: translateY(30px); */
 }
 
 .card::before, .glass-card::before {
@@ -412,7 +413,7 @@ a:hover {
   flex-wrap: wrap;
 }
 
-/* Partículas Animadas */
+/* Partículas Animadas - REDUZIDAS */
 .particles-container {
   position: fixed;
   top: 0;
@@ -697,7 +698,7 @@ a:hover {
   margin-top: 3rem;
 }
 
-/* Animações */
+/* Animações SIMPLIFICADAS */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -713,17 +714,7 @@ a:hover {
   animation: fadeInUp 0.8s ease-out;
 }
 
-/* Animações baseadas em scroll */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-animate].animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* REMOVIDAS as animações problemáticas baseadas em scroll */
 
 /* Utilitários */
 .text-center {
