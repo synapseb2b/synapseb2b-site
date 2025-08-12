@@ -1,12 +1,31 @@
-/* CSS Ultra Qualidade para Metodologia - Complementa globals.css */
-/* Seguindo EXATAMENTE o padrão da home */
+/* CSS Ajustes Finais para Metodologia - Complementa globals.css */
 
-/* Framework Video Side - Substituindo a imagem por vídeo no layout lado a lado */
-.framework-video-side {
+/* AJUSTE 1: Títulos em linhas separadas */
+.dual-title {
+  margin-bottom: 3rem;
+}
+
+.section-title-line {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.section-title-line:last-child {
+  margin-bottom: 0;
+}
+
+/* AJUSTE 2: Vídeo com altura ajustada e texto sem bullets */
+.framework-video-side-tall {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 500px;
+  min-height: 600px; /* Altura maior para alinhar com os 3 cards */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--glass-shadow);
@@ -14,39 +33,23 @@
   border: 1px solid var(--glass-border);
 }
 
-.framework-video-main {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Phase List - Estilização das listas dentro dos cards */
-.phase-list {
-  list-style: none;
-  padding: 0;
+.phase-text-list {
   margin: 1rem 0;
-  text-align: left;
 }
 
-.phase-list li {
-  position: relative;
-  padding-left: 1.5rem;
+.phase-text-list p {
   margin-bottom: 0.8rem;
   color: var(--base-color);
   line-height: 1.6;
   font-size: 0.95rem;
+  text-align: center;
 }
 
-.phase-list li::before {
-  content: '●';
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-  font-weight: bold;
+.phase-text-list p:last-child {
+  margin-bottom: 0;
 }
 
-/* Phase Deliverable - Box de entregáveis */
+/* Phase Deliverable - Ajustado */
 .phase-deliverable {
   background: var(--glass-bg);
   border: 1px solid var(--accent-color);
@@ -62,65 +65,125 @@
   color: var(--accent-color);
 }
 
-/* Diferencial Header - Para títulos alinhados à esquerda */
-.diferencial-header {
-  grid-column: 1 / -1;
-  margin-bottom: 1rem;
+/* AJUSTE 3: Grid 2-2-1 para diferenciais */
+.diferencial-grid-221 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Quiz Cards - Interatividade melhorada */
-.quiz-card {
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.diferencial-item-card {
+  padding: 2.5rem;
+  text-align: center;
   min-height: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
 }
 
-.quiz-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--accent-color);
-  box-shadow: 0 12px 40px rgba(0, 150, 129, 0.3);
+.diferencial-single {
+  grid-column: 1 / -1;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.quiz-card h3 {
-  text-align: center;
-  line-height: 1.4;
+.diferencial-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 1.5rem;
+}
+
+.diferencial-icon .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--primary-color);
+}
+
+.diferencial-item-card h3 {
+  color: var(--accent-color);
   margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  text-align: center;
 }
 
-.quiz-card .btn {
-  margin-top: auto;
-  width: auto;
-  padding: 0.8rem 1.5rem;
+.diferencial-item-card p {
+  color: var(--base-color);
+  margin: 0;
+  line-height: 1.6;
+  text-align: center;
+  flex-grow: 1;
 }
 
-/* Format Highlighted - Destaque para formato selecionado */
-.format-highlighted {
-  border-color: var(--accent-color) !important;
-  box-shadow: 0 0 30px rgba(0, 150, 129, 0.4) !important;
-  transform: scale(1.05);
-  animation: pulse-glow 2s ease-in-out infinite;
+/* AJUSTE 4: Grid 2-2-2 para resultados */
+.resultados-grid-222 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 30px rgba(0, 150, 129, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 150, 129, 0.6);
-  }
+.resultado-item-card {
+  padding: 2.5rem;
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-/* Melhorias nos Step Items para maior altura e melhor espaçamento */
+.resultado-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 1.5rem;
+}
+
+.resultado-icon .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--primary-color);
+}
+
+.resultado-item-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.resultado-item-card p {
+  color: var(--base-color);
+  margin: 0;
+  line-height: 1.6;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Melhorias nos Step Items */
 .step-item-vertical-tall {
   position: relative;
   padding: 3rem 2rem;
   text-align: center;
   flex: 1;
-  min-height: 180px;
+  min-height: 200px; /* Altura ajustada */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -128,7 +191,7 @@
 }
 
 .step-item-vertical-tall .step-content {
-  text-align: left;
+  text-align: center;
   width: 100%;
   flex-grow: 1;
   display: flex;
@@ -137,25 +200,12 @@
 
 .step-item-vertical-tall .step-content h3 {
   color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
   text-align: center;
 }
 
-.step-item-vertical-tall .step-content p {
-  color: var(--base-color);
-  margin: 0;
-  line-height: 1.6;
-  text-align: center;
-  flex-grow: 1;
-}
-
-.step-item-vertical-tall .step-content ul {
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
-
-/* Step Icon - Posicionamento melhorado */
+/* Step Icon - Posicionamento */
 .step-icon {
   position: absolute;
   top: 1.5rem;
@@ -172,7 +222,7 @@
   transform: scale(1.1);
 }
 
-/* Process Steps Vertical - Melhor espaçamento */
+/* Process Steps Vertical */
 .process-steps-vertical {
   display: flex;
   flex-direction: column;
@@ -180,9 +230,9 @@
   height: 100%;
 }
 
-/* Formats Section - Espaçamento consistente */
+/* Formats Section */
 .formats-section {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .formats-grid-square {
@@ -228,7 +278,7 @@
   line-height: 1.5;
 }
 
-/* Subtitle Small - Para textos menores */
+/* Subtitle Small */
 .subtitle-small {
   font-size: 0.85rem;
   font-weight: 400;
@@ -237,48 +287,7 @@
   margin-top: 0.5rem;
 }
 
-/* Problem List Three - Grid de 3 colunas para quiz */
-.problem-list-three {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 3rem 0;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.problem-item-square {
-  aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
-  text-align: center;
-  min-height: 280px;
-}
-
-.problem-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-bottom: 1rem;
-}
-
-.problem-icon .icon {
-  width: 28px;
-  height: 28px;
-  color: var(--primary-color);
-}
-
-/* Hover Effects Aprimorados */
+/* Hover Effects */
 .glass-card-contrast:hover {
   border-color: var(--accent-color);
   transform: translateY(-8px);
@@ -289,7 +298,7 @@
   opacity: 1;
 }
 
-/* Final CTAs - Espaçamento consistente */
+/* Final CTAs */
 .final-ctas {
   display: flex;
   gap: 2rem;
@@ -298,13 +307,13 @@
   margin-top: 3rem;
 }
 
-/* Section Content - Melhor espaçamento */
+/* Section Content */
 .section-content {
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Lead Text - Tipografia aprimorada */
+/* Lead Text */
 .lead-text {
   font-size: 1.2rem;
   line-height: 1.8;
@@ -313,7 +322,7 @@
   text-align: center;
 }
 
-/* Section Title - Consistência */
+/* Section Title */
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -324,20 +333,20 @@
   text-align: center;
 }
 
-/* Responsividade Ultra Qualidade */
+/* Responsividade */
 @media (max-width: 768px) {
+  .section-title-line {
+    font-size: 2rem;
+  }
+
   .process-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .framework-video-side {
+  .framework-video-side-tall {
     min-height: 300px;
     order: -1;
-  }
-
-  .diferencial-header .section-title {
-    text-align: center;
   }
 
   .step-item-vertical-tall {
@@ -345,14 +354,18 @@
     padding: 2.5rem 2rem;
   }
 
-  .problem-list-three {
+  .diferencial-grid-221 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .problem-item-square {
-    aspect-ratio: auto;
-    min-height: 240px;
+  .diferencial-single {
+    grid-column: 1;
+  }
+
+  .resultados-grid-222 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .formats-grid-square {
@@ -365,21 +378,23 @@
     min-height: 240px;
   }
 
+  .diferencial-item-card,
+  .resultado-item-card {
+    min-height: 240px;
+    padding: 2rem;
+  }
+
   .final-ctas {
     flex-direction: column;
     align-items: center;
   }
-
-  .quiz-card {
-    min-height: 240px;
-  }
-
-  .quiz-card h3 {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 480px) {
+  .section-title-line {
+    font-size: 1.8rem;
+  }
+
   .step-item-vertical-tall {
     padding: 2rem 1.5rem;
     min-height: 140px;
@@ -392,19 +407,22 @@
     height: 28px;
   }
 
-  .problem-item-square,
+  .diferencial-item-card,
+  .resultado-item-card,
   .format-item-square {
     padding: 1.5rem;
     min-height: 200px;
   }
 
-  .problem-icon,
+  .diferencial-icon,
+  .resultado-icon,
   .format-icon-large {
     width: 50px;
     height: 50px;
   }
 
-  .problem-icon .icon {
+  .diferencial-icon .icon,
+  .resultado-icon .icon {
     width: 24px;
     height: 24px;
   }
@@ -414,28 +432,23 @@
     height: 50px;
   }
 
-  .quiz-card {
-    min-height: 200px;
-    padding: 1.5rem;
-  }
-
-  .quiz-card .btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
   .phase-deliverable {
     padding: 0.8rem;
     font-size: 0.85rem;
   }
 
-  .phase-list li {
+  .phase-text-list p {
     font-size: 0.9rem;
     margin-bottom: 0.6rem;
   }
+
+  .diferencial-item-card h3,
+  .resultado-item-card h3 {
+    font-size: 1.1rem;
+  }
 }
 
-/* Animações Suaves */
+/* Animações */
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -447,27 +460,34 @@
   }
 }
 
-.step-item-vertical-tall {
+.step-item-vertical-tall,
+.diferencial-item-card,
+.resultado-item-card {
   animation: slideInUp 0.6s ease-out;
 }
 
-.step-item-vertical-tall:nth-child(2) {
+.diferencial-item-card:nth-child(2),
+.resultado-item-card:nth-child(2) {
   animation-delay: 0.1s;
 }
 
-.step-item-vertical-tall:nth-child(3) {
+.diferencial-item-card:nth-child(3),
+.resultado-item-card:nth-child(3) {
   animation-delay: 0.2s;
 }
 
-.step-item-vertical-tall:nth-child(4) {
+.diferencial-item-card:nth-child(4),
+.resultado-item-card:nth-child(4) {
   animation-delay: 0.3s;
 }
 
-.step-item-vertical-tall:nth-child(5) {
+.diferencial-item-card:nth-child(5),
+.resultado-item-card:nth-child(5) {
   animation-delay: 0.4s;
 }
 
-.step-item-vertical-tall:nth-child(6) {
+.diferencial-item-card:nth-child(6),
+.resultado-item-card:nth-child(6) {
   animation-delay: 0.5s;
 }
 

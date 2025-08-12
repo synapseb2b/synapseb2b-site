@@ -125,14 +125,17 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 1: O princípio */}
+      {/* Seção 1: O princípio - AJUSTE 1: Frases em linhas separadas */}
       <section 
         className="section section-dark modern-section"
         id="principio"
       >
         <div className="container">
           <div className="text-center mb-2">
-            <h2 className="section-title">Estratégia sem execução é teoria. Execução sem estratégia é desperdício.</h2>
+            <div className="dual-title">
+              <h2 className="section-title-line">Estratégia sem execução é teoria.</h2>
+              <h2 className="section-title-line">Execução sem estratégia é desperdício.</h2>
+            </div>
             <div className="section-content">
               <p className="lead-text">
                 No B2B, muitas empresas técnicas ficam invisíveis para o mercado não por falta de competência, mas por não conseguirem traduzir seu valor de forma clara e convincente.
@@ -148,7 +151,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 2: Framework GTM Ignition™ - Layout lado a lado como na home */}
+      {/* Seção 2: Framework GTM Ignition™ - AJUSTE 2: Vídeo com altura dos cards e sem bullets */}
       <section 
         className="section section-darker modern-section"
         style={{
@@ -166,17 +169,17 @@ export default function MetodologiaPage() {
             <h2 className="section-title">Nosso processo proprietário em três fases</h2>
             <div className="section-content">
               
-              {/* Layout com cards à esquerda e vídeo à direita - IGUAL À HOME */}
+              {/* Layout com cards à esquerda e vídeo à direita */}
               <div className="process-layout">
                 <div className="process-steps-vertical">
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Diagnóstico Estratégico</h3>
-                      <ul className="phase-list">
-                        <li>Mapeamento profundo de negócio, mercado e posicionamento</li>
-                        <li>Identificação de alavancas reais de crescimento</li>
-                        <li>Benchmark de performance e margens</li>
-                      </ul>
+                      <div className="phase-text-list">
+                        <p>Mapeamento profundo de negócio, mercado e posicionamento</p>
+                        <p>Identificação de alavancas reais de crescimento</p>
+                        <p>Benchmark de performance e margens</p>
+                      </div>
                       <div className="phase-deliverable">
                         <strong>Entregável:</strong> Roadmap de crescimento priorizado
                       </div>
@@ -187,11 +190,11 @@ export default function MetodologiaPage() {
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Decodificação de Mercado</h3>
-                      <ul className="phase-list">
-                        <li>Tradução da complexidade técnica em narrativa de valor irresistível</li>
-                        <li>Definição e validação de ICP e ICP Real</li>
-                        <li>Framework de mensagens para vendas, marketing e parceiros</li>
-                      </ul>
+                      <div className="phase-text-list">
+                        <p>Tradução da complexidade técnica em narrativa de valor irresistível</p>
+                        <p>Definição e validação de ICP e RCP</p>
+                        <p>Framework de mensagens para vendas, marketing e parceiros</p>
+                      </div>
                       <div className="phase-deliverable">
                         <strong>Entregável:</strong> Playbook de posicionamento
                       </div>
@@ -202,11 +205,11 @@ export default function MetodologiaPage() {
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <h3>Engenharia de Receita</h3>
-                      <ul className="phase-list">
-                        <li>Criação e integração de ativos e processos comerciais</li>
-                        <li>Playbooks, scripts, apresentações, automações</li>
-                        <li>Funil e métricas de RevOps</li>
-                      </ul>
+                      <div className="phase-text-list">
+                        <p>Criação e integração de ativos e processos comerciais</p>
+                        <p>Playbooks, scripts, apresentações, automações</p>
+                        <p>Funil e métricas de RevOps</p>
+                      </div>
                       <div className="phase-deliverable">
                         <strong>Entregável:</strong> Kit operacional do motor de receita
                       </div>
@@ -215,8 +218,8 @@ export default function MetodologiaPage() {
                   </div>
                 </div>
 
-                {/* Vídeo do Framework no lugar da imagem */}
-                <div className="framework-video-side">
+                {/* Vídeo do Framework com altura ajustada */}
+                <div className="framework-video-side-tall">
                   <video 
                     autoPlay 
                     muted 
@@ -242,78 +245,58 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 3: O que nos diferencia - Layout lado a lado como na home */}
+      {/* Seção 3: O que nos diferencia - AJUSTE 3: Título centralizado e cards 2-2-1 */}
       <section 
         className="section section-dark modern-section"
         id="diferencial"
       >
         <div className="container">
-          <div className="process-layout">
-            <div className="process-steps-vertical">
-              <div className="diferencial-header">
-                <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '3rem' }}>
-                  Por que o GTM Ignition™ não é só mais um método
-                </h2>
-              </div>
+          <div className="text-center mb-2">
+            <h2 className="section-title">Por que o GTM Ignition™ não é só mais um método</h2>
+            <div className="section-content">
               
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+              {/* Grid 2-2-1 para os diferenciais */}
+              <div className="diferencial-grid-221">
+                <div className="diferencial-item-card glass-card-contrast">
+                  <div className="diferencial-icon">
+                    <Award className="icon" />
+                  </div>
                   <h3>Metodologia proprietária, documentada e validada</h3>
                   <p>Framework exclusivo desenvolvido e refinado através de múltiplos projetos B2B de alta complexidade.</p>
                 </div>
-                <Award className="step-icon" />
-              </div>
-              
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+                
+                <div className="diferencial-item-card glass-card-contrast">
+                  <div className="diferencial-icon">
+                    <Users className="icon" />
+                  </div>
                   <h3>Execução hands-on, lado a lado com o cliente</h3>
                   <p>Não apenas consultoria, mas implementação prática integrada à sua operação.</p>
                 </div>
-                <Users className="step-icon" />
-              </div>
-              
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
-                  <h3>Prova de ROI com métricas de negócio</h3>
+                
+                <div className="diferencial-item-card glass-card-contrast">
+                  <div className="diferencial-icon">
+                    <BarChart className="icon" />
+                  </div>
+                  <h3>Prova de ROI com métricas de negócio, não indicadores de vaidade</h3>
                   <p>Foco em resultados mensuráveis: ciclo de vendas, conversão, receita previsível.</p>
                 </div>
-                <BarChart className="step-icon" />
-              </div>
 
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
-                  <h3>Integração ponta a ponta</h3>
-                  <p>Do diagnóstico à operação, conectando estratégia e execução sem lacunas.</p>
+                <div className="diferencial-item-card glass-card-contrast">
+                  <div className="diferencial-icon">
+                    <Zap className="icon" />
+                  </div>
+                  <h3>Integração ponta a ponta — do diagnóstico à operação</h3>
+                  <p>Conectando estratégia e execução sem lacunas, do planejamento à implementação.</p>
                 </div>
-                <Zap className="step-icon" />
-              </div>
 
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
-                  <h3>Foco em vendas complexas de alto valor</h3>
-                  <p>Especialização em soluções técnicas de difícil replicação e ciclos longos.</p>
+                <div className="diferencial-item-card glass-card-contrast diferencial-single">
+                  <div className="diferencial-icon">
+                    <Target className="icon" />
+                  </div>
+                  <h3>Foco em vendas complexas de alto valor e difícil replicação</h3>
+                  <p>Especialização em soluções técnicas com ciclos longos e múltiplos decisores.</p>
                 </div>
-                <Target className="step-icon" />
               </div>
-            </div>
-
-            {/* Vídeo do diferencial */}
-            <div className="framework-video-side">
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="framework-video-main"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  borderRadius: '12px'
-                }}
-              >
-                <source src="/video/Diferencial.mp4" type="video/mp4" />
-              </video>
             </div>
           </div>
         </div>
@@ -322,7 +305,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 4: Formatos de atuação - Seguindo padrão da home */}
+      {/* Seção 4: Formatos de atuação - Removendo cards de cima */}
       <section 
         className="section section-darker modern-section"
         id="formatos"
@@ -332,48 +315,17 @@ export default function MetodologiaPage() {
             <h2 className="section-title">Duas formas de colocar o GTM Ignition™ para trabalhar</h2>
             <div className="section-content">
               
-              {/* Quiz interativo estilizado como cards da home */}
-              <div className="problem-list-three" style={{ marginBottom: '3rem' }}>
-                <div className="problem-item-square glass-card-contrast quiz-card" onClick={() => handleQuizSelection('estrategia')}>
-                  <div className="problem-icon">
-                    <Rocket className="icon" />
-                  </div>
-                  <h3 style={{ color: 'var(--accent-color)', fontSize: '1.1rem', marginBottom: '1rem' }}>
-                    Você está entrando ou reposicionando sua solução no mercado?
-                  </h3>
-                  <button className="btn btn-secondary-contrast btn-modern" style={{ marginTop: '1rem' }}>
-                    <span>Sim, preciso de estratégia</span>
-                  </button>
-                </div>
-
-                <div className="problem-item-square glass-card-contrast quiz-card" onClick={() => handleQuizSelection('aceleracao')}>
-                  <div className="problem-icon">
-                    <TrendingUp className="icon" />
-                  </div>
-                  <h3 style={{ color: 'var(--accent-color)', fontSize: '1.1rem', marginBottom: '1rem' }}>
-                    Você já vende, mas quer acelerar e tornar previsível?
-                  </h3>
-                  <button className="btn btn-secondary-contrast btn-modern" style={{ marginTop: '1rem' }}>
-                    <span>Sim, quero acelerar</span>
-                  </button>
-                </div>
-
-                {/* Card vazio para manter o grid de 3 */}
-                <div className="problem-item-square" style={{ opacity: 0, pointerEvents: 'none' }}>
-                </div>
-              </div>
-
-              {/* Cards dos formatos - Seguindo padrão dos formatos da home */}
+              {/* Apenas os cards dos formatos */}
               <div className="formats-section" id="formatos-cards">
                 <div className="formats-grid-square">
-                  <div className={`format-item-square glass-card-contrast ${selectedFormat === 'estrategia' ? 'format-highlighted' : ''}`}>
+                  <div className="format-item-square glass-card-contrast">
                     <Target className="format-icon-large" />
                     <h4>Estratégia Go-to-Market completa</h4>
                     <p style={{ marginTop: '1rem', fontSize: '0.95rem' }}>
                       Entrada ou reposicionamento no mercado com clareza, impacto e diferenciação.
                     </p>
                   </div>
-                  <div className={`format-item-square glass-card-contrast ${selectedFormat === 'aceleracao' ? 'format-highlighted' : ''}`}>
+                  <div className="format-item-square glass-card-contrast">
                     <BarChart className="format-icon-large" />
                     <h4>
                       Diretoria de Aceleração de Receita B2B<br />
@@ -393,86 +345,66 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 5: Resultados - Layout lado a lado como na home */}
+      {/* Seção 5: Resultados - AJUSTE 4: Cards 2-2-2 sem vídeo */}
       <section 
         className="section section-dark modern-section"
         id="resultados"
       >
         <div className="container">
-          <div className="process-layout">
-            <div className="process-steps-vertical">
-              <div className="diferencial-header">
-                <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '3rem' }}>
-                  O que mudará no seu negócio quando a mensagem certa chegar às pessoas certas
-                </h2>
-              </div>
+          <div className="text-center mb-2">
+            <h2 className="section-title">O que mudará no seu negócio quando a mensagem certa chegar às pessoas certas</h2>
+            <div className="section-content">
               
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+              {/* Grid 2-2-2 para os resultados */}
+              <div className="resultados-grid-222">
+                <div className="resultado-item-card glass-card-contrast">
+                  <div className="resultado-icon">
+                    <CheckCircle className="icon" />
+                  </div>
                   <h3>Ser percebido como a melhor escolha no momento da decisão</h3>
                   <p>Posicionamento que destaca seus diferenciais únicos de forma clara e convincente.</p>
                 </div>
-                <CheckCircle className="step-icon" />
-              </div>
-              
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+                
+                <div className="resultado-item-card glass-card-contrast">
+                  <div className="resultado-icon">
+                    <Zap className="icon" />
+                  </div>
                   <h3>Reduzir drasticamente o tempo entre primeira conversa e fechamento</h3>
                   <p>Processo comercial otimizado que acelera a jornada de compra do prospect.</p>
                 </div>
-                <Zap className="step-icon" />
-              </div>
-              
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+                
+                <div className="resultado-item-card glass-card-contrast">
+                  <div className="resultado-icon">
+                    <Target className="icon" />
+                  </div>
                   <h3>Receber leads que já entendem e valorizam o que você entrega</h3>
                   <p>Atração qualificada através de mensagens que ressoam com o público certo.</p>
                 </div>
-                <Target className="step-icon" />
-              </div>
 
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+                <div className="resultado-item-card glass-card-contrast">
+                  <div className="resultado-icon">
+                    <TrendingUp className="icon" />
+                  </div>
                   <h3>Aumentar previsibilidade de receita e reduzir incertezas</h3>
                   <p>Métricas e processos que tornam o crescimento mensurável e replicável.</p>
                 </div>
-                <TrendingUp className="step-icon" />
-              </div>
 
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+                <div className="resultado-item-card glass-card-contrast">
+                  <div className="resultado-icon">
+                    <Users className="icon" />
+                  </div>
                   <h3>Criar alinhamento interno entre marketing, vendas e área técnica</h3>
                   <p>Linguagem comum e processos integrados que eliminam silos organizacionais.</p>
                 </div>
-                <Users className="step-icon" />
-              </div>
 
-              <div className="step-item-vertical-tall glass-card-contrast">
-                <div className="step-content">
+                <div className="resultado-item-card glass-card-contrast">
+                  <div className="resultado-icon">
+                    <Award className="icon" />
+                  </div>
                   <h3>Manter vantagem competitiva frente a players que competem só por preço</h3>
                   <p>Diferenciação sustentável baseada em valor percebido, não apenas custo.</p>
                 </div>
-                <Award className="step-icon" />
               </div>
-            </div>
-
-            {/* Vídeo da logo animada */}
-            <div className="framework-video-side">
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="framework-video-main"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  borderRadius: '12px'
-                }}
-              >
-                <source src="/video/Logo_Animada_SynapseB2B.mp4" type="video/mp4" />
-              </video>
             </div>
           </div>
         </div>
@@ -481,7 +413,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 6: Chamada final - Seguindo padrão da home */}
+      {/* Seção 6: Chamada final */}
       <section 
         className="section section-darker modern-section final-cta"
         id="chamada-final"
