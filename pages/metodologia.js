@@ -175,7 +175,7 @@ export default function MetodologiaPage() {
                 {/* 1ª Linha: Imagem + Card */}
                 <div className="framework-row">
                   <div className="framework-image-container">
-                    <Image src="/Diagnostico_Estrategico.jpg" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
+                    <Image src="/Diagnostico_Estrategico.png" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
@@ -210,14 +210,14 @@ export default function MetodologiaPage() {
                     <Target className="step-icon" />
                   </div>
                   <div className="framework-image-container">
-                    <Image src="/Decodificacao_de_Mercado.jpg" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
+                    <Image src="/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                 </div>
 
                 {/* 3ª Linha: Imagem + Card */}
                 <div className="framework-row">
                    <div className="framework-image-container">
-                    <Image src="/Engenharia_de_Receita.jpg" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
+                    <Image src="/Engenharia_de_Receita.png" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
