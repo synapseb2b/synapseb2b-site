@@ -1,4 +1,4 @@
-import { Target, BarChart, Search, ClipboardCheck, TrendingUp, Zap, Wrench, Ban, ArrowRight, CheckCircle, Eye, Users, Lightbulb, Play, Award, Rocket } from 'lucide-react';
+import { Target, BarChart, Search, TrendingUp, Zap, ArrowRight, CheckCircle, Eye, Users, Award } from 'lucide-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -68,7 +68,6 @@ export default function MetodologiaPage() {
         <link rel="canonical" href="https://synapseb2b.com/metodologia" />
       </Head>
 
-      {/* Partículas de fundo animadas */}
       <div className="particles-container">
         {[...Array(15)].map((_, i) => (
           <div
@@ -84,10 +83,8 @@ export default function MetodologiaPage() {
         ))}
       </div>
 
-      {/* Linha de pulso elétrico entre navbar e hero */}
       <div className="synapse-line synapse-line-top"></div>
  
-      {/* Hero interno */}
       <section 
         ref={heroRef}
         className="hero modern-hero" 
@@ -107,7 +104,6 @@ export default function MetodologiaPage() {
           </div>
         </div>
         
-        {/* Vídeo de fundo específico da metodologia */}
         <div className="hero-video-container">
           <div className="hero-video-overlay"></div>
           <video 
@@ -122,10 +118,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 1: O princípio */}
       <section 
         className="section section-dark modern-section"
         id="principio"
@@ -133,8 +127,8 @@ export default function MetodologiaPage() {
         <div className="container">
           <div className="text-center mb-2">
             <div className="dual-title">
-              <h2 className="section-title">Estratégia sem execução é teoria.</h2>
-              <h2 className="section-title">Execução sem estratégia é desperdício.</h2>
+              <h2 className="section-title-line">Estratégia sem execução é teoria.</h2>
+              <h2 className="section-title-line">Execução sem estratégia é desperdício.</h2>
             </div>
             <div className="section-content">
               <p className="lead-text">
@@ -148,10 +142,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-{/* Seção 2: Framework GTM Ignition™ - VERSÃO CORRIGIDA */}
       <section 
         className="section section-darker modern-section"
         style={{
@@ -171,14 +163,11 @@ export default function MetodologiaPage() {
               
               <div className="framework-grid">
                 
-                {/* 1ª Linha: Imagem + Card */}
                 <div className="framework-row">
                   <div className="framework-image-container">
-                    {/* CORREÇÃO 1: Caminho da imagem ajustado */}
                     <Image src="/image/Diagnostico_Estrategico.png" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
-                    {/* CORREÇÃO 2: Layout interno do card reorganizado */}
                     <div className="step-content">
                       <div className="card-main-content">
                         <h3>Diagnóstico Estratégico</h3>
@@ -196,10 +185,8 @@ export default function MetodologiaPage() {
                   </div>
                 </div>
                 
-                {/* 2ª Linha: Card + Imagem */}
                 <div className="framework-row-reverse">
                   <div className="step-item-vertical-tall glass-card-contrast">
-                    {/* CORREÇÃO 2: Layout interno do card reorganizado */}
                     <div className="step-content">
                       <div className="card-main-content">
                         <h3>Decodificação de Mercado</h3>
@@ -216,19 +203,15 @@ export default function MetodologiaPage() {
                     </div>
                   </div>
                   <div className="framework-image-container">
-                    {/* CORREÇÃO 1: Caminho da imagem ajustado */}
                     <Image src="/image/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                 </div>
 
-                {/* 3ª Linha: Imagem + Card */}
                 <div className="framework-row">
                    <div className="framework-image-container">
-                    {/* CORREÇÃO 1: Caminho da imagem ajustado */}
                     <Image src="/image/Engenharia_de_Receita.png" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
                   </div>
                   <div className="step-item-vertical-tall glass-card-contrast">
-                    {/* CORREÇÃO 2: Layout interno do card reorganizado */}
                     <div className="step-content">
                        <div className="card-main-content">
                         <h3>Engenharia de Receita</h3>
@@ -252,10 +235,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 3: O que nos diferencia */}
       <section 
         className="section section-dark modern-section"
         id="diferencial"
@@ -311,10 +292,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 4: Formatos de atuação */}
       <section 
         className="section section-darker modern-section"
         id="formatos"
@@ -350,10 +329,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 5: Resultados */}
       <section 
         className="section section-dark modern-section"
         id="resultados"
@@ -417,10 +394,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 6: Chamada final */}
       <section 
         className="section section-darker modern-section final-cta"
         id="chamada-final"
@@ -448,205 +423,208 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-<style jsx global>{`
-  /*
-    SYNAPSE B2B - METODOLOGIA PAGE STYLES
-    Este bloco contém todos os estilos necessários para os layouts da página Metodologia.
-    O código foi refatorado para clareza, correção e manutenibilidade.
-  */
+      <style jsx global>{`
+        /*
+          SYNAPSE B2B - METODOLOGIA PAGE STYLES
+          Este bloco contém todos os estilos necessários para os layouts da página Metodologia.
+          O código foi refatorado para clareza, correção e manutenibilidade.
+        */
 
-  /* ==========================================================================
-     1. LAYOUTS DE GRID DAS SEÇÕES PRINCIPAIS
-     ========================================================================== */
+        /* ==========================================================================
+           1. LAYOUTS DE GRID DAS SEÇÕES PRINCIPAIS
+           ========================================================================== */
 
-  /* Seção "Nosso Processo Proprietário" (Framework) */
-  .framework-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 1100px;
-    margin: 2rem auto 0 auto;
-  }
-  .framework-row,
-  .framework-row-reverse {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: stretch;
-  }
-  .framework-row-reverse .step-item-vertical-tall {
-    grid-column: 1;
-  }
-  .framework-row-reverse .framework-image-container {
-    grid-column: 2;
-  }
-  .framework-image-container {
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-    border-radius: 16px;
-    overflow: hidden;
-  }
+        /* Seção "Nosso Processo Proprietário" (Framework) */
+        .framework-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          max-width: 1100px;
+          margin: 2rem auto 0 auto;
+        }
+        .framework-row,
+        .framework-row-reverse {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          align-items: stretch;
+        }
+        .framework-row-reverse .step-item-vertical-tall {
+          grid-column: 1;
+        }
+        .framework-row-reverse .framework-image-container {
+          grid-column: 2;
+        }
+        .framework-image-container {
+          position: relative;
+          width: 100%;
+          min-height: 450px;
+          border-radius: 16px;
+          overflow: hidden;
+        }
 
-  /* Seções "Diferencial", "Resultados" e "Formatos" */
-  .diferencial-grid-221,
-  .resultados-grid-222,
-  .formats-grid-square {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 2rem auto 0 auto;
-  }
+        /* Seções "Diferencial", "Resultados" e "Formatos" */
+        .diferencial-grid-221,
+        .resultados-grid-222,
+        .formats-grid-square {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          max-width: 900px;
+          margin: 2rem auto 0 auto;
+        }
 
-  /* Card único na seção "Diferencial" */
-  .diferencial-item-card.diferencial-single { 
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 100%;
-    max-width: calc(50% - 1rem);
-  }
+        /* Card único na seção "Diferencial" */
+        .diferencial-item-card.diferencial-single { 
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: 100%;
+          max-width: calc(50% - 1rem);
+        }
 
-  /* ==========================================================================
-     2. ESTILIZAÇÃO DOS CARDS E SEU CONTEÚDO
-     ========================================================================== */
-  
-  /* ESTILOS DE BASE (Diferencial, Resultados, Formatos) */
-  .diferencial-item-card,
-  .resultado-item-card,
-  .format-item-square {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2.5rem;
-    text-align: center;
-    min-height: 320px;
-  }
-  .diferencial-icon,
-  .resultado-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-bottom: 1.5rem;
-  }
-  .diferencial-icon .icon,
-  .resultado-icon .icon {
-    width: 36px;
-    height: 36px;
-    color: var(--primary-color);
-  }
-  .diferencial-item-card h3,
-  .resultado-item-card h3,
-  .format-item-square h4 {
-    font-size: 1.3rem;
-    line-height: 1.4;
-  }
-  .diferencial-item-card p,
-  .resultado-item-card p {
-    font-size: 0.95rem;
-  }
-  .format-item-square {
-      justify-content: center; /* Centraliza verticalmente o conteúdo no card de formato */
-  }
-  .format-icon-large {
-    width: 80px;
-    height: 80px;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-  }
+        /* ==========================================================================
+           2. ESTILIZAÇÃO DOS CARDS E SEU CONTEÚDO
+           ========================================================================== */
+        
+        /* ESTILOS DE BASE (Diferencial, Resultados, Formatos) */
+        .diferencial-item-card,
+        .resultado-item-card,
+        .format-item-square {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 2.5rem;
+          text-align: center;
+          min-height: 320px;
+        }
+        .diferencial-icon,
+        .resultado-icon {
+          width: 80px;
+          height: 80px;
+          background: var(--gradient-primary);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          margin-bottom: 1.5rem;
+        }
+        .diferencial-icon .icon,
+        .resultado-icon .icon {
+          width: 36px;
+          height: 36px;
+          color: var(--primary-color);
+        }
+        .diferencial-item-card h3,
+        .resultado-item-card h3,
+        .format-item-square h4 {
+          font-size: 1.3rem;
+          line-height: 1.4;
+        }
+        .diferencial-item-card p,
+        .resultado-item-card p {
+          font-size: 0.95rem;
+        }
+        .format-item-square {
+            justify-content: center;
+        }
+        .format-icon-large {
+          width: 80px;
+          height: 80px;
+          color: var(--accent-color);
+          margin-bottom: 1.5rem;
+        }
 
-  /* ESTILOS ESPECÍFICOS (Layout Interno dos Cards do Framework) */
-  .step-item-vertical-tall .step-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    text-align: left;
-    padding: 1rem;
-  }
-  .step-item-vertical-tall .card-main-content {
-    flex-grow: 1;
-  }
-  .step-item-vertical-tall h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .step-item-vertical-tall .phase-text-list {
-    margin: 0;
-    padding: 0;
-  }
-  .step-item-vertical-tall .phase-text-list p {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  .step-item-vertical-tall .phase-text-list p::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 4px;
-    color: var(--accent-color);
-    font-weight: bold;
-  }
-  .phase-deliverable-highlight {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    border-radius: 8px;
-    background-color: rgba(0, 255, 224, 0.07);
-    border: 1px solid rgba(0, 255, 224, 0.2);
-  }
-  .phase-deliverable-highlight .deliverable-icon {
-    flex-shrink: 0;
-    color: var(--accent-color);
-  }
+        /* ESTILOS ESPECÍFICOS (Layout Interno dos Cards do Framework) */
+        .step-item-vertical-tall .step-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          width: 100%;
+          text-align: left;
+          padding: 1rem;
+        }
+        .step-item-vertical-tall .card-main-content {
+          flex-grow: 1;
+        }
+        .step-item-vertical-tall h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .step-item-vertical-tall .phase-text-list {
+          margin: 0;
+          padding: 0;
+        }
+        .step-item-vertical-tall .phase-text-list p {
+          position: relative;
+          padding-left: 1.5rem;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+        .step-item-vertical-tall .phase-text-list p::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          top: 4px;
+          color: var(--accent-color);
+          font-weight: bold;
+        }
+        .phase-deliverable-highlight {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 1rem;
+          margin-top: 1.5rem;
+          border-radius: 8px;
+          background-color: rgba(0, 255, 224, 0.07);
+          border: 1px solid rgba(0, 255, 224, 0.2);
+        }
+        .phase-deliverable-highlight .deliverable-icon {
+          flex-shrink: 0;
+          color: var(--accent-color);
+        }
 
-  /* ==========================================================================
-     3. AJUSTES DE RESPONSIVIDADE
-     ========================================================================== */
+        /* ==========================================================================
+           3. AJUSTES DE RESPONSIVIDADE
+           ========================================================================== */
 
-  @media (max-width: 768px) {
-    /* Converte todos os grids para uma única coluna */
-    .framework-row, 
-    .framework-row-reverse,
-    .diferencial-grid-221,
-    .resultados-grid-222,
-    .formats-grid-square {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    
-    /* Reseta a ordem da linha reversa para empilhamento correto */
-    .framework-row-reverse .step-item-vertical-tall,
-    .framework-row-reverse .framework-image-container {
-      grid-column: 1;
-    }
-    .framework-image-container { 
-      min-height: 300px; 
-    }
-    
-    /* Ajusta o card único para ocupar toda a largura */
-    .diferencial-item-card.diferencial-single {
-      max-width: none;
-      justify-self: stretch;
-    }
+        @media (max-width: 768px) {
+          /* Converte todos os grids para uma única coluna */
+          .framework-row, 
+          .framework-row-reverse,
+          .diferencial-grid-221,
+          .resultados-grid-222,
+          .formats-grid-square {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          /* Reseta a ordem da linha reversa para empilhamento correto */
+          .framework-row-reverse .step-item-vertical-tall,
+          .framework-row-reverse .framework-image-container {
+            grid-column: 1;
+          }
+          .framework-image-container { 
+            min-height: 300px; 
+          }
+          
+          /* Ajusta o card único para ocupar toda a largura */
+          .diferencial-item-card.diferencial-single {
+            max-width: none;
+            justify-self: stretch;
+          }
 
-    /* Reduz o padding e altura mínima dos cards em telas menores */
-    .diferencial-item-card,
-    .resultado-item-card,
-    .format-item-square {
-      min-height: auto;
-      padding: 2rem;
-    }
-  }
-`}</style>
+          /* Reduz o padding e altura mínima dos cards em telas menores */
+          .diferencial-item-card,
+          .resultado-item-card,
+          .format-item-square {
+            min-height: auto;
+            padding: 2rem;
+          }
+        }
+      `}</style>
+    </>
+  );
+}
