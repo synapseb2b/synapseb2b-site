@@ -1,13 +1,13 @@
-/* CSS Correções Específicas para Metodologia - Complementa globals.css */
+/* SOLUÇÃO DIRETA - CSS para corrigir os 3 problemas específicos */
 
-/* CORREÇÃO 1: Vídeo Framework com altura exata dos 3 cards */
+/* PROBLEMA 1: Vídeo Framework muito pequeno */
+/* Forçar altura do vídeo para coincidir com os 3 cards */
+.framework-video-side,
 .framework-video-side-tall {
   position: relative;
   width: 100%;
   height: 100%;
-  /* Altura calculada: 3 cards (200px cada) + 2 gaps (2rem cada) = 200px + 200px + 200px + 32px + 32px = 664px */
-  min-height: 664px;
-  max-height: 664px;
+  min-height: 700px !important; /* Força altura maior */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--glass-shadow);
@@ -15,124 +15,67 @@
   border: 1px solid var(--glass-border);
 }
 
-.framework-video-main {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Ajuste dos cards para altura consistente */
-.step-item-vertical-tall {
-  position: relative;
-  padding: 3rem 2rem;
-  text-align: center;
-  flex: 1;
-  min-height: 200px;
-  max-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
+/* Garantir que o container dos cards tenha altura fixa */
 .process-steps-vertical {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 664px; /* Altura total fixa */
+  height: 700px; /* Altura fixa para alinhar com vídeo */
 }
 
-/* CORREÇÃO 2: Grid Diferenciais 2-2-1 CORRETO */
-.diferencial-grid-221 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Primeiros 4 cards ocupam 2 linhas de 2 colunas cada */
-.diferencial-item-card:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.diferencial-item-card:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.diferencial-item-card:nth-child(3) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.diferencial-item-card:nth-child(4) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-/* 5º card centralizado na 3ª linha */
-.diferencial-item-card:nth-child(5) {
-  grid-column: 1 / -1; /* Ocupa as 2 colunas */
-  grid-row: 3;
-  max-width: 400px;
-  justify-self: center; /* Centraliza horizontalmente */
-}
-
-.diferencial-item-card {
-  padding: 2.5rem;
+/* Cards com altura distribuída igualmente */
+.step-item-vertical-tall {
+  position: relative;
+  padding: 2.5rem 2rem;
   text-align: center;
-  min-height: 280px;
+  flex: 1; /* Distribui altura igualmente */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
 }
 
-/* CORREÇÃO 3: Grid Resultados 2-2-2 CORRETO */
-.resultados-grid-222 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 2rem;
+/* PROBLEMA 2: Diferenciais não estão em 2-2-1 */
+/* Forçar grid 2-2-1 para diferenciais */
+.diferencial-grid-221 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 colunas */
+  gap: 2rem !important;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Posicionamento explícito dos 6 cards */
-.resultado-item-card:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
+/* Forçar posicionamento específico dos cards diferenciais */
+.diferencial-item-card:nth-child(1) { grid-area: 1 / 1; }
+.diferencial-item-card:nth-child(2) { grid-area: 1 / 2; }
+.diferencial-item-card:nth-child(3) { grid-area: 2 / 1; }
+.diferencial-item-card:nth-child(4) { grid-area: 2 / 2; }
+.diferencial-item-card:nth-child(5) { 
+  grid-area: 3 / 1 / 3 / 3; /* Ocupa toda a 3ª linha */
+  max-width: 400px;
+  justify-self: center;
 }
 
-.resultado-item-card:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
+/* PROBLEMA 3: Resultados não estão em 2-2-2 */
+/* Forçar grid 2-2-2 para resultados */
+.resultados-grid-222 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 colunas */
+  gap: 2rem !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.resultado-item-card:nth-child(3) {
-  grid-column: 1;
-  grid-row: 2;
-}
+/* Forçar posicionamento específico dos cards resultados */
+.resultado-item-card:nth-child(1) { grid-area: 1 / 1; }
+.resultado-item-card:nth-child(2) { grid-area: 1 / 2; }
+.resultado-item-card:nth-child(3) { grid-area: 2 / 1; }
+.resultado-item-card:nth-child(4) { grid-area: 2 / 2; }
+.resultado-item-card:nth-child(5) { grid-area: 3 / 1; }
+.resultado-item-card:nth-child(6) { grid-area: 3 / 2; }
 
-.resultado-item-card:nth-child(4) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.resultado-item-card:nth-child(5) {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.resultado-item-card:nth-child(6) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
+/* Estilos base para os cards */
+.diferencial-item-card,
 .resultado-item-card {
   padding: 2.5rem;
   text-align: center;
@@ -143,60 +86,7 @@
   justify-content: flex-start;
 }
 
-/* Títulos em linhas separadas */
-.dual-title {
-  margin-bottom: 3rem;
-}
-
-.section-title-line {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-  line-height: 1.3;
-}
-
-.section-title-line:last-child {
-  margin-bottom: 0;
-}
-
-/* Texto sem bullets */
-.phase-text-list {
-  margin: 1rem 0;
-}
-
-.phase-text-list p {
-  margin-bottom: 0.8rem;
-  color: var(--base-color);
-  line-height: 1.6;
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-.phase-text-list p:last-child {
-  margin-bottom: 0;
-}
-
-/* Phase Deliverable */
-.phase-deliverable {
-  background: var(--glass-bg);
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  padding: 1rem;
-  color: var(--base-color);
-  font-size: 0.9rem;
-  margin-top: 1.5rem;
-  text-align: center;
-}
-
-.phase-deliverable strong {
-  color: var(--accent-color);
-}
-
-/* Ícones */
+/* Ícones dos cards */
 .diferencial-icon,
 .resultado-icon {
   width: 60px;
@@ -237,6 +127,59 @@
   flex-grow: 1;
 }
 
+/* Títulos em linhas separadas */
+.dual-title {
+  margin-bottom: 3rem;
+}
+
+.section-title-line {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.section-title-line:last-child {
+  margin-bottom: 0;
+}
+
+/* Texto sem bullets nos cards do framework */
+.phase-text-list {
+  margin: 1rem 0;
+}
+
+.phase-text-list p {
+  margin-bottom: 0.8rem;
+  color: var(--base-color);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.phase-text-list p:last-child {
+  margin-bottom: 0;
+}
+
+/* Phase Deliverable */
+.phase-deliverable {
+  background: var(--glass-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--base-color);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.phase-deliverable strong {
+  color: var(--accent-color);
+}
+
 /* Step Icon */
 .step-icon {
   position: absolute;
@@ -246,12 +189,6 @@
   height: 32px;
   color: var(--accent-color);
   opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-.step-item-vertical-tall:hover .step-icon {
-  opacity: 1;
-  transform: scale(1.1);
 }
 
 /* Step Content */
@@ -261,7 +198,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .step-item-vertical-tall .step-content h3 {
@@ -278,24 +215,21 @@
   box-shadow: 0 12px 40px rgba(0, 150, 129, 0.2);
 }
 
-.glass-card-contrast:hover::before {
-  opacity: 1;
-}
-
-/* Responsividade */
+/* Responsividade - Mobile */
 @media (max-width: 768px) {
   .section-title-line {
     font-size: 2rem;
   }
 
+  /* Framework em mobile */
   .process-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
+  .framework-video-side,
   .framework-video-side-tall {
-    min-height: 300px;
-    max-height: none;
+    min-height: 300px !important;
     order: -1;
   }
 
@@ -305,15 +239,13 @@
 
   .step-item-vertical-tall {
     min-height: 160px;
-    max-height: none;
-    padding: 2.5rem 2rem;
+    padding: 2rem;
   }
 
-  /* Grid diferenciais em mobile */
+  /* Diferenciais em mobile - coluna única */
   .diferencial-grid-221 {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
 
   .diferencial-item-card:nth-child(1),
@@ -321,17 +253,15 @@
   .diferencial-item-card:nth-child(3),
   .diferencial-item-card:nth-child(4),
   .diferencial-item-card:nth-child(5) {
-    grid-column: 1;
-    grid-row: auto;
+    grid-area: auto !important;
     max-width: none;
     justify-self: stretch;
   }
 
-  /* Grid resultados em mobile */
+  /* Resultados em mobile - coluna única */
   .resultados-grid-222 {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
 
   .resultado-item-card:nth-child(1),
@@ -340,8 +270,7 @@
   .resultado-item-card:nth-child(4),
   .resultado-item-card:nth-child(5),
   .resultado-item-card:nth-child(6) {
-    grid-column: 1;
-    grid-row: auto;
+    grid-area: auto !important;
   }
 
   .diferencial-item-card,
@@ -357,7 +286,7 @@
   }
 
   .step-item-vertical-tall {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
     min-height: 140px;
   }
 
@@ -384,16 +313,6 @@
   .resultado-icon .icon {
     width: 24px;
     height: 24px;
-  }
-
-  .phase-deliverable {
-    padding: 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  .phase-text-list p {
-    font-size: 0.9rem;
-    margin-bottom: 0.6rem;
   }
 
   .diferencial-item-card h3,
