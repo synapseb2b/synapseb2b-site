@@ -124,7 +124,7 @@ export default function HomePage() {
             playsInline
             className="hero-video"
           >
-            <source src="/video/video_home.mp4" type="video/mp4" />
+            <source src="/video/Video_Home.mp4" type="video/mp4" />
           </video>
         </div>
       </section>

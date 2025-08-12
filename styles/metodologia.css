@@ -1,0 +1,480 @@
+/* CSS específico para página Metodologia - Complementa o globals.css */
+
+/* Framework Video Container - Formato 9:16 */
+.framework-video-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.framework-video-wrapper {
+  position: relative;
+  width: 300px;
+  height: 533px; /* Proporção 9:16 */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  background: var(--glass-bg-contrast);
+  border: 1px solid var(--glass-border);
+}
+
+.framework-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Framework Phases */
+.framework-phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.phase-item {
+  padding: 2.5rem;
+  text-align: left;
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.phase-number {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.phase-header h3 {
+  color: var(--accent-color);
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.phase-content {
+  margin-left: 0;
+}
+
+.phase-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.phase-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--base-color);
+  line-height: 1.6;
+}
+
+.phase-list li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.phase-deliverable {
+  background: var(--glass-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--base-color);
+  font-size: 0.95rem;
+}
+
+.phase-deliverable strong {
+  color: var(--accent-color);
+}
+
+/* Diferencial Layout */
+.diferencial-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.diferencial-content {
+  text-align: left;
+}
+
+.diferencial-content .section-title {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.diferencial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.diferencial-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.diferencial-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.diferencial-icon .icon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+}
+
+.diferencial-item p {
+  margin: 0;
+  color: var(--base-color);
+  font-weight: 500;
+}
+
+/* Diferencial Video - Formato 9:16 */
+.diferencial-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.diferencial-video-wrapper {
+  position: relative;
+  width: 250px;
+  height: 444px; /* Proporção 9:16 */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  background: var(--glass-bg-contrast);
+  border: 1px solid var(--glass-border);
+}
+
+.diferencial-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Quiz Container */
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.quiz-questions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.quiz-question {
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.quiz-question h3 {
+  color: var(--base-color);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.quiz-question:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+/* Format Cards Grid */
+.formats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.format-card {
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.format-card-highlighted {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 30px rgba(0, 150, 129, 0.3);
+  transform: scale(1.02);
+}
+
+.format-card-highlighted::before {
+  opacity: 1;
+}
+
+.format-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.format-card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.format-card-icon .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--primary-color);
+}
+
+.format-card-header h3 {
+  color: var(--accent-color);
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.format-card-content p {
+  color: var(--base-color);
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Resultados Layout */
+.resultados-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.resultados-content {
+  text-align: left;
+}
+
+.resultados-content .section-title {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.resultados-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.resultado-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.resultado-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resultado-icon .icon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+}
+
+.resultado-item p {
+  margin: 0;
+  color: var(--base-color);
+  font-weight: 500;
+}
+
+/* Logo Video - Formato 9:16 */
+.logo-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logo-video-wrapper {
+  position: relative;
+  width: 250px;
+  height: 444px; /* Proporção 9:16 */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  background: var(--glass-bg-contrast);
+  border: 1px solid var(--glass-border);
+}
+
+.logo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Animações específicas */
+@keyframes pulse-highlight {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 150, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 150, 129, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 150, 129, 0.3);
+  }
+}
+
+.format-card-highlighted {
+  animation: pulse-highlight 2s ease-in-out infinite;
+}
+
+/* Responsividade específica da metodologia */
+@media (max-width: 768px) {
+  .framework-video-wrapper {
+    width: 250px;
+    height: 444px;
+  }
+
+  .framework-phases {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .phase-item {
+    padding: 2rem;
+  }
+
+  .diferencial-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .diferencial-content .section-title {
+    text-align: center;
+  }
+
+  .diferencial-video-wrapper {
+    width: 200px;
+    height: 356px;
+  }
+
+  .quiz-questions {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .quiz-question {
+    padding: 2rem;
+  }
+
+  .formats-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .resultados-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .resultados-content .section-title {
+    text-align: center;
+  }
+
+  .resultados-list {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-video-wrapper {
+    width: 200px;
+    height: 356px;
+  }
+}
+
+@media (max-width: 480px) {
+  .framework-video-wrapper {
+    width: 200px;
+    height: 356px;
+  }
+
+  .diferencial-video-wrapper {
+    width: 180px;
+    height: 320px;
+  }
+
+  .logo-video-wrapper {
+    width: 180px;
+    height: 320px;
+  }
+
+  .phase-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .phase-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .diferencial-item,
+  .resultado-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .quiz-question h3 {
+    font-size: 1.1rem;
+  }
+}
+
