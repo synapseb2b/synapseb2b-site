@@ -142,7 +142,7 @@ export default function MetodologiaPage() {
 
       <div className="synapse-line"></div>
 
-      <section 
+<section 
         className="section section-darker modern-section"
         style={{
           backgroundImage: "url('/image/Plataforma.png')",
@@ -161,6 +161,7 @@ export default function MetodologiaPage() {
               
               <div className="framework-grid">
                 
+                {/* 1ª Linha: Imagem + Card */}
                 <div className="framework-row">
                   <div className="framework-image-container">
                     <Image src="/image/Diagnostico_Estrategico.png" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
@@ -183,7 +184,13 @@ export default function MetodologiaPage() {
                   </div>
                 </div>
                 
-                <div className="framework-row-reverse">
+                {/* AJUSTE: A classe foi alterada para "framework-row" e a ordem dos elementos foi corrigida. */}
+                <div className="framework-row">
+                  {/* Ordem corrigida: Imagem primeiro */}
+                  <div className="framework-image-container">
+                    <Image src="/image/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
+                  </div>
+                  {/* Card depois */}
                   <div className="step-item-vertical-tall glass-card-contrast">
                     <div className="step-content">
                       <div className="card-main-content">
@@ -200,11 +207,9 @@ export default function MetodologiaPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="framework-image-container">
-                    <Image src="/image/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
-                  </div>
                 </div>
 
+                {/* 3ª Linha: Imagem + Card */}
                 <div className="framework-row">
                    <div className="framework-image-container">
                     <Image src="/image/Engenharia_de_Receita.png" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
