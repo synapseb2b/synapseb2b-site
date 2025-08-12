@@ -145,6 +145,12 @@ export default function CasosDeUsoPage() {
           gap: 2rem;
           margin-top: 4rem;
         }
+        .challenges-grid-new .challenge-card-new:last-child {
+          grid-column: 1 / -1; /* Faz o último item ocupar todas as colunas da linha */
+          justify-self: center; /* Centraliza o item horizontalmente */
+          width: 100%; /* Garante que o max-width seja respeitado */
+          max-width: 400px; /* Define uma largura máxima para o card não esticar demais */
+        }    
         .challenge-card-new {
           display: flex;
           flex-direction: column;
