@@ -98,7 +98,7 @@ export default function CasosDeUsoPage() {
             playsInline
             className="hero-video"
           >
-            <source src="/video/video_home_metodologia.mp4" type="video/mp4" />
+            <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
@@ -149,7 +149,7 @@ export default function CasosDeUsoPage() {
       >
         <div className="container">
           <div className="text-center mb-2">
-            <h2 className="section-title">Desafios que já conhecemos — e resultados que já entregamos</h2>
+            <h2 className="section-title">Exemplos de Desafios que já conhecemos — e resultados que já entregamos</h2>
             <div className="section-content">
               <div className="scenarios-grid">
                 
@@ -161,11 +161,11 @@ export default function CasosDeUsoPage() {
                   <div className="scenario-body">
                     <div className="scenario-part">
                       <h4>Antes:</h4>
-                      <p>Décadas de excelência técnica, mas mensagens densas e pouco acessíveis para decisores. O valor real se perdia antes da primeira reunião terminar.</p>
+                      <p>Competência técnica robusta e clientes de peso, mas enfrentavam uma "invisibilidade digital" em um mercado onde a confiança é construída antes da primeira reunião. </p>
                     </div>
                     <div className="scenario-part">
                       <h4>Virada:</h4>
-                      <p>Reescrevemos a narrativa para falar o idioma de CFOs, CTOs e COOs — vinculando cada atributo técnico a métricas de ROI, eficiência e mitigação de risco.</p>
+                      <p> Autoridade offline transformada em um sinalizador online de credibilidade e valor. Adoção de métricas de ROI, eficiência e mitigação de risco.</p>
                     </div>
                     <div className="scenario-part">
                       <h4>Depois:</h4>
@@ -177,45 +177,23 @@ export default function CasosDeUsoPage() {
                 <div className="scenario-card glass-card-contrast">
                   <div className="scenario-header">
                     <HeartPulse className="scenario-icon" />
-                    <h3>Saúde & Bem-Estar Corporativo</h3>
+                    <h3>Healthtech</h3>
                   </div>
                   <div className="scenario-body">
                     <div className="scenario-part">
                       <h4>Antes:</h4>
-                      <p>Proposta inovadora em saúde integrativa, mas percebida como “conceitual demais” pelas empresas. Os benefícios práticos ficavam ofuscados.</p>
+                      <p>Solução inovadora, mas "sensação de desorientação" sobre sua própria proposta de valor e narrativa de mercado. Extrema dificuldade para traduzir a complexidade do seu método em um caso de negócio claro para clientes e investidores.</p>
                     </div>
                     <div className="scenario-part">
                       <h4>Virada:</h4>
-                      <p>Criamos um posicionamento irrecusável, com benefícios claros para RH, gestores financeiros e executivos de operação.</p>
+                      <p>Tese do negócio cristalizada em uma proposta irrecusável, focada em resolver uma das maiores dores financeiras e operacionais do setor da saúde.</p>
                     </div>
                     <div className="scenario-part">
                       <h4>Depois:</h4>
-                      <p>Novas conversas com tomadores de decisão, aumento da taxa de resposta e início de negociações em clientes-alvo estratégicos.</p>
+                      <p>Clareza estratégica e ativos de comunicação prontos para comprovar o ROI para clientes e investidores, acelerando a tração de mercado.</p>
                     </div>
                   </div>
                 </div>
-
-                <div className="scenario-card glass-card-contrast">
-                  <div className="scenario-header">
-                    <Laptop className="scenario-icon" />
-                    <h3>Tecnologia & SaaS</h3>
-                  </div>
-                   <div className="scenario-body">
-                    <div className="scenario-part">
-                      <h4>Antes:</h4>
-                      <p>Produto robusto e escalável, mas sem clareza no ICP e com funil desorganizado. Leads desqualificados inflavam o CAC e desperdiçavam esforço de vendas.</p>
-                    </div>
-                    <div className="scenario-part">
-                      <h4>Virada:</h4>
-                      <p>Implementamos PQLs, organizamos o funil com RevOps e ajustamos a proposta de valor para maximizar conversão.</p>
-                    </div>
-                    <div className="scenario-part">
-                      <h4>Depois:</h4>
-                      <p>Redução de 30% no CAC, aumento no volume de leads qualificados e previsibilidade no pipeline.</p>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
