@@ -125,7 +125,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 1: O princípio - AJUSTE 1: Frases em linhas separadas */}
+      {/* Seção 1: O princípio */}
       <section 
         className="section section-dark modern-section"
         id="principio"
@@ -151,7 +151,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 2: Framework GTM Ignition™ - ESTRUTURA CORRETA PARA O PEDIDO 1 */}
+      {/* Seção 2: Framework GTM Ignition™ */}
       <section 
         className="section section-darker modern-section"
         style={{
@@ -169,7 +169,6 @@ export default function MetodologiaPage() {
             <h2 className="section-title">Nosso processo proprietário em três fases</h2>
             <div className="section-content">
               
-              {/* Layout com imagens e cards */}
               <div className="framework-grid">
                 
                 {/* 1ª Linha: Imagem + Card */}
@@ -244,7 +243,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 3: O que nos diferencia - ESTRUTURA CORRETA PARA O PEDIDO 2 */}
+      {/* Seção 3: O que nos diferencia */}
       <section 
         className="section section-dark modern-section"
         id="diferencial"
@@ -254,7 +253,6 @@ export default function MetodologiaPage() {
             <h2 className="section-title">Por que o GTM Ignition™ não é só mais um método</h2>
             <div className="section-content">
               
-              {/* Grid 2-2-1 para os diferenciais */}
               <div className="diferencial-grid-221">
                 <div className="diferencial-item-card glass-card-contrast">
                   <div className="diferencial-icon">
@@ -304,7 +302,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 4: Formatos de atuação - Card Referência */}
+      {/* Seção 4: Formatos de atuação */}
       <section 
         className="section section-darker modern-section"
         id="formatos"
@@ -343,7 +341,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 5: Resultados - ESTRUTURA CORRETA PARA O PEDIDO 3 */}
+      {/* Seção 5: Resultados */}
       <section 
         className="section section-dark modern-section"
         id="resultados"
@@ -353,7 +351,6 @@ export default function MetodologiaPage() {
             <h2 className="section-title">O que mudará no seu negócio quando a mensagem certa chegar às pessoas certas</h2>
             <div className="section-content">
               
-              {/* Grid 2-2-2 para os resultados */}
               <div className="resultados-grid-222">
                 <div className="resultado-item-card glass-card-contrast">
                   <div className="resultado-icon">
@@ -438,6 +435,162 @@ export default function MetodologiaPage() {
           </div>
         </div>
       </section>
+
+      {/* ============================================================================================ */}
+      {/* ======================= INÍCIO DO CSS EMBUTIDO PARA CORREÇÃO =============================== */}
+      {/* ============================================================================================ */}
+      <style jsx global>{`
+        /* PEDIDO 1: LAYOUT DA SEÇÃO "PROCESSO PROPRIETÁRIO" (Framework) */
+        .framework-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          max-width: 1100px;
+          margin: 2rem auto 0 auto;
+        }
+        .framework-row,
+        .framework-row-reverse {
+          display: grid !important; /* Força o display grid */
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          align-items: stretch;
+        }
+        .framework-row-reverse .step-item-vertical-tall {
+          grid-column: 1;
+        }
+        .framework-row-reverse .framework-image-container {
+          grid-column: 2;
+        }
+        .framework-image-container {
+          position: relative;
+          width: 100%;
+          min-height: 450px;
+          border-radius: 16px;
+          overflow: hidden;
+        }
+
+        /* PEDIDO 2: LAYOUT E ESTILO DA SEÇÃO "DIFERENCIAL" */
+        .diferencial-grid-221 {
+          display: grid !important; /* Força o display grid */
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          max-width: 900px;
+          margin: 2rem auto 0 auto;
+        }
+        .diferencial-item-card.diferencial-single { 
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: 100%;
+          max-width: calc(50% - 1rem);
+        }
+
+        /* PEDIDO 3: LAYOUT E ESTILO DA SEÇÃO "RESULTADOS" */
+        .resultados-grid-222 {
+          display: grid !important; /* Força o display grid */
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          max-width: 900px;
+          margin: 2rem auto 0 auto;
+        }
+
+        /* ESTILO PADRONIZADO (seguindo o card de referência da seção "Formatos") */
+        .diferencial-item-card,
+        .resultado-item-card {
+          padding: 2.5rem;
+          text-align: center;
+          min-height: 320px;
+          display: flex !important; /* Força o display flex */
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .diferencial-icon,
+        .resultado-icon {
+          width: 80px;
+          height: 80px;
+          background: var(--gradient-primary);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          margin-bottom: 1.5rem;
+        }
+        .diferencial-icon .icon,
+        .resultado-icon .icon {
+          width: 36px;
+          height: 36px;
+          color: var(--primary-color);
+        }
+        .diferencial-item-card h3,
+        .resultado-item-card h3 {
+          font-size: 1.3rem;
+          line-height: 1.4;
+        }
+        .diferencial-item-card p,
+        .resultado-item-card p {
+          font-size: 0.95rem;
+        }
+        
+        /* Estilos de referência para a seção "Formatos" */
+        .formats-grid-square {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto 0 auto;
+        }
+        .format-item-square {
+            padding: 2.5rem;
+            text-align: center;
+            min-height: 320px;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .format-icon-large {
+            width: 80px;
+            height: 80px;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        .format-item-square h4 {
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+          .framework-row, 
+          .framework-row-reverse,
+          .diferencial-grid-221,
+          .resultados-grid-222,
+          .formats-grid-square {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          .framework-row-reverse .step-item-vertical-tall,
+          .framework-row-reverse .framework-image-container {
+            grid-column: 1;
+          }
+          .framework-image-container { min-height: 300px; }
+          .diferencial-item-card.diferencial-single {
+            max-width: none;
+            justify-self: stretch;
+          }
+          .diferencial-item-card,
+          .resultado-item-card,
+          .format-item-square {
+            min-height: auto;
+            padding: 2rem;
+          }
+        }
+      `}</style>
+      {/* ============================================================================================ */}
+      {/* ======================== FIM DO CSS EMBUTIDO PARA CORREÇÃO ================================= */}
+      {/* ============================================================================================ */}
+
     </>
   );
 }
