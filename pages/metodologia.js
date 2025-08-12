@@ -151,7 +151,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 2: Framework GTM Ignition™ - ALTERAÇÃO 1: Imagens e cards em 3 linhas */}
+      {/* Seção 2: Framework GTM Ignition™ - ESTRUTURA CORRETA PARA O PEDIDO 1 */}
       <section 
         className="section section-darker modern-section"
         style={{
@@ -244,7 +244,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 3: O que nos diferencia - ALTERAÇÃO 2: Ajuste de Estilo dos Cards */}
+      {/* Seção 3: O que nos diferencia - ESTRUTURA CORRETA PARA O PEDIDO 2 */}
       <section 
         className="section section-dark modern-section"
         id="diferencial"
@@ -343,7 +343,7 @@ export default function MetodologiaPage() {
       {/* Linha de pulso elétrico entre seções */}
       <div className="synapse-line"></div>
 
-      {/* Seção 5: Resultados - ALTERAÇÃO 3: Ajuste de Estilo dos Cards */}
+      {/* Seção 5: Resultados - ESTRUTURA CORRETA PARA O PEDIDO 3 */}
       <section 
         className="section section-dark modern-section"
         id="resultados"
