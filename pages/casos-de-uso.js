@@ -62,9 +62,7 @@ export default function CasosDeUsoPage() {
         <div className="container">
           <div className="text-center mb-2">
             <h2 className="section-title">Empresas B2B que vivem esses cenários…</h2>
-            <div className="section-content" style={{ maxWidth: '1000px' }}>
-              <p className="lead-text">Você domina o que faz. Seu produto ou serviço é tecnicamente sólido, mas o mercado ainda não enxerga todo o potencial. Veja se alguma dessas situações soa familiar — e se projete no próximo passo: resolvê-las.</p>
-              
+            <div className="section-content" style={{ maxWidth: '1000px' }}
               <div className="challenges-grid-new">
                 {/* Card 1 */}
                 <div className="challenge-card-new glass-card-contrast">
