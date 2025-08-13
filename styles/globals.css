@@ -160,6 +160,128 @@ a:hover { color: var(--base-color); }
 .footer-bottom p { font-size: 0.8rem; color: #8892B0; margin: 0; }
 
 /* ==========================================================================
+   ESTILOS PARA O FORMULÁRIO BLUEPRINT
+   ========================================================================== */
+
+.blueprint-container {
+  background: var(--glass-bg-contrast);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.blueprint-title {
+  font-size: 2.2rem;
+  color: var(--base-color);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+.blueprint-subtitle {
+  font-size: 1.1rem;
+  color: #a0aec0;
+}
+
+.blueprint-intro {
+  background-color: rgba(1, 42, 36, 0.8);
+  border-left: 4px solid var(--accent-color);
+  color: #cbd5e0;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.form-section {
+  border-left: 3px solid var(--accent-color);
+  padding-left: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-section h2 {
+  font-size: 1.8rem;
+  color: var(--base-color);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+.question-title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #E2E8F0;
+}
+
+.question-title span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #a0aec0;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.options-group label {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.options-group label:hover {
+  background-color: rgba(0, 150, 129, 0.2);
+}
+
+.options-group input[type="radio"],
+.options-group input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  accent-color: var(--accent-color);
+}
+
+.options-group span {
+  font-size: 1rem;
+  color: #cbd5e0;
+}
+
+textarea.textarea-custom, input[type="number"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--base-color);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea.textarea-custom:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 150, 129, 0.4);
+}
+
+.btn.w-full {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
    CORREÇÃO: ESTILOS ESPECÍFICOS DAS PÁGINAS (Home, Casos de Uso, etc.)
    ========================================================================== */
 
