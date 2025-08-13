@@ -82,7 +82,7 @@ export default function LoginPage() {
           font-size: 1rem;
           font-weight: 500;
           border-radius: 8px;
-          border: 1px solid var(--glass-border);
+          border: 1px solid var(--glass-border); 
           background-color: rgba(255, 255, 255, 0.1);
           color: var(--base-color);
           cursor: pointer;
