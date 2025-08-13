@@ -165,6 +165,8 @@ a:hover { color: var(--base-color); }
 .scenario-body { display: flex; flex-direction: column; gap: 1.5rem; }
 .scenario-part h4 { font-size: 0.9rem; text-transform: uppercase; color: var(--accent-color); letter-spacing: 1px; margin-bottom: 0.5rem; }
 .scenario-part p { font-size: 0.95rem; line-height: 1.7; color: var(--base-color-light); }
+.scenario-card { text-align: center; /* Alinha todo o texto ao centro */}
+.scenario-header { justify-content: center; /* Centraliza o ícone e o título */}
 
 /* --- Contato Page --- */
 .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
