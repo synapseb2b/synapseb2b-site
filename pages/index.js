@@ -1,4 +1,4 @@
-import { Target, BarChart, Search, ClipboardCheck, TrendingUp, Zap, Wrench, Ban, ArrowRight, CheckCircle, Eye, Users, Lightbulb } from 'lucide-react';
+import { Target, BarChart, Search, ClipboardCheck, TrendingUp, Zap, Wrench, HeartPulse, Ban, ArrowRight, CheckCircle, Eye, Users, Lightbulb } from 'lucide-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -272,77 +272,58 @@ export default function HomePage() {
       <div className="synapse-line"></div>
 
       {/* Bloco 4: Casos que inspiram */}
-      <section 
-        className="section section-dark modern-section"
-        id="casos"
+<section 
+        className="section section-darker modern-section"
+        id="cenarios"
       >
         <div className="container">
           <div className="text-center mb-2">
-            <h2 className="section-title">Aplicando estratégia e execução para gerar impacto real.</h2>
-            <p className="lead-text">
-              Veja exemplos de empresas que estão transformando sua presença no mercado com
-              nossas metodologias.
-            </p>
-          </div>
-          
-          <div className="cases-grid">
-            {/* Microcase 1 */}
-            <div className="case-item glass-card-contrast">
-              <div className="case-header">
-                <div className="case-icon">
-                  <Wrench className="icon" />
+            <h2 className="section-title">Exemplos de Desafios que já conhecemos — e resultados que já entregamos</h2>
+            <div className="section-content">
+              <div className="scenarios-grid">
+                
+                <div className="scenario-card glass-card-contrast">
+                  <div className="scenario-header">
+                    <Wrench className="scenario-icon" />
+                    <h3>Engenharia & Infraestrutura</h3>
+                  </div>
+                  <div className="scenario-body">
+                    <div className="scenario-part">
+                      <h4>Antes:</h4>
+                      <p>Competência técnica robusta e clientes de peso, mas enfrentavam uma "invisibilidade digital" em um mercado onde a confiança é construída antes da primeira reunião.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Virada:</h4>
+                      <p>Autoridade offline transformada em um sinalizador online de credibilidade e valor. Adoção de métricas de ROI, eficiência e mitigação de risco.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Depois:</h4>
+                      <p>Ciclo de vendas reduzido, maior taxa de conversão em propostas e novas portas abertas em contas estratégicas.</p>
+                    </div>
+                  </div>
                 </div>
-                <h3>Engenharia & Facilities</h3>
-              </div>
-              <div className="case-content">
-                <div className="case-section">
-                  <h4>Desafio:</h4>
-                  <p>Expertise técnica consolidada, mas dificuldade em comunicar valor para decisores estratégicos.</p>
-                </div>
-                <div className="case-section">
-                  <h4>Ação:</h4>
-                  <p>Diagnóstico profundo, reposicionamento e plano de <strong>go-to-market B2B</strong> direcionado.</p>
-                </div>
-                <div className="case-section">
-                  <h4>Status:</h4>
-                  <p>Implementação em andamento, com sinais iniciais de maior engajamento e abertura de novas conversas comerciais.</p>
-                </div>
-              </div>
-              <div className="case-footer">
-                <Link href="/casos-de-uso" className="case-link">
-                  Saiba mais
-                  <ArrowRight className="link-icon" />
-                </Link>
-              </div>
-            </div>
 
-            {/* Microcase 2 */}
-            <div className="case-item glass-card-contrast">
-              <div className="case-header">
-                <div className="case-icon">
-                  <Lightbulb className="icon" />
+                <div className="scenario-card glass-card-contrast">
+                  <div className="scenario-header">
+                    <HeartPulse className="scenario-icon" />
+                    <h3>HealthTech</h3>
+                  </div>
+                  <div className="scenario-body">
+                    <div className="scenario-part">
+                      <h4>Antes:</h4>
+                      <p>Solução inovadora, mas "sensação de desorientação" sobre sua própria proposta de valor e narrativa de mercado. Extrema dificuldade para traduzir a complexidade do seu método em um caso de negócio claro para clientes e investidores.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Virada:</h4>
+                      <p>Tese do negócio cristalizada em uma proposta irrecusável, focada em resolver uma das maiores dores financeiras e operacionais do setor da saúde.</p>
+                    </div>
+                    <div className="scenario-part">
+                      <h4>Depois:</h4>
+                      <p>Clareza estratégica e ativos de comunicação prontos para comprovar o ROI para clientes e investidores, acelerando a tração de mercado.</p>
+                    </div>
+                  </div>
                 </div>
-                <h3>Health & Wellness B2B</h3>
-              </div>
-              <div className="case-content">
-                <div className="case-section">
-                  <h4>Desafio:</h4>
-                  <p>Modelo inovador pouco compreendido por empresas.</p>
-                </div>
-                <div className="case-section">
-                  <h4>Ação:</h4>
-                  <p>Criação de proposta de valor clara, arquitetura de ativos estratégicos e plano de entrada no mercado corporativo.</p>
-                </div>
-                <div className="case-section">
-                  <h4>Status:</h4>
-                  <p>Primeiras ativações já geram mais clareza na mensagem e novas oportunidades de abordagem.</p>
-                </div>
-              </div>
-              <div className="case-footer">
-                <Link href="/casos-de-uso" className="case-link">
-                  Saiba mais
-                  <ArrowRight className="link-icon" />
-                </Link>
+                
               </div>
             </div>
           </div>

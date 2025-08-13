@@ -59,9 +59,9 @@ export default function MetodologiaPage() {
   return (
     <>
       <Head>
-        <title>GTM Ignition™ – Metodologia de Aceleração de Receita B2B</title>
+        <title>"Metodologia de Aceleração de Receita B2B - GTM Ignition™</title>
         <meta name="description" content="Metodologia GTM Ignition™: estratégia e execução para transformar complexidade técnica em clareza comercial e crescimento previsível no B2B." />
-        <meta property="og:title" content="GTM Ignition™ – Metodologia de Aceleração de Receita B2B" />
+        <meta property="og:title" content="Metodologia de Aceleração de Receita B2B - GTM Ignition™" />
         <meta property="og:description" content="Metodologia GTM Ignition™: estratégia e execução para transformar complexidade técnica em clareza comercial e crescimento previsível no B2B." />
         <link rel="canonical" href="https://synapseb2b.com/metodologia" />
       </Head>
@@ -97,7 +97,7 @@ export default function MetodologiaPage() {
               Estratégia e execução, conectadas para transformar complexidade em crescimento previsível.
             </h1>
             <p className="hero-subheadline">
-              Nosso método GTM Ignition™ leva empresas técnicas do invisível ao impossível de ignorar — provando valor com métricas reais.
+              Do invisível ao impossível de ignorar: o GTM Ignition™ prova o valor de empresas B2B complexas com métricas reais.
             </p>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function MetodologiaPage() {
                 No B2B, muitas empresas técnicas ficam invisíveis para o mercado não por falta de competência, mas por não conseguirem traduzir seu valor de forma clara e convincente.
               </p>
               <p className="lead-text">
-                O <strong>GTM Ignition™</strong> nasceu para eliminar essa lacuna — integrando clareza estratégica, execução prática e prova de ROI para que sua solução seja percebida, valorizada e escolhida.
+                A <strong>Synapse B2B</strong> nasceu para eliminar essa lacuna — integrando clareza estratégica, execução prática e prova de ROI para que sua solução seja percebida, valorizada e escolhida.
               </p>
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function MetodologiaPage() {
       >
         <div className="container">
           <div className="text-center mb-2">
-            <h2 className="section-title">Duas formas de colocar o GTM Ignition™ para trabalhar</h2>
+            <h2 className="section-title">Dois formatos exclusivos de atuação da Synapse B2B para impulsionar seu crescimento.</h2>
             <div className="section-content">
               
               <div className="formats-section" id="formatos-cards">
