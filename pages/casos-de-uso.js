@@ -58,13 +58,12 @@ export default function CasosDeUsoPage() {
 
       <div className="synapse-line"></div>
 
-      <section className="section section-dark modern-section" id="cenarios-b2b">
+ <section className="section section-dark modern-section" id="cenarios-b2b">
         <div className="container">
           <div className="text-center mb-2">
             <h2 className="section-title">Empresas B2B que vivem esses cenários…</h2>
-            <div className="section-content" style={{ maxWidth: '1000px' }}
+            <div className="section-content" style={{ maxWidth: '1000px' }}>
               <div className="challenges-grid-new">
-                {/* Card 1 */}
                 <div className="challenge-card-new glass-card-contrast">
                   <div className="card-icon-wrapper"><Gem className="card-icon" /></div>
                   <p className="challenge-text">Falam mais sobre o produto do que sobre o valor que entregam.</p>
