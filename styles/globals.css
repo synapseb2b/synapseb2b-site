@@ -281,6 +281,28 @@ textarea.textarea-custom:focus, input[type="number"]:focus {
   font-size: 1.1rem;
 }
 
+/* AJUSTE: Melhora o "respiro" entre as perguntas do formulário Blueprint */
+.form-section > .mb-8 {
+  margin-bottom: 3.5rem; /* Aumenta o espaço entre cada bloco de pergunta */
+}
+
+.form-section > div:last-child {
+  margin-bottom: 0; /* Remove a margem extra do último item de cada seção */
+}
+
+.ranking-group div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.ranking-group input[type="number"] {
+  width: 4rem;
+  text-align: center;
+  padding: 0.75rem;
+}
+
 /* ==========================================================================
    CORREÇÃO: ESTILOS ESPECÍFICOS DAS PÁGINAS (Home, Casos de Uso, etc.)
    ========================================================================== */
