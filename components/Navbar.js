@@ -37,7 +37,7 @@ export default function Navbar() {
               height={50} // AUMENTADO para 50
               className="nav-logo"
             >
-              <source src="/video/Logo_Animada_SynapseB2B_h.mp4" type="video/mp4" />
+              <source src="/video/Logo_Animada_SynapseB2B.mp4" type="video/mp4" />
             </video>
             {/* CORRIGIDO: Cor do texto para branco (#FFFFFF) */}
             <span style={{ color: '#FFFFFF', marginLeft: '12px', fontSize: '1.4rem', fontWeight: 'bold' }}>
