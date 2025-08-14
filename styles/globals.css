@@ -344,6 +344,31 @@ textarea.textarea-custom:focus, input[type="number"]:focus {
   background-color: transparent; /* Garante que o fundo seja transparente para ver o vídeo */
 }
 
+/* CORREÇÃO: Força o conteúdo principal a ficar sobreposto ao vídeo de fundo */
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.form-page-video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Garante que o vídeo fique no fundo */
+  overflow: hidden;
+}
+
+.form-page-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
 /* ==========================================================================
    CORREÇÃO: ESTILOS ESPECÍFICOS DAS PÁGINAS (Home, Casos de Uso, etc.)
    ========================================================================== */
