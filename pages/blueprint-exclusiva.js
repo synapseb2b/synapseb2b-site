@@ -5,33 +5,27 @@ export default function BlueprintForm() {
   // Script para limitar a seleção de checkboxes
   useEffect(() => {
     const setupCheckboxLimit = (name, limit) => {
-        // Garante que o código só rode no navegador
-        if (typeof window === 'undefined') return; 
-        
-        const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
-        
-        const handleChange = () => {
-            const checkedCheckboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-            if (checkedCheckboxes.length > limit) {
-                // 'this' se refere ao checkbox que disparou o evento
-                this.checked = false; 
-            }
-        };
+      if (typeof window === 'undefined') return;
+      const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
+      
+      const handleChange = (event) => {
+        const checkedCheckboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+        if (checkedCheckboxes.length > limit) {
+          event.target.checked = false;
+        }
+      };
 
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', handleChange);
+      });
+
+      return () => {
         checkboxes.forEach(checkbox => {
-            // Usa 'change' como o gatilho e a função handleChange
-            checkbox.addEventListener('change', handleChange);
+          checkbox.removeEventListener('change', handleChange);
         });
-
-        // Retorna uma função de limpeza para remover os event listeners
-        return () => {
-            checkboxes.forEach(checkbox => {
-                checkbox.removeEventListener('change', handleChange);
-            });
-        };
+      };
     };
 
-    // Ativa os limites para cada grupo de checkbox
     setupCheckboxLimit('archetype', 2);
     setupCheckboxLimit('never_transmit', 2);
     setupCheckboxLimit('visual_concept', 2);
@@ -122,7 +116,7 @@ export default function BlueprintForm() {
                 <textarea id="exclusiva_capability" name="exclusiva_capability" rows="3" className="textarea-custom"></textarea>
             </div>
         </div>
-        
+
         {/* --- Seção 4: O Cliente Ideal (ICP) e a Decisão de Compra --- */}
         <div className="form-section">
             <h2 className="text-2xl font-bold mb-6">4. O Cliente Ideal (ICP) e a Decisão de Compra</h2>
@@ -145,7 +139,7 @@ export default function BlueprintForm() {
                 </div>
             </div>
         </div>
-
+        
         {/* --- Seção 5: Estética Visual e Tom de Voz --- */}
         <div className="form-section">
             <h2 className="text-2xl font-bold mb-6">5. Estética Visual e Tom de Voz</h2>
