@@ -33,8 +33,8 @@ export default function Navbar() {
               loop
               muted
               playsInline
-              width={50}  // AUMENTADO para 50
-              height={50} // AUMENTADO para 50
+              width={70}  // AUMENTADO para 70
+              height={70} // AUMENTADO para 70
               className="nav-logo"
             >
               <source src="/video/Logo_Animada_SynapseB2B.mp4" type="video/mp4" />
