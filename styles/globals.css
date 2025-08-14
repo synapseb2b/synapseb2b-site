@@ -86,7 +86,7 @@ a:hover { color: var(--base-color); }
 }
 .nav.scrolled {
   /* CORRIGIDO: Fundo verde escuro semitransparente com desfoque */
-  background-color: rgba(1, 42, 36, 0.8);
+  background-color: rgba(0, 0, 0, 1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 0.75rem 0;
