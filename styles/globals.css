@@ -304,6 +304,40 @@ textarea.textarea-custom:focus, input[type="number"]:focus {
 }
 
 /* ==========================================================================
+   ESTILOS PARA O FUNDO COM VÍDEO DA PÁGINA DE FORMULÁRIO
+   ========================================================================== */
+
+.form-page-video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.form-page-video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-page-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Overlay escuro para garantir a legibilidade */
+}
+
+/* Garante que a Navbar fique sobre o vídeo */
+.nav {
+  z-index: 10;
+}
+
+/* ==========================================================================
    CORREÇÃO: ESTILOS ESPECÍFICOS DAS PÁGINAS (Home, Casos de Uso, etc.)
    ========================================================================== */
 
