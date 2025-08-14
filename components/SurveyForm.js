@@ -1,7 +1,6 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function SurveyForm() {
-  // Conectado ao seu novo formulário do Formspree
   const [state, handleSubmit] = useForm("xwpqzbgg");
 
   if (state.succeeded) {
@@ -18,11 +17,42 @@ export default function SurveyForm() {
 
   return (
     <div className="blueprint-container">
+      
+      {/* ==========================================================================
+          NOVO BLOCO DE TEXTO ESTRATÉGICO
+          ========================================================================== */}
+      <div className="form-context-box">
+        <h3 className="context-title">Contexto: O Cliente Ideal (ICP) da Synapse B2B</h3>
+        <p className="context-intro">
+          Antes de avaliar as opções de texto, queremos que você conheça os dois perfis de fundadores que buscamos ajudar. Pense neles ao escolher a copy mais eficaz.
+        </p>
+        
+        <div className="persona-profile">
+          <h4>1 - A Fundadora Visionária</h4>
+          <p>
+            Ela é uma fundadora jovem e brilhante, com um produto (MVP/beta) que tem o potencial de revolucionar um nicho do mercado de Healthtech. Sua expertise é profundamente técnica, e ela enfrenta o abismo entre ter uma ótima solução e conseguir os primeiros clientes pagantes. Pressionada pelo tempo e com recursos limitados, ela busca uma rota clara para validar seu modelo de negócio e construir um motor de crescimento inicial.
+          </p>
+          <p className="persona-quote">
+            <strong>Como ela descreve seu problema:</strong> “Eu sei que meu produto pode mudar o nosso setor, mas não sei nem por onde começar a vender. Fico paralisada entre criar mais uma feature e tentar uma ligação fria que não vai dar em nada.”
+          </p>
+        </div>
+
+        <div className="persona-profile">
+          <h4>2 - O Fundador Técnico</h4>
+          <p>
+            Ele é um líder técnico brilhante que construiu uma empresa sólida com base na excelência da entrega, mas agora enfrenta o platô de crescimento causado por uma comunicação de valor que não acompanha sua competência técnica. É extremamente ocupado, cético com marketing tradicional e busca um parceiro prático que traduza sua complexidade em resultados de negócio mensuráveis, sem "blá-blá-blá".
+          </p>
+        </div>
+      </div>
+      {/* ==========================================================================
+          FIM DO NOVO BLOCO
+          ========================================================================== */}
+
       <form onSubmit={handleSubmit}>
         
         {/* Questão 1 */}
         <div className="form-section">
-          <h2 className="text-2xl font-bold mb-6">1. Escolha uma copy para avaliar:</h2>
+          <h2 className="text-2xl font-bold mb-6">1. Com base nas personas, escolha uma copy para avaliar:</h2>
           <div className="options-group">
             <label>
               <input type="radio" name="copy_choice" value="A" required />
