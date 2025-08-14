@@ -337,6 +337,13 @@ textarea.textarea-custom:focus, input[type="number"]:focus {
   z-index: 10;
 }
 
+/* AJUSTE: Garante que o conteúdo da página do formulário fique sobre o vídeo de fundo */
+.form-page-content {
+  position: relative;
+  z-index: 2;
+  background-color: transparent; /* Garante que o fundo seja transparente para ver o vídeo */
+}
+
 /* ==========================================================================
    CORREÇÃO: ESTILOS ESPECÍFICOS DAS PÁGINAS (Home, Casos de Uso, etc.)
    ========================================================================== */

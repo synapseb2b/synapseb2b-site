@@ -12,19 +12,22 @@ export default function BlueprintPage() {
       {/* Vídeo de fundo para toda a página */}
       <div className="form-page-video-background">
         <video autoPlay muted loop playsInline>
+          {/* Corrigido para usar o novo vídeo vertical */}
           <source src="/video/Framework_GTM_SynapseB2B.mp4" type="video/mp4" />
         </video>
         <div className="form-page-video-overlay"></div>
       </div>
 
-      <div style={{ position: 'relative', zIndex: 2 }}>
-        {/* MINI HERO PADRONIZADO E INSPIRADOR */}
+      {/* Conteúdo principal da página que ficará sobre o vídeo */}
+      <main className="form-page-content">
+        {/* MINI HERO CORRIGIDO PARA CENTRALIZAR */}
         <section 
           className="section section-dark" 
           style={{ 
-            paddingTop: '10rem', 
-            paddingBottom: '4rem', 
-            minHeight: 'auto' 
+            minHeight: '50vh', // Aumentado para melhor respiro
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center'
           }}
         >
           <div className="container text-center">
@@ -43,7 +46,7 @@ export default function BlueprintPage() {
             <BlueprintForm />
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }
