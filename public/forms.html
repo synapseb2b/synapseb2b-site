@@ -4,10 +4,15 @@
     <title>Formulários Netlify</title>
   </head>
   <body>
-    <form name="strategic-blueprint" netlify netlify-honeypot="bot-field" hidden>
-      
+    <form 
+      name="strategic-blueprint" 
+      method="POST"
+      action="/formulario-enviado"
+      data-netlify="true" 
+      data-netlify-honeypot="bot-field" 
+      hidden
+    >
       <input type="hidden" name="form-name" value="strategic-blueprint" />
-
       <input type="radio" name="business_goal" />
       <input type="checkbox" name="archetype" />
       <input type="checkbox" name="never_transmit" />
