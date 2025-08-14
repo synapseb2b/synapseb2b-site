@@ -1,45 +1,22 @@
-import { useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function BlueprintForm() {
-  // O hook useForm se conecta ao seu formulário no Formspree usando o ID "xpwlnwjd"
   const [state, handleSubmit] = useForm("xpwlnwjd");
 
-  // Se o formulário foi enviado com sucesso, exibe a mensagem de agradecimento.
   if (state.succeeded) {
     return (
       <div className="blueprint-container text-center">
         <svg className="mx-auto h-16 w-16 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <h2 className="text-3xl font-bold text-gray-800 mt-6" style={{color: 'white'}}>Obrigado!</h2>
-        <p className="text-gray-600 mt-3 text-lg" style={{color: '#a0aec0'}}>Suas respostas foram recebidas com sucesso.</p>
-        <p className="text-gray-600 mt-2" style={{color: '#a0aec0'}}>Entraremos em contato em breve para os próximos passos.</p>
+        <h2 className="text-3xl font-bold mt-6" style={{color: 'white'}}>Obrigado!</h2>
+        <p className="mt-3 text-lg" style={{color: '#a0aec0'}}>Suas respostas foram recebidas com sucesso.</p>
+        <p className="mt-2" style={{color: '#a0aec0'}}>Entraremos em contato em breve para os próximos passos.</p>
       </div>
     );
   }
 
-  // Script para limitar a seleção de checkboxes
-  useEffect(() => {
-    const setupCheckboxLimit = (name, limit) => {
-      if (typeof window === 'undefined') return;
-      const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
-      
-      const handleChange = (event) => {
-        const checkedCheckboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-        if (checkedCheckboxes.length > limit) {
-          event.target.checked = false;
-        }
-      };
-      checkboxes.forEach(checkbox => checkbox.addEventListener('change', handleChange));
-      return () => {
-        checkboxes.forEach(checkbox => checkbox.removeEventListener('change', handleChange));
-      };
-    };
-    setupCheckboxLimit('archetype', 2);
-    setupCheckboxLimit('never_transmit', 2);
-    setupCheckboxLimit('visual_concept', 2);
-  }, []);
+  // O useEffect foi removido para evitar o erro de client-side exception.
 
   return (
     <div className="blueprint-container">
