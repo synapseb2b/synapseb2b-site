@@ -189,17 +189,3 @@ export default function FundacaoEstrategicaForm() {
   );
 }
 
-// Adicione este CSS básico ao seu globals.css para o campo de texto inline, se necessário
-/*
-.input-inline {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-bottom: 1px solid var(--accent-color);
-  color: var(--base-color);
-  margin-left: 8px;
-  padding: 4px;
-}
-.input-inline:focus {
-  outline: none;
-}
-*/
