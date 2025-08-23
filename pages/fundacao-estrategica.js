@@ -1,6 +1,6 @@
 // pages/fundacao-estrategica.js
 
-import Layout from '../foundation/components/Layout'; // Assumindo que seu Layout está aqui
+import Layout from '../components/Layout'; // Assumindo que seu Layout está aqui
 import FundacaoEstrategicaForm from '../components/FundacaoEstrategicaForm'; // Importa o formulário que criamos
 import Head from 'next/head';
 
