@@ -1,324 +1,300 @@
-// FundacaoEstrategicaForm.js
-import React from "react";
+// components/FundacaoEstrategicaForm.js
 
-/** Utilitário visual curto para caixas de texto confortáveis */
-const TA = ({ name, rows = 6, placeholder }) => (
-  <textarea
-    name={name}
-    rows={rows}
-    placeholder={placeholder}
-    className="w-full mt-2 rounded-md border border-[#233240] bg-[#0B1117] px-3 py-2 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400/40"
-  />
-);
-
-const Line = () => <hr className="my-8 border-[#1f2937]" />;
-
-const SectionTitle = ({ k, title, subtitle }) => (
-  <div className="mb-4">
-    <h2 className="text-xl font-semibold">
-      {k}. {title}
-    </h2>
-    {subtitle && (
-      <p className="text-slate-400 text-sm mt-1">{subtitle}</p>
-    )}
-  </div>
-);
+import { useForm } from '@formspree/react';
+import React from 'react';
 
 export default function FundacaoEstrategicaForm() {
+  const [state, handleSubmit] = useForm("movlgbgo");
+
+  if (state.succeeded) {
+    return (
+      <div className="blueprint-container text-center">
+        <svg className="mx-auto h-16 w-16 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h2 className="text-3xl font-bold mt-6" style={{color: 'white'}}>Obrigado!</h2>
+        <p className="mt-3 text-lg" style={{color: '#a0aec0'}}>Suas respostas foram recebidas com sucesso.</p>
+        <p className="mt-2" style={{color: '#a0aec0'}}>Agradecemos a sua colaboração para a fundação do projeto.</p>
+      </div>
+    );
+  }
+
   return (
-    <form className="space-y-8">
-      {/* =============== SEÇÃO 1 =============== */}
-      <SectionTitle
-        k="Seção 1"
-        title="Objetivos e Público‑Alvo"
-        subtitle="Objetivo: Validar a direção estratégica do projeto."
-      />
+    <div className="blueprint-container">
+      <p className="blueprint-subtitle mb-8">
+        Olá! Este é o nosso portal de alinhamento para o novo site da Exclusiva Engenharias. Com base em nossas conversas e no Blueprint Estratégico, reunimos as informações principais abaixo. Por favor, revise cada tópico para confirmarmos ou ajustarmos os detalhes.
+      </p>
 
-      {/* 1.1 Objetivos de Negócio */}
-      <div>
-        <h3 className="font-medium mb-1">1.1. Objetivos de Negócio</h3>
-        <p className="text-slate-400 text-sm mb-3">
-          Mapeamos que os objetivos centrais do novo site são gerar autoridade
-          e aumentar a captação de leads qualificados para projetos de maior porte.
-        </p>
+      <form onSubmit={handleSubmit}>
+        
+        {/* Seção 1: Objetivos e Público-Alvo */}
+        <div className="form-section">
+          <h2 className="text-2xl font-bold mb-6">Seção 1: Objetivos e Público-Alvo</h2>
+          <p className="blueprint-intro">Objetivo: Validar a direção estratégica do projeto.</p>
+          
+          <div className="mb-8">
+            <p className="question-title">1.1. Objetivos de Negócio</p>
+            <p className="mb-4">Mapeamos que os objetivos centrais do novo site são gerar autoridade no mercado de engenharia e aumentar a captação de leads qualificados para projetos de maior porte.</p>
+            <div className="options-group">
+                <label><input type="checkbox" name="objetivos_validacao[]" value="Concordo com os objetivos" /> <span>Concordo com os objetivos mapeados.</span></label>
+                <label><input type="checkbox" name="objetivos_validacao[]" value="Gostaria de refinar" /> <span>Gostaria de adicionar ou refinar os seguintes pontos: <input type="text" name="objetivos_refinamento" className="input-inline" /></span></label>
+            </div>
+          </div>
 
-        <label className="flex items-start gap-3">
-          <input type="checkbox" name="objetivos_concordo" className="mt-1" />
-          <span>Concordo com os objetivos mapeados.</span>
-        </label>
+          <div className="mb-8">
+            <p className="question-title">1.2. Públicos-Alvo (ICPs)</p>
+            <p className="mb-4">Identificamos dois perfis de cliente ideal (ICPs) principais: Gestores de Facilities/Manutenção e Engenheiros/Arquitetos responsáveis por novas obras. O foco da comunicação será direcionado para as dores e necessidades desses dois perfis.</p>
+            <div className="options-group">
+                <label><input type="checkbox" name="icp_validacao[]" value="Descrição correta" /> <span>A descrição dos ICPs está correta e completa.</span></label>
+                <label><input type="checkbox" name="icp_validacao[]" value="Gostaria de acrescentar" /> <span>Gostaria de acrescentar detalhes sobre os públicos-alvo: <input type="text" name="icp_detalhes" className="input-inline" /></span></label>
+            </div>
+          </div>
 
-        <label className="block mt-4">
-          <span>Gostaria de adicionar ou refinar os seguintes pontos:</span>
-          <TA name="objetivos_refino" rows={5} placeholder="Escreva aqui..." />
-        </label>
-      </div>
-
-      {/* 1.2 ICPs */}
-      <div>
-        <h3 className="font-medium mb-1">1.2. Públicos‑Alvo (ICPs)</h3>
-        <p className="text-slate-400 text-sm mb-3">
-          Identificamos dois perfis principais: Gestores de Facilities/Manutenção
-          e Engenheiros/Arquitetos responsáveis por novas obras.
-        </p>
-
-        <label className="flex items-start gap-3">
-          <input type="checkbox" name="icps_ok" className="mt-1" />
-          <span>A descrição dos ICPs está correta e completa.</span>
-        </label>
-
-        <label className="block mt-4">
-          <span>Gostaria de acrescentar detalhes sobre os públicos‑alvo:</span>
-          <TA name="icps_detalhes" rows={5} placeholder="Escreva aqui..." />
-        </label>
-      </div>
-
-      {/* 1.3 Métricas */}
-      <div>
-        <h3 className="font-medium mb-1">1.3. Métricas de Sucesso</h3>
-        <p className="text-slate-400 text-sm mb-3">
-          Hoje, a aquisição vem muito por indicação. Vamos diversificar canais e
-          medir sucesso de forma clara. Marque as metas prioritárias (6 meses):
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-3">
-          <label className="flex items-start gap-3">
-            <input type="checkbox" name="metas[]" value="orcamentos_qualificados" className="mt-1" />
-            <span>Aumentar Pedidos de Orçamento (≥5 qualificados/mês via site)</span>
-          </label>
-          <label className="flex items-start gap-3">
-            <input type="checkbox" name="metas[]" value="leads_conteudo" className="mt-1" />
-            <span>Gerar Leads via Conteúdo (downloads de cases, PDFs)</span>
-          </label>
-          <label className="flex items-start gap-3">
-            <input type="checkbox" name="metas[]" value="autoridade" className="mt-1" />
-            <span>Fortalecer a Marca (ranquear termos técnicos, referência)</span>
-          </label>
-          <label className="flex items-start gap-3">
-            <input type="checkbox" name="metas[]" value="alcance_geografico" className="mt-1" />
-            <span>Aumentar Alcance Geográfico (novas cidades/estados)</span>
-          </label>
-          <label className="flex items-start gap-3">
-            <input type="checkbox" name="metas[]" value="reduzir_ciclo" className="mt-1" />
-            <span>Diminuir Ciclo Comercial (educar para reunião mais objetiva)</span>
-          </label>
+          <div className="mb-8">
+            <p className="question-title">1.3. Métricas de Sucesso</p>
+            <p className="mb-4">Hoje, a aquisição de clientes da Exclusiva vem primariamente por indicação. Um dos nossos maiores objetivos é diversificar esses canais e medir o sucesso de forma clara.</p>
+            <p className="question-subtitle">Quais das metas abaixo devemos perseguir com o novo site nos primeiros 6 meses? (Marque as mais importantes)</p>
+            <div className="options-group">
+                <label><input type="checkbox" name="metricas_sucesso[]" value="Aumentar Pedidos de Orçamento" /> <span>**Aumentar Pedidos de Orçamento:** Receber pelo menos 5 novos pedidos de orçamento qualificados por mês através do site.</span></label>
+                <label><input type="checkbox" name="metricas_sucesso[]" value="Gerar Leads via Conteúdo" /> <span>**Gerar Leads via Conteúdo:** Ter materiais (como cases de sucesso em PDF) baixados, gerando uma lista de contatos interessados.</span></label>
+                <label><input type="checkbox" name="metricas_sucesso[]" value="Fortalecer a Marca (Autoridade)" /> <span>**Fortalecer a Marca (Autoridade):** Ser encontrado no Google para termos específicos da engenharia e ter o site usado como referência técnica.</span></label>
+                <label><input type="checkbox" name="metricas_sucesso[]" value="Aumentar o Alcance Geográfico" /> <span>**Aumentar o Alcance Geográfico:** Receber contatos de clientes em novas cidades ou estados.</span></label>
+                <label><input type="checkbox" name="metricas_sucesso[]" value="Diminuir o Ciclo Comercial" /> <span>**Diminuir o Ciclo Comercial:** Usar o site como uma ferramenta que educa o cliente, fazendo com que ele chegue mais preparado para a reunião de vendas.</span></label>
+                <label><input type="checkbox" name="metricas_sucesso[]" value="Outra" /> <span>Outra meta: <input type="text" name="metricas_sucesso_outra" className="input-inline" /></span></label>
+            </div>
+          </div>
         </div>
 
-        <label className="block mt-4">
-          <span>Outra meta:</span>
-          <TA name="metas_outra" rows={4} placeholder="Descreva aqui..." />
-        </label>
-      </div>
+        {/* Seção 2: Identidade Visual e Branding */}
+        <div className="form-section">
+            <h2 className="text-2xl font-bold mb-6">Seção 2: Identidade Visual e Branding</h2>
+            <p className="blueprint-intro">Objetivo: Definir a linha visual do novo site, combinando a identidade existente com uma nova proposta de posicionamento.</p>
 
-      <Line />
+            <div className="mb-8">
+                <p className="question-title">2.1. Manual da Marca</p>
+                <p className="mb-4">Recebemos o manual de marca da "Exclusiva Climatização". Com a transição para "Exclusiva Engenharias", surge a oportunidade de refinar o conceito visual. Nossa sugestão é evoluir para uma identidade mais sóbria, técnica e inovadora, com uma paleta de cores focada em tons de azul, cinza e industriais para reforçar a confiança e credibilidade.</p>
+                <div className="options-group">
+                    <label><input type="radio" name="decisao_visual" value="Seguir nova recomendação" /> <span>Sim, vamos seguir com a nova recomendação visual (sóbrio, técnico, inovador).</span></label>
+                    <label><input type="radio" name="decisao_visual" value="Manter identidade atual" /> <span>Não, prefiro manter 100% a identidade visual do manual de marca atual.</span></label>
+                    <label><input type="radio" name="decisao_visual" value="Mesclar abordagens" /> <span>Gostaria de mesclar as duas abordagens. Detalhes: <input type="text" name="decisao_visual_detalhes" className="input-inline" /></span></label>
+                </div>
+            </div>
 
-      {/* =============== SEÇÃO 2 =============== */}
-      <SectionTitle
-        k="Seção 2"
-        title="Identidade Visual e Branding"
-        subtitle="Definir linha visual e tokens de marca."
-      />
+            <div className="mb-8">
+                <p className="question-title">2.2. Logos</p>
+                <p className="mb-4">Para a atualização para "Exclusiva Engenharias", sugerimos uma adequação sutil no logo, mantendo a estrutura principal, mas ajustando as cores para a nova paleta, se aprovada.</p>
+                <p className="mb-4"><strong>Ação (Instrução Direta): Por favor, faça o upload dos arquivos do logo atual em alta resolução (vetor .ai, .eps ou .svg, e .png com fundo transparente) na pasta do Google Drive.</strong></p>
+            </div>
 
-      {/* 2.1 Manual da marca */}
-      <div>
-        <h3 className="font-medium mb-1">2.1. Manual da Marca</h3>
-        <p className="text-slate-400 text-sm mb-3">
-          Sugestão: evoluir para identidade sóbria, técnica e inovadora (tons de azul e cinza).
-        </p>
-        <div className="space-y-2">
-          <label className="flex items-center gap-3">
-            <input type="radio" name="branding_direcao" value="nova_recomendacao" />
-            <span>Seguir nova recomendação visual</span>
-          </label>
-          <label className="flex items-center gap-3">
-            <input type="radio" name="branding_direcao" value="manter_atual" />
-            <span>Manter 100% a identidade atual</span>
-          </label>
-          <label className="block">
-            <span className="inline-flex items-center gap-3">
-              <input type="radio" name="branding_direcao" value="mesclar" />
-              Mesclar abordagens — detalhes:
-            </span>
-            <TA name="branding_mesclar_detalhes" rows={4} placeholder="Explique como mesclar" />
-          </label>
+            <div className="mb-8">
+                <p className="question-title">2.3. Tipografia (Fontes)</p>
+                <p className="mb-4">A escolha da fonte é crucial para transmitir a mensagem correta. Abaixo estão 3 opções que se alinham com o conceito visual "sóbrio, técnico e inovador".</p>
+                <p className="question-subtitle">Qual destas famílias tipográficas você acredita que mais se conecta com a Exclusiva Engenharias?</p>
+                <div className="options-group">
+                    <label>
+                        <input type="radio" name="escolha_fonte" value="Montserrat" /> 
+                        <span style={{fontFamily: 'Montserrat, sans-serif'}}><strong>Opção 1: Montserrat</strong> - Moderna, geométrica, excelente para títulos.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="escolha_fonte" value="Roboto" /> 
+                        <span style={{fontFamily: 'Roboto, sans-serif'}}><strong>Opção 2: Roboto</strong> - Versátil, legível, ótima para textos longos e curtos.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="escolha_fonte" value="Source Sans Pro" /> 
+                        <span style={{fontFamily: '"Source Sans Pro", sans-serif'}}><strong>Opção 3: Source Sans Pro</strong> - Elegante, clara, profissional.</span>
+                    </label>
+                </div>
+            </div>
+
+             <div className="mb-8">
+                <label htmlFor="references" className="question-title">2.4. Referências Visuais</label>
+                <p className="mb-4">Em nossa conversa, mencionamos como referências os sites da Construtora Terraço e Executiva Tecnologia de Conforto.</p>
+                <label htmlFor="references" className="question-subtitle">O que mais te chama a atenção nesses sites? E você gostaria de adicionar mais alguma referência que considera inspiradora?</label>
+                <textarea id="references" name="referencias_visuais" rows="5" className="textarea-custom"></textarea>
+            </div>
+
+             <div className="mb-8">
+                <p className="question-title">2.5. Estilo Visual e Fotografia</p>
+                <p className="mb-4">A fotografia e os elementos visuais definem a percepção de qualidade do projeto.</p>
+                <p className="question-subtitle">Qual estilo de imagem melhor representa os projetos da Exclusiva Engenharias? (Marque as opções desejadas)</p>
+                <div className="options-group">
+                    <label><input type="checkbox" name="estilo_imagem[]" value="fotos_reais" /> <span>Fotos reais das obras, mostrando a equipe e os processos.</span></label>
+                    <label><input type="checkbox" name="estilo_imagem[]" value="tratamento_cinematografico" /> <span>Imagens com tratamento cinematográfico, focando nos detalhes e na grandiosidade da entrega.</span></label>
+                    <label><input type="checkbox" name="estilo_imagem[]" value="renders_3d" /> <span>Renders 3D e plantas técnicas para demonstrar a precisão da engenharia.</span></label>
+                    <label><input type="checkbox" name="estilo_imagem[]" value="icones_tecnicos" /> <span>Ícones técnicos e infográficos para explicar processos complexos.</span></label>
+                    <label><input type="checkbox" name="estilo_imagem[]" value="outro" /> <span>Outro estilo: <input type="text" name="estilo_imagem_outro" className="input-inline" /></span></label>
+                </div>
+            </div>
         </div>
-      </div>
 
-      {/* 2.2 Logos */}
-      <div>
-        <h3 className="font-medium mb-1">2.2. Logos</h3>
-        <p className="text-slate-400 text-sm">
-          Por favor, envie arquivos em alta (AI/EPS/SVG + PNG transparente) na pasta compartilhada.
-        </p>
-      </div>
+        {/* Seção 3: Conteúdo e Provas Sociais */}
+        <div className="form-section">
+            <h2 className="text-2xl font-bold mb-6">Seção 3: Conteúdo e Provas Sociais</h2>
+            <p className="blueprint-intro">Objetivo: Coletar os insumos que darão corpo, credibilidade e autoridade ao site.</p>
 
-      {/* 2.3 Tipografia */}
-      <div>
-        <h3 className="font-medium mb-1">2.3. Tipografia</h3>
-        <div className="space-y-2">
-          <label className="flex items-center gap-3">
-            <input type="radio" name="tipografia" value="montserrat" />
-            <span>Montserrat — moderna e geométrica (títulos)</span>
-          </label>
-          <label className="flex items-center gap-3">
-            <input type="radio" name="tipografia" value="roboto" />
-            <span>Roboto — versátil e legível (corpos)</span>
-          </label>
-          <label className="flex items-center gap-3">
-            <input type="radio" name="tipografia" value="source_sans_pro" />
-            <span>Source Sans Pro — clara e profissional</span>
-          </label>
+            <div className="mb-8">
+                <p className="question-title">3.1. Depoimentos de Clientes</p>
+                <p className="mb-4">Não se preocupe em ter o texto final aprovado pelo seu cliente ainda. Queremos capturar a essência da mensagem. Pense no que você gostaria que seus melhores clientes dissessem sobre o trabalho da Exclusiva.</p>
+                <p className="question-subtitle">Instrução: Por favor, crie 2 ou 3 depoimentos ideais.</p>
+                
+                <label htmlFor="depoimento_1_cliente" className="font-semibold mt-4">Depoimento 1:</label>
+                <input type="text" id="depoimento_1_cliente" name="depoimento_1_cliente" className="input-custom mb-2" placeholder="Nome do Cliente / Empresa"/>
+                <textarea name="depoimento_1_texto" rows="5" className="textarea-custom" placeholder="Depoimento Ideal"></textarea>
+                
+                <label htmlFor="depoimento_2_cliente" className="font-semibold mt-4">Depoimento 2:</label>
+                <input type="text" id="depoimento_2_cliente" name="depoimento_2_cliente" className="input-custom mb-2" placeholder="Nome do Cliente / Empresa"/>
+                <textarea name="depoimento_2_texto" rows="5" className="textarea-custom" placeholder="Depoimento Ideal"></textarea>
+            </div>
+
+            <div className="mb-8">
+                <label htmlFor="clientes_atendidos" className="question-title">3.2. Clientes Atendidos</label>
+                <label htmlFor="clientes_atendidos" className="question-subtitle">Instrução: Por favor, liste os nomes dos principais clientes que podemos exibir no site (não é preciso fazer upload dos logos agora).</label>
+                <textarea id="clientes_atendidos" name="lista_clientes" rows="5" className="textarea-custom" placeholder="Cliente A, Cliente B, Cliente C..."></textarea>
+            </div>
+
+             <div className="mb-8">
+                <p className="question-title">3.3. Cases de Sucesso</p>
+                <p className="mb-4">Para padronizar a apresentação dos seus cases, por favor, use o esqueleto de storytelling abaixo para 2 ou 3 projetos de destaque.</p>
+
+                <label className="font-semibold">Case de Sucesso 1:</label>
+                <input type="text" name="case_1_titulo" className="input-custom mb-2" placeholder="Título do Case: (Ex: Climatização de Precisão para o Hospital X)"/>
+                <textarea name="case_1_desafio" rows="5" className="textarea-custom mb-2" placeholder="Cenário Inicial (O Desafio): Qual era a situação ou o problema principal que o cliente enfrentava antes da sua intervenção?"></textarea>
+                <textarea name="case_1_solucao" rows="6" className="textarea-custom mb-2" placeholder="O Ponto de Virada (A Solução Exclusiva): Qual foi a abordagem ou tecnologia chave que a Exclusiva trouxe para resolver o desafio? Qual foi o diferencial?"></textarea>
+                <textarea name="case_1_resultados" rows="5" className="textarea-custom" placeholder="A Nova Realidade (Resultados): Que resultados concretos e mensuráveis o cliente obteve? (Ex: economia de 20% de energia, obra entregue 15 dias antes do prazo, etc.)"></textarea>
+            </div>
+
+            <div className="mb-8">
+                <label htmlFor="certificacoes" className="question-title">3.4. Certificações, Prêmios e Selos</label>
+                <label htmlFor="certificacoes" className="question-subtitle">Instrução: Liste os nomes das certificações (ex: ISO 9001), prêmios ou selos que a empresa possui.</label>
+                <textarea id="certificacoes" name="lista_certificacoes" rows="5" className="textarea-custom"></textarea>
+            </div>
+
+            <div className="mb-8">
+                <label htmlFor="provas_quantitativas" className="question-title">3.5. Provas de Valor Quantitativas</label>
+                <p className="mb-4">Números geram confiança e credibilidade instantâneas.</p>
+                <label htmlFor="provas_quantitativas" className="question-subtitle">Existem números auditáveis ou métricas de sucesso que podemos usar para provar a eficiência da Exclusiva? (Ex: "96% dos prazos cumpridos", "87 intervenções sem parada de produção", etc.)</label>
+                <textarea id="provas_quantitativas" name="provas_quantitativas" rows="5" className="textarea-custom"></textarea>
+            </div>
         </div>
-      </div>
 
-      {/* 2.4 Referências */}
-      <div>
-        <h3 className="font-medium mb-1">2.4. Referências Visuais</h3>
-        <TA name="referencias_visuais" rows={5} placeholder="O que chamou atenção? Quer adicionar outras referências?" />
-      </div>
 
-      <Line />
+        {/* Seção 4: Processos e Jornadas */}
+        <div className="form-section">
+            <h2 className="text-2xl font-bold mb-6">Seção 4: Processos e Jornadas</h2>
+            <p className="blueprint-intro">Objetivo: Detalhar os processos chave da Exclusiva para que possamos traduzi-los em conteúdo claro e útil para o cliente final.</p>
 
-      {/* =============== SEÇÃO 3 =============== */}
-      <SectionTitle
-        k="Seção 3"
-        title="Conteúdo e Provas Sociais"
-        subtitle="Coletar insumos para autoridade e confiança."
-      />
+            <div className="mb-8">
+                <p className="question-title">4.1. Jornada do Cliente - Casos de Uso</p>
+                <p className="mb-4">Vamos guiar seu futuro cliente, mostrando como vocês trabalham. Use o esqueleto de storytelling abaixo para descrever a jornada completa, do primeiro contato à entrega final.</p>
+                
+                <label htmlFor="jornada_refeitorio" className="font-semibold">Caso de Uso A - Construção de Refeitório:</label>
+                <textarea id="jornada_refeitorio" name="jornada_construcao_refeitorio" rows="7" className="textarea-custom" placeholder={`1. O Diagnóstico: Como vocês entendem a necessidade inicial do cliente? (Visita técnica, análise de planta, etc.)\n2. A Engenharia da Solução: Qual o processo para desenhar a solução customizada? (Cálculos, escolha de equipamentos, planejamento.)\n3. A Execução: Como a obra ou instalação acontece na prática? (Gerenciamento, equipe, segurança, comunicação com o cliente.)\n4. A Entrega e Suporte: O que acontece quando o projeto termina? (Comissionamento, treinamento, suporte pós-obra.)`}></textarea>
 
-      {/* 3.1 Depoimentos */}
-      <div>
-        <h3 className="font-medium mb-1">3.1. Depoimentos de Clientes</h3>
-        <TA name="depoimentos_1" rows={4} placeholder="Depoimento ideal #1 (cliente/empresa + mensagem)" />
-        <TA name="depoimentos_2" rows={4} placeholder="Depoimento ideal #2" />
-        <TA name="depoimentos_3" rows={4} placeholder="Depoimento ideal #3 (opcional)" />
-      </div>
+                <label htmlFor="jornada_demolicao" className="font-semibold mt-4">Caso de Uso B - Demolição:</label>
+                <textarea id="jornada_demolicao" name="jornada_demolicao" rows="7" className="textarea-custom" placeholder={`1. O Diagnóstico: Como vocês entendem a necessidade inicial do cliente?\n2. A Engenharia da Solução: Qual o processo para desenhar a solução?\n3. A Execução: Como a demolição acontece na prática?\n4. A Entrega e Suporte: O que acontece quando o projeto termina?`}></textarea>
+            </div>
 
-      {/* 3.2 Clientes atendidos */}
-      <div>
-        <h3 className="font-medium mb-1">3.2. Clientes Atendidos</h3>
-        <TA name="clientes_atendidos" rows={5} placeholder="Liste os principais clientes (um por linha)" />
-      </div>
+            <div className="mb-8">
+                <p className="question-title">4.2. Processo de Orçamento</p>
+                <p className="mb-4">Um processo de orçamento claro gera confiança. Use o esqueleto abaixo para descrever como a Exclusiva cria uma proposta de valor, não apenas um preço.</p>
+                <label htmlFor="processo_orcamento" className="question-subtitle">Processo Completo de Orçamento de Obra:</label>
+                <textarea id="processo_orcamento" name="processo_orcamento_obra" rows="6" className="textarea-custom" placeholder={`1. Análise de Escopo: Quais informações vocês coletam do cliente para iniciar um orçamento?\n2. Detalhamento Técnico: Como vocês quebram o projeto em etapas e custos? (Planilhas, softwares, etc.)\n3. Apresentação da Proposta: Como a proposta é apresentada ao cliente? O que ela inclui além dos valores? (Cronograma, diferenciais, etc.)`}></textarea>
+            </div>
+        </div>
 
-      {/* 3.3 Cases */}
-      <div>
-        <h3 className="font-medium mb-2">3.3. Cases de Sucesso</h3>
-        <p className="text-slate-400 text-sm mb-3">Use o esqueleto: Cenário (Desafio) → Solução → Resultados.</p>
-        <TA name="case_1" rows={6} placeholder="Case #1 — Título / Cenário / Solução / Resultados" />
-        <TA name="case_2" rows={6} placeholder="Case #2 — Título / Cenário / Solução / Resultados" />
-        <TA name="case_3" rows={6} placeholder="Case #3 (opcional) — Título / Cenário / Solução / Resultados" />
-      </div>
+        {/* Seção 5: Proposta de Valor e Mensagens-Chave */}
+        <div className="form-section">
+            <h2 className="text-2xl font-bold mb-6">Seção 5: Proposta de Valor e Mensagens-Chave</h2>
+            <p className="blueprint-intro">Objetivo: Alinhar a narrativa central com copywriting de decisão.</p>
+            <div className="mb-8">
+                <label htmlFor="frase_definitiva" className="question-title">5.1. A Frase Definitiva</label>
+                <label htmlFor="frase_definitiva" className="question-subtitle">Se você tivesse que explicar em uma única frase por que a Exclusiva Engenharias é a escolha inteligente para um grande projeto, qual seria essa frase?</label>
+                <textarea id="frase_definitiva" name="frase_definitiva" rows="5" className="textarea-custom"></textarea>
+            </div>
+            <div className="mb-8">
+                <label htmlFor="mapeamento_objecoes" className="question-title">5.2. Mapeamento de Objeções</label>
+                <label htmlFor="mapeamento_objecoes" className="question-subtitle">Quais são as 2 ou 3 objeções ou dúvidas mais comuns que os clientes trazem durante a negociação? E como vocês costumam respondê-las para tranquilizar o cliente?</label>
+                <textarea id="mapeamento_objecoes" name="mapeamento_objecoes" rows="6" className="textarea-custom"></textarea>
+            </div>
+            <div className="mb-8">
+                <label htmlFor="termos_slogans" className="question-title">5.3. Termos e Slogans</label>
+                <label htmlFor="termos_slogans" className="question-subtitle">Existe algum slogan interno, frase de impacto ou termos técnicos específicos que vocês gostariam de reforçar (ou evitar) no site?</label>
+                <textarea id="termos_slogans" name="termos_slogans" rows="5" className="textarea-custom"></textarea>
+            </div>
+        </div>
 
-      {/* 3.4 Certificações */}
-      <div>
-        <h3 className="font-medium mb-1">3.4. Certificações, Prêmios e Selos</h3>
-        <TA name="certificacoes" rows={4} placeholder="Ex.: ISO 9001, NR‑35, prêmios, selos" />
-      </div>
+        {/* Seção 6: Estrutura do Site e Conteúdo */}
+        <div className="form-section">
+            <h2 className="text-2xl font-bold mb-6">Seção 6: Estrutura do Site e Conteúdo</h2>
+            <p className="blueprint-intro">Objetivo: Preparar os blocos de conteúdo educativo e definir a arquitetura inicial do site.</p>
+            <div className="mb-8">
+                <label htmlFor="paginas_servicos" className="question-title">6.1. Páginas de Serviços</label>
+                <label htmlFor="paginas_servicos" className="question-subtitle">Quais serviços ou tipos de projeto são importantes o suficiente para terem suas próprias páginas dedicadas já na primeira versão do site?</label>
+                <textarea id="paginas_servicos" name="paginas_servicos" rows="5" className="textarea-custom"></textarea>
+            </div>
+            <div className="mb-8">
+                <p className="question-title">6.2. Conteúdo para Geração de Leads (Lead Magnet)</p>
+                <p className="question-subtitle">Para capturar o contato de potenciais clientes, que tipo de material rico seria mais valioso?</p>
+                <div className="options-group">
+                    <label><input type="radio" name="lead_magnet_tipo" value="case_pdf" /> <span>Um Case de Sucesso detalhado em PDF.</span></label>
+                    <label><input type="radio" name="lead_magnet_tipo" value="guia_tecnico" /> <span>Um Guia Técnico (ex: "Checklist para Contratação de Obras Industriais").</span></label>
+                    <label><input type="radio" name="lead_magnet_tipo" value="infografico_norma" /> <span>Um infográfico sobre uma norma técnica importante.</span></label>
+                </div>
+                <label htmlFor="lead_magnet_pronto" className="question-subtitle mt-4">Vocês já possuem algum desses materiais pronto ou semi-pronto para ser usado?</label>
+                <textarea id="lead_magnet_pronto" name="lead_magnet_pronto" rows="4" className="textarea-custom"></textarea>
+            </div>
+        </div>
 
-      <Line />
+        {/* Seção 7: Requisitos Técnicos e Alcance Digital */}
+        <div className="form-section">
+            <h2 className="text-2xl font-bold mb-6">Seção 7: Requisitos Técnicos e Alcance Digital</h2>
+             <p className="blueprint-intro">Objetivo: Definir integrações, ferramentas e a estratégia inicial de alcance online.</p>
+            <div className="mb-8">
+                <p className="question-title">7.1. Recebimento de Leads e Integrações</p>
+                <p className="question-subtitle">Como vocês preferem receber os contatos (leads) gerados pelo site?</p>
+                <div className="options-group">
+                    <label><input type="checkbox" name="recebimento_leads[]" value="email" /> <span>Por e-mail, para um ou mais destinatários.</span></label>
+                    <label><input type="checkbox" name="recebimento_leads[]" value="planilha_google" /> <span>Em uma Planilha Google, atualizada automaticamente.</span></label>
+                    <label><input type="checkbox" name="recebimento_leads[]" value="crm" /> <span>Diretamente em um sistema de CRM. Qual? (Ex: HubSpot, Pipedrive, RD Station) <input type="text" name="recebimento_leads_crm" className="input-inline" /></span></label>
+                </div>
+            </div>
+            <div className="mb-8">
+                <label htmlFor="seo_keywords" className="question-title">7.2. SEO: Palavras-Chave e Concorrentes</label>
+                <label htmlFor="seo_keywords" className="question-subtitle">Quais termos técnicos ou de mercado vocês acreditam que um cliente ideal digitaria no Google para encontrar uma empresa como a Exclusiva? E quais concorrentes diretos devemos monitorar?</label>
+                <textarea id="seo_keywords" name="seo_keywords" rows="6" className="textarea-custom"></textarea>
+            </div>
+            <div className="mb-8">
+                <label htmlFor="seo_geo" className="question-title">7.3. SEO: Alcance Geográfico</label>
+                <label htmlFor="seo_geo" className="question-subtitle">Além da sua área de atuação principal, existem outras cidades, estados ou regiões que são estratégicas para a expansão da Exclusiva?</label>
+                <textarea id="seo_geo" name="seo_geo" rows="5" className="textarea-custom"></textarea>
+            </div>
+        </div>
 
-      {/* =============== SEÇÃO 4 =============== */}
-      <SectionTitle
-        k="Seção 4"
-        title="Processos e Jornadas"
-        subtitle="Detalhar processos-chave para traduzir em conteúdo útil."
-      />
+        {/* Seção de Upload */}
+         <div className="form-section">
+          <h2 className="text-2xl font-bold mb-6">Upload de Arquivos Complementares</h2>
+          <p className="blueprint-intro">
+            Conforme solicitado na Seção 2, por favor, use o link abaixo para abrir a pasta compartilhada e enviar os arquivos do logo.
+          </p>
+          <div className="text-center mt-6">
+            <a 
+              href="https://drive.google.com/drive/folders/13R4FTDPspGenbsmaD6BdbMKUNHtB21Vr?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              Abrir Pasta para Upload de Arquivos
+            </a>
+          </div>
+        </div>
 
-      {/* 4.1 Jornada do Cliente */}
-      <div>
-        <h3 className="font-medium mb-1">4.1. Jornada do Cliente — Casos de Uso</h3>
-        <p className="text-slate-400 text-sm mb-3">
-          Esqueleto: Diagnóstico → Engenharia da Solução → Execução → Entrega e Suporte.
-        </p>
-        <TA name="jornada_caso_a" rows={6} placeholder="Caso de Uso A — (ex.: Construção de Refeitório) seguindo o esqueleto" />
-        <TA name="jornada_caso_b" rows={6} placeholder="Caso de Uso B — (ex.: Demolição) seguindo o esqueleto" />
-      </div>
-
-      {/* 4.2 Processo de Orçamento */}
-      <div>
-        <h3 className="font-medium mb-1">4.2. Processo de Orçamento</h3>
-        <p className="text-slate-400 text-sm mb-3">
-          Esqueleto: Análise de Escopo → Detalhamento Técnico → Apresentação da Proposta.
-        </p>
-        <TA name="processo_orcamento" rows={6} placeholder="Descreva o processo completo" />
-      </div>
-
-      <Line />
-
-      {/* =============== SEÇÕES ADICIONADAS (conforme combinado) =============== */}
-
-      {/* 5. Diferenciais e Provas de Valor */}
-      <SectionTitle
-        k="Seção 5"
-        title="Diferenciais e Provas de Valor"
-        subtitle="O que realmente diferencia e como provar."
-      />
-      <TA name="diferenciais" rows={5} placeholder="Liste diferenciais técnicos/comerciais que DEVEM aparecer" />
-      <TA name="provas_valor" rows={5} placeholder="Números auditáveis, SLAs, indicadores, garantias" />
-
-      {/* 6. Mensagens‑chave e Objeções */}
-      <SectionTitle
-        k="Seção 6"
-        title="Mensagens‑Chave e Objeções"
-        subtitle="Copys que convencem e dúvidas que precisamos neutralizar."
-      />
-      <TA name="mensagem_unica" rows={4} placeholder="Em 1 frase: por que escolher a Exclusiva?" />
-      <TA name="objecoes_comuns" rows={5} placeholder="Principais objeções e como respondem hoje" />
-
-      {/* 7. Requisitos Funcionais e Integrações */}
-      <SectionTitle
-        k="Seção 7"
-        title="Requisitos Funcionais e Integrações"
-        subtitle="Como querem receber leads? Que ferramentas são obrigatórias?"
-      />
-      <div className="space-y-2">
-        <label className="flex items-start gap-3">
-          <input type="checkbox" name="reqs[]" value="lead_email" className="mt-1" />
-          <span>Receber leads por e‑mail</span>
-        </label>
-        <label className="flex items-start gap-3">
-          <input type="checkbox" name="reqs[]" value="lead_planilha" className="mt-1" />
-          <span>Receber leads em planilha (Google Sheets)</span>
-        </label>
-        <label className="flex items-start gap-3">
-          <input type="checkbox" name="reqs[]" value="crm" className="mt-1" />
-          <span>Integração com CRM (HubSpot/Pipedrive/RD)</span>
-        </label>
-        <label className="flex items-start gap-3">
-          <input type="checkbox" name="reqs[]" value="orcamento_guiado" className="mt-1" />
-          <span>Formulário de cotação guiada / simulador</span>
-        </label>
-      </div>
-      <TA name="reqs_outros" rows={4} placeholder="Outros requisitos (uploads, área do cliente etc.)" />
-
-      {/* 8. SEO/GPO e Alcance */}
-      <SectionTitle
-        k="Seção 8"
-        title="SEO/GPO e Alcance"
-        subtitle="Termos técnicos, regiões e concorrentes de referência."
-      />
-      <TA name="seo_termos" rows={4} placeholder="Termos/Entidades para ranquear (técnicos e de negócio)" />
-      <TA name="seo_regioes" rows={3} placeholder="Cidades/estados prioritários" />
-      <TA name="seo_concorrentes" rows={3} placeholder="Sites de concorrentes a observar" />
-
-      <Line />
-
-      {/* Upload instruções */}
-      <div className="rounded-lg border border-[#1f2937] p-4">
-        <strong>Upload de Arquivos Complementares</strong>
-        <p className="text-slate-400 text-sm mt-1">
-          Envie <em>manual da marca</em> e <em>logos em alta</em> (AI/EPS/SVG/PNG) na pasta compartilhada.
-        </p>
-      </div>
-
-      {/* Submit */}
-      <div className="pt-2">
-        <button
-          type="submit"
-          className="inline-flex items-center justify-center rounded-md bg-teal-500 px-5 py-3 text-sm font-medium text-black hover:bg-teal-400"
-        >
-          Enviar Fundação Estratégica
-        </button>
-      </div>
-    </form>
+        {/* Botão de Envio */}
+        <div className="mt-12 text-center">
+          <button type="submit" disabled={state.submitting} className="btn btn-primary w-full md:w-auto">
+            {state.submitting ? 'Enviando...' : 'Enviar Fundação Estratégica'}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
