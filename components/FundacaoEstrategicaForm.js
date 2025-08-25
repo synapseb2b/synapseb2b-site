@@ -37,7 +37,10 @@ export default function FundacaoEstrategicaForm() {
             <p className="mb-4">Mapeamos que os objetivos centrais do novo site são gerar autoridade no mercado de engenharia e aumentar a captação de leads qualificados para projetos de maior porte.</p>
             <div className="options-group">
                 <label><input type="checkbox" name="objetivos_validacao[]" value="Concordo com os objetivos" /> <span>Concordo com os objetivos mapeados.</span></label>
-                <label><input type="checkbox" name="objetivos_validacao[]" value="Gostaria de refinar" /> <span>Gostaria de adicionar ou refinar os seguintes pontos: <input type="text" name="objetivos_refinamento" className="input-inline" /></span></label>
+                <div className="mt-2">
+                  <label><input type="checkbox" name="objetivos_validacao[]" value="Gostaria de refinar" /> <span>Gostaria de adicionar ou refinar os seguintes pontos:</span></label>
+                  <textarea name="objetivos_refinamento" rows="3" className="textarea-custom mt-2"></textarea>
+                </div>
             </div>
           </div>
 
@@ -46,7 +49,10 @@ export default function FundacaoEstrategicaForm() {
             <p className="mb-4">Identificamos dois perfis de cliente ideal (ICPs) principais: Gestores de Facilities/Manutenção e Engenheiros/Arquitetos responsáveis por novas obras. O foco da comunicação será direcionado para as dores e necessidades desses dois perfis.</p>
             <div className="options-group">
                 <label><input type="checkbox" name="icp_validacao[]" value="Descrição correta" /> <span>A descrição dos ICPs está correta e completa.</span></label>
-                <label><input type="checkbox" name="icp_validacao[]" value="Gostaria de acrescentar" /> <span>Gostaria de acrescentar detalhes sobre os públicos-alvo: <input type="text" name="icp_detalhes" className="input-inline" /></span></label>
+                <div className="mt-2">
+                  <label><input type="checkbox" name="icp_validacao[]" value="Gostaria de acrescentar" /> <span>Gostaria de acrescentar detalhes sobre os públicos-alvo:</span></label>
+                  <textarea name="icp_detalhes" rows="3" className="textarea-custom mt-2"></textarea>
+                </div>
             </div>
           </div>
 
@@ -60,7 +66,10 @@ export default function FundacaoEstrategicaForm() {
                 <label><input type="checkbox" name="metricas_sucesso[]" value="Fortalecer a Marca (Autoridade)" /> <span>**Fortalecer a Marca (Autoridade):** Ser encontrado no Google para termos específicos da engenharia e ter o site usado como referência técnica.</span></label>
                 <label><input type="checkbox" name="metricas_sucesso[]" value="Aumentar o Alcance Geográfico" /> <span>**Aumentar o Alcance Geográfico:** Receber contatos de clientes em novas cidades ou estados.</span></label>
                 <label><input type="checkbox" name="metricas_sucesso[]" value="Diminuir o Ciclo Comercial" /> <span>**Diminuir o Ciclo Comercial:** Usar o site como uma ferramenta que educa o cliente, fazendo com que ele chegue mais preparado para a reunião de vendas.</span></label>
-                <label><input type="checkbox" name="metricas_sucesso[]" value="Outra" /> <span>Outra meta: <input type="text" name="metricas_sucesso_outra" className="input-inline" /></span></label>
+                <div className="mt-2">
+                  <label><input type="checkbox" name="metricas_sucesso[]" value="Outra" /> <span>Outra meta:</span></label>
+                  <textarea name="metricas_sucesso_outra" rows="3" className="textarea-custom mt-2"></textarea>
+                </div>
             </div>
           </div>
         </div>
@@ -76,7 +85,10 @@ export default function FundacaoEstrategicaForm() {
                 <div className="options-group">
                     <label><input type="radio" name="decisao_visual" value="Seguir nova recomendação" /> <span>Sim, vamos seguir com a nova recomendação visual (sóbrio, técnico, inovador).</span></label>
                     <label><input type="radio" name="decisao_visual" value="Manter identidade atual" /> <span>Não, prefiro manter 100% a identidade visual do manual de marca atual.</span></label>
-                    <label><input type="radio" name="decisao_visual" value="Mesclar abordagens" /> <span>Gostaria de mesclar as duas abordagens. Detalhes: <input type="text" name="decisao_visual_detalhes" className="input-inline" /></span></label>
+                    <div className="mt-2">
+                        <label><input type="radio" name="decisao_visual" value="Mesclar abordagens" /> <span>Gostaria de mesclar as duas abordagens. Detalhes:</span></label>
+                        <textarea name="decisao_visual_detalhes" rows="3" className="textarea-custom mt-2"></textarea>
+                    </div>
                 </div>
             </div>
 
@@ -91,18 +103,9 @@ export default function FundacaoEstrategicaForm() {
                 <p className="mb-4">A escolha da fonte é crucial para transmitir a mensagem correta. Abaixo estão 3 opções que se alinham com o conceito visual "sóbrio, técnico e inovador".</p>
                 <p className="question-subtitle">Qual destas famílias tipográficas você acredita que mais se conecta com a Exclusiva Engenharias?</p>
                 <div className="options-group">
-                    <label>
-                        <input type="radio" name="escolha_fonte" value="Montserrat" /> 
-                        <span style={{fontFamily: 'Montserrat, sans-serif'}}><strong>Opção 1: Montserrat</strong> - Moderna, geométrica, excelente para títulos.</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="escolha_fonte" value="Roboto" /> 
-                        <span style={{fontFamily: 'Roboto, sans-serif'}}><strong>Opção 2: Roboto</strong> - Versátil, legível, ótima para textos longos e curtos.</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="escolha_fonte" value="Source Sans Pro" /> 
-                        <span style={{fontFamily: '"Source Sans Pro", sans-serif'}}><strong>Opção 3: Source Sans Pro</strong> - Elegante, clara, profissional.</span>
-                    </label>
+                    <label><input type="radio" name="escolha_fonte" value="Montserrat" /> <span style={{fontFamily: 'Montserrat, sans-serif'}}><strong>Opção 1: Montserrat</strong> - Moderna, geométrica, excelente para títulos.</span></label>
+                    <label><input type="radio" name="escolha_fonte" value="Roboto" /> <span style={{fontFamily: 'Roboto, sans-serif'}}><strong>Opção 2: Roboto</strong> - Versátil, legível, ótima para textos longos e curtos.</span></label>
+                    <label><input type="radio" name="escolha_fonte" value="Source Sans Pro" /> <span style={{fontFamily: '"Source Sans Pro", sans-serif'}}><strong>Opção 3: Source Sans Pro</strong> - Elegante, clara, profissional.</span></label>
                 </div>
             </div>
 
@@ -122,7 +125,10 @@ export default function FundacaoEstrategicaForm() {
                     <label><input type="checkbox" name="estilo_imagem[]" value="tratamento_cinematografico" /> <span>Imagens com tratamento cinematográfico, focando nos detalhes e na grandiosidade da entrega.</span></label>
                     <label><input type="checkbox" name="estilo_imagem[]" value="renders_3d" /> <span>Renders 3D e plantas técnicas para demonstrar a precisão da engenharia.</span></label>
                     <label><input type="checkbox" name="estilo_imagem[]" value="icones_tecnicos" /> <span>Ícones técnicos e infográficos para explicar processos complexos.</span></label>
-                    <label><input type="checkbox" name="estilo_imagem[]" value="outro" /> <span>Outro estilo: <input type="text" name="estilo_imagem_outro" className="input-inline" /></span></label>
+                    <div className="mt-2">
+                        <label><input type="checkbox" name="estilo_imagem[]" value="outro" /> <span>Outro estilo:</span></label>
+                        <textarea name="estilo_imagem_outro" rows="3" className="textarea-custom mt-2"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,31 +142,40 @@ export default function FundacaoEstrategicaForm() {
                 <p className="question-title">3.1. Depoimentos de Clientes</p>
                 <p className="mb-4">Não se preocupe em ter o texto final aprovado pelo seu cliente ainda. Queremos capturar a essência da mensagem. Pense no que você gostaria que seus melhores clientes dissessem sobre o trabalho da Exclusiva.</p>
                 <p className="question-subtitle">Instrução: Por favor, crie 2 ou 3 depoimentos ideais.</p>
-                
                 <label htmlFor="depoimento_1_cliente" className="font-semibold mt-4">Depoimento 1:</label>
                 <input type="text" id="depoimento_1_cliente" name="depoimento_1_cliente" className="input-custom mb-2" placeholder="Nome do Cliente / Empresa"/>
                 <textarea name="depoimento_1_texto" rows="5" className="textarea-custom" placeholder="Depoimento Ideal"></textarea>
-                
                 <label htmlFor="depoimento_2_cliente" className="font-semibold mt-4">Depoimento 2:</label>
                 <input type="text" id="depoimento_2_cliente" name="depoimento_2_cliente" className="input-custom mb-2" placeholder="Nome do Cliente / Empresa"/>
                 <textarea name="depoimento_2_texto" rows="5" className="textarea-custom" placeholder="Depoimento Ideal"></textarea>
             </div>
 
             <div className="mb-8">
-                <label htmlFor="clientes_atendidos" className="question-title">3.2. Clientes Atendidos</label>
-                <label htmlFor="clientes_atendidos" className="question-subtitle">Instrução: Por favor, liste os nomes dos principais clientes que podemos exibir no site (não é preciso fazer upload dos logos agora).</label>
-                <textarea id="clientes_atendidos" name="lista_clientes" rows="5" className="textarea-custom" placeholder="Cliente A, Cliente B, Cliente C..."></textarea>
+                <p className="question-title">3.2. Clientes Atendidos</p>
+                <p className="question-subtitle">Instrução: Por favor, liste os nomes dos principais clientes que podemos exibir no site.</p>
+                <div className="options-group">
+                    <label><input type="checkbox" name="clientes_atendidos[]" value="IVECO e Cimento Nacional" /> <span>IVECO e Cimento Nacional</span></label>
+                    <div className="mt-2">
+                        <label><input type="checkbox" name="clientes_atendidos[]" value="Outros" /> <span>Outros (Quais?):</span></label>
+                        <textarea name="clientes_atendidos_outros" rows="4" className="textarea-custom mt-2" placeholder="Cliente C, Cliente D, Cliente E..."></textarea>
+                    </div>
+                </div>
             </div>
 
              <div className="mb-8">
                 <p className="question-title">3.3. Cases de Sucesso</p>
                 <p className="mb-4">Para padronizar a apresentação dos seus cases, por favor, use o esqueleto de storytelling abaixo para 2 ou 3 projetos de destaque.</p>
-
                 <label className="font-semibold">Case de Sucesso 1:</label>
                 <input type="text" name="case_1_titulo" className="input-custom mb-2" placeholder="Título do Case: (Ex: Climatização de Precisão para o Hospital X)"/>
-                <textarea name="case_1_desafio" rows="5" className="textarea-custom mb-2" placeholder="Cenário Inicial (O Desafio): Qual era a situação ou o problema principal que o cliente enfrentava antes da sua intervenção?"></textarea>
-                <textarea name="case_1_solucao" rows="6" className="textarea-custom mb-2" placeholder="O Ponto de Virada (A Solução Exclusiva): Qual foi a abordagem ou tecnologia chave que a Exclusiva trouxe para resolver o desafio? Qual foi o diferencial?"></textarea>
-                <textarea name="case_1_resultados" rows="5" className="textarea-custom" placeholder="A Nova Realidade (Resultados): Que resultados concretos e mensuráveis o cliente obteve? (Ex: economia de 20% de energia, obra entregue 15 dias antes do prazo, etc.)"></textarea>
+                
+                <div className="question-guidance mb-2"><strong>Cenário Inicial (O Desafio):</strong> Qual era a situação ou o problema principal que o cliente enfrentava antes da sua intervenção?</div>
+                <textarea name="case_1_desafio" rows="5" className="textarea-custom mb-2"></textarea>
+                
+                <div className="question-guidance mb-2"><strong>O Ponto de Virada (A Solução Exclusiva):</strong> Qual foi a abordagem ou tecnologia chave que a Exclusiva trouxe para resolver o desafio? Qual foi o diferencial?</div>
+                <textarea name="case_1_solucao" rows="6" className="textarea-custom mb-2"></textarea>
+
+                <div className="question-guidance mb-2"><strong>A Nova Realidade (Resultados):</strong> Que resultados concretos e mensuráveis o cliente obteve? (Ex: economia de 20% de energia, obra entregue 15 dias antes do prazo, etc.)</div>
+                <textarea name="case_1_resultados" rows="5" className="textarea-custom"></textarea>
             </div>
 
             <div className="mb-8">
@@ -188,17 +203,40 @@ export default function FundacaoEstrategicaForm() {
                 <p className="mb-4">Vamos guiar seu futuro cliente, mostrando como vocês trabalham. Use o esqueleto de storytelling abaixo para descrever a jornada completa, do primeiro contato à entrega final.</p>
                 
                 <label htmlFor="jornada_refeitorio" className="font-semibold">Caso de Uso A - Construção de Refeitório:</label>
-                <textarea id="jornada_refeitorio" name="jornada_construcao_refeitorio" rows="7" className="textarea-custom" placeholder={`1. O Diagnóstico: Como vocês entendem a necessidade inicial do cliente? (Visita técnica, análise de planta, etc.)\n2. A Engenharia da Solução: Qual o processo para desenhar a solução customizada? (Cálculos, escolha de equipamentos, planejamento.)\n3. A Execução: Como a obra ou instalação acontece na prática? (Gerenciamento, equipe, segurança, comunicação com o cliente.)\n4. A Entrega e Suporte: O que acontece quando o projeto termina? (Comissionamento, treinamento, suporte pós-obra.)`}></textarea>
+                <div className="question-guidance mb-2">
+                    <ol className="list-decimal list-inside">
+                        <li><strong>O Diagnóstico:</strong> Como vocês entendem a necessidade inicial do cliente? (Visita técnica, análise de planta, etc.)</li>
+                        <li><strong>A Engenharia da Solução:</strong> Qual o processo para desenhar a solução customizada? (Cálculos, escolha de equipamentos, planejamento.)</li>
+                        <li><strong>A Execução:</strong> Como a obra ou instalação acontece na prática? (Gerenciamento, equipe, segurança, comunicação com o cliente.)</li>
+                        <li><strong>A Entrega e Suporte:</strong> O que acontece quando o projeto termina? (Comissionamento, treinamento, suporte pós-obra.)</li>
+                    </ol>
+                </div>
+                <textarea id="jornada_refeitorio" name="jornada_construcao_refeitorio" rows="7" className="textarea-custom"></textarea>
 
                 <label htmlFor="jornada_demolicao" className="font-semibold mt-4">Caso de Uso B - Demolição:</label>
-                <textarea id="jornada_demolicao" name="jornada_demolicao" rows="7" className="textarea-custom" placeholder={`1. O Diagnóstico: Como vocês entendem a necessidade inicial do cliente?\n2. A Engenharia da Solução: Qual o processo para desenhar a solução?\n3. A Execução: Como a demolição acontece na prática?\n4. A Entrega e Suporte: O que acontece quando o projeto termina?`}></textarea>
+                 <div className="question-guidance mb-2">
+                    <ol className="list-decimal list-inside">
+                        <li><strong>O Diagnóstico:</strong> Como vocês entendem a necessidade inicial do cliente?</li>
+                        <li><strong>A Engenharia da Solução:</strong> Qual o processo para desenhar a solução?</li>
+                        <li><strong>A Execução:</strong> Como a demolição acontece na prática?</li>
+                        <li><strong>A Entrega e Suporte:</strong> O que acontece quando o projeto termina?</li>
+                    </ol>
+                </div>
+                <textarea id="jornada_demolicao" name="jornada_demolicao" rows="7" className="textarea-custom"></textarea>
             </div>
 
             <div className="mb-8">
                 <p className="question-title">4.2. Processo de Orçamento</p>
                 <p className="mb-4">Um processo de orçamento claro gera confiança. Use o esqueleto abaixo para descrever como a Exclusiva cria uma proposta de valor, não apenas um preço.</p>
                 <label htmlFor="processo_orcamento" className="question-subtitle">Processo Completo de Orçamento de Obra:</label>
-                <textarea id="processo_orcamento" name="processo_orcamento_obra" rows="6" className="textarea-custom" placeholder={`1. Análise de Escopo: Quais informações vocês coletam do cliente para iniciar um orçamento?\n2. Detalhamento Técnico: Como vocês quebram o projeto em etapas e custos? (Planilhas, softwares, etc.)\n3. Apresentação da Proposta: Como a proposta é apresentada ao cliente? O que ela inclui além dos valores? (Cronograma, diferenciais, etc.)`}></textarea>
+                <div className="question-guidance mb-2">
+                     <ol className="list-decimal list-inside">
+                        <li><strong>Análise de Escopo:</strong> Quais informações vocês coletam do cliente para iniciar um orçamento?</li>
+                        <li><strong>Detalhamento Técnico:</strong> Como vocês quebram o projeto em etapas e custos? (Planilhas, softwares, etc.)</li>
+                        <li><strong>Apresentação da Proposta:</strong> Como a proposta é apresentada ao cliente? O que ela inclui além dos valores? (Cronograma, diferenciais, etc.)</li>
+                    </ol>
+                </div>
+                <textarea id="processo_orcamento" name="processo_orcamento_obra" rows="6" className="textarea-custom"></textarea>
             </div>
         </div>
 
@@ -255,7 +293,10 @@ export default function FundacaoEstrategicaForm() {
                 <div className="options-group">
                     <label><input type="checkbox" name="recebimento_leads[]" value="email" /> <span>Por e-mail, para um ou mais destinatários.</span></label>
                     <label><input type="checkbox" name="recebimento_leads[]" value="planilha_google" /> <span>Em uma Planilha Google, atualizada automaticamente.</span></label>
-                    <label><input type="checkbox" name="recebimento_leads[]" value="crm" /> <span>Diretamente em um sistema de CRM. Qual? (Ex: HubSpot, Pipedrive, RD Station) <input type="text" name="recebimento_leads_crm" className="input-inline" /></span></label>
+                    <div className="mt-2">
+                        <label><input type="checkbox" name="recebimento_leads[]" value="crm" /> <span>Diretamente em um sistema de CRM. Qual? (Ex: HubSpot, Pipedrive, RD Station)</span></label>
+                        <textarea name="recebimento_leads_crm" rows="3" className="textarea-custom mt-2"></textarea>
+                    </div>
                 </div>
             </div>
             <div className="mb-8">
