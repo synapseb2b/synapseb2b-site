@@ -33,7 +33,7 @@ export default function FundacaoEstrategicaPage() {
         >
           <div className="container text-center">
             <h1 className="hero-headline" style={{ fontSize: '2.8rem' }}>
-              Exclusiva Engenharias: Forms Fundação Estratégica
+              Formulário Fundação Estratégica
             </h1>
             {/* --- CORREÇÃO (a): O parágrafo de subtítulo foi removido. --- */}
           </div>
