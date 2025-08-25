@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Exclusiva Engenharias - Hub Multidisciplinar em Projetos, Obras e Manutenção</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exclusiva Engenharias: engenharia multidisciplinar com foco em desempenho, segurança e previsibilidade. Projetos, obras e manutenção para indústria, varejo, energia, infraestrutura e saúde.">
+  <meta property="og:title" content="Exclusiva Engenharias - Hub Multidisciplinar">
+  <meta property="og:description" content="Projetos, obras e manutenção com integração civil, elétrica, mecânica, automação e climatização.">
+  <meta property="og:image" content="https://storage.googleapis.com/geral-publico/9497db5d-a0d7-4ae3-b3e8-a285a2afea85.png">
+  <meta name="theme-color" content="#0A3D62">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1629642972010-e84e6066fd30?auto=format&fit=crop&w=1600&q=70">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              900: '#0A3D62',
+              800: '#1F5A82',
+              700: '#2A6E9E',
+              600: '#4A6B82'
+            },
+            gunmetal: '#0F172A',
+            steel: '#94A3B8',
+            concrete: '#E5E7EB',
+          },
+          boxShadow: {
+            'focus': '0 0 0 4px rgba(31,90,130,0.25)',
+          },
+          transitionTimingFunction: {
+            'expo': 'cubic-bezier(0.16, 1, 0.3, 1)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    html, body { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Exclusiva Engenharias",
+    "url": "https://www.exclusivaengenharias.com.br",
+    "logo": "https://storage.googleapis.com/geral-publico/9497db5d-a0d7-4ae3-b3e8-a285a2afea85.png",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body class="bg-white text-gunmetal font-sans antialiased">
+  <div class="bg-gunmetal text-white text-xs">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+      <p class="opacity-80">Engenharia que conecta projeto, obra e operação.</p>
+      <div class="hidden sm:flex gap-6">
+        <a href="#simulador" class="hover:underline focus:outline-none">Simulador</a>
+        <a href="#contato" class="hover:underline focus:outline-none">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-concrete">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3" aria-label="Página inicial - Exclusiva Engenharias">
+          <img src="https://storage.googleapis.com/geral-publico/9497db5d-a0d7-4ae3-b3e8-a285a2afea85.png" alt="Logotipo Exclusiva Engenharias" class="h-8 w-8">
+          <span class="sr-only">Exclusiva Engenharias</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6" aria-label="Principal">
+          <a href="#segmentos" class="text-sm text-gunmetal/80 hover:text-brand-900 transition-colors">Segmentos</a>
+          <a href="#hub-multidisciplinar" class="text-sm text-gunmetal/80 hover:text-brand-900 transition-colors">Hub</a>
+          <a href="#provas-sociais" class="text-sm text-gunmetal/80 hover:text-brand-900 transition-colors">Provas</a>
+          <a href="#obras" class="text-sm text-gunmetal/80 hover:text-brand-900 transition-colors">Obras</a>
+          <a href="#conteudo" class="text-sm text-gunmetal/80 hover:text-brand-900 transition-colors">Conteúdo</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button id="open-simulator-desktop" class="hidden sm:inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-800 transition-shadow" aria-controls="simulador" aria-expanded="false">
+            Orçar
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-concrete text-gunmetal hover:bg-concrete focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-800 transition">
+            <span class="sr-only">Abrir menu</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden border-t border-concrete pb-4" role="dialog" aria-label="Menu">
+        <div class="pt-2 flex flex-col gap-2">
+          <a href="#segmentos" class="px-3 py-2 rounded-md text-sm hover:bg-concrete/60 transition">Segmentos</a>
+          <a href="#hub-multidisciplinar" class="px-3 py-2 rounded-md text-sm hover:bg-concrete/60 transition">Hub</a>
+          <a href="#provas-sociais" class="px-3 py-2 rounded-md text-sm hover:bg-concrete/60 transition">Provas</a>
+          <a href="#obras" class="px-3 py-2 rounded-md text-sm hover:bg-concrete/60 transition">Obras</a>
+          <a href="#conteudo" class="px-3 py-2 rounded-md text-sm hover:bg-concrete/60 transition">Conteúdo</a>
+          <button id="open-simulator-mobile" class="mt-2 inline-flex items-center justify-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 transition">
+            Orçar
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1629642972010-e84e6066fd30?auto=format&fit=crop&w=1600&q=70" alt="Estrutura metálica de ponte sob céu azul" class="h-full w-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-white"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4">
+      <div class="py-16 sm:py-20 md:py-24">
+        <h1 class="text-3xl font-semibold text-gunmetal max-w-2xl leading-tight">
+          Engenharia multidisciplinar para projetos, obras e manutenção
+        </h1>
+        <p class="mt-4 text-base text-gunmetal/80 max-w-xl">
+          Integramos civil, elétrica, mecânica, automação e climatização para entregar desempenho, segurança e previsibilidade em cada etapa.
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <button class="inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-5 py-2.5 hover:bg-brand-800 shadow-sm hover:shadow-md transition-all ease-expo" id="hero-orcar">
+            Orçar
+          </button>
+          <a href="#obras" class="inline-flex items-center rounded-md border border-concrete text-gunmetal text-sm px-5 py-2.5 hover:bg-concrete/70 transition">
+            Cases
+          </a>
+        </div>
+        <div class="mt-8 grid grid-cols-3 gap-4 max-w-md">
+          <div class="rounded-md bg-white/80 border border-concrete p-4 backdrop-blur">
+            <p class="text-xs text-steel uppercase tracking-wide">Foco</p>
+            <p class="mt-1 text-sm">Desempenho e confiabilidade</p>
+          </div>
+          <div class="rounded-md bg-white/80 border border-concrete p-4 backdrop-blur">
+            <p class="text-xs text-steel uppercase tracking-wide">Modelo</p>
+            <p class="mt-1 text-sm">Projeto → Obra → Operação</p>
+          </div>
+          <div class="rounded-md bg-white/80 border border-concrete p-4 backdrop-blur">
+            <p class="text-xs text-steel uppercase tracking-wide">Entrega</p>
+            <p class="mt-1 text-sm">Prazo, segurança e qualidade</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="segmentos" class="py-16 border-t border-concrete">
+    <div class="max-w-7xl mx-auto px-4">
+      <header class="flex items-end justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold">Atuamos nos principais segmentos</h2>
+          <p class="mt-2 text-base text-gunmetal/80 max-w-2xl">Soluções de engenharia adequadas à realidade de cada setor, com linguagem clara e foco no resultado.</p>
+        </div>
+        <div class="hidden md:flex items-center gap-2">
+          <button data-seg="todos" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition aria-pressed=true">Todos</button>
+          <button data-seg="industrial" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition">Industrial</button>
+          <button data-seg="comercial" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition">Comercial</button>
+          <button data-seg="energia" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition">Energia</button>
+          <button data-seg="infra" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition">Infra</button>
+          <button data-seg="saude" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition">Saúde</button>
+          <button data-seg="logistica" class="seg-btn text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition">Logística</button>
+        </div>
+      </header>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="seg-card group rounded-lg border border-concrete p-5 hover:shadow-md transition" data-seg="industrial">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-900/10 text-brand-900">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M4 21V9l5 3V9l5 3V9l6 3v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <h3 class="text-base font-semibold">Indústria</h3>
+          </div>
+          <p class="mt-2 text-sm text-gunmetal/80">Adequação de plantas, utilidades, linhas e áreas classificadas com mínimo impacto produtivo.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="open-sim text-sm text-brand-900 hover:underline">Orçar</button>
+            <a href="#obras" class="text-sm text-gunmetal/80 hover:underline">Ver cases</a>
+          </div>
+        </article>
+
+        <article class="seg-card group rounded-lg border border-concrete p-5 hover:shadow-md transition" data-seg="comercial">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-900/10 text-brand-900">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M4 21V7h16v14M7 7V3h10v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <h3 class="text-base font-semibold">Comercial</h3>
+          </div>
+          <p class="mt-2 text-sm text-gunmetal/80">Modernização de instalações, climatização eficiente e reformas com segurança operacional.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="open-sim text-sm text-brand-900 hover:underline">Orçar</button>
+            <a href="#obras" class="text-sm text-gunmetal/80 hover:underline">Ver cases</a>
+          </div>
+        </article>
+
+        <article class="seg-card group rounded-lg border border-concrete p-5 hover:shadow-md transition" data-seg="energia">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-900/10 text-brand-900">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l-2 7h4l-2 7 8-11h-6l-2-3z" fill="currentColor"/></svg>
+            </span>
+            <h3 class="text-base font-semibold">Energia</h3>
+          </div>
+          <p class="mt-2 text-sm text-gunmetal/80">Subestações, painéis, geradores e eficiência energética com foco em continuidade.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="open-sim text-sm text-brand-900 hover:underline">Orçar</button>
+            <a href="#obras" class="text-sm text-gunmetal/80 hover:underline">Ver cases</a>
+          </div>
+        </article>
+
+        <article class="seg-card group rounded-lg border border-concrete p-5 hover:shadow-md transition" data-seg="infra">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-900/10 text-brand-900">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M4 20V6l8-3 8 3v14M7 10h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <h3 class="text-base font-semibold">Infraestrutura</h3>
+          </div>
+          <p class="mt-2 text-sm text-gunmetal/80">Obras civis e estruturas metálicas com controle de qualidade e segurança de ponta a ponta.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="open-sim text-sm text-brand-900 hover:underline">Orçar</button>
+            <a href="#obras" class="text-sm text-gunmetal/80 hover:underline">Ver cases</a>
+          </div>
+        </article>
+
+        <article class="seg-card group rounded-lg border border-concrete p-5 hover:shadow-md transition" data-seg="saude">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-900/10 text-brand-900">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v8M8 6h8M4 12h16v8H4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <h3 class="text-base font-semibold">Saúde</h3>
+          </div>
+          <p class="mt-2 text-sm text-gunmetal/80">Ambientes críticos com climatização, elétrica e acabamentos compatíveis às normas vigentes.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="open-sim text-sm text-brand-900 hover:underline">Orçar</button>
+            <a href="#obras" class="text-sm text-gunmetal/80 hover:underline">Ver cases</a>
+          </div>
+        </article>
+
+        <article class="seg-card group rounded-lg border border-concrete p-5 hover:shadow-md transition" data-seg="logistica">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-brand-900/10 text-brand-900">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18M4 17V7h16v10M7 17l2 4h6l2-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <h3 class="text-base font-semibold">Logística</h3>
+          </div>
+          <p class="mt-2 text-sm text-gunmetal/80">Galpões, docas e sistemas de combate a incêndio preparados para operação contínua.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="open-sim text-sm text-brand-900 hover:underline">Orçar</button>
+            <a href="#obras" class="text-sm text-gunmetal/80 hover:underline">Ver cases</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="hub-multidisciplinar" class="py-16 bg-[linear-gradient(180deg,#F8FAFC_0%,#FFFFFF_100%)]">
+    <div class="max-w-7xl mx-auto px-4">
+      <header class="mb-6">
+        <h2 class="text-2xl font-semibold">Hub multidisciplinar</h2>
+        <p class="mt-2 text-base text-gunmetal/80 max-w-2xl">Uma frente coordenada que reúne disciplinas para reduzir interfaces, aumentar previsibilidade e acelerar a entrega.</p>
+      </header>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="group rounded-lg border border-concrete p-4 bg-white hover:shadow-md transition" role="listitem">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-md bg-brand-900/10 flex items-center justify-center text-brand-900">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M4 21V9l8-3 8 3v12M7 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <p class="text-sm font-medium">Civil</p>
+          </div>
+          <p class="mt-2 text-xs text-gunmetal/70">Estruturas, fundações e acabamentos com controle de qualidade.</p>
+        </div>
+
+        <div class="group rounded-lg border border-concrete p-4 bg-white hover:shadow-md transition">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-md bg-brand-900/10 flex items-center justify-center text-brand-900">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8h12M8 16h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <p class="text-sm font-medium">Elétrica</p>
+          </div>
+          <p class="mt-2 text-xs text-gunmetal/70">Distribuição, painéis e energia de reserva com segurança.</p>
+        </div>
+
+        <div class="group rounded-lg border border-concrete p-4 bg-white hover:shadow-md transition">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-md bg-brand-900/10 flex items-center justify-center text-brand-900">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16M7 16V8h10v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <p class="text-sm font-medium">Mecânica</p>
+          </div>
+          <p class="mt-2 text-xs text-gunmetal/70">Estruturas metálicas, suportes e utilidades industriais.</p>
+        </div>
+
+        <div class="group rounded-lg border border-concrete p-4 bg-white hover:shadow-md transition">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-md bg-brand-900/10 flex items-center justify-center text-brand-900">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M8 8h8M9 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <p class="text-sm font-medium">Automação</p>
+          </div>
+          <p class="mt-2 text-xs text-gunmetal/70">Integração de sistemas para controle e monitoramento.</p>
+        </div>
+
+        <div class="group rounded-lg border border-concrete p-4 bg-white hover:shadow-md transition">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-md bg-brand-900/10 flex items-center justify-center text-brand-900">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14h16M6 10l12 0M8 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <p class="text-sm font-medium">Climatização</p>
+          </div>
+          <p class="mt-2 text-xs text-gunmetal/70">Conforto e confiabilidade com eficiência energética.</p>
+        </div>
+
+        <div class="group rounded-lg border border-concrete p-4 bg-white hover:shadow-md transition">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-md bg-brand-900/10 flex items-center justify-center text-brand-900">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h12M8 6h8M7 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <p class="text-sm font-medium">SST</p>
+          </div>
+          <p class="mt-2 text-xs text-gunmetal/70">Segurança em todas as etapas, com rastreabilidade.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 rounded-lg border border-concrete p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white">
+        <p class="text-sm text-gunmetal/80">Uma equipe, múltiplas disciplinas, um único ponto de contato.</p>
+        <div class="flex items-center gap-2">
+          <button class="open-sim inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 transition">Orçar</button>
+          <a href="#contato" class="inline-flex items-center rounded-md border border-concrete text-gunmetal text-sm px-4 py-2 hover:bg-concrete/70 transition">Contato</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="provas-sociais" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <header class="mb-6">
+        <h2 class="text-2xl font-semibold">Confiança construída em campo</h2>
+        <p class="mt-2 text-base text-gunmetal/80 max-w-2xl">Entregas consistentes, comunicação clara e compromisso com segurança e qualidade.</p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <blockquote class="rounded-lg border border-concrete p-5 bg-white hover:shadow-md transition">
+          <p class="text-sm">“Planejamento sólido e obra sem surpresas. Entregaram antes do prazo, com segurança.”</p>
+          <footer class="mt-3 text-xs text-gunmetal/70">Gerente de Operações - Indústria de alimentos, SP</footer>
+        </blockquote>
+        <blockquote class="rounded-lg border border-concrete p-5 bg-white hover:shadow-md transition">
+          <p class="text-sm">“A integração entre civil, elétrica e automação simplificou decisões e acelerou a partida.”</p>
+          <footer class="mt-3 text-xs text-gunmetal/70">Coordenador de Engenharia - Centro logístico, PR</footer>
+        </blockquote>
+        <blockquote class="rounded-lg border border-concrete p-5 bg-white hover:shadow-md transition">
+          <p class="text-sm">“Equipe acessível, técnica e objetiva. Transparência em cada etapa.”</p>
+          <footer class="mt-3 text-xs text-gunmetal/70">Diretora Administrativa - Rede de clínicas, MA</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="obras" class="py-16 bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FAFC_100%)] border-y border-concrete">
+    <div class="max-w-7xl mx-auto px-4">
+      <header class="flex items-start justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl font-semibold">Obras e projetos</h2>
+          <p class="mt-2 text-base text-gunmetal/80 max-w-2xl">Seleção de obras com registro fotográfico em campo.</p>
+        </div>
+        <div class="hidden sm:flex items-center gap-2">
+          <button class="text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-filter="todas">Todas</button>
+          <button class="text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-filter="estrutura">Estruturas</button>
+          <button class="text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-filter="eletrica">Elétricas</button>
+          <button class="text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-filter="clima">Clima</button>
+        </div>
+      </header>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <figure class="obra-card group rounded-lg overflow-hidden border border-concrete bg-white" data-cat="estrutura">
+          <img src="https://images.unsplash.com/photo-1629642971489-7bba22df9402?auto=format&fit=crop&w=1200&q=70" alt="Estrutura metálica em montagem" class="h-48 w-full object-cover transition-transform group-hover:scale-[1.02]">
+          <figcaption class="p-4">
+            <p class="text-sm font-medium">Estrutura metálica - ponte</p>
+            <p class="mt-1 text-xs text-gunmetal/70">Montagem e controle dimensional em campo.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="obra-card group rounded-lg overflow-hidden border border-concrete bg-white" data-cat="estrutura">
+          <img src="https://images.unsplash.com/photo-1724660582276-6793ce7ba6b4?auto=format&fit=crop&w=1200&q=70" alt="Detalhe de treliça metálica" class="h-48 w-full object-cover transition-transform group-hover:scale-[1.02]">
+          <figcaption class="p-4">
+            <p class="text-sm font-medium">Detalhe de treliça</p>
+            <p class="mt-1 text-xs text-gunmetal/70">Rastreabilidade de solda e proteção anticorrosiva.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="obra-card group rounded-lg overflow-hidden border border-concrete bg-white" data-cat="eletrica">
+          <img src="https://images.unsplash.com/photo-1676537445553-8779e0b27309?auto=format&fit=crop&w=1200&q=70" alt="Profissional em instalação elétrica predial" class="h-48 w-full object-cover transition-transform group-hover:scale-[1.02]">
+          <figcaption class="p-4">
+            <p class="text-sm font-medium">Instalações elétricas</p>
+            <p class="mt-1 text-xs text-gunmetal/70">Quadros, eletrocalhas e testes de continuidade.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="obra-card group rounded-lg overflow-hidden border border-concrete bg-white" data-cat="estrutura">
+          <img src="https://images.unsplash.com/photo-1612871552811-b7d292586a0c?auto=format&fit=crop&w=1200&q=70" alt="Edificação em concreto em fase de acabamento" class="h-48 w-full object-cover transition-transform group-hover:scale-[1.02]">
+          <figcaption class="p-4">
+            <p class="text-sm font-medium">Concreto e acabamentos</p>
+            <p class="mt-1 text-xs text-gunmetal/70">Controle tecnológico e entrega por etapas.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="obra-card group rounded-lg overflow-hidden border border-concrete bg-white" data-cat="estrutura">
+          <img src="https://images.unsplash.com/photo-1629642972010-e84e6066fd30?auto=format&fit=crop&w=1200&q=70" alt="Estrutura metálica de ponte" class="h-48 w-full object-cover transition-transform group-hover:scale-[1.02]">
+          <figcaption class="p-4">
+            <p class="text-sm font-medium">Obra de infraestrutura</p>
+            <p class="mt-1 text-xs text-gunmetal/70">Integração de disciplinas e cronograma controlado.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="obra-card group rounded-lg overflow-hidden border border-concrete bg-white" data-cat="estrutura">
+          <img src="https://images.unsplash.com/photo-1751054554594-85de2fe63e6b?auto=format&fit=crop&w=1200&q=70" alt="Guindaste movimentando painel pré-moldado" class="h-48 w-full object-cover transition-transform group-hover:scale-[1.02]">
+          <figcaption class="p-4">
+            <p class="text-sm font-medium">Pré-moldados em montagem</p>
+            <p class="mt-1 text-xs text-gunmetal/70">Planejamento de içamento e segurança operacional.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-6 flex items-center justify-between">
+        <p class="text-xs text-gunmetal/70">Registro fotográfico de obras reais do setor.</p>
+        <a href="#contato" class="text-sm text-brand-900 hover:underline">Falar com engenharia</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="conteudo" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <header class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-semibold">Hub de conteúdo</h2>
+          <p class="mt-2 text-base text-gunmetal/80 max-w-2xl">Materiais diretos ao ponto para apoiar decisões: guias, checklists e estudos de caso.</p>
+        </div>
+        <div class="hidden sm:flex items-center gap-2">
+          <button class="chip active text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-cat="tudo" aria-pressed="true">Tudo</button>
+          <button class="chip text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-cat="projetos">Projetos</button>
+          <button class="chip text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-cat="obras">Obras</button>
+          <button class="chip text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-cat="manutencao">Manutenção</button>
+          <button class="chip text-sm px-3 py-2 rounded-md border border-concrete hover:bg-concrete/70 transition" data-cat="energia">Energia</button>
+        </div>
+      </header>
+
+      <div class="mt-4">
+        <div class="relative">
+          <input id="search" type="search" placeholder="Buscar no hub..." class="w-full sm:w-80 rounded-md border border-concrete px-3 py-2 text-sm focus:outline-none focus:ring-0 focus:shadow-focus" aria-label="Buscar no hub de conteúdo">
+          <svg class="absolute right-3 top-1/2 -translate-y-1/2 text-steel" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm10 2-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div id="conteudo-grid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[480px] overflow-y-auto pr-1">
+        <div class="rounded-lg border border-concrete p-4 animate-pulse bg-white">
+          <div class="h-36 w-full bg-concrete rounded-md"></div>
+          <div class="mt-3 h-4 bg-concrete rounded w-2/3"></div>
+          <div class="mt-2 h-3 bg-concrete rounded w-1/2"></div>
+        </div>
+        <div class="rounded-lg border border-concrete p-4 animate-pulse bg-white">
+          <div class="h-36 w-full bg-concrete rounded-md"></div>
+          <div class="mt-3 h-4 bg-concrete rounded w-2/3"></div>
+          <div class="mt-2 h-3 bg-concrete rounded w-1/2"></div>
+        </div>
+        <div class="rounded-lg border border-concrete p-4 animate-pulse bg-white">
+          <div class="h-36 w-full bg-concrete rounded-md"></div>
+          <div class="mt-3 h-4 bg-concrete rounded w-2/3"></div>
+          <div class="mt-2 h-3 bg-concrete rounded w-1/2"></div>
+        </div>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between">
+        <p class="text-xs text-gunmetal/70">Conteúdos verificados e práticos.</p>
+        <a href="#contato" class="text-sm text-brand-900 hover:underline">Assine a newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="simulador" class="py-16 border-t border-concrete">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="rounded-xl bg-[linear-gradient(135deg,#EAF2F9_0%,#FFFFFF_100%)] border border-concrete overflow-hidden">
+        <div class="p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-semibold">Simulador de orçamento</h2>
+              <p class="mt-2 text-base text-gunmetal/80 max-w-2xl">Estimativa inicial para apoiar a tomada de decisão. Valores indicativos, sujeitos a validação técnica.</p>
+            </div>
+            <button class="open-sim inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 transition">Orçar</button>
+          </div>
+        </div>
+        <div class="px-6 sm:px-8 pb-6 sm:pb-8 text-xs text-gunmetal/70">
+          Ponto de integração: podemos embutir seu simulador/CRM ou API de propostas aqui.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="rounded-xl border border-concrete p-6 sm:p-8 bg-white">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="max-w-2xl">
+            <h3 class="text-2xl font-semibold">Fale com um engenheiro</h3>
+            <p class="mt-2 text-base text-gunmetal/80">Envie seu desafio. Respondemos com um caminho claro e prazos realistas.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://wa.me/5500000000000?text=Olá%2C%20gostaria%20de%20um%20orçamento." class="inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 transition">WhatsApp</a>
+            <a href="mailto:contato@exclusivaengenharias.com.br?subject=Contato%20via%20site" class="inline-flex items-center rounded-md border border-concrete text-gunmetal text-sm px-4 py-2 hover:bg-concrete/70 transition">E-mail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-concrete">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="https://storage.googleapis.com/geral-publico/9497db5d-a0d7-4ae3-b3e8-a285a2afea85.png" alt="Logotipo Exclusiva Engenharias" class="h-7 w-7">
+          <p class="text-sm">Exclusiva Engenharias</p>
+        </div>
+        <nav class="flex flex-wrap gap-4" aria-label="Rodapé">
+          <a href="#segmentos" class="text-sm text-gunmetal/80 hover:text-brand-900">Segmentos</a>
+          <a href="#hub-multidisciplinar" class="text-sm text-gunmetal/80 hover:text-brand-900">Hub</a>
+          <a href="#provas-sociais" class="text-sm text-gunmetal/80 hover:text-brand-900">Provas</a>
+          <a href="#obras" class="text-sm text-gunmetal/80 hover:text-brand-900">Obras</a>
+          <a href="#conteudo" class="text-sm text-gunmetal/80 hover:text-brand-900">Conteúdo</a>
+          <a href="#simulador" class="text-sm text-gunmetal/80 hover:text-brand-900">Simulador</a>
+        </nav>
+      </div>
+      <div class="mt-6 text-xs text-gunmetal/60">
+        © <span id="year"></span> Exclusiva Engenharias. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <div id="drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <div class="absolute inset-0 bg-black/30 opacity-0 transition-opacity"></div>
+    <div class="absolute right-0 top-0 h-full w-full sm:w-[480px] translate-x-full transition-transform">
+      <div class="h-full bg-white shadow-xl flex flex-col">
+        <div class="h-16 flex items-center justify-between px-4 border-b border-concrete">
+          <h2 id="drawer-title" class="text-base font-semibold">Simulador de orçamento</h2>
+          <button id="drawer-close" class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-concrete/70 transition" aria-label="Fechar simulador">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="flex-1 overflow-y-auto px-4 py-4">
+          <form id="sim-form" class="space-y-4" aria-describedby="sim-desc">
+            <p id="sim-desc" class="text-xs text-gunmetal/70">Estimativa inicial. Para proposta formal, enviaremos um escopo detalhado.</p>
+
+            <div>
+              <label for="seg" class="block text-sm font-medium">Segmento</label>
+              <select id="seg" name="seg" class="mt-1 w-full rounded-md border border-concrete px-3 py-2 text-sm focus:outline-none focus:shadow-focus">
+                <option value="industrial">Industrial</option>
+                <option value="comercial">Comercial</option>
+                <option value="energia">Energia</option>
+                <option value="infra">Infraestrutura</option>
+                <option value="saude">Saúde</option>
+                <option value="logistica">Logística</option>
+              </select>
+            </div>
+
+            <div>
+              <span class="block text-sm font-medium">Disciplinas</span>
+              <div class="mt-2 grid grid-cols-2 gap-2">
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="disc" value="civil" class="accent-brand-900"> Civil</label>
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="disc" value="eletrica" class="accent-brand-900"> Elétrica</label>
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="disc" value="mecanica" class="accent-brand-900"> Mecânica</label>
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="disc" value="automacao" class="accent-brand-900"> Automação</label>
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="disc" value="clima" class="accent-brand-900"> Climatização</label>
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="disc" value="sst" class="accent-brand-900"> SST</label>
+              </div>
+            </div>
+
+            <div>
+              <label for="tipo" class="block text-sm font-medium">Tipo de contratação</label>
+              <select id="tipo" name="tipo" class="mt-1 w-full rounded-md border border-concrete px-3 py-2 text-sm focus:outline-none focus:shadow-focus">
+                <option value="projeto">Projeto</option>
+                <option value="obra">Obra</option>
+                <option value="manutencao">Manutenção</option>
+                <option value="epc">EPC (turn-key)</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="area" class="block text-sm font-medium">Área (m²)</label>
+                <input id="area" name="area" type="number" min="10" step="10" value="500" class="mt-1 w-full rounded-md border border-concrete px-3 py-2 text-sm focus:outline-none focus:shadow-focus">
+              </div>
+              <div>
+                <label for="complexidade" class="block text-sm font-medium">Complexidade</label>
+                <select id="complexidade" name="complexidade" class="mt-1 w-full rounded-md border border-concrete px-3 py-2 text-sm focus:outline-none focus:shadow-focus">
+                  <option value="baixa">Baixa</option>
+                  <option value="media" selected>Média</option>
+                  <option value="alta">Alta</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="prazo" class="block text-sm font-medium">Prazo</label>
+              <select id="prazo" name="prazo" class="mt-1 w-full rounded-md border border-concrete px-3 py-2 text-sm focus:outline-none focus:shadow-focus">
+                <option value="estendido">Estendido</option>
+                <option value="normal" selected>Normal</option>
+                <option value="urgente">Urgente</option>
+              </select>
+            </div>
+
+            <div class="pt-2 flex items-center gap-2">
+              <button type="button" id="calc" class="inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 transition">Calcular</button>
+              <button type="button" id="save" class="inline-flex items-center rounded-md border border-concrete text-gunmetal text-sm px-4 py-2 hover:bg-concrete/70 transition">Salvar</button>
+            </div>
+          </form>
+
+          <div id="resultado" class="mt-6 hidden">
+            <div class="rounded-lg border border-concrete p-4 bg-white">
+              <p class="text-xs text-steel uppercase tracking-wide">Estimativa</p>
+              <p id="valor" class="mt-2 text-2xl font-semibold text-brand-900">-</p>
+              <p id="detalhe" class="mt-2 text-sm text-gunmetal/80">-</p>
+              <div class="mt-4 flex items-center gap-2">
+                <a id="mailto" href="#" class="inline-flex items-center rounded-md bg-brand-900 text-white text-sm px-4 py-2 hover:bg-brand-800 transition">Enviar</a>
+                <button id="imprimir" class="inline-flex items-center rounded-md border border-concrete text-gunmetal text-sm px-4 py-2 hover:bg-concrete/70 transition">PDF</button>
+              </div>
+              <p class="mt-3 text-xs text-gunmetal/70">Valores não vinculantes. Sujeitos a visita técnica e escopo detalhado.</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 pb-4">
+          <div class="rounded-md bg-[linear-gradient(90deg,#0A3D62_0%,#1F5A82_100%)] text-white p-4">
+            <p class="text-sm font-medium">Precisa de uma proposta formal?</p>
+            <p class="text-xs mt-1 opacity-90">Anexamos escopo, cronograma e condições. Envie seus dados pelo <a href="#contato" class="underline">formulário de contato</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Utilities
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    // Header mobile menu
+    const mobileBtn = $('#mobile-menu-btn');
+    const mobileMenu = $('#mobile-menu');
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
+    });
+
+    // Year
+    $('#year').textContent = new Date().getFullYear();
+
+    // Segmentation filter (header buttons)
+    const segBtns = $$('.seg-btn');
+    const segCards = $$('.seg-card');
+    segBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        segBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        const seg = btn.dataset.seg;
+        segCards.forEach(card => {
+          card.classList.remove('opacity-40');
+          if (seg !== 'todos' && card.dataset.seg !== seg) {
+            card.classList.add('opacity-40');
+          }
+        });
+      });
+    });
+
+    // Obras filter
+    const obraBtns = $$('[data-filter]');
+    const obraCards = $$('.obra-card');
+    obraBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.filter;
+        obraBtns.forEach(b => b.classList.remove('bg-concrete/70'));
+        btn.classList.add('bg-concrete/70');
+        obraCards.forEach(c => {
+          c.classList.remove('hidden');
+          if (cat !== 'todas' && c.dataset.cat !== cat) c.classList.add('hidden');
+        });
+      });
+    });
+
+    // Content Hub: sample data (replace with CMS/API)
+    const posts = [
+      {
+        id: 1,
+        title: 'Checklist de pré-obra: do canteiro à segurança',
+        cat: 'obras',
+        img: 'https://images.unsplash.com/photo-1629642971489-7bba22df9402?auto=format&fit=crop&w=1200&q=70',
+        desc: 'Itens essenciais para começar sem retrabalho.'
+      },
+      {
+        id: 2,
+        title: 'Como planejar uma parada de manutenção eficiente',
+        cat: 'manutencao',
+        img: 'https://images.unsplash.com/photo-1676537445553-8779e0b27309?auto=format&fit=crop&w=1200&q=70',
+        desc: 'Passos práticos para reduzir tempo e custo.'
+      },
+      {
+        id: 3,
+        title: 'Integração entre civil e elétrica no layout',
+        cat: 'projetos',
+        img: 'https://images.unsplash.com/photo-1612871552811-b7d292586a0c?auto=format&fit=crop&w=1200&q=70',
+        desc: 'Menos interfaces, mais previsibilidade.'
+      },
+      {
+        id: 4,
+        title: 'Energia de reserva: dimensionamento objetivo',
+        cat: 'energia',
+        img: 'https://images.unsplash.com/photo-1724660582276-6793ce7ba6b4?auto=format&fit=crop&w=1200&q=70',
+        desc: 'O que considerar ao especificar geradores.'
+      },
+      {
+        id: 5,
+        title: 'Climatização eficiente em ambientes críticos',
+        cat: 'projetos',
+        img: 'https://images.unsplash.com/photo-1629642972010-e84e6066fd30?auto=format&fit=crop&w=1200&q=70',
+        desc: 'Conforto, confiabilidade e consumo sob controle.'
+      },
+      {
+        id: 6,
+        title: 'Estruturas metálicas: inspeção e proteção',
+        cat: 'obras',
+        img: 'https://images.unsplash.com/photo-1751054554594-85de2fe63e6b?auto=format&fit=crop&w=1200&q=70',
+        desc: 'Boas práticas para vida útil prolongada.'
+      }
+    ];
+
+    const grid = $('#conteudo-grid');
+    const renderPosts = (list) => {
+      grid.innerHTML = '';
+      list.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'rounded-lg border border-concrete overflow-hidden bg-white hover:shadow-md transition';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" class="h-36 w-full object-cover">
+          <div class="p-4">
+            <span class="inline-block text-xs text-steel uppercase tracking-wide">${p.cat}</span>
+            <h3 class="mt-2 text-base font-semibold">${p.title}</h3>
+            <p class="mt-1 text-sm text-gunmetal/80">${p.desc}</p>
+            <div class="mt-3">
+              <a href="#contato" class="text-sm text-brand-900 hover:underline">Ler</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    };
+    // Simulate fetch
+    window.addEventListener('load', () => {
+      setTimeout(() => { renderPosts(posts); }, 600);
+    });
+
+    // Hub filters
+    const chips = $$('.chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
+        chip.classList.add('active'); chip.setAttribute('aria-pressed', 'true');
+        const cat = chip.dataset.cat;
+        const filtered = cat === 'tudo' ? posts : posts.filter(p => p.cat === cat);
+        renderPosts(filtered);
+      });
+    });
+    // Search
+    $('#search').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      const filtered = posts.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+      renderPosts(filtered);
+    });
+
+    // Animate on view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-2');
+          observer.unobserve(entry.target);
+        }
+      })
+    }, { threshold: 0.08 });
+    $$('.seg-card, .obra-card').forEach(el => {
+      el.classList.add('opacity-0', 'translate-y-2', 'transition', 'duration-700');
+      observer.observe(el);
+    });
+
+    // Drawer (simulador)
+    const drawer = $('#drawer');
+    const drawerOverlay = drawer.firstElementChild;
+    const drawerPanel = drawer.children[1];
+    const openButtons = $$('.open-sim').concat([$('#open-simulator-desktop'), $('#open-simulator-mobile'), $('#hero-orcar')]).filter(Boolean);
+
+    function openDrawer() {
+      drawer.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        drawerOverlay.classList.remove('opacity-0');
+        drawerPanel.classList.remove('translate-x-full');
+      });
+      document.body.style.overflow = 'hidden';
+      $('#drawer-title').focus({ preventScroll: true });
+    }
+    function closeDrawer() {
+      drawerOverlay.classList.add('opacity-0');
+      drawerPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        drawer.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    openButtons.forEach(btn => btn.addEventListener('click', openDrawer));
+    $('#drawer-close')?.addEventListener('click', closeDrawer);
+    drawerOverlay?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !drawer.classList.contains('hidden')) closeDrawer(); });
+
+    // Calculator
+    const fmtBRL = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    function calcValor({ seg, discs, tipo, area, complexidade, prazo }) {
+      // Base por disciplina (R$/m²) - faixas indicativas
+      const baseMap = {
+        civil: 700, eletrica: 280, mecanica: 230, automacao: 190, clima: 260, sst: 60
+      };
+      let base = discs.reduce((sum, d) => sum + (baseMap[d] || 0), 0);
+      if (tipo === 'projeto') base *= 0.25;
+      if (tipo === 'manutencao') base *= 0.18;
+      if (tipo === 'epc') base *= 1.15;
+      // Segmento ajuste
+      const segAdj = { industrial: 1.1, energia: 1.15, infra: 1.05, saude: 1.12, logistica: 1.0, comercial: 0.95 }[seg] || 1;
+      // Complexidade
+      const compAdj = { baixa: 0.9, media: 1.0, alta: 1.25 }[complexidade] || 1;
+      // Prazo
+      const prazoAdj = { estendido: 0.95, normal: 1.0, urgente: 1.12 }[prazo] || 1;
+      const valor = base * area * segAdj * compAdj * prazoAdj;
+      // Faixa +/- 12%
+      return { min: valor * 0.88, max: valor * 1.12 };
+    }
+
+    $('#calc').addEventListener('click', () => {
+      const seg = $('#seg').value;
+      const tipo = $('#tipo').value;
+      const area = Math.max(10, parseFloat($('#area').value || '0'));
+      const complexidade = $('#complexidade').value;
+      const prazo = $('#prazo').value;
+      const discs = $$('input[name="disc"]:checked').map(i => i.value);
+      if (!discs.length) {
+        alert('Selecione ao menos uma disciplina.');
+        return;
+      }
+      const faixa = calcValor({ seg, discs, tipo, area, complexidade, prazo });
+      $('#resultado').classList.remove('hidden');
+      $('#valor').textContent = `${fmtBRL(faixa.min)} - ${fmtBRL(faixa.max)}`;
+      $('#detalhe').textContent = `Base ${discs.join(', ')} • ${area} m² • ${tipo} • ${complexidade} • ${prazo}`;
+      const subject = encodeURIComponent('Solicitação de proposta - Exclusiva Engenharias');
+      const body = encodeURIComponent(
+        `Olá, equipe Exclusiva Engenharias.
+
+Segmento: ${seg}
+Disciplinas: ${discs.join(', ')}
+Tipo: ${tipo}
+Área: ${area} m²
+Complexidade: ${complexidade}
+Prazo: ${prazo}
+
+Estimativa: ${fmtBRL(faixa.min)} - ${fmtBRL(faixa.max)}
+Por favor, retornem com próximos passos para proposta formal.`
+      );
+      $('#mailto').setAttribute('href', `mailto:contato@exclusivaengenharias.com.br?subject=${subject}&body=${body}`);
+      // Persistência simples
+      localStorage.setItem('simulacao', JSON.stringify({ seg, discs, tipo, area, complexidade, prazo, faixa }));
+    });
+
+    $('#save').addEventListener('click', () => {
+      const data = {
+        seg: $('#seg').value,
+        tipo: $('#tipo').value,
+        area: $('#area').value,
+        complexidade: $('#complexidade').value,
+        prazo: $('#prazo').value,
+        discs: $$( 'input[name="disc"]:checked' ).map(i => i.value)
+      };
+      localStorage.setItem('simulacao', JSON.stringify(data));
+      const btn = $('#save');
+      const original = btn.textContent;
+      btn.textContent = 'Salvo';
+      setTimeout(() => btn.textContent = original, 1200);
+    });
+
+    // Restore saved
+    window.addEventListener('load', () => {
+      const saved = localStorage.getItem('simulacao');
+      if (saved) {
+        try {
+          const s = JSON.parse(saved);
+          if (s.seg) $('#seg').value = s.seg;
+          if (s.tipo) $('#tipo').value = s.tipo;
+          if (s.area) $('#area').value = s.area;
+          if (s.complexidade) $('#complexidade').value = s.complexidade;
+          if (s.prazo) $('#prazo').value = s.prazo;
+          if (s.discs?.length) {
+            $$('input[name="disc"]').forEach(i => i.checked = s.discs.includes(i.value));
+          }
+        } catch {}
+      }
+    });
+
+    // Print
+    $('#imprimir').addEventListener('click', () => window.print());
+
+    // Keyboard focus outlines only when keyboard used
+    (function () {
+      let usingMouse = true;
+      function handleFirstTab(e){
+        if (e.key === 'Tab') {
+          document.body.classList.add('outline-none', 'focus:outline-none');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('mousedown', () => { usingMouse = true; });
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
+</body>
+</html>
