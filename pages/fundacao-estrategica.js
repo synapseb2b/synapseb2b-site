@@ -25,7 +25,7 @@ export default function FundacaoEstrategicaPage() {
         <section 
           className="section section-dark" 
           style={{ 
-            minHeight: '50vh',
+            minHeight: '20vh',
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center'
