@@ -25,7 +25,7 @@ export default function FundacaoEstrategicaPage() {
         <section 
           className="section section-dark" 
           style={{ 
-            minHeight: '20vh',
+            minHeight: '30vh',
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center'
@@ -33,7 +33,7 @@ export default function FundacaoEstrategicaPage() {
         >
           <div className="container text-center">
             <h1 className="hero-headline" style={{ fontSize: '2.8rem' }}>
-              Fundação Estratégica
+              Exclusiva Engenharias: Forms Fundação Estratégica
             </h1>
             {/* --- CORREÇÃO (a): O parágrafo de subtítulo foi removido. --- */}
           </div>
