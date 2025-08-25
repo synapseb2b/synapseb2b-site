@@ -9,6 +9,7 @@ export default function FundacaoEstrategicaForm() {
   const [state, handleSubmit] = useForm("movlgbgo");
   const router = useRouter();
 
+  // Redireciona para a página de agradecimento customizada após o envio
   useEffect(() => {
     if (state.succeeded) {
       router.push('/formulario-enviado');
@@ -16,6 +17,7 @@ export default function FundacaoEstrategicaForm() {
   }, [state.succeeded, router]);
 
   if (state.succeeded) {
+    // Exibe uma mensagem de carregamento enquanto redireciona
     return (
         <div className="blueprint-container text-center">
             <p className="mt-3 text-lg" style={{color: '#a0aec0'}}>Enviando... um momento.</p>
@@ -25,6 +27,7 @@ export default function FundacaoEstrategicaForm() {
 
   return (
     <div className="blueprint-container">
+      {/* AÇÃO 1: Link para o arquivo HTML estático na pasta /public */}
       <div className="form-section preview-link-section">
           <h2 className="text-2xl font-bold mb-4">Preview do Novo Site</h2>
           <p className="blueprint-intro mb-4">Antes de preencher, você pode navegar pela primeira versão funcional do novo site para ter uma visão clara do design, da estrutura e das funcionalidades que estamos construindo.</p>
