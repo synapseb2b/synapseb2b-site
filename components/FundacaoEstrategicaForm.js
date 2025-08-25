@@ -1,26 +1,40 @@
 // components/FundacaoEstrategicaForm.js
 
 import { useForm } from '@formspree/react';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function FundacaoEstrategicaForm() {
   const [state, handleSubmit] = useForm("movlgbgo");
+  const router = useRouter();
+
+  useEffect(() => {
+    if (state.succeeded) {
+      router.push('/formulario-enviado');
+    }
+  }, [state.succeeded, router]);
 
   if (state.succeeded) {
     return (
-      <div className="blueprint-container text-center">
-        <svg className="mx-auto h-16 w-16 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h2 className="text-3xl font-bold mt-6" style={{color: 'white'}}>Obrigado!</h2>
-        <p className="mt-3 text-lg" style={{color: '#a0aec0'}}>Suas respostas foram recebidas com sucesso.</p>
-        <p className="mt-2" style={{color: '#a0aec0'}}>Agradecemos a sua colaboração para a fundação do projeto.</p>
-      </div>
+        <div className="blueprint-container text-center">
+            <p className="mt-3 text-lg" style={{color: '#a0aec0'}}>Enviando... um momento.</p>
+        </div>
     );
   }
 
   return (
     <div className="blueprint-container">
+      <div className="form-section preview-link-section">
+          <h2 className="text-2xl font-bold mb-4">Preview do Novo Site</h2>
+          <p className="blueprint-intro mb-4">Antes de preencher, você pode navegar pela primeira versão funcional do novo site para ter uma visão clara do design, da estrutura e das funcionalidades que estamos construindo.</p>
+          <Link href="/preview.html" legacyBehavior>
+            <a target="_blank" rel="noopener noreferrer" className="btn btn-secondary-contrast">
+              Acessar Preview do Site
+            </a>
+          </Link>
+      </div>
+
       <p className="blueprint-subtitle mb-8">
         Olá! Este é o nosso portal de alinhamento para o novo site da Exclusiva Engenharias. Com base em nossas conversas e no Blueprint Estratégico, reunimos as informações principais abaixo. Por favor, revise cada tópico para confirmarmos ou ajustarmos os detalhes.
       </p>
@@ -311,29 +325,34 @@ export default function FundacaoEstrategicaForm() {
             </div>
         </div>
 
-        {/* Seção de Upload */}
-         <div className="form-section">
-          <h2 className="text-2xl font-bold mb-6">Upload de Arquivos Complementares</h2>
-          <p className="blueprint-intro">
-            Conforme solicitado na Seção 2, por favor, use o link abaixo para abrir a pasta compartilhada e enviar os arquivos do logo.
-          </p>
-          <div className="text-center mt-6">
-            <a 
-              href="https://drive.google.com/drive/folders/13R4FTDPspGenbsmaD6BdbMKUNHtB21Vr?usp=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              Abrir Pasta para Upload de Arquivos
-            </a>
-          </div>
-        </div>
+        <div className="form-section final-steps-section">
+          <h2 className="text-2xl font-bold mb-6">Para finalizar, siga os dois passos abaixo:</h2>
+          <p className="blueprint-intro mb-6">Complete as duas ações para garantir que seus arquivos e respostas sejam processados corretamente.</p>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+              {/* Passo 1 */}
+              <div className="flex-1">
+                  <p className="font-bold mb-2">1. Upload dos Arquivos</p>
+                  <p className="text-sm text-gray-400 mb-3">Envie o logo e outros materiais na nossa pasta compartilhada.</p>
+                  <a 
+                    href="https://drive.google.com/drive/folders/13R4FTDPspGenbsmaD6BdbMKUNHtB21Vr?usp=sharing" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary w-full"
+                  >
+                    Abrir Pasta para Upload
+                  </a>
+              </div>
 
-        {/* Botão de Envio */}
-        <div className="mt-12 text-center">
-          <button type="submit" disabled={state.submitting} className="btn btn-primary w-full md:w-auto">
-            {state.submitting ? 'Enviando...' : 'Enviar Fundação Estratégica'}
-          </button>
+              {/* Passo 2 */}
+              <div className="flex-1">
+                  <p className="font-bold mb-2">2. Envio do Formulário</p>
+                  <p className="text-sm text-gray-400 mb-3"><strong>Importante:</strong> Suas respostas só serão salvas após clicar neste botão.</p>
+                  <button type="submit" disabled={state.submitting} className="btn btn-primary w-full">
+                    {state.submitting ? 'Enviando...' : 'Enviar Fundação Estratégica'}
+                  </button>
+              </div>
+          </div>
         </div>
       </form>
     </div>
