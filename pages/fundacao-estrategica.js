@@ -1,6 +1,6 @@
 // fundacao-estrategica.js
 import React from "react";
-import FundacaoEstrategicaForm from "./FundacaoEstrategicaForm";
+import FundacaoEstrategicaForm from "../components/FundacaoEstrategicaForm";
 
 export default function FundacaoEstrategicaPage() {
   return (
