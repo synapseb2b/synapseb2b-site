@@ -1,4 +1,4 @@
-// components/Footer.js
+// components/Footer.js (VERSÃO COM AJUSTES FINAIS)
 
 import Link from 'next/link';
 import { Mail, Phone } from 'lucide-react';
@@ -43,6 +43,8 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p>© {currentYear} Synapse B2B. Todos os direitos reservados.</p>
+          {/* TEXTO ADICIONAL INSERIDO AQUI */}
+          <p className="footer-credits">Desenvolvido por Synapse B2B | Plataformas Digitais arquitetadas em Engenharia de Receita.</p>
         </div>
       </div>
     </footer>
