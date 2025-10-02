@@ -1,19 +1,16 @@
-/* globals.css - VERSÃO GENIAL */
-
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E FONTES
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap' );
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap' );
 
 :root {
   --color-background: #020403;
-  --color-primary: #00f0b5;
-  --color-secondary: #0d1a18;
+  --color-primary-blue: #0066FF; /* Azul primário para CTAs */
+  --color-primary-blue-hover: #0052CC;
+  --color-secondary-bg: #0D121A; /* Cor para seções sólidas e cards */
   --color-text: #a0b3c2;
   --color-heading: #ffffff;
-  --color-text-dark: #020403;
-  --color-glass-border: rgba(0, 240, 181, 0.2);
-  --color-glass-bg: rgba(13, 26, 24, 0.5);
+  --color-border: rgba(0, 102, 255, 0.2); /* Borda com tom azulado */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,137 +21,243 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none; /* Esconde o cursor padrão */
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.text-center { text-align: center; }
 
 /* ==========================================================================
-   2. CURSOR CUSTOMIZADO E INTERATIVO
+   2. ANIMAÇÕES DE SCROLL
    ========================================================================== */
-.custom-cursor {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 2px solid var(--color-primary);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-  z-index: 9999;
+.reveal-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
-.custom-cursor.hover {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(0, 240, 181, 0.2);
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================================
-   3. NAVBAR E FOOTER (CORRIGIDOS E REESTILIZADOS)
+   3. COMPONENTES GLOBAIS (Botões, Navbar, Footer)
    ========================================================================== */
+
+/* --- Botões (CTAs) --- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.75rem; padding: 14px 32px;
+  border-radius: 8px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+}
+.btn-primary {
+  background-color: var(--color-primary-blue);
+  color: var(--color-heading);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-blue-hover);
+  transform: translateY(-3px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-heading);
+  border: 2px solid var(--color-border);
+}
+.btn-secondary:hover {
+  background-color: var(--color-primary-blue);
+  border-color: var(--color-primary-blue);
+}
+.btn-large { padding: 18px 40px; font-size: 1.1rem; }
+
+/* --- Navbar (Correção de Layout) --- */
 .nav {
   position: fixed; top: 0; left: 0; width: 100%;
   padding: 1rem 0; z-index: 1000;
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 .nav.scrolled {
   background-color: rgba(2, 4, 3, 0.7);
   backdrop-filter: blur(10px);
 }
-.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
 .nav-logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .nav-logo-text { color: var(--color-heading); font-size: 1.5rem; font-family: 'Montserrat', sans-serif; }
 .nav-menu { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
-.nav-link { color: var(--color-text); font-weight: 500; position: relative; transition: color 0.3s; }
+.nav-link { color: var(--color-text); font-weight: 500; text-decoration: none; transition: color 0.3s; }
 .nav-link:hover { color: var(--color-heading); }
-.nav-link.active { color: var(--color-primary); }
+.nav-link.active { color: var(--color-primary-blue); }
 
+/* --- Footer (Correção de Layout) --- */
 .footer {
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-bg);
   padding: 4rem 0 2rem;
-  border-top: 1px solid var(--color-glass-border);
+  border-top: 1px solid var(--color-border);
 }
 .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
 .footer-title { color: var(--color-heading); font-family: 'Montserrat'; margin-bottom: 1rem; }
 .footer a { color: var(--color-text); text-decoration: none; transition: color 0.3s; }
-.footer a:hover { color: var(--color-primary); }
+.footer a:hover { color: var(--color-primary-blue); }
 .footer ul { list-style: none; }
-.footer-bottom { text-align: center; border-top: 1px solid var(--color-glass-border); padding-top: 2rem; font-size: 0.9rem; }
+.footer-bottom { text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.9rem; }
 
 /* ==========================================================================
-   4. ANIMAÇÕES DE SCROLL E EFEITOS
+   4. ESTILOS DAS SEÇÕES
    ========================================================================== */
-.reveal-up, .reveal-fade {
-  opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.reveal-up { transform: translateY(80px); }
-.reveal-up.in-view, .reveal-fade.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Delays para animação coreografada */
-.reveal-up.in-view[data-delay="1"], .reveal-fade.in-view[data-delay="1"] { transition-delay: 200ms; }
-.reveal-up.in-view[data-delay="2"], .reveal-fade.in-view[data-delay="2"] { transition-delay: 400ms; }
 
-/* ==========================================================================
-   5. HERO GENIUS E SEÇÕES IMERSIVAS
-   ========================================================================== */
-.hero-genius {
-  min-height: 100vh; display: flex; align-items: center;
-  position: relative; overflow: hidden;
-}
-.hero-content { position: relative; z-index: 2; text-align: center; }
-.hero-headline-part1 { font-size: 5rem; font-family: 'Montserrat'; color: var(--color-heading); }
-.hero-headline-part2 { font-size: 5rem; font-family: 'Montserrat'; background: linear-gradient(45deg, var(--color-primary), #3cf7b5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero-subheadline { font-size: 1.2rem; max-width: 600px; margin: 1.5rem auto 2.5rem; }
-.hero-ctas { display: flex; justify-content: center; gap: 1.5rem; }
-
-.rotating-text-background {
-  position: absolute; top: 50%; left: 50%;
-  width: 120vw; height: 120vw; max-width: 1200px; max-height: 1200px;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  animation: rotate 60s linear infinite;
-}
-.rotating-text-background p {
-  font-size: 10rem; font-weight: 800; color: rgba(255, 255, 255, 0.03);
-  text-transform: uppercase;
-}
-@keyframes rotate { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-
-.section-immersive {
-  padding: 8rem 0;
+/* --- Hero --- */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  background-image: var(--bg-image);
+  overflow: hidden;
+}
+.hero-video-background {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+.hero-video { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(2, 4, 3, 0.7);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+}
+.hero-subheadline {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+.hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+/* --- Seções Gerais --- */
+.section-with-bg, .section-solid, .final-cta-section {
+  padding: 6rem 0;
+  position: relative;
+}
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+}
+.lead-text {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+.section-cta { margin-top: 3rem; }
+
+/* --- Seção com Imagem de Fundo (Blocos 2 e 4) --- */
+.section-with-bg {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Efeito Parallax */
 }
-.section-overlay {
+.section-with-bg .section-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(2, 4, 3, 0.85);
-  backdrop-filter: blur(5px);
+  background-color: rgba(2, 4, 3, 0.9);
+  z-index: 1;
 }
-.section-immersive .container { position: relative; z-index: 2; }
-.section-title { font-size: 3.5rem; color: var(--color-heading); }
-.lead-text { font-size: 1.2rem; max-width: 700px; margin: 1rem auto 3rem; }
+.section-with-bg .container { position: relative; z-index: 2; }
 
-/* Estilos dos blocos de conteúdo (problemas, engenharia, etc.) */
-.problem-list-three, .engineering-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.glass-card-contrast, .step-card {
-  background: var(--color-glass-bg);
-  border: 1px solid var(--color-glass-border);
-  border-radius: 16px;
-  padding: 2.5rem;
-  backdrop-filter: blur(15px);
+/* --- Seção com Cor Sólida (Blocos 3 e 5) --- */
+.section-solid { background-color: var(--color-secondary-bg); }
+
+/* --- Seção CTA Final --- */
+.final-cta-section { background-color: var(--color-background); }
+.final-cta-title { font-size: 3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
+
+/* ==========================================================================
+   5. COMPONENTES DE CONTEÚDO (Cards, Acordeão, etc.)
+   ========================================================================== */
+
+/* --- Grids de Cards --- */
+.card-grid-three, .card-grid-two {
+  display: grid;
+  gap: 2rem;
 }
-.highlight-box { margin-top: 3rem; /* ... */ }
+.card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
 
-/* Responsividade */
+/* --- Cards --- */
+.info-card, .case-card, .solution-card {
+  background-color: rgba(13, 18, 26, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.info-card:hover, .case-card:hover, .solution-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary-blue);
+}
+.info-card { text-align: center; }
+.card-icon { color: var(--color-primary-blue); width: 40px; height: 40px; margin-bottom: 1rem; }
+
+.highlight-box {
+  margin: 3rem auto 0;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: rgba(0, 102, 255, 0.1);
+  max-width: 900px;
+}
+
+/* --- Acordeão (Bloco 3) --- */
+.accordion-container { max-width: 800px; margin: 2rem auto 0; }
+.accordion-item { border-bottom: 1px solid var(--color-border); }
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--color-heading);
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.accordion-icon { transition: transform 0.3s ease; }
+.accordion-icon.open { transform: rotate(180deg); }
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.accordion-content.open { max-height: 200px; /* Altura suficiente para o conteúdo */ }
+.accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); }
+
+/* --- Cards de Caso e Solução --- */
+.case-card, .solution-card { text-align: left; }
+.case-title, .solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
+.case-body p { margin-bottom: 1rem; }
+.solution-subtitle { color: var(--color-text); font-weight: 600; }
+.solution-description { font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+.solution-features { list-style: none; padding: 0; }
+.solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.solution-features svg { color: var(--color-primary-blue); flex-shrink: 0; }
+
+/* ==========================================================================
+   6. RESPONSIVIDADE
+   ========================================================================== */
 @media (max-width: 768px) {
-  .custom-cursor { display: none; } /* Esconde cursor customizado em mobile */
-  body { cursor: auto; }
-  .hero-headline-part1, .hero-headline-part2 { font-size: 3rem; }
-  .section-title { font-size: 2.5rem; }
-  .rotating-text-background p { font-size: 5rem; }
+  .nav-menu { display: none; } /* Simplificação para o exemplo, menu hamburger seria necessário */
+  .hero-headline { font-size: 2.5rem; }
+  .section-title, .final-cta-title { font-size: 2.2rem; }
+  .lead-text { font-size: 1.1rem; }
 }
