@@ -2,11 +2,30 @@
 
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect } from 'react';
-import { ArrowRight, Eye, Zap, Search, Lightbulb, Ban, TrendingUp, Wrench, HeartPulse, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight, Eye, Zap, Search, Lightbulb, Ban, TrendingUp, Wrench, HeartPulse, CheckCircle, ChevronDown } from 'lucide-react';
+
+// --- Componente Acordeão para a Seção 3 ---
+const AccordionItem = ({ title, children, isOpen, onClick }) => {
+  return (
+    <div className="accordion-item">
+      <button className="accordion-header" onClick={onClick}>
+        <span>{title}</span>
+        <ChevronDown className={`accordion-icon ${isOpen ? 'open' : ''}`} />
+      </button>
+      <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
+        <div className="accordion-content-inner">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function HomePage() {
-  // Hook para animações de scroll-reveal
+  const [openAccordion, setOpenAccordion] = useState(0); // Deixa o primeiro item aberto por padrão
+
+  // Hook para animações de scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,119 +36,181 @@ export default function HomePage() {
           }
         });
       },
-      { threshold: 0.2 } // Anima quando 20% do elemento está visível
+      { threshold: 0.15 }
     );
 
-    document.querySelectorAll('.reveal-up, .reveal-fade').forEach(el => {
-      observer.observe(el);
-    });
-
+    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
     <>
+      {/* Bloco 1: Meta Tags */}
       <Head>
         <title>Synapse B2B | Engenharia de Receita para Escalar Negócios B2B</title>
-        <meta name="description" content="Traduzimos a complexidade técnica em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
+        <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
       </Head>
 
-      {/* ===== HERO DE ALTO IMPACTO ===== */}
-      <section className="hero-genius">
-        <div className="rotating-text-background">
-          <p>ENGENHARIA DE RECEITA • CORTEX GTM™ • PERFORMANCE B2B •</p>
-        </div>
-        <div className="hero-video-container">
+      {/* Bloco 1: Seção Hero */}
+      <section className="hero-section">
+        <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
-          <div className="hero-video-overlay"></div>
+          <div className="hero-overlay"></div>
         </div>
-        <div className="container hero-content">
+        <div className="container hero-content text-center">
           <div className="reveal-up">
-            <h1 className="hero-headline-part1">Sua empresa tem potencial.</h1>
-            <h2 className="hero-headline-part2">Nós projetamos a receita.</h2>
-          </div>
-          <p className="hero-subheadline reveal-up" data-delay="1">
-            Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas lutam para traduzi-la em uma narrativa clara que o mercado compreenda e compre. O resultado? Ciclos de venda longos, objeções e potencial de receita desperdiçado.
-          </p>
-          <div className="hero-ctas reveal-fade" data-delay="2">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Inicie seu Diagnóstico de Receita</span>
-              <ArrowRight />
-            </Link>
-            <Link href="#impacto" className="btn btn-secondary-contrast">
-              <span>Veja a Engenharia em Ação</span>
-              <Eye />
-            </Link>
+            <h1 className="hero-headline">Sua empresa tem potencial. Nós projetamos a receita.</h1>
+            <p className="hero-subheadline">
+              Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas lutam para traduzi-la em uma narrativa clara que o mercado compreenda e compre. O resultado? Ciclos de venda longos, objeções e potencial de receita desperdiçado. Nós construímos a clareza, os ativos e a aceleração que transformam esse potencial em lucro.
+            </p>
+            <div className="hero-ctas">
+              <Link href="/contato" className="btn btn-primary">
+                <span>Inicie seu Diagnóstico de Receita</span>
+                <ArrowRight size={20} />
+              </Link>
+              <Link href="#impacto" className="btn btn-secondary">
+                <span>Veja a Engenharia em Ação</span>
+                <Eye size={20} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== BLOCO 2: O PROBLEMA (com fundo de imagem) ===== */}
-      <section id="problema" className="section-immersive" style={{ '--bg-image': 'url(/image/Nos_somos_o_neurotransmissor_do_crescimento_B2B.png)' }}>
+      {/* Bloco 2: O problema que resolvemos */}
+      <section id="problema" className="section-with-bg" style={{ backgroundImage: "url('/image/Nos_somos_o_neurotransmissor_do_crescimento_B2B.png')" }}>
         <div className="section-overlay"></div>
-        <div className="container text-center">
-          <div className="reveal-up">
-            <h2 className="section-title">O mercado não compra o que não entende.</h2>
-            <p className="lead-text">Empresas técnicas dominam a engenharia do que fazem, mas falham em fazer o mercado perceber seu valor. O desafio vai além da linguagem técnica:</p>
-          </div>
-          <div className="problem-list-three">
-            <div className="problem-item-square glass-card-contrast reveal-fade" data-delay="0">
-              <div className="problem-icon"><Ban /></div>
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">O mercado não compra o que não entende.</h2>
+          <p className="lead-text">Empresas técnicas dominam a engenharia do que fazem, mas falham em fazer o mercado perceber seu valor. O desafio vai além da linguagem técnica:</p>
+          <div className="card-grid-three">
+            <div className="info-card">
+              <Ban className="card-icon" />
               <p>Mensagens que não conectam com decisores.</p>
             </div>
-            <div className="problem-item-square glass-card-contrast reveal-fade" data-delay="1">
-              <div className="problem-icon"><TrendingUp /></div>
+            <div className="info-card">
+              <TrendingUp className="card-icon" />
               <p>Estratégias comerciais desalinhadas com o processo real de compra.</p>
             </div>
-            <div className="problem-item-square glass-card-contrast reveal-fade" data-delay="2">
-              <div className="problem-icon"><Wrench /></div>
+            <div className="info-card">
+              <Wrench className="card-icon" />
               <p>Falta de integração entre marketing, vendas e produto.</p>
             </div>
           </div>
-          <div className="highlight-box reveal-up" data-delay="1">
+          <div className="highlight-box">
             <p>No B2B, crescer exige <strong>traduzir atributos técnicos em uma proposta comercial irresistível</strong>, adaptada para cada nível de decisão e sustentada por um plano de receita previsível.</p>
           </div>
         </div>
       </section>
 
-      {/* ===== BLOCO 3: NOSSA RESPOSTA (com fundo de imagem) ===== */}
-      <section id="solucao" className="section-immersive" style={{ '--bg-image': 'url(/image/Plataforma.png)' }}>
-        <div className="section-overlay"></div>
-        <div className="container text-center">
-          <div className="reveal-up">
-            <h2 className="section-title">A Engenharia por Trás da Clareza</h2>
-            <p className="lead-text">Resolver o gargalo entre um produto genial e a receita que ele gera exige mais do que táticas de marketing. Exige um método. Exige engenharia. Por isso, criamos o <strong>Cortex GTM™</strong>.</p>
+      {/* Bloco 3: Nossa Resposta - A Engenharia de Receita */}
+      <section id="solucao" className="section-solid">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">A Engenharia por Trás da Clareza</h2>
+          <p className="lead-text">Resolver o gargalo entre um produto genial e a receita que ele gera exige mais do que táticas de marketing. Exige um método. Exige engenharia.</p>
+          <p className="lead-text">Por isso, criamos o <strong>Cortex GTM™</strong>, nosso framework proprietário que integra a ciência do comportamento humano com a disciplina dos modelos de negócio mais validados do mundo.</p>
+          <div className="accordion-container">
+            <AccordionItem title="1. Diagnóstico Profundo" isOpen={openAccordion === 0} onClick={() => setOpenAccordion(openAccordion === 0 ? -1 : 0)}>
+              <p>Vamos ao núcleo do seu negócio e do seu cliente. Mapeamos o problema crítico, o perfil do comprador ideal (ICP) e os Jobs-to-be-Done para ter um raio-x preciso do seu mercado.</p>
+            </AccordionItem>
+            <AccordionItem title="2. Arquitetura da Clareza" isOpen={openAccordion === 1} onClick={() => setOpenAccordion(openAccordion === 1 ? -1 : 1)}>
+              <p>Com o diagnóstico, construímos sua tese de mercado. Desenhamos sua narrativa estratégica e definimos sua categoria. A clareza se torna sua maior vantagem competitiva.</p>
+            </AccordionItem>
+            <AccordionItem title="3. Ativação da Receita" isOpen={openAccordion === 2} onClick={() => setOpenAccordion(openAccordion === 2 ? -1 : 2)}>
+              <p>Traduzimos a estratégia em ativos que geram lucro. Construímos as provas de valor que eliminam o risco da compra e ativamos os canais que conectam sua solução aos clientes certos.</p>
+            </AccordionItem>
           </div>
-          <div className="engineering-steps">
-            <div className="step-card reveal-fade" data-delay="0">
-              <div className="step-icon-wrapper"><Search /></div>
-              <h3>1. Diagnóstico Profundo</h3>
-              <p>Mapeamos o problema crítico, o perfil do comprador ideal (ICP) e os Jobs-to-be-Done para ter um raio-x preciso do seu mercado.</p>
-            </div>
-            <div className="step-card reveal-fade" data-delay="1">
-              <div className="step-icon-wrapper"><Lightbulb /></div>
-              <h3>2. Arquitetura da Clareza</h3>
-              <p>Desenhamos sua narrativa estratégica e definimos sua categoria, transformando clareza em vantagem competitiva.</p>
-            </div>
-            <div className="step-card reveal-fade" data-delay="22">
-              <div className="step-icon-wrapper"><Zap /></div>
-              <h3>3. Ativação da Receita</h3>
-              <p>Traduzimos a estratégia em ativos que geram lucro, eliminam o risco da compra e ativam os canais de aceleração.</p>
-            </div>
-          </div>
-          <div className="reveal-fade" data-delay="1">
-            <Link href="/metodologia" className="btn btn-primary" style={{ marginTop: '3rem' }}>
-              <Eye />
+          <div className="section-cta">
+            <Link href="/metodologia" className="btn btn-primary">
+              <Eye size={20} />
               <span>Conheça a Metodologia em Detalhes</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* As seções 4, 5 e 6 podem ser adicionadas aqui, seguindo o mesmo padrão de `section-immersive` e `reveal-up` para manter a consistência. */}
+      {/* Bloco 4: A Prova do Impacto */}
+      <section id="impacto" className="section-with-bg" style={{ backgroundImage: "url('/image/Plataforma.png')" }}>
+        <div className="section-overlay"></div>
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">A Engenharia de Receita em Ação</h2>
+          <p className="lead-text">Não executamos projetos. Construímos teses de negócio e ativamos seu potencial de receita. Veja a profundidade da nossa engenharia através de transformações reais.</p>
+          <div className="card-grid-two">
+            <div className="case-card">
+              <h3 className="case-title">De Operações Fragmentadas a Hub de Engenharia de Alta Performance</h3>
+              <div className="case-body">
+                <p><strong>Desafio:</strong> Uma empresa familiar com clientes de grande porte (Iveco, FPT) e operações isoladas, sem uma narrativa de marca que refletisse sua real capacidade técnica.</p>
+                <p><strong>Engenharia Aplicada:</strong> Imersão profunda com o Cortex GTM™ para unificar operações sob uma nova tese de mercado, redefinindo categoria, posicionamento e culminando no rebatismo da marca.</p>
+                <p><strong>Transformação:</strong> Contratos ampliados para posições de CRO as a Service e Advisory Board, consolidando a Synapse como parceira estratégica de longo prazo.</p>
+              </div>
+            </div>
+            <div className="case-card">
+              <h3 className="case-title">De Inovação Complexa a uma Nova Categoria de Mercado em Saúde</h3>
+              <div className="case-body">
+                <p><strong>Desafio:</strong> Uma HealthTech com uma solução genial, mas com uma proposta de valor complexa que clientes e investidores não compreendiam, travando o potencial de escala.</p>
+                <p><strong>Engenharia Aplicada:</strong> Criação de uma nova categoria de mercado – "CareOps Integrativo" – e cristalização da oferta em uma tese de investimento com potencial de ROI superior a 6 para 1 para hospitais.</p>
+                <p><strong>Transformação:</strong> Clareza estratégica total, com ativos de comunicação prontos para acelerar a tração de mercado e comprovar o valor da solução para decisores C-level.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Bloco 5: Nossas Soluções */}
+      <section id="crescimento" className="section-solid">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
+          <p className="lead-text">Cada negócio está em um momento único. Nossos modelos de engajamento são desenhados para entregar o que você precisa, quando precisa.</p>
+          <div className="card-grid-three">
+            <div className="solution-card">
+              <h3 className="solution-title">Precisa Validar Rápido?</h3>
+              <h4 className="solution-subtitle">Sprint de Validação Comercial</h4>
+              <p className="solution-description">Sprints ágeis para responder à pergunta crítica: existe demanda real e pagante para sua oferta?</p>
+              <ul className="solution-features">
+                <li><CheckCircle size={16} /> Análise de Risco vs. Oportunidade</li>
+                <li><CheckCircle size={16} /> Teste de Narrativa e Oferta</li>
+                <li><CheckCircle size={16} /> Decisão Go/No-Go Baseada em Dados</li>
+              </ul>
+            </div>
+            <div className="solution-card">
+              <h3 className="solution-title">Pronto para Escalar Agora?</h3>
+              <h4 className="solution-subtitle">Go-To-Market Completo</h4>
+              <p className="solution-description">Do diagnóstico à execução, instalamos e operamos sua máquina de receita para um crescimento sustentável.</p>
+              <ul className="solution-features">
+                <li><CheckCircle size={16} /> Diagnóstico Profundo Cortex GTM™</li>
+                <li><CheckCircle size={16} /> Arquitetura da Clareza e Ativos</li>
+                <li><CheckCircle size={16} /> Ativação e Aceleração de Canais</li>
+              </ul>
+            </div>
+            <div className="solution-card">
+              <h3 className="solution-title">Busca Liderança Sênior?</h3>
+              <h4 className="solution-subtitle">Diretoria de Receita sob Demanda</h4>
+              <p className="solution-description">Inteligência C-level para decisões críticas e tração comercial, sem aumentar seu headcount.</p>
+              <ul className="solution-features">
+                <li><CheckCircle size={16} /> Planejamento Estratégico Contínuo</li>
+                <li><CheckCircle size={16} /> Gestão de Funil, Metas e KPIs</li>
+                <li><CheckCircle size={16} /> Mentoria para a Liderança</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bloco 6: Chamada final */}
+      <section className="final-cta-section">
+        <div className="container text-center reveal-up">
+          <h2 className="final-cta-title">Se o mercado ainda não entende seu valor, é hora de mudar isso.</h2>
+          <p className="lead-text">Com metodologia proprietária e atuação integrada, transformamos complexidade em <strong>crescimento previsível e mensurável</strong>, unindo clareza estratégica e execução comercial de alto nível.</p>
+          <div className="section-cta">
+            <Link href="/contato" className="btn btn-primary btn-large">
+              <span>Fale com a Synapse B2B</span>
+              <ArrowRight size={20} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
