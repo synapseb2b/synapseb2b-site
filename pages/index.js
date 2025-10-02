@@ -1,9 +1,10 @@
-// pages/index.js
+// pages/index.js (VERSÃO COMPLETA E CORRIGIDA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Eye, Zap, Search, Lightbulb, AlertCircle, CheckCircle, ChevronDown } from 'lucide-react';
+// Ícones atualizados para a seção de sintomas
+import { ArrowRight, Eye, Zap, Search, Lightbulb, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
 
 // --- Componente Acordeão para a Seção 3 ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -85,20 +86,21 @@ export default function HomePage() {
           <h2 className="section-title">O resultado é um gap entre potencial e performance.</h2>
           <p className="lead-text">Para empresas B2B com genialidade técnica, essa falha de comunicação se manifesta em sintomas que travam o crescimento:</p>
           <div className="symptom-grid">
+            {/* ÍCONES ATUALIZADOS AQUI */}
             <div className="symptom-card">
-              <AlertCircle className="card-icon" />
+              <TrendingDown className="card-icon" />
               <p>Sua solução é objetivamente superior, mas perde para concorrentes medianos.</p>
             </div>
             <div className="symptom-card">
-              <AlertCircle className="card-icon" />
+              <Tag className="card-icon" />
               <p>Cada proposta é uma batalha de preços, não de valor.</p>
             </div>
             <div className="symptom-card">
-              <AlertCircle className="card-icon" />
+              <Clock className="card-icon" />
               <p>O ciclo de vendas se arrasta porque o cliente "não entende" a profundidade da solução.</p>
             </div>
             <div className="symptom-card">
-              <AlertCircle className="card-icon" />
+              <Filter className="card-icon" />
               <p>O marketing queima caixa gerando volume, em vez de qualidade.</p>
             </div>
           </div>
@@ -108,8 +110,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 3: Nossa Resposta - A Engenharia de Receita (Conteúdo Atualizado) */}
-      <section id="solucao" className="section-solid-darker">
+      {/* Bloco 3: Nossa Resposta (COM EFEITO DE FUNDO) */}
+      <section id="solucao" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Nossa Resposta é um Sistema de Engenharia.</h2>
           <p className="lead-text">Resolver o gargalo entre um produto genial e a receita que ele gera exige mais do que táticas de marketing. Exige um método. Exige engenharia.</p>
@@ -134,7 +136,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 4: A Prova do Impacto (Textos Centralizados) */}
+      {/* Bloco 4: A Prova do Impacto */}
       <section id="impacto" className="section-with-bg" style={{ backgroundImage: "url('/image/Plataforma.png')" }}>
         <div className="section-overlay"></div>
         <div className="container text-center reveal-up">
@@ -161,8 +163,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 5: Nossas Soluções (Textos Centralizados) */}
-      <section id="crescimento" className="section-solid">
+      {/* Bloco 5: Nossas Soluções (COM EFEITO DE FUNDO) */}
+      <section id="crescimento" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
           <p className="lead-text">Cada negócio está em um momento único. Nossos modelos de engajamento são desenhados para entregar o que você precisa, quando precisa.</p>
