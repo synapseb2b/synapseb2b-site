@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Eye, Zap, Search, Lightbulb, Ban, TrendingUp, Wrench, HeartPulse, CheckCircle, ChevronDown } from 'lucide-react';
+import { ArrowRight, Eye, Zap, Search, Lightbulb, Ban, TrendingUp, Wrench, HeartPulse, CheckCircle, ChevronDown, AlertCircle } from 'lucide-react';
 
 // --- Componente Acordeão para a Seção 3 ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -23,7 +23,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 };
 
 export default function HomePage() {
-  const [openAccordion, setOpenAccordion] = useState(0); // Deixa o primeiro item aberto por padrão
+  const [openAccordion, setOpenAccordion] = useState(0);
 
   // Hook para animações de scroll
   useEffect(() => {
@@ -45,13 +45,13 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Bloco 1: Meta Tags */}
+      {/* Meta Tags */}
       <Head>
         <title>Synapse B2B | Engenharia de Receita para Escalar Negócios B2B</title>
         <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
       </Head>
 
-      {/* Bloco 1: Seção Hero */}
+      {/* Bloco 1: Seção Hero (Conteúdo Atualizado) */}
       <section className="hero-section">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -61,9 +61,9 @@ export default function HomePage() {
         </div>
         <div className="container hero-content text-center">
           <div className="reveal-up">
-            <h1 className="hero-headline">Sua empresa tem potencial. Nós projetamos a receita.</h1>
+            <h1 className="hero-headline">O mercado não compra o que não entende.</h1>
             <p className="hero-subheadline">
-              Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas lutam para traduzi-la em uma narrativa clara que o mercado compreenda e compre. O resultado? Ciclos de venda longos, objeções e potencial de receita desperdiçado. Nós construímos a clareza, os ativos e a aceleração que transformam esse potencial em lucro.
+              Empresas técnicas dominam a complexidade do que fazem, mas falham em fazer o mercado perceber seu valor.
             </p>
             <div className="hero-ctas">
               <Link href="/contato" className="btn btn-primary">
@@ -79,24 +79,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 2: O problema que resolvemos */}
-      <section id="problema" className="section-with-bg" style={{ backgroundImage: "url('/image/Nos_somos_o_neurotransmissor_do_crescimento_B2B.png')" }}>
-        <div className="section-overlay"></div>
+      {/* Bloco 2: O problema que resolvemos (Conteúdo Novo) */}
+      <section id="problema" className="section-solid">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O mercado não compra o que não entende.</h2>
-          <p className="lead-text">Empresas técnicas dominam a engenharia do que fazem, mas falham em fazer o mercado perceber seu valor. O desafio vai além da linguagem técnica:</p>
-          <div className="card-grid-three">
-            <div className="info-card">
-              <Ban className="card-icon" />
-              <p>Mensagens que não conectam com decisores.</p>
+          <h2 className="section-title">Sua empresa tem potencial. Nós projetamos a receita.</h2>
+          <p className="lead-text">Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas lutam para traduzi-la em uma narrativa clara que o mercado compreenda e compre. Os sintomas são:</p>
+          <div className="symptom-grid">
+            <div className="symptom-card">
+              <AlertCircle className="card-icon" />
+              <p>Sua solução é objetivamente superior, mas perde para concorrentes medianos.</p>
             </div>
-            <div className="info-card">
-              <TrendingUp className="card-icon" />
-              <p>Estratégias comerciais desalinhadas com o processo real de compra.</p>
+            <div className="symptom-card">
+              <AlertCircle className="card-icon" />
+              <p>Cada proposta é uma batalha de preços, não de valor.</p>
             </div>
-            <div className="info-card">
-              <Wrench className="card-icon" />
-              <p>Falta de integração entre marketing, vendas e produto.</p>
+            <div className="symptom-card">
+              <AlertCircle className="card-icon" />
+              <p>O ciclo de vendas se arrasta porque o cliente "não entende" a profundidade da solução.</p>
+            </div>
+            <div className="symptom-card">
+              <AlertCircle className="card-icon" />
+              <p>O marketing queima caixa gerando volume, em vez de qualidade.</p>
             </div>
           </div>
           <div className="highlight-box">
@@ -106,7 +109,7 @@ export default function HomePage() {
       </section>
 
       {/* Bloco 3: Nossa Resposta - A Engenharia de Receita */}
-      <section id="solucao" className="section-solid">
+      <section id="solucao" className="section-solid-darker">
         <div className="container text-center reveal-up">
           <h2 className="section-title">A Engenharia por Trás da Clareza</h2>
           <p className="lead-text">Resolver o gargalo entre um produto genial e a receita que ele gera exige mais do que táticas de marketing. Exige um método. Exige engenharia.</p>
