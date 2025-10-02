@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Eye, Zap, Search, Lightbulb, Ban, TrendingUp, Wrench, HeartPulse, CheckCircle, ChevronDown, AlertCircle } from 'lucide-react';
+import { ArrowRight, Eye, Zap, Search, Lightbulb, AlertCircle, CheckCircle, ChevronDown } from 'lucide-react';
 
 // --- Componente Acordeão para a Seção 3 ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -51,7 +51,7 @@ export default function HomePage() {
         <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
       </Head>
 
-      {/* Bloco 1: Seção Hero (Conteúdo Atualizado) */}
+      {/* Bloco 1: Seção Hero */}
       <section className="hero-section">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -79,11 +79,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 2: O problema que resolvemos (Conteúdo Novo) */}
+      {/* Bloco 2: O problema que resolvemos (Conteúdo Atualizado) */}
       <section id="problema" className="section-solid">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Sua empresa tem potencial. Nós projetamos a receita.</h2>
-          <p className="lead-text">Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas lutam para traduzi-la em uma narrativa clara que o mercado compreenda e compre. Os sintomas são:</p>
+          <h2 className="section-title">O resultado é um gap entre potencial e performance.</h2>
+          <p className="lead-text">Para empresas B2B com genialidade técnica, essa falha de comunicação se manifesta em sintomas que travam o crescimento:</p>
           <div className="symptom-grid">
             <div className="symptom-card">
               <AlertCircle className="card-icon" />
@@ -108,10 +108,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 3: Nossa Resposta - A Engenharia de Receita */}
+      {/* Bloco 3: Nossa Resposta - A Engenharia de Receita (Conteúdo Atualizado) */}
       <section id="solucao" className="section-solid-darker">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">A Engenharia por Trás da Clareza</h2>
+          <h2 className="section-title">Nossa Resposta é um Sistema de Engenharia.</h2>
           <p className="lead-text">Resolver o gargalo entre um produto genial e a receita que ele gera exige mais do que táticas de marketing. Exige um método. Exige engenharia.</p>
           <p className="lead-text">Por isso, criamos o <strong>Cortex GTM™</strong>, nosso framework proprietário que integra a ciência do comportamento humano com a disciplina dos modelos de negócio mais validados do mundo.</p>
           <div className="accordion-container">
@@ -134,14 +134,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 4: A Prova do Impacto */}
+      {/* Bloco 4: A Prova do Impacto (Textos Centralizados) */}
       <section id="impacto" className="section-with-bg" style={{ backgroundImage: "url('/image/Plataforma.png')" }}>
         <div className="section-overlay"></div>
         <div className="container text-center reveal-up">
           <h2 className="section-title">A Engenharia de Receita em Ação</h2>
           <p className="lead-text">Não executamos projetos. Construímos teses de negócio e ativamos seu potencial de receita. Veja a profundidade da nossa engenharia através de transformações reais.</p>
           <div className="card-grid-two">
-            <div className="case-card">
+            <div className="case-card text-center">
               <h3 className="case-title">De Operações Fragmentadas a Hub de Engenharia de Alta Performance</h3>
               <div className="case-body">
                 <p><strong>Desafio:</strong> Uma empresa familiar com clientes de grande porte (Iveco, FPT) e operações isoladas, sem uma narrativa de marca que refletisse sua real capacidade técnica.</p>
@@ -149,7 +149,7 @@ export default function HomePage() {
                 <p><strong>Transformação:</strong> Contratos ampliados para posições de CRO as a Service e Advisory Board, consolidando a Synapse como parceira estratégica de longo prazo.</p>
               </div>
             </div>
-            <div className="case-card">
+            <div className="case-card text-center">
               <h3 className="case-title">De Inovação Complexa a uma Nova Categoria de Mercado em Saúde</h3>
               <div className="case-body">
                 <p><strong>Desafio:</strong> Uma HealthTech com uma solução genial, mas com uma proposta de valor complexa que clientes e investidores não compreendiam, travando o potencial de escala.</p>
@@ -161,13 +161,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 5: Nossas Soluções */}
+      {/* Bloco 5: Nossas Soluções (Textos Centralizados) */}
       <section id="crescimento" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
           <p className="lead-text">Cada negócio está em um momento único. Nossos modelos de engajamento são desenhados para entregar o que você precisa, quando precisa.</p>
           <div className="card-grid-three">
-            <div className="solution-card">
+            <div className="solution-card text-center">
               <h3 className="solution-title">Precisa Validar Rápido?</h3>
               <h4 className="solution-subtitle">Sprint de Validação Comercial</h4>
               <p className="solution-description">Sprints ágeis para responder à pergunta crítica: existe demanda real e pagante para sua oferta?</p>
@@ -177,7 +177,7 @@ export default function HomePage() {
                 <li><CheckCircle size={16} /> Decisão Go/No-Go Baseada em Dados</li>
               </ul>
             </div>
-            <div className="solution-card">
+            <div className="solution-card text-center">
               <h3 className="solution-title">Pronto para Escalar Agora?</h3>
               <h4 className="solution-subtitle">Go-To-Market Completo</h4>
               <p className="solution-description">Do diagnóstico à execução, instalamos e operamos sua máquina de receita para um crescimento sustentável.</p>
@@ -187,7 +187,7 @@ export default function HomePage() {
                 <li><CheckCircle size={16} /> Ativação e Aceleração de Canais</li>
               </ul>
             </div>
-            <div className="solution-card">
+            <div className="solution-card text-center">
               <h3 className="solution-title">Busca Liderança Sênior?</h3>
               <h4 className="solution-subtitle">Diretoria de Receita sob Demanda</h4>
               <p className="solution-description">Inteligência C-level para decisões críticas e tração comercial, sem aumentar seu headcount.</p>
