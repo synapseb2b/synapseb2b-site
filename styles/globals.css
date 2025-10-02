@@ -1,16 +1,17 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E FONTES
+   1. CONFIGURAÇÕES GERAIS E NOVA PALETA DE CORES
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap' );
 
 :root {
-  --color-background: #020403;
-  --color-primary-blue: #0066FF; /* Azul primário para CTAs */
-  --color-primary-blue-hover: #0052CC;
-  --color-secondary-bg: #0D121A; /* Cor para seções sólidas e cards */
-  --color-text: #a0b3c2;
+  --color-background: #000000; /* Preto absoluto */
+  --color-primary: #009684;     /* Verde principal */
+  --color-secondary: #009681;   /* Verde secundário */
+  --color-accent: #38c5b1;      /* Verde adicional */
+  --color-text: #a6a6a6;        /* Cinza de apoio */
   --color-heading: #ffffff;
-  --color-border: rgba(0, 102, 255, 0.2); /* Borda com tom azulado */
+  --color-section-bg: #0A0A0A;  /* Fundo para seções sólidas */
+  --color-border: rgba(0, 150, 132, 0.2); /* Borda com tom verde */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,42 +43,44 @@ body {
    3. COMPONENTES GLOBAIS (Botões, Navbar, Footer)
    ========================================================================== */
 
-/* --- Botões (CTAs) --- */
+/* --- Botões (CTAs com nova paleta) --- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   gap: 0.75rem; padding: 14px 32px;
   border-radius: 8px; font-weight: 600;
   text-decoration: none; cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
 }
 .btn-primary {
-  background-color: var(--color-primary-blue);
+  background-color: var(--color-primary);
   color: var(--color-heading);
+  border-color: var(--color-primary);
 }
 .btn-primary:hover {
-  background-color: var(--color-primary-blue-hover);
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
   transform: translateY(-3px);
 }
 .btn-secondary {
   background-color: transparent;
   color: var(--color-heading);
-  border: 2px solid var(--color-border);
+  border-color: var(--color-border);
 }
 .btn-secondary:hover {
-  background-color: var(--color-primary-blue);
-  border-color: var(--color-primary-blue);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 .btn-large { padding: 18px 40px; font-size: 1.1rem; }
 
-/* --- Navbar (Correção de Layout) --- */
+/* --- Navbar (Layout Corrigido) --- */
 .nav {
   position: fixed; top: 0; left: 0; width: 100%;
   padding: 1rem 0; z-index: 1000;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 .nav.scrolled {
-  background-color: rgba(2, 4, 3, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
@@ -85,21 +88,44 @@ body {
 .nav-logo-text { color: var(--color-heading); font-size: 1.5rem; font-family: 'Montserrat', sans-serif; }
 .nav-menu { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
 .nav-link { color: var(--color-text); font-weight: 500; text-decoration: none; transition: color 0.3s; }
-.nav-link:hover { color: var(--color-heading); }
-.nav-link.active { color: var(--color-primary-blue); }
+.nav-link:hover { color: var(--color-primary); }
+.nav-link.active { color: var(--color-primary); }
 
-/* --- Footer (Correção de Layout) --- */
+/* --- Footer (Layout Corrigido com 3 Colunas) --- */
 .footer {
-  background-color: var(--color-secondary-bg);
-  padding: 4rem 0 2rem;
+  background-color: var(--color-section-bg);
+  padding: 5rem 0 2rem;
   border-top: 1px solid var(--color-border);
 }
-.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-.footer-title { color: var(--color-heading); font-family: 'Montserrat'; margin-bottom: 1rem; }
-.footer a { color: var(--color-text); text-decoration: none; transition: color 0.3s; }
-.footer a:hover { color: var(--color-primary-blue); }
-.footer ul { list-style: none; }
-.footer-bottom { text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.9rem; }
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Coluna 1 mais larga */
+  gap: 3rem;
+  margin-bottom: 3rem;
+  text-align: left; /* Alinha o texto das colunas à esquerda */
+}
+.footer-column .footer-title {
+  font-family: 'Montserrat';
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+.footer-column p, .footer-column a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.footer-column a:hover { color: var(--color-primary); }
+.footer-column ul { list-style: none; padding: 0; }
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
 
 /* ==========================================================================
    4. ESTILOS DAS SEÇÕES
@@ -107,75 +133,52 @@ body {
 
 /* --- Hero --- */
 .hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
 }
 .hero-video-background {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
 }
 .hero-video { width: 100%; height: 100%; object-fit: cover; }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(2, 4, 3, 0.7);
+  background: rgba(0, 0, 0, 0.6);
 }
 .hero-content { position: relative; z-index: 1; }
 .hero-headline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 4rem;
-  font-weight: 800;
-  color: var(--color-heading);
-  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800;
+  color: var(--color-heading); margin-bottom: 1.5rem;
 }
-.hero-subheadline {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 2.5rem;
-}
+.hero-subheadline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
 .hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
 /* --- Seções Gerais --- */
-.section-with-bg, .section-solid, .final-cta-section {
-  padding: 6rem 0;
-  position: relative;
+.section-with-bg, .section-solid, .section-solid-darker, .final-cta-section {
+  padding: 6rem 0; position: relative;
 }
 .section-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  color: var(--color-heading);
-  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif; font-size: 3rem;
+  color: var(--color-heading); margin-bottom: 1.5rem;
 }
 .lead-text {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
+  font-size: 1.2rem; max-width: 800px;
+  margin-left: auto; margin-right: auto; margin-bottom: 3rem;
 }
 .section-cta { margin-top: 3rem; }
 
-/* --- Seção com Imagem de Fundo (Blocos 2 e 4) --- */
+/* --- Seções com Fundo --- */
 .section-with-bg {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Efeito Parallax */
+  background-size: cover; background-position: center; background-attachment: fixed;
 }
 .section-with-bg .section-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(2, 4, 3, 0.9);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.9); z-index: 1;
 }
 .section-with-bg .container { position: relative; z-index: 2; }
 
-/* --- Seção com Cor Sólida (Blocos 3 e 5) --- */
-.section-solid { background-color: var(--color-secondary-bg); }
-
-/* --- Seção CTA Final --- */
+/* --- Seções com Cor Sólida --- */
+.section-solid { background-color: var(--color-section-bg); }
+.section-solid-darker { background-color: #050505; }
 .final-cta-section { background-color: var(--color-background); }
 .final-cta-title { font-size: 3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
 
@@ -183,36 +186,45 @@ body {
    5. COMPONENTES DE CONTEÚDO (Cards, Acordeão, etc.)
    ========================================================================== */
 
-/* --- Grids de Cards --- */
-.card-grid-three, .card-grid-two {
-  display: grid;
-  gap: 2rem;
+/* --- Grid e Card de Sintomas (Bloco 2) --- */
+.symptom-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
 }
+.symptom-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 12px; padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+.symptom-card:hover { background-color: rgba(0, 150, 132, 0.1); }
+.symptom-card .card-icon { color: var(--color-primary); }
+
+/* --- Grids Gerais de Cards --- */
+.card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
 
 /* --- Cards --- */
-.info-card, .case-card, .solution-card {
-  background-color: rgba(13, 18, 26, 0.6);
+.case-card, .solution-card {
+  background-color: rgba(10, 10, 10, 0.6);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 12px; padding: 2rem;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  text-align: left;
 }
-.info-card:hover, .case-card:hover, .solution-card:hover {
+.case-card:hover, .solution-card:hover {
   transform: translateY(-5px);
-  border-color: var(--color-primary-blue);
+  border-color: var(--color-primary);
 }
-.info-card { text-align: center; }
-.card-icon { color: var(--color-primary-blue); width: 40px; height: 40px; margin-bottom: 1rem; }
+.card-icon { color: var(--color-primary); width: 40px; height: 40px; margin-bottom: 1rem; }
 
 .highlight-box {
-  margin: 3rem auto 0;
-  padding: 2rem;
+  margin: 3rem auto 0; padding: 2rem;
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  background-color: rgba(0, 102, 255, 0.1);
+  background-color: rgba(0, 150, 132, 0.05);
   max-width: 900px;
 }
 
@@ -220,44 +232,33 @@ body {
 .accordion-container { max-width: 800px; margin: 2rem auto 0; }
 .accordion-item { border-bottom: 1px solid var(--color-border); }
 .accordion-header {
-  width: 100%;
-  background: none;
-  border: none;
-  color: var(--color-heading);
-  padding: 1.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
+  width: 100%; background: none; border: none; color: var(--color-heading);
+  padding: 1.5rem 1rem; display: flex; justify-content: space-between;
+  align-items: center; font-size: 1.2rem; font-weight: 600; cursor: pointer;
 }
 .accordion-icon { transition: transform 0.3s ease; }
 .accordion-icon.open { transform: rotate(180deg); }
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
-}
-.accordion-content.open { max-height: 200px; /* Altura suficiente para o conteúdo */ }
-.accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+.accordion-content.open { max-height: 200px; }
+.accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
 
 /* --- Cards de Caso e Solução --- */
-.case-card, .solution-card { text-align: left; }
 .case-title, .solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
 .solution-subtitle { color: var(--color-text); font-weight: 600; }
 .solution-description { font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
 .solution-features { list-style: none; padding: 0; }
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-.solution-features svg { color: var(--color-primary-blue); flex-shrink: 0; }
+.solution-features svg { color: var(--color-primary); flex-shrink: 0; }
 
 /* ==========================================================================
    6. RESPONSIVIDADE
    ========================================================================== */
 @media (max-width: 768px) {
-  .nav-menu { display: none; } /* Simplificação para o exemplo, menu hamburger seria necessário */
+  .nav-menu { display: none; }
   .hero-headline { font-size: 2.5rem; }
   .section-title, .final-cta-title { font-size: 2.2rem; }
   .lead-text { font-size: 1.1rem; }
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  .footer-column { align-items: center; }
 }
