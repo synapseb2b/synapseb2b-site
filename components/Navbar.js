@@ -44,12 +44,23 @@ export default function Navbar() {
             <li><Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
             <li><Link href="/metodologia" className={`nav-link ${router.pathname === '/metodologia' ? 'active' : ''}`}>Metodologia</Link></li>
             <li><Link href="/casos-de-uso" className={`nav-link ${router.pathname === '/casos-de-uso' ? 'active' : ''}`}>Casos de Uso</Link></li>
-            <li><Link href="/contato" className="btn btn-nav-cta">Agendar Diagnóstico</Link></li>
+            
+            {/* --- ALTERAÇÃO APLICADA AQUI --- */}
+            {/* O Link agora envolve uma tag <a> para garantir que a classe de botão seja aplicada corretamente. */}
+            <li>
+              <Link href="/contato" legacyBehavior>
+                <a className="btn btn-nav-cta">Agendar Diagnóstico</a>
+              </Link>
+            </li>
+            {/* --- FIM DA ALTERAÇÃO --- */}
+
           </ul>
 
+          {/* O botão de menu hamburger para mobile */}
           <button className="nav-hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
             <div className="line line1" />
             <div className="line line2" />
+            <div className="line line3" />
           </button>
         </div>
       </nav>
