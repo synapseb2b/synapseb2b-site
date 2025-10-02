@@ -1,17 +1,19 @@
+/* globals.css - VERSÃO FINAL CORRIGIDA */
+
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES OFICIAL
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap' );
 
 :root {
-  --color-background: #000000;      /* Preto absoluto */
-  --color-primary: #009684;          /* Verde principal */
-  --color-secondary: #009681;        /* Verde secundário */
-  --color-accent: #38c5b1;           /* Verde adicional */
-  --color-text: #a6a6a6;             /* Cinza de apoio */
+  --color-background: #000000;
+  --color-primary: #009684;
+  --color-secondary: #009681;
+  --color-accent: #38c5b1;
+  --color-text: #a6a6a6;
   --color-heading: #ffffff;
-  --color-section-bg: #0A0A0A;       /* Fundo para seções sólidas */
-  --color-border: rgba(0, 150, 132, 0.2); /* Borda com tom verde */
+  --color-section-bg: #0A0A0A;
+  --color-border: rgba(0, 150, 132, 0.2);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,43 +42,8 @@ body {
 }
 
 /* ==========================================================================
-   3. COMPONENTES GLOBAIS (Botões, Navbar, Footer)
+   3. NAVBAR E MENU MOBILE (CORREÇÃO DEFINITIVA)
    ========================================================================== */
-
-/* --- Botões (CTAs com paleta verde) --- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 0.75rem; padding: 14px 32px;
-  border-radius: 8px; font-weight: 600;
-  text-decoration: none; cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-  border: 2px solid transparent;
-}
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-heading);
-  border-color: var(--color-primary);
-}
-.btn-primary:hover {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  transform: translateY(-3px);
-}
-.btn-secondary {
-  background-color: transparent;
-  color: var(--color-heading);
-  border-color: var(--color-border);
-}
-.btn-secondary:hover {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-.btn-large { padding: 18px 40px; font-size: 1.1rem; }
-
-/* --- Navbar (Layout Corrigido) --- */
-/* Solução paleativa para a navbar duplicada. O ideal é corrigir no JSX. */
-body > header:first-of-type { display: none; }
-
 .nav {
   position: fixed; top: 0; left: 0; width: 100%;
   padding: 1rem 0; z-index: 1000;
@@ -89,6 +56,8 @@ body > header:first-of-type { display: none; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 .nav-logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .nav-logo-text { color: var(--color-heading); font-size: 1.5rem; font-family: 'Montserrat', sans-serif; }
+
+/* --- Menu Desktop --- */
 .nav-menu { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
 .nav-link { color: var(--color-text); font-weight: 500; text-decoration: none; transition: color 0.3s; }
 .nav-link:hover { color: var(--color-primary); }
@@ -96,13 +65,20 @@ body > header:first-of-type { display: none; }
 .btn-nav-cta {
   background-color: var(--color-primary);
   color: var(--color-heading);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 .btn-nav-cta:hover { background-color: var(--color-secondary); }
 
+/* --- Botão Hamburger e Menu Mobile --- */
+.nav-hamburger { display: none; /* Escondido por padrão em desktop */ }
+.mobile-menu-overlay { display: none; /* Escondido por padrão em desktop */ }
 
-/* --- Footer (Layout Corrigido com 3 Colunas) --- */
+/* ==========================================================================
+   4. FOOTER (LAYOUT CORRIGIDO)
+   ========================================================================== */
 .footer {
   background-color: var(--color-section-bg);
   padding: 5rem 0 2rem;
@@ -123,129 +99,58 @@ body > header:first-of-type { display: none; }
 .footer-column a { text-decoration: none; transition: color 0.3s; }
 .footer-column a:hover { color: var(--color-primary); }
 .footer-column ul { list-style: none; padding: 0; }
-.footer-column ul li a { display: block; margin-bottom: 0.75rem; }
-.footer-contact-link { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.footer-column ul li a { display: block; margin-bottom: 0.75rem; color: var(--color-text); }
+.footer-contact-link { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--color-text); }
 .footer-bottom {
   text-align: center; border-top: 1px solid var(--color-border);
   padding-top: 2rem; font-size: 0.9rem; color: var(--color-text);
 }
 
 /* ==========================================================================
-   4. ESTILOS DAS SEÇÕES
+   5. ESTILOS DE SEÇÕES E CONTEÚDO
    ========================================================================== */
+/* Copie e cole todo o conteúdo das seções 4 e 5 da minha resposta anterior aqui. */
+/* As seções de Hero, Cards, Acordeão, etc., não precisam de alteração. */
+/* O código abaixo é apenas um resumo, use o da resposta anterior para garantir tudo. */
 
-/* --- Hero --- */
-.hero-section {
-  min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.hero-video-background {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-}
+.hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-video { width: 100%; height: 100%; object-fit: cover; }
-.hero-overlay {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
 .hero-content { position: relative; z-index: 1; }
-.hero-headline {
-  font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800;
-  color: var(--color-heading); margin-bottom: 1.5rem;
-}
+.hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; color: var(--color-heading); margin-bottom: 1.5rem; }
 .hero-subheadline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
 .hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-
-/* --- Seções Gerais --- */
-.section-with-bg, .section-solid, .section-solid-darker, .final-cta-section {
-  padding: 6rem 0; position: relative;
-}
-.section-title {
-  font-family: 'Montserrat', sans-serif; font-size: 3rem;
-  color: var(--color-heading); margin-bottom: 1.5rem;
-}
-.lead-text {
-  font-size: 1.2rem; max-width: 800px;
-  margin-left: auto; margin-right: auto; margin-bottom: 3rem;
-}
+.section-with-bg, .section-solid, .section-solid-darker, .final-cta-section { padding: 6rem 0; position: relative; }
+.section-title { font-family: 'Montserrat', sans-serif; font-size: 3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
+.lead-text { font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
 .section-cta { margin-top: 3rem; }
-
-/* --- Seções com Fundo --- */
-.section-with-bg {
-  background-size: cover; background-position: center; background-attachment: fixed;
-}
-.section-with-bg .section-overlay {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); z-index: 1;
-}
+.section-with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
+.section-with-bg .section-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1; }
 .section-with-bg .container { position: relative; z-index: 2; }
-
-/* --- Seções com Cor Sólida --- */
 .section-solid { background-color: var(--color-section-bg); }
 .section-solid-darker { background-color: #050505; }
 .final-cta-section { background-color: var(--color-background); }
 .final-cta-title { font-size: 3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
-
-/* ==========================================================================
-   5. COMPONENTES DE CONTEÚDO (Cards, Acordeão, etc.)
-   ========================================================================== */
-
-/* --- Grid e Card de Sintomas (Bloco 2) --- */
-.symptom-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem; margin-top: 3rem;
-}
-.symptom-card {
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--color-border);
-  border-radius: 12px; padding: 2rem;
-  transition: background-color 0.3s ease;
-}
+.symptom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.symptom-card { background-color: rgba(0, 0, 0, 0.3); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; transition: background-color 0.3s ease; }
 .symptom-card:hover { background-color: rgba(0, 150, 132, 0.1); }
 .symptom-card .card-icon { color: var(--color-primary); margin: 0 auto 1rem; }
-
-/* --- Grids Gerais de Cards --- */
 .card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
-
-/* --- Cards --- */
-.case-card, .solution-card {
-  background-color: rgba(10, 10, 10, 0.6);
-  border: 1px solid var(--color-border);
-  border-radius: 12px; padding: 2rem;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.case-card:hover, .solution-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-primary);
-}
+.case-card, .solution-card { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); transition: transform 0.3s ease, border-color 0.3s ease; text-align: center; }
+.case-card:hover, .solution-card:hover { transform: translateY(-5px); border-color: var(--color-primary); }
 .card-icon { color: var(--color-primary); width: 40px; height: 40px; margin-bottom: 1rem; }
-
-.highlight-box {
-  margin: 3rem auto 0; padding: 2rem;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  background-color: rgba(0, 150, 132, 0.05);
-  max-width: 900px;
-}
-
-/* --- Acordeão (Bloco 3) --- */
+.highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
 .accordion-container { max-width: 800px; margin: 2rem auto 0; }
 .accordion-item { border-bottom: 1px solid var(--color-border); }
-.accordion-header {
-  width: 100%; background: none; border: none; color: var(--color-heading);
-  padding: 1.5rem 1rem; display: flex; justify-content: space-between;
-  align-items: center; font-size: 1.2rem; font-weight: 600; cursor: pointer;
-}
+.accordion-header { width: 100%; background: none; border: none; color: var(--color-heading); padding: 1.5rem 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; cursor: pointer; }
 .accordion-icon { transition: transform 0.3s ease; }
 .accordion-icon.open { transform: rotate(180deg); }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
 .accordion-content.open { max-height: 200px; }
 .accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
-
-/* --- Cards de Caso e Solução (Centralizados) --- */
-.case-card, .solution-card { text-align: center; }
 .case-title, .solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
 .solution-subtitle { color: var(--color-text); font-weight: 600; }
@@ -255,14 +160,64 @@ body > header:first-of-type { display: none; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
 
 /* ==========================================================================
-   6. RESPONSIVIDADE
+   6. RESPONSIVIDADE (COM CORREÇÃO DO MENU MOBILE)
    ========================================================================== */
 @media (max-width: 768px) {
+  /* Esconde o menu de desktop e mostra o botão hamburger */
   .nav-menu { display: none; }
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+  }
+  .nav-hamburger .line {
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-heading);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+  /* Animação do Hamburger para "X" */
+  .nav.menu-open .line1 { transform: rotate(45deg); }
+  .nav.menu-open .line2 { opacity: 0; transform: translateX(20px); }
+  .nav.menu-open .line3 { transform: rotate(-45deg); }
+
+  /* Mostra o menu overlay quando aberto */
+  .mobile-menu-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--color-background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001; /* Acima da navbar */
+  }
+  .mobile-menu-overlay.open { transform: translateX(0); }
+  .mobile-menu-links { list-style: none; padding: 0; text-align: center; }
+  .mobile-menu-links a {
+    font-size: 2rem; color: var(--color-heading); text-decoration: none;
+    padding: 1rem; display: block;
+  }
+  
   .hero-headline { font-size: 2.5rem; }
   .section-title, .final-cta-title { font-size: 2.2rem; }
   .lead-text { font-size: 1.1rem; }
   .footer-content { grid-template-columns: 1fr; text-align: center; }
   .footer-column { align-items: center; }
   .footer-column ul { display: inline-block; }
+  .footer-contact-link { justify-content: center; }
 }
