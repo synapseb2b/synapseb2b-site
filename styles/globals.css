@@ -1,16 +1,16 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E NOVA PALETA DE CORES
+   1. CONFIGURAÇÕES GERAIS E PALETA DE CORES OFICIAL
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap' );
 
 :root {
-  --color-background: #000000; /* Preto absoluto */
-  --color-primary: #009684;     /* Verde principal */
-  --color-secondary: #009681;   /* Verde secundário */
-  --color-accent: #38c5b1;      /* Verde adicional */
-  --color-text: #a6a6a6;        /* Cinza de apoio */
+  --color-background: #000000;      /* Preto absoluto */
+  --color-primary: #009684;          /* Verde principal */
+  --color-secondary: #009681;        /* Verde secundário */
+  --color-accent: #38c5b1;           /* Verde adicional */
+  --color-text: #a6a6a6;             /* Cinza de apoio */
   --color-heading: #ffffff;
-  --color-section-bg: #0A0A0A;  /* Fundo para seções sólidas */
+  --color-section-bg: #0A0A0A;       /* Fundo para seções sólidas */
   --color-border: rgba(0, 150, 132, 0.2); /* Borda com tom verde */
 }
 
@@ -43,7 +43,7 @@ body {
    3. COMPONENTES GLOBAIS (Botões, Navbar, Footer)
    ========================================================================== */
 
-/* --- Botões (CTAs com nova paleta) --- */
+/* --- Botões (CTAs com paleta verde) --- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   gap: 0.75rem; padding: 14px 32px;
@@ -74,6 +74,9 @@ body {
 .btn-large { padding: 18px 40px; font-size: 1.1rem; }
 
 /* --- Navbar (Layout Corrigido) --- */
+/* Solução paleativa para a navbar duplicada. O ideal é corrigir no JSX. */
+body > header:first-of-type { display: none; }
+
 .nav {
   position: fixed; top: 0; left: 0; width: 100%;
   padding: 1rem 0; z-index: 1000;
@@ -90,6 +93,14 @@ body {
 .nav-link { color: var(--color-text); font-weight: 500; text-decoration: none; transition: color 0.3s; }
 .nav-link:hover { color: var(--color-primary); }
 .nav-link.active { color: var(--color-primary); }
+.btn-nav-cta {
+  background-color: var(--color-primary);
+  color: var(--color-heading);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+.btn-nav-cta:hover { background-color: var(--color-secondary); }
+
 
 /* --- Footer (Layout Corrigido com 3 Colunas) --- */
 .footer {
@@ -99,32 +110,24 @@ body {
 }
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr; /* Coluna 1 mais larga */
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
-  text-align: left; /* Alinha o texto das colunas à esquerda */
+  text-align: left;
 }
 .footer-column .footer-title {
-  font-family: 'Montserrat';
-  color: var(--color-heading);
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
+  font-family: 'Montserrat'; color: var(--color-heading);
+  margin-bottom: 1.5rem; font-size: 1.2rem;
 }
-.footer-column p, .footer-column a {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color 0.3s;
-  display: block;
-  margin-bottom: 0.75rem;
-}
+.footer-column p { margin-bottom: 1.5rem; }
+.footer-column a { text-decoration: none; transition: color 0.3s; }
 .footer-column a:hover { color: var(--color-primary); }
 .footer-column ul { list-style: none; padding: 0; }
+.footer-column ul li a { display: block; margin-bottom: 0.75rem; }
+.footer-contact-link { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
 .footer-bottom {
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-  padding-top: 2rem;
-  font-size: 0.9rem;
-  color: var(--color-text);
+  text-align: center; border-top: 1px solid var(--color-border);
+  padding-top: 2rem; font-size: 0.9rem; color: var(--color-text);
 }
 
 /* ==========================================================================
@@ -198,7 +201,7 @@ body {
   transition: background-color 0.3s ease;
 }
 .symptom-card:hover { background-color: rgba(0, 150, 132, 0.1); }
-.symptom-card .card-icon { color: var(--color-primary); }
+.symptom-card .card-icon { color: var(--color-primary); margin: 0 auto 1rem; }
 
 /* --- Grids Gerais de Cards --- */
 .card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
@@ -212,7 +215,6 @@ body {
   border-radius: 12px; padding: 2rem;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, border-color 0.3s ease;
-  text-align: left;
 }
 .case-card:hover, .solution-card:hover {
   transform: translateY(-5px);
@@ -242,12 +244,13 @@ body {
 .accordion-content.open { max-height: 200px; }
 .accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
 
-/* --- Cards de Caso e Solução --- */
+/* --- Cards de Caso e Solução (Centralizados) --- */
+.case-card, .solution-card { text-align: center; }
 .case-title, .solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
 .solution-subtitle { color: var(--color-text); font-weight: 600; }
 .solution-description { font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
-.solution-features { list-style: none; padding: 0; }
+.solution-features { list-style: none; padding: 0; display: inline-block; text-align: left; }
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
 
@@ -261,4 +264,5 @@ body {
   .lead-text { font-size: 1.1rem; }
   .footer-content { grid-template-columns: 1fr; text-align: center; }
   .footer-column { align-items: center; }
+  .footer-column ul { display: inline-block; }
 }
