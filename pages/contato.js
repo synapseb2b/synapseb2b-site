@@ -31,8 +31,8 @@ export default function ContatoPage() {
         <link rel="canonical" href="https://synapseb2b.com/contato" />
       </Head>
 
-      {/* Seção Hero da Página de Contato */}
-      <section className="hero-section" style={{ minHeight: '60vh' }}>
+      {/* --- Seção Hero --- */}
+      <section className="hero-section" style={{ minHeight: '70vh' }}>
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
@@ -47,11 +47,11 @@ export default function ContatoPage() {
         </div>
       </section>
 
-      {/* Seção de Benefícios */}
+      {/* --- Seção de Benefícios --- */}
       <section id="conversa" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Em 21 minutos, clareza sobre o que mais importa agora.</h2>
-          <div className="card-grid-three">
+          <div className="card-grid-three" style={{ maxWidth: '1100px', margin: '3rem auto 0' }}>
             <div className="solution-card">
               <ScanLine className="card-icon" />
               <h4 className="solution-title">Raio-X estratégico imediato</h4>
@@ -71,18 +71,18 @@ export default function ContatoPage() {
         </div>
       </section>
 
-      {/* Seção de Destaque */}
-      <section id="porque-diagnostico" className="section-solid-darker">
+      {/* --- Seção de Destaque --- */}
+      <section id="porque-diagnostico" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <div className="highlight-box">
-            <p className="lead-text" style={{ marginBottom: 0 }}>
+            <p className="lead-text" style={{ marginBottom: 0, fontSize: '1.3rem' }}>
               A maioria das empresas técnicas investe tempo e recursos tentando corrigir sintomas, não causas. Um diagnóstico estratégico bem conduzido é o atalho para investir energia no que realmente transforma seu resultado — e começar a ser percebido de forma diferente pelo mercado.
             </p>
           </div>
         </div>
       </section>
       
-      {/* Seção da Agenda */}
+      {/* --- Seção da Agenda --- */}
       <section id="agenda" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Reserve seu horário agora</h2>
