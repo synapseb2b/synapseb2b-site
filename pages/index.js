@@ -1,11 +1,11 @@
-// pages/index.js (VERSÃO COM CARDS INTERATIVOS E PADDING CORRIGIDO)
+// pages/index.js (VERSÃO FINAL E CONSOLIDADA - COM A NOVA COPY)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Eye, Zap, Search, Lightbulb, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
+import { ArrowRight, Eye, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
 
-// --- NOVO: Componente Card Interativo para Casos de Uso ---
+// --- Componente Card Interativo para Casos de Uso (Sem alterações na estrutura) ---
 const FlippableCaseCard = ({ title, challenge, applied, transformation }) => {
   return (
     <div className="flip-card">
@@ -27,7 +27,7 @@ const FlippableCaseCard = ({ title, challenge, applied, transformation }) => {
   );
 };
 
-// --- NOVO: Componente Card Interativo para Soluções ---
+// --- Componente Card Interativo para Soluções (Sem alterações na estrutura) ---
 const FlippableSolutionCard = ({ title, subtitle, description, features }) => {
   return (
     <div className="flip-card">
@@ -51,8 +51,7 @@ const FlippableSolutionCard = ({ title, subtitle, description, features }) => {
   );
 };
 
-
-// --- Componente Acordeão (sem alterações) ---
+// --- Componente Acordeão (Sem alterações na estrutura) ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
   return (
     <div className="accordion-item">
@@ -96,6 +95,7 @@ export default function HomePage() {
         <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
       </Head>
 
+      {/* Bloco 1: Seção Hero (COPY ATUALIZADA) */}
       <section className="hero-section">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -103,7 +103,6 @@ export default function HomePage() {
           </video>
           <div className="hero-overlay"></div>
         </div>
-        {/* APLICAÇÃO DA CLASSE DE PADDING AQUI */}
         <div className="container hero-content text-center page-hero-padding">
           <div className="reveal-up">
             <h1 className="hero-headline">O mercado não compra o que não entende.</h1>
@@ -115,8 +114,8 @@ export default function HomePage() {
                 <span>Inicie seu Diagnóstico de Receita</span>
                 <ArrowRight size={20} />
               </Link>
-              <Link href="#impacto" className="btn btn-secondary">
-                <span>Veja a Engenharia em Ação</span>
+              <Link href="#crescimento" className="btn btn-secondary">
+                <span>Descubra as Alavancas de Crescimento</span>
                 <Eye size={20} />
               </Link>
             </div>
@@ -124,10 +123,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Bloco 2: O Problema que Resolvemos (COPY ATUALIZADA) */}
       <section id="problema" className="section-solid">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O resultado é um gap entre potencial e performance.</h2>
-          <p className="lead-text">Para empresas B2B com genialidade técnica, essa falha de comunicação se manifesta em sintomas que travam o crescimento:</p>
+          <h2 className="section-title">Sua empresa tem potencial. Nós projetamos a receita.</h2>
+          <p className="lead-text">Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas veem esse potencial se dissipar entre a complexidade do produto e a percepção do cliente. A causa não é a solução, mas a ausência de uma arquitetura de clareza que conecte valor técnico a uma decisão de compra estratégica. Os sintomas são:</p>
           <div className="symptom-grid">
             <div className="symptom-card">
               <TrendingDown className="card-icon" />
@@ -146,61 +146,38 @@ export default function HomePage() {
               <p>O marketing queima caixa gerando volume, em vez de qualidade.</p>
             </div>
           </div>
-          <div className="highlight-box">
-            <p>No B2B, crescer exige <strong>traduzir atributos técnicos em uma proposta comercial irresistível</strong>, adaptada para cada nível de decisão e sustentada por um plano de receita previsível.</p>
-          </div>
         </div>
       </section>
 
-      <section id="solucao" className="section-with-gradient-glow">
+      {/* Bloco 3: Nossa Resposta (COPY ATUALIZADA) */}
+      <section id="resposta" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Nossa Resposta é um Sistema de Engenharia.</h2>
-          <p className="lead-text">Resolver o gargalo entre um produto genial e a receita que ele gera exige mais do que táticas de marketing. Exige um método. Exige engenharia.</p>
-          <p className="lead-text">Por isso, criamos o <strong>Cortex GTM™</strong>, nosso framework proprietário que integra a ciência do comportamento humano com a disciplina dos modelos de negócio mais validados do mundo.</p>
+          <h2 className="section-title">A Engenharia de Receita é a ponte entre sua genialidade e o crescimento.</h2>
+          <p className="lead-text">Não vendemos marketing ou consultoria. Nós instalamos um sistema. Um método que traduz a complexidade da sua solução em uma narrativa de valor clara, uma proposta comercial irresistível e um processo de vendas que seu time consegue executar com disciplina e consistência.</p>
+        </div>
+      </section>
+
+      {/* Bloco 4: Como Funciona - O Cortex GTM™ (COPY ATUALIZADA) */}
+      <section id="como-funciona" className="section-solid">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">Nosso Sistema: O Cortex GTM™</h2>
+          <p className="lead-text">O Cortex GTM™ é o nosso sistema de diagnóstico e arquitetura estratégica, projetado para decodificar a genialidade técnica de um negócio e traduzi-la em uma Engenharia de Receita.</p>
+          <p className="lead-text">Ele opera em três fases que refletem o que nos diferencia: o nosso olhar.</p>
           <div className="accordion-container">
-            <AccordionItem title="1. Diagnóstico Profundo" isOpen={openAccordion === 0} onClick={() => setOpenAccordion(openAccordion === 0 ? -1 : 0)}>
-              <p>Vamos ao núcleo do seu negócio e do seu cliente. Mapeamos o problema crítico, o perfil do comprador ideal (ICP) e os Jobs-to-be-Done para ter um raio-x preciso do seu mercado.</p>
+            <AccordionItem title="Fase 1: Um Olhar de Fora para Dentro" isOpen={openAccordion === 0} onClick={() => setOpenAccordion(openAccordion === 0 ? -1 : 0)}>
+              <p>Nosso ponto de partida não é o seu produto, mas o problema crítico e o impacto que a falta de clareza gera no negócio do seu cliente. Diagnosticamos com precisão onde o valor real da sua solução se perde na percepção do mercado, transformando complexidade em clareza.</p>
             </AccordionItem>
-            <AccordionItem title="2. Arquitetura da Clareza" isOpen={openAccordion === 1} onClick={() => setOpenAccordion(openAccordion === 1 ? -1 : 1)}>
-              <p>Com o diagnóstico, construímos sua tese de mercado. Desenhamos sua narrativa estratégica e definimos sua categoria. A clareza se torna sua maior vantagem competitiva.</p>
+            <AccordionItem title="Fase 2: A Lógica por Trás da Decisão" isOpen={openAccordion === 1} onClick={() => setOpenAccordion(openAccordion === 1 ? -1 : 1)}>
+              <p>Com o diagnóstico em mãos, arquitetamos a narrativa e o posicionamento que conectam sua genialidade a uma decisão de compra estratégica. Não criamos marketing; construímos o argumento de negócio que torna a escolha pela sua empresa uma consequência lógica e defensável.</p>
             </AccordionItem>
-            <AccordionItem title="3. Ativação da Receita" isOpen={openAccordion === 2} onClick={() => setOpenAccordion(openAccordion === 2 ? -1 : 2)}>
-              <p>Traduzimos a estratégia em ativos que geram lucro. Construímos as provas de valor que eliminam o risco da compra e ativamos os canais que conectam sua solução aos clientes certos.</p>
+            <AccordionItem title="Fase 3: O Sistema que Gera Tração" isOpen={openAccordion === 2} onClick={() => setOpenAccordion(openAccordion === 2 ? -1 : 2)}>
+              <p>Traduzimos a arquitetura estratégica em um sistema de aceleração. Equipamos seu time com os ativos e a disciplina necessários para articular o novo valor, criando um motor de receita previsível que escala com inteligência.</p>
             </AccordionItem>
-          </div>
-          <div className="section-cta">
-            <Link href="/metodologia" className="btn btn-primary">
-              <Eye size={20} />
-              <span>Conheça a Metodologia em Detalhes</span>
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Bloco 4: A Prova do Impacto (COM CARDS INTERATIVOS) */}
-      <section id="impacto" className="section-with-bg" style={{ backgroundImage: "url('/image/Plataforma.png')" }}>
-        <div className="section-overlay"></div>
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">A Engenharia de Receita em Ação</h2>
-          <p className="lead-text">Não executamos projetos. Construímos teses de negócio e ativamos seu potencial de receita. Veja a profundidade da nossa engenharia através de transformações reais.</p>
-          <div className="card-grid-two">
-            <FlippableCaseCard
-              title="De Operações Fragmentadas a Hub de Engenharia de Alta Performance"
-              challenge="Uma empresa familiar com clientes de grande porte (Iveco, FPT) e operações isoladas, sem uma narrativa de marca que refletisse sua real capacidade técnica."
-              applied="Imersão profunda com o Cortex GTM™ para unificar operações sob uma nova tese de mercado, redefinindo categoria, posicionamento e culminando no rebatismo da marca."
-              transformation="Contratos ampliados para posições de CRO as a Service e Advisory Board, consolidando a Synapse como parceira estratégica de longo prazo."
-            />
-            <FlippableCaseCard
-              title="De Inovação Complexa a uma Nova Categoria de Mercado em Saúde"
-              challenge="Uma HealthTech com uma solução genial, mas com uma proposta de valor complexa que clientes e investidores não compreendiam, travando o potencial de escala."
-              applied="Criação de uma nova categoria de mercado – 'CareOps Integrativo' – e cristalização da oferta em uma tese de investimento com potencial de ROI superior a 6 para 1 para hospitais."
-              transformation="Clareza estratégica total, com ativos de comunicação prontos para acelerar a tração de mercado e comprovar o valor da solução para decisores C-level."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Bloco 5: Nossas Soluções (COM CARDS INTERATIVOS) */}
+      {/* Bloco 5: Soluções (COPY ATUALIZADA) */}
       <section id="crescimento" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
@@ -210,31 +187,32 @@ export default function HomePage() {
               title="Precisa Validar Rápido?"
               subtitle="Sprint de Validação Comercial"
               description="Sprints ágeis para responder à pergunta crítica: existe demanda real e pagante para sua oferta?"
-              features={["Análise de Risco vs. Oportunidade", "Teste de Narrativa e Oferta", "Decisão Go/No-Go Baseada em Dados"]}
+              features={[]} // Features não especificadas na nova copy para este card
             />
             <FlippableSolutionCard
               title="Pronto para Escalar Agora?"
               subtitle="Go-To-Market Completo"
               description="Do diagnóstico à execução, instalamos e operamos sua máquina de receita para um crescimento sustentável."
-              features={["Diagnóstico Profundo Cortex GTM™", "Arquitetura da Clareza e Ativos", "Ativação e Aceleração de Canais"]}
+              features={[]} // Features não especificadas na nova copy para este card
             />
             <FlippableSolutionCard
               title="Busca Liderança Sênior?"
               subtitle="Diretoria de Receita sob Demanda"
               description="Inteligência C-level para decisões críticas e tração comercial, sem aumentar seu headcount."
-              features={["Planejamento Estratégico Contínuo", "Gestão de Funil, Metas e KPIs", "Mentoria para a Liderança"]}
+              features={[]} // Features não especificadas na nova copy para este card
             />
           </div>
         </div>
       </section>
 
+      {/* Bloco 6: Chamada Final (COPY ATUALIZADA) */}
       <section className="final-cta-section">
         <div className="container text-center reveal-up">
           <h2 className="final-cta-title">Se o mercado ainda não entende seu valor, é hora de mudar isso.</h2>
-          <p className="lead-text">Com metodologia proprietária e atuação integrada, transformamos complexidade em <strong>crescimento previsível e mensurável</strong>, unindo clareza estratégica e execução comercial de alto nível.</p>
+          <p className="lead-text">Com metodologia proprietária e atuação integrada, transformamos complexidade em clareza, e clareza em receita.</p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Fale com a Synapse B2B</span>
+              <span>Inicie seu Diagnóstico de Receita</span>
               <ArrowRight size={20} />
             </Link>
           </div>
