@@ -1,57 +1,32 @@
-// pages/index.js (VERSÃO FINAL E CONSOLIDADA - COM COPY E CONTEÚDO DOS CARDS CORRIGIDOS)
+// pages/index.js (VERSÃO FINAL, VALIDADA E CORRIGIDA PARA MOBILE)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { ArrowRight, Eye, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
 
-// --- Componente Card Interativo para Casos de Uso (Estrutura sem alteração) ---
-const FlippableCaseCard = ({ title, challenge, applied, transformation }) => {
+// --- NOVO: Componente Card de Solução Unificado (CORRIGIDO PARA MOBILE) ---
+const SolutionCard = ({ title, subtitle, description, features }) => {
   return (
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front case-card">
-          <h3 className="case-title">{title}</h3>
-          <div className="case-body">
-            <p><strong>Desafio:</strong> {challenge}</p>
-            <p><strong>Engenharia Aplicada:</strong> {applied}</p>
-          </div>
-          <div className="flip-card-cta">Passe o mouse para ver a transformação</div>
-        </div>
-        <div className="flip-card-back case-card">
-          <h3 className="case-title">Transformação</h3>
-          <p>{transformation}</p>
-        </div>
+    <div className="solution-card-unified">
+      <div className="solution-card-main">
+        <h3 className="solution-title">{title}</h3>
+        <h4 className="solution-subtitle">{subtitle}</h4>
+        <p className="solution-description">{description}</p>
+      </div>
+      <div className="solution-card-deliverables">
+        <h5 className="deliverables-title">Principais Entregáveis</h5>
+        <ul className="solution-features">
+          {features.map((feature, index) => (
+            <li key={index}><CheckCircle size={16} /> {feature}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-// --- Componente Card Interativo para Soluções (Estrutura sem alteração) ---
-const FlippableSolutionCard = ({ title, subtitle, description, features }) => {
-  return (
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front solution-card">
-          <h3 className="solution-title">{title}</h3>
-          <h4 className="solution-subtitle">{subtitle}</h4>
-          <p className="solution-description">{description}</p>
-          <div className="flip-card-cta">Passe o mouse para ver os entregáveis</div>
-        </div>
-        <div className="flip-card-back solution-card">
-          <h3 className="solution-title">Principais Entregáveis</h3>
-          <ul className="solution-features">
-            {features.map((feature, index) => (
-              <li key={index}><CheckCircle size={16} /> {feature}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// --- Componente Acordeão (Estrutura sem alteração) ---
+// --- Componente Acordeão (Sem alteração) ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
   return (
     <div className="accordion-item">
@@ -81,7 +56,7 @@ export default function HomePage() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
@@ -95,7 +70,7 @@ export default function HomePage() {
         <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
       </Head>
 
-      {/* Bloco 1: Seção Hero (COPY ATUALIZADA) */}
+      {/* Bloco 1: Seção Hero */}
       <section className="hero-section">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -123,7 +98,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 2: O Problema que Resolvemos (COPY ATUALIZADA) */}
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 2: O Problema que Resolvemos */}
       <section id="problema" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua empresa tem potencial. Nós projetamos a receita.</h2>
@@ -149,7 +126,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 3: Nossa Resposta (COPY ATUALIZADA) */}
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 3: Nossa Resposta */}
       <section id="resposta" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">A Engenharia de Receita é a ponte entre sua genialidade e o crescimento.</h2>
@@ -157,7 +136,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 4: Como Funciona - O Cortex GTM™ (COPY ATUALIZADA) */}
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 4: Como Funciona - O Cortex GTM™ */}
       <section id="como-funciona" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Nosso Sistema: O Cortex GTM™</h2>
@@ -177,25 +158,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 5: Soluções (COPY ATUALIZADA E CONTEÚDO RESTAURADO) */}
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 5: Soluções (COM NOVO COMPONENTE UNIFICADO) */}
       <section id="crescimento" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
           <p className="lead-text">Cada negócio está em um momento único. Nossos modelos de engajamento são desenhados para entregar o que você precisa, quando precisa.</p>
           <div className="card-grid-three">
-            <FlippableSolutionCard
+            <SolutionCard
               title="Precisa Validar Rápido?"
               subtitle="Sprint de Validação Comercial"
               description="Sprints ágeis para responder à pergunta crítica: existe demanda real e pagante para sua oferta?"
               features={["Análise de Risco vs. Oportunidade", "Teste de Narrativa e Oferta", "Decisão Go/No-Go Baseada em Dados"]}
             />
-            <FlippableSolutionCard
+            <SolutionCard
               title="Pronto para Escalar Agora?"
               subtitle="Go-To-Market Completo"
               description="Do diagnóstico à execução, instalamos e operamos sua máquina de receita para um crescimento sustentável."
               features={["Diagnóstico Profundo Cortex GTM™", "Arquitetura da Clareza e Ativos", "Ativação e Aceleração de Canais"]}
             />
-            <FlippableSolutionCard
+            <SolutionCard
               title="Busca Liderança Sênior?"
               subtitle="Diretoria de Receita sob Demanda"
               description="Inteligência C-level para decisões críticas e tração comercial, sem aumentar seu headcount."
@@ -205,7 +188,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 6: Chamada Final (COPY ATUALIZADA) */}
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 6: Chamada Final */}
       <section className="final-cta-section">
         <div className="container text-center reveal-up">
           <h2 className="final-cta-title">Se o mercado ainda não entende seu valor, é hora de mudar isso.</h2>
