@@ -1,631 +1,163 @@
-import { Target, BarChart, Search, TrendingUp, Zap, ArrowRight, CheckCircle, Eye, Users, Award } from 'lucide-react';
+// pages/metodologia.js
+
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
+import Image from 'next/image';
+import { ArrowRight, CheckCircle, Zap, Target, BarChart } from 'lucide-react';
 
 export default function MetodologiaPage() {
-  const [isVisible, setIsVisible] = useState({});
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [selectedFormat, setSelectedFormat] = useState(null);
-  const heroRef = useRef(null);
-
+  // Hook para animações de scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(prev => ({
-              ...prev,
-              [entry.target.id]: true
-            }));
-            entry.target.classList.add('animate-in');
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('[data-animate]');
-    elements.forEach(el => observer.observe(el));
-
+    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: (e.clientY / window.innerHeight) * 2 - 1
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleQuizSelection = (format) => {
-    setSelectedFormat(format);
-    scrollToSection('formatos-cards');
-  };
 
   return (
     <>
       <Head>
-        <title>"Metodologia de Aceleração de Receita B2B - GTM Ignition™</title>
-        <meta name="description" content="Metodologia GTM Ignition™: estratégia e execução para transformar complexidade técnica em clareza comercial e crescimento previsível no B2B." />
-        <meta property="og:title" content="Metodologia de Aceleração de Receita B2B - GTM Ignition™" />
-        <meta property="og:description" content="Metodologia GTM Ignition™: estratégia e execução para transformar complexidade técnica em clareza comercial e crescimento previsível no B2B." />
+        <title>Metodologia Cortex GTM™ | Synapse B2B</title>
+        <meta name="description" content="Conheça o Cortex GTM™, o sistema operacional da sua estratégia de receita, desenhado para traduzir genialidade técnica em liderança de mercado." />
         <link rel="canonical" href="https://synapseb2b.com/metodologia" />
       </Head>
 
-      <div className="particles-container">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 20}s`,
-              animationDuration: `${20 + Math.random() * 20}s`
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="synapse-line synapse-line-top"></div>
- 
-      <section 
-        ref={heroRef}
-        className="hero modern-hero" 
-        style={{ 
-          position: 'relative', 
-          overflow: 'hidden'
-        }}
-      >
-        <div className="container">
-          <div className="hero-content fade-in-up">
-            <h1 className="hero-headline">
-              Estratégia e execução, conectadas para transformar complexidade em crescimento previsível.
-            </h1>
-            <p className="hero-subheadline">
-              Do invisível ao impossível de ignorar: o GTM Ignition™ prova o valor de empresas B2B complexas com métricas reais.
-            </p>
-          </div>
-        </div>
-        
-        <div className="hero-video-container">
-          <div className="hero-video-overlay"></div>
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="hero-video"
-          >
+      {/* --- Seção Hero --- */}
+      <section className="hero-section" style={{ minHeight: '70vh' }}>
+        <div className="hero-video-background">
+          <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home_metodologia.mp4" type="video/mp4" />
           </video>
+          <div className="hero-overlay"></div>
+        </div>
+        <div className="container hero-content text-center reveal-up">
+          <h1 className="hero-headline">Genialidade técnica não se traduz em receita. A não ser que exista um sistema para isso.</h1>
+          <p className="hero-subheadline">No B2B complexo, a superioridade do produto não garante a liderança de mercado. O crescimento é travado por um gap entre o valor que sua solução entrega e o valor que o cliente percebe. Nós não vendemos serviços para preencher essa lacuna. Nós instalamos o sistema que a elimina.</p>
         </div>
       </section>
 
-      <div className="synapse-line"></div>
-
-      <section 
-        className="section section-dark modern-section"
-        id="principio"
-      >
-        <div className="container">
-          <div className="text-center mb-2">
-            <div className="dual-title">
-              <h2 className="section-title-line">Estratégia sem execução é teoria.</h2>
-              <h2 className="section-title-line">Execução sem estratégia é desperdício.</h2>
+      {/* --- Bloco 2: O Desafio Central --- */}
+      <section id="desafio" className="section-solid">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">O Paradoxo do Valor no B2B Complexo</h2>
+          <p className="lead-text">Empresas com alta competência técnica frequentemente enfrentam um paradoxo: quanto mais sofisticada e superior é a solução, mais difícil se torna comunicar seu valor de forma clara. O resultado é um ciclo de receita que não reflete o verdadeiro potencial do negócio.</p>
+          <div className="card-grid-three">
+            <div className="symptom-card">
+              <p><strong>Dor 1:</strong> O time de vendas luta para conectar os atributos técnicos da solução com os problemas de negócio do C-level.</p>
             </div>
-            <div className="section-content">
-              <p className="lead-text">
-                No B2B, muitas empresas técnicas ficam invisíveis para o mercado não por falta de competência, mas por não conseguirem traduzir seu valor de forma clara e convincente.
-              </p>
-              <p className="lead-text">
-                A <strong>Synapse B2B</strong> nasceu para eliminar essa lacuna — integrando clareza estratégica, execução prática e prova de ROI para que sua solução seja percebida, valorizada e escolhida.
-              </p>
+            <div className="symptom-card">
+              <p><strong>Dor 2:</strong> O ciclo de decisão se alonga porque os compradores não têm a segurança necessária para justificar o investimento internamente.</p>
+            </div>
+            <div className="symptom-card">
+              <p><strong>Dor 3:</strong> A competição por preço se sobrepõe à discussão de valor, comoditizando sua expertise.</p>
+            </div>
+          </div>
+          <div className="highlight-box">
+            <p>Superar este paradoxo não exige mais esforço, exige uma arquitetura diferente. Exige um sistema projetado para traduzir complexidade em clareza e clareza em receita.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Bloco 3: Apresentando o Cortex GTM™ --- */}
+      <section id="cortex-gtm" className="section-with-gradient-glow">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">Cortex GTM™: O Sistema Operacional da sua Estratégia de Receita</h2>
+          <p className="lead-text">O Cortex GTM™ é nosso framework proprietário de diagnóstico e arquitetura de Go-To-Market. Ele foi desenhado para resolver o Paradoxo do Valor, decodificando sua genialidade técnica e a traduzindo em uma tese de negócio que torna a sua solução a única escolha lógica para o cliente certo.</p>
+          <div className="framework-diagram-container">
+            {/* O ideal é que a imagem seja um SVG ou PNG de alta qualidade */}
+            <Image src="/image/cortex_gtm_diagram.png" alt="Diagrama do framework Cortex GTM" width={1000} height={600} objectFit="contain" />
+          </div>
+          <p className="lead-text" style={{ fontStyle: 'italic', marginTop: '2rem' }}>
+            O sistema integra a ciência do comportamento humano (Neurociência, Andragogia ), a disciplina dos modelos de negócio mais validados do mundo (Category Design, Value Proposition Design) e a precisão dos frameworks de vendas B2B (MEDDIC, Challenger Sale). O resultado é um blueprint que guia cada decisão de receita com base em dados e método, não em achismo.
+          </p>
+        </div>
+      </section>
+
+      {/* --- Bloco 4: A Arquitetura do Sistema - As 3 Fases --- */}
+      <section id="arquitetura" className="section-solid">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">A Arquitetura do Sistema - As 3 Fases</h2>
+          
+          {/* Fase 1 */}
+          <div className="phase-container">
+            <h3 className="phase-title">Fase 1: Diagnóstico – O Raio-X da Oportunidade</h3>
+            <p className="phase-description">Antes de construir, medimos. Esta fase é uma imersão profunda para extrair a verdade sobre seu cliente, seu mercado e seu posicionamento real. O entregável é clareza total sobre o campo de batalha.</p>
+            <div className="module-grid">
+              <div className="module-card"><h4>Módulo 1.1: Problema Crítico & Custo da Inação</h4><p>Decodificamos a dor de negócio que justifica o investimento na sua solução e quantificamos o custo de não agir, armando seu time com um caso de negócio irrefutável.</p></div>
+              <div className="module-card"><h4>Módulo 1.2: Perfil do Comprador Ideal (ICP) & Jobs-to-be-Done (JTBD)</h4><p>Mapeamos o perfil funcional e psicológico do seu decisor. Entendemos o "trabalho" que ele precisa resolver ao "contratar" sua solução, descobrindo o verdadeiro gatilho da compra.</p></div>
+            </div>
+          </div>
+
+          {/* Fase 2 */}
+          <div className="phase-container">
+            <h3 className="phase-title">Fase 2: Arquitetura — O Blueprint da sua Liderança de Mercado</h3>
+            <p className="phase-description">Com o diagnóstico em mãos, desenhamos a estrutura da sua narrativa e posicionamento. É aqui que a clareza se transforma em uma vantagem competitiva defensável.</p>
+            <div className="module-grid">
+              <div className="module-card"><h4>Módulo 2.1: Tese de Mercado e Design de Categoria</h4><p>Construímos sua narrativa estratégica central. Posicionamos você não como a melhor escolha dentro de uma categoria existente, mas como o criador de uma nova categoria que você lidera.</p></div>
+              <div className="module-card"><h4>Módulo 2.2: Proposta de Valor e Arquitetura de Provas</h4><p>Conectamos os pilares da sua solução diretamente às dores e aos "jobs" do cliente. Definimos as provas (quantitativas, qualitativas, sociais) necessárias para eliminar o risco da compra.</p></div>
+            </div>
+          </div>
+
+          {/* Fase 3 */}
+          <div className="phase-container">
+            <h3 className="phase-title">Fase 3: Ativação – O Motor de Tração de Receita</h3>
+            <p className="phase-description">Estratégia sem execução é alucinação. Nesta fase, traduzimos o blueprint em ativos e movimentos de mercado que geram pipeline qualificado e receita mensurável.</p>
+            <div className="module-grid">
+              <div className="module-card"><h4>Módulo 3.1: Construção de Ativos de Conversão</h4><p>Desenvolvemos as ferramentas de alta performance que sua equipe precisa para vender valor: Pitch Decks, Plataformas Digitais de Aceleração, Calculadoras de ROI, etc.</p></div>
+              <div className="module-card"><h4>Módulo 3.2: Playbooks de Vendas e Aceleração</h4><p>Equipamos seu time com o discurso, os rituais e os processos para executar a nova tese de mercado com consistência e disciplina, do primeiro contato ao fechamento.</p></div>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="synapse-line"></div>
-
-<section 
-        className="section section-darker modern-section"
-        style={{
-          backgroundImage: "url('/image/Plataforma.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          position: 'relative'
-        }}
-        id="framework"
-      >
-        <div className="section-overlay"></div>
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="text-center mb-2">
-            <h2 className="section-title">Nosso processo proprietário em três fases</h2>
-            <div className="section-content">
-              
-              <div className="framework-grid">
-                
-                {/* 1ª Linha: Imagem + Card */}
-                <div className="framework-row">
-                  <div className="framework-image-container">
-                    <Image src="/image/Diagnostico_Estrategico.png" alt="Ilustração do Diagnóstico Estratégico" layout="fill" objectFit="cover" className="framework-image" />
-                  </div>
-                  <div className="step-item-vertical-tall glass-card-contrast">
-                    <div className="step-content">
-                      <div className="card-main-content">
-                        <h3>Diagnóstico Estratégico</h3>
-                        <div className="phase-text-list">
-                          <p>Mapeamento profundo de negócio, mercado e posicionamento.</p>
-                          <p>Identificação de alavancas reais de crescimento.</p>
-                          <p>Benchmark de performance e margens.</p>
-                        </div>
-                      </div>
-                      <div className="phase-deliverable-highlight">
-                        <CheckCircle className="deliverable-icon" />
-                        <span><strong>Entregável:</strong> Roadmap de crescimento priorizado.</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* AJUSTE: A classe foi alterada para "framework-row" e a ordem dos elementos foi corrigida. */}
-                <div className="framework-row">
-                  {/* Ordem corrigida: Imagem primeiro */}
-                  <div className="framework-image-container">
-                    <Image src="/image/Decodificacao_de_Mercado.png" alt="Ilustração da Decodificação de Mercado" layout="fill" objectFit="cover" className="framework-image" />
-                  </div>
-                  {/* Card depois */}
-                  <div className="step-item-vertical-tall glass-card-contrast">
-                    <div className="step-content">
-                      <div className="card-main-content">
-                        <h3>Decodificação de Mercado</h3>
-                        <div className="phase-text-list">
-                          <p>Tradução da complexidade técnica em narrativa de valor.</p>
-                          <p>Definição e validação de ICP (Ideal Customer Profile) e RCP.</p>
-                          <p>Framework de mensagens para vendas, marketing e parceiros.</p>
-                        </div>
-                      </div>
-                      <div className="phase-deliverable-highlight">
-                        <CheckCircle className="deliverable-icon" />
-                        <span><strong>Entregável:</strong> Playbook de posicionamento.</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 3ª Linha: Imagem + Card */}
-                <div className="framework-row">
-                   <div className="framework-image-container">
-                    <Image src="/image/Engenharia_de_Receita.png" alt="Ilustração da Engenharia de Receita" layout="fill" objectFit="cover" className="framework-image" />
-                  </div>
-                  <div className="step-item-vertical-tall glass-card-contrast">
-                    <div className="step-content">
-                       <div className="card-main-content">
-                        <h3>Engenharia de Receita</h3>
-                        <div className="phase-text-list">
-                          <p>Criação e integração de ativos e processos comerciais.</p>
-                          <p>Playbooks, scripts, apresentações e automações.</p>
-                          <p>Estruturação do funil e métricas de RevOps.</p>
-                        </div>
-                      </div>
-                      <div className="phase-deliverable-highlight">
-                        <CheckCircle className="deliverable-icon" />
-                        <span><strong>Entregável:</strong> Kit operacional do motor de receita.</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+      {/* --- Bloco 5: Por que Funciona --- */}
+      <section id="principios" className="section-with-gradient-glow">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">Nosso compromisso não é com a entrega de um projeto. É com a construção de um ativo de receita.</h2>
+          <div className="card-grid-three">
+            <div className="solution-card">
+              <Target className="card-icon" />
+              <h4>Princípio 1: Foco em Ativos, não em Campanhas</h4>
+              <p>Campanhas têm vida útil. Ativos geram valor composto. Construímos sistemas e ferramentas que se tornam parte do seu valuation.</p>
+            </div>
+            <div className="solution-card">
+              <BarChart className="card-icon" />
+              <h4>Princípio 2: Ciência, não Subjetividade</h4>
+              <p>Cada recomendação é baseada em frameworks validados e na ciência do comportamento, reduzindo drasticamente o risco da sua estratégia de crescimento.</p>
+            </div>
+            <div className="solution-card">
+              <Zap className="card-icon" />
+              <h4>Princípio 3: Alinhamento de Performance</h4>
+              <p>Não somos consultores que opinam à distância. Nosso modelo nos alinha diretamente ao seu sucesso. Nosso maior ganho é uma consequência direta do seu.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="synapse-line"></div>
-
-      <section 
-        className="section section-dark modern-section"
-        id="diferencial"
-      >
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2 className="section-title">Por que o GTM Ignition™ não é só mais um método</h2>
-            <div className="section-content">
-              
-              <div className="diferencial-grid-221">
-                <div className="diferencial-item-card glass-card-contrast">
-                  <div className="diferencial-icon">
-                    <Award className="icon" />
-                  </div>
-                  <h3>Metodologia proprietária, documentada e validada</h3>
-                  <p>Framework exclusivo desenvolvido e refinado através de múltiplos projetos B2B de alta complexidade.</p>
-                </div>
-                
-                <div className="diferencial-item-card glass-card-contrast">
-                  <div className="diferencial-icon">
-                    <Users className="icon" />
-                  </div>
-                  <h3>Execução hands-on, lado a lado com o cliente</h3>
-                  <p>Não apenas consultoria, mas implementação prática integrada à sua operação.</p>
-                </div>
-                
-                <div className="diferencial-item-card glass-card-contrast">
-                  <div className="diferencial-icon">
-                    <BarChart className="icon" />
-                  </div>
-                  <h3>Prova de ROI com métricas de negócio, não indicadores de vaidade</h3>
-                  <p>Foco em resultados mensuráveis: ciclo de vendas, conversão, receita previsível.</p>
-                </div>
-
-                <div className="diferencial-item-card glass-card-contrast">
-                  <div className="diferencial-icon">
-                    <Zap className="icon" />
-                  </div>
-                  <h3>Integração ponta a ponta — do diagnóstico à operação</h3>
-                  <p>Conectando estratégia e execução sem lacunas, do planejamento à implementação.</p>
-                </div>
-
-                <div className="diferencial-item-card glass-card-contrast diferencial-single">
-                  <div className="diferencial-icon">
-                    <Target className="icon" />
-                  </div>
-                  <h3>Foco em vendas complexas de alto valor e difícil replicação</h3>
-                  <p>Especialização em soluções técnicas com ciclos longos e múltiplos decisores.</p>
-                </div>
-              </div>
-            </div>
+      {/* --- Bloco 6: Chamada Final --- */}
+      <section className="final-cta-section">
+        <div className="container text-center reveal-up">
+          <h2 className="final-cta-title">Sua genialidade merece um sistema à altura.</h2>
+          <p className="lead-text">Se você está pronto para parar de competir em um mercado que não entende seu valor e começar a criar uma categoria que você domina, o próximo passo é claro.</p>
+          <div className="section-cta">
+            <Link href="/contato" className="btn btn-primary btn-large">
+              <span>Agende uma Sessão de Diagnóstico Estratégico</span>
+              <ArrowRight size={20} />
+            </Link>
           </div>
         </div>
       </section>
-
-      <div className="synapse-line"></div>
-
-      <section 
-        className="section section-darker modern-section"
-        id="formatos"
-      >
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2 className="section-title">Dois formatos exclusivos de atuação da Synapse B2B para impulsionar seu crescimento.</h2>
-            <div className="section-content">
-              
-              <div className="formats-section" id="formatos-cards">
-                <div className="formats-grid-square">
-                  <div className="format-item-square glass-card-contrast">
-                    <Target className="format-icon-large" />
-                    <h4>Estratégia Go-to-Market completa</h4>
-                    <p style={{ marginTop: '1rem', fontSize: '0.95rem' }}>
-                      Entrada ou reposicionamento no mercado com clareza, impacto e diferenciação.
-                    </p>
-                  </div>
-                  <div className="format-item-square glass-card-contrast">
-                    <BarChart className="format-icon-large" />
-                    <h4>
-                      Diretoria de Aceleração de Receita B2B<br />
-                      <span className="subtitle-small">(interina ou fracionada)</span>
-                    </h4>
-                    <p style={{ marginTop: '1rem', fontSize: '0.95rem' }}>
-                      Operação contínua para otimizar e escalar resultados.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="synapse-line"></div>
-
-      <section 
-        className="section section-dark modern-section"
-        id="resultados"
-      >
-        <div className="container">
-          <div className="text-center mb-2">
-            <h2 className="section-title">O que mudará no seu negócio quando a mensagem certa chegar às pessoas certas</h2>
-            <div className="section-content">
-              
-              <div className="resultados-grid-222">
-                <div className="resultado-item-card glass-card-contrast">
-                  <div className="resultado-icon">
-                    <CheckCircle className="icon" />
-                  </div>
-                  <h3>Ser percebido como a melhor escolha no momento da decisão</h3>
-                  <p>Posicionamento que destaca seus diferenciais únicos de forma clara e convincente.</p>
-                </div>
-                
-                <div className="resultado-item-card glass-card-contrast">
-                  <div className="resultado-icon">
-                    <Zap className="icon" />
-                  </div>
-                  <h3>Reduzir drasticamente o tempo entre primeira conversa e fechamento</h3>
-                  <p>Processo comercial otimizado que acelera a jornada de compra do prospect.</p>
-                </div>
-                
-                <div className="resultado-item-card glass-card-contrast">
-                  <div className="resultado-icon">
-                    <Target className="icon" />
-                  </div>
-                  <h3>Receber leads que já entendem e valorizam o que você entrega</h3>
-                  <p>Atração qualificada através de mensagens que ressoam com o público certo.</p>
-                </div>
-
-                <div className="resultado-item-card glass-card-contrast">
-                  <div className="resultado-icon">
-                    <TrendingUp className="icon" />
-                  </div>
-                  <h3>Aumentar previsibilidade de receita e reduzir incertezas</h3>
-                  <p>Métricas e processos que tornam o crescimento mensurável e replicável.</p>
-                </div>
-
-                <div className="resultado-item-card glass-card-contrast">
-                  <div className="resultado-icon">
-                    <Users className="icon" />
-                  </div>
-                  <h3>Criar alinhamento interno entre marketing, vendas e área técnica</h3>
-                  <p>Linguagem comum e processos integrados que eliminam silos organizacionais.</p>
-                </div>
-
-                <div className="resultado-item-card glass-card-contrast">
-                  <div className="resultado-icon">
-                    <Award className="icon" />
-                  </div>
-                  <h3>Manter vantagem competitiva frente a players que competem só por preço</h3>
-                  <p>Diferenciação sustentável baseada em valor percebido, não apenas custo.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="synapse-line"></div>
-
-      <section 
-        className="section section-darker modern-section final-cta"
-        id="chamada-final"
-      >
-        <div className="container">
-          <div className="text-center">
-            <h2 className="section-title">Pronto para transformar sua solução em algo impossível de ignorar?</h2>
-            <div className="section-content">
-              <p className="lead-text">
-                Com metodologia proprietária e atuação integrada, ajudamos empresas técnicas a transformar complexidade em <strong>crescimento previsível e mensurável</strong>, unindo clareza estratégica e execução comercial de alto nível.
-              </p>
-              
-              <div className="final-ctas">
-                <Link href="/contato" className="btn btn-primary btn-modern btn-large btn-white-text">
-                  <span>Quero acelerar minha receita</span>
-                  <ArrowRight className="btn-icon" />
-                </Link>
-                <Link href="/casos-de-uso" className="btn btn-secondary-contrast btn-modern">
-                  <Eye className="btn-icon" />
-                  <span>Ver exemplos de aplicação</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style jsx global>{`
-        /*
-          SYNAPSE B2B - METODOLOGIA PAGE STYLES
-          Este bloco contém todos os estilos necessários para os layouts da página Metodologia.
-          O código foi refatorado para clareza, correção e manutenibilidade.
-        */
-
-        /* ==========================================================================
-           1. ESTILOS GERAIS E DE TÍTULOS
-           ========================================================================== */
-
-        .section-title-line {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          text-align: center;
-          line-height: 1.3;
-          background: linear-gradient(135deg, var(--base-color) 0%, var(--accent-color) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        /* ==========================================================================
-           2. LAYOUTS DE GRID DAS SEÇÕES
-           ========================================================================== */
-        
-        .framework-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 3rem;
-          max-width: 1100px;
-          margin: 2rem auto 0 auto;
-        }
-        .framework-row,
-        .framework-row-reverse {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          align-items: stretch;
-        }
-        .framework-row-reverse .step-item-vertical-tall {
-          grid-column: 1;
-        }
-        .framework-row-reverse .framework-image-container {
-          grid-column: 2;
-        }
-        .framework-image-container {
-          position: relative;
-          width: 100%;
-          min-height: 450px;
-          border-radius: 16px;
-          overflow: hidden;
-        }
-
-        .diferencial-grid-221,
-        .resultados-grid-222,
-        .formats-grid-square {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          max-width: 900px;
-          margin: 2rem auto 0 auto;
-        }
-        .diferencial-item-card.diferencial-single { 
-          grid-column: 1 / -1;
-          justify-self: center;
-          width: 100%;
-          max-width: calc(50% - 1rem);
-        }
-
-        /* ==========================================================================
-           3. ESTILIZAÇÃO DOS CARDS E SEU CONTEÚDO
-           ========================================================================== */
-        
-        .diferencial-item-card,
-        .resultado-item-card,
-        .format-item-square {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          padding: 2.5rem;
-          text-align: center;
-          min-height: 320px;
-        }
-        .diferencial-icon,
-        .resultado-icon {
-          width: 80px;
-          height: 80px;
-          background: var(--gradient-primary);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          margin-bottom: 1.5rem;
-        }
-        .diferencial-icon .icon,
-        .resultado-icon .icon {
-          width: 36px;
-          height: 36px;
-          color: var(--primary-color);
-        }
-        .diferencial-item-card h3,
-        .resultado-item-card h3,
-        .format-item-square h4 {
-          font-size: 1.3rem;
-          line-height: 1.4;
-        }
-        .diferencial-item-card p,
-        .resultado-item-card p {
-          font-size: 0.95rem;
-        }
-        .format-item-square {
-            justify-content: center;
-        }
-        .format-icon-large {
-          width: 80px;
-          height: 80px;
-          color: var(--accent-color);
-          margin-bottom: 1.5rem;
-        }
-
-        .step-item-vertical-tall .step-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 100%;
-          width: 100%;
-          text-align: center;
-          padding: 1rem;
-        }
-        .step-item-vertical-tall .card-main-content {
-          flex-grow: 1;
-        }
-        .step-item-vertical-tall h3 {
-          font-size: 1.5rem;
-          margin-bottom: 1.5rem;
-        }
-        .step-item-vertical-tall .phase-text-list {
-          margin: 0;
-          padding: 0;
-        }
-        .step-item-vertical-tall .phase-text-list p {
-          position: relative;
-          padding-left: 0;
-          margin-bottom: 1rem;
-          line-height: 1.6;
-        }
-        .phase-deliverable-highlight {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.75rem;
-          padding: 1rem;
-          margin-top: 1.5rem;
-          border-radius: 8px;
-          background-color: rgba(0, 255, 224, 0.07);
-          border: 1px solid rgba(0, 255, 224, 0.2);
-        }
-        .phase-deliverable-highlight .deliverable-icon {
-          flex-shrink: 0;
-          color: var(--accent-color);
-        }
-
-        /* ==========================================================================
-           4. AJUSTES DE RESPONSIVIDADE
-           ========================================================================== */
-
-        @media (max-width: 768px) {
-          .section-title-line {
-            font-size: 2rem;
-          }
-          .framework-row, 
-          .framework-row-reverse,
-          .diferencial-grid-221,
-          .resultados-grid-222,
-          .formats-grid-square {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-          .framework-row-reverse .step-item-vertical-tall,
-          .framework-row-reverse .framework-image-container {
-            grid-column: 1;
-          }
-          .framework-image-container { 
-            min-height: 300px; 
-          }
-          .diferencial-item-card.diferencial-single {
-            max-width: none;
-            justify-self: stretch;
-          }
-          .diferencial-item-card,
-          .resultado-item-card,
-          .format-item-square {
-            min-height: auto;
-            padding: 2rem;
-          }
-        }
-      `}</style>
     </>
   );
 }
