@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO FINAL, COMPLETA E CORRIGIDA */
+/* globals.css - VERSÃO FINAL COM IMPACTO VISUAL APRIMORADO */
 
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
@@ -29,17 +29,35 @@ body {
 .text-center { text-align: center; }
 
 /* ==========================================================================
-   2. ANIMAÇÕES DE SCROLL
+   2. ANIMAÇÕES (MAIS RÁPIDAS E IMPACTANTES)
    ========================================================================== */
 .reveal-up {
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  /* --- VELOCIDADE AJUSTADA AQUI --- */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .reveal-up.in-view {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- NOVA ANIMAÇÃO DE BRILHO PARA TÍTULOS --- */
+@keyframes shine-effect {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-headline, .section-title, .final-cta-title {
+  background: linear-gradient(to right, var(--color-heading) 40%, var(--color-accent) 50%, var(--color-heading) 60%);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-effect 5s linear infinite;
+}
+
 
 /* ==========================================================================
    3. NAVBAR
@@ -120,7 +138,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.section-title { font-family: 'Montserrat', sans-serif; font-size: 3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
+.section-title { font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 1.5rem; }
 .lead-text { font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
 .section-cta { margin-top: 3rem; }
 
@@ -136,7 +154,8 @@ body {
   width: 80%;
   height: 80%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(0, 150, 132, 0.1), transparent 70%);
+  /* --- BRILHO AJUSTADO AQUI --- */
+  background: radial-gradient(circle, rgba(0, 150, 132, 0.15), transparent 70%);
   filter: blur(100px);
   z-index: 0;
 }
@@ -150,7 +169,7 @@ body {
 .section-with-bg .container { position: relative; z-index: 2; }
 .section-solid { background-color: var(--color-section-bg); }
 .final-cta-section { background-color: var(--color-background); }
-.final-cta-title { font-size: 3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
+.final-cta-title { font-size: 3rem; margin-bottom: 1.5rem; }
 
 /* ==========================================================================
    6. FOOTER
@@ -178,19 +197,17 @@ body {
 /* ==========================================================================
    7. COMPONENTES GERAIS
    ========================================================================== */
-/* --- CORREÇÃO DE PADDING DO HERO --- */
 .hero-section {
   min-height: 100vh;
-  padding: 0; /* Remove o padding vertical extra */
+  padding: 0;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/* --- NOVA CLASSE DE PADDING PARA TODAS AS PÁGINAS --- */
 .page-hero-padding {
-  padding-top: 120px; /* Espaço para a navbar. Ajuste se necessário. */
+  padding-top: 120px;
   padding-bottom: 40px;
 }
 .hero-section.short-hero { min-height: 50vh; padding: 0; display: flex; align-items: center; background: var(--color-section-bg); }
@@ -198,7 +215,7 @@ body {
 .hero-video { width: 100%; height: 100%; object-fit: cover; }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
 .hero-content { position: relative; z-index: 1; }
-.hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; color: var(--color-heading); margin-bottom: 1.5rem; }
+.hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; }
 .hero-subheadline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
 .hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 .symptom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
@@ -208,8 +225,7 @@ body {
 .card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
-.case-card, .solution-card { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); transition: transform 0.3s ease, border-color 0.3s ease; text-align: center; }
-.case-card:hover, .solution-card:hover { transform: translateY(-5px); border-color: var(--color-primary); }
+.case-card, .solution-card { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); text-align: center; }
 .highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
 .accordion-container { max-width: 800px; margin: 2rem auto 0; }
 .accordion-item { border-bottom: 1px solid var(--color-border); }
@@ -227,23 +243,26 @@ body {
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
 
+.flip-card { background-color: transparent; min-height: 350px; perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; flex-direction: column; }
+.flip-card-back { transform: rotateY(180deg); }
+.flip-card-cta { font-size: 0.8rem; color: var(--color-text); opacity: 0.7; margin-top: auto; padding-top: 1rem; }
+
 /* ==========================================================================
    8. ESTILOS ESPECÍFICOS DE PÁGINAS
    ========================================================================== */
 .framework-layout { display: flex; flex-direction: column; gap: 4rem; margin-top: 4rem; }
-.framework-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-.framework-row.reverse { grid-template-columns: 1fr 1fr; }
-.framework-row.reverse .framework-image-container { grid-column: 2; }
-.framework-row.reverse .framework-content { grid-column: 1; grid-row: 1; }
-.framework-image-container { position: relative; min-height: 400px; border-radius: 12px; overflow: hidden; }
-.framework-content { text-align: left; }
-.framework-deliverable { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; padding: 1rem; background-color: rgba(0, 150, 132, 0.05); border: 1px solid var(--color-border); border-radius: 8px; }
 .phase-container { margin-bottom: 4rem; }
-.phase-title { font-size: 2rem; color: var(--color-primary); margin-bottom: 1rem; }
+.phase-header { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+.phase-icon { color: var(--color-primary); width: 40px; height: 40px; }
+.phase-title { font-size: 2rem; color: var(--color-heading); margin-bottom: 0; }
 .phase-description { max-width: 700px; margin: 0 auto 2rem; }
 .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
 .module-card { background-color: var(--color-section-bg); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 8px; text-align: left; }
 .module-card h4 { color: var(--color-heading); margin-bottom: 0.5rem; }
+.case-studies-container { display: flex; flex-direction: column; gap: 0; }
 .case-study-header { margin-bottom: 3rem; }
 .case-study-icon { color: var(--color-primary); width: 60px; height: 60px; margin: 0 auto 1rem; }
 .case-study-company { font-weight: 600; color: var(--color-text); }
@@ -295,6 +314,30 @@ body {
   .mobile-menu-links a:hover { color: var(--color-primary); }
   .mobile-menu-footer { padding-top: 2rem; border-top: 1px solid var(--color-border); }
   .mobile-menu-footer .btn { width: 100%; }
+
+  /* --- CORREÇÃO PARA FLIP CARDS NO MOBILE --- */
+  .flip-card { min-height: auto; } /* Altura automática no mobile */
+  .flip-card:hover .flip-card-inner {
+    transform: none; /* Desativa a rotação no hover */
+  }
+  .flip-card-inner {
+    transform-style: flat; /* Muda o estilo de transformação */
+  }
+  .flip-card-front, .flip-card-back {
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove a rotação */
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    height: auto; /* Altura automática para acomodar o conteúdo */
+  }
+  .flip-card-back {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .flip-card-cta {
+    display: none; /* Esconde a mensagem "passe o mouse" */
+  }
 }
 
 /* ==========================================================================
