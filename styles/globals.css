@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO FINAL, COMPLETA E APRIMORADA */
+/* globals.css - VERSÃO FINAL, COMPLETA E CORRIGIDA */
 
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
@@ -166,7 +166,7 @@ body {
 .lead-text { font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
 .section-cta { margin-top: 3rem; }
 
-/* --- NOVO: Divisor com brilho para transições --- */
+/* --- Divisor com brilho para transições --- */
 .section-divider-glow {
   height: 1px;
   width: 100%;
@@ -269,7 +269,7 @@ body {
 .card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
-.case-card, .solution-card { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); text-align: center; }
+.case-card { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); text-align: center; }
 .highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
 .accordion-container { max-width: 800px; margin: 2rem auto 0; }
 .accordion-item { border-bottom: 1px solid var(--color-border); }
@@ -277,23 +277,49 @@ body {
 .accordion-icon { transition: transform 0.3s ease; }
 .accordion-icon.open { transform: rotate(180deg); }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
-/* --- CORREÇÃO DO ACORDEÃO AQUI --- */
-.accordion-content.open { max-height: 500px; /* Aumentado para garantir que todo texto caiba */ }
+.accordion-content.open { max-height: 500px; }
 .accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
-.case-title, .solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
+.case-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
-.solution-subtitle { color: var(--color-text); font-weight: 600; }
-.solution-description { font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+
+/* --- INÍCIO DA ALTERAÇÃO: Estilos para o Card de Solução Unificado --- */
+.solution-card-unified {
+  background-color: rgba(10, 10, 10, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.solution-card-unified:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.solution-card-main {
+  padding: 2rem;
+}
+.solution-card-deliverables {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+.deliverables-title {
+  font-family: 'Montserrat';
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 0.5rem; }
+.solution-subtitle { color: var(--color-text); font-weight: 600; margin-bottom: 1rem; }
+.solution-description { font-size: 0.95rem; }
 .solution-features { list-style: none; padding: 0; display: inline-block; text-align: left; }
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
-
-.flip-card { background-color: transparent; min-height: 350px; perspective: 1000px; }
-.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
-.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; flex-direction: column; }
-.flip-card-back { transform: rotateY(180deg); }
-.flip-card-cta { font-size: 0.8rem; color: var(--color-text); opacity: 0.7; margin-top: auto; padding-top: 1rem; }
+/* --- FIM DA ALTERAÇÃO --- */
 
 /* ==========================================================================
    8. ESTILOS ESPECÍFICOS DE PÁGINAS
@@ -359,29 +385,6 @@ body {
   .mobile-menu-links a:hover { color: var(--color-primary); }
   .mobile-menu-footer { padding-top: 2rem; border-top: 1px solid var(--color-border); }
   .mobile-menu-footer .btn { width: 100%; }
-
-  .flip-card { min-height: auto; }
-  .flip-card:hover .flip-card-inner {
-    transform: none;
-  }
-  .flip-card-inner {
-    transform-style: flat;
-  }
-  .flip-card-front, .flip-card-back {
-    position: static;
-    transform: none;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
-    height: auto;
-  }
-  .flip-card-back {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
-  }
-  .flip-card-cta {
-    display: none;
-  }
 }
 
 /* ==========================================================================
