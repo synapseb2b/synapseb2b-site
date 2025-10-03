@@ -1,11 +1,11 @@
-// pages/index.js (VERSÃO FINAL E CONSOLIDADA - COM A NOVA COPY)
+// pages/index.js (VERSÃO FINAL E CONSOLIDADA - COM COPY E CONTEÚDO DOS CARDS CORRIGIDOS)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { ArrowRight, Eye, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
 
-// --- Componente Card Interativo para Casos de Uso (Sem alterações na estrutura) ---
+// --- Componente Card Interativo para Casos de Uso (Estrutura sem alteração) ---
 const FlippableCaseCard = ({ title, challenge, applied, transformation }) => {
   return (
     <div className="flip-card">
@@ -27,7 +27,7 @@ const FlippableCaseCard = ({ title, challenge, applied, transformation }) => {
   );
 };
 
-// --- Componente Card Interativo para Soluções (Sem alterações na estrutura) ---
+// --- Componente Card Interativo para Soluções (Estrutura sem alteração) ---
 const FlippableSolutionCard = ({ title, subtitle, description, features }) => {
   return (
     <div className="flip-card">
@@ -51,7 +51,7 @@ const FlippableSolutionCard = ({ title, subtitle, description, features }) => {
   );
 };
 
-// --- Componente Acordeão (Sem alterações na estrutura) ---
+// --- Componente Acordeão (Estrutura sem alteração) ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
   return (
     <div className="accordion-item">
@@ -177,7 +177,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bloco 5: Soluções (COPY ATUALIZADA) */}
+      {/* Bloco 5: Soluções (COPY ATUALIZADA E CONTEÚDO RESTAURADO) */}
       <section id="crescimento" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
@@ -187,19 +187,19 @@ export default function HomePage() {
               title="Precisa Validar Rápido?"
               subtitle="Sprint de Validação Comercial"
               description="Sprints ágeis para responder à pergunta crítica: existe demanda real e pagante para sua oferta?"
-              features={[]} // Features não especificadas na nova copy para este card
+              features={["Análise de Risco vs. Oportunidade", "Teste de Narrativa e Oferta", "Decisão Go/No-Go Baseada em Dados"]}
             />
             <FlippableSolutionCard
               title="Pronto para Escalar Agora?"
               subtitle="Go-To-Market Completo"
               description="Do diagnóstico à execução, instalamos e operamos sua máquina de receita para um crescimento sustentável."
-              features={[]} // Features não especificadas na nova copy para este card
+              features={["Diagnóstico Profundo Cortex GTM™", "Arquitetura da Clareza e Ativos", "Ativação e Aceleração de Canais"]}
             />
             <FlippableSolutionCard
               title="Busca Liderança Sênior?"
               subtitle="Diretoria de Receita sob Demanda"
               description="Inteligência C-level para decisões críticas e tração comercial, sem aumentar seu headcount."
-              features={[]} // Features não especificadas na nova copy para este card
+              features={["Planejamento Estratégico Contínuo", "Gestão de Funil, Metas e KPIs", "Mentoria para a Liderança"]}
             />
           </div>
         </div>
