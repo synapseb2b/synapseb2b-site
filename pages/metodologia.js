@@ -1,29 +1,30 @@
-// pages/metodologia.js (VERSÃO FINAL E RECRIADA)
+// pages/metodologia.js (VERSÃO FINAL COM ACORDEÃO)
 
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect } from 'react';
-import { ArrowRight, CheckCircle, Target, Zap, ShieldCheck } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowRight, CheckCircle, Target, Zap, ShieldCheck, ChevronDown } from 'lucide-react';
 
-// --- Componente para os cards das fases da engenharia ---
-const PhaseCard = ({ phaseNumber, title, whatWeDo, whatYouGet }) => {
+// --- Componente Acordeão para as Fases da Metodologia ---
+const PhaseAccordion = ({ title, whatWeDo, whatYouGet, isOpen, onClick }) => {
   return (
-    <div className="phase-card">
-      <div className="phase-card-header">
-        <span className="phase-number">{phaseNumber}</span>
-        <h3 className="phase-card-title">{title}</h3>
+    <div className="solution-accordion">
+      <div className="solution-accordion-main">
+        <h3 className="solution-title">{title}</h3>
+        <p className="solution-description">{whatWeDo}</p>
       </div>
-      <div className="phase-card-body">
-        <div className="phase-card-section">
-          <h4>O que fazemos:</h4>
-          <p>{whatWeDo}</p>
-        </div>
-        <div className="phase-card-section">
-          <h4>O que você recebe:</h4>
-          <p className="deliverable-text">
-            <CheckCircle size={18} />
-            <span>{whatYouGet}</span>
-          </p>
+      <div className="accordion-deliverables">
+        <button className="accordion-header" onClick={onClick}>
+          <span>O que você recebe</span>
+          <ChevronDown className={`accordion-icon ${isOpen ? 'open' : ''}`} />
+        </button>
+        <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
+          <div className="accordion-content-inner">
+            <p className="deliverable-text">
+              <CheckCircle size={18} />
+              <span>{whatYouGet}</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -31,6 +32,8 @@ const PhaseCard = ({ phaseNumber, title, whatWeDo, whatYouGet }) => {
 };
 
 export default function MetodologiaPage() {
+  const [openPhaseAccordion, setOpenPhaseAccordion] = useState(-1); // -1 para começar fechado
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -87,7 +90,7 @@ export default function MetodologiaPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 3: As Fases da Engenharia */}
+      {/* Bloco 3: As Fases da Engenharia (COM NOVO ACORDEÃO) */}
       <section id="fases" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Como Construímos para Gerar Resultados</h2>
@@ -95,23 +98,26 @@ export default function MetodologiaPage() {
             Nossa engenharia se divide em três fases sequenciais. Cada uma delas gera um ativo tangível para o seu negócio.
           </p>
           <div className="card-grid-three">
-            <PhaseCard
-              phaseNumber="01"
-              title="Diagnóstico de Clareza"
+            <PhaseAccordion
+              title="Fase 1: Diagnóstico de Clareza"
               whatWeDo="Investigamos a fundo a desconexão entre o valor do seu produto e a percepção do mercado. Mapeamos com precisão o problema do seu cliente e onde sua narrativa atual falha em comunicar a solução."
               whatYouGet="Um diagnóstico estratégico que aponta as alavancas de crescimento travadas e o caminho para destravá-las."
+              isOpen={openPhaseAccordion === 0}
+              onClick={() => setOpenPhaseAccordion(openPhaseAccordion === 0 ? -1 : 0)}
             />
-            <PhaseCard
-              phaseNumber="02"
-              title="Arquitetura de Valor"
+            <PhaseAccordion
+              title="Fase 2: Arquitetura de Valor"
               whatWeDo="Desenhamos a estrutura lógica do seu argumento de venda. Construímos sua narrativa estratégica, posicionamento de mercado e os pilares de valor que tornam sua solução a escolha óbvia para o cliente certo."
               whatYouGet="Um documento estratégico que define sua mensagem principal, alinhando a comunicação entre marketing e vendas."
+              isOpen={openPhaseAccordion === 1}
+              onClick={() => setOpenPhaseAccordion(openPhaseAccordion === 1 ? -1 : 1)}
             />
-            <PhaseCard
-              phaseNumber="03"
-              title="Ativação e Construção"
+            <PhaseAccordion
+              title="Fase 3: Ativação e Construção"
               whatWeDo="Traduzimos a arquitetura estratégica em ferramentas de alta performance. Desenvolvemos os ativos de conversão e instalamos a disciplina para que seu time execute a nova estratégia com consistência."
               whatYouGet="Os ativos e processos necessários para gerar tração de forma previsível e escalável."
+              isOpen={openPhaseAccordion === 2}
+              onClick={() => setOpenPhaseAccordion(openPhaseAccordion === 2 ? -1 : 2)}
             />
           </div>
         </div>
