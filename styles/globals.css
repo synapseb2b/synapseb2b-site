@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO FINAL COM ESTILOS DO SOLUTION ACCORDION */
+/* globals.css - VERSÃO FINAL, COMPLETA E CORRIGIDA */
 
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
@@ -230,7 +230,14 @@ body {
 .footer-column a:hover { color: var(--color-primary); }
 .footer-column ul { list-style: none; padding: 0; }
 .footer-column ul li a { display: block; margin-bottom: 0.75rem; color: var(--color-text); }
-.footer-contact-link { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--color-text); }
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  justify-content: flex-start; /* Padrão para desktop */
+}
 .footer-contact-link.as-button { background: none; border: none; padding: 0; font-family: inherit; font-size: inherit; cursor: pointer; position: relative; }
 .copy-feedback {
   position: absolute;
@@ -295,7 +302,6 @@ body {
 .case-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
 
-/* --- INÍCIO DOS ESTILOS DO SOLUTION ACCORDION --- */
 .solution-accordion {
   background-color: rgba(10, 10, 10, 0.6);
   border: 1px solid var(--color-border);
@@ -332,7 +338,6 @@ body {
 .solution-features { list-style: none; padding: 0; display: inline-block; text-align: left; }
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
-/* --- FIM DOS ESTILOS DO SOLUTION ACCORDION --- */
 
 /* ==========================================================================
    8. ESTILOS ESPECÍFICOS DE PÁGINAS
@@ -356,6 +361,70 @@ body {
 .case-study-section ul { list-style: none; padding-left: 1rem; }
 .case-study-section li { padding-left: 1rem; border-left: 2px solid var(--color-primary); margin-bottom: 1rem; }
 .calendar-container { max-width: 1000px; margin: 3rem auto 0; padding: 1.5rem; background-color: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+
+/* --- NOVOS ESTILOS PARA PÁGINA DE METODOLOGIA --- */
+.phase-card {
+  background-color: rgba(10, 10, 10, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.phase-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.phase-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-primary);
+}
+.phase-card-title {
+  font-size: 1.5rem;
+  color: var(--color-heading);
+  margin: 0;
+}
+.phase-card-section h4 {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.phase-card-section p {
+  font-size: 1rem;
+}
+.deliverable-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--color-heading);
+  font-weight: 500;
+}
+.deliverable-text svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.principle-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+.principle-title {
+  font-family: 'Montserrat';
+  color: var(--color-heading);
+  margin: 1rem 0 0.5rem;
+}
 
 /* ==========================================================================
    9. MENU MOBILE
