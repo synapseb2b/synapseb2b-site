@@ -1,13 +1,36 @@
-// pages/metodologia.js (VERSÃO REVISADA SEM IMAGENS E COM PADDING CORRIGIDO)
+// pages/metodologia.js (VERSÃO FINAL E RECRIADA)
 
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { ArrowRight, Eye, CheckCircle, Search, Lightbulb, Zap, Award, Users, BarChart, Target } from 'lucide-react';
+import { useEffect } from 'react';
+import { ArrowRight, CheckCircle, Target, Zap, ShieldCheck } from 'lucide-react';
+
+// --- Componente para os cards das fases da engenharia ---
+const PhaseCard = ({ phaseNumber, title, whatWeDo, whatYouGet }) => {
+  return (
+    <div className="phase-card">
+      <div className="phase-card-header">
+        <span className="phase-number">{phaseNumber}</span>
+        <h3 className="phase-card-title">{title}</h3>
+      </div>
+      <div className="phase-card-body">
+        <div className="phase-card-section">
+          <h4>O que fazemos:</h4>
+          <p>{whatWeDo}</p>
+        </div>
+        <div className="phase-card-section">
+          <h4>O que você recebe:</h4>
+          <p className="deliverable-text">
+            <CheckCircle size={18} />
+            <span>{whatYouGet}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function MetodologiaPage() {
-  const [openAccordion, setOpenAccordion] = useState(0);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -18,7 +41,7 @@ export default function MetodologiaPage() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
@@ -28,142 +51,113 @@ export default function MetodologiaPage() {
   return (
     <>
       <Head>
-        <title>Metodologia Cortex GTM™ | Synapse B2B</title>
-        <meta name="description" content="Conheça o Cortex GTM™, nosso sistema operacional de receita que traduz genialidade técnica em liderança de mercado para empresas B2B." />
+        <title>Metodologia | Synapse B2B - A Engenharia por Trás da Clareza</title>
+        <meta name="description" content="Genialidade técnica, por si só, não gera receita previsível. É preciso uma engenharia que traduza esse potencial em resultados. Aqui, detalhamos nosso processo de construção." />
       </Head>
 
+      {/* Bloco 1: Seção Hero */}
       <section className="hero-section short-hero">
-        {/* APLICAÇÃO DA CLASSE DE PADDING AQUI */}
+        <div className="hero-video-background">
+          <video autoPlay muted loop playsInline className="hero-video">
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+        </div>
         <div className="container hero-content text-center page-hero-padding">
           <div className="reveal-up">
-            <h1 className="hero-headline">Genialidade técnica não se traduz em receita. A não ser que exista um sistema para isso.</h1>
+            <h1 className="hero-headline">A Engenharia por Trás da Clareza.</h1>
             <p className="hero-subheadline">
-              No B2B complexo, a superioridade do produto não garante a liderança de mercado. O crescimento é travado por um gap entre o valor que sua solução entrega e o valor que o cliente percebe. Nós não vendemos serviços para preencher essa lacuna. Nós instalamos o sistema que a elimina.
+              Genialidade técnica, por si só, não gera receita previsível. É preciso uma engenharia que traduza esse potencial em resultados. Aqui, detalhamos nosso processo de construção.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="desafio" className="section-solid">
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 2: O Método da Nossa Abordagem */}
+      <section id="metodo" className="section-solid">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O Paradoxo do Valor no B2B Complexo</h2>
-          <p className="lead-text">Empresas com alta competência técnica frequentemente enfrentam um paradoxo: quanto mais sofisticada e superior é a solução, mais difícil se torna comunicar seu valor de forma clara. O resultado é um ciclo de receita que não reflete o verdadeiro potencial do negócio.</p>
-          <div className="symptom-grid">
-            <div className="symptom-card">
-              <p>O time de vendas luta para conectar os atributos técnicos da solução com os problemas de negócio do C-level.</p>
-            </div>
-            <div className="symptom-card">
-              <p>O ciclo de decisão se alonga porque os compradores não têm a segurança necessária para justificar o investimento internamente.</p>
-            </div>
-            <div className="symptom-card">
-              <p>A competição por preço se sobrepõe à discussão de valor, comoditizando sua expertise.</p>
-            </div>
-          </div>
-          <div className="highlight-box">
-            <p>Superar este paradoxo não exige mais esforço, exige uma arquitetura diferente. Exige um sistema projetado para traduzir complexidade em clareza e clareza em receita.</p>
-          </div>
+          <h2 className="section-title">Cortex GTM™: O Método da Nossa Engenharia</h2>
+          <p className="lead-text">
+            O Cortex GTM™ é o nosso método de diagnóstico e arquitetura. É o processo que usamos para construir sua Engenharia de Receita: um caminho com etapas claras, focado em transformar sua genialidade técnica em crescimento previsível.
+          </p>
         </div>
       </section>
 
-      <section id="apresentando-cortex" className="section-with-gradient-glow">
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 3: As Fases da Engenharia */}
+      <section id="fases" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Cortex GTM™: O Sistema Operacional da sua Estratégia de Receita.</h2>
-          <p className="lead-text">O Cortex GTM™ é nosso framework proprietário de diagnóstico e arquitetura de Go-To-Market. Ele foi desenhado para resolver o Paradoxo do Valor, decodificando sua genialidade técnica e a traduzindo em uma tese de negócio que torna a sua solução a única escolha lógica para o cliente certo.</p>
-          <p className="lead-text">O sistema integra a ciência do comportamento humano (Neurociência, Andragogia), a disciplina dos modelos de negócio mais validados do mundo (Category Design, Value Proposition Design) e a precisão dos frameworks de vendas B2B (MEDDIC, Challenger Sale). O resultado é um blueprint que guia cada decisão de receita com base em dados e método, não em achismo.</p>
-        </div>
-      </section>
-
-      {/* Bloco 4: A Arquitetura do Sistema (REESTRUTURADO SEM IMAGENS) */}
-      <section id="arquitetura" className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">A Arquitetura do Sistema - As 3 Fases</h2>
-          
-          {/* Fase 1 */}
-          <div className="phase-container">
-            <div className="phase-header">
-              <Search className="phase-icon" />
-              <h3 className="phase-title">Fase 1: Diagnóstico – O Raio-X da Oportunidade.</h3>
-            </div>
-            <p className="phase-description">Antes de construir, medimos. Esta fase é uma imersão profunda para extrair a verdade sobre seu cliente, seu mercado e seu posicionamento real. O entregável é clareza total sobre o campo de batalha.</p>
-            <div className="module-grid">
-              <div className="module-card">
-                <h4>Módulo 1.1: Problema Crítico & Custo da Inação</h4>
-                <p>Decodificamos a dor de negócio que justifica o investimento na sua solução e quantificamos o custo de não agir, armando seu time com um caso de negócio irrefutável.</p>
-              </div>
-              <div className="module-card">
-                <h4>Módulo 1.2: Perfil do Comprador Ideal (ICP) & Jobs-to-be-Done (JTBD)</h4>
-                <p>Mapeamos o perfil funcional e psicológico do seu decisor. Entendemos o "trabalho" que ele precisa resolver ao "contratar" sua solução, descobrindo o verdadeiro gatilho da compra.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Fase 2 */}
-          <div className="phase-container">
-            <div className="phase-header">
-              <Lightbulb className="phase-icon" />
-              <h3 className="phase-title">Fase 2: Arquitetura — O Blueprint da sua Liderança de Mercado.</h3>
-            </div>
-            <p className="phase-description">Com o diagnóstico em mãos, desenhamos a estrutura da sua narrativa e posicionamento. É aqui que a clareza se transforma em uma vantagem competitiva defensável.</p>
-            <div className="module-grid">
-              <div className="module-card">
-                <h4>Módulo 2.1: Tese de Mercado e Design de Categoria</h4>
-                <p>Construímos sua narrativa estratégica central. Posicionamos você não como a melhor escolha dentro de uma categoria existente, mas como o criador de uma nova categoria que você lidera.</p>
-              </div>
-              <div className="module-card">
-                <h4>Módulo 2.2: Proposta de Valor e Arquitetura de Provas</h4>
-                <p>Conectamos os pilares da sua solução diretamente às dores e aos "jobs" do cliente. Definimos as provas (quantitativas, qualitativas, sociais) necessárias para eliminar o risco da compra.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Fase 3 */}
-          <div className="phase-container">
-            <div className="phase-header">
-              <Zap className="phase-icon" />
-              <h3 className="phase-title">Fase 3: Ativação – O Motor de Tração de Receita.</h3>
-            </div>
-            <p className="phase-description">Estratégia sem execução é alucinação. Nesta fase, traduzimos o blueprint em ativos e movimentos de mercado que geram pipeline qualificado e receita mensurável.</p>
-            <div className="module-grid">
-              <div className="module-card">
-                <h4>Módulo 3.1: Construção de Ativos de Conversão</h4>
-                <p>Desenvolvemos as ferramentas de alta performance que sua equipe precisa para vender valor: Pitch Decks, Plataformas Digitais de Aceleração, Calculadoras de ROI, etc.</p>
-              </div>
-              <div className="module-card">
-                <h4>Módulo 3.2: Playbooks de Vendas e Aceleração</h4>
-                <p>Equipamos seu time com o discurso, os rituais e os processos para executar a nova tese de mercado com consistência e disciplina, do primeiro contato ao fechamento.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="porque-funciona" className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Nosso compromisso não é com a entrega de um projeto. É com a construção de um ativo de receita.</h2>
+          <h2 className="section-title">Como Construímos para Gerar Resultados</h2>
+          <p className="lead-text">
+            Nossa engenharia se divide em três fases sequenciais. Cada uma delas gera um ativo tangível para o seu negócio.
+          </p>
           <div className="card-grid-three">
-            <div className="solution-card">
-              <h3 className="solution-title">Princípio 1: Foco em Ativos, não em Campanhas</h3>
-              <p>Campanhas têm vida útil. Ativos geram valor composto. Construímos sistemas e ferramentas que se tornam parte do seu valuation.</p>
+            <PhaseCard
+              phaseNumber="01"
+              title="Diagnóstico de Clareza"
+              whatWeDo="Investigamos a fundo a desconexão entre o valor do seu produto e a percepção do mercado. Mapeamos com precisão o problema do seu cliente e onde sua narrativa atual falha em comunicar a solução."
+              whatYouGet="Um diagnóstico estratégico que aponta as alavancas de crescimento travadas e o caminho para destravá-las."
+            />
+            <PhaseCard
+              phaseNumber="02"
+              title="Arquitetura de Valor"
+              whatWeDo="Desenhamos a estrutura lógica do seu argumento de venda. Construímos sua narrativa estratégica, posicionamento de mercado e os pilares de valor que tornam sua solução a escolha óbvia para o cliente certo."
+              whatYouGet="Um documento estratégico que define sua mensagem principal, alinhando a comunicação entre marketing e vendas."
+            />
+            <PhaseCard
+              phaseNumber="03"
+              title="Ativação e Construção"
+              whatWeDo="Traduzimos a arquitetura estratégica em ferramentas de alta performance. Desenvolvemos os ativos de conversão e instalamos a disciplina para que seu time execute a nova estratégia com consistência."
+              whatYouGet="Os ativos e processos necessários para gerar tração de forma previsível e escalável."
+            />
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 4: A Lógica da Nossa Construção */}
+      <section id="logica" className="section-solid">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">Nossos Princípios de Engenharia</h2>
+          <p className="lead-text">
+            Nosso processo é eficaz porque segue uma lógica inegociável.
+          </p>
+          <div className="card-grid-three">
+            <div className="principle-card">
+              <Target className="card-icon" />
+              <h3 className="principle-title">1. Ativos, não Campanhas</h3>
+              <p>Focamos em construir ativos de longo prazo (narrativas, posicionamento) que geram valor composto, em vez de campanhas que perdem o efeito.</p>
             </div>
-            <div className="solution-card">
-              <h3 className="solution-title">Princípio 2: Ciência, não Subjetividade</h3>
-              <p>Cada recomendação é baseada em frameworks validados e na ciência do comportamento, reduzindo drasticamente o risco da sua estratégia de crescimento.</p>
+            <div className="principle-card">
+              <Zap className="card-icon" />
+              <h3 className="principle-title">2. Engenharia, não Esforço Bruto</h3>
+              <p>Aplicamos um processo de engenharia que organiza o esforço do seu time, tornando os resultados uma consequência da disciplina, não do acaso.</p>
             </div>
-            <div className="solution-card">
-              <h3 className="solution-title">Princípio 3: Alinhamento de Performance</h3>
-              <p>Não somos consultores que opinam à distância. Nosso modelo nos alinha diretamente ao seu sucesso. Nosso maior ganho é uma consequência direta do seu.</p>
+            <div className="principle-card">
+              <ShieldCheck className="card-icon" />
+              <h3 className="principle-title">3. Clareza, não Volume</h3>
+              <p>Cada peça da nossa engenharia serve a um único propósito: tornar o seu valor tão claro que a decisão de compra se torna inevitável.</p>
             </div>
           </div>
         </div>
       </section>
 
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 5: Chamada Final */}
       <section className="final-cta-section">
         <div className="container text-center reveal-up">
-          <h2 className="final-cta-title">Sua genialidade merece um sistema à altura.</h2>
-          <p className="lead-text">Se você está pronto para parar de competir em um mercado que não entende seu valor e começar a criar uma categoria que você domina, o próximo passo é claro.</p>
+          <h2 className="final-cta-title">A engenharia que sua genialidade merece.</h2>
+          <p className="lead-text">
+            Se você está pronto para transformar seu potencial técnico em um negócio com crescimento claro e defensável, o ponto de partida é o diagnóstico.
+          </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Agende uma Sessão de Diagnóstico Estratégico</span>
+              <span>Agende sua Sessão de Diagnóstico</span>
               <ArrowRight size={20} />
             </Link>
           </div>
