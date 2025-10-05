@@ -1,39 +1,12 @@
-// pages/index.js (VERSÃO FINAL, COMPLETA E CORRIGIDA)
+// pages/index.js (VERSÃO FINAL COM NOVA SEÇÃO DE ENGENHARIA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Eye, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
+// Ícones atualizados para a nova seção
+import { ArrowRight, Eye, ChevronDown, TrendingDown, Tag, Clock, Filter, Compass, Wrench } from 'lucide-react';
 
-// --- Componente Acordeão para a Seção de Soluções ---
-const SolutionAccordion = ({ title, subtitle, description, features, isOpen, onClick }) => {
-  return (
-    <div className="solution-accordion">
-      <div className="solution-accordion-main">
-        <h3 className="solution-title">{title}</h3>
-        <h4 className="solution-subtitle">{subtitle}</h4>
-        <p className="solution-description">{description}</p>
-      </div>
-      <div className="solution-accordion-deliverables">
-        <button className="accordion-header" onClick={onClick}>
-          <span>Principais Entregáveis</span>
-          <ChevronDown className={`accordion-icon ${isOpen ? 'open' : ''}`} />
-        </button>
-        <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-          <div className="accordion-content-inner">
-            <ul className="solution-features">
-              {features.map((feature, index) => (
-                <li key={index}><CheckCircle size={16} /> {feature}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// --- Componente Acordeão Padrão ---
+// --- Componente Acordeão Padrão (Sem alteração) ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
   return (
     <div className="accordion-item">
@@ -52,7 +25,6 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 
 export default function HomePage() {
   const [openAccordion, setOpenAccordion] = useState(0);
-  const [openSolutionAccordion, setOpenSolutionAccordion] = useState(-1); // -1 para começar fechado
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -168,36 +140,61 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 5: Soluções */}
+      {/* Bloco 5: Soluções (REIMAGINADO COM NOVO LAYOUT) */}
       <section id="crescimento" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
+          <h2 className="section-title">Nossa Engenharia: Da Estratégia aos Ativos de Receita</h2>
           <p className="lead-text">Cada negócio está em um momento único. Nossos modelos de engajamento são desenhados para entregar o que você precisa, quando precisa.</p>
-          <div className="card-grid-three">
-            <SolutionAccordion
-              title="Precisa Validar Rápido?"
-              subtitle="Sprint de Validação Comercial"
-              description="Sprints ágeis para responder à pergunta crítica: existe demanda real e pagante para sua oferta?"
-              features={["Análise de Risco vs. Oportunidade", "Teste de Narrativa e Oferta", "Decisão Go/No-Go Baseada em Dados"]}
-              isOpen={openSolutionAccordion === 0}
-              onClick={() => setOpenSolutionAccordion(openSolutionAccordion === 0 ? -1 : 0)}
-            />
-            <SolutionAccordion
-              title="Pronto para Escalar Agora?"
-              subtitle="Go-To-Market Completo"
-              description="Do diagnóstico à execução, instalamos e operamos sua máquina de receita para um crescimento sustentável."
-              features={["Diagnóstico Profundo Cortex GTM™", "Arquitetura da Clareza e Ativos", "Ativação e Aceleração de Canais"]}
-              isOpen={openSolutionAccordion === 1}
-              onClick={() => setOpenSolutionAccordion(openSolutionAccordion === 1 ? -1 : 1)}
-            />
-            <SolutionAccordion
-              title="Busca Liderança Sênior?"
-              subtitle="Diretoria de Receita sob Demanda"
-              description="Inteligência C-level para decisões críticas e tração comercial, sem aumentar seu headcount."
-              features={["Planejamento Estratégico Contínuo", "Gestão de Funil, Metas e KPIs", "Mentoria para a Liderança"]}
-              isOpen={openSolutionAccordion === 2}
-              onClick={() => setOpenSolutionAccordion(openSolutionAccordion === 2 ? -1 : 2)}
-            />
+          
+          <div className="engineering-block">
+            {/* Coluna Esquerda */}
+            <div className="engineering-column">
+              <div className="engineering-header">
+                <Compass className="icon" />
+                <h3>Inteligência & Estratégia</h3>
+                <p>Onde desenhamos o blueprint do seu crescimento.</p>
+              </div>
+              <ul className="engineering-list">
+                <li>
+                  <h4>Sprint de Validação Comercial</h4>
+                  <p>Para testar novas ofertas e mercados com velocidade e precisão.</p>
+                </li>
+                <li>
+                  <h4>Go-To-Market Completo</h4>
+                  <p>Para arquitetar e instalar seu motor de receita do zero.</p>
+                </li>
+                <li>
+                  <h4>Diretoria de Receita (CRO as a Service)</h4>
+                  <p>Para injetar liderança C-level na sua operação de receita.</p>
+                </li>
+                <li>
+                  <h4>Advisory Board</h4>
+                  <p>Para guiar decisões estratégicas de alto impacto.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* Divisor Central */}
+            <div className="engineering-divider"></div>
+
+            {/* Coluna Direita */}
+            <div className="engineering-column">
+              <div className="engineering-header">
+                <Wrench className="icon" />
+                <h3>Construção de Ativos Digitais</h3>
+                <p>Onde transformamos estratégia em ferramentas de receita.</p>
+              </div>
+              <ul className="engineering-list">
+                <li>
+                  <h4>Plataformas de Aceleração de Receita</h4>
+                  <p>Construímos o seu novo "site": um ativo digital projetado para educar, qualificar e converter clientes.</p>
+                </li>
+                <li>
+                  <h4>Ferramentas Estratégicas de Conversão</h4>
+                  <p>Desenvolvemos ferramentas (calculadoras, simuladores, apps) que se tornam o centro da sua argumentação de valor e aceleram a decisão de compra.</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
