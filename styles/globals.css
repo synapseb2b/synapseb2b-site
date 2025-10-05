@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO FINAL, COMPLETA E CORRIGIDA */
+/* globals.css - VERSÃO FINAL COM ESTILOS DO SOLUTION ACCORDION */
 
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
@@ -231,6 +231,19 @@ body {
 .footer-column ul { list-style: none; padding: 0; }
 .footer-column ul li a { display: block; margin-bottom: 0.75rem; color: var(--color-text); }
 .footer-contact-link { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--color-text); }
+.footer-contact-link.as-button { background: none; border: none; padding: 0; font-family: inherit; font-size: inherit; cursor: pointer; position: relative; }
+.copy-feedback {
+  position: absolute;
+  right: -65px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-primary);
+  color: var(--color-heading);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 .footer-bottom { text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.9rem; color: var(--color-text); }
 .footer-credits {
   font-size: 0.8rem;
@@ -282,8 +295,8 @@ body {
 .case-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
 
-/* --- INÍCIO DA ALTERAÇÃO: Estilos para o Card de Solução Unificado --- */
-.solution-card-unified {
+/* --- INÍCIO DOS ESTILOS DO SOLUTION ACCORDION --- */
+.solution-accordion {
   background-color: rgba(10, 10, 10, 0.6);
   border: 1px solid var(--color-border);
   border-radius: 12px;
@@ -294,24 +307,24 @@ body {
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.solution-card-unified:hover {
+.solution-accordion:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-.solution-card-main {
+.solution-accordion-main {
   padding: 2rem;
 }
-.solution-card-deliverables {
+.solution-accordion-deliverables {
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 1.5rem 2rem;
   border-top: 1px solid var(--color-border);
   margin-top: auto;
 }
-.deliverables-title {
-  font-family: 'Montserrat';
-  color: var(--color-primary);
-  margin-bottom: 1rem;
+.solution-accordion-deliverables .accordion-header {
   font-size: 1.1rem;
+  color: var(--color-primary);
+}
+.solution-accordion-deliverables .accordion-content-inner {
+  padding-top: 1rem;
 }
 .solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 0.5rem; }
 .solution-subtitle { color: var(--color-text); font-weight: 600; margin-bottom: 1rem; }
@@ -319,7 +332,7 @@ body {
 .solution-features { list-style: none; padding: 0; display: inline-block; text-align: left; }
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
-/* --- FIM DA ALTERAÇÃO --- */
+/* --- FIM DOS ESTILOS DO SOLUTION ACCORDION --- */
 
 /* ==========================================================================
    8. ESTILOS ESPECÍFICOS DE PÁGINAS
