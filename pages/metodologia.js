@@ -1,17 +1,18 @@
-// pages/metodologia.js (VERSÃO FINAL COM ACORDEÃO)
+// pages/metodologia.js (VERSÃO FINAL COM LAYOUT CORRIGIDO)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ArrowRight, CheckCircle, Target, Zap, ShieldCheck, ChevronDown } from 'lucide-react';
 
-// --- Componente Acordeão para as Fases da Metodologia ---
-const PhaseAccordion = ({ title, whatWeDo, whatYouGet, isOpen, onClick }) => {
+// --- NOVO: Componente Acordeão para as Fases da Metodologia (Layout Corrigido) ---
+const PhaseAccordion = ({ phaseLabel, title, description, whatYouGet, isOpen, onClick }) => {
   return (
-    <div className="solution-accordion">
-      <div className="solution-accordion-main">
-        <h3 className="solution-title">{title}</h3>
-        <p className="solution-description">{whatWeDo}</p>
+    <div className="phase-accordion">
+      <div className="phase-accordion-main">
+        <div className="phase-card-label">{phaseLabel}</div>
+        <h3 className="phase-card-title">{title}</h3>
+        <p className="phase-card-description">{description}</p>
       </div>
       <div className="accordion-deliverables">
         <button className="accordion-header" onClick={onClick}>
@@ -90,7 +91,7 @@ export default function MetodologiaPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 3: As Fases da Engenharia (COM NOVO ACORDEÃO) */}
+      {/* Bloco 3: As Fases da Engenharia (COM NOVO LAYOUT) */}
       <section id="fases" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Como Construímos para Gerar Resultados</h2>
@@ -99,22 +100,25 @@ export default function MetodologiaPage() {
           </p>
           <div className="card-grid-three">
             <PhaseAccordion
-              title="Fase 1: Diagnóstico de Clareza"
-              whatWeDo="Investigamos a fundo a desconexão entre o valor do seu produto e a percepção do mercado. Mapeamos com precisão o problema do seu cliente e onde sua narrativa atual falha em comunicar a solução."
+              phaseLabel="Fase 1"
+              title="Diagnóstico de Clareza"
+              description="Investigamos a fundo a desconexão entre o valor do seu produto e a percepção do mercado. Mapeamos com precisão o problema do seu cliente e onde sua narrativa atual falha em comunicar a solução."
               whatYouGet="Um diagnóstico estratégico que aponta as alavancas de crescimento travadas e o caminho para destravá-las."
               isOpen={openPhaseAccordion === 0}
               onClick={() => setOpenPhaseAccordion(openPhaseAccordion === 0 ? -1 : 0)}
             />
             <PhaseAccordion
-              title="Fase 2: Arquitetura de Valor"
-              whatWeDo="Desenhamos a estrutura lógica do seu argumento de venda. Construímos sua narrativa estratégica, posicionamento de mercado e os pilares de valor que tornam sua solução a escolha óbvia para o cliente certo."
+              phaseLabel="Fase 2"
+              title="Arquitetura de Valor"
+              description="Desenhamos a estrutura lógica do seu argumento de venda. Construímos sua narrativa estratégica, posicionamento de mercado e os pilares de valor que tornam sua solução a escolha óbvia para o cliente certo."
               whatYouGet="Um documento estratégico que define sua mensagem principal, alinhando a comunicação entre marketing e vendas."
               isOpen={openPhaseAccordion === 1}
               onClick={() => setOpenPhaseAccordion(openPhaseAccordion === 1 ? -1 : 1)}
             />
             <PhaseAccordion
-              title="Fase 3: Ativação e Construção"
-              whatWeDo="Traduzimos a arquitetura estratégica em ferramentas de alta performance. Desenvolvemos os ativos de conversão e instalamos a disciplina para que seu time execute a nova estratégia com consistência."
+              phaseLabel="Fase 3"
+              title="Ativação e Construção"
+              description="Traduzimos a arquitetura estratégica em ferramentas de alta performance. Desenvolvemos os ativos de conversão e instalamos a disciplina para que seu time execute a nova estratégia com consistência."
               whatYouGet="Os ativos e processos necessários para gerar tração de forma previsível e escalável."
               isOpen={openPhaseAccordion === 2}
               onClick={() => setOpenPhaseAccordion(openPhaseAccordion === 2 ? -1 : 2)}
