@@ -1,11 +1,11 @@
-// pages/index.js (VERSÃO FINAL COM AJUSTES DE TEXTO E NOVO ACORDEÃO DE SOLUÇÕES)
+// pages/index.js (VERSÃO FINAL, COMPLETA E CORRIGIDA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { ArrowRight, Eye, CheckCircle, ChevronDown, TrendingDown, Tag, Clock, Filter } from 'lucide-react';
 
-// --- NOVO: Componente Acordeão para a Seção de Soluções ---
+// --- Componente Acordeão para a Seção de Soluções ---
 const SolutionAccordion = ({ title, subtitle, description, features, isOpen, onClick }) => {
   return (
     <div className="solution-accordion">
@@ -33,7 +33,7 @@ const SolutionAccordion = ({ title, subtitle, description, features, isOpen, onC
   );
 };
 
-// --- Componente Acordeão Padrão (Sem alteração) ---
+// --- Componente Acordeão Padrão ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
   return (
     <div className="accordion-item">
@@ -146,7 +146,7 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 4: Como Funciona - O Cortex GTM™ (TEXTO CORRIGIDO) */}
+      {/* Bloco 4: Como Funciona - O Cortex GTM™ */}
       <section id="como-funciona" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Nosso Sistema: O Cortex GTM™</h2>
@@ -168,7 +168,7 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 5: Soluções (COM NOVO COMPONENTE ACORDEÃO) */}
+      {/* Bloco 5: Soluções */}
       <section id="crescimento" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Sua Engenharia de Receita Sob Medida</h2>
