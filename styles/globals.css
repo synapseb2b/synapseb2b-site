@@ -302,7 +302,7 @@ body {
 .case-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
 .case-body p { margin-bottom: 1rem; }
 
-/* --- INÍCIO DOS ESTILOS DO SOLUTION ACCORDION --- */
+/* --- Estilos do Solution Accordion --- */
 .solution-accordion {
   background-color: rgba(10, 10, 10, 0.6);
   border: 1px solid var(--color-border);
@@ -344,7 +344,6 @@ body {
 }
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
-/* --- FIM DOS ESTILOS DO SOLUTION ACCORDION --- */
 
 /* ==========================================================================
    8. ESTILOS ESPECÍFICOS DE PÁGINAS
@@ -369,75 +368,47 @@ body {
 .case-study-section li { padding-left: 1rem; border-left: 2px solid var(--color-primary); margin-bottom: 1rem; }
 .calendar-container { max-width: 1000px; margin: 3rem auto 0; padding: 1.5rem; background-color: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
 
-/* --- NOVOS ESTILOS PARA PÁGINA DE METODOLOGIA --- */
-.phase-card {
+/* --- INÍCIO DA ALTERAÇÃO: Estilos para o Acordeão de Fases da Metodologia --- */
+.phase-accordion {
   background-color: rgba(10, 10, 10, 0.6);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  padding: 2rem;
-  text-align: left;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.phase-card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+.phase-accordion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-.phase-number {
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-  color: var(--color-primary);
-}
-.phase-card-title {
-  font-size: 1.5rem;
-  color: var(--color-heading);
-  margin: 0;
-}
-.phase-card-section h4 {
-  color: var(--color-text);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
-.phase-card-section p {
-  font-size: 1rem;
-}
-.deliverable-text {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  color: var(--color-heading);
-  font-weight: 500;
-}
-.deliverable-text svg {
-  color: var(--color-primary);
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-.principle-card {
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 2rem;
+.phase-accordion-main {
+  padding: 2.5rem 2rem; /* Aumenta o padding para mais respiro */
   text-align: center;
 }
-.principle-title {
-  font-family: 'Montserrat';
-  color: var(--color-heading);
-  margin: 1rem 0 0.5rem;
+.phase-card-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
 }
-
-/* --- INÍCIO DA ALTERAÇÃO: Estilos para o Acordeão de Entregáveis da Metodologia --- */
+.phase-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+.phase-card-description {
+  font-size: 1rem;
+  color: var(--color-text);
+}
 .accordion-deliverables {
   background-color: rgba(0, 0, 0, 0.3);
   border-top: 1px solid var(--color-border);
-  margin: 1.5rem -2rem -2rem; /* Margem negativa para preencher o card */
+  margin-top: auto;
 }
 .accordion-deliverables .accordion-header {
   font-size: 1.1rem;
@@ -451,8 +422,30 @@ body {
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--color-heading);
+}
+.accordion-deliverables .deliverable-text svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 /* --- FIM DA ALTERAÇÃO --- */
+
+.principle-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+.principle-title {
+  font-family: 'Montserrat';
+  color: var(--color-heading);
+  margin: 1rem 0 0.5rem;
+}
 
 /* ==========================================================================
    9. MENU MOBILE
