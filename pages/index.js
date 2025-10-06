@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 // Ícones atualizados para a nova seção
 import { ArrowRight, Eye, ChevronDown, TrendingDown, Tag, Clock, Filter, Compass, Wrench } from 'lucide-react';
+import Hero from '../components/Hero'; // ADICIONADO: Importa o componente Hero
 
 // --- Componente Acordeão Padrão (Sem alteração) ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
