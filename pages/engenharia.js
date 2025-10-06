@@ -1,222 +1,587 @@
-// pages/engenharia.js (A Nova Página Unificada)
+/* globals.css - VERSÃO FINAL, COMPLETA E CORRIGIDA */
 
-import Head from 'next/head';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { ArrowRight, Compass, Wrench, Zap, Target, ShieldCheck, HelpCircle, Briefcase, BarChart } from 'lucide-react';
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap'    );
 
-// --- Componente de Abas para ICPs ---
-const IcpTabs = ({ activeTab, setActiveTab }) => {
-  const tabs = ["A Startup Inovadora", "A Empresa Técnica", "O Negócio em Platô"];
-  return (
-    <div className="icp-tabs-container">
-      {tabs.map((tab, index) => (
-        <button
-          key={index}
-          className={`icp-tab ${activeTab === index ? 'active' : ''}`}
-          onClick={() => setActiveTab(index)}
-        >
-          {tab}
-        </button>
-      ))}
-    </div>
-  );
-};
-
-export default function EngenhariaPage() {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabContent = [
-    "Você construiu um produto tecnicamente superior, mas a tração não acontece. O mercado não entende o valor real e o ciclo de vendas se arrasta.",
-    "Sua reputação e entrega são excelentes, mas o crescimento depende de indicações. O valor real do seu negócio não é percebido pelo mercado devido à sua complexidade técnica.",
-    "Você já é um líder no seu nicho, mas o crescimento estagnou. A fórmula que te trouxe até aqui não vai te levar para a próxima fase e você precisa de uma nova arquitetura para expandir."
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <>
-      <Head>
-        <title>A Engenharia por Trás da Clareza | Synapse B2B</title>
-        <meta name="description" content="Para fundadores de startups B2B complexas, empresas técnicas e negócios em platô de crescimento: nós decodificamos sua genialidade técnica e a transformamos em um sistema que gera um pipeline de vendas previsível." />
-      </Head>
-
-      {/* Bloco 1: Seção Hero */}
-      <section className="hero-section short-hero">
-        <div className="hero-video-background">
-          <video autoPlay muted loop playsInline className="hero-video">
-            <source src="/video/video_home.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="container hero-content text-center page-hero-padding">
-          <div className="reveal-up">
-            <h1 className="hero-headline">A Engenharia por Trás da Clareza.</h1>
-            <p className="hero-subheadline">
-              Para fundadores de startups B2B complexas, empresas técnicas e negócios em platô de crescimento: nós decodificamos sua genialidade técnica e a transformamos em um sistema que gera um pipeline de vendas previsível.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 2: O Cenário do Crescimento Travado */}
-      <section id="cenario" className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Sua genialidade é inquestionável. Sua receita deveria ser também.</h2>
-          <p className="lead-text">Se você chegou até aqui, provavelmente se identifica com um destes cenários:</p>
-          <IcpTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-          <p className="icp-content">{tabContent[activeTab]}</p>
-          <div className="highlight-box">
-            <p>O problema não é seu produto ou sua competência. É a ausência de uma engenharia que conecte seu valor à percepção do mercado.</p>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 3: Nossa Engenharia de Receita */}
-      <section id="engenharia-receita" className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Duas Camadas, Um Objetivo: Crescimento Previsível.</h2>
-          <p className="lead-text">Nossa engenharia opera em duas camadas que podem atuar de forma independente ou integrada. A camada de <strong>Inteligência</strong> é a fundação que define o blueprint do crescimento. A camada de <strong>Construção</strong> é sempre arquitetada com os mesmos princípios, transformando a estratégia em ativos de receita.</p>
-          
-          <div className="engineering-block">
-            <div className="engineering-column">
-              <div className="engineering-header">
-                <Compass className="icon" />
-                <h3>Inteligência & Estratégia</h3>
-                <p>Onde desenhamos o blueprint do seu crescimento.</p>
-              </div>
-              <ul className="engineering-list">
-                <li><h4>Sprint de Validação Comercial</h4><p>Para testar novas ofertas e mercados com velocidade e precisão.</p></li>
-                <li><h4>Go-To-Market Completo</h4><p>Para arquitetar e instalar um motor de receita de alta performance, seja do zero ou otimizando uma operação existente.</p></li>
-                <li><h4>Diretoria de Receita (CRO as a Service)</h4><p>Para injetar liderança C-level na sua operação de receita.</p></li>
-                <li><h4>Advisory Board</h4><p>Para guiar decisões estratégicas de alto impacto.</p></li>
-              </ul>
-            </div>
-            <div className="engineering-divider"></div>
-            <div className="engineering-column">
-              <div className="engineering-header">
-                <Wrench className="icon" />
-                <h3>Construção de Ativos Digitais</h3>
-                <p>Onde transformamos estratégia em ferramentas de receita.</p>
-              </div>
-              <ul className="engineering-list">
-                <li><h4>Plataformas de Aceleração de Receita</h4><p>Construímos o seu novo "site": um ativo digital projetado para educar, qualificar e converter clientes.</p></li>
-                <li><h4>Ferramentas Estratégicas de Conversão</h4><p>Desenvolvemos ferramentas (calculadoras, simuladores, apps) que se tornam o centro da sua argumentação de valor e aceleram a decisão de compra.</p></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 4: A Prova da Engenharia */}
-      <section id="prova" className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Da Estratégia à Tração: A Engenharia em Ação.</h2>
-          <div className="case-studies-container">
-            <div className="transformation-case-card">
-              <h3>De Competência Fragmentada a Hub de Engenharia Estratégico.</h3>
-              <p className="company-name">Caso 1: Exclusiva Engenharias</p>
-              <div className="case-section">
-                <h4><HelpCircle className="icon" /> O Desafio</h4>
-                <p>A Exclusiva possuía uma competência técnica ímpar, mas operava como um coletivo de empresas isoladas, posicionando-se como um "fornecedor competente", não como o "parceiro estratégico" que de fato era.</p>
-              </div>
-              <div className="case-section">
-                <h4><Compass className="icon" /> A Engenharia de Inteligência</h4>
-                <p>Aplicamos nosso diagnóstico para redefinir a tese de negócio. A mudança para "Exclusiva Engenharias" e o posicionamento como "Hub Multidisciplinar" foram as alavancas estratégicas que destravaram o novo valor.</p>
-              </div>
-              <div className="case-section">
-                <h4><Wrench className="icon" /> A Engenharia de Construção</h4>
-                <p>Com a clareza estabelecida, materializamos a nova tese em uma Plataforma Digital de Aceleração, que hoje serve como o principal motor de autoridade e conversão da empresa.</p>
-              </div>
-              <div className="case-section">
-                <h4><Briefcase className="icon" /> A Engenharia de Liderança</h4>
-                <p>Com a fundação estratégica e os ativos construídos, a Exclusiva avançou a parceria para o nível máximo de confiança, nos contratando como sua Diretoria de Engenharia de Receita as a Service para operar o novo motor de crescimento com disciplina e inteligência C-level.</p>
-              </div>
-            </div>
-            <div className="transformation-case-card">
-              <h3>De Potencial Oculto a uma Nova Categoria de Mercado.</h3>
-              <p className="company-name">Caso 2: Versão Holística (VH)</p>
-              <div className="case-section">
-                <h4><HelpCircle className="icon" /> O Desafio</h4>
-                <p>A VH tinha uma solução healthtech revolucionária, mas uma história complicada. O mercado não entendia o que a empresa fazia, travando o potencial de crescimento.</p>
-              </div>
-              <div className="case-section">
-                <h4><Compass className="icon" /> A Engenharia de Inteligência</h4>
-                <p>Nossa engenharia decodificou o valor central e arquitetou uma nova categoria de mercado: a "1ª Plataforma de CareOps Integrativo do Brasil". Isso tirou a VH da briga com concorrentes e a posicionou como vanguarda.</p>
-              </div>
-              <div className="case-section">
-                <h4><Wrench className="icon" /> A Engenharia de Construção</h4>
-                <p>Traduzimos essa clareza em ativos de conversão — Pitch Deck e Plataforma Digital — que comunicam o novo valor de forma inequívoca para C-levels e investidores.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 5: Outros Desafios Críticos */}
-      <section id="outros-desafios" className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Cenários de Aplicação da Nossa Engenharia.</h2>
-          <div className="card-grid-three">
-            <div className="scenario-card">
-              <h4>1. Para o Líder Regional que Precisa Expandir</h4>
-              <p><strong>Cenário:</strong> Uma marca forte em sua região de origem, mas com dificuldade para penetrar em novos territórios de forma estruturada.</p>
-              <p><strong>Nossa Engenharia:</strong> Nossa engenharia desenha o plano de expansão, recalibra a narrativa da marca para uma audiência nacional e constrói os ativos digitais necessários para capturar a nova demanda.</p>
-            </div>
-            <div className="scenario-card">
-              <h4>2. Para o SaaS de IA que Precisa Destravar Contratos Maiores</h4>
-              <p><strong>Cenário:</strong> Uma tecnologia de ponta que não consegue sair do ciclo de "projetos pilotos" para contratos anuais de alto valor (ACV).</p>
-              <p><strong>Nossa Engenharia:</strong> Aplicamos um Sprint de Validação para focar a oferta em um nicho de alto valor e construímos uma Ferramenta Estratégica, como uma Calculadora de ROI, para provar o impacto financeiro e destravar o orçamento do C-level.</p>
-            </div>
-            <div className="scenario-card">
-              <h4>3. Para a Expertise Técnica Vendida como Commodity</h4>
-              <p><strong>Cenário:</strong> Uma empresa de automação industrial que vendia "horas de engenharia" e competia por preço, apesar de sua expertise ser vastamente superior.</p>
-              <p><strong>Nossa Engenharia:</strong> Nossa engenharia "produtiza" a expertise em uma solução com entregáveis claros, como um pacote de "Otimização de Performance Industrial". Isso permite a precificação baseada em valor e posiciona a empresa como especialista em resultado, não como fornecedora de horas.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 6: Chamada Final */}
-      <section className="final-cta-section">
-        <div className="container text-center reveal-up">
-          <h2 className="final-cta-title">Sua transformação é a nossa próxima tese de negócio.</h2>
-          <p className="lead-text">
-            Se você se viu em algum desses cenários, o desafio que você enfrenta não é único. A forma de resolvê-lo, sim. Nossa Engenharia de Receita funciona porque é um método, não um acaso.
-          </p>
-          <div className="section-cta">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Agende sua Sessão de Diagnóstico</span>
-              <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+:root {
+  --color-background: #000000;
+  --color-primary: #009684;
+  --color-secondary: #007a6c;
+  --color-accent: #38c5b1;
+  --color-text: #a6a6a6;
+  --color-heading: #ffffff;
+  --color-section-bg: #0A0A0A;
+  --color-border: rgba(0, 150, 132, 0.2);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden; /* Prevenção extra contra overflow horizontal */
+  cursor: none;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   2. CURSOR CUSTOMIZADO
+   ========================================================================== */
+.custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+  z-index: 9999;
+}
+.custom-cursor.hover {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 150, 132, 0.2);
+}
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor { display: none; }
+  body { cursor: auto; }
+}
+
+/* ==========================================================================
+   3. ANIMAÇÕES
+   ========================================================================== */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes shine-effect {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-headline, .section-title, .final-cta-title {
+  background: linear-gradient(to right, var(--color-heading) 40%, var(--color-accent) 50%, var(--color-heading) 60%);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-effect 5s linear infinite;
+}
+
+/* ==========================================================================
+   4. NAVBAR
+   ========================================================================== */
+.nav {
+  position: fixed; top: 0; left: 0; width: 100%;
+  padding: 1rem 0; z-index: 1000;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+.nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+.nav-logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-text { color: var(--color-heading); font-size: 1.5rem; font-family: 'Montserrat', sans-serif; }
+.nav-menu { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-link { color: var(--color-text); font-weight: 500; text-decoration: none; transition: color 0.3s; }
+.nav-link:hover { color: var(--color-primary); }
+.nav-link.active { color: var(--color-primary); }
+
+/* ==========================================================================
+   5. CTAs (BOTÕES)
+   ========================================================================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.75rem; padding: 16px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(145deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-heading);
+  box-shadow: 0 4px 15px rgba(0, 150, 132, 0.2), 
+              inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 150, 132, 0.3),
+              inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+.btn-secondary {
+  background-color: rgba(10, 10, 10, 0.5);
+  color: var(--color-heading);
+  position: relative;
+  padding: 18px 34px;
+}
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 10px; 
+  border: 2px solid transparent;
+  background: linear-gradient(145deg, var(--color-border), rgba(0, 150, 132, 0.1)) border-box;
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.btn-secondary:hover {
+  background-color: rgba(0, 150, 132, 0.1);
+  transform: translateY(-2px);
+}
+.btn-nav-cta {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none !important;
+  background: var(--color-primary);
+  color: var(--color-heading);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 150, 132, 0.2);
+}
+.btn-nav-cta:hover { 
+  background-color: var(--color-secondary); 
+  transform: translateY(-2px);
+}
+.btn-large { padding: 20px 42px; font-size: 1.1rem; }
+
+/* ==========================================================================
+   6. SEÇÕES E DIVISORES
+   ========================================================================== */
+.section-with-bg, .section-solid, .section-with-gradient-glow, .final-cta-section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.section-title { font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 1.5rem; }
+.lead-text { font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
+.section-cta { margin-top: 3rem; }
+.section-divider-glow {
+  height: 1px;
+  width: 100%;
+  background: var(--color-border);
+  position: relative;
+  margin: 0;
+}
+.section-divider-glow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 3px;
+  background: var(--color-primary);
+  filter: blur(5px);
+  opacity: 0.7;
+}
+.section-with-gradient-glow {
+  background-color: var(--color-section-bg);
+  position: relative;
+}
+.section-with-gradient-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 150, 132, 0.15), transparent 70%);
+  filter: blur(100px);
+  z-index: 0;
+}
+.section-with-gradient-glow .container {
+  position: relative;
+  z-index: 1;
+}
+.section-with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
+.section-with-bg .section-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1; }
+.section-with-bg .container { position: relative; z-index: 2; }
+.section-solid { background-color: var(--color-section-bg); }
+.final-cta-section { background-color: var(--color-background); }
+.final-cta-title { font-size: 3rem; margin-bottom: 1.5rem; }
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.footer {
+  background-color: var(--color-section-bg);
+  padding: 5rem 0 2rem;
+  border-top: 1px solid var(--color-border);
+}
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; text-align: left; }
+.footer-column .footer-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1.5rem; font-size: 1.2rem; }
+.footer-column p { margin-bottom: 1.5rem; }
+.footer-column a { text-decoration: none; transition: color 0.3s; }
+.footer-column a:hover { color: var(--color-primary); }
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column ul li a { display: block; margin-bottom: 0.75rem; color: var(--color-text); }
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  justify-content: flex-start;
+}
+.footer-contact-link.as-button { background: none; border: none; padding: 0; font-family: inherit; font-size: inherit; cursor: pointer; position: relative; }
+.copy-feedback {
+  position: absolute;
+  right: -65px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-primary);
+  color: var(--color-heading);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.footer-bottom { text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.9rem; color: var(--color-text); }
+.footer-credits {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   8. COMPONENTES GERAIS
+   ========================================================================== */
+.hero-section {
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-hero-padding {
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+.hero-section.short-hero { min-height: 50vh; }
+.hero-video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
+.hero-content { position: relative; z-index: 1; }
+.hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; }
+.hero-subheadline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
+.hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.symptom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.symptom-card { background-color: rgba(0, 0, 0, 0.3); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; transition: background-color 0.3s ease; }
+.symptom-card:hover { background-color: rgba(0, 150, 132, 0.1); }
+.symptom-card .card-icon { color: var(--color-primary); margin: 0 auto 1rem; width: 40px; height: 40px; }
+.card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
+.card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+.highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
+.accordion-container { max-width: 800px; margin: 2rem auto 0; }
+.accordion-item { border-bottom: 1px solid var(--color-border); }
+.accordion-header { width: 100%; background: none; border: none; color: var(--color-heading); padding: 1.5rem 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; cursor: pointer; }
+.accordion-icon { transition: transform 0.3s ease; }
+.accordion-icon.open { transform: rotate(180deg); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+.accordion-content.open { max-height: 500px; }
+.accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
+
+/* --- Estilos do Engineering Block (da Home) --- */
+.engineering-block { display: flex; gap: 2rem; margin-top: 4rem; position: relative; }
+.engineering-column { flex: 1; background-color: rgba(10, 10, 10, 0.4); border: 1px solid var(--color-border); border-radius: 12px; padding: 2.5rem; }
+.engineering-divider { width: 1px; background: linear-gradient(to bottom, transparent, var(--color-primary), transparent); opacity: 0.5; }
+.engineering-header { text-align: center; margin-bottom: 2.5rem; }
+.engineering-header .icon { width: 48px; height: 48px; color: var(--color-primary); margin: 0 auto 1rem; }
+.engineering-header h3 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--color-heading); margin-bottom: 0.5rem; }
+.engineering-header p { font-size: 1rem; color: var(--color-text); max-width: 300px; margin: 0 auto; }
+.engineering-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+.engineering-list li { text-align: center; }
+.engineering-list h4 { font-size: 1.1rem; color: var(--color-heading); font-weight: 600; margin-bottom: 0.25rem; }
+.engineering-list p { font-size: 0.95rem; color: var(--color-text); }
+
+/* --- Estilos do Solution Accordion (da Home) --- */
+.solution-accordion { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; backdrop-filter: blur(10px); text-align: center; overflow: hidden; }
+.solution-accordion-main { padding: 2rem; }
+.solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
+.solution-subtitle { color: var(--color-text); font-weight: 600; }
+.solution-description { font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+.solution-accordion-deliverables { border-top: 1px solid var(--color-border); }
+.solution-accordion-deliverables .accordion-header { font-size: 1rem; color: var(--color-primary); }
+.solution-accordion-deliverables .accordion-content-inner { text-align: center; }
+.solution-features { list-style: none; padding: 0; display: inline-block; text-align: left; }
+.solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.solution-features svg { color: var(--color-primary); flex-shrink: 0; }
+
+/* ==========================================================================
+   9. ESTILOS ESPECÍFICOS DE PÁGINAS
+   ========================================================================== */
+/* --- Estilos para a Nova Página de Engenharia --- */
+.icp-tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  background-color: rgba(10, 10, 10, 0.4);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icp-tab {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.icp-tab.active {
+  background-color: var(--color-primary);
+  color: var(--color-heading);
+}
+.icp-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.transformation-case-card {
+  background-color: var(--color-section-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+.transformation-case-card h3 {
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+.transformation-case-card .company-name {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+.case-section {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.case-section h4 {
+  font-size: 1.2rem;
+  color: var(--color-heading);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.case-section h4 .icon {
+  color: var(--color-accent);
+}
+.scenario-card {
+  background-color: rgba(10, 10, 10, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+}
+.scenario-card h4 {
+  font-size: 1.2rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+.calendar-container { max-width: 1000px; margin: 3rem auto 0; padding: 1.5rem; background-color: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+
+/* --- Estilos para a Página de Metodologia (NOVO) --- */
+.phase-card-unified {
+  background-color: rgba(10, 10, 10, 0.4);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.phase-card-unified .phase-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+.phase-card-unified .phase-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+.phase-card-unified .phase-description {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+.phase-card-unified .accordion-header {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   10. MENU MOBILE
+   ========================================================================== */
+.nav-hamburger { display: none; }
+.mobile-menu-overlay { display: none; }
+
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .nav-hamburger {
+    display: flex; flex-direction: column; justify-content: space-around;
+    width: 28px; height: 24px; background: transparent; border: none;
+    cursor: pointer; padding: 0; z-index: 1002;
+  }
+  .nav-hamburger .line {
+    width: 100%; height: 3px; background-color: var(--color-heading);
+    border-radius: 10px; transition: all 0.3s linear; transform-origin: center;
+  }
+  .nav.menu-open .line1 { transform: translateY(10px) rotate(45deg); }
+  .nav.menu-open .line2 { opacity: 0; }
+  .nav.menu-open .line3 { transform: translateY(-11px) rotate(-45deg); }
+
+  .mobile-menu-overlay {
+    display: flex; flex-direction: column; justify-content: space-between;
+    background: var(--color-background); position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%; padding: 2rem; z-index: 1001;
+    transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    visibility: hidden;
+  }
+  .mobile-menu-overlay.open { transform: translateX(0); visibility: visible; }
+  .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+  .mobile-menu-title { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: var(--color-primary); }
+  .mobile-menu-close { background: none; border: none; color: var(--color-heading); cursor: pointer; }
+  .mobile-menu-links { list-style: none; padding: 0; text-align: center; margin: auto 0; }
+  .mobile-menu-links a {
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    font-size: 2rem; font-weight: 700; font-family: 'Montserrat', sans-serif;
+    color: var(--color-heading); text-decoration: none; padding: 1rem; transition: color 0.3s;
+  }
+  .mobile-menu-links a:hover { color: var(--color-primary); }
+  .mobile-menu-footer { padding-top: 2rem; border-top: 1px solid var(--color-border); }
+  .mobile-menu-footer .btn { width: 100%; }
+}
+
+/* ==========================================================================
+   11. PÁGINAS LEGAIS
+   ========================================================================== */
+.legal-content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.legal-section { margin-bottom: 2.5rem; }
+.legal-section h2 {
+  font-size: 1.8rem; color: var(--color-heading); margin-bottom: 1rem;
+  border-left: 3px solid var(--color-primary); padding-left: 1rem;
+}
+.legal-section p { font-size: 1.1rem; line-height: 1.8; }
+.legal-section a { color: var(--color-primary); text-decoration: underline; }
+
+/* ==========================================================================
+   12. BOTÃO DO WHATSAPP
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-primary);
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse-whatsapp 2s infinite;
+}
+.whatsapp-float:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation-play-state: paused;
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 150, 132, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0);
+  }
+}
+
+/* ==========================================================================
+   13. AJUSTES DE RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- Ajustes Gerais --- */
+  .container {
+    padding: 0 1.5rem; /* Reduz o padding lateral em telas menores */
+  }
+
+  /* 1 & 2: Correção de Padding da Hero e Tamanho da Fonte H1 */
+  .hero-section, .section-with-bg, .section-solid {
+    /* Garante um padding superior consistente para não ficar colado na navbar */
+    padding-top: 100px !important; 
+    padding-bottom: 60px !important;
+  }
+
+  .hero-headline, .section-title, .final-cta-title {
+    /* Reduz o tamanho dos títulos principais para mobile */
+    font-size: 2.2rem !important; 
+    line-height: 1.3;
+  }
+  
+  .page-hero-padding {
+    padding-top: 0; /* Remove o padding duplicado que vinha desta classe */
+  }
+
+  /* --- Correção do Rodapé --- */
+  .footer-content {
+    grid-template-columns: 1fr; /* Faz as colunas do rodapé ficarem uma sobre a outra */
+    gap: 2.5
