@@ -1,8 +1,8 @@
-// pages/a-synapse.js
+// pages/a-synapse.js (CORRIGIDO)
 
 import Head from 'next/head';
 import Link from 'next/link';
-import { BrainCircuit, Target, DraftingCompass, Layers, ShieldCheck, Map, Wrench, Package, ArrowRight } from 'lucide-react';
+import { BrainCircuit, Target, Compass, Layers, ShieldCheck, Map, Wrench, Package, ArrowRight } from 'lucide-react';
 
 export default function ASynapsePage() {
   return (
@@ -44,7 +44,8 @@ export default function ASynapsePage() {
               <p>Primeiro, usamos o diagnóstico para encontrar o "gancho objetivo". Classificamos o que você faz de forma que o cérebro do seu cliente possa abrir o arquivo correto, sem esforço.</p>
             </div>
             <div className="info-card">
-              <DraftingCompass className="info-card-icon" />
+              {/* ÍCONE CORRIGIDO AQUI */}
+              <Compass className="info-card-icon" />
               <h3 className="info-card-title">2. Arquitetura da Clareza</h3>
               <p>Em seguida, construímos a narrativa que cria intriga e articula o valor mais ressonante, conectando sua solução ao alívio de um medo real, não apenas a uma oportunidade vaga.</p>
             </div>
