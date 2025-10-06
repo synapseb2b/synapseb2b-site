@@ -23,14 +23,14 @@ body {
   color: var(--color-text);
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
-  overflow-x: hidden;
-  cursor: none; /* Esconde o cursor padrão em desktops */
+  overflow-x: hidden; /* Prevenção extra contra overflow horizontal */
+  cursor: none;
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .text-center { text-align: center; }
 
 /* ==========================================================================
-   2. CURSOR CUSTOMIZADO (NOVO)
+   2. CURSOR CUSTOMIZADO
    ========================================================================== */
 .custom-cursor {
   position: fixed;
@@ -48,15 +48,9 @@ body {
   height: 60px;
   background-color: rgba(0, 150, 132, 0.2);
 }
-
-/* Esconde o cursor em telas mobile onde ele não faz sentido */
 @media (hover: none) and (pointer: coarse) {
-  .custom-cursor {
-    display: none;
-  }
-  body {
-    cursor: auto;
-  }
+  .custom-cursor { display: none; }
+  body { cursor: auto; }
 }
 
 /* ==========================================================================
@@ -309,7 +303,6 @@ body {
 .card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
-.case-card { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); text-align: center; }
 .highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
 .accordion-container { max-width: 800px; margin: 2rem auto 0; }
 .accordion-item { border-bottom: 1px solid var(--color-border); }
@@ -319,8 +312,6 @@ body {
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
 .accordion-content.open { max-height: 500px; }
 .accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
-.case-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
-.case-body p { margin-bottom: 1rem; }
 
 /* --- Estilos do Engineering Block (da Home) --- */
 .engineering-block { display: flex; gap: 2rem; margin-top: 4rem; position: relative; }
@@ -334,6 +325,19 @@ body {
 .engineering-list li { text-align: center; }
 .engineering-list h4 { font-size: 1.1rem; color: var(--color-heading); font-weight: 600; margin-bottom: 0.25rem; }
 .engineering-list p { font-size: 0.95rem; color: var(--color-text); }
+
+/* --- Estilos do Solution Accordion (da Home) --- */
+.solution-accordion { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); border-radius: 12px; backdrop-filter: blur(10px); text-align: center; overflow: hidden; }
+.solution-accordion-main { padding: 2rem; }
+.solution-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1rem; }
+.solution-subtitle { color: var(--color-text); font-weight: 600; }
+.solution-description { font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+.solution-accordion-deliverables { border-top: 1px solid var(--color-border); }
+.solution-accordion-deliverables .accordion-header { font-size: 1rem; color: var(--color-primary); }
+.solution-accordion-deliverables .accordion-content-inner { text-align: center; }
+.solution-features { list-style: none; padding: 0; display: inline-block; text-align: left; }
+.solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.solution-features svg { color: var(--color-primary); flex-shrink: 0; }
 
 /* ==========================================================================
    9. ESTILOS ESPECÍFICOS DE PÁGINAS
@@ -420,6 +424,37 @@ body {
   margin-bottom: 0.5rem;
 }
 .calendar-container { max-width: 1000px; margin: 3rem auto 0; padding: 1.5rem; background-color: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+
+/* --- Estilos para a Página de Metodologia (NOVO) --- */
+.phase-card-unified {
+  background-color: rgba(10, 10, 10, 0.4);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.phase-card-unified .phase-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+.phase-card-unified .phase-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+.phase-card-unified .phase-description {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+.phase-card-unified .accordion-header {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
 
 /* ==========================================================================
    10. MENU MOBILE
@@ -509,13 +544,4 @@ body {
 
 @keyframes pulse-whatsapp {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(0, 150, 132, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0);
-  }
-}
-
+    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.
