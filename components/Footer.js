@@ -1,4 +1,4 @@
-// components/Footer.js (VERSÃO FINAL COM INTERATIVIDADE)
+// components/Footer.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -11,9 +11,9 @@ export default function Footer() {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('contato@synapseb2b.com').then(() => {
       setCopySuccess('Copiado!');
-      setTimeout(() => setCopySuccess(''), 2000); // Mensagem some após 2 segundos
+      setTimeout(() => setCopySuccess(''), 2000);
     }, () => {
-      setCopySuccess('Falhou em copiar');
+      setCopySuccess('Falhou');
       setTimeout(() => setCopySuccess(''), 2000);
     });
   };
@@ -27,13 +27,11 @@ export default function Footer() {
             <h4 className="footer-title">Synapse B2B</h4>
             <p>Transformando Expertise Técnica em Receita Previsível.</p>
             <div className="footer-contact">
-              {/* E-mail com função de cópia */}
               <button onClick={handleCopyEmail} className="footer-contact-link as-button">
                 <Mail size={16} />
                 <span>contato@synapseb2b.com</span>
                 {copySuccess && <span className="copy-feedback">{copySuccess}</span>}
               </button>
-              {/* Telefone com link para WhatsApp */}
               <a 
                 href="https://wa.me/553139586192" 
                 target="_blank" 
@@ -46,14 +44,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Coluna 2: Navegação */}
+          {/* Coluna 2: Navegação (ATUALIZADA ) */}
           <div className="footer-column footer-links">
             <h4 className="footer-title">Navegação</h4>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/metodologia">Metodologia</Link></li>
-              <li><Link href="/casos-de-uso">Casos de Uso</Link></li>
-              <li><Link href="/contato">Contato</Link></li>
+              <li><Link href="/engenharia">A Engenharia</Link></li>
+              <li><Link href="/contato">A Synapse</Link></li>
             </ul>
           </div>
 
