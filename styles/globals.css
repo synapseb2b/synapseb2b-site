@@ -615,13 +615,12 @@ body {
   }
 
   /* --- Centralização de Texto na Página Engenharia --- */
-  .transformation-case-card, .scenario-card {
-    text-align: center;
-  }
-  .case-section {
+  .transformation-case-card, 
+  .case-section, 
+  .scenario-card {
     text-align: center;
   }
   .case-section h4 {
-    justify-content: center; /* Centraliza o ícone e o título */
+    justify-content: center; /* Centraliza o ícone e o título do h4 */
   }
 }
