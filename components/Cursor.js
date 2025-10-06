@@ -1,38 +1,53 @@
-/* ==========================================================================
-   12. BOTÃO DO WHATSAPP (NOVO)
-   ========================================================================== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background-color: var(--color-primary); /* COR ATUALIZADA */
-  color: #FFF;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  animation: pulse-whatsapp 2s infinite; /* Animação renomeada para evitar conflitos */
-}
-.whatsapp-float:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  animation-play-state: paused;
-}
+// components/Cursor.js (VERSÃO CORRETA E RESTAURADA)
 
-@keyframes pulse-whatsapp {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.7); /* COR ATUALIZADA */
+import { useState, useEffect } from 'react';
+
+const Cursor = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const updatePosition = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseOver = (e) => {
+      // Verifica se o elemento ou um de seus pais é um link ou botão
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button')) {
+        setIsHovering(true);
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button')) {
+        setIsHovering(false);
+      }
+    };
+
+    window.addEventListener('mousemove', updatePosition);
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      window.removeEventListener('mousemove', updatePosition);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, []);
+
+  // Adiciona uma classe para esconder o cursor em dispositivos touch
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (isTouchDevice) {
+    return null; // Não renderiza o cursor em dispositivos touch
   }
-  70% {
-    box-shadow: 0 0 0 15px rgba(0, 150, 132, 0); /* COR ATUALIZADA */
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0); /* COR ATUALIZADA */
-  }
-}
+
+  return (
+    <div 
+      className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+      style={{ left: `${position.x}px`, top: `${position.y}px` }}
+    />
+  );
+};
+
+export default Cursor;
