@@ -570,4 +570,8 @@ body {
 
   /* 1 & 2: Correção de Padding da Hero e Tamanho da Fonte H1 */
   .hero-section, .section-with-bg, .section-solid, .section-with-gradient-glow {
-    padding-top: 1
+    padding-top: 100px; 
+    padding-bottom: 60px;
+  }
+
+  .hero-headline
