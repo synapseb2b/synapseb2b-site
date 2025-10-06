@@ -152,7 +152,7 @@ export default function HomePage() {
               <div className="engineering-header">
                 <Compass className="icon" />
                 <h3>Inteligência & Estratégia</h3>
-                <p>Onde desenhamos o blueprint do seu crescimento.</p>
+                <p>Onde definimos a arquitetura do seu crescimento.</p>
               </div>
               <ul className="engineering-list">
                 <li>
