@@ -561,8 +561,13 @@ body {
 @media (max-width: 768px) {
   /* --- Ajustes Gerais --- */
   .container {
-    padding: 0 1.5rem; /* Reduz o padding lateral em telas menores */
+    padding: 0 1.5rem;
+  }
+
+  .nav-container {
+    padding: 0 1.5rem;
   }
 
   /* 1 & 2: Correção de Padding da Hero e Tamanho da Fonte H1 */
-  .hero-section, .section-with
+  .hero-section, .section-with-bg, .section-solid, .section-with-gradient-glow {
+    padding-top: 1
