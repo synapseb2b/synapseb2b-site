@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ArrowRight, Compass, Wrench, Zap, Target, ShieldCheck, HelpCircle, Briefcase, BarChart } from 'lucide-react';
+import Hero from '../components/Hero'; // ADICIONADO: Importa o componente Hero
 
 // --- Componente de Abas para ICPs ---
 const IcpTabs = ({ activeTab, setActiveTab }) => {
