@@ -800,3 +800,50 @@ body {
     padding: 2rem;
   }
 }
+/* ==========================================================================
+   15. ESTILOS DA PÁGINA "A SYNAPSE"
+   ========================================================================== */
+
+.info-card {
+  background-color: rgba(10, 10, 10, 0.4);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.info-card:hover {
+  background-color: rgba(0, 150, 132, 0.1);
+  transform: translateY(-5px);
+}
+
+.info-card-icon {
+  color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1.5rem;
+}
+
+.info-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+
+/* Utilitários de texto e espaçamento */
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.font-bold { font-weight: 700; }
+.text-white { color: #ffffff; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* Ajustes de responsividade para a página */
+@media (max-width: 768px) {
+  .info-card {
+    padding: 2rem;
+  }
+  .info-card-title {
+    font-size: 1.2rem;
+  }
+}
