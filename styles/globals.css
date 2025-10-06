@@ -3,7 +3,7 @@
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap'   );
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap' );
 
 :root {
   --color-background: #000000;
@@ -288,7 +288,7 @@ body {
   padding-top: 120px;
   padding-bottom: 40px;
 }
-.hero-section.short-hero { min-height: 50vh; padding: 0; display: flex; align-items: center; background: var(--color-section-bg); }
+.hero-section.short-hero { min-height: 50vh; }
 .hero-video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-video { width: 100%; height: 100%; object-fit: cover; }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
@@ -555,44 +555,3 @@ body {
 }
 
 /* ==========================================================================
-   13. CORREÇÕES FINAIS DE RESPONSIVIDADE
-   ========================================================================== */
-
-@media (max-width: 768px) {
-  /* --- Ajustes Gerais --- */
-  .container {
-    padding: 0 1.5rem; /* Reduz o padding lateral em telas menores */
-  }
-
-  .section-title {
-    font-size: 2.5rem; /* Reduz o tamanho do título das seções */
-  }
-
-  .hero-headline {
-    font-size: 2.8rem; /* Reduz o tamanho do título principal */
-  }
-
-  /* --- Correção do Rodapé --- */
-  .footer-content {
-    grid-template-columns: 1fr; /* Faz as colunas do rodapé ficarem uma sobre a outra */
-    gap: 2.5rem;
-    text-align: center; /* Centraliza o conteúdo das colunas */
-  }
-
-  .footer-column .footer-title {
-    margin-bottom: 1rem;
-  }
-
-  .footer-contact-link {
-    justify-content: center; /* Centraliza os ícones de contato */
-  }
-
-  /* --- Ajuste Bloco de Engenharia --- */
-  .engineering-block {
-    flex-direction: column; /* Empilha as colunas */
-  }
-
-  .engineering-divider {
-    display: none; /* Esconde o divisor vertical */
-  }
-}
