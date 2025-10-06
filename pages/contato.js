@@ -1,54 +1,29 @@
-// pages/contato.js (Nova Página "Ativar Engenharia")
+// pages/contato.js (VERSÃO REFINADA)
 
 import { useState } from 'react';
 import Head from 'next/head';
-import { FileText, User, Mail, Building, ChevronDown, CheckCircle, Calendar, Search } from 'lucide-react';
+import { User, Mail, Building, ChevronDown, CheckCircle, Calendar, Search, ArrowRight } from 'lucide-react';
 
 export default function ContatoPage() {
-  // Número de WhatsApp da Synapse B2B (sem o '+' ou '()', apenas números)
   const whatsappNumber = "553139586192";
 
-  // Estado para controlar os dados do formulário
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
     empresa: '',
-    cenario: 'Preciso validar uma nova oferta ou mercado.', // Valor padrão
+    cenario: 'Preciso validar uma nova oferta ou mercado.',
     desafio: '',
   });
 
-  // Função para atualizar o estado do formulário
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Formata a mensagem para o WhatsApp
-    const message = `
-*Diagnóstico - Ativação de Engenharia*
-
-*Nome:* ${formData.nome}
-*E-mail Corporativo:* ${formData.email}
-*Empresa:* ${formData.empresa}
-
-*Cenário de Crescimento:*
-${formData.cenario}
-
-*Principal Desafio de Receita:*
-${formData.desafio}
-    `;
-
-    // Codifica a mensagem para URL e cria o link do WhatsApp
+    const message = `*Diagnóstico - Ativação de Engenharia*\n\n*Nome:* ${formData.nome}\n*E-mail Corporativo:* ${formData.email}\n*Empresa:* ${formData.empresa}\n\n*Cenário de Crescimento:*\n${formData.cenario}\n\n*Principal Desafio de Receita:*\n${formData.desafio}`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message.trim( ))}`;
-
-    // Abre o WhatsApp em uma nova aba
     window.open(whatsappUrl, '_blank');
   };
 
@@ -118,12 +93,12 @@ ${formData.desafio}
                 <div className="form-group">
                   <label htmlFor="cenario">Qual cenário de crescimento melhor descreve seu momento?</label>
                   <div className="input-wrapper select-wrapper">
-                    <ChevronDown className="input-icon select-arrow" />
                     <select id="cenario" name="cenario" value={formData.cenario} onChange={handleChange} required>
                       <option>Preciso validar uma nova oferta ou mercado.</option>
                       <option>Preciso escalar um produto já validado.</option>
                       <option>Preciso de liderança estratégica para a próxima fase.</option>
                     </select>
+                    <ChevronDown className="select-arrow-icon" />
                   </div>
                 </div>
 
@@ -135,7 +110,8 @@ ${formData.desafio}
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-large form-submit-btn">
-                  Agendar Sessão de Diagnóstico
+                  <span>Agendar Sessão de Diagnóstico</span>
+                  <ArrowRight size={20} />
                 </button>
               </form>
             </div>
@@ -151,23 +127,17 @@ ${formData.desafio}
           <h2 className="section-title">Nosso Processo de Ativação</h2>
           <div className="process-steps-container">
             <div className="process-step">
-              <div className="process-step-icon-wrapper">
-                <CheckCircle className="process-step-icon" />
-              </div>
+              <div className="process-step-icon-wrapper"><CheckCircle className="process-step-icon" /></div>
               <h3>Passo 1: Submissão e Análise</h3>
               <p>Após receber suas informações, nosso time fará uma análise preliminar para entender o contexto do seu desafio.</p>
             </div>
             <div className="process-step">
-              <div className="process-step-icon-wrapper">
-                <Calendar className="process-step-icon" />
-              </div>
+              <div className="process-step-icon-wrapper"><Calendar className="process-step-icon" /></div>
               <h3>Passo 2: Agendamento</h3>
               <p>Um de nossos Arquitetos de Receita entrará em contato por e-mail para agendar a Sessão de Diagnóstico em um horário conveniente.</p>
             </div>
             <div className="process-step">
-              <div className="process-step-icon-wrapper">
-                <Search className="process-step-icon" />
-              </div>
+              <div className="process-step-icon-wrapper"><Search className="process-step-icon" /></div>
               <h3>Passo 3: A Sessão</h3>
               <p>Uma reunião de 45 minutos, focada e sem compromisso, para aprofundar no seu desafio e apresentar uma tese inicial de solução.</p>
             </div>
