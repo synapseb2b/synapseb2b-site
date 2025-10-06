@@ -555,3 +555,14 @@ body {
 }
 
 /* ==========================================================================
+   13. AJUSTES DE RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- Ajustes Gerais --- */
+  .container {
+    padding: 0 1.5rem; /* Reduz o padding lateral em telas menores */
+  }
+
+  /* 1 & 2: Correção de Padding da Hero e Tamanho da Fonte H1 */
+  .hero-section, .section-with
