@@ -557,14 +557,9 @@ body {
 /* ==========================================================================
    13. AJUSTES DE RESPONSIVIDADE
    ========================================================================== */
-
 @media (max-width: 768px) {
   /* --- Ajustes Gerais --- */
-  .container {
-    padding: 0 1.5rem;
-  }
-
-  .nav-container {
+  .container, .nav-container {
     padding: 0 1.5rem;
   }
 
@@ -573,13 +568,10 @@ body {
     padding-top: 100px; 
     padding-bottom: 60px;
   }
-
-  .hero-headline
-, .section-title, .final-cta-title {
+  .hero-headline, .section-title, .final-cta-title {
     font-size: 2.2rem; 
     line-height: 1.3;
   }
-  
   .page-hero-padding {
     padding-top: 0;
     padding-bottom: 0;
@@ -591,21 +583,17 @@ body {
     gap: 2.5rem;
     text-align: center;
   }
-
   .footer-column {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .footer-column .footer-title {
     margin-bottom: 1rem;
   }
-
   .footer-contact-link {
     justify-content: center;
   }
-
   .footer-column p {
     max-width: 320px;
   }
@@ -614,7 +602,6 @@ body {
   .engineering-block {
     flex-direction: column;
   }
-
   .engineering-divider {
     display: none;
   }
@@ -623,8 +610,18 @@ body {
   .icp-tabs-container {
     flex-direction: column;
   }
-
   .transformation-case-card {
     padding: 2rem;
+  }
+
+  /* --- Centralização de Texto na Página Engenharia --- */
+  .transformation-case-card, .scenario-card {
+    text-align: center;
+  }
+  .case-section {
+    text-align: center;
+  }
+  .case-section h4 {
+    justify-content: center; /* Centraliza o ícone e o título */
   }
 }
