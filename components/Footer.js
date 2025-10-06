@@ -1,4 +1,4 @@
-// components/Footer.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO)
+// components/Footer.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO DE 4 ITENS)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -50,7 +50,8 @@ export default function Footer() {
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/engenharia">A Engenharia</Link></li>
-              <li><Link href="/contato">A Synapse</Link></li>
+              <li><Link href="/a-synapse">A Synapse</Link></li>
+              <li><Link href="/contato">Ativar Engenharia</Link></li>
             </ul>
           </div>
 
