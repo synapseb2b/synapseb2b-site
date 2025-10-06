@@ -624,3 +624,179 @@ body {
     justify-content: center; /* Centraliza o ícone e o título do h4 */
   }
 }
+/* ==========================================================================
+   14. ESTILOS DA PÁGINA DE CONTATO (ATIVAR ENGENHARIA)
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr; /* Proporção mais equilibrada */
+  gap: 5rem; /* Mais espaço entre as colunas */
+  align-items: start;
+}
+
+.contact-column-text {
+  padding-top: 1rem; /* Alinha o topo do texto com o formulário */
+}
+
+.contact-column-text .contact-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+}
+
+.contact-column-text .contact-lead {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-column-text .contact-support-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.contact-column-form {
+  background-color: var(--color-section-bg);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+}
+
+.contact-form .form-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.75rem; /* Mais espaço entre os campos */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text);
+  opacity: 0.5;
+  pointer-events: none; /* Garante que o ícone não bloqueie o clique */
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px 16px 16px 52px; /* Aumenta o padding para o ícone */
+  color: var(--color-heading);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper textarea {
+  padding: 16px 20px; /* Textarea não precisa de espaço para ícone */
+  resize: vertical;
+  min-height: 120px;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 150, 132, 0.3);
+}
+
+.input-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding-right: 40px; /* Espaço para a seta */
+}
+
+.select-wrapper .select-arrow-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 1.5rem; /* Mais espaço acima do botão */
+}
+
+.process-steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.process-step {
+  text-align: center;
+}
+
+.process-step-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 150, 132, 0.15), transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-step-icon {
+  color: var(--color-primary);
+  width: 32px;
+  height: 32px;
+}
+
+.process-step h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  color: var(--color-heading);
+  margin-bottom: 0.75rem;
+}
+
+/* --- Ajustes de Responsividade para a Página de Contato --- */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .contact-column-text {
+    text-align: center;
+    padding-top: 0;
+  }
+  .contact-column-form {
+    padding: 2rem;
+  }
+}
