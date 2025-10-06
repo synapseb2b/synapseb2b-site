@@ -545,3 +545,46 @@ body {
 @keyframes pulse-whatsapp {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.
+
+                             /* ==========================================================================
+   13. CORREÇÕES FINAIS DE RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- Ajustes Gerais --- */
+  .container {
+    padding: 0 1.5rem; /* Reduz o padding lateral em telas menores */
+  }
+
+  .section-title {
+    font-size: 2.5rem; /* Reduz o tamanho do título das seções */
+  }
+
+  .hero-headline {
+    font-size: 2.8rem; /* Reduz o tamanho do título principal */
+  }
+
+  /* --- Correção do Rodapé --- */
+  .footer-content {
+    grid-template-columns: 1fr; /* Faz as colunas do rodapé ficarem uma sobre a outra */
+    gap: 2.5rem;
+    text-align: center; /* Centraliza o conteúdo das colunas */
+  }
+
+  .footer-column .footer-title {
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact-link {
+    justify-content: center; /* Centraliza os ícones de contato */
+  }
+
+  /* --- Ajuste Bloco de Engenharia --- */
+  .engineering-block {
+    flex-direction: column; /* Empilha as colunas */
+  }
+
+  .engineering-divider {
+    display: none; /* Esconde o divisor vertical */
+  }
+}
