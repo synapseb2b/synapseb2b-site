@@ -1,9 +1,9 @@
-// components/Navbar.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO)
+// components/Navbar.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO DE 4 ITENS)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Home, Zap, Building, Mail, X } from 'lucide-react'; // Ícones atualizados
+import { Home, Zap, Building, Mail, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,9 +50,10 @@ export default function Navbar() {
           <ul className="nav-menu">
             <li><Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
             <li><Link href="/engenharia" className={`nav-link ${router.pathname === '/engenharia' ? 'active' : ''}`}>A Engenharia</Link></li>
+            <li><Link href="/a-synapse" className={`nav-link ${router.pathname === '/a-synapse' ? 'active' : ''}`}>A Synapse</Link></li>
             <li>
               <Link href="/contato" legacyBehavior>
-                <a className="btn btn-nav-cta">A Synapse</a>
+                <a className="btn btn-nav-cta">Ativar Engenharia</a>
               </Link>
             </li>
           </ul>
@@ -77,11 +78,11 @@ export default function Navbar() {
         <ul className="mobile-menu-links">
           <li><Link href="/" onClick={handleLinkClick}><Home /><span>Home</span></Link></li>
           <li><Link href="/engenharia" onClick={handleLinkClick}><Zap /><span>A Engenharia</span></Link></li>
-          <li><Link href="/contato" onClick={handleLinkClick}><Building /><span>A Synapse</span></Link></li>
+          <li><Link href="/a-synapse" onClick={handleLinkClick}><Building /><span>A Synapse</span></Link></li>
         </ul>
         <div className="mobile-menu-footer">
            <Link href="/contato" onClick={handleLinkClick} className="btn btn-primary btn-large">
-            <Mail /><span>Agende seu Diagnóstico</span>
+            <Mail /><span>Ativar Engenharia</span>
           </Link>
         </div>
       </div>
