@@ -7,13 +7,13 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Synapse B2B - Framework GTM Ignition™</title>
+        <title>Synapse B2B | Engenharia de Receita para Escalar Negócios B2B™</title>
         <meta name="description" content="Transformamos expertise técnica em receita previsível para empresas B2B de alta complexidade" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon/favicon.ico" />
         
         {/* Meta tags para SEO */}
-        <meta property="og:title" content="Synapse B2B - Framework GTM Ignition™" />
+        <meta property="og:title" content="Synapse B2B | Engenharia de Receita para Escalar Negócios B2B" />
         <meta property="og:description" content="Transformamos expertise técnica em receita previsível para empresas B2B de alta complexidade" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
