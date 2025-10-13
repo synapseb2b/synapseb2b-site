@@ -848,13 +848,15 @@ body {
   }
 }
 
-/* Estilos para o texto rotativo na Hero H1 */
+/* ==========================================================================
+   ESTILOS PARA TEXTO ROTATIVO NA HERO H1 (Otimizado)
+   ========================================================================== */
 
 .rotating-text {
   display: inline-block;
   position: relative;
   font-weight: 700;
-  color: var(--primary-color, #0066cc); /* Ajuste conforme a cor primária da Synapse */
+  color: var(--color-accent); /* Usando a cor accent da paleta Synapse (#38c5b1) */
   animation: fadeInOut 300ms ease-in-out;
   cursor: default;
   transition: opacity 300ms ease-in-out;
@@ -888,5 +890,4 @@ body {
     display: inline;
   }
 }
-
 
