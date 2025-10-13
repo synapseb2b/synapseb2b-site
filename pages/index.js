@@ -51,33 +51,81 @@ export default function HomePage() {
         <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
       </Head>
 
-      {/* Bloco 1: Seção Hero */}
-      <section className="hero-section">
-        <div className="hero-video-background">
-          <video autoPlay muted loop playsInline className="hero-video">
-            <source src="/video/video_home.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="container hero-content text-center page-hero-padding">
-          <div className="reveal-up">
-            <h1 className="hero-headline">O mercado não compra o que não entende.</h1>
-            <p className="hero-subheadline">
-              Empresas técnicas dominam a complexidade do que fazem, mas falham em fazer o mercado perceber seu valor.
-            </p>
-            <div className="hero-ctas">
-              <Link href="/contato" className="btn btn-primary">
-                <span>Inicie seu Diagnóstico de Receita</span>
-                <ArrowRight size={20} />
-              </Link>
-              <Link href="#crescimento" className="btn btn-secondary">
-                <span>Descubra as Alavancas de Crescimento</span>
-                <Eye size={20} />
-              </Link>
-            </div>
+// Seção Hero com H1 rotativa
+// Adicione este código no lugar da seção hero existente
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { ArrowRight, Eye } from 'lucide-react';
+
+// Componente de texto rotativo
+const RotatingText = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  
+  const variations = [
+    'entende',
+    'mensura',
+    'gera valor',
+    'resolve problema',
+    'escala',
+    'projeta retorno'
+  ];
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % variations.length);
+    }, 3500); // 3.5 segundos por variação
+
+    return () => clearInterval(interval);
+  }, [isPaused, variations.length]);
+
+  return (
+    <h1 className="hero-headline">
+      O mercado compra o que{' '}
+      <span 
+        className="rotating-text"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {variations[currentIndex]}
+      </span>
+      .
+    </h1>
+  );
+};
+
+// Seção Hero completa
+export default function HeroSection() {
+  return (
+    <section className="hero-section">
+      <div className="hero-video-background">
+        <video autoPlay muted loop playsInline className="hero-video">
+          <source src="/video/video_home.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-overlay"></div>
+      </div>
+      <div className="container hero-content text-center page-hero-padding">
+        <div className="reveal-up">
+          <RotatingText />
+          <p className="hero-subheadline">
+            Empresas técnicas dominam a complexidade do que fazem, mas falham em fazer o mercado perceber seu valor.
+          </p>
+          <div className="hero-ctas">
+            <Link href="/contato" className="btn btn-primary">
+              <span>Inicie seu Diagnóstico de Receita</span>
+              <ArrowRight size={20} />
+            </Link>
+            <Link href="#crescimento" className="btn btn-secondary">
+              <span>Descubra as Alavancas de Crescimento</span>
+              <Eye size={20} />
+            </Link>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <div className="section-divider-glow"></div>
 
