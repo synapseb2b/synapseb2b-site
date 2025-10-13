@@ -849,7 +849,10 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS PARA TEXTO ROTATIVO NA HERO H1 (Otimizado)
+   ESTILOS PARA TEXTO ROTATIVO NA HERO H1 (CORRIGIDO)
+   
+   IMPORTANTE: Este CSS corrige o problema de invisibilidade causado pela
+   propriedade -webkit-text-fill-color: transparent aplicada ao .hero-headline
    ========================================================================== */
 
 .rotating-text {
@@ -860,6 +863,12 @@ body {
   animation: fadeInOut 300ms ease-in-out;
   cursor: default;
   transition: opacity 300ms ease-in-out;
+  
+  /* CORREÇÃO: Sobrescrever as propriedades herdadas do .hero-headline */
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
 }
 
 /* Animação de fade para transição suave */
@@ -890,4 +899,3 @@ body {
     display: inline;
   }
 }
-
