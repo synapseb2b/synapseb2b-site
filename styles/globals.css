@@ -847,3 +847,46 @@ body {
     font-size: 1.2rem;
   }
 }
+
+/* Estilos para o texto rotativo na Hero H1 */
+
+.rotating-text {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  color: var(--primary-color, #0066cc); /* Ajuste conforme a cor primária da Synapse */
+  animation: fadeInOut 300ms ease-in-out;
+  cursor: default;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Animação de fade para transição suave */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito de pausa no hover - opcional para destacar interatividade */
+.rotating-text:hover {
+  opacity: 0.9;
+}
+
+/* Garantir que o espaço não mude durante a transição */
+.hero-headline {
+  min-height: 1.2em; /* Ajuste conforme necessário */
+}
+
+/* Responsividade - ajustar tamanho em telas menores se necessário */
+@media (max-width: 768px) {
+  .rotating-text {
+    display: inline;
+  }
+}
+
+
