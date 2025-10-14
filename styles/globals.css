@@ -849,20 +849,46 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS PARA TEXTO ROTATIVO NA HERO H1 (CORRIGIDO)
+   ESTILOS PARA TEXTO ROTATIVO NA HERO H1 (DUAS LINHAS - ATUALIZADO)
    
-   IMPORTANTE: Este CSS corrige o problema de invisibilidade causado pela
-   propriedade -webkit-text-fill-color: transparent aplicada ao .hero-headline
+   Este CSS suporta o layout de duas linhas:
+   - Linha 1: "O mercado compra o que" (fixa)
+   - Linha 2: Frases rotativas em loop
    ========================================================================== */
 
+/* Layout de duas linhas para o hero-headline */
+.hero-headline-two-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Estilo para a linha fixa */
+.hero-headline-fixed {
+  display: block;
+  /* Opcional: se quiser que a linha fixa tenha o mesmo efeito de gradiente do .hero-headline */
+  /* 
+  background: linear-gradient(to right, var(--color-heading) 40%, var(--color-accent) 50%, var(--color-heading) 60%);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-effect 5s linear infinite;
+  */
+}
+
+/* Estilo para o texto rotativo (segunda linha) */
 .rotating-text {
-  display: inline-block;
+  display: block;
   position: relative;
   font-weight: 700;
   color: var(--color-accent); /* Usando a cor accent da paleta Synapse (#38c5b1) */
   animation: fadeInOut 300ms ease-in-out;
   cursor: default;
   transition: opacity 300ms ease-in-out;
+  min-height: 1.2em; /* Garante espaço consistente para evitar saltos */
   
   /* CORREÇÃO: Sobrescrever as propriedades herdadas do .hero-headline */
   background: none !important;
@@ -888,14 +914,13 @@ body {
   opacity: 0.9;
 }
 
-/* Garantir que o espaço não mude durante a transição */
-.hero-headline {
-  min-height: 1.2em; /* Ajuste conforme necessário */
-}
-
-/* Responsividade - ajustar tamanho em telas menores se necessário */
+/* Responsividade - ajustar para dispositivos móveis */
 @media (max-width: 768px) {
+  .hero-headline-two-lines {
+    gap: 0.3rem;
+  }
+  
   .rotating-text {
-    display: inline;
+    font-size: 0.9em; /* Ajustar tamanho se necessário */
   }
 }
