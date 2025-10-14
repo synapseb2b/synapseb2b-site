@@ -6,17 +6,17 @@ import { useState, useEffect } from 'react';
 // Ícones atualizados para a nova seção
 import { ArrowRight, Eye, ChevronDown, TrendingDown, Tag, Clock, Filter, Compass, Wrench } from 'lucide-react';
 
-// --- Componente de Texto Rotativo ---
+// --- Componente de Texto Rotativo (ATUALIZADO) ---
 const RotatingText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   
   const variations = [
-    'entende',
-    'mensura',
+    'realmente entende',
+    'consegue mensurar',
     'gera valor',
-    'resolve problema',
-    'escala',
+    'resolve o problema',
+    'gera escala',
     'projeta retorno'
   ];
 
@@ -31,8 +31,8 @@ const RotatingText = () => {
   }, [isPaused, variations.length]);
 
   return (
-    <h1 className="hero-headline">
-      O mercado compra o que{' '}
+    <h1 className="hero-headline hero-headline-two-lines">
+      <span className="hero-headline-fixed">O mercado compra o que</span>
       <span 
         className="rotating-text"
         onMouseEnter={() => setIsPaused(true)}
@@ -40,7 +40,6 @@ const RotatingText = () => {
       >
         {variations[currentIndex]}
       </span>
-      .
     </h1>
   );
 };
