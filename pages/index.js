@@ -123,12 +123,12 @@ export default function HomePage() {
 <section id="pilares" className="section-solid">
   <div className="container text-center reveal-up">
     
-    {/* 2.a: Título com quebras de linha controladas */}
-    <h2 className="section-title">
-      Receita previsível não é acidente.
-      <br className="desktop-break" />
-      {' '}É engenharia.
-    </h2>
+{/* 2.a: Título com quebras de linha controladas (VERSÃO CORRIGIDA E ROBUSTA) */}
+<h2 className="section-title">
+  Receita previsível não é acidente.
+  <br className="desktop-break" />
+  {' '}<span className="no-wrap-text">É engenharia.</span>
+</h2>
     
     <p className="pillar-subtitle">Quatro pilares integrados. Um resultado: você cresce sem depender de sorte.</p>
     
