@@ -347,6 +347,29 @@ body {
 .solution-features li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
 .solution-features svg { color: var(--color-primary); flex-shrink: 0; }
 
+/* --- Estilos da Seção de Cases de Sucesso --- */
+.case-studies-container { max-width: 900px; margin: 3rem auto 0; }
+.case-tabs-nav { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; border: 1px solid var(--color-border); border-radius: 12px; padding: 0.5rem; background-color: rgba(10, 10, 10, 0.4); }
+.case-tab { flex: 1; padding: 1rem; background: transparent; border: none; color: var(--color-text); font-size: 1rem; font-weight: 600; cursor: pointer; border-radius: 8px; transition: background-color 0.3s, color 0.3s; white-space: nowrap; }
+.case-tab.active { background-color: var(--color-primary); color: var(--color-heading); }
+.case-content-container { position: relative; }
+.case-content { background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 16px; padding: 3rem; text-align: left; animation: fadeIn 0.5s ease-out; }
+.case-type { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; }
+.case-section-detail { margin-bottom: 2rem; }
+.case-section-detail:last-of-type { margin-bottom: 2.5rem; }
+.case-section-detail h4 { display: flex; align-items: center; gap: 0.75rem; font-size: 1.2rem; color: var(--color-heading); margin-bottom: 0.75rem; }
+.case-section-detail p { line-height: 1.8; }
+.case-cta { margin-top: 1rem; }
+.case-conclusion { margin: 5rem auto 0; padding: 2.5rem; max-width: 800px; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); }
+.case-conclusion p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; }
+.case-conclusion p:last-child { margin-bottom: 0; }
+.case-conclusion strong { color: var(--color-heading); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ==========================================================================
    9. ESTILOS ESPECÍFICOS DE PÁGINAS
    ========================================================================== */
@@ -505,6 +528,11 @@ body {
   .mobile-menu-links a:hover { color: var(--color-primary); }
   .mobile-menu-footer { padding-top: 2rem; border-top: 1px solid var(--color-border); }
   .mobile-menu-footer .btn { width: 100%; }
+   
+   /* --- Ajustes da Seção de Cases --- */
+.case-tabs-nav { flex-direction: column; }
+.case-content { padding: 2rem; }
+.case-conclusion { padding: 2rem; }
 }
 
 /* ==========================================================================
