@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 // Ícones atualizados para a nova seção
-import { ArrowRight, Eye, ChevronDown, TrendingDown, Tag, Clock, Filter, Compass, Wrench } from 'lucide-react';
+import { ArrowRight, Eye, ChevronDown, ClipboardList, Settings2, Zap, Compass, Wrench } from 'lucide-react'
 import { BrainCircuit, Phone, Timer, Target } from 'lucide-react';
 
 // --- Componente de Texto Rotativo (ATUALIZADO) ---
