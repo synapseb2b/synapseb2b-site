@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 // Ícones atualizados para a nova seção
-import { ArrowRight, Eye, ChevronDown, ClipboardList, Settings2, Zap, Compass, Wrench } from 'lucide-react'
+import { ArrowRight, Eye, ChevronDown, ClipboardList, Settings2, Zap, Lightbulb, HardHat, Rocket, Map, Briefcase, Users, MonitorSmartphone, Wrench, CheckCircle2 } from 'lucide-react';
 import { BrainCircuit, Phone, Timer, Target } from 'lucide-react';
 
 // --- Componente de Texto Rotativo (ATUALIZADO) ---
@@ -226,9 +226,9 @@ export default function HomePage() {
               <h4><Zap size={18} /> Resultado tangível</h4>
               <p>"De oferta confusa para tese de investimento clara. Narrativa que hospitais entendem em 60 segundos. Fundação estratégica pronta para escalar com confiança."</p>
             </div>
-            <Link href="#" className="btn btn-secondary case-cta">
-              Ver case completo <ArrowRight size={16} />
-            </Link>
+           <Link href="/engenharia" className="btn btn-secondary case-cta">
+             Ver case completo <ArrowRight size={16} />
+           </Link>
           </div>
         )}
 
@@ -248,9 +248,9 @@ export default function HomePage() {
               <h4><Zap size={18} /> Resultado tangível</h4>
               <p>"De invisível para encontrável. De receita reativa para motor de geração de demanda estruturado. Sistema validado, documentado e pronto para contratar time e escalar."</p>
             </div>
-            <Link href="#" className="btn btn-secondary case-cta">
-              Ver case completo <ArrowRight size={16} />
-            </Link>
+           <Link href="/engenharia" className="btn btn-secondary case-cta">
+             Ver case completo <ArrowRight size={16} />
+           </Link>
           </div>
         )}
 
@@ -270,9 +270,9 @@ export default function HomePage() {
               <h4><Zap size={18} /> Resultado tangível</h4>
               <p>"De caos relacional para inteligência de conexão. Matching que acontece em segundos, baseado em dados estruturados. Escalável para qualquer ecossistema que precisa organizar relacionamentos estratégicos."</p>
             </div>
-            <Link href="#" className="btn btn-secondary case-cta">
-              Ver ferramenta <ArrowRight size={16} />
-            </Link>
+           <Link href="/engenharia" className="btn btn-secondary case-cta">
+             Ver ferramenta <ArrowRight size={16} />
+           </Link>
           </div>
         )}
       </div>
@@ -292,25 +292,144 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 4: Como Funciona - O Cortex GTM™ */}
-      <section id="como-funciona" className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Nosso Sistema: O Cortex GTM™</h2>
-          <p className="lead-text">O Cortex GTM™ é o nosso sistema de diagnóstico e arquitetura estratégica, projetado para decodificar a genialidade técnica de um negócio e traduzi-la em uma Engenharia de Receita.</p>
-          <p className="lead-text">Ele opera em três fases que refletem o que nos diferencia: o nosso olhar.</p>
-          <div className="accordion-container">
-            <AccordionItem title="Um Olhar de Fora para Dentro" isOpen={openAccordion === 0} onClick={() => setOpenAccordion(openAccordion === 0 ? -1 : 0)}>
-              <p>Nosso ponto de partida não é o seu produto, mas o problema crítico e o impacto que a falta de clareza gera no negócio do seu cliente. Diagnosticamos com precisão onde o valor real da sua solução se perde na percepção do mercado, transformando complexidade em clareza.</p>
-            </AccordionItem>
-            <AccordionItem title="A Lógica por Trás da Decisão" isOpen={openAccordion === 1} onClick={() => setOpenAccordion(openAccordion === 1 ? -1 : 1)}>
-              <p>Com o diagnóstico em mãos, arquitetamos a narrativa e o posicionamento que conectam sua genialidade a uma decisão de compra estratégica. Não criamos marketing; construímos o argumento de negócio que torna a escolha pela sua empresa uma consequência lógica e defensável.</p>
-            </AccordionItem>
-            <AccordionItem title="O Sistema que Gera Tração" isOpen={openAccordion === 2} onClick={() => setOpenAccordion(openAccordion === 2 ? -1 : 2)}>
-              <p>Traduzimos a arquitetura estratégica em um sistema de aceleração. Equipamos seu time com os ativos e a disciplina necessários para articular o novo valor, criando um motor de receita previsível que escala com inteligência.</p>
-            </AccordionItem>
+{/* Bloco 4: O Que Construímos Para Você */}
+<section id="servicos" className="section-solid">
+  <div className="container reveal-up">
+    <div className="text-center">
+      <h2 className="section-title">O Que Construímos Para Você</h2>
+      <p className="lead-text">Duas frentes integradas. Múltiplas formas de entrada.</p>
+    </div>
+
+    {/* Grid de Duas Colunas para as Frentes de Serviço */}
+    <div className="services-grid">
+
+      {/* COLUNA 1: INTELIGÊNCIA & ESTRATÉGIA */}
+      <div className="services-column">
+        <div className="column-header">
+          <Lightbulb className="icon" size={32} />
+          <h3>Inteligência & Estratégia</h3>
+        </div>
+        <p className="column-intro">Onde definimos a arquitetura do seu crescimento antes de gastar um real em execução.</p>
+
+        {/* Card de Serviço: Sprint de Validação */}
+        <div className="service-card">
+          <h4><Rocket size={18} /> Sprint de Validação Comercial</h4>
+          <p>Valide demanda real antes de contratar time comercial. Testamos oferta, ICP e canais em 30 dias. Você decide escalar baseado em dados de campo, não intuição ou esperança.</p>
+          <button className="service-card-toggle" onClick={() => setOpenAccordion(openAccordion === 'sprint' ? null : 'sprint')}>
+            <span>Quando contratar</span>
+            <ChevronDown className={`accordion-icon ${openAccordion === 'sprint' ? 'open' : ''}`} />
+          </button>
+          <div className={`service-card-details ${openAccordion === 'sprint' ? 'open' : ''}`}>
+            <ul>
+              <li><CheckCircle2 size={16} /> Produto novo entrando no mercado</li>
+              <li><CheckCircle2 size={16} /> Pivô de modelo de negócio</li>
+              <li><CheckCircle2 size={16} /> Expansão para novo segmento ou geografia</li>
+              <li><CheckCircle2 size={16} /> Dúvida se há demanda pagante real</li>
+            </ul>
           </div>
         </div>
-      </section>
+
+        {/* Card de Serviço: Go-To-Market Completo */}
+        <div className="service-card">
+          <h4><Map size={18} /> Go-To-Market Completo</h4>
+          <p>Arquitetura do zero: posicionamento, ICP, proposta de valor, canais de aquisição, modelo de vendas, pricing, estratégia de retenção. Blueprint que guia cada decisão comercial dos próximos 18 meses.</p>
+          <button className="service-card-toggle" onClick={() => setOpenAccordion(openAccordion === 'gtm' ? null : 'gtm')}>
+            <span>Quando contratar</span>
+            <ChevronDown className={`accordion-icon ${openAccordion === 'gtm' ? 'open' : ''}`} />
+          </button>
+          <div className={`service-card-details ${openAccordion === 'gtm' ? 'open' : ''}`}>
+            <ul>
+              <li><CheckCircle2 size={16} /> Crescimento é errático com produto validado</li>
+              <li><CheckCircle2 size={16} /> Sua narrativa não está clara internamente</li>
+              <li><CheckCircle2 size={16} /> Time vende explicando features, não problemas</li>
+              <li><CheckCircle2 size={16} /> CAC alto, ciclo longo, conversão baixa</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Card de Serviço: CRO as a Service */}
+        <div className="service-card">
+          <h4><Briefcase size={18} /> Diretoria de Receita (CRO as a Service)</h4>
+          <p>Liderança C-level fracionada. Injetamos inteligência sênior na sua operação sem contrato permanente. Executamos por 90-120 dias, entregamos o playbook validado. Mínimo fixo + performance sobre receita gerada.</p>
+           <button className="service-card-toggle" onClick={() => setOpenAccordion(openAccordion === 'cro' ? null : 'cro')}>
+            <span>Quando contratar</span>
+            <ChevronDown className={`accordion-icon ${openAccordion === 'cro' ? 'open' : ''}`} />
+          </button>
+          <div className={`service-card-details ${openAccordion === 'cro' ? 'open' : ''}`}>
+             <ul>
+              <li><CheckCircle2 size={16} /> CEO está sobrecarregado fazendo comercial</li>
+              <li><CheckCircle2 size={16} /> Time de vendas opera sem liderança estratégica</li>
+              <li><CheckCircle2 size={16} /> Precisa validar processo antes de contratar gerente</li>
+              <li><CheckCircle2 size={16} /> Receita travou e você não sabe qual alavanca puxar</li>
+            </ul>
+          </div>
+        </div>
+        
+        {/* Card de Serviço: Advisory Board */}
+        <div className="service-card">
+          <h4><Users size={18} /> Advisory Board</h4>
+          <p>Decisões estratégicas de alto impacto exigem visão externa de quem já executou. Atuamos como conselho sob demanda para: novos mercados, pivôs, preparação para investimento, parcerias estratégicas.</p>
+           <button className="service-card-toggle" onClick={() => setOpenAccordion(openAccordion === 'advisory' ? null : 'advisory')}>
+            <span>Quando contratar</span>
+            <ChevronDown className={`accordion-icon ${openAccordion === 'advisory' ? 'open' : ''}`} />
+          </button>
+          <div className={`service-card-details ${openAccordion === 'advisory' ? 'open' : ''}`}>
+             <ul>
+              <li><CheckCircle2 size={16} /> Decisão com risco alto e impacto irreversível</li>
+              <li><CheckCircle2 size={16} /> Falta referência interna para validar hipótese</li>
+              <li><CheckCircle2 size={16} /> Precisa de sparring qualificado antes de comprometer recurso</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      {/* COLUNA 2: CONSTRUÇÃO DE ATIVOS DIGITAIS */}
+      <div className="services-column">
+        <div className="column-header">
+          <HardHat className="icon" size={32} />
+          <h3>Construção de Ativos Digitais</h3>
+        </div>
+        <p className="column-intro">Onde transformamos estratégia em ferramentas que geram receita enquanto você dorme.</p>
+
+        {/* Card de Serviço: Plataformas de Aceleração */}
+        <div className="service-card">
+          <h4><MonitorSmartphone size={18} /> Plataformas de Aceleração de Receita</h4>
+          <p>Não construímos sites. Construímos plataformas digitais estratégicas: 30% institucional, 70% engenharia de receita. Seu ativo digital educa, nutre e converte 24/7.</p>
+          <div className="service-card-examples">
+            <h5>Exemplos tangíveis:</h5>
+            <p><a href="https://exclusivaengenharias.com" target="_blank" rel="noopener noreferrer">exclusivaengenharias.com</a>, <a href="https://versaoholistica.com.br" target="_blank" rel="noopener noreferrer">versaoholistica.com.br</a></p>
+            <h5>O que inclui:</h5>
+            <p>Arquitetura de conversão, Copywriting, Jornadas por perfil, Integração com CRM.</p>
+          </div>
+        </div>
+        
+        {/* Card de Serviço: Ferramentas Estratégicas */}
+        <div className="service-card">
+          <h4><Wrench size={18} /> Ferramentas Estratégicas de Conversão</h4>
+          <p>Construímos ativos proprietários que se tornam o centro da sua argumentação de valor: calculadoras de ROI, simuladores, matchmakers, diagnósticos. Ferramentas que provam sua autoridade e aceleram decisão.</p>
+          <div className="service-card-examples">
+             <h5>Exemplos tangíveis:</h5>
+             <p>Synapse B2B Match Maker, Simulador de Orçamento, Cortex GTM™, MathPop</p>
+          </div>
+           <button className="service-card-toggle" onClick={() => setOpenAccordion(openAccordion === 'tools' ? null : 'tools')}>
+            <span>Quando contratar</span>
+            <ChevronDown className={`accordion-icon ${openAccordion === 'tools' ? 'open' : ''}`} />
+          </button>
+          <div className={`service-card-details ${openAccordion === 'tools' ? 'open' : ''}`}>
+             <ul>
+              <li><CheckCircle2 size={16} /> Venda depende de apresentação ao vivo</li>
+              <li><CheckCircle2 size={16} /> Cliente precisa "sentir" o valor antes de comprar</li>
+              <li><CheckCircle2 size={16} /> Ciclo de vendas é longo e complexo</li>
+              <li><CheckCircle2 size={16} /> Quer escalar argumento de vendas sem escalar time</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       <div className="section-divider-glow"></div>
 
