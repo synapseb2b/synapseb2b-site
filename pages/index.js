@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 // Ícones atualizados para a nova seção
 import { ArrowRight, Eye, ChevronDown, TrendingDown, Tag, Clock, Filter, Compass, Wrench } from 'lucide-react';
+import { BrainCircuit, Phone, Timer, Target } from 'lucid-react';
 
 // --- Componente de Texto Rotativo (ATUALIZADO) ---
 const RotatingText = () => {
@@ -100,15 +101,15 @@ export default function HomePage() {
           <div className="reveal-up">
             <RotatingText />
             <p className="hero-subheadline">
-              Empresas técnicas dominam a complexidade do que fazem, mas falham em fazer o mercado perceber seu valor.
+              Você domina a entrega. Nós dominamos como transformar isso em receita previsível.
             </p>
             <div className="hero-ctas">
               <Link href="/contato" className="btn btn-primary">
-                <span>Inicie seu Diagnóstico de Receita</span>
+                <span>Falar com a Synapse B2B</span>
                 <ArrowRight size={20} />
               </Link>
               <Link href="#crescimento" className="btn btn-secondary">
-                <span>Descubra as Alavancas de Crescimento</span>
+                <span>Como Trabalhamos</span>
                 <Eye size={20} />
               </Link>
             </div>
@@ -118,31 +119,56 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 2: O Problema que Resolvemos */}
-      <section id="problema" className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Sua empresa tem potencial. Nós projetamos a receita.</h2>
-          <p className="lead-text">Muitas empresas B2B possuem uma genialidade técnica inquestionável, mas veem esse potencial se dissipar entre a complexidade do produto e a percepção do cliente. A causa não é a solução, mas a ausência de uma arquitetura de clareza que conecte valor técnico a uma decisão de compra estratégica. Os sintomas são:</p>
-          <div className="symptom-grid">
-            <div className="symptom-card">
-              <TrendingDown className="card-icon" />
-              <p>Sua solução é objetivamente superior, mas perde para concorrentes medianos.</p>
-            </div>
-            <div className="symptom-card">
-              <Tag className="card-icon" />
-              <p>Cada proposta é uma batalha de preços, não de valor.</p>
-            </div>
-            <div className="symptom-card">
-              <Clock className="card-icon" />
-              <p>O ciclo de vendas se arrasta porque o cliente "não entende" a profundidade da solução.</p>
-            </div>
-            <div className="symptom-card">
-              <Filter className="card-icon" />
-              <p>O marketing queima caixa gerando volume, em vez de qualidade.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* Bloco 2: Os Pilares da Engenharia de Receita */}
+<section id="pilares" className="section-solid">
+  <div className="container text-center reveal-up">
+    <h2 className="section-title">Receita previsível não é acidente. É engenharia.</h2>
+    
+    {/* NOVO SUBTÍTULO */}
+    <p className="pillar-subtitle">Quatro pilares integrados. Um resultado: você cresce sem depender de sorte.</p>
+    
+    {/* TEXTO INTRODUTÓRIO ATUALIZADO */}
+    <p className="lead-text">
+      A maioria das empresas B2B opera em modo reativo. Vendem quando conseguem. Escalam quando sobra recurso. Pivotam quando o mercado força.
+      <br />Isso não é estratégia. É sobrevivência.
+      <br />Receita previsível exige o oposto: clareza antes de execução. Sistema antes de esforço.
+      <br />Nosso trabalho se organiza em quatro pilares que se alimentam:
+    </p>
+    
+    {/* GRID DOS PILARES (ANTIGO SYMPTOM-GRID) */}
+    <div className="pillar-grid">
+      
+      {/* Pilar 1: Clareza de Valor */}
+      <div className="pillar-card">
+        <BrainCircuit className="card-icon" />
+        <h3 className="pillar-card-title">Clareza de Valor</h3>
+        <p>Traduzimos complexidade técnica em narrativa de decisão fundamentadas em neurociência. Seu cliente ideal precisa entender em 30 segundos: o que você resolve, por que agora, por que você.</p>
+      </div>
+      
+      {/* Pilar 2: Sistema Comercial */}
+      <div className="pillar-card">
+        <Phone className="card-icon" />
+        <h3 className="pillar-card-title">Sistema Comercial</h3>
+        <p>Construímos o motor completo: da estratégia de Go-To-Market à arquitetura do processo comercial. Você para de depender de networking heroico e passa a gerar pipeline com método e previsibilidade.</p>
+      </div>
+
+      {/* Pilar 3: Governança de Execução */}
+      <div className="pillar-card">
+        <Timer className="card-icon" />
+        <h3 className="pillar-card-title">Governança de Execução</h3>
+        <p>Lideramos sua operação de receita como CRO fracionado. Você ganha inteligência C-level sem aumentar headcount. Planejamos juntos o período ideal de acompanhamento, com mínimo de 3 meses, até validar o sistema.</p>
+      </div>
+
+      {/* Pilar 4: Ativos que Convertem */}
+      <div className="pillar-card">
+        <Target className="card-icon" />
+        <h3 className="pillar-card-title">Ativos que Convertem</h3>
+        <p>Transformamos estratégia em ativos digitais que geram receita: plataformas de aceleração, ferramentas de ROI, simuladores, matchmakers, apps personalizados focados em business. Tecnologia que educa, qualifica e acelera decisão.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <div className="section-divider-glow"></div>
 
