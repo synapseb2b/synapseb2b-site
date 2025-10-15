@@ -308,6 +308,7 @@ body {
 .lead-text-container { max-width: 800px; margin: 0 auto 3rem; }
 .lead-text-container .lead-text { margin-bottom: 1.5rem; }
 .highlight-survival { color: var(--color-primary); font-weight: 600; }
+.no-wrap-text { white-space: nowrap; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
 .highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
