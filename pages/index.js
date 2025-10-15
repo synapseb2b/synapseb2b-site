@@ -178,13 +178,117 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 3: Nossa Resposta */}
-      <section id="resposta" className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">A Engenharia de Receita é a ponte entre sua genialidade e o crescimento.</h2>
-          <p className="lead-text">Não vendemos marketing ou consultoria. Nós instalamos um sistema. Um método que traduz a complexidade da sua solução em uma narrativa de valor clara, uma proposta comercial irresistível e um processo de vendas que seu time consegue executar com disciplina e consistência.</p>
-        </div>
-      </section>
+{/* Bloco 3: Como Transformamos Potencial em Performance */}
+<section id="cases" className="section-with-gradient-glow">
+  <div className="container text-center reveal-up">
+    <h2 className="section-title">Três histórias reais. Três resultados tangíveis.</h2>
+    <p className="lead-text">Não entregamos diagnósticos. Entregamos clareza que vira receita.</p>
+
+    {/* Componente Interativo de Abas (Tabs) para os Cases */}
+    <div className="case-studies-container">
+      {/* Navegação das Abas */}
+      <div className="case-tabs-nav">
+        <button 
+          className={`case-tab ${openAccordion === 1 ? 'active' : ''}`} 
+          onClick={() => setOpenAccordion(1)}
+        >
+          Healthtech Holística
+        </button>
+        <button 
+          className={`case-tab ${openAccordion === 2 ? 'active' : ''}`} 
+          onClick={() => setOpenAccordion(2)}
+        >
+          Exclusiva Engenharias
+        </button>
+        <button 
+          className={`case-tab ${openAccordion === 3 ? 'active' : ''}`} 
+          onClick={() => setOpenAccordion(3)}
+        >
+          Synapse Matchmaker
+        </button>
+      </div>
+
+      {/* Conteúdo das Abas */}
+      <div className="case-content-container">
+        {/* CASE 1 */}
+        {openAccordion === 1 && (
+          <div className="case-content">
+            <p className="case-type">VERSÃO HOLÍSTICA</p>
+            <div className="case-section-detail">
+              <h4><ClipboardList size={18} /> Contexto</h4>
+              <p>"Uma healthtech nascida da superação pessoal de sua fundadora, com metodologia inovadora de cuidado integrativo. Produto sólido, mas narrativa dispersa em múltiplos modelos de negócio simultâneos. Hospitais e investidores faziam sempre a mesma pergunta: 'O que, exatamente, vocês fazem por mim?'"</p>
+            </div>
+            <div className="case-section-detail">
+              <h4><Settings2 size={18} /> O que fizemos</h4>
+              <p>"Reposicionamento estratégico completo. Traduzimos 'Cuidado Farmacêutico Integrativo' para linguagem de decisor: 'Plataforma de gestão que reduz custo de paciente crônico'. Construímos nova narrativa, validamos ROI (5.8x em casos reais) e criamos posicionamento de categoria: 1ª Plataforma de CareOps Integrativo do Brasil."</p>
+            </div>
+            <div className="case-section-detail">
+              <h4><Zap size={18} /> Resultado tangível</h4>
+              <p>"De oferta confusa para tese de investimento clara. Narrativa que hospitais entendem em 60 segundos. Fundação estratégica pronta para escalar com confiança."</p>
+            </div>
+            <Link href="#" className="btn btn-secondary case-cta">
+              Ver case completo <ArrowRight size={16} />
+            </Link>
+          </div>
+        )}
+
+        {/* CASE 2 */}
+        {openAccordion === 2 && (
+          <div className="case-content">
+            <p className="case-type">EXCLUSIVA ENGENHARIAS</p>
+            <div className="case-section-detail">
+              <h4><ClipboardList size={18} /> Contexto</h4>
+              <p>"Engenharia de excelência técnica, mas invisibilidade digital absoluta. Crescimento dependia 100% de indicação e networking. Sem motor de geração de demanda. Sem previsibilidade de receita."</p>
+            </div>
+            <div className="case-section-detail">
+              <h4><Settings2 size={18} /> O que fizemos</h4>
+              <p>"Começamos pelo GTM completo: posicionamento, ICP, proposta de valor, canais de aquisição. Só então construímos a plataforma digital (institucional + motor de receita) e um simulador de orçamento integrado. Na sequência, assumimos como CRO as a Service: fundação da Diretoria de Receita com inteligência de mercado, prospecção ativa, execução de reuniões e entrega do playbook comercial completo."</p>
+            </div>
+            <div className="case-section-detail">
+              <h4><Zap size={18} /> Resultado tangível</h4>
+              <p>"De invisível para encontrável. De receita reativa para motor de geração de demanda estruturado. Sistema validado, documentado e pronto para contratar time e escalar."</p>
+            </div>
+            <Link href="#" className="btn btn-secondary case-cta">
+              Ver case completo <ArrowRight size={16} />
+            </Link>
+          </div>
+        )}
+
+        {/* CASE 3 */}
+        {openAccordion === 3 && (
+          <div className="case-content">
+            <p className="case-type">SYNAPSE B2B MATCH MAKER</p>
+            <div className="case-section-detail">
+              <h4><ClipboardList size={18} /> Contexto</h4>
+              <p>"Grupos de networking com dezenas ou centenas de profissionais. Skills diversas, entregáveis variados, oportunidades invisíveis. Informação valiosa perdida em conversas assíncronas. Zero capacidade de confluência estratégica."</p>
+            </div>
+            <div className="case-section-detail">
+              <h4><Settings2 size={18} /> O que fizemos</h4>
+              <p>"Criamos ferramenta proprietária de matching inteligente com Neural System. Plataforma multi-tenant que conecta perfis por competência, necessidade e oportunidade. Versões para Educação (alunos e mentores), Investimento (startups e investidores) e preparada para qualquer segmento (RH, parcerias comerciais, fornecedores)."</p>
+            </div>
+            <div className="case-section-detail">
+              <h4><Zap size={18} /> Resultado tangível</h4>
+              <p>"De caos relacional para inteligência de conexão. Matching que acontece em segundos, baseado em dados estruturados. Escalável para qualquer ecossistema que precisa organizar relacionamentos estratégicos."</p>
+            </div>
+            <Link href="#" className="btn btn-secondary case-cta">
+              Ver ferramenta <ArrowRight size={16} />
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
+
+    {/* Texto de Fechamento da Seção */}
+    <div className="case-conclusion text-center">
+        <p>Esses três casos provam o mesmo princípio:</p>
+        <p><strong>Complexidade técnica sem clareza estratégica é potencial desperdiçado.</strong></p>
+        <p>Nós traduzimos o que está travado no córtex pré-frontal do seu comprador (dúvida, análise, comparação) em decisão límbica rápida (confiança, urgência, ação).</p>
+        <p>Construímos ferramentas que tomam decisões cognitivamente caras no lugar do usuário.</p>
+        <p>Lideramos execução nos primeiros 90 dias porque sabemos que você não tem largura de banda para aprender novo processo enquanto toca sua operação.</p>
+        <p>Isso é Engenharia de Receita.</p>
+    </div>
+  </div>
+</section>
 
       <div className="section-divider-glow"></div>
 
