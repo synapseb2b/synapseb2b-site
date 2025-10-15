@@ -423,7 +423,7 @@ body {
 .service-card-toggle { display: flex; justify-content: space-between; align-items: center; background: none; border: none; color: var(--color-primary); font-size: 1rem; font-weight: 600; padding: 1rem 0 0.5rem; margin-top: 1rem; border-top: 1px solid var(--color-border); cursor: pointer; width: 100%; }
 .service-card-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
 .service-card-details.open { max-height: 500px; padding-top: 1rem; }
-.service-card-details ul { list-style: none; padding: 0; text-align: left; } /* Garante que a lista dentro do dropdown fique alinhada à esquerda */
+.service-card-details ul { list-style: none; padding: 0; text-align: left; }
 .service-card-details li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--color-text); }
 .service-card-details li svg { color: var(--color-accent); margin-top: 4px; flex-shrink: 0; }
 .service-card-examples { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
@@ -431,7 +431,6 @@ body {
 .service-card-examples p { font-size: 0.95rem; margin-bottom: 0.5rem; }
 .service-card-examples a { color: var(--color-accent); text-decoration: none; transition: color 0.3s; }
 .service-card-examples a:hover { text-decoration: underline; }
-}
 
 /* ==========================================================================
    9. ESTILOS ESPECÍFICOS DE PÁGINAS
