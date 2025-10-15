@@ -321,6 +321,46 @@ body {
 .accordion-content.open { max-height: 500px; }
 .accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
 
+/* --- Estilos da Seção "Por Que Nos Contratam" --- */
+.truths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+.truth-card { background-color: rgba(10, 10, 10, 0.4); border: 1px solid var(--color-border); border-radius: 16px; padding: 2.5rem; text-align: left; }
+.truth-card .truth-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.truth-card .truth-header .icon { color: var(--color-primary); }
+.truth-card .truth-header h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: var(--color-heading); margin: 0; }
+.truth-card p { line-height: 1.8; }
+.decision-block { margin: 5rem auto 0; padding: 3rem; max-width: 900px; border: 1px solid var(--color-border); border-radius: 16px; background: radial-gradient(circle, rgba(0, 150, 132, 0.05), transparent 80%); }
+.decision-block h3 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--color-heading); margin-bottom: 1.5rem; }
+.decision-block p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
+.decision-block .decision-highlight { font-weight: 600; color: var(--color-heading); margin-top: 2rem; }
+
+/* --- Estilos do CTA Final --- */
+.cta-lead-text { font-size: 1.5rem; font-weight: 500; color: var(--color-heading); margin-bottom: 2rem; }
+.cta-support-text { font-size: 1rem; color: var(--color-text); max-width: 500px; margin: 1.5rem auto 0; opacity: 0.8; }
+
+/* --- Estilos do Rodapé Estratégico (Knowledge Base) --- */
+.knowledge-base-section { padding: 6rem 0; background-color: var(--color-section-bg); border-top: 1px solid var(--color-border); }
+.knowledge-base-title { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--color-primary); margin-bottom: 1rem; }
+.knowledge-base-intro { max-width: 800px; margin: 0 auto 3rem; }
+.knowledge-accordion-container { max-width: 900px; margin: 0 auto; }
+.knowledge-accordion-container .accordion-item { border-color: rgba(0, 150, 132, 0.15); }
+.knowledge-accordion-container .accordion-content-inner p { margin-bottom: 0.75rem; }
+.knowledge-accordion-container .accordion-content-inner strong { color: var(--color-heading); }
+
+/* --- Estilos do Carrossel de Logos --- */
+.logo-carousel-container { margin-top: 5rem; text-align: center; position: relative; overflow: hidden; }
+.logo-carousel-title { margin-bottom: 2rem; font-weight: 500; }
+.logo-carousel-container::before, .logo-carousel-container::after { content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none; }
+.logo-carousel-container::before { left: 0; background: linear-gradient(to right, var(--color-section-bg), transparent); }
+.logo-carousel-container::after { right: 0; background: linear-gradient(to left, var(--color-section-bg), transparent); }
+.logo-track { display: flex; width: calc(200px * 14); /* 200px por logo, 7 logos duplicados */ animation: scroll 40s linear infinite; }
+.logo-slide { display: grid; place-items: center; width: 200px; height: 60px; color: var(--color-text); font-weight: 600; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
+.logo-slide:hover { filter: grayscale(0%); opacity: 1; color: var(--color-heading); }
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-200px * 7)); } /* Metade do tamanho total do track */
+}
+
 /* --- Estilos do Engineering Block (da Home) --- */
 .engineering-block { display: flex; gap: 2rem; margin-top: 4rem; position: relative; }
 .engineering-column { flex: 1; background-color: rgba(10, 10, 10, 0.4); border: 1px solid var(--color-border); border-radius: 12px; padding: 2.5rem; }
@@ -912,6 +952,11 @@ body {
   .info-card-title {
     font-size: 1.2rem;
   }
+
+  /* --- Ajustes da Seção "Por Que Nos Contratam" --- */
+.truths-grid { grid-template-columns: 1fr; }
+.truth-card { padding: 2rem; }
+.decision-block { padding: 2rem; }
 }
 
 /* ==========================================================================

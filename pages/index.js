@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 // Ícones atualizados para a nova seção
-import { ArrowRight, Eye, ChevronDown, ClipboardList, Settings2, Zap, Lightbulb, HardHat, Rocket, Map, Briefcase, Users, MonitorSmartphone, Wrench, CheckCircle2, Compass } from 'lucide-react';
+import { ArrowRight, Eye, ChevronDown, ClipboardList, Settings2, Zap, Lightbulb, HardHat, Rocket, Map, Briefcase, Users, MonitorSmartphone, Wrench, CheckCircle2, Compass, Target, TrendingUp, UserCheck } from 'lucide-react';
 import { BrainCircuit, Phone, Timer, Target } from 'lucide-react';
 
 // --- Componente de Texto Rotativo (ATUALIZADO) ---
@@ -433,81 +433,108 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 5: Soluções (REIMAGINADO COM NOVO LAYOUT) */}
-      <section id="crescimento" className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Nossa Engenharia: Da Estratégia aos Ativos de Receita</h2>
-          <p className="lead-text">Cada negócio está em um momento único. Nossos modelos de engajamento são desenhados para entregar o que você precisa, quando precisa.</p>
-          
-          <div className="engineering-block">
-            {/* Coluna Esquerda */}
-            <div className="engineering-column">
-              <div className="engineering-header">
-                <Compass className="icon" />
-                <h3>Inteligência & Estratégia</h3>
-                <p>Onde definimos a arquitetura do seu crescimento.</p>
-              </div>
-              <ul className="engineering-list">
-                <li>
-                  <h4>Sprint de Validação Comercial</h4>
-                  <p>Para testar novas ofertas e mercados com velocidade e precisão.</p>
-                </li>
-                <li>
-                  <h4>Go-To-Market Completo</h4>
-                  <p>Para arquitetar e instalar seu motor de receita do zero.</p>
-                </li>
-                <li>
-                  <h4>Diretoria de Receita (CRO as a Service)</h4>
-                  <p>Para injetar liderança C-level na sua operação de receita.</p>
-                </li>
-                <li>
-                  <h4>Advisory Board</h4>
-                  <p>Para guiar decisões estratégicas de alto impacto.</p>
-                </li>
-              </ul>
-            </div>
+{/* Bloco 5: A Seção da Clareza ("Por que nos Contratam") */}
+      <section id="why-synapse" className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <div className="text-center">
+            <h2 className="section-title">Por Que Empresas B2B nos Contratam</h2>
+            <p className="lead-text">Três verdades que você já sabe. Uma decisão que ainda não tomou.</p>
+          </div>
 
-            {/* Divisor Central */}
-            <div className="engineering-divider"></div>
-
-            {/* Coluna Direita */}
-            <div className="engineering-column">
-              <div className="engineering-header">
-                <Wrench className="icon" />
-                <h3>Construção de Ativos Digitais</h3>
-                <p>Onde transformamos estratégia em ferramentas de receita.</p>
+          {/* As Três Verdades */}
+          <div className="truths-grid">
+            <div className="truth-card">
+              <div className="truth-header">
+                <Target className="icon" />
+                <h3>Você não tem problema de produto.</h3>
               </div>
-              <ul className="engineering-list">
-                <li>
-                  <h4>Plataformas de Aceleração de Receita</h4>
-                  <p>Construímos o seu novo "site": um ativo digital projetado para educar, qualificar e converter clientes.</p>
-                </li>
-                <li>
-                  <h4>Ferramentas Estratégicas de Conversão</h4>
-                  <p>Desenvolvemos ferramentas (calculadoras, simuladores, apps) que se tornam o centro da sua argumentação de valor e aceleram a decisão de compra.</p>
-                </li>
-              </ul>
+              <p>Sua solução funciona. Seus clientes atuais validam isso. O problema é que o mercado não entende o valor na velocidade que você precisa para crescer. Complexidade técnica travada em explicação longa não gera receita previsível.</p>
             </div>
+            <div className="truth-card">
+              <div className="truth-header">
+                <TrendingUp className="icon" />
+                <h3>Heroísmo comercial não escala.</h3>
+              </div>
+              <p>Aquele vendedor excepcional. Aquele networking que gerou indicação. Isso não é sistema. É sorte replicável até parar de funcionar. Crescimento sustentável exige que qualquer vendedor mediano execute processo excelente.</p>
+            </div>
+            <div className="truth-card">
+              <div className="truth-header">
+                <UserCheck className="icon" />
+                <h3>Você não tem largura de banda para construir isso sozinho.</h3>
+              </div>
+              <p>CEO já está sobrecarregado. Time está executando operação. Contratar gerente antes de ter sistema validado é risco caro. Você precisa de alguém que já fez isso 50 vezes, executa na linha de frente e entrega o playbook pronto.</p>
+            </div>
+          </div>
+
+          {/* A Decisão */}
+          <div className="decision-block text-center">
+            <h3>A Pergunta Não é SE Você Precisa Disso</h3>
+            <p>A pergunta é: quanto tempo você vai continuar crescendo sem sistema?<br/>Quanto custa cada trimestre de receita imprevisível?</p>
+            <p className="decision-highlight">Nós não somos a única solução. Você pode contratar consultores, gerentes, agências ou continuar sozinho. Ou pode contratar quem traduz sua complexidade em clareza, constrói o sistema e executa até funcionar.</p>
           </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 6: Chamada Final */}
-      <section className="final-cta-section">
+      {/* Bloco 6: A Seção da Ação (CTA Final) */}
+      <section id="final-cta" className="final-cta-section">
         <div className="container text-center reveal-up">
-          <h2 className="final-cta-title">Se o mercado ainda não entende seu valor, é hora de mudar isso.</h2>
-          <p className="lead-text">Com metodologia proprietária e atuação integrada, transformamos complexidade em clareza, e clareza em receita.</p>
+          <p className="cta-lead-text">Se você chegou até aqui, já sabe se faz sentido conversar.</p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Inicie seu Diagnóstico de Receita</span>
+              <span>Falar com a Synapse</span>
               <ArrowRight size={20} />
             </Link>
+          </div>
+          <p className="cta-support-text">Primeira conversa: 30 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Sem proposta genérica. Só clareza.</p>
+        </div>
+      </section>
+
+      {/* Bloco 7: A Seção da Autoridade (Rodapé Estratégico) */}
+      <section id="knowledge-base" className="knowledge-base-section">
+        <div className="container reveal-up">
+          <div className="text-center">
+            <h3 className="knowledge-base-title">Nossa Base de Conhecimento</h3>
+            <p className="knowledge-base-intro">Síntese de 20+ anos forjando receita em ecossistemas B2B de alta complexidade. O que funciona não é teoria. É método validado em campo.</p>
+          </div>
+
+          <div className="knowledge-accordion-container">
+            <AccordionItem title="Engenharia de Go-To-Market" isOpen={openAccordion === 'gtm_knowledge'} onClick={() => setOpenAccordion(openAccordion === 'gtm_knowledge' ? -1 : 'gtm_knowledge')}>
+              <p><strong>Challenger Sale:</strong> Venda por insight, não por produto.</p>
+              <p><strong>Strategic Narrative:</strong> O mercado compra a melhor história, não o melhor produto.</p>
+              <p><strong>Category Design:</strong> Liderança vem de criar uma nova categoria, não de competir melhor.</p>
+              <p><strong>Positioning (Dunford):</strong> Clareza de diferenciação tangível e contextual.</p>
+              <p><strong>Product-Led / Education-Led Growth:</strong> O produto e o conhecimento como canais de aquisição.</p>
+            </AccordionItem>
+            <AccordionItem title="Ciência do Comportamento" isOpen={openAccordion === 'behavior_knowledge'} onClick={() => setOpenAccordion(openAccordion === 'behavior_knowledge' ? -1 : 'behavior_knowledge')}>
+              <p><strong>Neurociência Aplicada:</strong> Decisão B2B é racionalização pós-emocional. Facilitamos o 'sim' do Sistema 1.</p>
+              <p><strong>Jobs-to-be-Done:</strong> Mapeamos o "job" real que seu cliente precisa resolver, não o produto que ele diz querer.</p>
+              <p><strong>Buyer Enablement:</strong> Construímos ativos que habilitam seu campeão a vender sua solução internamente.</p>
+              <p><strong>Behavioral Economics:</strong> Usamos nudges e arquitetura de escolha para reduzir fricção e acelerar a decisão.</p>
+            </AccordionItem>
+            <AccordionItem title="Orquestração de Escala" isOpen={openAccordion === 'scale_knowledge'} onClick={() => setOpenAccordion(openAccordion === 'scale_knowledge' ? -1 : 'scale_knowledge')}>
+              <p><strong>Founder-Led Growth:</strong> Codificamos o instinto do fundador em um playbook de receita escalável.</p>
+              <p><strong>Receita Previsível:</strong> Evoluímos o modelo clássico para uma abordagem integrada e relevante.</p>
+              <p><strong>Science of Scaling:</strong> Métricas que indicam quando acelerar e quando corrigir antes de escalar um problema.</p>
+              <p><strong>Dual-Track Revenue (Synapse B2B):</strong> Discovery contínua + Delivery implacável em paralelo. Aprendizado alimenta execução.</p>
+              <p><strong>Cortex GTM™ (Synapse B2B):</strong> Nosso meta-framework proprietário que integra cinco lentes críticas para instalar Engenharia de Receita completa.</p>
+            </AccordionItem>
+          </div>
+
+          <div className="logo-carousel-container">
+             <p className="logo-carousel-title">Experiência forjada em:</p>
+            <div className="logo-track">
+              {['TOTVS', 'Google Cloud', 'Microsoft', 'Dell', 'Salesforce', 'Dynatrace', 'Keepit', 'TOTVS', 'Google Cloud', 'Microsoft', 'Dell', 'Salesforce', 'Dynatrace', 'Keepit'].map((logo, index) => (
+                <div className="logo-slide" key={index}>
+                  {/* Substitua o texto por <img src="/path/to/logo.svg" alt={logo} /> */}
+                  {logo}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 }
-
