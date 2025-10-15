@@ -295,6 +295,7 @@ body {
 .hero-content { position: relative; z-index: 1; }
 .hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; }
 .hero-subheadline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
+.hero-subheadline.wider-on-desktop { max-width: 850px; }
 .hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 4rem; } /* Ajustei o margin-top para 4rem para dar mais respiro ao novo texto */
 .pillar-card { background-color: rgba(0, 0, 0, 0.3); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; transition: background-color 0.3s ease, transform 0.3s; }
@@ -303,6 +304,10 @@ body {
 .card-grid-three, .card-grid-two { display: grid; gap: 2rem; }
 .pillar-subtitle { font-size: 1.2rem; font-weight: 500; color: var(--color-accent); max-width: 700px; margin: -1rem auto 2.5rem; }
 .pillar-card-title { font-family: 'Montserrat', sans-serif; font-size:1.3rem; color: var(--color-heading); margin-bottom: 0.75rem; font-weight: 700; }
+.desktop-break { display: none; }
+.lead-text-container { max-width: 800px; margin: 0 auto 3rem; }
+.lead-text-container .lead-text { margin-bottom: 1.5rem; }
+.highlight-survival { color: var(--color-primary); font-weight: 600; }
 .card-grid-three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .card-grid-two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
 .highlight-box { margin: 3rem auto 0; padding: 2rem; border: 1px solid var(--color-border); border-radius: 12px; background-color: rgba(0, 150, 132, 0.05); max-width: 900px; }
@@ -567,13 +572,18 @@ body {
 
   /* 1 & 2: Correção de Padding da Hero e Tamanho da Fonte H1 */
   .hero-section, .section-with-bg, .section-solid, .section-with-gradient-glow {
-    padding-top: 100px; 
+    padding-top: 100px;
     padding-bottom: 60px;
   }
   .hero-headline, .section-title, .final-cta-title {
-    font-size: 2.2rem; 
+    font-size: 2.2rem;
     line-height: 1.3;
   }
+  /* INÍCIO DA CORREÇÃO 1.a */
+  .hero-headline-two-lines { display: flex; flex-direction: column; align-items: center; }
+  .hero-headline-fixed { display: block; }
+  .rotating-text { display: block; margin-top: 0.25rem; }
+  /* FIM DA CORREÇÃO 1.a */
   .page-hero-padding {
     padding-top: 0;
     padding-bottom: 0;
@@ -617,8 +627,8 @@ body {
   }
 
   /* --- Centralização de Texto na Página Engenharia --- */
-  .transformation-case-card, 
-  .case-section, 
+  .transformation-case-card,
+  .case-section,
   .scenario-card {
     text-align: center;
   }

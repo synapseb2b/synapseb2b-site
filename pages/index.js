@@ -100,7 +100,7 @@ export default function HomePage() {
         <div className="container hero-content text-center page-hero-padding">
           <div className="reveal-up">
             <RotatingText />
-            <p className="hero-subheadline">
+            <p className="hero-subheadline wider-on-desktop">
               Você domina a entrega. Nós dominamos como transformar isso em receita previsível.
             </p>
             <div className="hero-ctas">
@@ -119,54 +119,60 @@ export default function HomePage() {
 
       <div className="section-divider-glow"></div>
 
-{/* Bloco 2: Os Pilares da Engenharia de Receita */}
+{/* Bloco 2: Os Pilares da Engenharia de Receita (VERSÃO ATUALIZADA) */}
 <section id="pilares" className="section-solid">
   <div className="container text-center reveal-up">
-    <h2 className="section-title">Receita previsível não é acidente. É engenharia.</h2>
     
-    {/* NOVO SUBTÍTULO */}
+    {/* 2.a: Título com quebras de linha controladas */}
+    <h2 className="section-title">
+      Receita previsível não é acidente.
+      <br className="desktop-break" />
+      {' '}É engenharia.
+    </h2>
+    
     <p className="pillar-subtitle">Quatro pilares integrados. Um resultado: você cresce sem depender de sorte.</p>
     
-    {/* TEXTO INTRODUTÓRIO ATUALIZADO */}
-    <p className="lead-text">
-      A maioria das empresas B2B opera em modo reativo. Vendem quando conseguem. Escalam quando sobra recurso. Pivotam quando o mercado força.
-      <br />Isso não é estratégia. É sobrevivência.
-      <br />Receita previsível exige o oposto: clareza antes de execução. Sistema antes de esforço.
-      <br />Nosso trabalho se organiza em quatro pilares que se alimentam:
-    </p>
+    {/* 2.b: Texto introdutório reestruturado e com destaque */}
+    <div className="lead-text-container">
+      <p className="lead-text">
+        A maioria das empresas B2B opera em modo reativo. Vendem quando conseguem. Escalam quando sobra recurso. Pivotam quando o mercado força.
+      </p>
+      <p className="lead-text">
+        <span className="highlight-survival">Isso não é estratégia. É sobrevivência.</span>
+      </p>
+      <p className="lead-text">
+        Receita previsível exige o oposto: clareza antes de execução. Sistema antes de esforço.
+      </p>
+      <p className="lead-text">
+        Nosso trabalho se organiza em quatro pilares que se alimentam:
+      </p>
+    </div>
     
-    {/* GRID DOS PILARES (ANTIGO SYMPTOM-GRID) */}
+    {/* Grid dos Pilares (sem alteração no JSX) */}
     <div className="pillar-grid">
-      
-      {/* Pilar 1: Clareza de Valor */}
+      {/* ...seus 4 pillar-cards continuam aqui como estavam... */}
       <div className="pillar-card">
         <BrainCircuit className="card-icon" />
         <h3 className="pillar-card-title">Clareza de Valor</h3>
         <p>Traduzimos complexidade técnica em narrativa de decisão fundamentadas em neurociência. Seu cliente ideal precisa entender em 30 segundos: o que você resolve, por que agora, por que você.</p>
       </div>
-      
-      {/* Pilar 2: Sistema Comercial */}
       <div className="pillar-card">
         <Phone className="card-icon" />
         <h3 className="pillar-card-title">Sistema Comercial</h3>
         <p>Construímos o motor completo: da estratégia de Go-To-Market à arquitetura do processo comercial. Você para de depender de networking heroico e passa a gerar pipeline com método e previsibilidade.</p>
       </div>
-
-      {/* Pilar 3: Governança de Execução */}
       <div className="pillar-card">
         <Timer className="card-icon" />
         <h3 className="pillar-card-title">Governança de Execução</h3>
         <p>Lideramos sua operação de receita como CRO fracionado. Você ganha inteligência C-level sem aumentar headcount. Planejamos juntos o período ideal de acompanhamento, com mínimo de 3 meses, até validar o sistema.</p>
       </div>
-
-      {/* Pilar 4: Ativos que Convertem */}
       <div className="pillar-card">
         <Target className="card-icon" />
         <h3 className="pillar-card-title">Ativos que Convertem</h3>
         <p>Transformamos estratégia em ativos digitais que geram receita: plataformas de aceleração, ferramentas de ROI, simuladores, matchmakers, apps personalizados focados em business. Tecnologia que educa, qualifica e acelera decisão.</p>
       </div>
-
     </div>
+
   </div>
 </section>
 
