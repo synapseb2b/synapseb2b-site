@@ -599,6 +599,21 @@ body {
 /* --- Ajustes da Seção de Serviços --- */
 .services-grid { grid-template-columns: 1fr; gap: 3rem; }
 .service-card { padding: 1.5rem; }
+
+/* --- Ajustes do Carrossel de Logos --- */
+.logo-carousel-container::before, .logo-carousel-container::after { display: none; }
+.logo-carousel-title { text-align: center; }
+.logo-track {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: none;
+  gap: 1rem; /* Adiciona um espaço entre os logos */
+}
+.logo-slide {
+  width: calc(50% - 2rem); /* Cria um layout de duas colunas */
+  height: 40px; /* Reduz a altura para um visual mais compacto */
+}
 }
 
 /* ==========================================================================
