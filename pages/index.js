@@ -177,7 +177,7 @@ export default function HomePage() {
                 className={`case-tab ${openAccordion === 1 ? 'active' : ''}`} 
                 onClick={() => setOpenAccordion(1)}
               >
-                Healthtech Holística
+                Versão Holística
               </button>
               <button 
                 className={`case-tab ${openAccordion === 2 ? 'active' : ''}`} 
