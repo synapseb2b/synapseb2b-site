@@ -90,40 +90,44 @@ export default function ComoTrabalhamosPage() {
         <div className="container reveal-up">
           <div className="accordion-container">
 
-            {/* Desafio 1 */}
-            <AccordionItem 
-              [cite_start]title={<><Siren /><span>"Seu produto é tecnicamente superior, mas o mercado não percebe o valor dele" [cite: 15]</span></>}
-              isOpen={openAccordion === 1} 
-              onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
-            >
-                <div className="card-grid-two">
-                    <div>
-                        [cite_start]<h4>Sintomas que você reconhece: [cite: 16]</h4>
-                        <ul>
-                            [cite_start]<li>Você explica features, cliente pergunta "mas como isso resolve meu problema?" [cite: 17]</li>
-                            [cite_start]<li>Reuniões comerciais longas sem decisão clara (cliente "precisa pensar") [cite: 18]</li>
-                            [cite_start]<li>Concorrentes inferiores vendem mais rápido com narrativas mais simples [cite: 19]</li>
-                            [cite_start]<li>Sua equipe vende explicando tecnologia, não resolvendo problemas de negócio [cite: 20]</li>
-                        </ul>
-                        [cite_start]<h4 className="mt-4">Por que isso acontece: [cite: 21]</h4>
-                        [cite_start]<p>Complexidade técnica não foi traduzida para linguagem de decisor. [cite: 22] [cite_start]Sua narrativa ativa o cérebro racional (lento) em vez do decisivo (rápido). [cite: 23]</p>
-                    </div>
-                    <div className="solution-accordion">
-                        <div className="solution-accordion-main">
-                            [cite_start]<h5 className="solution-subtitle">SOLUÇÃO: GO-TO-MARKET COMPLETO [cite: 26]</h5>
-                            [cite_start]<h4 className="solution-title">Arquitetura estratégica do zero. [cite: 27]</h4>
-                            [cite_start]<p className="solution-description">Entrega: Blueprint que guia cada decisão comercial dos próximos 18 meses [cite: 42]</p>
-                        </div>
-                         <div className="solution-accordion-deliverables">
-                             <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd1-details'} onClick={() => setOpenAccordion(openAccordion === 'd1-details' ? 1 : 'd1-details')}>
-                                 <ul className="solution-features">
-                                     [cite_start]<li><CheckCircle2 size={16} /> Posicionamento [cite: 28]</li>
-                                     [cite_start]<li><CheckCircle2 size={16} /> ICP Refinado [cite: 30]</li>
-                                     [cite_start]<li><CheckCircle2 size={16} /> Proposta de Valor Central [cite: 32]</li>
-                                     [cite_start]<li><CheckCircle2 size={16} /> Canais de Aquisição [cite: 34]</li>
-                                     [cite_start]<li><CheckCircle2 size={16} /> Pricing Estratégico [cite: 38]</li>
-                                 </ul>
-                             </AccordionItem>
+{/* Desafio 1 */}
+<AccordionItem 
+  title={<><Siren /><span>"Seu produto é tecnicamente superior, mas o mercado não percebe o valor dele"</span></>}
+  isOpen={openAccordion === 1} 
+  onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
+>
+    <div className="card-grid-two">
+        <div>
+            <h4>Sintomas que você reconhece:</h4>
+            <ul>
+                <li>Você explica features, cliente pergunta "mas como isso resolve meu problema?"</li>
+                <li>Reuniões comerciais longas sem decisão clara (cliente "precisa pensar")</li>
+                <li>Concorrentes inferiores vendem mais rápido com narrativas mais simples</li>
+                <li>Sua equipe vende explicando tecnologia, não resolvendo problemas de negócio</li>
+            </ul>
+            <h4 className="mt-4">Por que isso acontece:</h4>
+            <p>Complexidade técnica não foi traduzida para linguagem de decisor. Sua narrativa ativa o cérebro racional (lento) em vez do decisivo (rápido).</p>
+        </div>
+        <div className="solution-accordion">
+            <div className="solution-accordion-main">
+                <h5 className="solution-subtitle">SOLUÇÃO: GO-TO-MARKET COMPLETO</h5>
+                <h4 className="solution-title">Arquitetura estratégica do zero.</h4>
+                <p className="solution-description">Entrega: Blueprint que guia cada decisão comercial dos próximos 18 meses</p>
+            </div>
+             <div className="solution-accordion-deliverables">
+                 <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd1-details'} onClick={() => setOpenAccordion(openAccordion === 'd1-details' ? 1 : 'd1-details')}>
+                     <ul className="solution-features">
+                         <li><CheckCircle2 size={16} /> Posicionamento</li>
+                         <li><CheckCircle2 size={16} /> ICP Refinado</li>
+                         <li><CheckCircle2 size={16} /> Proposta de Valor Central</li>
+                         <li><CheckCircle2 size={16} /> Canais de Aquisição</li>
+                         <li><CheckCircle2 size={16} /> Pricing Estratégico</li>
+                     </ul>
+                 </AccordionItem>
+             </div>
+        </div>
+    </div>
+</AccordionItem>
                          </div>
                     </div>
                 </div>

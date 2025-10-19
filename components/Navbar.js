@@ -32,9 +32,9 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const handleLinkClick = () => {
-    setIsMenu-Open(false);
-  };
+const handleLinkClick = () => {
+  setIsMenuOpen(false);
+};
 
   return (
     <>
