@@ -133,157 +133,201 @@ export default function ComoTrabalhamosPage() {
                 </div>
             </AccordionItem>
             
-            {/* Desafio 2 */}
-            <AccordionItem 
-              [cite_start]title={<><TrendingUp /><span>"Seu time comercial depende de esforço heroico para fechar contratos" [cite: 61]</span></>}
-              isOpen={openAccordion === 2} 
-              onClick={() => setOpenAccordion(openAccordion === 2 ? null : 2)}
-            >
-              <div className="card-grid-two">
-                <div>
-                  [cite_start]<h4>Sintomas que você reconhece: [cite: 62]</h4>
-                  <ul>
-                    [cite_start]<li>Aquele vendedor excepcional fecha tudo, mas ninguém consegue replicar o método [cite: 63]</li>
-                    [cite_start]<li>Crescimento depende de quem tem melhor rede de contatos (não de processo) [cite: 64]</li>
-                    [cite_start]<li>CEO passa mais tempo vendendo do que liderando empresa [cite: 66]</li>
-                  </ul>
-                  [cite_start]<h4 className="mt-4">Por que isso acontece: [cite: 68]</h4>
-                  <p>Ausência de sistema replicável. Vendas dependem de talento individual, não de processo excelente. Heroísmo comercial não escala. [cite_start]Sistema escala. [cite: 69, 72]</p>
-                </div>
-                <div className="solution-accordion">
-                  <div className="solution-accordion-main">
-                    [cite_start]<h5 className="solution-subtitle">SOLUÇÃO: DIRETORIA DE RECEITA (CRO as a Service) [cite: 74]</h5>
-                    [cite_start]<h4 className="solution-title">Liderança C-level fracionada. [cite: 75]</h4>
-                    [cite_start]<p className="solution-description">Modelo: Investimento mínimo fixo + performance sobre receita nova gerada [cite: 89]</p>
-                  </div>
-                  <div className="solution-accordion-deliverables">
-                    <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd2-details'} onClick={() => setOpenAccordion(openAccordion === 'd2-details' ? 2 : 'd2-details')}>
-                      <ul className="solution-features">
-                        [cite_start]<li><CheckCircle2 size={16} /> Inteligência de Mercado [cite: 76]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Arquitetura de Processo [cite: 78]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Execução Pioneira [cite: 80]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Playbook Validado [cite: 84]</li>
-                      </ul>
-                    </AccordionItem>
-                  </div>
-                </div>
-              </div>
-            </AccordionItem>
+{/* Bloco 2: Desafios e Soluções (Accordion) - CÓDIGO CORRIGIDO */}
+<section id="desafios" className="section-solid">
+  <div className="container reveal-up">
+    <div className="accordion-container">
 
-            {/* Desafio 3 */}
-            <AccordionItem 
-              [cite_start]title={<><BarChart /><span>"Você investe em marketing, mas gera leads que não convertem" [cite: 108, 109]</span></>}
-              isOpen={openAccordion === 3} 
-              onClick={() => setOpenAccordion(openAccordion === 3 ? null : 3)}
-            >
-              <div className="card-grid-two">
-                <div>
-                  [cite_start]<h4>Sintomas que você reconhece: [cite: 110]</h4>
-                  <ul>
-                    [cite_start]<li>Site gera tráfego, mas conversão é baixa [cite: 111]</li>
-                    [cite_start]<li>Leads entram sem contexto, time perde horas qualificando [cite: 112]</li>
-                    [cite_start]<li>Site institucional bonito, mas não educa nem qualifica [cite: 115]</li>
-                  </ul>
-                  [cite_start]<h4 className="mt-4">Por que isso acontece: [cite: 116]</h4>
-                  [cite_start]<p>Seu site não foi projetado como motor de receita, mas como uma brochura online. [cite: 117] [cite_start]Lead entra cru, time gasta tempo descobrindo se é fit ou não. [cite: 119]</p>
-                </div>
-                <div className="solution-accordion">
-                  <div className="solution-accordion-main">
-                    [cite_start]<h5 className="solution-subtitle">SOLUÇÃO: PLATAFORMA DE ACELERAÇÃO DE RECEITA [cite: 121]</h5>
-                    [cite_start]<h4 className="solution-title">30% Institucional + 70% Engenharia de Receita. [cite: 123]</h4>
-                    [cite_start]<p className="solution-description">Seu ativo digital educa, qualifica e converte 24/7. [cite: 133]</p>
-                  </div>
-                  <div className="solution-accordion-deliverables">
-                    <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd3-details'} onClick={() => setOpenAccordion(openAccordion === 'd3-details' ? 3 : 'd3-details')}>
-                      <ul className="solution-features">
-                        [cite_start]<li><CheckCircle2 size={16} /> Arquitetura de Conversão [cite: 125]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Copywriting Neurocientífico [cite: 127]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Jornadas por Perfil [cite: 129]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Integração com CRM [cite: 131]</li>
-                      </ul>
-                    </AccordionItem>
-                  </div>
-                </div>
-              </div>
-            </AccordionItem>
-
-            {/* Desafio 4 */}
-            <AccordionItem 
-              [cite_start]title={<><Target /><span>"Seu crescimento estagnou e você não sabe qual alavanca puxar" [cite: 156]</span></>}
-              isOpen={openAccordion === 4} 
-              onClick={() => setOpenAccordion(openAccordion === 4 ? null : 4)}
-            >
-              <div className="card-grid-two">
-                <div>
+      {/* Desafio 1 */}
+      <AccordionItem 
+        title={<><Siren /><span>"Seu produto é tecnicamente superior, mas o mercado não percebe o valor dele"</span></>}
+        isOpen={openAccordion === 1} 
+        onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
+      >
+          <div className="card-grid-two">
+              <div>
                   <h4>Sintomas que você reconhece:</h4>
                   <ul>
-                    [cite_start]<li>Receita parou de crescer há 2-3 trimestres [cite: 157]</li>
-                    [cite_start]<li>Você tenta várias coisas ao mesmo tempo mas nada move a agulha [cite: 158]</li>
-                    [cite_start]<li>Decisões baseadas em intuição, não em dados de campo [cite: 160]</li>
+                      <li>Você explica features, cliente pergunta "mas como isso resolve meu problema?"</li>
+                      <li>Reuniões comerciais longas sem decisão clara (cliente "precisa pensar")</li>
+                      <li>Concorrentes inferiores vendem mais rápido com narrativas mais simples</li>
+                      <li>Sua equipe vende explicando tecnologia, não resolvendo problemas de negócio</li>
                   </ul>
-                  [cite_start]<h4 className="mt-4">Por que isso acontece: [cite: 162]</h4>
-                  [cite_start]<p>Ausência de inteligência estratégica. [cite: 163] [cite_start]Você precisa validar demanda real antes de comprometer recursos grandes. [cite: 166]</p>
-                </div>
-                <div className="solution-accordion">
-                  <div className="solution-accordion-main">
-                    [cite_start]<h5 className="solution-subtitle">SOLUÇÃO: SPRINT DE VALIDAÇÃO COMERCIAL [cite: 168]</h5>
-                    [cite_start]<h4 className="solution-title">Testamos oferta, ICP e canais em 15 ou 30 dias. [cite: 169]</h4>
-                    [cite_start]<p className="solution-description">Você decide escalar baseado em dados de campo, não intuição ou esperança. [cite: 178]</p>
-                  </div>
-                  <div className="solution-accordion-deliverables">
-                    <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd4-details'} onClick={() => setOpenAccordion(openAccordion === 'd4-details' ? 4 : 'd4-details')}>
-                      <ul className="solution-features">
-                        [cite_start]<li><CheckCircle2 size={16} /> Hipóteses Priorizadas [cite: 170]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Validação Rápida em Campo [cite: 172]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Coleta de Dados Reais [cite: 174]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Recomendação Clara [cite: 176]</li>
-                      </ul>
-                    </AccordionItem>
-                  </div>
-                </div>
+                  <h4 className="mt-4">Por que isso acontece:</h4>
+                  <p>Complexidade técnica não foi traduzida para linguagem de decisor. Sua narrativa ativa o cérebro racional (lento) em vez do decisivo (rápido).</p>
               </div>
-            </AccordionItem>
-            
-            {/* Desafio 5 */}
-            <AccordionItem 
-              [cite_start]title={<><ThumbsUp /><span>"Sua venda depende de apresentação ao vivo e o cliente precisa 'sentir' o valor" [cite: 196]</span></>}
-              isOpen={openAccordion === 5} 
-              onClick={() => setOpenAccordion(openAccordion === 5 ? null : 5)}
-            >
-              <div className="card-grid-two">
-                <div>
-                  [cite_start]<h4>Sintomas que você reconhece: [cite: 197]</h4>
-                  <ul>
-                    [cite_start]<li>Ciclo de vendas longo porque cliente não consegue tangibilizar resultado [cite: 198]</li>
-                    [cite_start]<li>Cada venda exige apresentação personalizada (não escala) [cite: 200]</li>
-                    [cite_start]<li>Competidores com calculadoras/simuladores convertem mais rápido [cite: 202]</li>
-                  </ul>
-                  [cite_start]<h4 className="mt-4">Por que isso acontece: [cite: 203]</h4>
-                  [cite_start]<p>Seu produto/serviço é complexo ou intangível. [cite: 204] [cite_start]Você precisa de um ativo proprietário que prova autoridade e acelera a decisão SEM depender de reunião. [cite: 205]</p>
-                </div>
-                <div className="solution-accordion">
+              <div className="solution-accordion">
                   <div className="solution-accordion-main">
-                    [cite_start]<h5 className="solution-subtitle">SOLUÇÃO: FERRAMENTAS ESTRATÉGICAS DE CONVERSÃO [cite: 208]</h5>
-                    [cite_start]<h4 className="solution-title">Construímos ativos que se tornam o centro da sua argumentação de valor. [cite: 209]</h4>
-                    [cite_start]<p className="solution-description">Ferramenta que toma decisões cognitivamente caras no lugar do usuário. [cite: 220]</p>
+                      <h5 className="solution-subtitle">SOLUÇÃO: GO-TO-MARKET COMPLETO</h5>
+                      <h4 className="solution-title">Arquitetura estratégica do zero.</h4>
+                      <p className="solution-description">Entrega: Blueprint que guia cada decisão comercial dos próximos 18 meses</p>
                   </div>
-                  <div className="solution-accordion-deliverables">
-                    <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd5-details'} onClick={() => setOpenAccordion(openAccordion === 'd5-details' ? 5 : 'd5-details')}>
-                      <ul className="solution-features">
-                        [cite_start]<li><CheckCircle2 size={16} /> Calculadoras de ROI [cite: 210]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Simuladores de Cenário [cite: 212]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Matchmakers Inteligentes [cite: 214]</li>
-                        [cite_start]<li><CheckCircle2 size={16} /> Diagnósticos de Maturidade [cite: 216]</li>
-                      </ul>
-                    </AccordionItem>
-                  </div>
-                </div>
+                   <div className="solution-accordion-deliverables">
+                       <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd1-details'} onClick={() => setOpenAccordion(openAccordion === 'd1-details' ? 1 : 'd1-details')}>
+                           <ul className="solution-features">
+                               <li><CheckCircle2 size={16} /> Posicionamento</li>
+                               <li><CheckCircle2 size={16} /> ICP Refinado</li>
+                               <li><CheckCircle2 size={16} /> Proposta de Valor Central</li>
+                               <li><CheckCircle2 size={16} /> Canais de Aquisição</li>
+                               <li><CheckCircle2 size={16} /> Pricing Estratégico</li>
+                           </ul>
+                       </AccordionItem>
+                   </div>
               </div>
-            </AccordionItem>
+          </div>
+      </AccordionItem>
 
+      {/* Desafio 2 */}
+      <AccordionItem 
+        title={<><TrendingUp /><span>"Seu time comercial depende de esforço heroico para fechar contratos"</span></>}
+        isOpen={openAccordion === 2} 
+        onClick={() => setOpenAccordion(openAccordion === 2 ? null : 2)}
+      >
+        <div className="card-grid-two">
+          <div>
+            <h4>Sintomas que você reconhece:</h4>
+            <ul>
+              <li>Aquele vendedor excepcional fecha tudo, mas ninguém consegue replicar o método</li>
+              <li>Crescimento depende de quem tem melhor rede de contatos (não de processo)</li>
+              <li>CEO passa mais tempo vendendo do que liderando empresa</li>
+            </ul>
+            <h4 className="mt-4">Por que isso acontece:</h4>
+            <p>Ausência de sistema replicável. Vendas dependem de talento individual, não de processo excelente. Heroísmo comercial não escala. Sistema escala.</p>
+          </div>
+          <div className="solution-accordion">
+            <div className="solution-accordion-main">
+              <h5 className="solution-subtitle">SOLUÇÃO: DIRETORIA DE RECEITA (CRO as a Service)</h5>
+              <h4 className="solution-title">Liderança C-level fracionada.</h4>
+              <p className="solution-description">Modelo: Investimento mínimo fixo + performance sobre receita nova gerada</p>
+            </div>
+            <div className="solution-accordion-deliverables">
+              <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd2-details'} onClick={() => setOpenAccordion(openAccordion === 'd2-details' ? 2 : 'd2-details')}>
+                <ul className="solution-features">
+                  <li><CheckCircle2 size={16} /> Inteligência de Mercado</li>
+                  <li><CheckCircle2 size={16} /> Arquitetura de Processo</li>
+                  <li><CheckCircle2 size={16} /> Execução Pioneira</li>
+                  <li><CheckCircle2 size={16} /> Playbook Validado</li>
+                </ul>
+              </AccordionItem>
+            </div>
           </div>
         </div>
-      </section>
+      </AccordionItem>
+
+      {/* Desafio 3 */}
+      <AccordionItem 
+        title={<><BarChart /><span>"Você investe em marketing, mas gera leads que não convertem"</span></>}
+        isOpen={openAccordion === 3} 
+        onClick={() => setOpenAccordion(openAccordion === 3 ? null : 3)}
+      >
+        <div className="card-grid-two">
+          <div>
+            <h4>Sintomas que você reconhece:</h4>
+            <ul>
+              <li>Site gera tráfego, mas conversão é baixa</li>
+              <li>Leads entram sem contexto, time perde horas qualificando</li>
+              <li>Site institucional bonito, mas não educa nem qualifica</li>
+            </ul>
+            <h4 className="mt-4">Por que isso acontece:</h4>
+            <p>Seu site não foi projetado como motor de receita, mas como uma brochura online. Lead entra cru, time gasta tempo descobrindo se é fit ou não.</p>
+          </div>
+          <div className="solution-accordion">
+            <div className="solution-accordion-main">
+              <h5 className="solution-subtitle">SOLUÇÃO: PLATAFORMA DE ACELERAÇÃO DE RECEITA</h5>
+              <h4 className="solution-title">30% Institucional + 70% Engenharia de Receita.</h4>
+              <p className="solution-description">Seu ativo digital educa, qualifica e converte 24/7.</p>
+            </div>
+            <div className="solution-accordion-deliverables">
+              <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd3-details'} onClick={() => setOpenAccordion(openAccordion === 'd3-details' ? 3 : 'd3-details')}>
+                <ul className="solution-features">
+                  <li><CheckCircle2 size={16} /> Arquitetura de Conversão</li>
+                  <li><CheckCircle2 size={16} /> Copywriting Neurocientífico</li>
+                  <li><CheckCircle2 size={16} /> Jornadas por Perfil</li>
+                  <li><CheckCircle2 size={16} /> Integração com CRM</li>
+                </ul>
+              </AccordionItem>
+            </div>
+          </div>
+        </div>
+      </AccordionItem>
+
+      {/* Desafio 4 */}
+      <AccordionItem 
+        title={<><Target /><span>"Seu crescimento estagnou e você não sabe qual alavanca puxar"</span></>}
+        isOpen={openAccordion === 4} 
+        onClick={() => setOpenAccordion(openAccordion === 4 ? null : 4)}
+      >
+        <div className="card-grid-two">
+          <div>
+            <h4>Sintomas que você reconhece:</h4>
+            <ul>
+              <li>Receita parou de crescer há 2-3 trimestres</li>
+              <li>Você tenta várias coisas ao mesmo tempo mas nada move a agulha</li>
+              <li>Decisões baseadas em intuição, não em dados de campo</li>
+            </ul>
+            <h4 className="mt-4">Por que isso acontece:</h4>
+            <p>Ausência de inteligência estratégica. Você precisa validar demanda real antes de comprometer recursos grandes.</p>
+          </div>
+          <div className="solution-accordion">
+            <div className="solution-accordion-main">
+              <h5 className="solution-subtitle">SOLUÇÃO: SPRINT DE VALIDAÇÃO COMERCIAL</h5>
+              <h4 className="solution-title">Testamos oferta, ICP e canais em 15 ou 30 dias.</h4>
+              <p className="solution-description">Você decide escalar baseado em dados de campo, não intuição ou esperança.</p>
+            </div>
+            <div className="solution-accordion-deliverables">
+              <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd4-details'} onClick={() => setOpenAccordion(openAccordion === 'd4-details' ? 4 : 'd4-details')}>
+                <ul className="solution-features">
+                  <li><CheckCircle2 size={16} /> Hipóteses Priorizadas</li>
+                  <li><CheckCircle2 size={16} /> Validação Rápida em Campo</li>
+                  <li><CheckCircle2 size={16} /> Coleta de Dados Reais</li>
+                  <li><CheckCircle2 size={16} /> Recomendação Clara</li>
+                </ul>
+              </AccordionItem>
+            </div>
+          </div>
+        </div>
+      </AccordionItem>
+
+      {/* Desafio 5 */}
+      <AccordionItem 
+        title={<><ThumbsUp /><span>"Sua venda depende de apresentação ao vivo e o cliente precisa 'sentir' o valor"</span></>}
+        isOpen={openAccordion === 5} 
+        onClick={() => setOpenAccordion(openAccordion === 5 ? null : 5)}
+      >
+        <div className="card-grid-two">
+          <div>
+            <h4>Sintomas que você reconhece:</h4>
+            <ul>
+              <li>Ciclo de vendas longo porque cliente não consegue tangibilizar resultado</li>
+              <li>Cada venda exige apresentação personalizada (não escala)</li>
+              <li>Competidores com calculadoras/simuladores convertem mais rápido</li>
+            </ul>
+            <h4 className="mt-4">Por que isso acontece:</h4>
+            <p>Seu produto/serviço é complexo ou intangível. Você precisa de um ativo proprietário que prova autoridade e acelera a decisão SEM depender de reunião.</p>
+          </div>
+          <div className="solution-accordion">
+            <div className="solution-accordion-main">
+              <h5 className="solution-subtitle">SOLUÇÃO: FERRAMENTAS ESTRATÉGICAS DE CONVERSÃO</h5>
+              <h4 className="solution-title">Construímos ativos que se tornam o centro da sua argumentação de valor.</h4>
+              <p className="solution-description">Ferramenta que toma decisões cognitivamente caras no lugar do usuário.</p>
+            </div>
+            <div className="solution-accordion-deliverables">
+              <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd5-details'} onClick={() => setOpenAccordion(openAccordion === 'd5-details' ? 5 : 'd5-details')}>
+                <ul className="solution-features">
+                  <li><CheckCircle2 size={16} /> Calculadoras de ROI</li>
+                  <li><CheckCircle2 size={16} /> Simuladores de Cenário</li>
+                  <li><CheckCircle2 size={16} /> Matchmakers Inteligentes</li>
+                  <li><CheckCircle2 size={16} /> Diagnósticos de Maturidade</li>
+                </ul>
+              </AccordionItem>
+            </div>
+          </div>
+        </div>
+      </AccordionItem>
+
+    </div>
+  </div>
+</section>
 
       <div className="section-divider-glow"></div>
 
