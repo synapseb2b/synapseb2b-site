@@ -177,6 +177,50 @@ export default function ComoTrabalhamosPage() {
           </div>
       </AccordionItem>
       
+{/* Bloco 2: Desafios e Soluções (Accordion) - CÓDIGO CORRIGIDO E VALIDADO */}
+<section id="desafios" className="section-solid">
+  <div className="container reveal-up">
+    <div className="accordion-container">
+
+      {/* Desafio 1 */}
+      <AccordionItem 
+        title={<><Siren /><span>"Seu produto é tecnicamente superior, mas o mercado não percebe o valor dele"</span></>}
+        isOpen={openAccordion === 1} 
+        onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
+      >
+        <div className="card-grid-two">
+          <div>
+            <h4>Sintomas que você reconhece:</h4>
+            <ul>
+              <li>Você explica features, cliente pergunta "mas como isso resolve meu problema?"</li>
+              <li>Reuniões comerciais longas sem decisão clara (cliente "precisa pensar")</li>
+              <li>Concorrentes inferiores vendem mais rápido com narrativas mais simples</li>
+              <li>Sua equipe vende explicando tecnologia, não resolvendo problemas de negócio</li>
+            </ul>
+            <h4 className="mt-4">Por que isso acontece:</h4>
+            <p>Complexidade técnica não foi traduzida para linguagem de decisor. Sua narrativa ativa o cérebro racional (lento) em vez do decisivo (rápido).</p>
+          </div>
+          <div className="solution-accordion">
+            <div className="solution-accordion-main">
+              <h5 className="solution-subtitle">SOLUÇÃO: GO-TO-MARKET COMPLETO</h5>
+              <h4 className="solution-title">Arquitetura estratégica do zero.</h4>
+              <p className="solution-description">Entrega: Blueprint que guia cada decisão comercial dos próximos 18 meses</p>
+            </div>
+            <div className="solution-accordion-deliverables">
+              <AccordionItem title="Ver entregáveis" isOpen={openAccordion === 'd1-details'} onClick={() => setOpenAccordion(openAccordion === 'd1-details' ? 1 : 'd1-details')}>
+                <ul className="solution-features">
+                  <li><CheckCircle2 size={16} /> Posicionamento</li>
+                  <li><CheckCircle2 size={16} /> ICP Refinado</li>
+                  <li><CheckCircle2 size={16} /> Proposta de Valor Central</li>
+                  <li><CheckCircle2 size={16} /> Canais de Aquisição</li>
+                  <li><CheckCircle2 size={16} /> Pricing Estratégico</li>
+                </ul>
+              </AccordionItem>
+            </div>
+          </div>
+        </div>
+      </AccordionItem>
+      
       {/* Desafio 2 */}
       <AccordionItem 
         title={<><TrendingUp /><span>"Seu time comercial depende de esforço heroico para fechar contratos"</span></>}
