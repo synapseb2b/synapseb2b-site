@@ -1,9 +1,10 @@
-// components/Navbar.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO DE 4 ITENS)
+// components/Navbar.js (VERSÃO FINAL COM NOVA ESTRUTURA DE PÁGINAS)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Home, Zap, Building, Mail, X } from 'lucide-react';
+// Ícones atualizados para o novo menu
+import { Home, BookOpen, Award, Building, Mail, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   const handleLinkClick = () => {
-    setIsMenuOpen(false);
+    setIsMenu-Open(false);
   };
 
   return (
@@ -46,10 +47,11 @@ export default function Navbar() {
             <span className="nav-logo-text">Synapse B2B</span>
           </Link>
           
-          {/* --- Menu Desktop (ATUALIZADO) --- */}
+          {/* --- Menu Desktop (ATUALIZADO PARA NOVAS PÁGINAS) --- */}
           <ul className="nav-menu">
             <li><Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-            <li><Link href="/engenharia" className={`nav-link ${router.pathname === '/engenharia' ? 'active' : ''}`}>A Engenharia</Link></li>
+            <li><Link href="/como-trabalhamos" className={`nav-link ${router.pathname === '/como-trabalhamos' ? 'active' : ''}`}>Como Trabalhamos</Link></li>
+            <li><Link href="/cases" className={`nav-link ${router.pathname === '/cases' ? 'active' : ''}`}>Cases</Link></li>
             <li><Link href="/a-synapse" className={`nav-link ${router.pathname === '/a-synapse' ? 'active' : ''}`}>A Synapse</Link></li>
             <li>
               <Link href="/contato" legacyBehavior>
@@ -67,7 +69,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* --- Menu Overlay para Mobile (ATUALIZADO) --- */}
+      {/* --- Menu Overlay para Mobile (ATUALIZADO PARA NOVAS PÁGINAS) --- */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <span className="mobile-menu-title">Navegação</span>
@@ -77,7 +79,8 @@ export default function Navbar() {
         </div>
         <ul className="mobile-menu-links">
           <li><Link href="/" onClick={handleLinkClick}><Home /><span>Home</span></Link></li>
-          <li><Link href="/engenharia" onClick={handleLinkClick}><Zap /><span>A Engenharia</span></Link></li>
+          <li><Link href="/como-trabalhamos" onClick={handleLinkClick}><BookOpen /><span>Como Trabalhamos</span></Link></li>
+          <li><Link href="/cases" onClick={handleLinkClick}><Award /><span>Cases</span></Link></li>
           <li><Link href="/a-synapse" onClick={handleLinkClick}><Building /><span>A Synapse</span></Link></li>
         </ul>
         <div className="mobile-menu-footer">

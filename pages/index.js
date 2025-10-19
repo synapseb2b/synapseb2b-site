@@ -104,11 +104,10 @@ export default function HomePage() {
               <Link href="/contato" className="btn btn-primary">
                 <span>Falar com a Synapse B2B</span>
                 <ArrowRight size={20} />
-              </Link>
-              <Link href="#servicos" className="btn btn-secondary">
-                <span>Como Trabalhamos</span>
-                <Eye size={20} />
-              </Link>
+        <Link href="/como-trabalhamos" className="btn btn-secondary">
+          <span>Como Trabalhamos</span>
+          <Eye size={20} />
+        </Link>
             </div>
           </div>
         </div>

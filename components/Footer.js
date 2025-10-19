@@ -1,4 +1,4 @@
-// components/Footer.js (VERSÃO FINAL COM NOVA NAVEGAÇÃO DE 4 ITENS)
+// components/Footer.js (VERSÃO FINAL COM NOVA ESTRUTURA DE PÁGINAS)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -44,14 +44,15 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Coluna 2: Navegação (ATUALIZADA ) */}
+          {/* Coluna 2: Navegação (ATUALIZADA PARA NOVAS PÁGINAS) */}
           <div className="footer-column footer-links">
             <h4 className="footer-title">Navegação</h4>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/engenharia">A Engenharia</Link></li>
+              <li><Link href="/como-trabalhamos">Como Trabalhamos</Link></li>
+              <li><Link href="/cases">Cases de Sucesso</Link></li>
               <li><Link href="/a-synapse">A Synapse</Link></li>
-              <li><Link href="/contato">Ativar Engenharia</Link></li>
+              <li><Link href="/contato">Contato</Link></li>
             </ul>
           </div>
 
