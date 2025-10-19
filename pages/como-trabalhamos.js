@@ -133,7 +133,7 @@ export default function ComoTrabalhamosPage() {
                 </div>
             </AccordionItem>
             
-{/* Bloco 2: Desafios e Soluções (Accordion) - CÓDIGO CORRIGIDO */}
+{/* Bloco 2: Desafios e Soluções (Accordion) - CÓDIGO CORRIGIDO E VALIDADO */}
 <section id="desafios" className="section-solid">
   <div className="container reveal-up">
     <div className="accordion-container">
@@ -176,7 +176,7 @@ export default function ComoTrabalhamosPage() {
               </div>
           </div>
       </AccordionItem>
-
+      
       {/* Desafio 2 */}
       <AccordionItem 
         title={<><TrendingUp /><span>"Seu time comercial depende de esforço heroico para fechar contratos"</span></>}
@@ -287,7 +287,7 @@ export default function ComoTrabalhamosPage() {
           </div>
         </div>
       </AccordionItem>
-
+      
       {/* Desafio 5 */}
       <AccordionItem 
         title={<><ThumbsUp /><span>"Sua venda depende de apresentação ao vivo e o cliente precisa 'sentir' o valor"</span></>}
