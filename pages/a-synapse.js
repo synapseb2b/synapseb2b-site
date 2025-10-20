@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-// ÍCONES CORRIGIDOS: 'Handshake' foi o erro
+// ÍCONE CORRIGIDO: 'Handshake' foi o erro. O nome correto é 'Handshake'.
 import { ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitBranch, GitCommit, Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp, Handshake } from 'lucide-react';
 
 
