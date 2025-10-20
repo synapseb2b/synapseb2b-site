@@ -316,7 +316,7 @@ body {
 .negative-highlight h4 { color: #ff8a8a; }
 .negative-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; text-align: left; }
 .negative-list p { display: flex; align-items: center; gap: 0.5rem; }
-.negative-list svg { color: #ff8a8a; flex-shrink: 0; }
+.negative-list svg { color: #ff8a8a; flex-shrink: 0; } 
 .accordion-container { max-width: 800px; margin: 2rem auto 0; }
 .accordion-item { border-bottom: 1px solid var(--color-border); }
 .accordion-header { width: 100%; background: none; border: none; color: var(--color-heading); padding: 1.5rem 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; cursor: pointer; gap: 1rem; text-align: left; }
