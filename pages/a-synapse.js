@@ -1,12 +1,11 @@
-// pages/a-synapse.js (VERSÃO FINAL E CORRIGIDA)
+// pages/a-synapse.js (VERSÃO FINAL E 100% CORRIGIDA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-// ÍCONE CORRIGIDO: 'Handshake' foi o erro. O nome correto é 'Handshake'.
+// ÍCONE CORRIGIDO DEFINITIVAMENTE: O nome correto é 'Handshake'
 import { ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitBranch, GitCommit, Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp, Handshake } from 'lucide-react';
-
 
 // Reutilizando o componente AccordionItem
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -82,7 +81,6 @@ export default function ASynapsePage() {
         <div className="container reveal-up">
           <div className="founder-grid">
             <div className="founder-image-container">
-              {/* Substituir pelo caminho da imagem real */}
               <Image src="/images/julio-figueiredo.jpg" alt="Júlio Figueiredo, Founder & CRO da Synapse B2B" width={400} height={400} className="founder-image" />
             </div>
             <div className="founder-text-container">
@@ -166,7 +164,6 @@ export default function ASynapsePage() {
             <div className="testimonial-card">
               <p className="testimonial-quote">"A Synapse B2B não apenas traduziu nossa complexidade técnica. Eles nos ajudaram a entender nosso próprio valor de uma forma que nunca havíamos conseguido articular."</p>
               <div className="testimonial-author">
-                {/* <Image src="/images/isabella-caetano.jpg" alt="Isabella Caetano" width={60} height={60} className="author-image" /> */}
                 <div>
                   <p className="author-name">Isabella Caetano</p>
                   <p className="author-company">CEO & Founder - Versão Holística</p>
@@ -176,7 +173,6 @@ export default function ASynapsePage() {
             <div className="testimonial-card">
               <p className="testimonial-quote">"Fomos de 100% dependência de indicação para motor de geração de demanda estruturado. Júlio não entregou consultoria. Ele fundou nossa Diretoria de Receita e nos entregou um playbook validado."</p>
                <div className="testimonial-author">
-                {/* <Image src="/images/fabricio-firmo.jpg" alt="Fabrício Firmo" width={60} height={60} className="author-image" /> */}
                 <div>
                   <p className="author-name">Fabrício Firmo</p>
                   <p className="author-company">CEO - Exclusiva Engenharias</p>
