@@ -53,8 +53,8 @@ export default function ComoTrabalhamosPage() {
         <meta name="description" content="Entenda como nosso sistema de duas camadas conecta a arquitetura da Engenharia de Receita à construção de ativos que geram resultado." />
       </Head>
 
-      {/* Bloco 1: Hero Section - Alinhada com a Home */}
-      <section className="hero-section short-hero">
+      {/* Bloco 1: Hero Section - CORRIGIDA para tamanho padrão */}
+      <section className="hero-section"> {/* CLASSE .short-hero REMOVIDA */}
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
@@ -142,8 +142,9 @@ export default function ComoTrabalhamosPage() {
               </div>
             </AccordionItem>
             
-            {/* Desafio 2 */}
-            <AccordionItem 
+            {/* ... (O restante dos AccordionItems permanece o mesmo, pois as correções de estilo são globais ou no CSS-in-JS abaixo) ... */}
+             {/* Desafio 2 */}
+             <AccordionItem 
               title={<><TrendingUp /><span>"Seu time comercial depende de esforço heroico e networking"</span></>}
               isOpen={openAccordion === 2} 
               onClick={() => setOpenAccordion(openAccordion === 2 ? null : 2)}
@@ -274,83 +275,35 @@ export default function ComoTrabalhamosPage() {
             <h2 className="section-title">Qual solução para qual momento?</h2>
             <p className="lead-text">Use esta matriz reimaginada para uma recomendação rápida.</p>
             <div className="decision-matrix-grid">
-                {/* Card 1 */}
                 <div className="decision-card">
-                    <div className="moment">
-                        <h3>SEU MOMENTO</h3>
-                        <p>Produto novo no mercado</p>
-                    </div>
+                    <div className="moment"><h3>SEU MOMENTO</h3><p>Produto novo no mercado</p></div>
                     <ArrowRight className="arrow-connector" />
-                    <div className="solution">
-                        <h3>SOLUÇÃO APLICÁVEL</h3>
-                        <p>Sprint de Validação</p>
-                        <span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span>
-                    </div>
+                    <div className="solution"><h3>SOLUÇÃO APLICÁVEL</h3><p>Sprint de Validação</p><span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span></div>
                 </div>
-                 {/* Card 2 */}
                 <div className="decision-card">
-                    <div className="moment">
-                        <h3>SEU MOMENTO</h3>
-                        <p>Narrativa não converte</p>
-                    </div>
+                    <div className="moment"><h3>SEU MOMENTO</h3><p>Narrativa não converte</p></div>
                     <ArrowRight className="arrow-connector" />
-                    <div className="solution">
-                        <h3>SOLUÇÃO APLICÁVEL</h3>
-                        <p>GTM Completo</p>
-                        <span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span>
-                    </div>
+                    <div className="solution"><h3>SOLUÇÃO APLICÁVEL</h3><p>GTM Completo</p><span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span></div>
                 </div>
-                {/* Card 3 */}
                 <div className="decision-card">
-                    <div className="moment">
-                        <h3>SEU MOMENTO</h3>
-                        <p>CEO sobrecarregado</p>
-                    </div>
+                    <div className="moment"><h3>SEU MOMENTO</h3><p>CEO sobrecarregado</p></div>
                     <ArrowRight className="arrow-connector" />
-                    <div className="solution">
-                        <h3>SOLUÇÃO APLICÁVEL</h3>
-                        <p>CRO as a Service</p>
-                        <span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span>
-                    </div>
+                    <div className="solution"><h3>SOLUÇÃO APLICÁVEL</h3><p>CRO as a Service</p><span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span></div>
                 </div>
-                 {/* Card 4 */}
                 <div className="decision-card">
-                    <div className="moment">
-                        <h3>SEU MOMENTO</h3>
-                        <p>Decisão de alto risco</p>
-                    </div>
+                    <div className="moment"><h3>SEU MOMENTO</h3><p>Decisão de alto risco</p></div>
                     <ArrowRight className="arrow-connector" />
-                    <div className="solution">
-                        <h3>SOLUÇÃO APLICÁVEL</h3>
-                        <p>Advisory Board</p>
-                        <span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span>
-                    </div>
+                    <div className="solution"><h3>SOLUÇÃO APLICÁVEL</h3><p>Advisory Board</p><span>CAMADA: INTELIGÊNCIA & ESTRATÉGIA</span></div>
                 </div>
-                 {/* Card 5 */}
                 <div className="decision-card">
-                    <div className="moment">
-                        <h3>SEU MOMENTO</h3>
-                        <p>Site não gera leads</p>
-                    </div>
+                    <div className="moment"><h3>SEU MOMENTO</h3><p>Site não gera leads</p></div>
                     <ArrowRight className="arrow-connector" />
-                    <div className="solution">
-                        <h3>SOLUÇÃO APLICÁVEL</h3>
-                        <p>Plataforma Digital</p>
-                        <span>CAMADA: ATIVOS DIGITAIS</span>
-                    </div>
+                    <div className="solution"><h3>SOLUÇÃO APLICÁVEL</h3><p>Plataforma Digital</p><span>CAMADA: ATIVOS DIGITAIS</span></div>
                 </div>
-                 {/* Card 6 */}
                 <div className="decision-card">
-                    <div className="moment">
-                        <h3>SEU MOMENTO</h3>
-                        <p>Venda depende de reunião</p>
-                    </div>
+                    <div className="moment"><h3>SEU MOMENTO</h3><p>Venda depende de reunião</p></div>
                     <ArrowRight className="arrow-connector" />
-                    <div className="solution">
-                        <h3>SOLUÇÃO APLICÁVEL</h3>
-                        <p>Ferramentas Estratégicas</p>
-                        <span>CAMADA: ATIVOS DIGITAIS</span>
-                    </div>
+                    <div className="solution"><h3>SOLUÇÃO APLICÁVEL</h3><p>Ferramentas Estratégicas</p><span>CAMADA: ATIVOS DIGITAIS</span></div>
                 </div>
             </div>
         </div>
@@ -387,131 +340,37 @@ export default function ComoTrabalhamosPage() {
         </div>
       </section>
 
-      {/* Adicionando CSS específico para as correções e a nova matriz */}
+      {/* Adicionando CSS específico para as correções */}
       <style jsx>{`
-        /* 4a. Ajuste de espaçamento no título do Accordion */
         .accordion-title-wrapper {
           display: flex;
           align-items: center;
-          gap: 1rem;
-        }
-
-        /* 4b. Ajustes internos do Accordion */
-        .accordion-content {
-          transition: max-height 0.3s ease-in-out; /* Animação mais rápida */
+          gap: 1rem; /* Aumenta o espaçamento entre ícone e texto */
         }
         .accordion-content.open {
-          max-height: 1000px; /* Aumenta altura máxima para evitar cortes */
+          max-height: 1500px; /* Aumenta altura máxima para garantir que nada seja cortado */
         }
         .solution-details-grid p {
           line-height: 1.8; /* Melhora o espaçamento entre linhas */
         }
         
-        .solution-details-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.2fr;
-          gap: 2.5rem;
-          padding: 1.5rem 1rem;
-        }
-        .diagnosis-column h4, .solution-column h4 {
-          font-family: 'Montserrat', sans-serif;
-          color: var(--color-heading);
-          font-size: 1.3rem;
-          margin-bottom: 1rem;
-          border-bottom: 2px solid var(--color-border);
-          padding-bottom: 0.75rem;
-        }
+        /* ... (restante do CSS-in-JS que já estava aqui, para a matriz de decisão, etc.) ... */
+        .solution-details-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; padding: 1.5rem 1rem; }
+        .diagnosis-column h4, .solution-column h4 { font-family: 'Montserrat', sans-serif; color: var(--color-heading); font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.75rem; }
         .diagnosis-column p { margin-bottom: 1rem; }
-        .deliverables-title {
-          font-weight: 600;
-          color: var(--color-text);
-          margin-top: 1.5rem;
-          margin-bottom: 1rem;
-        }
-        .solution-column ul {
-          list-style: none;
-          padding: 0;
-        }
-        .solution-column li {
-          display: flex;
-          align-items: flex-start;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-        }
-        .solution-column li svg {
-          color: var(--color-accent);
-          margin-top: 4px;
-          flex-shrink: 0;
-        }
-        .case-proof {
-          margin-top: 2rem;
-          padding: 1.5rem;
-          background-color: rgba(0, 150, 132, 0.05);
-          border-left: 3px solid var(--color-primary);
-          border-radius: 0 8px 8px 0;
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-        }
-        .case-proof svg {
-          color: var(--color-primary);
-          flex-shrink: 0;
-        }
-        .case-proof a {
-          display: block;
-          margin-top: 0.25rem;
-          color: var(--color-accent);
-          text-decoration: none;
-          font-weight: 600;
-        }
-
-        /* 4. Estilos para a Matriz de Decisão Reimaginada */
-        .decision-matrix-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 1.5rem;
-          margin-top: 3rem;
-        }
-        .decision-card {
-          background-color: var(--color-section-bg);
-          border: 1px solid var(--color-border);
-          border-radius: 12px;
-          padding: 2rem;
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-        .decision-card .moment h3, .decision-card .solution h3 {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 0.9rem;
-          font-weight: 700;
-          color: var(--color-primary);
-          margin-bottom: 0.5rem;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        .decision-card p {
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: var(--color-heading);
-          line-height: 1.4;
-        }
-        .decision-card .arrow-connector {
-          color: var(--color-text);
-          opacity: 0.5;
-          align-self: center;
-          margin: 0.5rem 0;
-          transform: rotate(90deg);
-        }
-        .decision-card .solution span {
-          display: block;
-          margin-top: 1rem;
-          font-size: 0.8rem;
-          font-weight: 500;
-          color: var(--color-text);
-          opacity: 0.8;
-        }
+        .deliverables-title { font-weight: 600; color: var(--color-text); margin-top: 1.5rem; margin-bottom: 1rem; }
+        .solution-column ul { list-style: none; padding: 0; }
+        .solution-column li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .solution-column li svg { color: var(--color-accent); margin-top: 4px; flex-shrink: 0; }
+        .case-proof { margin-top: 2rem; padding: 1.5rem; background-color: rgba(0, 150, 132, 0.05); border-left: 3px solid var(--color-primary); border-radius: 0 8px 8px 0; display: flex; gap: 1rem; align-items: center; }
+        .case-proof svg { color: var(--color-primary); flex-shrink: 0; }
+        .case-proof a { display: block; margin-top: 0.25rem; color: var(--color-accent); text-decoration: none; font-weight: 600; }
+        .decision-matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .decision-card { background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; text-align: left; display: flex; flex-direction: column; gap: 1rem; }
+        .decision-card .moment h3, .decision-card .solution h3 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .decision-card p { font-size: 1.3rem; font-weight: 600; color: var(--color-heading); line-height: 1.4; }
+        .decision-card .arrow-connector { color: var(--color-text); opacity: 0.5; align-self: center; margin: 0.5rem 0; transform: rotate(90deg); }
+        .decision-card .solution span { display: block; margin-top: 1rem; font-size: 0.8rem; font-weight: 500; color: var(--color-text); opacity: 0.8; }
         
         @media (max-width: 768px) {
           .solution-details-grid {

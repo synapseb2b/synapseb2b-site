@@ -325,7 +325,8 @@ body {
 .accordion-icon.open { transform: rotate(180deg); }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
 .accordion-content.open { max-height: 500px; }
-.accordion-content-inner { padding: 0 1rem 1.5rem; color: var(--color-text); text-align: left; }
+.accordion-content.open { max-height: 1500px; } /* Aumentado para evitar corte de conteúdo */
+.accordion-content-inner { padding: 1.5rem 2rem 2rem; color: var(--color-text); text-align: left; } /* Padding aumentado */
 
 /* --- Estilos da Seção "Por Que Nos Contratam" --- */
 .truths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
