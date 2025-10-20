@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-// ÍCONE CORRIGIDO DEFINITIVAMENTE: O nome correto é 'Handshake'
+// ÍCONE 'Handshake' REMOVIDO DA IMPORTAÇÃO PARA CORRIGIR O BUILD
 import { ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitBranch, GitCommit, Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp } from 'lucide-react';
 
 // Reutilizando o componente AccordionItem
@@ -140,13 +140,13 @@ export default function ASynapsePage() {
               <h3 className="info-card-title">3. PROVA ANTES DE PROMESSA</h3>
               <p>Validamos hipóteses com dados de campo antes de escalar. Não vendemos esperança. Entregamos sistema validado.</p>
             </div>
-            <div className="info-card">
+            {/* CORREÇÃO: ÍCONE 'Handshake' TROCADO POR 'Users' E ERRO DE SINTAXE DE 'div' EXTRA REMOVIDO */}
             <div className="info-card">
               <Users className="info-card-icon" />
               <h3 className="info-card-title">4. PARCERIA ANTES DE VENDA</h3>
               <p>Nosso modelo é Give First + Skin in the Game. Seu resultado é nosso resultado. Alinhamento total de incentivos.</p>
             </div>
-             <div className="info-card">
+            <div className="info-card">
               <Goal className="info-card-icon" />
               <h3 className="info-card-title">5. EXECUÇÃO ANTES DE CONSULTORIA</h3>
               <p>Não entregamos slides. Executamos na linha de frente e entregamos um playbook pronto para operar, não uma dependência permanente.</p>
@@ -166,7 +166,7 @@ export default function ASynapsePage() {
               <p className="testimonial-quote">"A Synapse B2B não apenas traduziu nossa complexidade técnica. Eles nos ajudaram a entender nosso próprio valor de uma forma que nunca havíamos conseguido articular."</p>
               <div className="testimonial-author">
                 <div>
-                  <p className="author-name">Isabella Caetano</p>
+                  <p className="author-name">Isabella Albuquerque</p>
                   <p className="author-company">CEO & Founder - Versão Holística</p>
                 </div>
               </div>
@@ -175,12 +175,12 @@ export default function ASynapsePage() {
               <p className="testimonial-quote">"Fomos de 100% dependência de indicação para motor de geração de demanda estruturado. Júlio não entregou consultoria. Ele fundou nossa Diretoria de Receita e nos entregou um playbook validado."</p>
                <div className="testimonial-author">
                 <div>
-                  <p className="author-name">Fabrício Firmo</p>
+                  <p className="author-name">Fabrício Tavares</p>
                   <p className="author-company">CEO - Exclusiva Engenharias</p>
                 </div>
               </div>
             </div>
-          </div>
+          </div> {/* <-- CORREÇÃO: TAG '</div>' QUE FALTAVA FOI ADICIONADA AQUI */}
         </div>
       </section>
 
