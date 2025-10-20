@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-// Ícones necessários para esta página, combinando os existentes e os novos
+// Ícones otimizados para a nova estrutura, garantindo consistência
 import { User, Mail, Building, ChevronDown, CheckCircle, Calendar, Search, ArrowRight, MessageSquare, Users, Map, ThumbsUp, XCircle, Linkedin, Send } from 'lucide-react';
 
 // Reutilizando o componente AccordionItem que já usamos em outras páginas
@@ -24,7 +24,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => {
 
 export default function ContatoPage() {
   const whatsappNumber = "553139586192";
-  const [openAccordion, setOpenAccordion] = useState(null);
+  const [openAccordion, setOpenAccordion] = useState('faq1'); // Inicia com o primeiro FAQ aberto
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -65,22 +65,26 @@ export default function ContatoPage() {
   return (
     <>
       <Head>
-        <title>Vamos Conversar | Synapse B2B</title>
-        <meta name="description" content="Primeira conversa de 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão, só clareza sobre como podemos gerar valor real para você." />
+        <title>Ative Sua Engenharia de Receita | Synapse B2B</title>
+        <meta name="description" content="Tudo começa com uma sessão de diagnóstico de 21 minutos para mapear seu principal desafio de receita. Sem pressão, apenas clareza." />
       </Head>
 
-      {/* Bloco 1: Hero Section (NOVA COPY) */}
+      {/* Bloco 1: Hero Section (REFINADA) */}
       <section className="hero-section short-hero">
+        <div className="hero-video-background">
+          <video autoPlay muted loop playsInline className="hero-video">
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+        </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
-          <h1 className="hero-headline">Vamos Conversar Sobre Seu Crescimento</h1>
-          <p className="hero-subheadline">
-            Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo.
-            <br />
-            Sem pressão. Sem proposta genérica. Só clareza.
+          <h1 className="section-title">O Ponto de Partida da Sua Engenharia de Receita</h1>
+          <p className="lead-text">
+            Tudo começa com uma sessão de diagnóstico de 21 minutos para mapear seu principal desafio de receita e avaliar o fit mútuo.
           </p>
           <div className="hero-ctas">
             <Link href="#diagnostico" className="btn btn-primary btn-large">
-              <span>Agendar Diagnóstico (21min)</span>
+              <span>Agendar Sessão de Diagnóstico</span>
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -89,34 +93,29 @@ export default function ContatoPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 2: O Que Acontece na Primeira Conversa (NOVO) */}
+      {/* Bloco 2: Alinhamento de Expectativas (NOVA ESTRUTURA) */}
       <section className="section-solid">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O Que Acontece na Primeira Conversa</h2>
-          <div className="card-grid-three">
-            <div className="info-card">
-              <MessageSquare className="info-card-icon" />
-              <h3 className="info-card-title">1. ENTENDEMOS SEU CONTEXTO (10 min)</h3>
-              <p>Qual seu principal desafio de crescimento agora? Onde está travando: narrativa, sistema, execução ou ativos? O que já tentou e não funcionou?</p>
+          <h2 className="section-title">Uma Sessão Estratégica, Não Uma Chamada de Vendas</h2>
+          <p className="lead-text">Nós não vendemos. Nós diagnosticamos. O objetivo desta primeira conversa é gerar clareza para você.</p>
+          <div className="transformation-matrix">
+            <div className="matrix-column before">
+              <h4><XCircle /> Chamada de Vendas Típica</h4>
+              <ul>
+                <li>Pressão para fechar contrato</li>
+                <li>Diagnóstico superficial</li>
+                <li>Promessas sem contexto</li>
+                <li>Proposta genérica por e-mail</li>
+              </ul>
             </div>
-            <div className="info-card">
-              <Users className="info-card-icon" />
-              <h3 className="info-card-title">2. AVALIAMOS FIT MÚTUO (5 min)</h3>
-              <p>Nem toda empresa está no momento certo para Engenharia de Receita. Somos transparentes sobre isso. Se não formos o fit ideal, indicamos alternativas.</p>
-            </div>
-            <div className="info-card">
-              <Map className="info-card-icon" />
-              <h3 className="info-card-title">3. MAPEAMOS PRÓXIMO PASSO (6 min)</h3>
-              <p>Se houver fit, sugerimos qual frente operacional faz mais sentido para seu contexto (Sprint, GTM, CRO, etc.) e explicamos o porquê.</p>
-            </div>
-          </div>
-          <div className="highlight-box negative-highlight">
-            <h4>O que NÃO fazemos na primeira conversa:</h4>
-            <div className="negative-list">
-                <p><XCircle /> Não enviamos proposta genérica por e-mail</p>
-                <p><XCircle /> Não fazemos diagnóstico superficial de 40 slides</p>
-                <p><XCircle /> Não pressionamos para fechar contrato</p>
-                <p><XCircle /> Não prometemos resultado sem entender contexto</p>
+            <div className="matrix-column after">
+              <h4><CheckCircle /> Nossa Sessão de Diagnóstico</h4>
+              <ul>
+                <li><strong>Contexto:</strong> Entendemos seu desafio real (10 min)</li>
+                <li><strong>Fit Mútuo:</strong> Avaliamos se somos a melhor ajuda (5 min)</li>
+                <li><strong>Clareza:</strong> Mapeamos o próximo passo lógico (6 min)</li>
+                <li><strong>Resultado:</strong> Você sai com um caminho de ação claro</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -124,11 +123,10 @@ export default function ContatoPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 3: A Sessão de Diagnóstico + Formulário (MANTIDO) */}
+      {/* Bloco 3: A Sessão de Diagnóstico + Formulário (INTOCADO, COMO SOLICITADO) */}
       <section id="diagnostico" className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="contact-grid">
-            {/* Coluna Esquerda: Contexto */}
             <div className="contact-column-text">
               <h2 className="contact-title">A Sessão de Diagnóstico.</h2>
               <p className="contact-lead">
@@ -138,7 +136,6 @@ export default function ContatoPage() {
                 Ao preencher o formulário, você agendará uma sessão estratégica com um de nossos Arquitetos de Receita para mapearmos juntos o seu principal desafio de crescimento. Nosso objetivo é fornecer clareza imediata e um caminho de ação claro – com ou sem a Synapse.
               </p>
             </div>
-            {/* Coluna Direita: Formulário */}
             <div className="contact-column-form">
               <form onSubmit={handleSubmit} className="contact-form">
                 <h3 className="form-title">Inicie o Diagnóstico</h3>
@@ -178,74 +175,95 @@ export default function ContatoPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 4: Perguntas Frequentes (NOVO) */}
+      {/* Bloco 4: Perguntas Frequentes (REFINADO) */}
       <section id="faq" className="section-solid">
         <div className="container text-center reveal-up">
-            <h2 className="section-title">Perguntas Frequentes</h2>
+            <h2 className="section-title">Dúvidas Comuns</h2>
             <div className="accordion-container">
                 <AccordionItem title="Para quem a Synapse B2B é o fit ideal?" isOpen={openAccordion === 'faq1'} onClick={() => setOpenAccordion(openAccordion === 'faq1' ? null : 'faq1')}>
-                    <p>Empresas B2B que têm produto validado mas receita imprevisível. Especificamente: founders técnicos, empresas que crescem via networking sem sistema, CEOs sobrecarregados com o comercial e times que vendem features, não problemas.</p>
+                    <p>Para empresas B2B que têm produto validado mas receita imprevisível. Nossos melhores parceiros são founders técnicos, CEOs sobrecarregados com o comercial e times que vendem features, não problemas.</p>
                 </AccordionItem>
-                <AccordionItem title="Qual o investimento típico?" isOpen={openAccordion === 'faq2'} onClick={() => setOpenAccordion(openAccordion === 'faq2' ? null : 'faq2')}>
-                    <p>Nosso modelo é <strong>Give First + Skin in the Game</strong>: uma Ativação Estratégica simbólica para iniciar, com o investimento principal vindo de Receita Nova gerada pelo projeto. Seu resultado é nosso resultado.</p>
+                <AccordionItem title="Qual o investimento?" isOpen={openAccordion === 'faq2'} onClick={() => setOpenAccordion(openAccordion === 'faq2' ? null : 'faq2')}>
+                    <p>Nosso modelo é <strong>Give First + Skin in the Game</strong>. Começamos com uma Ativação Estratégica para provar valor rápido. O investimento principal vem de Receita Nova gerada pelo projeto. Seu resultado é o nosso.</p>
                 </AccordionItem>
-                <AccordionItem title="Quanto tempo dura um projeto típico?" isOpen={openAccordion === 'faq3'} onClick={() => setOpenAccordion(openAccordion === 'faq3' ? null : 'faq3')}>
-                    <p>Varia conforme a frente: Sprints (15-30 dias), GTM Completo (30-45 dias), CRO as a Service (mínimo 60-120 dias), Plataformas e Ferramentas (30-45 dias). O objetivo é sempre o mesmo: você operar sem depender de nós.</p>
-                </AccordionItem>
-                 <AccordionItem title="Qual a diferença entre vocês e uma agência?" isOpen={openAccordion === 'faq4'} onClick={() => setOpenAccordion(openAccordion === 'faq4' ? null : 'faq4')}>
-                    <p>Agências executam táticas (ads, conteúdo). Nós instalamos o sistema de receita. Questionamos a estratégia antes de gastar com canais, construímos a arquitetura completa, executamos na linha de frente até validar e entregamos a capacidade para você operar sozinho. Agência é braço. Synapse é cérebro + braço até você ter os dois.</p>
+                <AccordionItem title="Qual a diferença entre vocês e uma agência?" isOpen={openAccordion === 'faq4'} onClick={() => setOpenAccordion(openAccordion === 'faq4' ? null : 'faq4')}>
+                    <p>Agências executam táticas (ads, conteúdo). Nós instalamos o sistema de receita. Questionamos a estratégia antes de gastar com canais, construímos a arquitetura, executamos na linha de frente e entregamos o playbook para você operar sozinho. Agência é braço. Synapse é cérebro + braço até você ter os dois.</p>
                 </AccordionItem>
             </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 5: O Que Acontece Depois (MANTIDO) */}
-      <section className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Nosso Processo de Ativação</h2>
-          <div className="process-steps-container">
-            <div className="process-step">
-              <div className="process-step-icon-wrapper"><CheckCircle className="process-step-icon" /></div>
-              <h3>Passo 1: Submissão e Análise</h3>
-              <p>Após receber suas informações, nosso time fará uma análise preliminar para entender o contexto do seu desafio.</p>
-            </div>
-            <div className="process-step">
-              <div className="process-step-icon-wrapper"><Calendar className="process-step-icon" /></div>
-              <h3>Passo 2: Agendamento</h3>
-              <p>Um de nossos Arquitetos de Receita entrará em contato por e-mail para agendar a Sessão de Diagnóstico em um horário conveniente.</p>
-            </div>
-            <div className="process-step">
-              <div className="process-step-icon-wrapper"><Search className="process-step-icon" /></div>
-              <h3>Passo 3: A Sessão</h3>
-              <p>Uma reunião de 45 minutos, focada e sem compromisso, para aprofundar no seu desafio e apresentar uma tese inicial de solução.</p>
-            </div>
-          </div>
         </div>
       </section>
       
-      {/* Bloco 6: Outras Formas de Contato (NOVO) */}
-       <section id="outras-formas" className="section-solid">
+      {/* Bloco 5: Outras Formas de Contato (REFINADO E FINAL) */}
+       <section id="outras-formas" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
-            <h2 className="section-title">Outras Formas de Contato</h2>
-            <p className="lead-text">Prefere escrever antes de agendar?</p>
+            <h2 className="section-title">Prefere Outro Caminho?</h2>
+            <p className="lead-text">Se você ainda não está pronto para o diagnóstico, sem problemas. Conecte-se conosco.</p>
             <div className="contact-methods-grid">
                 <a href="mailto:contato@synapseb2b.com" className="contact-method-card">
                     <Mail />
-                    <span>contato@synapseb2b.com</span>
+                    <span>Enviar um E-mail</span>
                 </a>
                 <a href="https://www.linkedin.com/in/juliofigueiredo-synapseb2b/" target="_blank" rel="noopener noreferrer" className="contact-method-card">
                     <Linkedin />
-                    <span>LinkedIn</span>
+                    <span>Conectar no LinkedIn</span>
                 </a>
                  <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="contact-method-card">
                     <Send />
-                    <span>WhatsApp</span>
+                    <span>Mensagem Rápida</span>
                 </a>
             </div>
         </div>
       </section>
+
+      {/* CSS específico para a nova Matriz de Alinhamento */}
+      <style jsx>{`
+        .transformation-matrix {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-top: 3rem;
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .matrix-column {
+          padding: 2.5rem;
+          border-radius: 12px;
+          text-align: left;
+        }
+        .matrix-column.before {
+          background-color: rgba(10, 10, 10, 0.6);
+          border: 1px solid var(--color-border);
+        }
+        .matrix-column.after {
+          background-color: rgba(0, 150, 132, 0.1);
+          border: 1px solid var(--color-primary);
+        }
+        .matrix-column h4 {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.2rem;
+          margin-bottom: 1.5rem;
+          color: var(--color-text);
+        }
+        .matrix-column.after h4 {
+          color: var(--color-primary);
+        }
+        .matrix-column ul {
+          list-style: none;
+          padding: 0;
+        }
+        .matrix-column li {
+          margin-bottom: 0.75rem;
+        }
+        @media (max-width: 768px) {
+          .transformation-matrix {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </>
   );
 }
