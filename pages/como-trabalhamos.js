@@ -1,18 +1,16 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-// Ícones necessários para esta página
+// Ícones necessários para a nova estrutura
 import { 
-  ArrowRight, CheckCircle2, Siren, BarChart, Target, TrendingUp, ThumbsUp, Award,
-  BrainCircuit, HardHat 
+  ArrowRight, BrainCircuit, HardHat, Map, Briefcase, Rocket, MonitorSmartphone, Wrench 
 } from 'lucide-react';
 
-// --- Componente de Texto Rotativo para a Hero (VERSÃO FINAL REFINADA) ---
+// --- Componente de Texto Rotativo para a Hero (ATUALIZADO) ---
 const RotatingText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   
-  // Lista de variações atualizada
   const variations = [
     'conecta produto e mercado.',
     'traduz complexidade em valor.',
@@ -29,7 +27,6 @@ const RotatingText = () => {
   }, [isPaused, variations.length]);
 
   return (
-    // Estrutura atualizada com a nova "Sob Headline"
     <>
       <p className="hero-pre-headline">Desenvolvemos</p>
       <h1 className="hero-headline hero-headline-two-lines">
@@ -47,8 +44,6 @@ const RotatingText = () => {
 };
 
 export default function ComoTrabalhamosPage() {
-  const [activeChallenge, setActiveChallenge] = useState('desafio1');
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -61,7 +56,6 @@ export default function ComoTrabalhamosPage() {
       },
       { threshold: 0.1 }
     );
-
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
@@ -73,7 +67,7 @@ export default function ComoTrabalhamosPage() {
         <meta name="description" content="Entenda como nosso sistema de duas camadas conecta a arquitetura da Engenharia de Receita à construção de ativos que geram resultado." />
       </Head>
 
-      {/* Bloco 1: Hero Section - ATUALIZADA */}
+      {/* Bloco 1: Hero Section */}
       <section className="hero-section">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -87,8 +81,8 @@ export default function ComoTrabalhamosPage() {
             Nós instalamos o sistema que transforma potencial técnico em receita previsível.
           </p>
            <div className="hero-ctas">
-            <Link href="#desafios" className="btn btn-primary">
-              <span>Reconheça seu Desafio</span>
+            <Link href="#camada-inteligencia" className="btn btn-primary">
+              <span>Conheça as Camadas</span>
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -102,78 +96,129 @@ export default function ComoTrabalhamosPage() {
         <div className="container text-center reveal-up">
             <h2 className="section-title">Um Sistema. Duas Camadas.</h2>
             <p className="lead-text">A Synapse B2B opera como um sistema de duas camadas que conecta estratégia e execução.</p>
-            <p className="lead-text" style={{maxWidth: '900px'}}>
-              A primeira camada é a <strong>ARQUITETURA</strong>. Aqui aplicamos o <strong>Cortex GTM™</strong>, nosso sistema proprietário de diagnóstico, para decodificar sua genialidade técnica e traduzi-la em uma Engenharia de Receita. A segunda camada é a <strong>EXECUÇÃO TANGÍVEL</strong>, onde transformamos a arquitetura em ativos que geram resultado.
-            </p>
-            <div className="card-grid-two" style={{marginTop: '3rem'}}>
-              <div className="info-card">
-                  <span className="info-card-subtitle" style={{fontWeight: 700, color: 'var(--color-primary)'}}>CAMADA 1</span>
-                  <h3 className="info-card-title" style={{fontSize: '1.8rem'}}>Inteligência & Estratégia</h3>
-                  <p>Onde definimos a arquitetura do seu crescimento antes de gastar um real em execução.</p>
+        </div>
+      </section>
+
+      {/* Bloco 3: CAMADA 1 - Inteligência & Estratégia */}
+      <section id="camada-inteligencia" className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <div className="layer-intro text-center">
+            <div className="layer-badge"><BrainCircuit size={32} /><span>CAMADA 1</span></div>
+            <h2 className="section-title">Inteligência & Estratégia</h2>
+            <p className="lead-text">Onde definimos a arquitetura do seu crescimento antes de gastar um real em execução.</p>
+            <p className="layer-principle">Se você não sabe <strong>o que vender</strong>, <strong>para quem vender</strong> ou <strong>como vender</strong>, começamos aqui.</p>
+          </div>
+
+          {/* Solução 1: Go-To-Market Completo */}
+          <div className="solution-block">
+            <div className="solution-header"><Map size={28} /><h3>Go-To-Market Completo</h3><p className="solution-tagline">De "o que somos" para "o problema que só nós resolvemos"</p></div>
+            <div className="solution-body">
+              <div className="challenge-side">
+                <h4>Você reconhece este contexto?</h4>
+                <ul><li>Seu produto é tecnicamente superior, mas o mercado não entende o valor na velocidade que você precisa</li><li>Reuniões comerciais longas terminam com "preciso pensar" porque cliente não consegue tangibilizar resultado</li><li>Concorrentes inferiores vendem mais rápido com narrativas mais simples</li><li>Sua equipe vende explicando tecnologia, não resolvendo problemas de negócio</li><li>Crescimento é errático mesmo com produto validado</li></ul>
+                <div className="diagnosis-box"><strong>Diagnóstico:</strong> Complexidade técnica não foi traduzida para linguagem de decisor. Sua narrativa ativa Sistema 2 (análise lenta) ao invés de Sistema 1 (decisão rápida). Decisão B2B é racionalização pós-emocional — se não passar no filtro emocional primeiro, análise racional nunca acontece.</div>
               </div>
-              <div className="info-card">
-                  <span className="info-card-subtitle" style={{fontWeight: 700, color: 'var(--color-primary)'}}>CAMADA 2</span>
-                  <h3 className="info-card-title" style={{fontSize: '1.8rem'}}>Construção de Ativos Digitais</h3>
-                  <p>Onde transformamos estratégia em ferramentas que geram receita 24/7.</p>
+              <div className="solution-side">
+                <h4>O que construímos</h4><p>Arquitetura estratégica completa do zero:</p>
+                <ul><li><strong>Posicionamento:</strong> De "o que somos" para "problema que só nós resolvemos"</li><li><strong>ICP Refinado:</strong> Quem compra, por que compra, quando compra</li><li><strong>Proposta de Valor Central:</strong> Mensagem que decisor entende em 60 segundos</li><li><strong>Canais de Aquisição:</strong> Onde seu cliente ideal está e como alcançá-lo</li><li><strong>Modelo de Vendas:</strong> Consultivo, transacional ou híbrido</li><li><strong>Pricing Estratégico:</strong> Ancoragem de valor e arquitetura de escolha</li><li><strong>Estratégia de Retenção:</strong> Como cliente vira defensor</li></ul>
+                <div className="result-box"><strong>Entrega:</strong> Blueprint que guia cada decisão comercial dos próximos 18 meses.</div>
+                <div className="timeline-box"><strong>Timeline típica:</strong> Clareza de narrativa (15 dias) → Blueprint completo (30 dias) → Primeiras validações de mercado (45 dias) → Sistema pronto para escalar (60 dias)</div>
+                <div className="case-proof"><strong>Case que prova:</strong> Versão Holística transformou "Cuidado Farmacêutico Integrativo" (decisor: "o quê??") em "Plataforma que reduz custo de paciente crônico em 5.8x" (decisor: "quando começamos?"). <Link href="/cases">Ver case completo →</Link></div>
               </div>
+            </div>
+          </div>
+          <div className="solution-divider"></div>
+
+          {/* Solução 2: CRO as a Service */}
+          <div className="solution-block">
+            <div className="solution-header"><Briefcase size={28} /><h3>Diretoria de Receita (CRO as a Service)</h3><p className="solution-tagline">Liderança C-level fracionada que instala o sistema e entrega o playbook</p></div>
+            <div className="solution-body">
+              <div className="challenge-side">
+                <h4>Você reconhece este contexto?</h4>
+                <ul><li>Aquele vendedor excepcional fecha tudo, mas ninguém consegue replicar o método dele</li><li>Crescimento depende de quem tem melhor rede de contatos, não de processo</li><li>Cada vendedor tem suas próprias planilhas, critérios e abordagem</li><li>CEO passa mais tempo vendendo do que liderando empresa</li><li>Quando vendedor sai, relacionamentos vão junto</li><li>Receita travou e você não sabe qual alavanca puxar</li></ul>
+                <div className="diagnosis-box"><strong>Diagnóstico:</strong> Ausência de sistema replicável. Vendas dependem de talento individual, não de processo excelente. Sem playbook validado, cada pessoa inventa seu método. Resultado: impossível escalar sem contratar "vendedores excepcionais" (raros e caros). Heroísmo comercial não escala. Sistema escala.</div>
+              </div>
+              <div className="solution-side">
+                <h4>O que construímos</h4><p>Liderança C-level fracionada que opera como sua Diretoria de Receita:</p>
+                <ul><li><strong>Inteligência de Mercado:</strong> Win/Loss Analysis, Voice of Customer, mapeamento de vetores de crescimento</li><li><strong>Arquitetura de Processo:</strong> Funil completo desenhado com critérios de qualificação e cadências validadas</li><li><strong>Execução Pioneira:</strong> Lideramos prospecção ativa, participamos de reuniões, modelamos abordagem</li><li><strong>Governança de KPIs:</strong> Instalamos métricas de saúde de receita e dashboards</li><li><strong>Playbook Validado:</strong> Documentamos processos, scripts, perfil de contratação</li></ul>
+                <div className="methodology-box"><strong>Metodologia:</strong> Dual-Track Revenue — Discovery (validação) + Delivery (execução) em paralelo. Aprendizado alimenta execução.</div>
+                <div className="result-box"><strong>Modelo:</strong> Planejamos juntos o período ideal de acompanhamento (mínimo 3 meses). Investimento mínimo fixo + performance sobre receita nova gerada.</div>
+                <div className="timeline-box"><strong>Timeline típica:</strong> Inteligência de mercado (15 dias) → Primeiras reuniões qualificadas (30 dias) → Pipeline estruturado (60 dias) → Playbook validado (60-120 dias)</div>
+                <div className="case-proof"><strong>Case que prova:</strong> Exclusiva Engenharias foi de 100% dependência de indicação para motor de geração de demanda estruturado. Sistema validado, documentado e pronto para contratar time e escalar. <Link href="/cases">Ver case completo →</Link></div>
+              </div>
+            </div>
+          </div>
+          <div className="solution-divider"></div>
+
+          {/* Solução 3: Sprint de Validação Comercial */}
+          <div className="solution-block">
+            <div className="solution-header"><Rocket size={28} /><h3>Sprint de Validação Comercial</h3><p className="solution-tagline">Valide demanda real antes de comprometer recursos grandes</p></div>
+            <div className="solution-body">
+              <div className="challenge-side">
+                <h4>Você reconhece este contexto?</h4>
+                <ul><li>Receita parou de crescer há 2-3 trimestres</li><li>Você tenta várias coisas ao mesmo tempo mas nada move a agulha</li><li>Não sabe se o problema é ICP, mensagem, canal, pricing ou processo</li><li>Decisões baseadas em intuição, não em dados de campo</li><li>Medo de escalar errado e queimar caixa</li><li>Produto novo entrando no mercado ou pivô de modelo de negócio</li></ul>
+                <div className="diagnosis-box"><strong>Diagnóstico:</strong> Ausência de inteligência estratégica. Você não sabe qual hipótese testar primeiro. Tentar tudo ao mesmo tempo dispersa recursos e não valida nada. Tentar uma coisa de cada vez sem método leva meses até descobrir o que funciona. Você precisa validar demanda real antes de comprometer recursos grandes.</div>
+              </div>
+              <div className="solution-side">
+                <h4>O que construímos</h4><p>Testamos oferta, ICP e canais em 15 ou 30 dias:</p>
+                <ul><li><strong>Hipóteses Priorizadas:</strong> Identificamos as 3 variáveis mais críticas para testar</li><li><strong>Validação Rápida:</strong> Executamos testes de campo com ICPs reais</li><li><strong>Dados, Não Opiniões:</strong> Coletamos feedback qualitativo e quantitativo</li><li><strong>Recomendação Clara:</strong> Escalar, pivotar ou refinar</li></ul>
+                <div className="result-box"><strong>Você decide escalar baseado em dados de campo, não intuição ou esperança.</strong></div>
+                <div className="timeline-box"><strong>Sprint 15 dias:</strong> Clareza sobre alavanca prioritária. Decisão fundamentada sobre próximo passo.<br/><strong>Sprint 30 dias:</strong> Validação robusta de demanda. Primeiras conversões ou refutação clara de hipótese.</div>
+                <div className="outcome-box">Em ambos os casos: Você não queima caixa escalando problema. Valida antes de comprometer recursos grandes.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 3: Desafios e Soluções (COPY ATUALIZADA) */}
-      <section id="desafios" className="section-with-gradient-glow">
-        <div className="container reveal-up text-center">
-          <h2 className="section-title">Encontre seu Desafio. Conheça a Solução.</h2>
-          
-          <div className="challenge-tabs-nav">
-            <button className={`tab-button ${activeChallenge === 'desafio1' ? 'active' : ''}`} onClick={() => setActiveChallenge('desafio1')}><Siren /><span>Narrativa</span></button>
-            <button className={`tab-button ${activeChallenge === 'desafio2' ? 'active' : ''}`} onClick={() => setActiveChallenge('desafio2')}><TrendingUp /><span>Sistema</span></button>
-            <button className={`tab-button ${activeChallenge === 'desafio3' ? 'active' : ''}`} onClick={() => setActiveChallenge('desafio3')}><BarChart /><span>Conversão</span></button>
-            <button className={`tab-button ${activeChallenge === 'desafio4' ? 'active' : ''}`} onClick={() => setActiveChallenge('desafio4')}><Target /><span>Estagnação</span></button>
-            <button className={`tab-button ${activeChallenge === 'desafio5' ? 'active' : ''}`} onClick={() => setActiveChallenge('desafio5')}><ThumbsUp /><span>Complexidade</span></button>
+      {/* Bloco 4: CAMADA 2 - Construção de Ativos Digitais */}
+      <section id="camada-ativos" className="section-solid">
+        <div className="container reveal-up">
+          <div className="layer-intro text-center">
+            <div className="layer-badge"><HardHat size={32} /><span>CAMADA 2</span></div>
+            <h2 className="section-title">Construção de Ativos Digitais</h2>
+            <p className="lead-text">Onde transformamos estratégia em ferramentas que geram receita 24/7.</p>
+            <p className="layer-principle">Se você tem clareza estratégica mas <strong>baixa conversão digital</strong> ou <strong>vendas que dependem de apresentação ao vivo</strong>, começamos aqui.</p>
           </div>
 
-          <div className="challenge-content-wrapper">
-            {/* Desafio 1 Content */}
-            <div className={`challenge-pane ${activeChallenge === 'desafio1' ? 'active' : ''}`}>
-              <h3>"Seu produto é tecnicamente superior, mas o mercado não percebe o valor"</h3>
-              <div className="solution-details-grid">
-                  <div className="diagnosis-column"><h4>Diagnóstico</h4><p>Complexidade técnica não foi traduzida para linguagem de decisor. Você explica features, mas o cliente pergunta "como isso resolve meu problema?". Sua narrativa ativa o Sistema 2 (racional/lento) ao invés do Sistema 1 (emocional/decisivo). Decisão B2B é racionalização pós-emocional — se não passar no filtro emocional primeiro, análise racional nunca acontece.</p></div>
-                  <div className="solution-column"><h4>Solução: Go-To-Market Completo</h4><p>Arquitetura estratégica do zero: posicionamento que traduz "o que somos" para "problema que só nós resolvemos", ICP refinado (quem compra, por que compra, quando compra), proposta de valor que decisor entende em 60 segundos, canais de aquisição, modelo de vendas, pricing estratégico e estratégia de retenção. Blueprint que guia cada decisão comercial dos próximos 18 meses.</p><p className="solution-when"><strong>Quando contratar:</strong> Crescimento errático com produto validado, narrativa não clara internamente, time vende explicando features (não problemas), CAC alto + ciclo longo + conversão baixa.</p></div>
+          {/* Solução 4: Plataforma de Aceleração de Receita */}
+          <div className="solution-block">
+            <div className="solution-header"><MonitorSmartphone size={28} /><h3>Plataforma de Aceleração de Receita</h3><p className="solution-tagline">30% Institucional + 70% Engenharia de Receita</p></div>
+            <div className="solution-body">
+              <div className="challenge-side">
+                <h4>Você reconhece este contexto?</h4>
+                <ul><li>Site gera tráfego, mas conversão é baixa</li><li>Leads entram sem contexto, time perde horas qualificando</li><li>Conteúdo genérico atrai perfil errado de visitante</li><li>Formulários com 50% de abandono</li><li>Site institucional bonito, mas não educa nem qualifica</li></ul>
+                <div className="diagnosis-box"><strong>Diagnóstico:</strong> Site não foi projetado como motor de receita — foi tratado como "presença digital" (brochura online). Ausência de arquitetura de conversão: páginas não educam, não reduzem objeção, não qualificam visitante antes do contato. Resultado: lead entra cru, time gasta tempo descobrindo se é fit ou não.</div>
+              </div>
+              <div className="solution-side">
+                <h4>O que construímos</h4><p>Não construímos sites institucionais. Construímos plataformas digitais estratégicas:</p>
+                <ul><li><strong>Arquitetura de Conversão:</strong> Cada página projetada para educar, qualificar e reduzir objeção antes do contato</li><li><strong>Copywriting Neurocientífico:</strong> Mensagens que ativam Sistema 1 (decisão rápida) antes de Sistema 2 (análise lenta)</li><li><strong>Jornadas por Perfil:</strong> Visitante de ICP A vê conteúdo diferente de ICP B</li><li><strong>Integração com CRM:</strong> Lead entra com contexto, não cru</li></ul>
+                <div className="result-box"><strong>Seu ativo digital educa, qualifica e converte 24/7.</strong></div>
+                <div className="examples-box"><strong>Exemplos tangíveis:</strong><br/><a href="https://exclusivaengenharias.com" target="_blank" rel="noopener noreferrer">exclusivaengenharias.com</a> (Plataforma + Simulador de Orçamento integrado)<br/><a href="https://versaoholistica.com.br" target="_blank" rel="noopener noreferrer">versaoholistica.com.br</a> (Plataforma que educa sobre CareOps Integrativo)</div>
+                <div className="timeline-box"><strong>Timeline típica:</strong> Arquitetura e copywriting (15 dias) → Desenvolvimento e testes (30 dias) → Plataforma em produção (15-45 dias) → Primeiras conversões orgânicas (+30 dias)</div>
               </div>
             </div>
-            {/* Desafio 2 Content */}
-            <div className={`challenge-pane ${activeChallenge === 'desafio2' ? 'active' : ''}`}>
-              <h3>"Seu time comercial depende de networking e esforço heroico para fechar contratos"</h3>
-              <div className="solution-details-grid">
-                  <div className="diagnosis-column"><h4>Diagnóstico</h4><p>Ausência de sistema replicável. Aquele vendedor excepcional fecha tudo, mas ninguém consegue replicar o método. Crescimento depende de quem tem melhor rede de contatos (não de processo). Sem playbook validado, cada pessoa inventa seu método. Resultado: impossível escalar sem contratar "vendedores excepcionais" (raros e caros). Heroísmo comercial não escala. Sistema escala.</p></div>
-                  <div className="solution-column"><h4>Solução: Diretoria de Receita (CRO as a Service)</h4><p>Liderança C-level fracionada. Inteligência de mercado (Win/Loss Analysis, Voice of Customer), arquitetura de processo (funil completo com critérios de qualificação), execução pioneira (lideramos prospecção, participamos de reuniões, modelamos abordagem), governança de KPIs e playbook validado documentado. Metodologia Dual-Track Revenue: Discovery (validação) + Delivery (execução) em paralelo. Planejamos juntos o período ideal de acompanhamento (mínimo 3 meses). Modelo: investimento mínimo fixo + performance sobre receita nova gerada.</p><p className="solution-when"><strong>Quando contratar:</strong> CEO sobrecarregado fazendo comercial, time opera sem liderança estratégica, precisa validar processo antes de contratar gerente, receita travou e você não sabe qual alavanca puxar.</p></div>
+          </div>
+          <div className="solution-divider"></div>
+
+          {/* Solução 5: Ferramentas Estratégicas de Conversão */}
+          <div className="solution-block">
+            <div className="solution-header"><Wrench size={28} /><h3>Ferramentas Estratégicas de Conversão</h3><p className="solution-tagline">Ativos que provam autoridade e aceleram decisão</p></div>
+            <div className="solution-body">
+              <div className="challenge-side">
+                <h4>Você reconhece este contexto?</h4>
+                <ul><li>Ciclo de vendas longo porque cliente não consegue tangibilizar resultado</li><li>Você perde oportunidades para quem tem demo ou prova de conceito</li><li>Cada venda exige apresentação personalizada (não escala)</li><li>Cliente quer "ver funcionando" antes de comprar, mas você não tem ferramenta self-service</li><li>Competidores com calculadoras/simuladores convertem mais rápido</li></ul>
+                <div className="diagnosis-box"><strong>Diagnóstico:</strong> Seu produto/serviço é complexo ou intangível. Cliente não consegue visualizar valor sem experimentar. Apresentação ao vivo não escala. Você precisa de ativo proprietário que prova autoridade e acelera decisão SEM depender de reunião. Ferramenta estratégica bem projetada reduz fricção cognitiva e torna vitória possível antes do contrato.</div>
               </div>
-            </div>
-            {/* Desafio 3 Content */}
-             <div className={`challenge-pane ${activeChallenge === 'desafio3' ? 'active' : ''}`}>
-              <h3>"Você investe em marketing, mas gera leads que não convertem ou consomem tempo precioso da equipe"</h3>
-              <div className="solution-details-grid">
-                  <div className="diagnosis-column"><h4>Diagnóstico</h4><p>Site não foi projetado como motor de receita — foi tratado como "presença digital" (brochura online). Ausência de arquitetura de conversão: páginas não educam, não reduzem objeção, não qualificam visitante antes do contato. Site gera tráfego mas conversão é baixa. Leads entram sem contexto, time perde horas qualificando. Resultado: lead entra cru, time gasta tempo descobrindo se é fit ou não.</p></div>
-                  <div className="solution-column"><h4>Solução: Plataforma de Aceleração de Receita</h4><p>Não construímos sites institucionais. Construímos plataformas digitais estratégicas: 30% Institucional + 70% Engenharia de Receita. Arquitetura de conversão (cada página projetada para educar, qualificar e reduzir objeção), copywriting neurocientífico (mensagens que ativam Sistema 1), jornadas por perfil (visitante de ICP A vê conteúdo diferente de ICP B), integração com CRM (lead entra com contexto, não cru). Seu ativo digital educa, qualifica e converte 24/7.</p><p className="solution-examples"><strong>Exemplos tangíveis:</strong> exclusivaengenharias.com, versaoholistica.com.br</p></div>
-              </div>
-            </div>
-             {/* Desafio 4 Content */}
-             <div className={`challenge-pane ${activeChallenge === 'desafio4' ? 'active' : ''}`}>
-              <h3>"Seu crescimento estagnou e você não sabe qual alavanca puxar para sair do platô"</h3>
-              <div className="solution-details-grid">
-                  <div className="diagnosis-column"><h4>Diagnóstico</h4><p>Ausência de inteligência estratégica. Receita parou de crescer há 2-3 trimestres. Você tenta várias coisas ao mesmo tempo mas nada move a agulha. Não sabe se o problema é ICP, mensagem, canal, pricing ou processo. Decisões baseadas em intuição, não em dados de campo. Tentar tudo ao mesmo tempo dispersa recursos e não valida nada. Tentar uma coisa de cada vez sem método leva meses até descobrir o que funciona. Você precisa validar demanda real antes de comprometer recursos grandes.</p></div>
-                  <div className="solution-column"><h4>Solução: Sprint de Validação Comercial</h4><p>Testamos oferta, ICP e canais em 15 ou 30 dias. Hipóteses priorizadas (identificamos as 3 variáveis mais críticas para testar), validação rápida (executamos testes de campo com ICPs reais), dados (não opiniões) e recomendação clara: escalar, pivotar ou refinar. Você decide escalar baseado em dados de campo, não intuição ou esperança.</p><p className="solution-when"><strong>Quando contratar:</strong> Produto novo entrando no mercado, pivô de modelo de negócio, expansão para novo segmento/geografia, dúvida se há demanda pagante real.</p></div>
-              </div>
-            </div>
-             {/* Desafio 5 Content */}
-            <div className={`challenge-pane ${activeChallenge === 'desafio5' ? 'active' : ''}`}>
-              <h3>"Sua venda depende de apresentação ao vivo e cliente precisa 'sentir' o valor antes de comprar"</h3>
-              <div className="solution-details-grid">
-                  <div className="diagnosis-column"><h4>Diagnóstico</h4><p>Seu produto/serviço é complexo ou intangível. Cliente não consegue visualizar valor sem experimentar. Ciclo de vendas longo porque cliente não consegue tangibilizar resultado. Você perde oportunidades para quem tem demo ou prova de conceito. Cada venda exige apresentação personalizada (não escala). Apresentação ao vivo não escala — você precisa de ativo proprietário que prova autoridade e acelera decisão SEM depender de reunião. Ferramenta estratégica bem projetada reduz fricção cognitiva e torna vitória possível antes do contrato.</p></div>
-                  <div className="solution-column"><h4>Solução: Ferramentas Estratégicas de Conversão</h4><p>Construímos ativos proprietários que se tornam o centro da sua argumentação de valor: calculadoras de ROI personalizadas (cliente insere dados dele, vê economia projetada em segundos), simuladores de cenário, matchmakers inteligentes (conecta necessidade a solução via IA), diagnósticos de maturidade (cliente descobre gap sozinho, você vira solução óbvia), apps personalizados focados em business. Neurociência aplicada: ferramenta que toma decisões cognitivamente caras no lugar do usuário.</p><p className="solution-examples"><strong>Exemplos tangíveis:</strong> Synapse B2B Match Maker, Simulador de Orçamento (Exclusiva), Cortex GTM™, MathPop</p><p className="solution-when"><strong>Quando contratar:</strong> Venda depende de apresentação ao vivo, cliente precisa "sentir" valor antes de comprar, ciclo de vendas longo e complexo, quer escalar argumento de vendas sem escalar time.</p></div>
+              <div className="solution-side">
+                <h4>O que construímos</h4><p>Ativos proprietários que se tornam o centro da sua argumentação de valor:</p>
+                <ul><li><strong>Calculadoras de ROI Personalizadas:</strong> Cliente insere dados dele, vê economia projetada em segundos</li><li><strong>Simuladores de Cenário:</strong> Testa diferentes configurações, compara resultados</li><li><strong>Matchmakers Inteligentes:</strong> Conecta necessidade a solução via IA (ex: Synapse Match Maker)</li><li><strong>Diagnósticos de Maturidade:</strong> Cliente descobre gap sozinho, você vira solução óbvia</li><li><strong>Apps Personalizados Focados em Business:</strong> Ferramentas complexas que educam e convertem</li></ul>
+                <div className="principle-box"><strong>Neurociência aplicada:</strong> Ferramenta que toma decisões cognitivamente caras no lugar do usuário.</div>
+                <div className="examples-box"><strong>Exemplos tangíveis:</strong><br/>• Synapse B2B Match Maker (matching em 10 segundos)<br/>• Simulador de Orçamento (Exclusiva Engenharias)<br/>• Cortex GTM™ (diagnóstico estratégico automatizado)<br/>• MathPop (gamificação educacional)</div>
+                <div className="timeline-box"><strong>Timeline típica:</strong> Briefing e prototipagem (7 dias) → Desenvolvimento e testes (30 dias) → Ferramenta em produção (30-45 dias) → Integração com site/CRM (+15 dias)</div>
+                <div className="case-proof"><strong>Case que prova:</strong> Synapse Match Maker transformou caos relacional em inteligência de conexão. De análise manual exaustiva (Sistema 2) para sugestão imediata (Sistema 1). Decisão em segundos. <Link href="/cases">Ver ferramenta →</Link></div>
               </div>
             </div>
           </div>
@@ -182,49 +227,15 @@ export default function ComoTrabalhamosPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 4: Matriz de Decisão (COPY ATUALIZADA) */}
-      <section id="matriz-decisao" className="section-solid">
-        <div className="container text-center reveal-up">
-            <h2 className="section-title">Qual solução para qual momento?</h2>
-            <p className="lead-text">Seu desafio se encaixa em uma de nossas duas frentes de trabalho.</p>
-            <div className="card-grid-two">
-              {/* Coluna de Estratégia */}
-              <div className="solution-layer-card">
-                  <div className="layer-header"><BrainCircuit /><h3>Inteligência & Estratégia</h3></div>
-                  <p className="layer-description">Onde definimos a arquitetura do seu crescimento antes de gastar um real em execução. Para desafios de clareza de narrativa, ausência de sistema comercial, validação de mercado e decisões estratégicas de alto risco.</p>
-                  <ul>
-                      <li><span>Seu momento:</span> Produto validado mas crescimento errático, narrativa confusa, time vende features<br/><span>→ Solução:</span> <strong>Go-To-Market Completo</strong></li>
-                      <li><span>Seu momento:</span> CEO sobrecarregado fazendo comercial, ausência de liderança estratégica<br/><span>→ Solução:</span> <strong>CRO as a Service</strong></li>
-                      <li><span>Seu momento:</span> Produto novo no mercado, pivô de modelo, expansão para novo segmento<br/><span>→ Solução:</span> <strong>Sprint de Validação Comercial</strong></li>
-                      <li><span>Seu momento:</span> Decisão de alto risco irreversível, falta referência interna para validar hipótese<br/><span>→ Solução:</span> <strong>Advisory Board</strong></li>
-                  </ul>
-              </div>
-              {/* Coluna de Ativos */}
-              <div className="solution-layer-card">
-                  <div className="layer-header"><HardHat /><h3>Construção de Ativos Digitais</h3></div>
-                  <p className="layer-description">Onde transformamos estratégia em ferramentas que geram receita 24/7. Para desafios de baixa conversão digital, leads que entram sem contexto, vendas que dependem de apresentação ao vivo e necessidade de escalar argumentação sem escalar time.</p>
-                  <ul>
-                      <li><span>Seu momento:</span> Site gera tráfego mas não converte, leads entram sem contexto, time perde horas qualificando<br/><span>→ Solução:</span> <strong>Plataforma de Aceleração de Receita</strong><br/><em>30% Institucional + 70% Engenharia de Receita. Arquitetura de conversão em cada página.</em></li>
-                      <li><span>Seu momento:</span> Venda depende de apresentação ao vivo, cliente precisa "sentir" valor, ciclo longo e complexo<br/><span>→ Solução:</span> <strong>Ferramentas Estratégicas de Conversão</strong><br/><em>Calculadoras de ROI, simuladores, matchmakers, diagnósticos — ativos que provam autoridade e aceleram decisão.</em></li>
-                  </ul>
-              </div>
-            </div>
-        </div>
-      </section>
-      
       {/* Bloco 5: Modelo de Trabalho */}
        <section id="modelo-trabalho" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <div className="decision-block">
             <h3>NOSSO MODELO DE TRABALHO</h3>
             <p className="decision-highlight">Give First + Skin in the Game</p>
-            <p>
-              Iniciamos com uma Ativação Estratégica para formalizar o comprometimento mútuo. O maior volume de investimento vem de <strong>Receita Nova</strong> gerada pelo projeto — dinheiro que você não teria sem nossa intervenção. Seu resultado é nosso resultado.
-            </p>
+            <p>Iniciamos com uma Ativação Estratégica para formalizar o comprometimento mútuo. O maior volume de investimento vem de <strong>Receita Nova</strong> gerada pelo projeto — dinheiro que você não teria sem nossa intervenção. Seu resultado é nosso resultado.</p>
             <div className="section-cta">
-              <Link href="/contato" className="btn btn-secondary">
-                <span>Entender o modelo</span><ArrowRight size={20} />
-              </Link>
+              <Link href="/contato" className="btn btn-secondary"><span>Entender o modelo</span><ArrowRight size={20} /></Link>
             </div>
           </div>
         </div>
@@ -236,48 +247,45 @@ export default function ComoTrabalhamosPage() {
           <h2 className="final-cta-title">Qual desafio você enfrenta agora?</h2>
           <p className="lead-text" style={{marginBottom: '2rem'}}>Vamos traduzir seu desafio em um plano de ação.</p>
           <div className="section-cta">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Agendar Diagnóstico Estratégico em 21min</span><ArrowRight size={20} />
-            </Link>
+            <Link href="/contato" className="btn btn-primary btn-large"><span>Agendar Diagnóstico Estratégico em 21min</span><ArrowRight size={20} /></Link>
           </div>
         </div>
       </section>
 
-      {/* CSS específico para as novas seções */}
+      {/* CSS para a NOVA ESTRUTURA */}
       <style jsx>{`
-        /* SEÇÃO DE DESAFIOS (SEM ACCORDION) */
-        .challenge-tabs-nav { display: flex; justify-content: center; gap: 1rem; margin: 3rem auto; flex-wrap: wrap; }
-        .tab-button { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.8rem 1.5rem; background: transparent; border: 1px solid var(--color-border); color: var(--color-text); font-size: 1rem; font-weight: 600; cursor: pointer; border-radius: 8px; transition: all 0.3s ease; }
-        .tab-button:hover { background-color: rgba(0, 150, 132, 0.1); color: var(--color-heading); }
-        .tab-button.active { background-color: var(--color-primary); color: var(--color-heading); border-color: var(--color-primary); }
-        .challenge-content-wrapper { position: relative; min-height: 420px; /* Evita pulos de layout */ }
-        .challenge-pane { opacity: 0; position: absolute; top: 0; left: 0; right: 0; pointer-events: none; transition: opacity 0.4s ease-in-out; }
-        .challenge-pane.active { opacity: 1; position: relative; pointer-events: auto; }
-        .challenge-pane h3 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--color-heading); margin-bottom: 2.5rem; }
-        .solution-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1000px; margin: 0 auto; }
-        .diagnosis-column, .solution-column { text-align: left; }
-        .diagnosis-column h4, .solution-column h4 { font-family: 'Montserrat'; color: var(--color-primary); font-size: 1.2rem; margin-bottom: 1rem; }
-        .solution-when, .solution-examples { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); font-size: 0.95rem; text-align: left; }
-        .solution-when strong, .solution-examples strong { color: var(--color-heading); }
-
-        /* MATRIZ DE DECISÃO REIMAGINADA */
-        .solution-layer-card { background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 16px; padding: 3rem; }
-        .layer-header { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--color-border); }
-        .layer-header svg { width: 40px; height: 40px; color: var(--color-primary); }
-        .layer-header h3 { font-family: 'Montserrat'; font-size: 1.5rem; color: var(--color-heading); margin: 0; }
-        .layer-description { margin-bottom: 2rem; min-height: 60px; /* Alinha verticalmente */ }
-        .solution-layer-card ul { list-style: none; text-align: left; }
-        .solution-layer-card li { padding: 1rem 0; border-bottom: 1px solid var(--color-border); line-height: 1.8; }
-        .solution-layer-card li:last-child { border-bottom: none; }
-        .solution-layer-card li span:first-child { font-weight: 500; color: var(--color-text); }
-        .solution-layer-card li span:nth-of-type(2) { font-weight: 500; color: var(--color-text); }
-        .solution-layer-card li strong { color: var(--color-heading); }
-        .solution-layer-card li em { font-style: normal; font-size: 0.9rem; opacity: 0.8; display: block; margin-top: 0.5rem; }
+        .layer-intro { margin-bottom: 5rem; }
+        .layer-badge { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-weight: 600; color: var(--color-primary); margin-bottom: 2rem; }
+        .layer-badge svg { margin-bottom: 2px; }
+        .layer-principle { font-size: 1.2rem; font-weight: 500; color: var(--color-heading); max-width: 800px; margin: -1.5rem auto 0; }
         
-        @media (max-width: 768px) {
-          .solution-details-grid { grid-template-columns: 1fr; }
-          .diagnosis-column, .solution-column, .solution-when, .solution-examples { text-align: center; }
-          .challenge-content-wrapper { min-height: 600px; }
+        .solution-block { margin-bottom: 4rem; }
+        .solution-header { text-align: center; margin-bottom: 3rem; }
+        .solution-header svg { color: var(--color-primary); margin-bottom: 1rem; }
+        .solution-header h3 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; color: var(--color-heading); margin-bottom: 0.5rem; }
+        .solution-tagline { font-size: 1.1rem; color: var(--color-text); }
+        
+        .solution-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .challenge-side, .solution-side { text-align: left; }
+        .challenge-side h4, .solution-side h4 { font-family: 'Montserrat'; font-size: 1.3rem; color: var(--color-heading); margin-bottom: 1.5rem; }
+        .challenge-side ul, .solution-side ul { list-style-type: '✓'; list-style-position: inside; padding-left: 5px; }
+        .challenge-side li, .solution-side li { margin-bottom: 1rem; padding-left: 0.75rem; }
+        .solution-side li strong { color: var(--color-heading); }
+
+        .diagnosis-box, .result-box, .timeline-box, .case-proof, .methodology-box, .outcome-box, .examples-box, .principle-box {
+          margin-top: 2rem; padding: 1.5rem; border-radius: 8px; font-size: 0.95rem; line-height: 1.7;
+        }
+        .diagnosis-box { background-color: rgba(10, 10, 10, 0.6); border: 1px solid var(--color-border); }
+        .result-box, .methodology-box, .outcome-box, .principle-box { background-color: rgba(0, 150, 132, 0.1); border: 1px solid var(--color-primary); color: var(--color-heading); }
+        .timeline-box, .case-proof, .examples-box { background-color: transparent; border: 1px solid var(--color-border); }
+        .case-proof a, .examples-box a { color: var(--color-accent); font-weight: 600; text-decoration: none; }
+        .case-proof a:hover, .examples-box a:hover { text-decoration: underline; }
+        
+        .solution-divider { height: 1px; background-color: var(--color-border); margin: 6rem 0; }
+
+        @media (max-width: 992px) {
+          .solution-body { grid-template-columns: 1fr; }
+          .layer-intro, .solution-block { margin-bottom: 4rem; }
         }
       `}</style>
     </>
