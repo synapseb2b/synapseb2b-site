@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 // ÍCONE CORRIGIDO DEFINITIVAMENTE: O nome correto é 'Handshake'
-import { ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitBranch, GitCommit, Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp, Handshake } from 'lucide-react';
+import { ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitBranch, GitCommit, Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp } from 'lucide-react';
 
 // Reutilizando o componente AccordionItem
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -141,7 +141,8 @@ export default function ASynapsePage() {
               <p>Validamos hipóteses com dados de campo antes de escalar. Não vendemos esperança. Entregamos sistema validado.</p>
             </div>
             <div className="info-card">
-              <Handshake className="info-card-icon" />
+            <div className="info-card">
+              <Users className="info-card-icon" />
               <h3 className="info-card-title">4. PARCERIA ANTES DE VENDA</h3>
               <p>Nosso modelo é Give First + Skin in the Game. Seu resultado é nosso resultado. Alinhamento total de incentivos.</p>
             </div>
