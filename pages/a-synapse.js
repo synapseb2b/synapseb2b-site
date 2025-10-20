@@ -1,11 +1,14 @@
-// pages/a-synapse.js (VERSÃO FINAL E 100% CORRIGIDA)
+// pages/a-synapse.js (VERSÃO OTIMIZADA E REESTRUTURADA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-// ÍCONE 'Handshake' REMOVIDO DA IMPORTAÇÃO PARA CORRIGIR O BUILD
-import { ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitBranch, GitCommit, Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp } from 'lucide-react';
+// Ícones necessários e otimizados para a nova estrutura
+import { 
+  ArrowRight, ChevronDown, CheckCircle2, Award, Users, BookOpen, GitCommit, 
+  Goal, ShieldCheck, BrainCircuit, Star, Brain, Target, TrendingUp, Zap, GitBranch 
+} from 'lucide-react';
 
 // Reutilizando o componente AccordionItem
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -46,8 +49,8 @@ export default function ASynapsePage() {
   return (
     <>
       <Head>
-        <title>A Synapse | Engenharia de Receita B2B</title>
-        <meta name="description" content="Nossa missão é transformar complexidade técnica em receita previsível através de clareza estratégica, sistema comercial e ativos digitais que convertem." />
+        <title>A Synapse | Nosso Manifesto e Filosofia Operacional</title>
+        <meta name="description" content="Nascemos para resolver o Paradoxo de Valor: quando o melhor produto não gera a melhor receita. Conheça nossos princípios e nossa filosofia operacional." />
       </Head>
 
       {/* Bloco 1: Hero - Manifesto */}
@@ -76,55 +79,12 @@ export default function ASynapsePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 2: Founder Story */}
-      <section id="founder" className="section-solid">
-        <div className="container reveal-up">
-          <div className="founder-grid">
-            <div className="founder-image-container">
-              <Image src="/images/julio-figueiredo.jpg" alt="Júlio Figueiredo, Founder & CRO da Synapse B2B" width={400} height={400} className="founder-image" />
-            </div>
-            <div className="founder-text-container">
-              <h2 className="founder-name">JÚLIO FIGUEIREDO</h2>
-              <p className="founder-title">Founder & Chief Revenue Officer</p>
-              <p className="founder-quote">"Minha paixão é arquitetar o futuro da Engenharia de Receita B2B."</p>
-              <p>Minha trajetória foi forjada na linha de frente de vendas complexas em ecossistemas como Google, Microsoft, Dell e TOTVS, não como um técnico que vende tecnologia, mas como um estrategista que sabe transformar visão em receita.</p>
-            </div>
-          </div>
-
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-content">
-                <h3>GOOGLE (4 anos)</h3>
-                <p>Expansão que gerou <strong>+200% em novos clientes</strong> e +300% no faturamento de contas estratégicas.</p>
-                <p className="timeline-learning"><strong>Aprendizado validado:</strong> É possível escalar vendas complexas com método e execução disciplinada, não apenas com esforço heroico.</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-content">
-                <h3>TOTVS (7 anos)</h3>
-                <p>De assistente a <strong>sócio da franquia em apenas 2 anos</strong>.</p>
-                <p className="timeline-learning"><strong>Aprendizado validado:</strong> Crescimento acelerado é resultado de método replicável. Quando se codifica o instinto em processo, qualquer pessoa mediana executa com excelência.</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-content">
-                <h3>MICROSOFT, DELL & OUTROS</h3>
-                <p>Décadas de imersão em vendas B2B de alta complexidade.</p>
-                <p className="timeline-learning"><strong>Aprendizado validado:</strong> B2B complexo é estratégico. Exige entender o problema de negócio que o produto resolve e como articular isso para múltiplos decisores.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Bloco 3: Nossos Princípios */}
-      <section id="principios" className="section-with-gradient-glow">
+      {/* Bloco 2: Nossos Princípios */}
+      <section id="principios" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Nossos Princípios</h2>
           <p className="lead-text">Como operamos. O que defendemos.</p>
-          <div className="principles-grid">
+          <div className="principles-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))'}}>
             <div className="info-card">
               <BrainCircuit className="info-card-icon" />
               <h3 className="info-card-title">1. CLAREZA ANTES DE EXECUÇÃO</h3>
@@ -140,7 +100,6 @@ export default function ASynapsePage() {
               <h3 className="info-card-title">3. PROVA ANTES DE PROMESSA</h3>
               <p>Validamos hipóteses com dados de campo antes de escalar. Não vendemos esperança. Entregamos sistema validado.</p>
             </div>
-            {/* CORREÇÃO: ÍCONE 'Handshake' TROCADO POR 'Users' E ERRO DE SINTAXE DE 'div' EXTRA REMOVIDO */}
             <div className="info-card">
               <Users className="info-card-icon" />
               <h3 className="info-card-title">4. PARCERIA ANTES DE VENDA</h3>
@@ -156,31 +115,103 @@ export default function ASynapsePage() {
       </section>
 
       <div className="section-divider-glow"></div>
+      
+      {/* Bloco 3: Filosofia Operacional (NOVO BLOCO) */}
+      <section id="filosofia" className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <div className="text-center">
+            <h2 className="section-title">Nossa Filosofia Operacional</h2>
+            <p className="lead-text">O sistema que nos diferencia e garante o seu resultado.</p>
+          </div>
+          <div className="card-grid-three" style={{alignItems: 'start'}}>
+            <div className="info-card text-center">
+              <Zap className="info-card-icon" />
+              <h3 className="info-card-title">Give First + Skin in the Game</h3>
+              <p>Começamos com uma Ativação Estratégica para provar valor rápido. O maior volume do investimento vem de Receita Nova gerada pelo projeto. Não ganhamos se você não ganhar.</p>
+            </div>
+            <div className="info-card text-center">
+              <GitBranch className="info-card-icon" />
+              <h3 className="info-card-title">Dual-Track Revenue</h3>
+              <p>Discovery (validação) e Delivery (execução) acontecem em paralelo. Aprendizado de campo alimenta a execução. Execução valida o aprendizado. Ciclos rápidos que garantem que não escalamos um problema.</p>
+            </div>
+            <div className="info-card text-center">
+              <Users className="info-card-icon" />
+              <h3 className="info-card-title">Playbook, Não Dependência</h3>
+              <p>Nosso objetivo final é que você opere o sistema sem nós. Entregamos processos, scripts, KPIs e um playbook validado para construir sua capacidade interna, não uma dependência externa.</p>
+            </div>
+          </div>
+          <div className="decision-block" style={{marginTop: '4rem', borderColor: 'var(--color-accent)'}}>
+            <div style={{textAlign: 'center'}}>
+              <Brain size={40} style={{color: 'var(--color-accent)', marginBottom: '1rem'}}/>
+              <h3 style={{fontSize: '1.8rem'}}>Cortex GTM™: Nosso Sistema Operacional</h3>
+              <p style={{fontSize: '1.1rem'}}>
+                É o nosso sistema proprietário de orquestração estratégica. Ele integra cinco lentes críticas (Fundador, Comprador, Receita, Neurociência e Andragogia) para traduzir sua genialidade técnica em uma Engenharia de Receita completa e coerente.
+              </p>
+            </div>
+            <AccordionItem 
+              title="Fundamentado nos maiores frameworks globais"
+              isOpen={openAccordion === 'frameworks'} 
+              onClick={() => setOpenAccordion(openAccordion === 'frameworks' ? null : 'frameworks')}
+            >
+              <div className="frameworks-grid">
+                <div>
+                  <strong>Engenharia de Go-To-Market:</strong>
+                  <ul>
+                    <li>Challenger Sale</li>
+                    <li>Strategic Narrative</li>
+                    <li>Category Design</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Ciência do Comportamento:</strong>
+                  <ul>
+                    <li>Neurociência Aplicada</li>
+                    <li>Jobs-to-be-Done (JTBD)</li>
+                    <li>Buyer Enablement</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Orquestração de Escala:</strong>
+                  <ul>
+                    <li>Science of Scaling</li>
+                    <li>Founder-Led Growth</li>
+                    <li>Value Disciplines</li>
+                  </ul>
+                </div>
+              </div>
+            </AccordionItem>
+          </div>
+        </div>
+      </section>
 
-      {/* Bloco 4: Depoimentos */}
+      <div className="section-divider-glow"></div>
+
+      {/* Bloco 4: Depoimentos (com nomes corrigidos) */}
        <section id="depoimentos" className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Que Nossos Clientes Dizem</h2>
           <div className="card-grid-two">
             <div className="testimonial-card">
-              <p className="testimonial-quote">"A Synapse B2B não apenas traduziu nossa complexidade técnica. Eles nos ajudaram a entender nosso próprio valor de uma forma que nunca havíamos conseguido articular."</p>
+              <p className="testimonial-quote">"A Synapse B2B não apenas traduziu nossa complexidade técnica. Eles nos ajudaram a entender nosso próprio valor de uma forma que nunca havíamos conseguido articular. O Cortex GTM™ conectou nossa paixão com a linguagem que hospitais e investidores precisavam ouvir."</p>
               <div className="testimonial-author">
+                {/* Imagem pode ser adicionada aqui se disponível */}
                 <div>
-                  <p className="author-name">Isabella Albuquerque</p>
+                  <p className="author-name">Isabella Caetano</p>
                   <p className="author-company">CEO & Founder - Versão Holística</p>
                 </div>
               </div>
             </div>
             <div className="testimonial-card">
-              <p className="testimonial-quote">"Fomos de 100% dependência de indicação para motor de geração de demanda estruturado. Júlio não entregou consultoria. Ele fundou nossa Diretoria de Receita e nos entregou um playbook validado."</p>
+              <p className="testimonial-quote">"Fomos de 100% dependência de indicação para motor de geração de demanda estruturado. Júlio não entregou consultoria. Ele fundou nossa Diretoria de Receita, executou na linha de frente e nos entregou um playbook validado. Agora temos um sistema."</p>
                <div className="testimonial-author">
+                {/* Imagem pode ser adicionada aqui se disponível */}
                 <div>
-                  <p className="author-name">Fabrício Tavares</p>
+                  <p className="author-name">Fabrício Firmo</p>
                   <p className="author-company">CEO - Exclusiva Engenharias</p>
                 </div>
               </div>
             </div>
-          </div> {/* <-- CORREÇÃO: TAG '</div>' QUE FALTAVA FOI ADICIONADA AQUI */}
+          </div>
         </div>
       </section>
 
@@ -190,60 +221,50 @@ export default function ASynapsePage() {
       <section id="sucesso" className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Nossa Definição de Sucesso</h2>
-           <p className="lead-text">Sucesso não é fechar contrato. Sucesso é você operar o sistema sem nós.</p>
+           <p className="lead-text">Sucesso não é fechar um contrato. Sucesso é você operar o sistema sem nós.</p>
            <div className="success-grid">
-              <p><CheckCircle2 /> Entende sua proposta de valor melhor do que nós</p>
-              <p><CheckCircle2 /> Executa o playbook sem precisar nos ligar</p>
-              <p><CheckCircle2 /> Contrata vendedor que performa desde o primeiro mês</p>
-              <p><CheckCircle2 /> Projeta receita com 80% de acurácia</p>
-              <p><CheckCircle2 /> Toma decisões comerciais com confiança</p>
+              <p><CheckCircle2 /> Entende sua proposta de valor melhor do que nós.</p>
+              <p><CheckCircle2 /> Executa o playbook sem precisar nos ligar.</p>
+              <p><CheckCircle2 /> Contrata um vendedor que performa desde o primeiro mês.</p>
+              <p><CheckCircle2 /> Projeta a receita com 80% de acurácia.</p>
+              <p><CheckCircle2 /> Toma decisões comerciais com total confiança.</p>
            </div>
            <p className="lead-text mt-4">Aí sim, nós cumprimos nossa missão.</p>
         </div>
       </section>
 
-       <div className="section-divider-glow"></div>
-
-      {/* Bloco 6: Por que "Synapse"? */}
-       <section id="porque-synapse" className="section-solid">
-         <div className="container text-center reveal-up">
-            <div className="decision-block">
-              <h3>POR QUE "SYNAPSE"?</h3>
-              <p className="decision-highlight">Synapse = Sinapse. A conexão que transmite informação e permite aprendizado.</p>
-              <p>
-                Somos a sinapse entre o que você é capaz de entregar e o que o mercado está disposto a pagar.
-              </p>
-              <div className="connections-grid">
-                <span>Seu potencial técnico</span><ArrowRight /><span>Receita previsível</span>
-                <span>Sua complexidade</span><ArrowRight /><span>Clareza que converte</span>
-                <span>Seu instinto</span><ArrowRight /><span>Sistema replicável</span>
-              </div>
-            </div>
-         </div>
-       </section>
-      
-      {/* Bloco 7: CTA Final */}
+      {/* Bloco 6: CTA Final */}
       <section className="final-cta-section">
         <div className="container text-center reveal-up">
-          <h2 className="final-cta-title">Quer conhecer mais?</h2>
-          <p className="cta-support-text">Explore nosso trabalho ou vamos conversar:</p>
-          <div className="hero-ctas mt-4">
-            <Link href="/como-trabalhamos" className="btn btn-secondary">
-              <span>Como Trabalhamos</span>
-            </Link>
-            <Link href="/cases" className="btn btn-secondary">
-              <span>Cases de Transformação</span>
-            </Link>
-          </div>
+          <h2 className="final-cta-title">Vamos conversar sobre o seu sistema de receita?</h2>
            <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large">
               <span>Agendar Diagnóstico Estratégico em 21min</span>
               <ArrowRight size={20} />
             </Link>
           </div>
-          <p className="cta-support-text">Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Sem proposta genérica.</p>
+          <p className="cta-support-text">Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Apenas clareza.</p>
         </div>
       </section>
+
+      <style jsx>{`
+        .frameworks-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 2rem;
+          margin-top: 1.5rem;
+          text-align: left;
+        }
+        .frameworks-grid strong {
+          color: var(--color-heading);
+        }
+        .frameworks-grid ul {
+          list-style: none;
+          padding: 0;
+          margin-top: 0.5rem;
+          opacity: 0.8;
+        }
+      `}</style>
     </>
   );
 }
