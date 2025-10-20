@@ -1,33 +1,30 @@
-// pages/cases.js (VERSÃO REESTRUTURADA E OTIMIZADA)
+// pages/cases.js (VERSÃO CORRIGIDA E REIMAGINADA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-// Ícones otimizados para a nova estrutura de abas e matriz de transformação
+// Ícones otimizados para a nova estrutura
 import { ArrowRight, HardHat, Share2, GraduationCap, Brain, XCircle, Zap, HeartPulse } from 'lucide-react';
 
 export default function CasesPage() {
-  // Define o case inicial que será exibido
   const [activeCase, setActiveCase] = useState('versao-holistica');
 
-  // Efeito para animações de scroll
   useEffect(() => {
-    const scrollObserver = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
-            scrollObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll('.reveal-up').forEach(el => scrollObserver.observe(el));
-    return () => scrollObserver.disconnect();
+    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
-  // Componente interno para a Matriz de Transformação
   const TransformationMatrix = ({ before, after }) => (
     <div className="transformation-matrix">
       <div className="matrix-column">
@@ -48,7 +45,7 @@ export default function CasesPage() {
         <meta name="description" content="Explore histórias reais de como o Cortex GTM™ transforma complexidade em clareza, gerando resultados tangíveis para Healthtechs, Engenharias e Ecossistemas." />
       </Head>
 
-      {/* Bloco 1: Hero Section */}
+      {/* Bloco 1: Hero Section (AJUSTADA) */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -59,15 +56,20 @@ export default function CasesPage() {
         <div className="container hero-content text-center page-hero-padding reveal-up">
           <h1 className="section-title">Engenharia de Receita em Ação</h1>
           <p className="lead-text">
-            Quatro histórias reais. Quatro aplicações do Cortex GTM™.
-            <br/>Um princípio unificador: complexidade sem clareza é potencial desperdiçado.
+            Quatro histórias reais. Um princípio: complexidade sem clareza é potencial desperdiçado.
           </p>
+           <div className="hero-ctas">
+              <Link href="#cases-content" className="btn btn-primary">
+                <span>Explorar as Provas</span>
+                <ArrowRight size={20} />
+              </Link>
+            </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
-
-      {/* Bloco 2: O Princípio Unificador (NOVO) */}
+      
+      {/* Bloco 2: O Princípio Unificador */}
       <section className="section-solid">
           <div className="container text-center reveal-up">
               <h2 className="section-title">O Princípio Unificador: Cortex GTM™</h2>
@@ -77,29 +79,44 @@ export default function CasesPage() {
           </div>
       </section>
 
-      {/* Bloco 3: Cases em Abas (NOVA ESTRUTURA) */}
+      {/* Bloco 3: Cases com Navegação Reimaginada e Correção de Bug */}
       <section id="cases-content" className="section-with-gradient-glow">
         <div className="container reveal-up">
-          {/* Navegação por Abas */}
-          <div className="case-tabs-navigation">
-            <button className={`tab-button ${activeCase === 'versao-holistica' ? 'active' : ''}`} onClick={() => setActiveCase('versao-holistica')}>
-              <HeartPulse /> Versão Holística
+          {/* Navegação Reimaginada com Cards */}
+          <div className="case-selector-grid">
+            <button className={`case-selector-card ${activeCase === 'versao-holistica' ? 'active' : ''}`} onClick={() => setActiveCase('versao-holistica')}>
+              <HeartPulse />
+              <div>
+                <h3>Versão Holística</h3>
+                <span>Tradução de Narrativa</span>
+              </div>
             </button>
-            <button className={`tab-button ${activeCase === 'exclusiva-engenharias' ? 'active' : ''}`} onClick={() => setActiveCase('exclusiva-engenharias')}>
-              <HardHat /> Exclusiva Engenharias
+            <button className={`case-selector-card ${activeCase === 'exclusiva-engenharias' ? 'active' : ''}`} onClick={() => setActiveCase('exclusiva-engenharias')}>
+              <HardHat />
+              <div>
+                <h3>Exclusiva Engenharias</h3>
+                <span>Construção de Sistema</span>
+              </div>
             </button>
-            <button className={`tab-button ${activeCase === 'synapse-matchmaker' ? 'active' : ''}`} onClick={() => setActiveCase('synapse-matchmaker')}>
-              <Share2 /> Synapse Matchmaker
+            <button className={`case-selector-card ${activeCase === 'synapse-matchmaker' ? 'active' : ''}`} onClick={() => setActiveCase('synapse-matchmaker')}>
+              <Share2 />
+              <div>
+                <h3>Synapse Matchmaker</h3>
+                <span>Método em Produto</span>
+              </div>
             </button>
-            <button className={`tab-button ${activeCase === 'mathpop' ? 'active' : ''}`} onClick={() => setActiveCase('mathpop')}>
-              <GraduationCap /> MathPop
+            <button className={`case-selector-card ${activeCase === 'mathpop' ? 'active' : ''}`} onClick={() => setActiveCase('mathpop')}>
+              <GraduationCap />
+              <div>
+                <h3>MathPop</h3>
+                <span>Prova de Universalidade</span>
+              </div>
             </button>
           </div>
 
-          {/* Conteúdo dos Cases */}
+          {/* Conteúdo dos Cases (COM CORREÇÃO DE BUG) */}
           <div className="case-content-wrapper">
-            {activeCase === 'versao-holistica' && (
-              <div className="case-content-pane">
+              <div className={`case-content-pane ${activeCase === 'versao-holistica' ? 'active' : ''}`}>
                 <div className="case-grid">
                   <div className="case-column">
                     <h3>Contexto: A Narrativa Dispersa</h3>
@@ -120,10 +137,8 @@ export default function CasesPage() {
                   <p className="text-2xl font-bold text-white">"Traduzimos inovação técnica em linguagem de decisor financeiro. O produto sempre funcionou. Agora o mercado entende por quê."</p>
                 </div>
               </div>
-            )}
             
-            {activeCase === 'exclusiva-engenharias' && (
-              <div className="case-content-pane">
+              <div className={`case-content-pane ${activeCase === 'exclusiva-engenharias' ? 'active' : ''}`}>
                 <div className="case-grid">
                   <div className="case-column">
                     <h3>Contexto: A Invisibilidade Digital</h3>
@@ -144,10 +159,8 @@ export default function CasesPage() {
                   <p className="text-2xl font-bold text-white">"Dual-Track Revenue transforma aprendizado em receita enquanto você descobre o que funciona."</p>
                 </div>
               </div>
-            )}
             
-            {activeCase === 'synapse-matchmaker' && (
-              <div className="case-content-pane">
+              <div className={`case-content-pane ${activeCase === 'synapse-matchmaker' ? 'active' : ''}`}>
                   <div className="case-grid">
                       <div className="case-column">
                           <h3>Contexto: O Caos Relacional</h3>
@@ -168,10 +181,8 @@ export default function CasesPage() {
                       <p className="text-2xl font-bold text-white">"A mesma lógica que destrava receita em empresas B2B agora destrava conexões em ecossistemas."</p>
                   </div>
               </div>
-            )}
 
-            {activeCase === 'mathpop' && (
-              <div className="case-content-pane">
+              <div className={`case-content-pane ${activeCase === 'mathpop' ? 'active' : ''}`}>
                   <div className="case-grid">
                       <div className="case-column">
                           <h3>Contexto: A Prova de Universalidade</h3>
@@ -188,7 +199,6 @@ export default function CasesPage() {
                       <p className="text-2xl font-bold text-white">"Cortex GTM™ não é uma estratégia de nicho. É uma ciência de traduzir complexidade em clareza que qualquer cérebro humano consegue processar e valorizar."</p>
                   </div>
               </div>
-            )}
           </div>
         </div>
       </section>
@@ -210,40 +220,82 @@ export default function CasesPage() {
         </div>
       </section>
 
-      {/* CSS específico para a nova estrutura de abas */}
+      {/* CSS específico para as correções e a nova estrutura */}
       <style jsx>{`
-        .case-tabs-navigation {
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 3rem;
-          border-bottom: 1px solid var(--color-border);
+        /* 3. Estilos para a Nova Navegação de Cases */
+        .case-selector-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
+          margin-bottom: 4rem;
         }
-        .tab-button {
-          display: inline-flex;
+        .case-selector-card {
+          display: flex;
           align-items: center;
-          gap: 0.75rem;
-          padding: 1rem 1.5rem;
-          background: transparent;
-          border: none;
-          border-bottom: 3px solid transparent;
-          color: var(--color-text);
-          font-size: 1.1rem;
-          font-weight: 600;
+          gap: 1rem;
+          padding: 1.5rem;
+          background-color: var(--color-section-bg);
+          border: 1px solid var(--color-border);
+          border-radius: 12px;
           cursor: pointer;
           transition: all 0.3s ease;
-          transform: translateY(1px);
+          text-align: left;
         }
-        .tab-button:hover {
+        .case-selector-card:hover {
+          transform: translateY(-5px);
+          background-color: rgba(0, 150, 132, 0.1);
+        }
+        .case-selector-card.active {
+          background-color: var(--color-primary);
+          color: var(--color-heading);
+          border-color: var(--color-primary);
+        }
+        .case-selector-card svg {
+          flex-shrink: 0;
+          width: 32px;
+          height: 32px;
+          color: var(--color-text);
+          transition: color 0.3s ease;
+        }
+        .case-selector-card:hover svg,
+        .case-selector-card.active svg {
           color: var(--color-heading);
         }
-        .tab-button.active {
-          color: var(--color-primary);
-          border-bottom-color: var(--color-primary);
+        .case-selector-card h3 {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.2rem;
+          color: var(--color-heading);
+          margin: 0 0 0.25rem 0;
+        }
+        .case-selector-card span {
+          font-size: 0.9rem;
+          color: var(--color-text);
+          transition: color 0.3s ease;
+        }
+        .case-selector-card.active span {
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* CORREÇÃO DO BUG DE FLICKERING */
+        .case-content-wrapper {
+          position: relative;
         }
         .case-content-pane {
-          animation: fadeIn 0.5s ease-out;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          pointer-events: none;
+          transition: opacity 0.4s ease-in-out;
         }
+        .case-content-pane.active {
+          opacity: 1;
+          position: relative;
+          pointer-events: auto;
+        }
+
+        /* Estilos reaproveitados da versão anterior */
         .transformation-matrix {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -269,23 +321,6 @@ export default function CasesPage() {
           line-height: 1.7;
         }
         @media (max-width: 768px) {
-          .case-tabs-navigation {
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            border-bottom: none;
-          }
-          .tab-button {
-            flex-basis: calc(50% - 0.5rem);
-            justify-content: center;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            transform: translateY(0);
-          }
-          .tab-button.active {
-            background-color: var(--color-primary);
-            color: var(--color-heading);
-            border-color: var(--color-primary);
-          }
           .transformation-matrix {
             grid-template-columns: 1fr;
           }
