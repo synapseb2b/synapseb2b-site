@@ -1,9 +1,9 @@
-// pages/index.js (VERSÃO FINAL E CORRIGIDA)
+// pages/index.js (VERSÃO FINAL, COMPLETA E VALIDADA)
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-// Ícones consolidados em uma única linha para evitar erros
+// Ícones consolidados em uma única linha
 import { ArrowRight, Eye, ChevronDown, ClipboardList, Settings2, Zap, Lightbulb, HardHat, Rocket, Map, Briefcase, Users, MonitorSmartphone, Wrench, CheckCircle2, Compass, Target, TrendingUp, UserCheck, BrainCircuit, Phone, Timer } from 'lucide-react';
 
 // --- Componente de Texto Rotativo ---
@@ -104,10 +104,12 @@ export default function HomePage() {
               <Link href="/contato" className="btn btn-primary">
                 <span>Falar com a Synapse B2B</span>
                 <ArrowRight size={20} />
-        <Link href="/como-trabalhamos" className="btn btn-secondary">
-          <span>Como Trabalhamos</span>
-          <Eye size={20} />
-        </Link>
+              </Link>
+              {/* LINK CORRIGIDO */}
+              <Link href="/como-trabalhamos" className="btn btn-secondary">
+                <span>Como Trabalhamos</span>
+                <Eye size={20} />
+              </Link>
             </div>
           </div>
         </div>
