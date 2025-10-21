@@ -191,10 +191,8 @@ export default function ComoTrabalhamosPage() {
         section { padding: 4.5rem 0; }
         .hero-section { padding: 0; }
         
-        .layer-intro { margin-bottom: 3rem; text-align: center; } /* Alinhamento Central */
+        .layer-intro { margin-bottom: 3rem; text-align: center; }
         .layer-badge { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-weight: 600; color: var(--color-primary); margin-bottom: 1.5rem; }
-        .decision-block { text-align: center; } /* Alinhamento Central */
-        .decision-block .section-cta { margin-top: 2rem; }
         
         .solutions-column-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
         .solution-card-detailed {
@@ -202,7 +200,7 @@ export default function ComoTrabalhamosPage() {
           border: 1px solid var(--color-border);
           border-radius: 16px;
           padding: 2.5rem;
-          text-align: center; /* Alinhamento Central */
+          text-align: center;
           display: flex;
           flex-direction: column;
         }
@@ -219,12 +217,12 @@ export default function ComoTrabalhamosPage() {
           gap: 2.5rem;
           padding-top: 2rem;
           border-top: 1px solid var(--color-border);
-          text-align: left; /* Listas e parágrafos internos permanecem à esquerda para legibilidade */
+          text-align: center; /* CORREÇÃO APLICADA */
         }
         .detail-block h5 { font-size: 1rem; font-weight: 700; color: var(--color-heading); margin-bottom: 1rem; }
-        .detail-block ul { list-style-type: '✓'; list-style-position: inside; padding-left: 5px; }
+        .detail-block ul { list-style: none; padding: 0; } /* CORREÇÃO: Remove bullet points para alinhamento central */
         .detail-block li, .detail-block p { font-size: 0.95rem; color: var(--color-text); line-height: 1.8; }
-        .detail-block li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
+        .detail-block li { margin-bottom: 0.75rem; }
         
         .solution-cta { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
         .solution-cta .btn-secondary { background-color: transparent; }
