@@ -35,18 +35,18 @@ const ExpandableImage = ({ src, alt, initialHeight = '280px' }) => {
             </button>
           </div>
         )}
-      </div>
 
-      {isExpanded && (
-        <button
-          className="collapse-button-floating"
-          onClick={toggleExpand}
-          aria-label="Recolher imagem"
-        >
-          <ChevronUp size={24} />
-          <span>Recolher</span>
-        </button>
-      )}
+        {isExpanded && (
+          <button
+            className="collapse-button-overlay"
+            onClick={toggleExpand}
+            aria-label="Recolher imagem"
+          >
+            <ChevronUp size={24} />
+            <span>Recolher</span>
+          </button>
+        )}
+      </div>
     </>
   );
 };
@@ -483,7 +483,7 @@ export default function CasesPage() {
               before={['Zero', 'Ideia no papel', 'Nenhum cliente', 'Sem histórico']}
               after={['Marca criada', 'Narrativa validada', 'Homologação como Parceiro Global Keepit', 'Primeira venda: 1.200+ usuários']}
             />
-            <p className="case-metric-summary"><strong>Meta-prova:</strong> Aplicamos em nós mesmos o que vendemos. Funcionou. Agora replicamos para você.</p>
+            <p className="case-metric-summary"><strong>Métrica que importa:</strong> De zero para um pipeline de R$ 40 milhões em 12 meses.</p>
             <div className="case-link"><a href="https://aorkia.com" target="_blank" rel="noopener noreferrer">Visite a prova: aorkia.com →</a></div>
           </CaseSection>
         </div>
@@ -615,4 +615,3 @@ export default function CasesPage() {
     </>
   );
 }
-
