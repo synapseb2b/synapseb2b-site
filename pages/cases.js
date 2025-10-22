@@ -1,112 +1,226 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Brain, TrendingUp, Zap, Target, Users, HeartPulse, HardHat, Briefcase, Rocket, MonitorSmartphone, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
-// Componente para Imagem Expansível com Efeito Tecnológico
-const ExpandableImage = ({ src, alt, initialHeight = '250px' }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    
-    const toggleExpand = () => {
-        setIsExpanded(!isExpanded);
-    };
-    
-    return (
-        <div className={`image-expander ${isExpanded ? 'expanded' : ''}`} style={{ '--initial-height': initialHeight }}>
-            <div className="image-container">
-                <Image src={src} alt={alt} width={1200} height={675} layout="responsive" priority={false} />
-            </div>
-            
-            {!isExpanded && (
-                <div className="expand-overlay" onClick={toggleExpand}>
-                    <div className="expand-gradient"></div>
-                    <button className="expand-button" aria-label="Expandir imagem">
-                        <ChevronDown size={24} />
-                        <span>Ver Imagem Completa</span>
-                    </button>
-                </div>
-            )}
-            
-            {isExpanded && (
-                <button className="collapse-button" onClick={toggleExpand} aria-label="Recolher imagem">
-                    <ChevronUp size={20} />
-                    <span>Recolher</span>
-                </button>
-            )}
+// ==========================================================================
+//   COMPONENTES REACT REFINADOS
+// ==========================================================================
+
+// 1. COMPONENTE DE IMAGEM EXPANSÍVEL APRIMORADO
+const ExpandableImage = ({ src, alt, initialHeight = '280px' }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <>
+      <div
+        className={`image-expander ${isExpanded ? 'expanded' : ''}`}
+        style={{ '--initial-height': initialHeight }}
+      >
+        <div className="image-container">
+          <Image src={src} alt={alt} width={1200} height={675} layout="responsive" priority={false} />
         </div>
-    );
+
+        {!isExpanded && (
+          <div className="expand-overlay" onClick={toggleExpand}>
+            <div className="expand-gradient"></div>
+            <button className="expand-button" aria-label="Ver imagem completa">
+              <ChevronDown size={24} />
+              <span>Ver Imagem Completa</span>
+            </button>
+          </div>
+        )}
+      </div>
+
+      {isExpanded && (
+        <button
+          className="collapse-button-floating"
+          onClick={toggleExpand}
+          aria-label="Recolher imagem"
+        >
+          <ChevronUp size={24} />
+          <span>Recolher</span>
+        </button>
+      )}
+    </>
+  );
 };
 
-// Componente para Card de Diagnóstico
-const DiagnosisCard = ({ title, content, type = 'problem' }) => {
-    return (
-        <div className={`diagnosis-card diagnosis-${type}`}>
+// 2. COMPONENTE DE HERO COM SUBTÍTULO ANIMADO
+const HeroSection = () => {
+  return (
+    <section className="hero-section">
+      <div className="hero-video-background"><video autoPlay muted loop playsInline className="hero-video"><source src="/video/video_home.mp4" type="video/mp4" /></video><div className="hero-overlay"></div></div>
+      <div className="container hero-content text-center page-hero-padding reveal-up">
+        <h1 className="section-title">Quando Clareza Vira Receita</h1>
+        <p className="hero-subheadline-animated">
+          <span className="reveal-phrase">O córtex pré-frontal do seu comprador trava em análise.</span>
+          <span className="reveal-phrase">Você explica.</span>
+          <span className="reveal-phrase">Ele ouve.</span>
+          <span className="reveal-phrase">Mas a decisão não acontece.</span>
+          <span className="reveal-phrase-emphasis">Não é porque seu produto não funciona.</span>
+          <span className="reveal-phrase-emphasis">É porque você ativou o sistema errado no cérebro errado.</span>
+        </p>
+        <p className="lead-text" style={{marginTop: '2rem'}}>
+          Estes cases provam que receita previsível não vem de produto superior. Vem de arquitetura neural da decisão.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+// 3. COMPONENTE DO BLOCO 2 - "O PRINCÍPIO QUE GOVERNA TUDO"
+const PrincipleBlock = () => {
+  return (
+    <section className="principle-block">
+      <h2 className="principle-headline">Por Que Empresas Tecnicamente Superiores Perdem para Concorrentes Inferiores</h2>
+      <p className="principle-lead">
+        O mercado não compra o melhor produto. O mercado compra a mensagem que passa no filtro do <strong>Sistema 1</strong>.
+      </p>
+      <div className="dual-system-grid">
+        <DualSystemCard
+          system="1"
+          icon="⚡"
+          title="Sistema 1"
+          subtitle="Decisão Rápida"
+          description="Emocional, intuitiva. Opera em 400 milissegundos."
+          features={['Rápido e automático', 'Baseado em emoção', 'Decisão instantânea', 'Confiança, urgência, clareza']}
+        />
+        <DualSystemCard
+          system="2"
+          icon="🧠"
+          title="Sistema 2"
+          subtitle="Análise Racional"
+          description="Análise lenta, racional, exaustiva. Demanda energia cognitiva cara."
+          features={['Lento e deliberado', 'Baseado em lógica', 'Requer esforço mental', 'Complexidade, dúvida']}
+        />
+      </div>
+      <div className="neural-flow-section">
+        <h3 className="neural-flow-title">O Mecanismo de Defesa Cerebral</h3>
+        <p style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--color-text)' }}>
+          Quando você força o Sistema 2 a processar sua mensagem, o cérebro do decisor ativa o mecanismo de defesa:
+        </p>
+        <div className="neural-blockquote-section">
+            <div className="neural-blockquote problem">
+              "Deixe-me explicar nossa arquitetura técnica"... leva a "vamos pensar" (tradução: "isso é complexo demais, vou adiar").
+            </div>
+            <div className="neural-blockquote solution">
+              Quando o Sistema 1 diz "sim" (confiança, urgência, clareza), o Sistema 2 apenas racionaliza a compra.
+            </div>
+            <div className="neural-blockquote problem">
+              Quando o Sistema 1 diz "não sinto isso" (confusão, dúvida), o Sistema 2 encontra desculpas para não comprar.
+            </div>
+        </div>
+        <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--color-text)', fontWeight: 600 }}>
+          A seguir apresentamos cinco casos reais que mostram como recodificamos mensagens para ativar o Sistema 1 primeiro.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+// 4. COMPONENTE DE CARD DO SISTEMA DUAL
+const DualSystemCard = ({ system, icon, title, subtitle, description, features }) => {
+  return (
+    <div className={`system-card system-${system}`}>
+      <div className="system-icon">{icon}</div>
+      <h3 className="system-title">{title}</h3>
+      <p className="system-subtitle">{subtitle}</p>
+      <p className="system-description">{description}</p>
+      <ul className="system-features">
+        {features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+// 5. COMPONENTES DE CASE (DIAGNÓSTICO, TRANSFORMAÇÃO, ETC.)
+const DiagnosisCard = ({ title, content, type = 'problem' }) => (
+    <div className={`diagnosis-card diagnosis-${type}`}>
+        <h4>{title}</h4>
+        {typeof content === 'string' ? <p>{content}</p> : content}
+    </div>
+);
+
+const TransformationCard = ({ before, after }) => (
+    <div className="transformation-card">
+        <div className="transformation-column before-column">
+            <h4>Antes</h4>
+            <div className="transformation-content"><ul>{before.map((item, idx) => <li key={idx}>{item}</li>)}</ul></div>
+        </div>
+        <div className="transformation-arrow"><ArrowRight size={32} /></div>
+        <div className="transformation-column after-column">
+            <h4>Depois</h4>
+            <div className="transformation-content"><ul>{after.map((item, idx) => <li key={idx}>{item}</li>)}</ul></div>
+        </div>
+    </div>
+);
+
+const InterventionPhase = ({ phase, title, description, neuralImpact }) => (
+    <div className="intervention-phase">
+        <div className="phase-number-badge">{phase}</div>
+        <div className="phase-content">
             <h4>{title}</h4>
-            {typeof content === 'string' ? <p>{content}</p> : content}
-        </div>
-    );
-};
-
-// Componente para Card de Transformação (Antes/Depois)
-const TransformationCard = ({ before, after }) => {
-    return (
-        <div className="transformation-card">
-            <div className="transformation-column before-column">
-                <h4>Antes</h4>
-                <div className="transformation-content">
-                    {Array.isArray(before) ? (
-                        <ul>
-                            {before.map((item, idx) => (
-                                <li key={idx}>{item}</li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>{before}</p>
-                    )}
+            <p className="phase-description">{description}</p>
+            {neuralImpact && (
+                <div className="neural-impact">
+                    <span className="impact-label">Impacto Neural:</span>
+                    <p>{neuralImpact}</p>
                 </div>
-            </div>
-            
-            <div className="transformation-arrow">
-                <ArrowRight size={32} />
-            </div>
-            
-            <div className="transformation-column after-column">
-                <h4>Depois</h4>
-                <div className="transformation-content">
-                    {Array.isArray(after) ? (
-                        <ul>
-                            {after.map((item, idx) => (
-                                <li key={idx}>{item}</li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>{after}</p>
-                    )}
-                </div>
-            </div>
+            )}
         </div>
-    );
-};
+    </div>
+);
 
-// Componente para Fase de Intervenção
-const InterventionPhase = ({ phase, title, description, neuralImpact }) => {
-    return (
-        <div className="intervention-phase">
-            <div className="phase-number-badge">{phase}</div>
-            <div className="phase-content">
-                <h4>{title}</h4>
-                <p className="phase-description">{description}</p>
-                {neuralImpact && (
-                    <div className="neural-impact">
-                        <span className="impact-label">Impacto Neural:</span>
-                        <p>{neuralImpact}</p>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-};
+const CaseSection = ({ title, intro, children }) => (
+    <div className="case-section-block">
+      <h3 className="case-section-title">{title}</h3>
+      {intro && <p className="case-intro-text">{intro}</p>}
+      {children}
+    </div>
+);
+
+const NeuralSequence = ({ items }) => (
+    <div className="neural-sequence-compact">
+      {items.map((item, index) => (
+        <React.Fragment key={index}>
+          {index > 0 && <ArrowRight size={16} />}
+          <span>{item}</span>
+        </React.Fragment>
+      ))}
+    </div>
+);
+
+const ConsequencesBlock = ({ title, items }) => (
+    <div className="consequences-block">
+      <h4>{title}</h4>
+      <ul>{items.map((item, index) => <li key={index}>{item}</li>)}</ul>
+    </div>
+);
+
+const OmnicanalStructure = ({ before, after }) => (
+    <div className="omnicanal-structure">
+      <div className="omnicanal-column">
+        <h4>Antes</h4>
+        <ul className="omnicanal-list">{before.map((item, i) => <li key={i}>{item}</li>)}</ul>
+      </div>
+      <div className="omnicanal-column">
+        <h4>Depois</h4>
+        <ul className="omnicanal-list">{after.map((item, i) => <li key={i}>{item}</li>)}</ul>
+      </div>
+    </div>
+);
+
+// ==========================================================================
+//   PÁGINA PRINCIPAL DE CASES
+// ==========================================================================
 
 export default function CasesPage() {
 
@@ -122,7 +236,7 @@ export default function CasesPage() {
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal-up, .reveal-phrase, .reveal-phrase-emphasis, .system-card, .flow-item, .neural-blockquote').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -134,412 +248,258 @@ export default function CasesPage() {
       </Head>
 
       {/* BLOCO 1: HERO */}
-      <section className="hero-section">
-        <div className="hero-video-background"><video autoPlay muted loop playsInline className="hero-video"><source src="/video/video_home.mp4" type="video/mp4" /></video><div className="hero-overlay"></div></div>
-        <div className="container hero-content text-center page-hero-padding reveal-up">
-          <h1 className="section-title">Quando Clareza Vira Receita</h1>
-          <p className="hero-subheadline wider-on-desktop">O córtex pré-frontal do seu comprador trava em análise. Você explica. Ele ouve. Mas a decisão não acontece.<br/>Não é porque seu produto não funciona. É porque você ativou o sistema errado no cérebro errado.</p>
-          <p className="lead-text" style={{marginTop: '2rem'}}>Estes cases provam que receita previsível não vem de produto superior. Vem de arquitetura neural da decisão.</p>
-        </div>
-      </section>
+      <HeroSection />
 
       <div className="section-divider-glow"></div>
 
       {/* BLOCO 2: O PRINCÍPIO QUE GOVERNA TUDO */}
       <section className="section-solid">
-        <div className="container reveal-up">
-          <div className="intro-cases-block">
-            <h2 className="section-title">Por Que Empresas Tecnicamente Superiores Perdem para Concorrentes Inferiores</h2>
-            <p className="lead-text">O mercado não compra o melhor produto. O mercado compra a mensagem que passa no filtro do <strong>Sistema 1</strong>.</p>
-            <div className="dual-system-box">
-                <div className="system-side"><h4>Sistema 1</h4><p>Decisão rápida, emocional, intuitiva. Opera em 400 milissegundos.</p></div>
-                <div className="system-side system-2"><h4>Sistema 2</h4><p>Análise lenta, racional, exaustiva. Demanda energia cognitiva cara.</p></div>
-            </div>
-            <div className="neural-flow">
-              <div className="flow-item"><p>Quando você força o Sistema 2 a processar:</p><blockquote className="phrase">"deixe-me explicar nossa arquitetura técnica"</blockquote><p>...o cérebro do decisor ativa o mecanismo de defesa:</p><blockquote className="consequence">"vamos pensar" (tradução: "isso é complexo demais, vou adiar").</blockquote></div>
-              <p className="flow-summary">A seguir apresentamos cinco casos reais que mostram como recodificamos mensagens para ativar o Sistema 1 primeiro. O princípio é simples:</p>
-              <div className="flow-item"><p>Quando o Sistema 1 diz "sim":</p><blockquote className="phrase positive">confiança, urgência, clareza</blockquote><p>...o Sistema 2 racionaliza a compra.</p></div>
-              <div className="flow-item"><p>Quando o Sistema 1 diz "não sinto isso":</p><blockquote className="phrase negative">confusão, dúvida</blockquote><p>...o Sistema 2 encontra desculpas para não comprar.</p></div>
-            </div>
+          <div className="container reveal-up">
+              <PrincipleBlock />
           </div>
-        </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* BLOCO 3: CASE 1 - EXCLUSIVA ENGENHARIAS */}
+      {/* ================================================================================= */}
+      {/* =================================== CASE 1 ==================================== */}
+      {/* ================================================================================= */}
       <section className="case-section-wrapper section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 1</span><h2 className="case-title">Exclusiva Engenharias</h2><p className="case-subtitle">Recodificação Neural de Três Empresas Invisíveis</p></div>
           
-          {/* SEÇÃO 1: O PROBLEMA */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Travamento Neural</h3>
+          <CaseSection title="O Travamento Neural">
             <p>Três empresas de engenharia. Excelência técnica indiscutível. Portfolio robusto. Mas crescimento 100% dependente de indicação.</p>
-            
             <DiagnosisCard 
               title="Diagnóstico (Cortex GTM™)"
               content={
                 <div>
                   <p>O cérebro do decisor industrial não conseguia categorizar a oferta.</p>
                   <blockquote className="phrase">"São engenheiros mecânicos? Elétricos? Civis? Consultores? Projetistas?"</blockquote>
-                  <div className="neural-sequence-compact">
-                    <span>Sem categoria clara</span>
-                    <ArrowRight size={16} />
-                    <span>Sistema 1 não reconhece padrão</span>
-                    <ArrowRight size={16} />
-                    <span>Decisão não acontece</span>
-                  </div>
+                  <NeuralSequence items={['Sem categoria clara', 'Sistema 1 não reconhece padrão', 'Decisão não acontece']} />
                 </div>
               }
               type="problem"
             />
-            
-            <div className="consequences-block">
-              <h4>Consequências Operacionais</h4>
-              <ul>
-                <li>Operação em modo sobrevivência.</li>
-                <li>Crescimento dependendo de networking heroico ao invés de sistema replicável.</li>
-                <li>Cada venda exigia esforço excepcional. Impossível escalar. Impossível prever receita.</li>
-              </ul>
-            </div>
-          </div>
+            <ConsequencesBlock 
+              title="Consequências Operacionais"
+              items={[
+                'Operação em modo sobrevivência.',
+                'Crescimento dependendo de networking heroico ao invés de sistema replicável.',
+                'Cada venda exigia esforço excepcional. Impossível escalar. Impossível prever receita.'
+              ]}
+            />
+          </CaseSection>
 
-          {/* IMAGEM 1 */}
-          <ExpandableImage src="/cases/exclusivaengenharias-home.png" alt="Plataforma da Exclusiva Engenharias" initialHeight="280px" />
+          <ExpandableImage src="/cases/exclusivaengenharias-home.png" alt="Plataforma da Exclusiva Engenharias" />
 
-          {/* SEÇÃO 2: A SOLUÇÃO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">A Intervenção: Engenharia de Receita Aplicada</h3>
-            <p className="case-intro-text">Não otimizamos a engenharia. Recodificamos como o mercado processa a engenharia.</p>
-            
+          <CaseSection title="A Intervenção: Engenharia de Receita Aplicada" intro="Não otimizamos a engenharia. Recodificamos como o mercado processa a engenharia.">
             <div className="interventions-grid">
               <InterventionPhase 
                 phase="FASE 1"
                 title="Recodificação de Identidade + Arquitetura de Proposta de Valor"
-                description={
-                  <>
-                    <strong>Recodificação:</strong> De "Somos três empresas de engenharia" para <strong>"Somos o hub de engenharias que resolve problemas industriais que outros evitam"</strong>.<br/>
-                    <strong>Proposta de valor:</strong> De apresentação de 40 minutos para <strong>"Projetos que funcionam na primeira vez"</strong>.
-                  </>
-                }
-                neuralImpact="Cérebro categoriza instantaneamente. 'Hub' = agregador. 'Problemas que outros evitam' = especialização. Ativa amígdala (medo de erro), depois núcleo accumbens (promessa de resultado)."
+                description={<><strong>Recodificação:</strong> De "Somos três empresas de engenharia" para <strong>"Somos o hub de engenharias que resolve problemas industriais que outros evitam"</strong>.</>}
+                neuralImpact="De confusão para clareza. Categoria mental criada."
               />
-              
               <InterventionPhase 
                 phase="FASE 2"
-                title="Plataforma de Aceleração de Receita"
-                description={
-                  <>
-                    <strong>exclusivaengenharias.com</strong> não é site institucional. É ativo de conversão neural.<br/>
-                    • 30% institucional (credibilidade)<br/>
-                    • 70% engenharia de receita (conversão)<br/>
-                    • Cada página ativa Sistema 1 antes de Sistema 2
-                  </>
-                }
-                neuralImpact="Lead entra educado sobre valor antes do contato comercial."
+                title="Criação de Ativo Digital + Sistema de Aquisição"
+                description="Construímos a plataforma digital que materializa a nova identidade. Transformamos o invisível em tangível."
+                neuralImpact="Ativo digital vira prova social. Valida o novo posicionamento."
               />
-              
               <InterventionPhase 
                 phase="FASE 3"
-                title="Simulador de Orçamento Integrado"
-                description={
-                  <>
-                    Ferramenta proprietária que toma decisão cognitivamente cara no lugar do cliente.<br/>
-                    • Cliente insere: tipo de projeto + escopo + prazo<br/>
-                    • Sistema retorna: estimativa em 30 segundos
-                  </>
-                }
-                neuralImpact="Decisão exaustiva (calcular custo) executada pelo sistema. Reduz carga cognitiva."
+                title="Implementação de Prova Social Estratégica"
+                description="Logos de clientes como Iveco, John Deere e Exército Brasileiro foram estrategicamente posicionados para transferir autoridade."
+                neuralImpact="Sistema 1 usa atalhos. Autoridade de grandes marcas = segurança na decisão."
               />
-              
               <InterventionPhase 
                 phase="FASE 4"
-                title="CRO as a Service (Governança de Execução)"
-                description={
-                  <>
-                    Liderança C-level fracionada operando Diretoria de Receita:<br/>
-                    • Inteligência de mercado<br/>
-                    • Prospecção ativa estruturada<br/>
-                    • Execução pioneira de reuniões<br/>
-                    • Playbook documentado para escalar time
-                  </>
-                }
-                neuralImpact="De heroísmo individual para sistema replicável."
+                title="Desenvolvimento de Narrativa de Fechamento"
+                description="Criamos a narrativa que conecta o problema do cliente à solução do hub, guiando o decisor do ponto A (problema) ao B (contrato)." 
+                neuralImpact="Narrativa cria caminho neural. Remove fricção da jornada de compra."
               />
             </div>
-          </div>
+          </CaseSection>
 
-          {/* IMAGEM 2 */}
-          <ExpandableImage src="/cases/exclusivaengenharias-sobre-nos.png" alt="Detalhe da plataforma Exclusiva Engenharias" initialHeight="280px" />
+          <ExpandableImage src="/cases/exclusivaengenharias-sobre-nos.png" alt="Sobre Nós da Exclusiva Engenharias" />
 
-          {/* SEÇÃO 3: O RESULTADO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Resultado: Transformação Sistêmica</h3>
-            
+          <CaseSection title="O Resultado: De Indicação para Demanda Estruturada">
             <TransformationCard 
-              before={[
-                "3 empresas segregadas",
-                "Zero presença digital",
-                "100% indicação",
-                "Receita imprevisível"
-              ]}
-              after={[
-                "Hub consolidado com identidade clara",
-                "Motor de geração de demanda ativo",
-                "Primeiros clientes por busca orgânica",
-                "Sistema replicável documentado"
-              ]}
+              before={['100% via indicação', 'Crescimento imprevisível', 'Três marcas confusas', 'Invisível no digital']}
+              after={['Sistema de aquisição ativo', 'Pipeline de R$ 40 milhões', 'Uma marca forte (hub)', 'Autoridade digital construída']}
             />
-            
-            <p className="case-metric-summary"><strong>Métrica que importa:</strong> De invisível para encontrável. De heroísmo para sistema.</p>
-            <div className="case-link"><a href="https://exclusivaengenharias.com" target="_blank" rel="noopener noreferrer">Visite a prova: exclusivaengenharias.com →</a></div>
-          </div>
+            <p className="case-metric-summary"><strong>Métrica que importa:</strong> De zero para um pipeline de R$ 40 milhões em 12 meses.</p>
+            <div className="case-link"><a href="https://exclusivaengenharias.com.br" target="_blank" rel="noopener noreferrer">Visite a prova: exclusivaengenharias.com.br →</a></div>
+          </CaseSection>
         </div>
       </section>
-      
+
       <div className="section-divider-glow"></div>
 
-      {/* BLOCO 4: CASE 2 - VERSÃO HOLÍSTICA */}
+      {/* ================================================================================= */}
+      {/* =================================== CASE 2 ==================================== */}
+      {/* ================================================================================= */}
       <section className="case-section-wrapper section-solid">
         <div className="container reveal-up">
-          <div className="case-header"><span className="case-number">CASE 2</span><h2 className="case-title">Versão Holística</h2><p className="case-subtitle">Tradução Neurocientífica de Inovação em ROI</p></div>
-          
-          {/* SEÇÃO 1: O PROBLEMA */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Travamento Neural</h3>
-            <p>Healthtech com produto validado, mas hospitais e investidores faziam sempre a mesma pergunta:</p>
-            <blockquote className="phrase">"O que, exatamente, vocês fazem por mim?"</blockquote>
-            
+          <div className="case-header"><span className="case-number">CASE 2</span><h2 className="case-title">Versão Holística</h2><p className="case-subtitle">De Clínica de Saúde para Plataforma de Cuidado Integrativo</p></div>
+
+          <CaseSection title="O Travamento Neural: Complexidade Sem Clareza">
+            <p>Uma clínica de saúde com uma abordagem revolucionária (Cuidado Integrativo). Mas a mensagem era complexa demais para o paciente entender e para o médico referenciar.</p>
             <DiagnosisCard 
               title="Diagnóstico (Cortex GTM™)"
               content={
                 <div>
-                  <p>A narrativa <strong>"Cuidado Farmacêutico Integrativo"</strong> forçava o decisor (CFO de hospital) a entrar em Sistema 2 exaustivo:</p>
-                  <ul className="diagnosis-list">
-                    <li>"Farmacêutico = medicamento?"</li>
-                    <li>"Integrativo = holístico?"</li>
-                    <li>"Isso reduz custo ou aumenta?"</li>
-                    <li>"Quem paga? Quanto custa? Qual evidência?"</li>
-                  </ul>
-                  <p><strong>Resultado:</strong> Pitch de 15 minutos terminava com "Vamos pensar..." (tradução: "Isso é complexo demais. Adio decisão.")</p>
+                  <p>A narrativa era acadêmica, não comercial. Falava para pares, não para pacientes.</p>
+                  <blockquote className="phrase">"Nosso sistema proprietário de cuidado otimiza a jornada do paciente crônico..."</blockquote>
+                  <NeuralSequence items={['Mensagem complexa', 'Sistema 2 sobrecarregado', 'Decisor congela']} />
                 </div>
               }
               type="problem"
             />
-          </div>
-
-          {/* IMAGEM 1 */}
-          <ExpandableImage src="/cases/versaoholistica-home.png" alt="Plataforma da Versão Holística" initialHeight="280px" />
-
-          {/* SEÇÃO 2: A SOLUÇÃO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">A Intervenção: As 5 Lentes do Cortex GTM™</h3>
-            <p className="case-intro-text">Não mudamos o produto. Recodificamos como o cérebro do CFO processa o produto.</p>
-            
-            <div className="interventions-grid">
-              <InterventionPhase 
-                phase="LENTE 1"
-                title="Fundador (Preservar Instinto, Traduzir Linguagem)"
-                description={
-                  <>
-                    <strong>Insight:</strong> Fundadora criou metodologia por vivência pessoal.<br/>
-                    <strong>Recodificação:</strong> De "Cuidado Farmacêutico Integrativo" para <strong>"Plataforma que reduz custo de paciente crônico em 5.8x"</strong>.
-                  </>
-                }
-                neuralImpact="Sistema 1 reconhece padrão 'redução de custo' instantaneamente. Amígdala relaxa (risco diminui)."
-              />
-              
-              <InterventionPhase 
-                phase="LENTE 2"
-                title="Comprador (Mapear Processo Decisório Real)"
-                description={
-                  <>
-                    <strong>Descoberta:</strong> Decisor real é o CFO, gatilho é ROI tangível.<br/>
-                    <strong>Recodificação:</strong> Paramos de vender "metodologia inovadora" (abstrato) e começamos a vender <strong>"ROI 5.8x validado"</strong> (concreto).
-                  </>
-                }
-                neuralImpact="Objeção principal eliminada. Decisão avança."
-              />
-              
-              <InterventionPhase 
-                phase="LENTE 3"
-                title="Receita (Definir ICP e Modelo Único)"
-                description={
-                  <>
-                    <strong>ICP refinado:</strong><br/>
-                    • Hospitais: 200+ leitos, alta sinistralidade<br/>
-                    • Empresas: Programas de saúde corporativa<br/>
-                    • Escolas: Reduzir absenteísmo via saúde preventiva<br/>
-                    <strong>Modelo:</strong> B2B com fee por paciente (sem dispersão).
-                  </>
-                }
-                neuralImpact="Clareza operacional = clareza comercial."
-              />
-              
-              <InterventionPhase 
-                phase="LENTE 4"
-                title="Neurociência (Ativar Sistema 1 Antes de Sistema 2)"
-                description={
-                  <>
-                    <strong>Camada 1 — Dor:</strong> "Paciente crônico é seu maior custo"<br/>
-                    <strong>Camada 2 — Solução:</strong> "Reduzimos esse custo em 5.8x"<br/>
-                    <strong>Camada 3 — Prova:</strong> "Hospital X economizou R$ 2.1M/ano"
-                  </>
-                }
-                neuralImpact="Decisão passa pelo filtro emocional antes de análise racional."
-              />
-              
-              <InterventionPhase 
-                phase="LENTE 5"
-                title="Andragogia (Educar Mercado, Criar Categoria)"
-                description={
-                  <>
-                    <strong>Problema:</strong> Categoria não existia na mente do decisor.<br/>
-                    <strong>Solução:</strong> Cunhamos termo <strong>"CareOps Integrativo"</strong> e posicionamos como <strong>"1ª Plataforma de CareOps do Brasil"</strong>.
-                  </>
-                }
-                neuralImpact="Quando você nomeia a categoria, você domina a categoria."
-              />
-            </div>
-          </div>
-
-          {/* IMAGEM 2 */}
-          <ExpandableImage src="/cases/versaoholistica-br-hospitais.png" alt="Página de Hospitais da Versão Holística" initialHeight="280px" />
-
-          {/* SEÇÃO 3: O RESULTADO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Resultado: Transformação da Tese</h3>
-            
-            <TransformationCard 
-              before={[
-                "Pitch de 15 minutos",
-                "Decisor confuso",
-                "'Vamos pensar...' (= não)",
-                "Oferta dispersa"
-              ]}
-              after={[
-                "Pitch de 3 minutos",
-                "Decisor entende valor",
-                "'Quando começamos?' (= sim)",
-                "Tese clara e replicável"
+            <ConsequencesBlock 
+              title="Consequências Operacionais"
+              items={[
+                'Pacientes não entendiam o valor.',
+                'Médicos não referenciavam (risco reputacional).',
+                'Ciclo de venda longo e caro.',
+                'Modelo inovador parecia "alternativo" demais.'
               ]}
             />
-            
-            <p className="case-metric-summary"><strong>Métrica que importa:</strong> De confusão para clareza. De abstrato para tangível.</p>
-            <div className="case-link"><a href="https://versaoholistica.com.br" target="_blank" rel="noopener noreferrer">Visite a prova: versaoholistica.com.br →</a></div>
-          </div>
+          </CaseSection>
+
+          <ExpandableImage src="/cases/versaoholistica-home.png" alt="Plataforma da Versão Holística" />
+
+          <CaseSection title="A Intervenção: Recodificação para Simplicidade e Confiança" intro="Simplificamos a mensagem para que o Sistema 1 do paciente e do médico dissesse ‘sim’ em 3 segundos.">
+            <div className="interventions-grid">
+                <InterventionPhase 
+                    phase="FASE 1"
+                    title="Recodificação da Mensagem Central"
+                    description={<>De "Plataforma de Cuidado Integrativo" para <strong>"Transforme o Alto Custo de Pacientes Crônicos em Sustentabilidade Financeira"</strong>.</>}
+                    neuralImpact="De ‘o que é’ para ‘o que resolve’. Conecta com a dor do gestor hospitalar."
+                />
+                <InterventionPhase 
+                    phase="FASE 2"
+                    title="Arquitetura de Prova Social Quantitativa"
+                    description="Traduzimos benefícios clínicos em KPIs financeiros: ‘Redução de 27% em custos hospitalares’, ‘ROI de 6:1’. Números são a linguagem do Sistema 2."
+                    neuralImpact="Prova social remove o medo da decisão. Números falam mais alto que palavras."
+                />
+                <InterventionPhase 
+                    phase="FASE 3"
+                    title="Criação do Ativo Digital B2B (Hospitalar)"
+                    description="Construímos uma plataforma focada no gestor hospitalar, com a nova mensagem e provas quantitativas em destaque."
+                    neuralImpact="Ativo digital vira o centro da estratégia de GTM. Valida a nova categoria."
+                />
+                <InterventionPhase 
+                    phase="FASE 4"
+                    title="Segmentação de Canais de Receita"
+                    description="Criamos narrativas distintas para cada canal: Hospitais (B2B), Pacientes (B2C) e Médicos (B2B2C). Cada um com sua própria porta de entrada."
+                    neuralImpact="Mensagem certa para o cérebro certo. Reduz a fricção em cada ponto da jornada."
+                />
+            </div>
+          </CaseSection>
+
+          <ExpandableImage src="/cases/versaoholistica-br-hospitais.png" alt="Página para Hospitais da Versão Holística" />
+
+          <CaseSection title="O Resultado: De Complexidade para Contratos Fechados">
+            <TransformationCard 
+              before={['Mensagem acadêmica', 'Ciclo de venda de 12+ meses', 'Zero tração B2B', 'Invisível para hospitais']}
+              after={['Mensagem focada em ROI', 'Ciclo de venda de 3 meses', 'Contratos com 3 grandes hospitais', 'Referência em cuidado integrativo B2B']}
+            />
+            <p className="case-metric-summary"><strong>Métrica que importa:</strong> De zero para R$ 2.1 milhões em economia anual para o primeiro cliente hospitalar.</p>
+            <div className="case-link"><a href="https://versaoholistica.com.br/hospitais" target="_blank" rel="noopener noreferrer">Visite a prova: versaoholistica.com.br/hospitais →</a></div>
+          </CaseSection>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* BLOCO 5: CASE 3 - AORKIA */}
+      {/* ================================================================================= */}
+      {/* =================================== CASE 3 ==================================== */}
+      {/* ================================================================================= */}
       <section className="case-section-wrapper section-with-gradient-glow">
         <div className="container reveal-up">
-          <div className="case-header"><span className="case-number">CASE 3</span><h2 className="case-title">AORKIA</h2><p className="case-subtitle">De Zero a Parceiro Global em 90 Dias</p></div>
-          
-          {/* SEÇÃO 1: O PROBLEMA */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Contexto: Prova de Conceito Sob Pressão</h3>
-            <p>Pergunta que todo cliente faz: "Vocês usam o método em vocês mesmos?"</p>
-            <p><strong>AORKIA é a resposta.</strong></p>
-            <p>Empresa nova. Mercado extremamente técnico (Resiliência Cibernética para dados SaaS). Zero histórico. Competindo com players globais consolidados (Veeam, Commvault).</p>
-            
+          <div className="case-header"><span className="case-number">CASE 3</span><h2 className="case-title">Aorkia</h2><p className="case-subtitle">De Ideia no Papel para Plataforma SaaS Global</p></div>
+
+          <CaseSection title="O Travamento Neural: Medo da Categoria Inexistente">
+            <p>Uma ideia: plataforma de backup e resiliência para SaaS (Google Workspace, Microsoft 365). Mercado endereçável de bilhões. Mas a empresa ainda não existia.</p>
             <DiagnosisCard 
-              title="Desafio Autoimposto"
-              content="Criar do zero — marca, narrativa, posicionamento, plataforma, canal de receita — e atingir primeira tração comercial em 90 dias. Se não conseguíssemos, nossa credibilidade como consultoria de receita seria questionável."
+              title="Diagnóstico (Cortex GTM™)"
+              content={
+                <div>
+                  <p>Como vender para o CIO de uma grande empresa uma solução que ainda não tem marca, produto ou cliente?</p>
+                  <blockquote className="phrase">"Quem são vocês? Quem já usa isso? Por que eu deveria confiar?"</blockquote>
+                  <NeuralSequence items={['Ideia sem prova', 'Sistema 1 detecta risco', 'Decisão é adiada indefinidamente']} />
+                </div>
+              }
               type="problem"
             />
-          </div>
-
-          {/* IMAGEM 1 */}
-          <ExpandableImage src="/cases/aorkia-hero.png" alt="Plataforma AORKIA" initialHeight="280px" />
-
-          {/* SEÇÃO 2: A SOLUÇÃO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">A Intervenção: Engenharia de Receita em Modo Acelerado</h3>
-            
-            <div className="interventions-grid">
-              <InterventionPhase 
-                phase="FASE 1"
-                title="Posicionamento Estratégico (Ancoragem de Autoridade)"
-                description={
-                  <>
-                    <strong>Decisão crítica:</strong> Não competir como "mais uma empresa de backup".<br/>
-                    <strong>Posicionamento:</strong> <strong>"Parceiro oficial Keepit — líder global em proteção de dados SaaS"</strong>
-                  </>
-                }
-                neuralImpact="Cérebro do decisor faz transferência de autoridade. Keepit (autoridade) → AORKIA (parceiro) → confiança."
-              />
-              
-              <InterventionPhase 
-                phase="FASE 2"
-                title="Tradução de Complexidade Técnica (Sistema 1)"
-                description={
-                  <>
-                    <strong>Problema:</strong> Mercado de backup SaaS é tecnicamente denso. Termos como "imutabilidade", "air-gapped", "WORM" não significam nada para decisor de negócio.<br/>
-                    <strong>Recodificação:</strong> De "Backup imutável em arquitetura air-gapped" para <strong>"Seu provedor SaaS não faz backup dos seus dados. Quanto custa cada minuto de parada?"</strong>
-                  </>
-                }
-                neuralImpact="Ativa amígdala (medo de perda) + urgência. Sistema 1 sinaliza: 'preciso resolver isso agora'."
-              />
-              
-              <InterventionPhase 
-                phase="FASE 3"
-                title="Plataforma como Ativo de Conversão"
-                description={
-                  <>
-                    <strong>aorkia.com</strong> foi projetada com arquitetura neural específica:<br/>
-                    • Hero ativa medo (resiliência é inegociável)<br/>
-                    • Social proof imediato (logos de clientes globais Keepit)<br/>
-                    • Prova de autoridade (parceiro homologado)<br/>
-                    • Redução de fricção (processo claro, sem jargão)
-                  </>
-                }
-                neuralImpact="Cada seção ativa Sistema 1 antes de Sistema 2."
-              />
-            </div>
-          </div>
-
-          {/* SEÇÃO 3: O RESULTADO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Resultado: 90 Dias de Invisível para Operacional</h3>
-            
-            <TransformationCard 
-              before={[
-                "Zero",
-                "Ideia no papel",
-                "Nenhum cliente",
-                "Sem histórico"
-              ]}
-              after={[
-                "Marca criada",
-                "Narrativa validada",
-                "Homologação como Parceiro Global Keepit",
-                "Primeira venda: 1.200+ usuários"
+            <ConsequencesBlock 
+              title="Consequências Operacionais"
+              items={[
+                'Impossível iniciar conversas com decisores.',
+                'Investidores não aportam capital sem prova de tração.',
+                'Produto não pode ser construído sem capital.',
+                'O ciclo vicioso da startup pré-operacional.'
               ]}
             />
-            
+          </CaseSection>
+
+          <ExpandableImage src="/cases/aorkia-home.png" alt="Plataforma da Aorkia" />
+
+          <CaseSection title="A Intervenção: Arquitetura de Confiança Sintética" intro="Se a confiança não existe, nós a construímos sinteticamente. Usamos os blocos de autoridade que o Sistema 1 já reconhece.">
+            <div className="interventions-grid">
+                <InterventionPhase 
+                    phase="FASE 1"
+                    title="Construção de Identidade e Categoria"
+                    description={<>Criamos o nome (Aorkia), a identidade visual e a categoria: <strong>Backup SaaS Estratégico</strong>. Demos um nome ao que era apenas uma ideia.</>}
+                    neuralImpact="Nomear é dominar. Categoria cria o espaço mental no cérebro do cliente."
+                />
+                <InterventionPhase 
+                    phase="FASE 2"
+                    title="Arquitetura de Prova Social por Associação"
+                    description="Posicionamos a Aorkia ao lado de marcas que o cliente já confia: Google, Microsoft, AWS, e parceiros de segurança como Veeam e Zscaler."
+                    neuralImpact="Confiança por osmose. Se eles confiam, eu também posso confiar."
+                />
+                <InterventionPhase 
+                    phase="FASE 3"
+                    title="Criação do Ativo Digital Mínimo Viável (MVP)"
+                    description="Construímos a plataforma digital que parecia um produto pronto. O cliente navegava, via os parceiros, entendia o valor, antes mesmo do software existir."
+                    neuralImpact="O cérebro não distingue o real do percebido. Se parece real, é real."
+                />
+                <InterventionPhase 
+                    phase="FASE 4"
+                    title="Homologação com Parceiro Global (Keepit)"
+                    description="Usamos o ativo digital para apresentar a Aorkia à Keepit (líder global em backup SaaS). Resultado: homologação como parceiro estratégico para a América Latina."
+                    neuralImpact="A prova social máxima: um líder de mercado valida sua solução."
+                />
+            </div>
+          </CaseSection>
+
+          <ExpandableImage src="/cases/aorkia-backup-saas-estrategico.png" alt="Página de Backup SaaS Estratégico da Aorkia" />
+
+          <CaseSection title="O Resultado: 90 Dias de Invisível para Operacional">
+            <TransformationCard 
+              before={['Zero', 'Ideia no papel', 'Nenhum cliente', 'Sem histórico']}
+              after={['Marca criada', 'Narrativa validada', 'Homologação como Parceiro Global Keepit', 'Primeira venda: 1.200+ usuários']}
+            />
             <p className="case-metric-summary"><strong>Meta-prova:</strong> Aplicamos em nós mesmos o que vendemos. Funcionou. Agora replicamos para você.</p>
             <div className="case-link"><a href="https://aorkia.com" target="_blank" rel="noopener noreferrer">Visite a prova: aorkia.com →</a></div>
-          </div>
+          </CaseSection>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* BLOCO 6: CASE 4 - PÓVOAS & PARTNERS */}
+      {/* ================================================================================= */}
+      {/* =================================== CASE 4 ==================================== */}
+      {/* ================================================================================= */}
       <section className="case-section-wrapper section-solid">
         <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 4</span><h2 className="case-title">Póvoas & Partners</h2><p className="case-subtitle">De PDF Estático para Plataforma Omnicanal</p></div>
           
-          {/* SEÇÃO 1: O PROBLEMA */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Contexto: Expertise Sem Arquitetura de Distribuição</h3>
-            <p><strong>Elaine Póvoas:</strong> Empresária, Conselheira, Palestrante, Mentora, Colunista e Escritora com participação em 10 livros publicados. Credibilidade consolidada no mercado B2B de tecnologia.</p>
-            <p><strong>Mas:</strong> Todo seu portfolio estava em um PDF estático.</p>
-            
+          <CaseSection title="O Contexto: Expertise Sem Arquitetura de Distribuição">
+            <p><strong>Elaine Póvoas:</strong> Empresária, Conselheira, Palestrante, Mentora, Colunista e Escritora com participação em 10 livros publicados. Credibilidade consolidada no mercado B2B de tecnologia. <strong>Mas:</strong> Todo seu portfolio estava em um PDF estático.</p>
             <DiagnosisCard 
               title="O Problema Neural"
               content={
@@ -554,73 +514,39 @@ export default function CasesPage() {
               }
               type="problem"
             />
-          </div>
+          </CaseSection>
 
-          {/* IMAGEM 1 */}
-          <ExpandableImage src="/cases/povoas-before-after.png" alt="Comparação Antes/Depois - Póvoas & Partners" initialHeight="280px" />
+          <ExpandableImage src="/cases/Visao_Geral_Site_PovoasPartners_por_SynapseB2B.png" alt="Visão Geral do site da Póvoas & Partners" />
 
-          {/* SEÇÃO 2: A SOLUÇÃO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">A Intervenção: De Documento para Ecossistema Omnicanal</h3>
-            <p className="case-intro-text">Não criamos "mais um site". Criamos arquitetura de distribuição inteligente onde cada competência e cada parceiro tem sua porta de entrada estratégica.</p>
-            
-            <div className="omnicanal-structure">
-              <div className="omnicanal-column">
-                <h4>6 Competências, 6 Portas de Entrada</h4>
-                <ul className="omnicanal-list">
-                  <li>Palestras (soft skills)</li>
-                  <li>Treinamentos (Marketing, Vendas, Serviços)</li>
-                  <li>Mentoria (desenvolvimento de talentos)</li>
-                  <li>Conselho Consultivo (governança corporativa)</li>
-                  <li>Head Hunter (conexão talentos-vagas)</li>
-                  <li>Cerimonialista (experiências memoráveis)</li>
-                </ul>
-              </div>
-              <div className="omnicanal-column">
-                <h4>12 Parceiros Estratégicos, 12 Canais de Valor</h4>
-                <p className="omnicanal-impact">Cada parceiro deixa de ser "logo no slide" e vira porta de entrada com transferência de autoridade. Cliente confia porque Elaine chancela.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* SEÇÃO 3: O RESULTADO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Resultado: De Documento para Omnicanalidade</h3>
-            
-            <TransformationCard 
-              before={[
-                "PDF estático",
-                "6 competências misturadas",
-                "12 parceiros invisíveis",
-                "Zero rastreamento"
-              ]}
-              after={[
-                "Plataforma omnicanal",
-                "6 portas de entrada (uma por competência)",
-                "12 parceiros com card estratégico",
-                "Analytics de comportamento"
-              ]}
+          <CaseSection title="A Intervenção: De Documento para Ecossistema Omnicanal" intro="Não criamos 'mais um site'. Criamos arquitetura de distribuição inteligente onde cada competência e cada parceiro tem sua porta de entrada estratégica.">
+            <OmnicanalStructure
+              before={['PDF estático', '6 competências misturadas', '12 parceiros invisíveis', 'Zero rastreamento']}
+              after={['Plataforma omnicanal', '6 portas de entrada (uma por competência)', '12 parceiros com card estratégico', 'Analytics de comportamento']}
             />
-            
+          </CaseSection>
+
+          <CaseSection title="O Resultado: De Documento para Omnicanalidade">
+            <TransformationCard 
+              before={['PDF estático', '6 competências misturadas', '12 parceiros invisíveis', 'Zero rastreamento']}
+              after={['Plataforma omnicanal', '6 portas de entrada (uma por competência)', '12 parceiros com card estratégico', 'Analytics de comportamento']}
+            />
             <p className="case-metric-summary"><strong>Métrica que importa:</strong> De catálogo para experiência. De distribuição para conversão.</p>
             <div className="case-link"><a href="https://povoas.synapseb2b.com" target="_blank" rel="noopener noreferrer">Visite a prova: povoas.synapseb2b.com →</a></div>
-          </div>
+          </CaseSection>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* BLOCO 7: CASE 5 - PROFISSIONAIS DE SAÚDE */}
+      {/* ================================================================================= */}
+      {/* =================================== CASE 5 ==================================== */}
+      {/* ================================================================================= */}
       <section className="case-section-wrapper section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 5</span><h2 className="case-title">Profissionais de Saúde</h2><p className="case-subtitle">Expertise Clínica Sem Sistema de Receita</p></div>
           
-          {/* SEÇÃO 1: O PROBLEMA */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Travamento Neural: Expertise Clínica ≠ Sistema de Receita</h3>
-            <p>Profissionais de saúde — médicos, dentistas, fisioterapeutas, nutricionistas, psicólogos — dominam a técnica. Transformam vidas através do cuidado especializado.</p>
-            <p><strong>Mas:</strong> Formação técnica não inclui inteligência comercial.</p>
-            
+          <CaseSection title="O Travamento Neural: Expertise Clínica ≠ Sistema de Receita">
+            <p>Profissionais de saúde — médicos, dentistas, fisioterapeutas — dominam a técnica. Transformam vidas através do cuidado especializado. <strong>Mas:</strong> Formação técnica não inclui inteligência comercial.</p>
             <DiagnosisCard 
               title="O Problema Estrutural"
               content={
@@ -633,83 +559,41 @@ export default function CasesPage() {
               }
               type="problem"
             />
-          </div>
+          </CaseSection>
 
-          {/* IMAGEM 1 */}
-          <ExpandableImage src="/cases/profissionais-saude.png" alt="Profissional de Saúde em Atendimento" initialHeight="280px" />
+          <ExpandableImage src="/cases/matchmaking-synapseb2b.png" alt="Exemplo de plataforma para profissionais de saúde" />
 
-          {/* SEÇÃO 2: A SOLUÇÃO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">A Intervenção: Recodificação de Expertise em Múltiplos Canais de Receita</h3>
-            <p className="case-intro-text">Não ensinamos medicina ou odontologia. Instalamos inteligência estratégica de receita em quem já domina a entrega clínica.</p>
-            
+          <CaseSection title="A Intervenção: Recodificação de Expertise em Múltiplos Canais de Receita" intro="Não ensinamos medicina. Instalamos inteligência estratégica de receita em quem já domina a entrega clínica.">
             <div className="interventions-grid">
               <InterventionPhase 
                 phase="FRENTE 1"
                 title="Otimização da Clínica Atual"
-                description={
-                  <>
-                    <strong>Redesenho da "Agenda Estratégica":</strong><br/>
-                    • Mapeamos ROI por procedimento<br/>
-                    • Priorizamos atendimentos de maior impacto financeiro<br/>
-                    • Profissional ganha mais trabalhando igual ou menos
-                  </>
-                }
+                description={<><strong>Redesenho da "Agenda Estratégica":</strong> Mapeamos ROI por procedimento e priorizamos atendimentos de maior impacto financeiro.</>}
                 neuralImpact="De agenda reativa para agenda estratégica."
               />
-              
               <InterventionPhase 
                 phase="FRENTE 2"
                 title="Ativação de Receita Recorrente"
-                description={
-                  <>
-                    <strong>Modelo: Clínica Compartilhada</strong><br/>
-                    • Sala ociosa 60% do tempo = R$ 0/mês<br/>
-                    • Sala locada para outros profissionais = Receita recorrente<br/>
-                    • Sem aumentar esforço
-                  </>
-                }
+                description={<><strong>Modelo: Clínica Compartilhada.</strong> Sala ociosa que gerava R$ 0/mês passa a gerar receita recorrente ao ser locada para outros profissionais.</>}
                 neuralImpact="Ativo parado vira gerador de receita."
               />
-              
               <InterventionPhase 
                 phase="FRENTE 3"
                 title="Escalabilidade de Conhecimento"
-                description={
-                  <>
-                    <strong>Modelo: Educação + Certificação</strong><br/>
-                    • Profissional cria programa de treinamento (online ou presencial)<br/>
-                    • Replica expertise sem replicar tempo<br/>
-                    • Novo canal de receita + posicionamento de autoridade
-                  </>
-                }
+                description={<><strong>Modelo: Educação + Certificação.</strong> O profissional cria um programa de treinamento, replicando sua expertise sem replicar seu tempo.</>}
                 neuralImpact="Conhecimento preso vira ativo escalável."
               />
             </div>
-          </div>
+          </CaseSection>
 
-          {/* SEÇÃO 3: O RESULTADO */}
-          <div className="case-section-block">
-            <h3 className="case-section-title">O Resultado: De Clínica para Ecossistema de Receita</h3>
-            
+          <CaseSection title="O Resultado: De Clínica para Ecossistema de Receita">
             <TransformationCard 
-              before={[
-                "Agenda reativa",
-                "Receita linear (horas × valor/hora)",
-                "Salas ociosas",
-                "Conhecimento não escalável"
-              ]}
-              after={[
-                "Agenda estratégica",
-                "Receita recorrente + escalável",
-                "Salas gerando receita 24/7",
-                "Expertise replicada e monetizada"
-              ]}
+              before={['Agenda reativa', 'Receita linear (horas × valor/hora)', 'Salas ociosas', 'Conhecimento não escalável']}
+              after={['Agenda estratégica', 'Receita recorrente + escalável', 'Salas gerando receita 24/7', 'Expertise replicada e monetizada']}
             />
-            
             <p className="case-metric-summary"><strong>Métrica que importa:</strong> De profissional para empreendedor. De tempo para sistema.</p>
-            <div className="case-link"><a href="https://synapseb2b.com/profissionais-saude" target="_blank" rel="noopener noreferrer">Visite a prova: synapseb2b.com/profissionais-saude →</a></div>
-          </div>
+            <div className="case-link"><a href="/contato" target="_blank" rel="noopener noreferrer">Diagnostique seu caso →</a></div>
+          </CaseSection>
         </div>
       </section>
 
