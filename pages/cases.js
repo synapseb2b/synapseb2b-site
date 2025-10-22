@@ -50,7 +50,27 @@ export default function CasesPage() {
                 <div className="system-side"><h4>Sistema 1</h4><p>Decisão rápida, emocional, intuitiva. Opera em 400 milissegundos.</p></div>
                 <div className="system-side system-2"><h4>Sistema 2</h4><p>Análise lenta, racional, exaustiva. Demanda energia cognitiva cara.</p></div>
             </div>
-            <p className="lead-text">Quando você força o Sistema 2 ("deixe-me explicar nossa arquitetura técnica"), o cérebro do decisor ativa o mecanismo de defesa: "vamos pensar" (tradução: "isso é complexo demais, vou adiar"). Estes cinco cases mostram como recodificamos mensagens para ativar o Sistema 1 primeiro. Quando o Sistema 1 diz "sim" (confiança, urgência, clareza), o Sistema 2 racionaliza a compra. Quando o Sistema 1 diz "não sinto isso" (confusão, dúvida), o Sistema 2 encontra desculpas para não comprar.</p>
+            
+            {/* TEXTO REORGANIZADO */}
+            <div className="neural-flow">
+              <div className="flow-item">
+                <p>Quando você força o Sistema 2:</p>
+                <blockquote className="phrase">"deixe-me explicar nossa arquitetura técnica"</blockquote>
+                <p>...o cérebro do decisor ativa o mecanismo de defesa:</p>
+                <blockquote className="consequence">"vamos pensar" (tradução: "isso é complexo demais, vou adiar").</blockquote>
+              </div>
+              <p className="flow-summary">Estes cinco cases mostram como recodificamos mensagens para ativar o Sistema 1 primeiro.</p>
+              <div className="flow-item">
+                <p>Quando o Sistema 1 diz "sim":</p>
+                <blockquote className="phrase positive">confiança, urgência, clareza</blockquote>
+                <p>...o Sistema 2 racionaliza a compra.</p>
+              </div>
+              <div className="flow-item">
+                <p>Quando o Sistema 1 diz "não sinto isso":</p>
+                <blockquote className="phrase negative">confusão, dúvida</blockquote>
+                <p>...o Sistema 2 encontra desculpas para não comprar.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -63,8 +83,25 @@ export default function CasesPage() {
           <div className="case-header"><span className="case-number">CASE 1</span><h2 className="case-title">Exclusiva Engenharias</h2><p className="case-subtitle">Estudo de Caso: Recodificação Neural de Três Empresas Invisíveis</p></div>
           <div className="case-body-grid">
             <div className="case-main-narrative">
+              {/* TEXTO REORGANIZADO */}
               <h3>O Travamento Neural</h3>
-              <p>Três empresas de engenharia. Excelência técnica indiscutível. Portfolio robusto. Mas crescimento 100% dependente de indicação. O cérebro do decisor industrial não conseguia categorizar a oferta. "São engenheiros mecânicos? Elétricos? Civis? Consultores? Projetistas?". Sem categoria clara → Sistema 1 não reconhece padrão → Não gera sensação de "eu entendo o que vocês fazem" → Decisão não acontece. Adicional: Operação em modo sobrevivência. Crescimento dependendo de networking heroico ao invés de sistema replicável. Cada venda exigia esforço excepcional. Impossível escalar. Impossível prever receita.</p>
+              <p>Três empresas de engenharia. Excelência técnica indiscutível. Portfolio robusto. Mas crescimento 100% dependente de indicação.</p>
+              <p>O cérebro do decisor industrial não conseguia categorizar a oferta.</p>
+              <blockquote className="phrase text-center">"São engenheiros mecânicos? Elétricos? Civis? Consultores? Projetistas?"</blockquote>
+              <div className="neural-sequence">
+                <span>Sem categoria clara</span><ArrowRight/><span>Sistema 1 não reconhece padrão</span><ArrowRight/><span>Não gera "eu entendo o que vocês fazem"</span><ArrowRight/><span>Decisão não acontece</span>
+              </div>
+              <div className="consequences-block">
+                <h4>As Consequências Operacionais:</h4>
+                <ul>
+                  <li>Operação em modo sobrevivência.</li>
+                  <li>Crescimento dependendo de networking heroico ao invés de sistema replicável.</li>
+                  <li>Cada venda exigia esforço excepcional.</li>
+                  <li>Impossível escalar.</li>
+                  <li>Impossível prever receita.</li>
+                </ul>
+              </div>
+
               <h3>A Intervenção: Engenharia de Receita Aplicada</h3>
               <p>Não otimizamos a engenharia. Recodificamos como o mercado processa a engenharia.</p>
               <h3>O Resultado: Transformação Sistêmica</h3>
@@ -74,9 +111,9 @@ export default function CasesPage() {
             </div>
             <div className="case-sidebar">
               <div className="sidebar-block"><h4>FASE 1: Recodificação de Identidade</h4><p><strong>Antes:</strong> "Somos três empresas de engenharia" → <strong>Depois:</strong> "Somos o hub de engenharias que resolve problemas industriais que outros evitam". Impacto neural: Cérebro categoriza "Hub" instantaneamente.</p></div>
-              <div className="sidebar-block image-block"><Image src="/images/cases/exclusivaengenharias-home.png" alt="Plataforma Exclusiva Engenharias" width={500} height={281} layout="responsive" /></div>
+              <div className="sidebar-block image-block"><Image src="/images/cases/exclusivaengenharias-home.jpg" alt="Plataforma Exclusiva Engenharias" width={500} height={281} layout="responsive" /></div>
               <div className="sidebar-block"><h4>FASE 2: Plataforma de Aceleração</h4><p>exclusivaengenharias.com não é um site. É um ativo de conversão neural: 70% engenharia de receita, 30% institucional.</p></div>
-              <div className="sidebar-block image-block"><Image src="/images/cases/exclusivaengenharias-sobre-nos.png" alt="Detalhe da plataforma Exclusiva Engenharias" width={500} height={281} layout="responsive" /></div>
+              <div className="sidebar-block image-block"><Image src="/images/cases/exclusivaengenharias-sobre-nos.jpg" alt="Detalhe da plataforma Exclusiva Engenharias" width={500} height={281} layout="responsive" /></div>
               <div className="sidebar-block"><h4>FASE 3: Ferramenta Estratégica</h4><p>Simulador de orçamento integrado que toma a decisão cognitivamente cara no lugar do cliente, retornando uma estimativa em 30 segundos.</p></div>
               <div className="sidebar-block"><h4>FASE 4: CRO as a Service</h4><p>Liderança C-level fracionada operando a Diretoria de Receita para transformar heroísmo individual em sistema replicável.</p></div>
             </div>
@@ -84,9 +121,8 @@ export default function CasesPage() {
         </div>
       </section>
       
+      {/* ... (O restante dos cases segue a mesma lógica e foi omitido para brevidade, mas o código completo está abaixo) ... */}
       <div className="section-divider-glow"></div>
-
-      {/* BLOCO 4: CASE 2 - VERSÃO HOLÍSTICA */}
       <section className="case-section-wrapper section-solid">
          <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 2</span><h2 className="case-title">Versão Holística</h2><p className="case-subtitle">Estudo de Caso: Tradução Neurocientífica de Inovação em ROI</p></div>
@@ -103,18 +139,15 @@ export default function CasesPage() {
             </div>
             <div className="case-sidebar">
                 <div className="sidebar-block"><h4>LENTE 1 & 4 (Neurociência)</h4><p><strong>Recodificação:</strong> De "Cuidado Farmacêutico Integrativo" para "Plataforma que reduz custo de paciente crônico em 5.8x". Impacto: Sistema 1 reconhece o padrão "redução de custo" instantaneamente.</p></div>
-                <div className="sidebar-block image-block"><Image src="/images/cases/versaoholistica-home.png" alt="Plataforma Versão Holística" width={500} height={281} layout="responsive" /></div>
+                <div className="sidebar-block image-block"><Image src="/images/cases/versaoholistica-home.jpg" alt="Plataforma Versão Holística" width={500} height={281} layout="responsive" /></div>
                 <div className="sidebar-block"><h4>LENTE 2 & 3 (Comprador + Receita)</h4><p>Identificamos o CFO como decisor real e o ROI como gatilho. A abordagem mudou de vender "metodologia" para vender "ROI 5.8x validado".</p></div>
-                <div className="sidebar-block image-block"><Image src="/images/cases/versaoholistica-br-hospitais.png" alt="Página de Hospitais da Versão Holística" width={500} height={281} layout="responsive" /></div>
+                <div className="sidebar-block image-block"><Image src="/images/cases/versaoholistica-br-hospitais.jpg" alt="Página de Hospitais da Versão Holística" width={500} height={281} layout="responsive" /></div>
                 <div className="sidebar-block"><h4>LENTE 5 (Andragogia)</h4><p>Criamos e nomeamos a categoria "CareOps Integrativo", posicionando a VH como a "1ª Plataforma de CareOps do Brasil". Quando você nomeia a categoria, você domina a categoria na mente do decisor.</p></div>
             </div>
           </div>
         </div>
       </section>
-
-       <div className="section-divider-glow"></div>
-
-      {/* BLOCO 5: CASE 3 - AORKIA */}
+      <div className="section-divider-glow"></div>
       <section className="case-section-wrapper section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 3</span><h2 className="case-title">AORKIA</h2><p className="case-subtitle">Estudo de Caso: De Zero a Parceiro Global em 90 Dias</p></div>
@@ -131,17 +164,14 @@ export default function CasesPage() {
             </div>
             <div className="case-sidebar">
                 <div className="sidebar-block"><h4>FASE 1: Ancoragem de Autoridade</h4><p>Posicionamento escolhido: "Parceiro oficial Keepit — líder global". Impacto neural: Cérebro do decisor faz transferência de autoridade. "Se Keepit confia, eu posso confiar".</p></div>
-                <div className="sidebar-block image-block"><Image src="/images/cases/aorkia-home.png" alt="Plataforma AORKIA" width={500} height={281} layout="responsive" /></div>
+                <div className="sidebar-block image-block"><Image src="/images/cases/aorkia-home.jpg" alt="Plataforma AORKIA" width={500} height={281} layout="responsive" /></div>
                 <div className="sidebar-block"><h4>FASE 2: Tradução de Complexidade</h4><p><strong>Recodificação:</strong> De "Backup imutável" para "Seu provedor SaaS não faz backup dos seus dados. A responsabilidade é sua". Impacto: Ativa amígdala (medo) e urgência.</p></div>
-                <div className="sidebar-block image-block"><Image src="/images/cases/aorkia-backup-saas-estrategico.png" alt="Página de Backup SaaS da AORKIA" width={500} height={281} layout="responsive" /></div>
+                <div className="sidebar-block image-block"><Image src="/images/cases/aorkia-backup-saas-estrategico.jpg" alt="Página de Backup SaaS da AORKIA" width={500} height={281} layout="responsive" /></div>
             </div>
           </div>
         </div>
       </section>
-
       <div className="section-divider-glow"></div>
-
-      {/* BLOCO 6: CASE 4 - PÓVOAS & PARTNERS */}
        <section className="case-section-wrapper section-solid">
          <div className="container reveal-up">
             <div className="case-header"><span className="case-number">CASE 4</span><h2 className="case-title">Póvoas & Partners</h2><p className="case-subtitle">Estudo de Caso: De PDF Estático para Plataforma Omnicanal</p></div>
@@ -157,7 +187,7 @@ export default function CasesPage() {
                 </div>
                 <div className="case-sidebar">
                     <div className="sidebar-block"><h4>6 Competências, 6 Portas de Entrada</h4><p>A um clique, cliente escolhe exatamente o que precisa (Palestras, Treinamentos, Mentoria, etc.). O sistema apresenta a opção exata em 30 segundos.</p></div>
-                    <div className="sidebar-block image-block"><Image src="/images/cases/Visao_Geral_Site_PovoasPartners_por_SynapseB2B.png" alt="Plataforma Póvoas & Partners" width={500} height={281} layout="responsive" /></div>
+                    <div className="sidebar-block image-block"><Image src="/images/cases/Visao_Geral_Site_PovoasPartners_por_SynapseB2B.jpg" alt="Plataforma Póvoas & Partners" width={500} height={281} layout="responsive" /></div>
                     <div className="sidebar-block"><h4>12 Parceiros, 12 Canais de Valor</h4><p>Cada parceiro ganhou um card estratégico com descrição de valor. Cliente confia porque Elaine chancela (transferência de autoridade).</p></div>
                 </div>
             </div>
@@ -179,9 +209,24 @@ export default function CasesPage() {
       <style jsx>{`
         /* INTRODUÇÃO E ESTRUTURA GERAL */
         .intro-cases-block { max-width: 900px; margin: 0 auto; text-align: center; }
-        .dual-system-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+        .dual-system-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: left;}
         .system-side h4 { font-family: 'Montserrat'; font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem; }
         .system-side.system-2 h4 { color: var(--color-text); }
+
+        /* NOVOS ESTILOS PARA ORGANIZAÇÃO DE TEXTO */
+        .neural-flow { text-align: center; margin-top: 2rem; }
+        .flow-item { margin-bottom: 2rem; }
+        .flow-summary { font-size: 1.1rem; font-weight: 500; margin: 2rem 0; }
+        .phrase { display: block; font-style: italic; color: var(--color-heading); background-color: var(--color-section-bg); border: 1px solid var(--color-border); padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+        .phrase.positive { color: var(--color-primary); }
+        .phrase.negative { opacity: 0.7; }
+        .consequence { display: block; font-weight: 600; color: var(--color-text); }
+        .neural-sequence { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; background-color: var(--color-section-bg); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .neural-sequence span { font-weight: 500; }
+        .neural-sequence svg { color: var(--color-primary); }
+        .consequences-block { margin-top: 2rem; }
+        .consequences-block h4 { font-size: 1.1rem; color: var(--color-heading); margin-bottom: 1rem; }
+        .consequences-block ul { list-style: none; padding: 0; }
 
         /* ESTRUTURA DOS CASES */
         .case-section-wrapper { padding: 5rem 0; }
@@ -190,37 +235,20 @@ export default function CasesPage() {
         .case-title { font-family: 'Montserrat'; font-size: 3rem; color: var(--color-heading); }
         .case-subtitle { font-size: 1.2rem; color: var(--color-text); max-width: 700px; margin: 0.5rem auto 0; }
         
-        .case-body-grid {
-          display: grid;
-          grid-template-columns: 2fr 1fr;
-          gap: 4rem;
-          align-items: start;
-        }
-        .case-main-narrative { text-align: left; }
-        .case-main-narrative h3 { font-family: 'Montserrat'; font-size: 1.8rem; color: var(--color-heading); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); }
+        .case-body-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+        .case-main-narrative { text-align: center; }
+        .case-main-narrative h3 { font-family: 'Montserrat'; font-size: 1.8rem; color: var(--color-heading); margin: 3rem 0 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); }
         .case-main-narrative p { margin-bottom: 1.5rem; line-height: 1.8; }
         .case-main-narrative strong { color: var(--color-heading); }
 
-        .case-sidebar {
-          position: sticky;
-          top: 120px; /* Alinha com a navbar sticky */
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-        .sidebar-block {
-          background-color: var(--color-section-bg);
-          border: 1px solid var(--color-border);
-          border-radius: 12px;
-          padding: 1.5rem;
-          text-align: left;
-        }
+        .case-sidebar { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 1.5rem; }
+        .sidebar-block { background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; text-align: left; }
         .sidebar-block.image-block { padding: 0; overflow: hidden; }
         .sidebar-block h4 { font-size: 1rem; color: var(--color-primary); margin-bottom: 0.75rem; font-weight: 700; }
-        .sidebar-block p { font-size: 0.9rem; line-height: 1.7; }
+        .sidebar-block p { font-size: 0.9rem; line-height: 1.7; margin:0; }
 
-        .transformation-metric { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.5rem; text-align: center; background-color: var(--color-section-bg); border: 1px solid var(--color-border); padding: 2rem; border-radius: 12px; margin-top: 2rem; }
-        .transformation-metric svg { color: var(--color-primary); }
+        .transformation-metric { display: grid; grid-template-columns: 1fr auto 1fr; align-items: start; gap: 1.5rem; text-align: center; background-color: var(--color-section-bg); border: 1px solid var(--color-border); padding: 2rem; border-radius: 12px; margin-top: 2rem; }
+        .transformation-metric svg { color: var(--color-primary); margin-top: 1.5rem; }
         .case-metric-summary { font-weight: 600; font-style: italic; text-align: center; margin-top: 2rem; }
         .case-link { margin-top: 2rem; text-align: center; }
         .case-link a { color: var(--color-accent); font-weight: 600; }
@@ -234,6 +262,7 @@ export default function CasesPage() {
           .dual-system-box { grid-template-columns: 1fr; }
           .transformation-metric { grid-template-columns: 1fr; }
           .transformation-metric svg { transform: rotate(90deg); margin: 1rem auto; }
+          .neural-sequence { flex-direction: column; }
         }
       `}</style>
     </>
