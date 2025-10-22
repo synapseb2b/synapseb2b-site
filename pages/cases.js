@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Brain, TrendingUp, Zap, Target, Users, HeartPulse, HardHat, Briefcase, Rocket, MonitorSmartphone, Wrench, ChevronDown } from 'lucide-react';
 
 // Componente para Imagem Expansível
-const ExpandableImage = ({ src, alt, initialHeight = '200px' }) => {
+const ExpandableImage = ({ src, alt, initialHeight = '250px' }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     return (
         <div className={`image-expander ${isExpanded ? 'expanded' : ''}`} style={{ '--initial-height': initialHeight }}>
@@ -13,9 +13,11 @@ const ExpandableImage = ({ src, alt, initialHeight = '200px' }) => {
                 <Image src={src} alt={alt} width={1200} height={675} layout="responsive" />
             </div>
             {!isExpanded && (
-                <button className="expand-button" onClick={() => setIsExpanded(true)}>
-                    <ChevronDown /> Ver Imagem Completa
-                </button>
+                <div className="expand-overlay" onClick={() => setIsExpanded(true)}>
+                    <button className="expand-button">
+                        <ChevronDown /> Ver Imagem Completa
+                    </button>
+                </div>
             )}
         </div>
     );
@@ -88,26 +90,29 @@ export default function CasesPage() {
           <ExpandableImage src="/cases/exclusivaengenharias-home.png" alt="Plataforma da Exclusiva Engenharias" />
           <div className="case-narrative">
             <h3>O Travamento Neural</h3>
-            <p>Três empresas de engenharia. Excelência técnica indiscutível. Portfolio robusto. Mas crescimento 100% dependente de indicação.<br/><strong>Diagnóstico (Cortex GTM™):</strong><br/>O cérebro do decisor industrial não conseguia categorizar a oferta.</p>
+            <p>Três empresas de engenharia. Excelência técnica indiscutível. Portfolio robusto. Mas crescimento 100% dependente de indicação.</p>
+            <p><strong>Diagnóstico (Cortex GTM™):</strong><br/>O cérebro do decisor industrial não conseguia categorizar a oferta.</p>
             <blockquote className="phrase">"São engenheiros mecânicos? Elétricos? Civis? Consultores? Projetistas?"</blockquote>
             <div className="neural-sequence"><span>Sem categoria clara</span><ArrowRight/><span>Sistema 1 não reconhece padrão</span><ArrowRight/><span>Não gera "eu entendo o que vocês fazem"</span><ArrowRight/><span>Decisão não acontece</span></div>
             <div className="consequences-block"><h4>Consequências Operacionais:</h4><ul><li>Operação em modo sobrevivência.</li><li>Crescimento dependendo de networking heroico ao invés de sistema replicável.</li><li>Cada venda exigia esforço excepcional. Impossível escalar. Impossível prever receita.</li></ul></div>
             <h3>A Intervenção: Engenharia de Receita Aplicada</h3>
             <p>Não otimizamos a engenharia. Recodificamos como o mercado processa a engenharia.</p>
-            <div className="case-phase"><h4>FASE 1: Recodificação de Identidade + Arquitetura de Proposta de Valor</h4><p><strong>Recodificação:</strong> De "Somos três empresas de engenharia" para "Somos o hub de engenharias que resolve problemas industriais que outros evitam".<br/><strong>Proposta de Valor Recodificada:</strong> De uma apresentação de 40 minutos para "Projetos que funcionam na primeira vez".</p></div>
-            <div className="case-phase"><h4>FASE 2: Plataforma de Aceleração de Receita</h4><p>exclusivaengenharias.com não é site institucional. É ativo de conversão neural: 70% engenharia de receita, 30% institucional.</p></div>
+            <div className="case-phase"><h4>FASE 1: Recodificação de Identidade + Arquitetura de Proposta de Valor</h4><p><strong>Recodificação:</strong> De "Somos três empresas de engenharia" para "Somos o hub de engenharias que resolve problemas industriais que outros evitam".<br/><strong>Impacto neural:</strong> Cérebro categoriza instantaneamente. "Hub" = agregador. "Problemas que outros evitam" = especialização.<br/><strong>Proposta de valor recodificada:</strong> De apresentação de 40 minutos para "Projetos que funcionam na primeira vez".<br/><strong>Impacto neural:</strong> Ativa amígdala (medo de erro), depois núcleo accumbens (promessa de resultado). Sistema 1 sinaliza: "isso resolve minha dor".</p></div>
+            <div className="case-phase"><h4>FASE 2: Plataforma de Aceleração de Receita</h4><p>exclusivaengenharias.com não é site institucional. É ativo de conversão neural.<br/>→ 30% institucional (credibilidade)<br/>→ 70% engenharia de receita (conversão)<br/>→ Cada página ativa Sistema 1 antes de Sistema 2<br/>→ Lead entra educado sobre valor antes do contato comercial</p></div>
             <ExpandableImage src="/cases/exclusivaengenharias-sobre-nos.png" alt="Detalhe da plataforma Exclusiva Engenharias" />
-            <div className="case-phase"><h4>FASE 3: Simulador de Orçamento Integrado</h4><p>Ferramenta proprietária que toma a decisão cognitivamente cara no lugar do cliente, retornando uma estimativa de investimento em 30 segundos.</p></div>
-            <div className="case-phase"><h4>FASE 4: CRO as a Service (Governança de Execução)</h4><p>Liderança C-level fracionada que transforma heroísmo individual em sistema replicável.</p></div>
+            <div className="case-phase"><h4>FASE 3: Simulador de Orçamento Integrado</h4><p>Ferramenta proprietária que toma decisão cognitivamente cara no lugar do cliente.<br/>→ Cliente insere: tipo de projeto + escopo + prazo<br/>→ Sistema retorna: estimativa de investimento em 30 segundos<br/>→ <strong>Impacto neural:</strong> Decisão exaustiva (calcular custo) executada pelo sistema. Reduz carga cognitiva.</p></div>
+            <div className="case-phase"><h4>FASE 4: CRO as a Service (Governança de Execução)</h4><p>Liderança C-level fracionada operando Diretoria de Receita:<br/>→ Inteligência de mercado<br/>→ Prospecção ativa estruturada<br/>→ Execução pioneira de reuniões<br/>→ Playbook documentado para escalar time.<br/><strong>Impacto:</strong> De heroísmo individual para sistema replicável.</p></div>
             <h3>O Resultado: Transformação Sistêmica</h3>
             <div className="transformation-metric"><div className="metric-before"><strong>Antes:</strong><br/>→ 3 empresas segregadas<br/>→ 100% indicação<br/>→ Receita imprevisível</div><ArrowRight size={24} /><div className="metric-after"><strong>Depois:</strong><br/>→ Hub consolidado<br/>→ Motor de demanda ativo<br/>→ Sistema replicável</div></div>
+            <p className="case-metric-summary"><strong>Métrica que importa:</strong> De invisível para encontrável. De heroísmo para sistema.</p>
             <div className="case-link"><a href="https://exclusivaengenharias.com" target="_blank" rel="noopener noreferrer">Visite a prova: exclusivaengenharias.com →</a></div>
           </div>
         </div>
       </section>
       
-      {/* ... (Todos os outros cases seguem a mesma estrutura, com o código completo abaixo) ... */}
-       <div className="section-divider-glow"></div>
+      <div className="section-divider-glow"></div>
+
+      {/* BLOCO 4: CASE 2 - VERSÃO HOLÍSTICA */}
       <section className="case-section-wrapper section-solid">
          <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 2</span><h2 className="case-title">Versão Holística</h2><p className="case-subtitle">Estudo de Caso: Tradução Neurocientífica de Inovação em ROI</p></div>
@@ -132,17 +137,19 @@ export default function CasesPage() {
           </div>
         </div>
       </section>
-      <div className="section-divider-glow"></div>
+
+      {/* ... (restante dos cases) ... */}
+       <div className="section-divider-glow"></div>
       <section className="case-section-wrapper section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="case-header"><span className="case-number">CASE 3</span><h2 className="case-title">AORKIA</h2><p className="case-subtitle">Estudo de Caso: De Zero a Parceiro Global em 90 Dias</p></div>
           <ExpandableImage src="/cases/aorkia-home.png" alt="Plataforma da AORKIA" />
           <div className="case-narrative">
             <h3>O Contexto: Prova de Conceito Sob Pressão</h3>
-            <p>AORKIA é a nossa resposta à pergunta: <blockquote className="phrase">"Vocês usam o método em vocês mesmos?"</blockquote> <strong>Desafio autoimposto:</strong> Criar marca, narrativa, plataforma e gerar tração comercial em 90 dias num mercado técnico (Resiliência Cibernética), competindo com gigantes globais.</p>
+            <p>Pergunta que todo cliente faz: <blockquote className="phrase">"Vocês usam o método em vocês mesmos?"</blockquote> AORKIA é a resposta. Empresa nova. Mercado extremamente técnico. Zero histórico. Competindo com gigantes.<br/><strong>Desafio autoimposto:</strong> Criar marca, narrativa, plataforma e gerar tração comercial em 90 dias.</p>
             <h3>A Intervenção: Engenharia de Receita Acelerada</h3>
             <div className="case-phase"><h4>FASE 1: Posicionamento Estratégico (Ancoragem de Autoridade)</h4><p><strong>Decisão crítica:</strong> Não competir como "mais uma empresa de backup". <strong>Posicionamento escolhido:</strong> "Parceiro oficial Keepit — líder global". <strong>Impacto neural:</strong> Transferência de autoridade. "Se Keepit confia, eu posso confiar".</p></div>
-            <div className="case-phase"><h4>FASE 2: Tradução de Complexidade Técnica (Sistema 1)</h4><p><strong>Problema:</strong> Termos como "imutabilidade" não significam nada para o decisor. <strong>Recodificação neural:</strong> De "Backup imutável" para "Seu provedor SaaS não faz backup dos seus dados. A responsabilidade é sua. Quanto custa cada minuto de parada?". <strong>Impacto:</strong> Ativa amígdala (medo) e urgência.</p></div>
+            <div className="case-phase"><h4>FASE 2: Tradução de Complexidade Técnica (Sistema 1)</h4><p><strong>Problema:</strong> Termos como "imutabilidade" não significam nada para o decisor. <strong>Recodificação neural:</strong> De "Backup imutável" para "Seu provedor SaaS não faz backup dos seus dados. A responsabilidade é sua.". <strong>Impacto:</strong> Ativa amígdala (medo) e urgência.</p></div>
             <ExpandableImage src="/cases/aorkia-backup-saas-estrategico.png" alt="Página de Backup SaaS da AORKIA" />
             <h3>O Resultado: 90 Dias de Invisível para Operacional</h3>
             <div className="transformation-metric"><div className="metric-before"><strong>Antes:</strong><br/>→ Zero<br/>→ Ideia no papel</div><ArrowRight size={24} /><div className="metric-after"><strong>Depois (90 dias):</strong><br/>→ Parceiro Global Keepit<br/>→ 1ª venda: +1.200 usuários</div></div>
@@ -158,8 +165,8 @@ export default function CasesPage() {
             <ExpandableImage src="/cases/Visao_Geral_Site_PovoasPartners_por_SynapseB2B.png" alt="Plataforma da Póvoas & Partners" />
             <div className="case-narrative">
                 <h3>O Contexto: Expertise Sem Arquitetura de Distribuição</h3>
-                <p>Elaine Póvoas: credibilidade consolidada, mas todo seu portfólio estava em um PDF estático. <strong>O problema neural:</strong></p>
-                <ul className="problem-list"><li>PDF exige download (fricção)</li><li>Cliente não sabe qual serviço escolher</li><li>Parceiros estratégicos apresentados como logos estáticas</li><li>Zero arquitetura de conversão</li></ul>
+                <p>Elaine Póvoas: credibilidade consolidada, mas todo seu portfólio estava em um PDF estático.<br/><strong>O problema neural:</strong></p>
+                <ul className="problem-list"><li>PDF exige download (fricção)</li><li>Cliente não sabe qual serviço escolher</li><li>Parceiros estratégicos apresentados como logos estáticas</li></ul>
                 <h3>A Intervenção: De Documento para Ecossistema Omnicanal</h3>
                 <p>Criamos uma arquitetura de distribuição inteligente onde cada competência e cada parceiro se tornaram uma porta de entrada estratégica.</p>
                 <div className="case-phase"><h4>6 Competências, 6 Portas de Entrada</h4><p><strong>Impacto neural:</strong> Redução radical de fricção cognitiva. O sistema apresenta a opção exata em 30 segundos.</p></div>
@@ -176,7 +183,7 @@ export default function CasesPage() {
             <div className="case-header"><span className="case-number">CASE 5</span><h2 className="case-title">Profissionais de Saúde</h2><p className="case-subtitle">Estudo de Caso: Expertise Clínica Sem Sistema de Receita</p></div>
             <div className="case-narrative">
                 <h3>O Travamento Neural: Expertise Clínica ≠ Sistema de Receita</h3>
-                <p>Profissionais de saúde dominam a técnica, mas formação técnica não inclui inteligência comercial. <strong>O problema estrutural:</strong></p>
+                <p>Formação técnica não inclui inteligência comercial. <strong>O problema estrutural:</strong></p>
                 <ul className="problem-list"><li>Agenda lotada não significa caixa saudável</li><li>Salas ociosas 60% do tempo (ativo parado)</li><li>Conhecimento valioso preso no consultório (não escalável)</li></ul>
                 <h3>A Intervenção: Recodificação de Expertise em Múltiplos Canais de Receita</h3>
                 <p>Instalamos inteligência estratégica de receita em quem já domina a entrega clínica.</p>
@@ -184,7 +191,7 @@ export default function CasesPage() {
                 <div className="case-phase"><h4>FRENTE 2: Ativação de Receita Recorrente</h4><p>Modelo: Clínica Compartilhada. <strong>Resultado:</strong> Ativo parado vira fonte de caixa em 3 semanas.</p></div>
                 <div className="case-phase"><h4>FRENTE 3: Modelos Disruptivos Multi-Canal</h4><p>Transformando saber clínico em receita escalável (Mentorias, Cursos, etc.). <strong>Impacto neural:</strong> Profissional descobre que pode faturar enquanto dorme.</p></div>
                 <h3>O Resultado: De Agenda Lotada para Sistema de Receita</h3>
-                <div className="transformation-metric"><div className="metric-before"><strong>Antes:</strong><br/>→ Agenda cheia, caixa apertado<br/>→ Sala ociosa</div><ArrowRight size={24} /><div className="metric-after"><strong>Depois:</strong><br/>→ Agenda otimizada (maior ROI/hora)<br/>→ Receita recorrente de locação</div></div>
+                <div className="transformation-metric"><div className="metric-before"><strong>Antes:</strong><br/>→ Agenda cheia, caixa apertado<br/>→ Sala ociosa</div><ArrowRight size={24} /><div className="metric-after"><strong>Depois:</strong><br/>→ Agenda otimizada<br/>→ Receita recorrente</div></div>
                 <p className="case-metric-summary"><strong>Caso real:</strong> Clínica odontológica em MG ativou primeira receita recorrente em 3 semanas com modelo de locação de sala.</p>
             </div>
         </div>
@@ -252,7 +259,7 @@ export default function CasesPage() {
         /* INTRODUÇÃO E TEXTO REORGANIZADO */
         .intro-cases-block, .case-narrative, .final-cta-section { text-align: center; }
         .intro-cases-block { max-width: 900px; margin: 0 auto; }
-        .dual-system-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; margin: 2rem auto; max-width: 700px; }
+        .dual-system-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background-color: var(--color-section-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; margin: 2rem auto; max-width: 700px; text-align:left;}
         .system-side h4 { font-family: 'Montserrat'; font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem; }
         .system-side.system-2 h4 { color: var(--color-text); }
         .neural-flow, .neural-sequence, .consequences-block, .problem-list { margin: 1.5rem 0; }
@@ -288,14 +295,15 @@ export default function CasesPage() {
         .case-link a { color: var(--color-accent); font-weight: 600; }
 
         /* EFEITO DE IMAGEM EXPANSÍVEL */
-        .image-expander { position: relative; max-height: var(--initial-height, 200px); overflow: hidden; border-radius: 16px; border: 1px solid var(--color-border); transition: max-height 0.7s ease-in-out; margin: 3rem auto; max-width: 1000px;}
-        .image-expander.expanded { max-height: 1000px; }
+        .image-expander { position: relative; max-height: var(--initial-height, 250px); overflow: hidden; border-radius: 16px; border: 1px solid var(--color-border); transition: max-height 0.7s ease-in-out; margin: 3rem auto; max-width: 1000px; cursor: pointer;}
+        .image-expander.expanded { max-height: 1200px; /* Aumentado para garantir que a imagem inteira apareça */ cursor: default; }
         .image-container { line-height: 0; }
-        .expand-button { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border: none; color: white; padding: 2rem 1rem 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600; transition: background 0.3s; }
-        .expand-button:hover { background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
+        .expand-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 100%; display: flex; align-items: flex-end; justify-content: center; background: linear-gradient(to top, var(--color-background) 0%, rgba(0,0,0,0.8) 50%, transparent 100%); transition: opacity 0.3s; }
+        .image-expander.expanded .expand-overlay { opacity: 0; pointer-events: none; }
+        .expand-button { background: none; border: none; color: white; padding-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600; font-size: 1rem; text-shadow: 0 1px 3px black; }
 
         /* BLOCO FINAL */
-        .cases-proof-grid, .thesis-block, .cta-neuro-block, .post-scriptum { margin: 4rem 0; }
+        .cases-proof-grid, .thesis-block, .cta-neuro-block, .post-scriptum { margin: 4rem auto; max-width: 800px; }
         .cases-proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
         .proof-item { background-color: var(--color-section-bg); border: 1px solid var(--color-border); padding: 1rem; border-radius: 8px; }
         .thesis-block h3, .cta-neuro-block h3, .post-scriptum h4 { font-size: 1.5rem; color: var(--color-heading); margin-bottom: 1rem; }
