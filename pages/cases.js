@@ -298,7 +298,7 @@ export default function CasesPage() {
               <InterventionPhase 
                 phase="FASE 1"
                 title="Recodificação de Identidade + Arquitetura de Proposta de Valor"
-                description={<><strong>Recodificação:</strong> De "Somos três empresas de engenharia" para <strong>"Somos o hub de engenharias que resolve problemas industriais que outros evitam"</strong>.</>}
+                description={<>Recodificação de Identidade + Arquitetura de Proposta de Valor Antes: \"Somos três empresas de engenharia\"  Depois: \"Somos o hub de engenharias que resolve problemas industriais que outros evitam\" Impacto neural: Cérebro categoriza instantaneamente. \"Hub\" = agregador (padrão reconhecível). \"Problemas que outros evitam\" = especialização (reduz competição percebida). Proposta de valor recodificada:  Antes: Apresentação técnica de 40 minutos explicando capacidades  Depois: \"Projetos que funcionam na primeira vez\" Impacto neural: Ativa amígdala (medo de erro/retrabalho), depois ativa núcleo accumbens (promessa de resultado). Sistema 1 sinaliza: \"isso resolve minha dor\".</>}
                 neuralImpact="De confusão para clareza. Categoria mental criada."
               />
               <InterventionPhase 
@@ -375,7 +375,7 @@ export default function CasesPage() {
                 <InterventionPhase 
                     phase="FASE 1"
                     title="Recodificação da Mensagem Central"
-                    description={<>De "Plataforma de Cuidado Integrativo" para <strong>"Transforme o Alto Custo de Pacientes Crônicos em Sustentabilidade Financeira"</strong>.</>}
+                    description={<>CRO as a Service (Governança de Execução) Liderança C-level fracionada operando Diretoria de Receita: → Inteligência de mercado (Win/Loss Analysis)  → Prospecção ativa estruturada  → Execução pioneira de reuniões (modelagem de abordagem)  → Playbook documentado para escalar time Impacto: De heroísmo individual para sistema replicável. Qualquer vendedor mediano executa processo excelente.</>}
                     neuralImpact="De ‘o que é’ para ‘o que resolve’. Conecta com a dor do gestor hospitalar."
                 />
                 <InterventionPhase 
