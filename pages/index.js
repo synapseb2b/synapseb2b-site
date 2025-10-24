@@ -83,7 +83,7 @@ export default function HomePage() {
     <>
       <Head>
         <title>Synapse B2B | Engenharia de Receita para Escalar Negócios B2B</title>
-        <meta name="description" content="Traduzimos a complexidade técnica de empresas de tecnologia e engenharia em uma Engenharia de Receita clara e executável. Transformamos seu potencial em performance de mercado." />
+        <meta name="description" content="Quando você domina como o cérebro humano toma decisões, não importa o que você vende. Você domina como traduzir complexidade em clareza que vira receita." />
       </Head>
 
       {/* Bloco 1: Seção Hero */}
@@ -98,7 +98,7 @@ export default function HomePage() {
           <div className="reveal-up">
             <RotatingText />
             <p className="hero-subheadline wider-on-desktop">
-              Você domina a entrega. Nós dominamos como transformar isso em receita previsível.
+              Quando você domina como o cérebro humano toma decisões, não importa o que você vende. Você domina como traduzir complexidade em clareza que vira receita.
             </p>
             <div className="hero-ctas">
               <Link href="/contato" className="btn btn-primary">
