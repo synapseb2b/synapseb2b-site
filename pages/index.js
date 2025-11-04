@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, BrainCircuit, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, BrainCircuit, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react'; // Ícones atualizados
 
-// --- Componente de Texto Rotativo ---
+// --- Componente de Texto Rotativo (INTOCADO) ---
 const RotatingText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -78,7 +78,9 @@ export default function Home() {
         <meta name="description" content="Instalamos o sistema que transforma potencial técnico complexo em receita previsível. Clareza de Valor, Sistema Comercial, Governança de Execução e Ativos que Convertem." />
       </Head>
 
-      {/* Bloco 1: Hero Section */}
+      {/* ====================================================================== */}
+      {/* Bloco 1: Hero Section (INTOCADO, CONFORME SOLICITADO)                 */}
+      {/* ====================================================================== */}
       <section className="hero-section">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -106,8 +108,10 @@ export default function Home() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 2: Os 4 Pilares da Engenharia de Receita */}
-      <section id="engenharia" className="section-solid">
+      {/* ====================================================================== */}
+      {/* Bloco 2: Os 4 Pilares da Engenharia de Receita (NOVO DESIGN)           */}
+      {/* ====================================================================== */}
+      <section id="engenharia" className="section-solid section-pillars-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Receita previsível não é acidente. É engenharia.</h2>
           <p className="lead-text">
@@ -116,28 +120,57 @@ export default function Home() {
           <p className="text-center" style={{ maxWidth: '800px', margin: '1rem auto 0' }}>
             Empresas B2B que escalam têm uma coisa em comum: elas pararam de improvisar e construíram um sistema.
           </p>
-          <div className="info-grid">
-            <div className="info-card">
-              <BrainCircuit className="info-card-icon" />
-              <h3 className="info-card-title">Clareza de Valor</h3>
-              <p>Seu cliente ideal entende em 30 segundos: o que você resolve, por que agora, por que você. Sem jargão técnico. Sem apresentação de 40 slides.</p>
+          
+          {/* --- NOVO GRID DE PILARES --- */}
+          <div className="pillar-grid-revolutionary">
+            
+            {/* Pilar 1: Clareza de Valor */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content">
+                <div className="pillar-icon-wrapper">
+                  <Gem size={28} />
+                </div>
+                <h3 className="pillar-card-title">Clareza de Valor</h3>
+                <p className="pillar-card-description">Seu cliente ideal entende em 30 segundos: o que você resolve, por que agora, por que você. Sem jargão técnico. Sem apresentação de 40 slides.</p>
+              </div>
             </div>
-            <div className="info-card">
-              <GitBranch className="info-card-icon" />
-              <h3 className="info-card-title">Sistema Comercial</h3>
-              <p>Motor completo de receita: estratégia GTM, processo comercial estruturado, pipeline previsível. Você para de depender de indicações e passa a gerar demanda.</p>
+
+            {/* Pilar 2: Sistema Comercial */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content">
+                <div className="pillar-icon-wrapper">
+                  <GitBranch size={28} />
+                </div>
+                <h3 className="pillar-card-title">Sistema Comercial</h3>
+                <p className="pillar-card-description">Motor completo de receita: estratégia GTM, processo comercial estruturado, pipeline previsível. Você para de depender de indicações e passa a gerar demanda.</p>
+              </div>
             </div>
-            <div className="info-card">
-              <Users className="info-card-icon" />
-              <h3 className="info-card-title">Governança de Execução</h3>
-              <p>Liderança C-level fracionada operando sua receita. Inteligência sênior sem contrato CLT. Mínimo 3 meses até validar o sistema completo.</p>
+
+            {/* Pilar 3: Governança de Execução */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content">
+                <div className="pillar-icon-wrapper">
+                  <ShieldCheck size={28} />
+                </div>
+                <h3 className="pillar-card-title">Governança de Execução</h3>
+                <p className="pillar-card-description">Liderança C-level fracionada operando sua receita. Inteligência sênior sem contrato CLT. Mínimo 3 meses até validar o sistema completo.</p>
+              </div>
             </div>
-            <div className="info-card">
-              <Award className="info-card-icon" />
-              <h3 className="info-card-title">Ativos que Convertem</h3>
-              <p>Plataformas digitais, calculadoras de ROI, simuladores, ferramentas que educam e aceleram decisão. Tecnologia trabalhando 24/7 para converter.</p>
+
+            {/* Pilar 4: Ativos que Convertem */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content">
+                <div className="pillar-icon-wrapper">
+                  <Layers size={28} />
+                </div>
+                <h3 className="pillar-card-title">Ativos que Convertem</h3>
+                <p className="pillar-card-description">Plataformas digitais, calculadoras de ROI, simuladores, ferramentas que educam e aceleram decisão. Tecnologia trabalhando 24/7 para converter.</p>
+              </div>
             </div>
+
           </div>
+          {/* --- FIM DO NOVO GRID --- */}
+
            <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '3rem auto 0' }}>
             Nós instalamos o sistema que transforma seu potencial técnico em receita previsível através da Engenharia de Receita.
           </p>
@@ -146,106 +179,156 @@ export default function Home() {
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 3: Cases de Sucesso */}
-      <section id="cases" className="section-with-gradient-glow">
+      {/* ====================================================================== */}
+      {/* Bloco 3: Cases de Sucesso (NOVO DESIGN - CARROSSEL)                  */}
+      {/* ====================================================================== */}
+      <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Três histórias reais. Três resultados tangíveis.</h2>
-          <div className="case-grid">
+        </div>
+        
+        {/* --- NOVO CARROSSEL DE CASES --- */}
+        <div className="case-carousel-container reveal-up">
+          <div className="case-carousel-track">
+
             {/* Case 1: Versão Holística */}
-            <div className="case-card">
-              <div className="case-card-header">
-                <h3 className="case-card-title">Versão Holística</h3>
-                <span className="case-card-tag">Healthtech</span>
+            <div className="case-card-revolutionary">
+              <div className="case-card-header-rev">
+                <h3 className="case-card-title-rev">Versão Holística</h3>
+                <span className="case-card-tag-rev">Healthtech</span>
               </div>
               <p><strong>Contexto:</strong> Produto inovador ("Cuidado Farmacêutico Integrativo") que hospitais e investidores não entendiam. Pitch de 15 minutos gerava: "vamos pensar".</p>
               <p><strong>O que fizemos:</strong> Recodificamos a narrativa. "Cuidado" virou "Plataforma que reduz custo de paciente crônico em 5.8x". Focamos no ROI para o CFO, não na metodologia para o médico.</p>
               <p><strong>Resultado tangível:</strong> De "vamos pensar" para "quando começamos?". Posicionamento de categoria criado ("CareOps Integrativo") e tese de investimento pronta.</p>
-              <Link href="/cases" className="btn btn-secondary btn-small"><span>Ver Case Completo</span><ArrowRight size={18} /></Link>
+              <Link href="/cases" className="btn-case-revolutionary">
+                <span>Ver Case Completo</span>
+                <ArrowRight size={18} />
+              </Link>
             </div>
 
             {/* Case 2: Exclusiva Engenharias */}
-            <div className="case-card">
-              <div className="case-card-header">
-                <h3 className="case-card-title">Exclusiva Engenharias</h3>
-                <span className="case-card-tag">Indústria / Engenharia</span>
+            <div className="case-card-revolutionary">
+              <div className="case-card-header-rev">
+                <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
+                <span className="case-card-tag-rev">Indústria / Engenharia</span>
               </div>
               <p><strong>Contexto:</strong> Excelência técnica com 100% de dependência de indicações. CEO era o principal vendedor e gargalo do crescimento.</p>
               <p><strong>O que fizemos:</strong> Fundamos a Diretoria de Receita (CRO as a Service) e construímos o motor de demanda do zero: GTM, plataforma digital e prospecção ativa.</p>
               <p><strong>Resultado tangível:</strong> De 100% indicação para um sistema replicável. Playbook de vendas validado e documentado, pronto para escalar o time.</p>
-              <Link href="/cases" className="btn btn-secondary btn-small"><span>Ver Case Completo</span><ArrowRight size={18} /></Link>
+              <Link href="/cases" className="btn-case-revolutionary">
+                <span>Ver Case Completo</span>
+                <ArrowRight size={18} />
+              </Link>
             </div>
 
             {/* Case 3: AORKIA (NOVO) */}
-            <div className="case-card">
-              <div className="case-card-header">
-                <h3 className="case-card-title">AORKIA</h3>
-                <span className="case-card-tag">Prova de Conceito</span>
+            <div className="case-card-revolutionary">
+              <div className="case-card-header-rev">
+                <h3 className="case-card-title-rev">AORKIA</h3>
+                <span className="case-card-tag-rev">Prova de Conceito</span>
               </div>
               <p><strong>Contexto:</strong> Empresa nova em mercado técnico competindo com gigantes globais. Zero histórico, zero clientes. Desafio: provar que nosso próprio método funciona em 45 dias.</p>
               <p><strong>O que fizemos:</strong> Sprint intensivo: marca, narrativa, plataforma digital e parceria estratégica com Keepit (líder global). Recodificamos 'backup imutável' para 'Seu SaaS não faz backup dos seus dados. Quanto custa cada minuto parado?'.</p>
               <p><strong>Resultado tangível:</strong> De zero para Parceiro Global Keepit com primeira venda de 1.200+ usuários em 45 dias. A prova definitiva: nosso método aplicado em nós mesmos. Link: aorkia.com</p>
-              <a href="https://aorkia.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-small"><span>Ver Prova</span><ArrowRight size={18} /></a>
+              <a href="https://aorkia.com" target="_blank" rel="noopener noreferrer" className="btn-case-revolutionary">
+                <span>Ver Prova</span>
+                <ArrowRight size={18} />
+              </a>
             </div>
+
           </div>
         </div>
+        {/* --- FIM DO NOVO CARROSSEL --- */}
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 4: Princípio Unificador */}
-      <section id="principio" className="section-solid">
+      {/* ====================================================================== */}
+      {/* Bloco 4: Princípio Unificador (NOVO DESIGN - NÚCLEO)                */}
+      {/* ====================================================================== */}
+      <section id="principio" className="section-solid section-principle-revolutionary">
+        {/* Efeito de fundo animado será aplicado via CSS */}
+        <div className="flowfield-background"></div>
+
         <div className="container text-center reveal-up">
-          <div className="decision-block">
+          {/* --- NOVO BLOCO DE NÚCLEO --- */}
+          <div className="principle-core-block">
+            <div className="principle-core-icon">
+              <LineChart size={32} />
+            </div>
             <h3>Esses três casos provam o mesmo princípio:</h3>
-            <p className="decision-highlight">Complexidade técnica sem clareza estratégica é potencial desperdiçado.</p>
+            <p className="principle-core-highlight">Complexidade técnica sem clareza estratégica é potencial desperdiçado.</p>
             <p>Nós traduzimos o que trava seu comprador — dúvida, comparação, análise — em decisão rápida: confiança, urgência, ação.</p>
             <p>Construímos sistemas que tomam decisões complexas no lugar do usuário.</p>
             <p>Lideramos a execução nos primeiros 90 dias porque sabemos que você não pode parar sua operação para implementar um novo processo.</p>
-            <p className="font-bold text-white mt-4">Isso é Engenharia de Receita.</p>
+            <p className="font-bold text-white mt-4" style={{color: 'var(--color-heading)', fontSize: '1.1rem'}}>Isso é Engenharia de Receita.</p>
             <div className="section-cta">
-              <Link href="/como-trabalhamos" className="btn btn-secondary">
+              <Link href="/como-trabalhamos" className="btn btn-secondary" style={{backdropFilter: 'blur(10px)'}}>
                 <span>Conhecer Nossas Soluções</span>
               </Link>
             </div>
           </div>
+          {/* --- FIM DO BLOCO DE NÚCLEO --- */}
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* Bloco 5: Por Que Empresas B2B nos Contratam (NOVO) */}
-      <section id="por-que-synapse" className="section-solid">
+      {/* ====================================================================== */}
+      {/* Bloco 5: Por Que Empresas B2B nos Contratam (NOVO DESIGN)           */}
+      {/* ====================================================================== */}
+      <section id="por-que-synapse" className="section-solid section-truths-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Três verdades que todo empresário B2B já descobriu:</h2>
-          <div className="card-grid-three" style={{marginTop: '3rem'}}>
-            <div className="info-card text-left">
-              <h3 className="info-card-title">1. Você não tem problema de produto.</h3>
+          
+          {/* --- NOVO GRID DE VERDADES --- */}
+          <div className="truths-grid-revolutionary">
+            
+            <div className="truth-card-revolutionary">
+              <span className="truth-card-number">1.</span>
+              <h3 className="truth-card-title">Você não tem problema de produto.</h3>
               <p>Sua solução funciona. Clientes validam. O problema: o mercado não entende o valor rápido o suficiente para você crescer de forma previsível.</p>
             </div>
-            <div className="info-card text-left">
-              <h3 className="info-card-title">2. Crescimento por indicação tem teto.</h3>
+            
+            <div className="truth-card-revolutionary">
+              <span className="truth-card-number">2.</span>
+              <h3 className="truth-card-title">Crescimento por indicação tem teto.</h3>
               <p>Aquele vendedor estrela. Aquele networking do fundador. Funciona até não funcionar mais. Escalar exige que qualquer vendedor médio execute um processo excelente.</p>
             </div>
-            <div className="info-card text-left">
-              <h3 className="info-card-title">3. Você não tem tempo para aprender fazendo.</h3>
+
+            <div className="truth-card-revolutionary">
+              <span className="truth-card-number">3.</span>
+              <h3 className="truth-card-title">Você não tem tempo para aprender fazendo.</h3>
               <p>CEO tocando comercial. Time executando o dia a dia. Contratar gerente sem processo validado é apostar caro. Você precisa de quem já fez isso dezenas de vezes.</p>
             </div>
+
           </div>
+          {/* --- FIM DO NOVO GRID --- */}
         </div>
       </section>
 
-      {/* Bloco 6: CTA Final */}
-      <section className="final-cta-section">
-        <div className="container text-center reveal-up">
+      {/* ====================================================================== */}
+      {/* Bloco 6: CTA Final (NOVO DESIGN - IMERSIVO)                         */}
+      {/* ====================================================================== */}
+      <section className="final-cta-section final-cta-revolutionary">
+        {/* Efeito de fundo pulsante será aplicado via CSS */}
+        <div className="pulsating-core-background"></div>
+
+        <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
           <h2 className="final-cta-title">A pergunta B2B de US$ 1 milhão:</h2>
-          <p className="cta-support-text">"Seu produto é genial, mas sua narrativa é confusa. Como você traduz complexidade em receita previsível?"</p>
+          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem'}}>
+            "Seu produto é genial, mas sua narrativa é confusa. Como você traduz complexidade em receita previsível?"
+          </p>
           <div className="section-cta">
-            <Link href="/contato" className="btn btn-primary btn-large">
+            {/* --- NOVO BOTÃO COM EFEITO --- */}
+            <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Agendar Diagnóstico Estratégico (21min)</span>
               <ArrowRight size={20} />
             </Link>
           </div>
-          <p className="cta-support-text">Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Só clareza.</p>
+          <p className="cta-support-text" style={{opacity: 0.9}}>
+            Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Só clareza.
+          </p>
         </div>
       </section>
     </>
