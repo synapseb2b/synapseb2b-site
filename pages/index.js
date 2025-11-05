@@ -91,8 +91,8 @@ export default function Home() {
         <div className="container hero-content text-center page-hero-padding reveal-up">
           <RotatingText />
           <p className="hero-subheadline">
-            Seu produto resolve problemas complexos.<br/>
-            Mas o mercado não entende o valor na velocidade que você precisa crescer.
+            Você tem um produto complexo que resolve.<br/>
+            Mas se o mercado não entende o valor, ele não compra na velocidade que você precisa crescer.
           </p>
           <div className="hero-ctas">
             <Link href="/contato" className="btn btn-primary btn-large">
@@ -200,7 +200,7 @@ export default function Home() {
               <p><strong>Contexto:</strong> Produto inovador ("Cuidado Farmacêutico Integrativo") que hospitais e investidores não entendiam. Pitch de 15 minutos gerava: "vamos pensar".</p>
               <p><strong>O que fizemos:</strong> Recodificamos a narrativa. "Cuidado" virou "Plataforma que reduz custo de paciente crônico em 5.8x". Focamos no ROI para o CFO, não na metodologia para o médico.</p>
               <p><strong>Resultado tangível:</strong> De "vamos pensar" para "quando começamos?". Posicionamento de categoria criado ("CareOps Integrativo") e tese de investimento pronta.</p>
-              <Link href="/cases" className="btn-case-revolutionary">
+              <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
               </Link>
@@ -215,7 +215,7 @@ export default function Home() {
               <p><strong>Contexto:</strong> Excelência técnica com 100% de dependência de indicações. CEO era o principal vendedor e gargalo do crescimento.</p>
               <p><strong>O que fizemos:</strong> Fundamos a Diretoria de Receita (CRO as a Service) e construímos o motor de demanda do zero: GTM, plataforma digital e prospecção ativa.</p>
               <p><strong>Resultado tangível:</strong> De 100% indicação para um sistema replicável. Playbook de vendas validado e documentado, pronto para escalar o time.</p>
-              <Link href="/cases" className="btn-case-revolutionary">
+              <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
               </Link>
@@ -306,6 +306,60 @@ export default function Home() {
           {/* --- FIM DO NOVO GRID --- */}
         </div>
       </section>
+
+      {/* ====================================================================== */}
+{/* Bloco 5.5: Nossas Soluções (NOVA SEÇÃO)                             */}
+      {/* ====================================================================== */}
+      <section id="solucoes" className="section-solid section-solutions-revolutionary">
+        <div className="container text-center reveal-up">
+          <h2 className="section-title">Soluções de Engenharia de Receita</h2>
+          <p className="lead-text" style={{marginBottom: '4rem'}}>
+            Sistemas proprietários que traduzem excelência técnica em tração comercial previsível.
+          </p>
+          
+          <div className="solutions-grid-revolutionary">
+            
+            {/* Solução 1: Plataformas Digitais */}
+            <Link href="/solucoes/plataformas-digitais" className="solution-card-revolutionary">
+              <div className="pillar-icon-wrapper">
+                <Layers size={28} />
+              </div>
+              <h3 className="pillar-card-title">Plataformas Digitais</h3>
+              <p className="pillar-card-description">Plataformas web que educam o mercado, qualificam leads e convertem autoridade em receita.</p>
+            </Link>
+
+            {/* Solução 2: Cortex B2B */}
+            <Link href="/solucoes/cortex-b2b" className="solution-card-revolutionary">
+              <div className="pillar-icon-wrapper">
+                <BrainCircuit size={28} />
+              </div>
+              <h3 className="pillar-card-title">Cortex B2B™</h3>
+              <p className="pillar-card-description">Sistema de diagnóstico e arquitetura estratégica que decodifica negócios sob lentes de Engenharia de Receita, Neurociência e Orquestração de Escala.</p>
+            </Link>
+
+            {/* Solução 3: Match-Maker */}
+            <Link href="/solucoes/match-maker" className="solution-card-revolutionary">
+              <div className="pillar-icon-wrapper">
+                <Users size={28} />
+              </div>
+              <h3 className="pillar-card-title">Match-Maker B2B</h3>
+              <p className="pillar-card-description">Plataforma de inteligência que conecta pessoas certas no momento certo, eliminando networking aleatório com recomendações estratégicas baseadas em dados.</p>
+            </Link>
+
+            {/* Solução 4: Apps Estratégicos */}
+            <Link href="/solucoes/apps" className="solution-card-revolutionary">
+              <div className="pillar-icon-wrapper">
+                <Zap size={28} />
+              </div>
+              <h3 className="pillar-card-title">Apps Estratégicos</h3>
+              <p className="pillar-card-description">Ferramentas interativas que aceleram decisão de compra: simuladores, calculadoras e ROI builders.</p>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
       {/* Bloco 6: CTA Final (NOVO DESIGN - IMERSIVO)                         */}
