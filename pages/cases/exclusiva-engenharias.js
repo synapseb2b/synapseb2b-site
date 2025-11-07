@@ -41,7 +41,7 @@ export default function ExclusivaEngenhariasCase() {
 
   // Estilo customizado para o Hero deste case
   const heroStyle = {
-    backgroundImage: `url(/cases/exclusivaengenharias-home.png)`, // CORREÇÃO: Token de citação removido
+    backgroundImage: `url(/cases/exclusivaengenharias-home.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -63,7 +63,7 @@ export default function ExclusivaEngenhariasCase() {
           
           <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
             <Image 
-              src="/cases/logo_exclusiva.png" // CORREÇÃO: e comentário removidos
+              src="/cases/logo_exclusiva.png"
               alt="Logo Exclusiva Engenharias"
               width={250}
               height={70}
@@ -378,7 +378,7 @@ export default function ExclusivaEngenhariasCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/exclusivaengenharias-home.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/exclusivaengenharias-home.png"
                   alt="Homepage Exclusiva Engenharias com proposta de valor"
                   width={1000}
                   height={500}
@@ -405,7 +405,7 @@ export default function ExclusivaEngenhariasCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/simulador_exclusiva.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/simulador_exclusiva.png"
                   alt="Interface do Simulador Exclusiva Engenharias"
                   width={1000}
                   height={500}
@@ -434,7 +434,7 @@ export default function ExclusivaEngenhariasCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/playbook_exclusiva.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/playbook_exclusiva.png"
                   alt="Capa do Playbook Comercial Exclusiva Engenharias"
                   width={1000}
                   height={500}
@@ -558,7 +558,7 @@ export default function ExclusivaEngenhariasCase() {
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                src="/cases/logo_exclusiva.png" // CORREÇÃO: Token de citação removido
+                src="/cases/logo_exclusiva.png"
                 alt="Fabrício Tavares"
                 width={80}
                 height={80}
@@ -585,7 +585,7 @@ export default function ExclusivaEngenhariasCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 8: Learnings Estratégicos                                      */}
+      {/* Bloco 8: Learnings Estratégicos (CORRIGIDO)                           */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
         <div className="container">
@@ -617,7 +617,8 @@ export default function ExclusivaEngenhariasCase() {
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
                 <TrendingUp size={28} />
               </div>
-              <h3 className="truth-card-title">INSIGHT 3: HEROÍSMO NÃO ESCALA</h3> 
+              {/* CORREÇÃO: Removido o espaço rígido ( ) do final da tag h3 */}
+              <h3 className="truth-card-title">INSIGHT 3: HEROÍSMO NÃO ESCALA</h3>
               <p>Crescimento por networking individual da liderança tem teto claro: o tamanho da rede.</p>
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Método > heroísmo. Playbook validado > talento individual. Previsibilidade exige processo.</p>
             </div>

@@ -41,7 +41,7 @@ export default function VersaoHolisticaCase() {
 
   // Estilo customizado para o Hero deste case
   const heroStyle = {
-    backgroundImage: `url(/cases/versaoholistica-home.png)`, // CORREÇÃO: Token de citação removido
+    backgroundImage: `url(/cases/versaoholistica-home.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -63,7 +63,7 @@ export default function VersaoHolisticaCase() {
           
           <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
             <Image 
-              src="/cases/logo_vh.png" // CORREÇÃO: Token de citação removido
+              src="/cases/logo_vh.png"
               alt="Logo Versão Holística"
               width={250}
               height={70}
@@ -371,7 +371,7 @@ export default function VersaoHolisticaCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/versaoholistica-br-hospitais.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/versaoholistica-br-hospitais.png"
                   alt="Visual da categoria CareOps Integrativo"
                   width={1000}
                   height={500}
@@ -400,7 +400,7 @@ export default function VersaoHolisticaCase() {
               
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/versaoholistica-home.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/versaoholistica-home.png"
                   alt="Homepage versaoholistica.com.br"
                   width={1000}
                   height={500}
@@ -528,13 +528,13 @@ export default function VersaoHolisticaCase() {
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.8rem', fontFamily: "'Montserrat', sans-serif", color: 'var(--color-heading)', lineHeight: 1.4, marginBottom: '2.5rem'}}>
-                "A Synapse B2B nos deu o que nenhuma aceleradora havia entregue: <strong>clareza</strong>. [cite: 130-131] [cite_start]Eles conectaram nossa paixão com a linguagem que hospitais e investidores precisavam ouvir. [cite: 132-133] Saímos de 'solução complexa' para 'nova categoria'. O resultado? R$ 500k captados."
+                "A Synapse B2B nos deu o que nenhuma aceleradora havia entregue: <strong>clareza</strong>. Eles conectaram nossa paixão com a linguagem que hospitais e investidores precisavam ouvir. Saímos de 'solução complexa' para 'nova categoria'. O resultado? R$ 500k captados."
               </p>
             </blockquote>
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                src="/cases/Isabella_Albuquerque.png" // CORREÇÃO: Token de citação removido
+                src="/cases/Isabella_Albuquerque.png"
                 alt="Isabella Albuquerque"
                 width={80}
                 height={80}
@@ -565,7 +565,7 @@ export default function VersaoHolisticaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 8: Learnings Estratégicos                                      */}
+      {/* Bloco 8: Learnings Estratégicos (CORRIGIDO)                           */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
         <div className="container">
@@ -581,7 +581,8 @@ export default function VersaoHolisticaCase() {
               </div>
               <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
               <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. [cite_start]Sempre. [cite: 151-152]</p>
+              {/* CORREÇÃO: Removido o token e citação do meio do parágrafo */}
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. Sempre.</p>
             </div>
             
             <div className="truth-card-revolutionary text-left">
@@ -589,8 +590,8 @@ export default function VersaoHolisticaCase() {
                 <Layers size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 2: CRIAR CATEGORIA É CRIAR DEMANDA</h3>
-              [cite_start]<p>Ao posicionar VH como "1ª Plataforma CareOps Integrativo", criamos oceano azul onde antes havia confusão competitiva. [cite: 157-159]</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Se você compete em categoria estabelecida, você compete em preço. [cite_start]Se você CRIA a categoria, você define as regras do jogo. [cite: 161-163]</p>
+              <p>Ao posicionar VH como "1ª Plataforma CareOps Integrativo", criamos oceano azul onde antes havia confusão competitiva.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Se você compete em categoria estabelecida, você compete em preço. Se você CRIA a categoria, você define as regras do jogo.</p>
             </div>
 
             <div className="truth-card-revolutionary text-left">
@@ -598,8 +599,8 @@ export default function VersaoHolisticaCase() {
                 <BrainCircuit size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 3: HISTÓRIA + DADOS = DEFENSABILIDADE</h3>
-              <p>A história de Isabella não era marketing. [cite_start]Era a prova viva de que o sistema de saúde tem lacuna crítica. [cite: 168-170] [cite_start]Conectada aos dados (ROI 5.8x + validação UFMG), virou tese irrefutável. [cite: 172-175]</p>
-              [cite_start]<p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Propósito autêntico + Prova quantitativa = Diferenciação que ninguém replica. [cite: 177-178]</p>
+              <p>A história de Isabella não era marketing. Era a prova viva de que o sistema de saúde tem lacuna crítica. Conectada aos dados (ROI 5.8x + validação UFMG), virou tese irrefutável.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Propósito autêntico + Prova quantitativa = Diferenciação que ninguém replica.</p>
             </div>
           </div>
         </div>
@@ -628,7 +629,7 @@ export default function VersaoHolisticaCase() {
             </Link>
           </div>
           <p className="cta-support-text" style={{opacity: 0.9}}>
-            [cite_start]Primeira conversa: 21 minutos para traduzir sua complexidade em tração. [cite: 187-188]
+            Primeira conversa: 21 minutos para traduzir sua complexidade em tração.
             Zero pressão. Apenas clareza estratégica.
           </p>
 
