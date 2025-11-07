@@ -564,7 +564,7 @@ export default function VersaoHolisticaCase() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
+{/* ====================================================================== */}
       {/* Bloco 8: Learnings Estratégicos (CORRIGIDO)                           */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
@@ -582,7 +582,9 @@ export default function VersaoHolisticaCase() {
               </div>
               <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
               <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. Sempre.</p>
+              
+              {/* CORREÇÃO APLICADA AQUI */}
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza &gt; Complexidade. Sempre.</p>
             </div>
             {/* --- Fim Insight 1 --- */}
             
