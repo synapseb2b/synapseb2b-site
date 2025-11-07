@@ -653,13 +653,13 @@ export default function ExclusivaEngenhariasCase() {
             Zero pressão. Apenas clareza estratégica. 
           </p>
 
-          {/* Link de Download do PDF Adicional */}
+{/* Link de Download do PDF Adicional */}
           <div id="download-pdf" className="cta-secondary-link" style={{marginTop: '3rem'}}>
             <p style={{marginBottom: '0.5rem'}}>Prefere estudar o caso antes?</p> 
             <Link href="/pdf/synapse-case-exclusiva.pdf" className="btn-case-revolutionary" style={{justifyContent: 'center', fontSize: '1rem'}}>
               <span>Download PDF Completo do Case</span> 
               <Download size={18} />
-            </Kink>
+            </Link>
           </div>
         </div>
       </section>
