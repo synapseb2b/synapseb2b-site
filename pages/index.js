@@ -115,7 +115,8 @@ export default function Home() {
       {/* ====================================================================== */}
       <section id="engenharia" className="section-solid section-pillars-revolutionary">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Receita previsível não é acidente. É engenharia.</h2>
+          <h2 className="section-title">Receita previsível não é acidente. <br/>
+          É Engenharia.</h2>
           <p className="lead-text">
             Quatro pilares integrados. Um resultado: você cresce sem depender de sorte.
           </p>
