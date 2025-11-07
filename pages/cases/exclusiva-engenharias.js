@@ -1,3 +1,5 @@
+// pages/cases/exclusiva-engenharias.js (Corrigido)
+
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -39,7 +41,7 @@ export default function ExclusivaEngenhariasCase() {
 
   // Estilo customizado para o Hero deste case
   const heroStyle = {
-    backgroundImage: `url(/cases/exclusivaengenharias-home.png)`, // [cite: 3]
+    backgroundImage: `url(/cases/exclusivaengenharias-home.png)`, // CORREÇÃO: Token de citação removido
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -61,7 +63,7 @@ export default function ExclusivaEngenhariasCase() {
           
           <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
             <Image 
-              [cite_start]src="/cases/logo_exclusiva.png" // [cite: 4]
+              src="/cases/logo_exclusiva.png" // CORREÇÃO: e comentário removidos
               alt="Logo Exclusiva Engenharias"
               width={250}
               height={70}
@@ -153,15 +155,15 @@ export default function ExclusivaEngenhariasCase() {
       <section className="section-solid reveal-up">
         <div className="container" style={{maxWidth: '800px', textAlign: 'left'}}>
           <h2 className="section-title text-center">O CENÁRIO ANTES DA SYNAPSE</h2> 
-          <p>A Exclusiva Engenharias não tinha problema de competência técnica. Tinha um problema de clareza estratégica. [cite: 25]</p>
+          <p>A Exclusiva Engenharias não tinha problema de competência técnica. Tinha um problema de clareza estratégica.</p>
           <p><strong>O que tinham:</strong></p> 
           <ul style={{listStylePosition: 'inside', paddingLeft: '1rem', marginBottom: '1.5rem'}}>
-            <li>Um grupo de competências segregadas entre civil, elétrica, mecânica, automação, climatização, arquitetura e SST [cite: 27]</li>
-            <li>Clientes de peso: Gerdau, Cimento Nacional, IVECO, IDV [cite: 28]</li>
-            <li>Projetos industriais de alta complexidade entregues com excelência [cite: 29]</li>
+            <li>Um grupo de competências segregadas entre civil, elétrica, mecânica, automação, climatização, arquitetura e SST</li>
+            <li>Clientes de peso: Gerdau, Cimento Nacional, IVECO, IDV</li>
+            <li>Projetos industriais de alta complexidade entregues com excelência</li>
           </ul>
-          <p><strong>O problema:</strong> Cada competência era apresentada como negócio separado. Dependendo do tipo de obra, a narrativa mudava. [cite: 30] A empresa se fragmentava na própria comunicação. [cite: 31]</p>
-          <p>O crescimento? 100% por indicação. Dependente do networking individual da liderança. Zero previsibilidade de pipeline. Nenhuma estrutura comercial replicável. [cite: 32]</p>
+          <p><strong>O problema:</strong> Cada competência era apresentada como negócio separado. Dependendo do tipo de obra, a narrativa mudava. A empresa se fragmentava na própria comunicação.</p>
+          <p>O crescimento? 100% por indicação. Dependente do networking individual da liderança. Zero previsibilidade de pipeline. Nenhuma estrutura comercial replicável.</p>
           
           <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '3rem'}}>O PEDIDO QUE RECUSAMOS</h3> 
           <p style={{
@@ -174,9 +176,9 @@ export default function ExclusivaEngenhariasCase() {
           }}>
             "Precisamos de um site." 
           </p>
-          <p>Essa foi a solicitação inicial. E nossa resposta imediata foi: <strong>não</strong>. [cite: 35]</p>
-          <p>Não porque não fizéssemos plataformas digitais. Mas porque um site sem clareza estratégica seria apenas uma vitrine cara de um negócio indefinido. [cite: 36]</p>
-          <p>O que eles realmente precisavam? Entender que história tinham para contar antes de escolher onde contá-la. [cite: 37]</p>
+          <p>Essa foi a solicitação inicial. E nossa resposta imediata foi: <strong>não</strong>.</p>
+          <p>Não porque não fizéssemos plataformas digitais. Mas porque um site sem clareza estratégica seria apenas uma vitrine cara de um negócio indefinido.</p>
+          <p>O que eles realmente precisavam? Entender que história tinham para contar antes de escolher onde contá-la.</p>
         </div>
       </section>
 
@@ -199,7 +201,7 @@ export default function ExclusivaEngenhariasCase() {
                 <Target size={28} />
               </div>
               <h3 className="truth-card-title">DOR OPERACIONAL</h3> 
-              <p>Narrativa diferente para cada tipo de obra = confusão interna/externa. [cite: 43-47]</p>
+              <p>Narrativa diferente para cada tipo de obra = confusão interna/externa.</p>
             </div>
             
             <div className="truth-card-revolutionary">
@@ -207,7 +209,7 @@ export default function ExclusivaEngenhariasCase() {
                 <GitBranch size={28} />
               </div>
               <h3 className="truth-card-title">DOR ESTRATÉGICA</h3> 
-              <p>Impossível escalar sem depender de heroísmo da liderança. [cite: 44-47]</p>
+              <p>Impossível escalar sem depender de heroísmo da liderança.</p>
             </div>
 
             <div className="truth-card-revolutionary">
@@ -215,7 +217,7 @@ export default function ExclusivaEngenhariasCase() {
                 <LineChart size={28} />
               </div>
               <h3 className="truth-card-title">DOR FINANCEIRA</h3> 
-              <p>Receita imprevisível, dependente de ciclo longo não controlado. [cite: 43, 45-47]</p>
+              <p>Receita imprevisível, dependente de ciclo longo não controlado.</p>
             </div>
           </div>
 
@@ -225,19 +227,19 @@ export default function ExclusivaEngenhariasCase() {
           <div style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
             <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
               <ArrowRight size={20} color="var(--color-primary)" />
-              Crescimento limitado ao tamanho da rede pessoal dos sócios. [cite: 51]
+              Crescimento limitado ao tamanho da rede pessoal dos sócios.
             </p>
             <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
               <ArrowRight size={20} color="var(--color-primary)" />
-              Incapacidade de criar equipe comercial (o que vender? como vender?). [cite: 51]
+              Incapacidade de criar equipe comercial (o que vender? como vender?).
             </p>
             <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
               <ArrowRight size={20} color="var(--color-primary)" />
-              Perda de oportunidades por não ter resposta clara à pergunta "o que vocês fazem?". [cite: 51]
+              Perda de oportunidades por não ter resposta clara à pergunta "o que vocês fazem?".
             </p>
             <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
               <ArrowRight size={20} color="var(--color-primary)" />
-              Commoditização por competir em cada disciplina isoladamente. [cite: 52]
+              Commoditização por competir em cada disciplina isoladamente.
             </p>
           </div>
 
@@ -255,7 +257,7 @@ export default function ExclusivaEngenhariasCase() {
             textAlign: 'left'
           }}>
             <p>"Como crescer além de quem eu conheço?"</p> 
-            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>Essa era a questão real. E a resposta não estava em fazer mais networking. Estava em criar um Método. [cite: 55]</p>
+            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>Essa era a questão real. E a resposta não estava em fazer mais networking. Estava em criar um Método.</p>
           </blockquote>
 
         </div>
@@ -352,14 +354,14 @@ export default function ExclusivaEngenhariasCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                <li>└─ Decodificamos a genialidade técnica dispersa [cite: 64]</li>
-                <li>└─ Reposicionamento radical: De: "Três empresas de engenharia" Para: "Hub multidisciplinar que resolve problemas que outros evitam" [cite: 65]</li>
-                <li>└─ Nova categoria: Soluções de Engenharia Integrada para Infraestrutura Essencial em plantas industriais ativas [cite: 66]</li>
-                <li>└─ Proposta de valor definida: Precisão, previsibilidade e confiança em ambientes operacionais críticos [cite: 67]</li>
+                <li>└─ Decodificamos a genialidade técnica dispersa</li>
+                <li>└─ Reposicionamento radical: De: "Três empresas de engenharia" Para: "Hub multidisciplinar que resolve problemas que outros evitam"</li>
+                <li>└─ Nova categoria: Soluções de Engenharia Integrada para Infraestrutura Essencial em plantas industriais ativas</li>
+                <li>└─ Proposta de valor definida: Precisão, previsibilidade e confiança em ambientes operacionais críticos</li>
               </ul>
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>O insight crítico: a Exclusiva não vendia civil, elétrica ou mecânica. Vendia <strong>continuidade operacional</strong>. [cite: 69] O produto real era a capacidade de executar obras essenciais em plantas industriais ativas sem gerar atrito, parada ou risco. [cite: 70] Essa clareza transformou a conversa. [cite: 71]</p>
+              <p>O insight crítico: a Exclusiva não vendia civil, elétrica ou mecânica. Vendia <strong>continuidade operacional</strong>. O produto real era a capacidade de executar obras essenciais em plantas industriais ativas sem gerar atrito, parada ou risco. Essa clareza transformou a conversa.</p>
             </div>
 
             {/* --- FASE 2 --- */}
@@ -369,14 +371,14 @@ export default function ExclusivaEngenhariasCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                <li>└─ Arquitetura estratégica: 30% institucional + 70% motor de receita [cite: 75]</li>
-                <li>└─ Cada página como ferramenta educativa: orientar o cliente sobre como escolher parceiro para obras críticas [cite: 76]</li>
-                <li>└─ Diferenciação máxima: traduzir competências técnicas em valor percebido pelo decisor industrial [cite: 77]</li>
+                <li>└─ Arquitetura estratégica: 30% institucional + 70% motor de receita</li>
+                <li>└─ Cada página como ferramenta educativa: orientar o cliente sobre como escolher parceiro para obras críticas</li>
+                <li>└─ Diferenciação máxima: traduzir competências técnicas em valor percebido pelo decisor industrial</li>
               </ul>
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  [cite_start]src="/cases/exclusivaengenharias-home.png" // [cite: 83]
+                  src="/cases/exclusivaengenharias-home.png" // CORREÇÃO: Token de citação removido
                   alt="Homepage Exclusiva Engenharias com proposta de valor"
                   width={1000}
                   height={500}
@@ -386,7 +388,7 @@ export default function ExclusivaEngenhariasCase() {
               </div>
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>A plataforma não foi construída para impressionar. Foi construída para converter. [cite: 79] Cada seção respondia a uma objeção específica. [cite: 80] Cada case demonstrava não apenas execução técnica, mas impacto operacional zero. [cite: 81] O cliente industrial que chegava ao site saía com uma certeza: a Exclusiva entendia o desafio dele. [cite: 82]</p>
+              <p>A plataforma não foi construída para impressionar. Foi construída para converter. Cada seção respondia a uma objeção específica. Cada case demonstrava não apenas execução técnica, mas impacto operacional zero. O cliente industrial que chegava ao site saía com uma certeza: a Exclusiva entendia o desafio dele.</p>
             </div>
 
             {/* --- FASE 3 --- */}
@@ -396,14 +398,14 @@ export default function ExclusivaEngenhariasCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                <li>└─ Ferramenta de qualificação: cliente insere tipo de projeto, dimensões, complexidade [cite: 87]</li>
-                <li>└─ Sistema retorna faixa de investimento em 10 segundos [cite: 88]</li>
-                <li>└─ Lead entra na conversa já contextualizado e com expectativa calibrada [cite: 89]</li>
+                <li>└─ Ferramenta de qualificação: cliente insere tipo de projeto, dimensões, complexidade</li>
+                <li>└─ Sistema retorna faixa de investimento em 10 segundos</li>
+                <li>└─ Lead entra na conversa já contextualizado e com expectativa calibrada</li>
               </ul>
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  [cite_start]src="/cases/simulador_exclusiva.png" // [cite: 95]
+                  src="/cases/simulador_exclusiva.png" // CORREÇÃO: Token de citação removido
                   alt="Interface do Simulador Exclusiva Engenharias"
                   width={1000}
                   height={500}
@@ -413,7 +415,7 @@ export default function ExclusivaEngenhariasCase() {
               </div>
 
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>O simulador era mais que praticidade. Era <strong>mecanismo de comprometimento</strong>. [cite: 91] Ao investir tempo inserindo dados, o cliente já estava mentalmente dentro da jornada de compra. [cite: 92] E para a equipe comercial? Zero conversa perdida com leads fora de perfil. [cite: 93] Todo contato que chegava já estava qualificado. [cite: 94]</p>
+              <p>O simulador era mais que praticidade. Era <strong>mecanismo de comprometimento</strong>. Ao investir tempo inserindo dados, o cliente já estava mentalmente dentro da jornada de compra. E para a equipe comercial? Zero conversa perdida com leads fora de perfil. Todo contato que chegava já estava qualificado.</p>
             </div>
 
             {/* --- FASE 4 --- */}
@@ -423,16 +425,16 @@ export default function ExclusivaEngenhariasCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                <li>└─ Estruturamos a Diretoria de Receita do zero [cite: 99]</li>
-                <li>└─ Lideramos prospecção ativa com roteiro validado em campo [cite: 100]</li>
-                <li>└─ Conduzimos reuniões estratégicas com grandes industriais [cite: 101]</li>
-                <li>└─ Entregamos playbook comercial documentado e testado [cite: 102]</li>
-                <li>└─ Alinhamento de narrativa: transição de "vendemos projetos" para "resolvemos problemas industriais" [cite: 103]</li>
+                <li>└─ Estruturamos a Diretoria de Receita do zero</li>
+                <li>└─ Lideramos prospecção ativa com roteiro validado em campo</li>
+                <li>└─ Conduzimos reuniões estratégicas com grandes industriais</li>
+                <li>└─ Entregamos playbook comercial documentado e testado</li>
+                <li>└─ Alinhamento de narrativa: transição de "vendemos projetos" para "resolvemos problemas industriais"</li>
               </ul>
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  [cite_start]src="/cases/playbook_exclusiva.png" // [cite: 110]
+                  src="/cases/playbook_exclusiva.png" // CORREÇÃO: Token de citação removido
                   alt="Capa do Playbook Comercial Exclusiva Engenharias"
                   width={1000}
                   height={500}
@@ -442,7 +444,7 @@ export default function ExclusivaEngenhariasCase() {
               </div>
 
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>Não terceirizamos. <strong>Incorporamos</strong>. [cite: 105] Atuamos como diretoria interna, tomando decisões, liderando reuniões, enfrentando objeções reais. [cite: 106] O playbook não foi teórico — foi construído em campo. [cite: 107] Ao final dos 90 dias, a Exclusiva não tinha apenas um documento. Tinha um método comercial operando. [cite: 108-109]</p>
+              <p>Não terceirizamos. <strong>Incorporamos</strong>. Atuamos como diretoria interna, tomando decisões, liderando reuniões, enfrentando objeções reais. O playbook não foi teórico — foi construído em campo. Ao final dos 90 dias, a Exclusiva não tinha apenas um documento. Tinha um método comercial operando.</p>
             </div>
           </div>
         </div>
@@ -550,13 +552,13 @@ export default function ExclusivaEngenhariasCase() {
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.8rem', fontFamily: "'Montserrat', sans-serif", color: 'var(--color-heading)', lineHeight: 1.4, marginBottom: '2.5rem'}}>
-                "A Synapse B2B não entregou consultoria tradicional. [cite: 138] Eles desafiaram nosso pedido inicial, recusaram fazer 'só um site' e nos forçaram a olhar para dentro. [cite: 139] O resultado? Clareza estratégica que se traduziu em um Método comercial que funciona. Agora temos fundação." 
+                "A Synapse B2B não entregou consultoria tradicional. Eles desafiaram nosso pedido inicial, recusaram fazer 'só um site' e nos forçaram a olhar para dentro. O resultado? Clareza estratégica que se traduziu em um Método comercial que funciona. Agora temos fundação." 
               </p>
             </blockquote>
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                [cite_start]src="/cases/logo_exclusiva.png" // [cite: 142] (Nota: Fonte indica logo, usando como imagem de perfil)
+                src="/cases/logo_exclusiva.png" // CORREÇÃO: Token de citação removido
                 alt="Fabrício Tavares"
                 width={80}
                 height={80}
@@ -598,8 +600,8 @@ export default function ExclusivaEngenhariasCase() {
                 <Gem size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 1: COMPETÊNCIA ≠ CLAREZA</h3> 
-              <p>A Exclusiva tinha competências excepcionais. [cite: 152] Mas se apresentava de forma fragmentada. [cite: 153]</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Excelência técnica sem narrativa unificada não gera previsibilidade de receita. [cite: 155-156]</p>
+              <p>A Exclusiva tinha competências excepcionais. Mas se apresentava de forma fragmentada.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Excelência técnica sem narrativa unificada não gera previsibilidade de receita.</p>
             </div>
             
             <div className="truth-card-revolutionary text-left">
@@ -607,8 +609,8 @@ export default function ExclusivaEngenhariasCase() {
                 <ShieldCheck size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 2: RECUSE O PEDIDO ERRADO</h3> 
-              <p>Cliente pediu "site". Recusamos. [cite: 161] Entregamos clareza estratégica primeiro. [cite: 162]</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Resolver o problema real, não o pedido superficial. Essa é a diferença entre consultoria e transformação. [cite: 164-166]</p>
+              <p>Cliente pediu "site". Recusamos. Entregamos clareza estratégica primeiro.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Resolver o problema real, não o pedido superficial. Essa é a diferença entre consultoria e transformação.</p>
             </div>
 
             <div className="truth-card-revolutionary text-left">
@@ -616,8 +618,8 @@ export default function ExclusivaEngenhariasCase() {
                 <TrendingUp size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 3: HEROÍSMO NÃO ESCALA</h3> 
-              <p>Crescimento por networking individual da liderança tem teto claro: o tamanho da rede. [cite: 171-172]</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Método > heroísmo. Playbook validado > talento individual. Previsibilidade exige processo. [cite: 174-175]</p>
+              <p>Crescimento por networking individual da liderança tem teto claro: o tamanho da rede.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Método > heroísmo. Playbook validado > talento individual. Previsibilidade exige processo.</p>
             </div>
           </div>
         </div>
@@ -645,7 +647,7 @@ export default function ExclusivaEngenhariasCase() {
             </Link>
           </div>
           <p className="cta-support-text" style={{opacity: 0.9}}>
-            Primeira conversa: 21 minutos para mapear seu travamento de receita. [cite: 184-185]
+            Primeira conversa: 21 minutos para mapear seu travamento de receita.
             Zero pressão. Apenas clareza estratégica. 
           </p>
 

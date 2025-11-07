@@ -1,3 +1,5 @@
+// pages/cases/versao-holistica.js (Corrigido)
+
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -39,7 +41,7 @@ export default function VersaoHolisticaCase() {
 
   // Estilo customizado para o Hero deste case
   const heroStyle = {
-    [cite_start]backgroundImage: `url(/cases/versaoholistica-home.png)`, // [cite: 3]
+    backgroundImage: `url(/cases/versaoholistica-home.png)`, // CORREÇÃO: Token de citação removido
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -61,7 +63,7 @@ export default function VersaoHolisticaCase() {
           
           <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
             <Image 
-              [cite_start]src="/cases/logo_vh.png" // [cite: 4]
+              src="/cases/logo_vh.png" // CORREÇÃO: Token de citação removido
               alt="Logo Versão Holística"
               width={250}
               height={70}
@@ -74,8 +76,8 @@ export default function VersaoHolisticaCase() {
             DE NARRATIVA CONFUSA PARA NOVA CATEGORIA DE MERCADO 
           </h1>
           <p className="hero-subheadline wider-on-desktop">
-            [cite_start]Como uma healthtech com metodologia validada transformou [cite: 6]
-            [cite_start]complexidade incompreensível em clareza que captou R$ 500k. [cite: 7]
+            Como uma healthtech com metodologia validada transformou
+            complexidade incompreensível em clareza que captou R$ 500k.
           </p>
 
           {/* Destaque de Resultado */}
@@ -154,20 +156,20 @@ export default function VersaoHolisticaCase() {
       <section className="section-solid reveal-up">
         <div className="container" style={{maxWidth: '800px', textAlign: 'left'}}>
           <h2 className="section-title text-center">O CENÁRIO ANTES DA SYNAPSE</h2> 
-          <p>Isabella Albuquerque não criou a Versão Holística por oportunidade de mercado. [cite_start]Ela criou por necessidade existencial. [cite: 27]</p>
-          <p>Aos 12 anos, um tumor cerebral. Cirurgia de urgência. Perda total de movimentos. [cite_start]Anos de recuperação dolorosa. [cite: 28]</p>
-          <p>E quando finalmente recebeu alta hospitalar? Zero acompanhamento. [cite_start]"Eu que me virasse." [cite: 29]</p>
-          <p>As terapias integrativas a salvaram — mas nenhum hospital integrava isso ao cuidado convencional. [cite_start]A Versão Holística nasceu dessa lacuna. [cite: 30]</p>
-          [cite_start]<p>Anos depois, Isabella tinha construído algo único: uma metodologia de cuidado farmacêutico integrativo com validação científica pela UFMG. [cite: 31] [cite_start]ROI comprovado de 5.8x em pacientes de hemodiálise. [cite: 32] [cite_start]Parceria com o Hospital Nossa Senhora das Dores. [cite: 32] [cite_start]Tecnologia proprietária G-Ops desenvolvida em colaboração estratégica. [cite: 33]</p>
+          <p>Isabella Albuquerque não criou a Versão Holística por oportunidade de mercado. Ela criou por necessidade existencial.</p>
+          <p>Aos 12 anos, um tumor cerebral. Cirurgia de urgência. Perda total de movimentos. Anos de recuperação dolorosa.</p>
+          <p>E quando finalmente recebeu alta hospitalar? Zero acompanhamento. "Eu que me virasse."</p>
+          <p>As terapias integrativas a salvaram — mas nenhum hospital integrava isso ao cuidado convencional. A Versão Holística nasceu dessa lacuna.</p>
+          <p>Anos depois, Isabella tinha construído algo único: uma metodologia de cuidado farmacêutico integrativo com validação científica pela UFMG. ROI comprovado de 5.8x em pacientes de hemodiálise. Parceria com o Hospital Nossa Senhora das Dores. Tecnologia proprietária G-Ops desenvolvida em colaboração estratégica.</p>
           
           <p className="lead-text" style={{fontStyle: 'italic', color: 'var(--color-heading)', textAlign: 'center', marginTop: '3rem', marginBottom: '3rem'}}>
-            Tinha tudo. [cite_start]Menos uma coisa: alguém que entendesse o que ela fazia. [cite: 34]
+            Tinha tudo. Menos uma coisa: alguém que entendesse o que ela fazia.
           </p>
 
           <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '3rem'}}>O PARADOXO DA INOVAÇÃO</h3>
-          [cite_start]<p>Pitch de 15 minutos que deixava decisores mais confusos do que antes. [cite: 36] [cite_start]Investidores perguntando: "Vocês vendem consultoria ou software?" [cite: 36]</p>
-          [cite_start]<p>Hospitais interessados mas sem conseguir visualizar a implementação. [cite: 37] [cite_start]História pessoal de superação desconectada da proposta de valor. [cite: 37]</p>
-          <p>A genialidade estava lá. [cite_start]Mas aprisionada em complexidade técnica intraduzível. [cite: 38]</p>
+          <p>Pitch de 15 minutos que deixava decisores mais confusos do que antes. Investidores perguntando: "Vocês vendem consultoria ou software?"</p>
+          <p>Hospitais interessados mas sem conseguir visualizar a implementação. História pessoal de superação desconectada da proposta de valor.</p>
+          <p>A genialidade estava lá. Mas aprisionada em complexidade técnica intraduzível.</p>
 
           <blockquote style={{
             borderLeft: '4px solid var(--color-primary)', 
@@ -177,7 +179,7 @@ export default function VersaoHolisticaCase() {
             fontStyle: 'italic',
             color: 'var(--color-heading)'
           }}>
-            E aqui está o insight cruel: inovação sem clareza não é vantagem competitiva. [cite_start]É desvantagem comercial. [cite: 39]
+            E aqui está o insight cruel: inovação sem clareza não é vantagem competitiva. É desvantagem comercial.
           </blockquote>
         </div>
       </section>
@@ -201,7 +203,7 @@ export default function VersaoHolisticaCase() {
                 <Target size={28} />
               </div>
               <h3 className="truth-card-title">DOR OPERACIONAL</h3> 
-              [cite_start]<p>Pitch de 15 min que confundia em vez de clarificar decisores. [cite: 45-48]</p>
+              <p>Pitch de 15 min que confundia em vez de clarificar decisores.</p>
             </div>
             
             <div className="truth-card-revolutionary">
@@ -209,7 +211,7 @@ export default function VersaoHolisticaCase() {
                 <GitBranch size={28} />
               </div>
               <h3 className="truth-card-title">DOR ESTRATÉGICA</h3> 
-              [cite_start]<p>Múltiplos modelos de negócio simultâneos sem hierarquia. [cite: 46-47]</p>
+              <p>Múltiplos modelos de negócio simultâneos sem hierarquia.</p>
             </div>
 
             <div className="truth-card-revolutionary">
@@ -217,7 +219,7 @@ export default function VersaoHolisticaCase() {
                 <LineChart size={28} />
               </div>
               <h3 className="truth-card-title">DOR FINANCEIRA</h3> 
-              [cite_start]<p>ROI de 5.8x validado mas não comunicado de forma tangível. [cite: 45, 47-48]</p>
+              <p>ROI de 5.8x validado mas não comunicado de forma tangível.</p>
             </div>
           </div>
 
@@ -261,7 +263,7 @@ export default function VersaoHolisticaCase() {
             textAlign: 'left'
           }}>
             <p>"Por que ninguém entende o valor do que fazemos?"</p> 
-            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>E a resposta não estava em explicar melhor. [cite_start]Estava em <strong>criar a categoria que ainda não existia</strong>. [cite: 55]</p>
+            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>E a resposta não estava em explicar melhor. Estava em <strong>criar a categoria que ainda não existia</strong>.</p>
           </blockquote>
 
         </div>
@@ -343,14 +345,14 @@ export default function VersaoHolisticaCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                [cite_start]<li>└─ Mapeamento do processo decisório real nos hospitais. [cite: 64]</li>
-                [cite_start]<li>└─ Decisor identificado: CFO, não diretor clínico (insight crítico). [cite: 65]</li>
-                [cite_start]<li>└─ Objeção principal mapeada: "Mais uma consultoria cara sem ROI mensurável". [cite: 66]</li>
-                [cite_start]<li>└─ Gatilho de decisão descoberto: Case com métrica financeira tangível. [cite: 67]</li>
+                <li>└─ Mapeamento do processo decisório real nos hospitais.</li>
+                <li>└─ Decisor identificado: CFO, não diretor clínico (insight crítico).</li>
+                <li>└─ Objeção principal mapeada: "Mais uma consultoria cara sem ROI mensurável".</li>
+                <li>└─ Gatilho de decisão descoberto: Case com métrica financeira tangível.</li>
               </ul>
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              [cite_start]<p>O erro estratégico estava claro: Isabella vendia para quem aprecia a solução (diretores clínicos), não para quem aprova orçamento (CFOs pressionados por custos). [cite: 69] [cite_start]A conversa precisava mudar de "cuidado humanizado" para "redução de custo do paciente de alto valor". [cite: 70] CFOs não compram humanização. [cite_start]Compram ROI. [cite: 71]</p>
+              <p>O erro estratégico estava claro: Isabella vendia para quem aprecia a solução (diretores clínicos), não para quem aprova orçamento (CFOs pressionados por custos). A conversa precisava mudar de "cuidado humanizado" para "redução de custo do paciente de alto valor". CFOs não compram humanização. Compram ROI.</p>
             </div>
 
             {/* --- FASE 2 --- */}
@@ -360,16 +362,16 @@ export default function VersaoHolisticaCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                [cite_start]<li>└─ De: "Cuidado Farmacêutico Integrativo" → Para: "1ª Plataforma de CareOps Integrativo do Brasil". [cite: 75]</li>
-                [cite_start]<li>└─ Conceito estruturado: Nova Arquitetura de Cuidado ao Paciente Crônico. [cite: 76]</li>
-                [cite_start]<li>└─ Diferenciação em três pilares integrados (Atenção Farmacêutica, Terapias Integrativas, Inteligência de Dados). [cite: 77]</li>
-                [cite_start]<li>└─ Resultado tangível: Redução de 5.8x no custo do paciente crônico. [cite: 78]</li>
-                [cite_start]<li>└─ Validação de verticais com hierarquia clara (Core: Hospitais, Tração: Empresas, Validação: Escolas). [cite: 79]</li>
+                <li>└─ De: "Cuidado Farmacêutico Integrativo" → Para: "1ª Plataforma de CareOps Integrativo do Brasil".</li>
+                <li>└─ Conceito estruturado: Nova Arquitetura de Cuidado ao Paciente Crônico.</li>
+                <li>└─ Diferenciação em três pilares integrados (Atenção Farmacêutica, Terapias Integrativas, Inteligência de Dados).</li>
+                <li>└─ Resultado tangível: Redução de 5.8x no custo do paciente crônico.</li>
+                <li>└─ Validação de verticais com hierarquia clara (Core: Hospitais, Tração: Empresas, Validação: Escolas).</li>
               </ul>
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  [cite_start]src="/cases/versaoholistica-br-hospitais.png" // [cite: 86]
+                  src="/cases/versaoholistica-br-hospitais.png" // CORREÇÃO: Token de citação removido
                   alt="Visual da categoria CareOps Integrativo"
                   width={1000}
                   height={500}
@@ -379,7 +381,7 @@ export default function VersaoHolisticaCase() {
               </div>
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>Criar categoria não é marketing. [cite_start]É reconfiguração da realidade competitiva. [cite: 81] [cite_start]Antes: VH competia com clínicas digitais, apps de wellness, etc. [cite: 82] Depois: VH criou o CareOps Integrativo. [cite_start]Competição zero. [cite: 83] [cite_start]Oceano azul. [cite: 84] A história de Isabella deixou de ser contexto emocional. [cite_start]Virou prova viva da lacuna no sistema de saúde. [cite: 85]</p>
+              <p>Criar categoria não é marketing. É reconfiguração da realidade competitiva. Antes: VH competia com clínicas digitais, apps de wellness, etc. Depois: VH criou o CareOps Integrativo. Competição zero. Oceano azul. A história de Isabella deixou de ser contexto emocional. Virou prova viva da lacuna no sistema de saúde.</p>
             </div>
 
             {/* --- FASE 3 --- */}
@@ -389,16 +391,16 @@ export default function VersaoHolisticaCase() {
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>O que fizemos:</h4>
               <ul style={{listStyle: 'none', paddingLeft: 0, margin: '1rem 0', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                [cite_start]<li>└─ Construímos plataforma digital que educa o mercado sobre a categoria nova. [cite: 90]</li>
-                [cite_start]<li>└─ Estruturamos modelo de receita por vertical com métricas claras. [cite: 91]</li>
-                [cite_start]<li>└─ Criamos tese de investimento fundamentada (Mercado, Diferenciação, Tração, Escalabilidade). [cite: 92]</li>
-                [cite_start]<li>└─ Preparamos pitch deck e material para captação. [cite: 93]</li>
-                [cite_start]<li style={{color: 'var(--color-primary)', fontWeight: 'bold', marginTop: '0.5rem'}}>└─ RESULTADO IMEDIATO: R$ 500k captados no Programa Compete Minas. [cite: 94]</li>
+                <li>└─ Construímos plataforma digital que educa o mercado sobre a categoria nova.</li>
+                <li>└─ Estruturamos modelo de receita por vertical com métricas claras.</li>
+                <li>└─ Criamos tese de investimento fundamentada (Mercado, Diferenciação, Tração, Escalabilidade).</li>
+                <li>└─ Preparamos pitch deck e material para captação.</li>
+                <li style={{color: 'var(--color-primary)', fontWeight: 'bold', marginTop: '0.5rem'}}>└─ RESULTADO IMEDIATO: R$ 500k captados no Programa Compete Minas.</li>
               </ul>
               
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  [cite_start]src="/cases/versaoholistica-home.png" // [cite: 99]
+                  src="/cases/versaoholistica-home.png" // CORREÇÃO: Token de citação removido
                   alt="Homepage versaoholistica.com.br"
                   width={1000}
                   height={500}
@@ -408,7 +410,7 @@ export default function VersaoHolisticaCase() {
               </div>
 
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>Investidores não investem em soluções complexas. [cite_start]Investem em categorias inevitáveis com primeiro player claro. [cite: 96] [cite_start]O pitch deixou de ser "entenda nossa metodologia" para virar "entenda por que CareOps Integrativo é a próxima fronteira de eficiência em saúde". [cite: 97] [cite_start]Clareza de categoria + ROI validado + história autêntica = tese irrefutável. [cite: 98]</p>
+              <p>Investidores não investem em soluções complexas. Investem em categorias inevitáveis com primeiro player claro. O pitch deixou de ser "entenda nossa metodologia" para virar "entenda por que CareOps Integrativo é a próxima fronteira de eficiência em saúde". Clareza de categoria + ROI validado + história autêntica = tese irrefutável.</p>
             </div>
           </div>
         </div>
@@ -502,10 +504,10 @@ export default function VersaoHolisticaCase() {
             MÉTRICA QUE REALMENTE IMPORTA 
           </h3>
           <p className="lead-text" style={{color: 'var(--color-heading)', fontStyle: 'italic'}}>
-            De complexo para inevitável. De "vamos pensar" para captação de R$ 500k. [cite_start]Criação de categoria que antes não existia. [cite: 126]
+            De complexo para inevitável. De "vamos pensar" para captação de R$ 500k. Criação de categoria que antes não existia.
           </p>
           <p className="lead-text" style={{fontSize: '1.5rem', color: 'var(--color-primary)', fontWeight: 600}}>
-            Primeira plataforma de CareOps Integrativo do Brasil. Oceano azul. [cite_start]Competição zero. [cite: 127]
+            Primeira plataforma de CareOps Integrativo do Brasil. Oceano azul. Competição zero.
           </p>
 
         </div>
@@ -526,13 +528,13 @@ export default function VersaoHolisticaCase() {
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.8rem', fontFamily: "'Montserrat', sans-serif", color: 'var(--color-heading)', lineHeight: 1.4, marginBottom: '2.5rem'}}>
-                [cite_start]"A Synapse B2B nos deu o que nenhuma aceleradora havia entregue: <strong>clareza</strong>. [cite: 130-131] [cite_start]Eles conectaram nossa paixão com a linguagem que hospitais e investidores precisavam ouvir. [cite: 132-133] [cite_start]Saímos de 'solução complexa' para 'nova categoria'. [cite: 134] O resultado? [cite_start]R$ 500k captados." [cite: 135]
+                "A Synapse B2B nos deu o que nenhuma aceleradora havia entregue: <strong>clareza</strong>. [cite: 130-131] [cite_start]Eles conectaram nossa paixão com a linguagem que hospitais e investidores precisavam ouvir. [cite: 132-133] Saímos de 'solução complexa' para 'nova categoria'. O resultado? R$ 500k captados."
               </p>
             </blockquote>
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                [cite_start]src="/cases/Isabella_Albuquerque.png" // [cite: 136]
+                src="/cases/Isabella_Albuquerque.png" // CORREÇÃO: Token de citação removido
                 alt="Isabella Albuquerque"
                 width={80}
                 height={80}
@@ -578,7 +580,7 @@ export default function VersaoHolisticaCase() {
                 <Gem size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
-              [cite_start]<p>VH tinha metodologia validada pela UFMG. [cite: 147] [cite_start]Tinha ROI comprovado de 5.8x. [cite: 148] [cite_start]Mas decisores não compravam porque não entendiam. [cite: 149]</p>
+              <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. [cite_start]Sempre. [cite: 151-152]</p>
             </div>
             
@@ -616,8 +618,8 @@ export default function VersaoHolisticaCase() {
             MAS NINGUÉM ENTENDE? 
           </h2>
           <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem'}}>
-            [cite_start]Metodologia validada não garante captação. [cite: 185]
-            [cite_start]Clareza de categoria sim. [cite: 186]
+            Metodologia validada não garante captação.
+            Clareza de categoria sim.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
@@ -627,7 +629,7 @@ export default function VersaoHolisticaCase() {
           </div>
           <p className="cta-support-text" style={{opacity: 0.9}}>
             [cite_start]Primeira conversa: 21 minutos para traduzir sua complexidade em tração. [cite: 187-188]
-            Zero pressão. [cite_start]Apenas clareza estratégica. [cite: 189]
+            Zero pressão. Apenas clareza estratégica.
           </p>
 
           {/* Link de Download do PDF Adicional */}
