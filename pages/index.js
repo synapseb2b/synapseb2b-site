@@ -91,8 +91,8 @@ export default function Home() {
         <div className="container hero-content text-center page-hero-padding reveal-up">
           <RotatingText />
           <p className="hero-subheadline">
-            Você tem um produto complexo que resolve.<br/>
-            Mas se o mercado não entende o valor, ele não compra na velocidade que você precisa crescer.
+            Seu produto resolve problemas reais, <br/>
+            mas se o mercado não consegue entender o valor rapidamente, ele simplesmente não compra.
           </p>
           <div className="hero-ctas">
             {/* --- ATUALIZAÇÃO 3: Adicionada classe btn-cta-pulse --- */}
@@ -302,8 +302,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====================================================================== */}
-      {/* Bloco 5.5: Nossas Soluções (Centralizado por padrão)                   */}
+{/* ====================================================================== */}
+      {/* Bloco 5.5: Nossas Soluções (Centralizado por padrão)                */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid section-solutions-revolutionary">
         <div className="container text-center reveal-up">
@@ -316,7 +316,7 @@ export default function Home() {
             
             {/* Solução 1: Plataformas Digitais */}
             <Link href="/solucoes/plataformas-digitais" className="solution-card-revolutionary">
-              <div className="pillar-icon-wrapper">
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Layers size={28} />
               </div>
               <h3 className="pillar-card-title">Plataformas Digitais</h3>
@@ -325,7 +325,7 @@ export default function Home() {
 
             {/* Solução 2: Cortex B2B */}
             <Link href="/solucoes/cortex-b2b" className="solution-card-revolutionary">
-              <div className="pillar-icon-wrapper">
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <BrainCircuit size={28} />
               </div>
               <h3 className="pillar-card-title">Cortex B2B™</h3>
@@ -334,7 +334,7 @@ export default function Home() {
 
             {/* Solução 3: Match-Maker */}
             <Link href="/solucoes/match-maker" className="solution-card-revolutionary">
-              <div className="pillar-icon-wrapper">
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Users size={28} />
               </div>
               <h3 className="pillar-card-title">Match-Maker B2B</h3>
@@ -343,7 +343,7 @@ export default function Home() {
 
             {/* Solução 4: Apps Estratégicos */}
             <Link href="/solucoes/apps" className="solution-card-revolutionary">
-              <div className="pillar-icon-wrapper">
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Zap size={28} />
               </div>
               <h3 className="pillar-card-title">Apps Estratégicos</h3>
