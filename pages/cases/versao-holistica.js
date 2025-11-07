@@ -581,7 +581,7 @@ export default function VersaoHolisticaCase() {
               </div>
               <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
               <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
-              {/* CORREÇÃO: Removido o token e citação do meio do parágrafo */}
+              {/* CORREÇÃO: Comentário removido */}
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. Sempre.</p>
             </div>
             
