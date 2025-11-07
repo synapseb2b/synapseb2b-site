@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Brain, Target, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Brain, Target, Zap, TrendingUp, CheckCircle2, Network } from 'lucide-react';
 
 export default function CortexB2B() {
   useEffect(() => {
@@ -26,10 +26,12 @@ export default function CortexB2B() {
     <>
       <Head>
         <title>Cortex B2B™ | Meta-Framework de Inteligência Estratégica | Synapse B2B</title>
-        <meta name="description" content="Meta-framework proprietário que reúne os maiores frameworks globais de GTM, 20 anos de experiência em ecossistemas B2B e neurociência aplicada para diagnóstico 360º de negócios complexos." />
+        <meta name="description" content="Meta-framework proprietário que reúne os maiores frameworks globais de GTM e aceleração de receita + 20 anos de experiência em ecossistemas B2B para diagnóstico 360º de negócios complexos." />
       </Head>
 
-      {/* HERO */}
+      {/* ====================================================================== */}
+      {/* Hero Section                                                         */}
+      {/* ====================================================================== */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -50,7 +52,9 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* GÊNESE DO CORTEX */}
+      {/* ====================================================================== */}
+      {/* Gênese do Cortex                                                     */}
+      {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '3rem'}}>
@@ -60,13 +64,13 @@ export default function CortexB2B() {
             </p>
           </div>
 
-          {/* AJUSTE DE PADRÃO: Aplicado gradiente e borda de contraste */}
+          {/* Bloco de Gênese - Padrão de destaque */}
           <div style={{
             maxWidth: '900px',
             margin: '0 auto',
             padding: '3rem',
             background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.03))',
-            border: '1px solid var(--color-primary-accent)',
+            border: '1px solid var(--color-primary-accent)', // ADEQUAÇÃO DE EXCELÊNCIA
             borderRadius: '16px',
             textAlign: 'left'
           }}>
@@ -83,19 +87,19 @@ export default function CortexB2B() {
             <ul style={{listStyle: 'none', padding: 0, marginBottom: '1.5rem'}}>
               <li style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
-                <span><strong>Frameworks Globais de GTM:</strong> Challenger Sale, Strategic Narrative, Category Design, Positioning (April Dunford), Jobs-to-be-Done</span>
+                <span><strong>Maiores frameworks globais</strong> de Go-To-Market, aceleração de receita e gestão de negócios B2B</span>
               </li>
               <li style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
-                <span><strong>Neurociência Aplicada:</strong> Arquitetura de decisão humana, redução de fricção cognitiva, ativação de Sistema 1 vs Sistema 2</span>
+                <span><strong>Neurociência aplicada</strong> ao comportamento de compra e arquitetura de decisão em ambientes corporativos</span>
               </li>
               <li style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
-                <span><strong>Andragogia:</strong> Como adultos aprendem, processam informação complexa e tomam decisões em contextos corporativos</span>
+                <span><strong>Andragogia empresarial</strong> sobre como adultos aprendem, processam informação complexa e tomam decisões em contextos B2B</span>
               </li>
               <li style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
-                <span><strong>Orquestração de Escala:</strong> Science of Scaling, Founder-Led Growth, Revenue Predictability, Dual-Track Revenue</span>
+                <span><strong>Experiência operacional</strong> acumulada em construção e escala de motores de receita em múltiplos segmentos e geografias</span>
               </li>
             </ul>
 
@@ -108,7 +112,9 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* EVOLUÇÃO */}
+      {/* ====================================================================== */}
+      {/* Evolução (Timeline)                                                  */}
+      {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '3rem'}}>
@@ -117,27 +123,30 @@ export default function CortexB2B() {
 
           <div style={{maxWidth: '900px', margin: '0 auto'}}>
             <div className="evolution-timeline">
+              {/* Fase 1: Origem */}
               <div className="timeline-phase">
-                <div className="timeline-marker">Fase 1</div>
+                <div className="timeline-marker">Origem</div>
                 <div className="timeline-content">
-                  <h4>Nascimento (2023)</h4>
-                  <p>Criado para servir clientes da Synapse B2B. Foco: diagnóstico de Go-To-Market para empresas tecnicamente complexas.</p>
+                  <h4>Ferramenta Proprietária Interna</h4>
+                  <p>Criado inicialmente para servir clientes da Synapse B2B. Foco primário: diagnóstico de Go-To-Market para empresas tecnicamente complexas que precisavam traduzir potencial em receita previsível.</p>
                 </div>
               </div>
 
+              {/* Fase 2: Expansão */}
               <div className="timeline-phase">
-                <div className="timeline-marker">Fase 2</div>
+                <div className="timeline-marker">Expansão</div>
                 <div className="timeline-content">
-                  <h4>Expansão (2024)</h4>
-                  <p>Upgrades permitiram diagnóstico 360º além de GTM: análise financeira, maturidade operacional, arquitetura de escala, economia de valor.</p>
+                  <h4>Diagnóstico 360º Multi-Dimensional</h4>
+                  <p>Evolução para análise completa além de GTM: arquitetura financeira, maturidade operacional, dependências sistêmicas, economia de valor, capital relacional e ecossistema de parceiros.</p>
                 </div>
               </div>
 
+              {/* Fase 3: Presente */}
               <div className="timeline-phase">
-                <div className="timeline-marker">Fase 3</div>
+                <div className="timeline-marker">Presente</div>
                 <div className="timeline-content">
-                  <h4>Presente (2025)</h4>
-                  <p>Sistema de inteligência aplicável a qualquer negócio B2B: empresas em platô de crescimento, startups buscando aceleração, organizações diversificando canais de receita.</p>
+                  <h4>Sistema de Inteligência Universal B2B</h4>
+                  <p>Aplicável a qualquer negócio B2B: empresas em platô de crescimento, startups buscando aceleração, organizações diversificando canais de receita, ecossistemas de investimento validando teses.</p>
                 </div>
               </div>
             </div>
@@ -147,7 +156,9 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* O PROBLEMA */}
+      {/* ====================================================================== */}
+      {/* O Problema                                                           */}
+      {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Problema que Resolvemos</h2>
@@ -179,7 +190,9 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* COMO FUNCIONA */}
+      {/* ====================================================================== */}
+      {/* Como Funciona                                                        */}
+      {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
@@ -188,26 +201,29 @@ export default function CortexB2B() {
           </div>
 
           <div className="cortex-process">
+            {/* Passo 1 */}
             <div className="cortex-step">
               <div className="cortex-step-number">1</div>
               <div className="cortex-step-content">
-                <h3>Ingestão de Dados</h3>
-                <p>Upload de pitch deck, DRE, fluxo de caixa, apresentações comerciais, métricas operacionais (qualquer combinação disponível).</p>
+                <h3>Ingestão de Inteligência de Negócio</h3>
+                <p>Upload de materiais estratégicos: pitch deck, DRE, fluxo de caixa, apresentações comerciais, métricas operacionais, propostas de valor, análises de concorrência, relatórios de pipeline, contratos-tipo, playbooks de vendas, roadmaps de produto — qualquer combinação disponível que enriqueça a base de conhecimento.</p>
               </div>
             </div>
 
+            {/* Passo 2 */}
             <div className="cortex-step">
               <div className="cortex-step-number">2</div>
               <div className="cortex-step-content">
-                <h3>Processamento Multi-Camada</h3>
-                <p>Sistema aplica 4 lentes analíticas simultaneamente: Engenharia de GTM, Arquitetura de Decisão, Orquestração de Escala, Economia de Valor.</p>
+                <h3>Processamento Multi-Dimensional</h3>
+                <p>Sistema aplica 5 lentes analíticas simultaneamente: Engenharia de GTM, Arquitetura de Decisão, Orquestração de Escala, Economia de Valor, Ecossistema & Capital Relacional.</p>
               </div>
             </div>
 
+            {/* Passo 3 */}
             <div className="cortex-step">
               <div className="cortex-step-number">3</div>
               <div className="cortex-step-content">
-                <h3>Diagnóstico Estruturado</h3>
+                <h3>Diagnóstico Estruturado 360º</h3>
                 <p>Relatório em 4 blocos: Diagnóstico de Maturidade, Mapa de Recomendação Priorizado, Blueprint Estratégico, Roteiro 90 Dias.</p>
               </div>
             </div>
@@ -217,52 +233,70 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* AS 4 LENTES */}
+      {/* ====================================================================== */}
+      {/* As 5 Lentes                                                          */}
+      {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
-            <h2 className="section-title">As 4 Lentes Analíticas do Cortex</h2>
-            <p className="lead-text">Cada negócio é analisado sob múltiplas perspectivas integradas simultaneamente.</p>
+            <h2 className="section-title">As 5 Lentes Analíticas do Cortex</h2>
+            <p className="lead-text">Cada negócio é analisado sob múltiplas perspectivas integradas simultaneamente para visão 360º completa.</p>
           </div>
 
-          <div className="pillar-grid-revolutionary">
+          {/* Grid de 5 colunas */}
+          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'}}>
+            {/* Lente 1 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Target size={28} />
                 </div>
                 <h3 className="pillar-card-title">Lente 1: Engenharia de GTM</h3>
-                <p className="pillar-card-description">Avalia clareza de valor, ICP, proposta de valor, canais de aquisição, modelo de vendas. Identifica gaps estruturais no motor comercial. Base: Challenger Sale, Strategic Narrative, Category Design.</p>
+                <p className="pillar-card-description">Avalia clareza de valor, ICP, proposta de valor, canais de aquisição, modelo de vendas, arquitetura de pricing. Identifica gaps estruturais no motor comercial.</p>
               </div>
             </div>
 
+            {/* Lente 2 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Brain size={28} />
                 </div>
                 <h3 className="pillar-card-title">Lente 2: Arquitetura de Decisão</h3>
-                <p className="pillar-card-description">Analisa como a narrativa atual facilita ou trava a decisão do comprador. Identifica objeções não resolvidas e fricção cognitiva. Base: Neurociência Aplicada, Jobs-to-be-Done, Buyer Enablement.</p>
+                <p className="pillar-card-description">Analisa como a narrativa atual facilita ou trava a decisão do comprador. Identifica objeções não resolvidas, fricção cognitiva e gaps de buyer enablement.</p>
               </div>
             </div>
 
+            {/* Lente 3 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <TrendingUp size={28} />
                 </div>
                 <h3 className="pillar-card-title">Lente 3: Orquestração de Escala</h3>
-                <p className="pillar-card-description">Avalia maturidade operacional, governança financeira, dependência de founder, concentração de clientes. Define próxima fase de crescimento. Base: Science of Scaling, Founder-Led Growth, Dual-Track Revenue.</p>
+                <p className="pillar-card-description">Avalia maturidade operacional, governança financeira, dependência de founder, concentração de clientes. Define capacidade de escala e próxima fase de crescimento.</p>
               </div>
             </div>
 
+            {/* Lente 4 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Zap size={28} />
                 </div>
                 <h3 className="pillar-card-title">Lente 4: Economia de Valor</h3>
-                <p className="pillar-card-description">Valida modelo de precificação, analisa captura de valor, identifica oportunidades de upsell/cross-sell não exploradas. Base: Value-Based Pricing, Customer Lifetime Value Optimization.</p>
+                <p className="pillar-card-description">Valida modelo de precificação, analisa captura de valor vs entrega, identifica oportunidades de expansão (upsell/cross-sell) não exploradas e otimização de LTV.</p>
+              </div>
+            </div>
+
+            {/* Lente 5 (Nova) */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content">
+                <div className="pillar-icon-wrapper">
+                  <Network size={28} />
+                </div>
+                <h3 className="pillar-card-title">Lente 5: Ecossistema & Capital Relacional</h3>
+                <p className="pillar-card-description">Mapeia qualidade de relacionamentos estratégicos, maturidade de parcerias e canais indiretos, dependência de key accounts, capital social acumulado e estratégia de expansão via ecossistema.</p>
               </div>
             </div>
           </div>
@@ -271,17 +305,21 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* O RESULTADO */}
+      {/* ====================================================================== */}
+      {/* O Resultado                                                          */}
+      {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Resultado: Diagnóstico 360º Acionável</h2>
           <p className="lead-text" style={{maxWidth: '700px', margin: '0 auto 2rem'}}>
-            Não é opinião. Não é checklist genérico. É análise estruturada sob 4 lentes com recomendações priorizadas por impacto.
+            Não é opinião. Não é checklist genérico. É análise estruturada sob 5 lentes com recomendações priorizadas por impacto.
           </p>
 
-          {/* AJUSTE DE PADRÃO: Aplicado gradiente e borda de contraste */}
+          {/* Bloco de Entregáveis - Padrão de destaque */}
           <div style={{
-            background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.02))',
+            // ADEQUAÇÃO DE EXCELÊNCIA: Fundo de destaque
+            background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.1), rgba(56, 197, 177, 0.05))',
+            // ADEQUAÇÃO DE EXCELÊNCIA: Borda de destaque
             border: '1px solid var(--color-primary-accent)',
             borderRadius: '16px',
             padding: '3rem',
@@ -294,29 +332,29 @@ export default function CortexB2B() {
               <li style={{display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <div>
-                  <strong>Bloco 1: Diagnóstico de Maturidade</strong><br/>
-                  Estágio atual do negócio sob 4 lentes + Gaps críticos priorizados por severidade e urgência
+                  <strong>Bloco 1: Diagnóstico de Maturidade 360º</strong><br/>
+                  Estágio atual do negócio sob 5 lentes + Gaps críticos priorizados por severidade, urgência e impacto potencial
                 </div>
               </li>
               <li style={{display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <div>
-                  <strong>Bloco 2: Mapa de Recomendação</strong><br/>
-                  Qual frente ativar primeiro (GTM completo, Sprint de Validação, CRO fracionado, Plataforma de Aceleração) com justificativa técnica e matriz de impacto
+                  <strong>Bloco 2: Mapa de Recomendação Priorizado</strong><br/>
+                  Qual frente ativar primeiro (GTM completo, Sprint de Validação, CRO fracionado, Plataforma de Aceleração, Ativação de Ecossistema) com justificativa técnica e matriz de impacto vs esforço
                 </div>
               </li>
               <li style={{display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <div>
                   <strong>Bloco 3: Blueprint Estratégico</strong><br/>
-                  ICP refinado + Proposta de valor otimizada + Canais de aquisição validados + Modelo de precificação baseado em valor (não em custo)
+                  ICP refinado + Proposta de valor otimizada + Canais de aquisição validados + Modelo de precificação baseado em valor + Estratégia de parcerias e ecossistema
                 </div>
               </li>
               <li style={{display: 'flex', alignItems: 'flex-start', gap: '1rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <div>
                   <strong>Bloco 4: Roteiro 90 Dias</strong><br/>
-                  Ações priorizadas por impacto + Métricas de validação + KPIs de sucesso (objetivos tangíveis, não aspiracionais)
+                  Ações priorizadas por impacto + Métricas de validação + KPIs de sucesso + Quick wins para gerar momentum (objetivos tangíveis, não aspiracionais)
                 </div>
               </li>
             </ul>
@@ -326,7 +364,9 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* CASOS DE USO */}
+      {/* ====================================================================== */}
+      {/* Casos de Uso Ideais                                                  */}
+      {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Casos de Uso Ideais</h2>
@@ -349,7 +389,7 @@ export default function CortexB2B() {
             </div>
           </div>
 
-          {/* Bloco 'Também Aplicável' - Estilo de citação mantido (não é um card padrão) */}
+          {/* Bloco "Também Aplicável" */}
           <div style={{
             maxWidth: '800px',
             margin: '4rem auto 0',
@@ -361,9 +401,9 @@ export default function CortexB2B() {
           }}>
             <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem'}}>Também Aplicável em:</h4>
             <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
-              <li style={{marginBottom: '0.75rem'}}>→ <strong>Advisory & Consultoria:</strong> Economiza 20-30h/mês em análise manual de pitch decks</li>
-              <li style={{marginBottom: '0.75rem'}}>→ <strong>Ecossistemas de Investimento:</strong> Triagem estruturada de dezenas de startups em escala</li>
-              <li style={{marginBottom: '0.75rem'}}>→ <strong>Founders & C-Level:</strong> Segunda opinião estratégica estruturada em 15 minutos (self-service)</li>
+              <li style={{marginBottom: '0.75rem'}}>→ <strong>Advisory & Consultoria:</strong> Economiza 20-30h/mês em análise manual de pitch decks e diagnósticos estratégicos</li>
+              <li style={{marginBottom: '0.75rem'}}>→ <strong>Ecossistemas de Investimento:</strong> Triagem estruturada de dezenas de startups com consistência metodológica</li>
+              <li style={{marginBottom: '0.75rem'}}>→ <strong>Founders & C-Level:</strong> Segunda opinião estratégica estruturada para validação de hipóteses críticas</li>
             </ul>
           </div>
         </div>
@@ -371,12 +411,14 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* CTA FINAL */}
+      {/* ====================================================================== */}
+      {/* CTA Final                                                            */}
+      {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
           <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
-            20 Anos de Experiência. 10 Minutos de Diagnóstico.
+            20 Anos de Experiência. 5 Lentes. 10 Minutos de Diagnóstico.
           </h2>
           <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px'}}>
             Se você gasta 5-7 horas analisando negócios manualmente ou está em platô de crescimento sem clareza sobre qual alavanca puxar, o Cortex B2B™ foi feito para você.
@@ -393,7 +435,7 @@ export default function CortexB2B() {
         </div>
       </section>
 
-      {/* CSS */}
+      {/* CSS Específico */}
       <style jsx>{`
         .cortex-process {
           display: flex;
@@ -406,8 +448,9 @@ export default function CortexB2B() {
           display: flex;
           align-items: flex-start;
           gap: 2rem;
-          /* AJUSTE DE PADRÃO: Aplicado gradiente e borda de contraste */
+          /* ADEQUAÇÃO DE EXCELÊNCIA: Fundo de destaque */
           background: linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.02));
+          /* ADEQUAÇÃO DE EXCELÊNCIA: Borda de destaque */
           border: 1px solid var(--color-primary-accent);
           border-radius: 12px;
           padding: 2rem;
@@ -437,6 +480,7 @@ export default function CortexB2B() {
           line-height: 1.7;
         }
 
+        /* Estilos da Nova Seção: Evolução */
         .evolution-timeline {
           display: flex;
           flex-direction: column;
@@ -444,7 +488,7 @@ export default function CortexB2B() {
         }
         .timeline-phase {
           display: grid;
-          grid-template-columns: 100px 1fr;
+          grid-template-columns: 120px 1fr;
           gap: 2rem;
           align-items: start;
         }
@@ -458,8 +502,9 @@ export default function CortexB2B() {
         }
         .timeline-content {
           padding: 1.5rem;
-          /* AJUSTE DE PADRÃO: Aplicado gradiente e borda de contraste */
+          /* ADEQUAÇÃO DE EXCELÊNCIA: Fundo de destaque */
           background: linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.02));
+          /* ADEQUAÇÃO DE EXCELÊNCIA: Borda de destaque */
           border: 1px solid var(--color-primary-accent);
           border-radius: 12px;
         }
