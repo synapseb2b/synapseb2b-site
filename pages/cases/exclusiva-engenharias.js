@@ -617,7 +617,7 @@ export default function ExclusivaEngenhariasCase() {
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
                 <TrendingUp size={28} />
               </div>
-              {/* CORREÇÃO: Removido o espaço rígido ( ) do final da tag h3 */}
+              {/* CORREÇÃO: Comentário removido */}
               <h3 className="truth-card-title">INSIGHT 3: HEROÍSMO NÃO ESCALA</h3>
               <p>Crescimento por networking individual da liderança tem teto claro: o tamanho da rede.</p>
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Método > heroísmo. Playbook validado > talento individual. Previsibilidade exige processo.</p>
