@@ -572,25 +572,19 @@ export default function VersaoHolisticaCase() {
           <h2 className="section-title text-center">Learnings Estratégicos</h2>
           <p className="lead-text text-center">O QUE ESTE CASO ENSINA</p>
           
-          {/* Reutilizando o grid de "3 Verdades" para os "3 Insights" */}
+{/* Reutilizando o grid de "3 Verdades" para os "3 Insights" */}
           <div className="truths-grid-revolutionary">
             
+            {/* --- Início Insight 1 --- */}
             <div className="truth-card-revolutionary text-left">
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
                 <Gem size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
               <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
-         <div className="truth-card-revolutionary text-left">
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
-                <Gem size={28} />
-              </div>
-              <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
-              <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. Sempre.</p>
             </div>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza > Complexidade. Sempre.</p>
-            </div>
+            {/* --- Fim Insight 1 --- */}
             
             <div className="truth-card-revolutionary text-left">
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>

@@ -584,8 +584,8 @@ export default function ExclusivaEngenhariasCase() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Bloco 8: Learnings Estratégicos (CORRIGIDO)                           */}
+{/* ====================================================================== */}
+      {/* Bloco 8: Learnings Estratégicos                                      */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
         <div className="container">
@@ -617,7 +617,6 @@ export default function ExclusivaEngenhariasCase() {
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
                 <TrendingUp size={28} />
               </div>
-              {/* CORREÇÃO: Comentário removido */}
               <h3 className="truth-card-title">INSIGHT 3: HEROÍSMO NÃO ESCALA</h3>
               <p>Crescimento por networking individual da liderança tem teto claro: o tamanho da rede.</p>
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Método > heroísmo. Playbook validado > talento individual. Previsibilidade exige processo.</p>
