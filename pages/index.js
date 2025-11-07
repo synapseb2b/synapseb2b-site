@@ -75,7 +75,7 @@ export default function Home() {
     <>
       <Head>
         <title>Synapse B2B | Engenharia de Receita para Empresas B2B</title>
-        <meta name="description" content="Instalamos o sistema que transforma potencial técnico complexo em receita previsível. Clareza de Valor, Sistema Comercial, Governança de Execução e Ativos que Convertem." />
+        <meta name="description" content="Instalamos a engenharia que transforma potencial técnico complexo em receita previsível. Clareza de Valor, Sistema Comercial, Governança de Execução e Ativos que Convertem." />
       </Head>
 
       {/* ====================================================================== */}
@@ -121,7 +121,8 @@ export default function Home() {
             Quatro pilares integrados. Um resultado: você cresce sem depender de sorte.
           </p>
           <p className="text-center" style={{ maxWidth: '800px', margin: '1rem auto 0' }}>
-            Empresas B2B que escalam têm uma coisa em comum: elas pararam de improvisar e construíram um sistema.
+            Empresas B2B que escalam têm uma coisa em comum: <br/>
+            elas param de improvisar e construem uma Engenharia de Receita.
           </p>
           
           <div className="pillar-grid-revolutionary">
@@ -155,7 +156,7 @@ export default function Home() {
                   <ShieldCheck size={28} />
                 </div>
                 <h3 className="pillar-card-title">Governança de Execução</h3>
-                <p className="pillar-card-description">Liderança C-level fracionada operando sua receita. Inteligência sênior sem contrato CLT. Mínimo 3 meses até validar o sistema completo.</p>
+                <p className="pillar-card-description">Liderança C-level fracionada operando sua receita. Inteligência sênior sem contrato CLT. Mínimo 3 meses até validar a engenharia completo.</p>
               </div>
             </div>
 
@@ -173,7 +174,7 @@ export default function Home() {
           </div>
 
            <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '3rem auto 0' }}>
-            Nós instalamos o sistema que transforma seu potencial técnico em receita previsível através da Engenharia de Receita.
+            Nós instalamos a engenharia que transforma seu potencial técnico em receita previsível através da Engenharia de Receita.
           </p>
         </div>
       </section>
