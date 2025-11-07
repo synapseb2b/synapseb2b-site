@@ -1,33 +1,11 @@
-// pages/a-synapse.js (REFATORADO - SIMPLES, DIRETO E CONSISTENTE)
+// pages/a-synapse.js (VERSÃO REVISADA E OTIMIZADA)
 
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { 
-  ArrowRight, ChevronDown, CheckCircle2, BrainCircuit, GitCommit, 
-  ShieldCheck, Users, Goal, Zap, GitBranch, Brain, Eye
-} from 'lucide-react';
-
-// Componente Acordeão Reutilizável
-const AccordionItem = ({ title, children, isOpen, onClick }) => {
-  return (
-    <div className="accordion-item">
-      <button className="accordion-header" onClick={onClick}>
-        <span>{title}</span>
-        <ChevronDown className={`accordion-icon ${isOpen ? 'open' : ''}`} />
-      </button>
-      <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-        <div className="accordion-content-inner">
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-};
+import { useEffect } from 'react';
+import { ArrowRight, Target, Users, TrendingUp, AlertCircle, CheckCircle2, XCircle } from 'lucide-react';
 
 export default function ASynapsePage() {
-  const [openAccordion, setOpenAccordion] = useState(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -47,14 +25,14 @@ export default function ASynapsePage() {
   return (
     <>
       <Head>
-        <title>A Synapse | Nossa Filosofia e Princípios Operacionais</title>
-        <meta name="description" content="Conheça a filosofia operacional da Synapse B2B. Resolvemos o Paradoxo de Valor: quando o melhor produto não gera a melhor receita." />
+        <title>A Synapse | Quem Somos e Por Que Existimos</title>
+        <meta name="description" content="Nossa tese sobre o mercado B2B, quem somos de verdade, para quem servimos (e para quem não servimos)." />
       </Head>
 
-      {/* ========================================================================
-          BLOCO 1: HERO SECTION - PADRÃO CONSISTENTE COM INDEX.JS
-          ======================================================================== */}
-      <section className="hero-section">
+      {/* ====================================================================== */}
+      {/* HERO                                                                 */}
+      {/* ====================================================================== */}
+      <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
@@ -63,244 +41,74 @@ export default function ASynapsePage() {
         </div>
         <div className="container hero-content text-center page-hero-padding">
           <div className="reveal-up">
-            <h1 className="section-title">Por que a Synapse B2B existe</h1>
+            <h1 className="section-title">A Synapse B2B</h1>
             <p className="hero-subheadline wider-on-desktop">
-              Genialidade técnica sem clareza estratégica é potencial desperdiçado. Empresas B2B não falham por falta de produto. Falham por falta de sistema de receita.
+              Não somos consultoria. Não somos agência. Somos engenharia de receita.
             </p>
-            <div className="hero-ctas">
-              <Link href="/contato" className="btn btn-primary">
-                <span>Agendar Diagnóstico</span>
-                <ArrowRight size={20} />
-              </Link>
-              <Link href="/cases" className="btn btn-secondary">
-                <span>Ver Cases</span>
-                <Eye size={20} />
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* ========================================================================
-          BLOCO 2: O PARADOXO DE VALOR™
-          ======================================================================== */}
-      <section className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">O Paradoxo de Valor™</h2>
-          <p className="lead-text">A verdade que a maioria das empresas B2B não quer admitir</p>
-          
-          <div className="paradox-box" style={{
-            marginTop: '3rem',
-            padding: '3rem',
-            background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.03))',
-            border: '1px solid var(--color-border)',
-            borderRadius: '16px',
-            textAlign: 'center'
-          }}>
-            <p style={{fontSize: '1.3rem', color: 'var(--color-heading)', marginBottom: '1.5rem', fontWeight: 600}}>
-              O mercado não compra o melhor produto.
-            </p>
-            <p style={{fontSize: '1.3rem', color: 'var(--color-accent)', marginBottom: '1.5rem', fontWeight: 600}}>
-              O mercado compra a mensagem que passa no filtro da mente do comprador.
-            </p>
-            <p style={{fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: '1.8'}}>
-              Quando sua genialidade técnica não se traduz em clareza estratégica, você perde. Não porque seu produto não funciona. Mas porque o cérebro do seu comprador não consegue processar o valor que você oferece.
-            </p>
-          </div>
-
-          <p style={{marginTop: '3rem', fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: '1.8'}}>
-            <strong>A Synapse B2B existe para resolver isso.</strong> Traduzimos complexidade técnica em receita previsível através de Engenharia de Receita: clareza estratégica + sistema comercial + ativos digitais que convertem.
-          </p>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* ========================================================================
-          BLOCO 3: NOSSOS PRINCÍPIOS
-          ======================================================================== */}
-      <section className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Nossos Princípios Operacionais</h2>
-          <p className="lead-text">Como operamos. O que defendemos.</p>
-
-          <div className="principles-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
-            marginTop: '3rem'
-          }}>
-            <div className="info-card">
-              <BrainCircuit className="info-card-icon" />
-              <h3 className="info-card-title">Clareza Antes de Execução</h3>
-              <p>Não gastamos um real em tática antes de ter clareza estratégica. Arquitetura de Go-To-Market precede ativação de canais. Sempre.</p>
-            </div>
-            <div className="info-card">
-              <GitCommit className="info-card-icon" />
-              <h3 className="info-card-title">Sistema Antes de Esforço</h3>
-              <p>Crescimento sustentável exige processo replicável. Se o sucesso depende de contratar "vendedores excepcionais", você não tem sistema.</p>
-            </div>
-            <div className="info-card">
-              <ShieldCheck className="info-card-icon" />
-              <h3 className="info-card-title">Prova Antes de Promessa</h3>
-              <p>Validamos hipóteses com dados de campo antes de escalar. Não vendemos esperança. Entregamos sistema validado.</p>
-            </div>
-            <div className="info-card">
-              <Users className="info-card-icon" />
-              <h3 className="info-card-title">Parceria Antes de Venda</h3>
-              <p>Nosso modelo é Give First + Skin in the Game. Seu resultado é nosso resultado. Alinhamento total de incentivos.</p>
-            </div>
-            <div className="info-card">
-              <Goal className="info-card-icon" />
-              <h3 className="info-card-title">Execução Antes de Consultoria</h3>
-              <p>Não entregamos slides. Executamos na linha de frente e entregamos um playbook pronto para operar, não uma dependência permanente.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* ========================================================================
-          BLOCO 4: NOSSA FILOSOFIA OPERACIONAL
-          ======================================================================== */}
+      {/* ====================================================================== */}
+      {/* NOSSA TESE                                                           */}
+      {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container reveal-up">
-          <div className="text-center" style={{marginBottom: '3rem'}}>
-            <h2 className="section-title">Nossa Filosofia Operacional</h2>
-            <p className="lead-text">O sistema que nos diferencia e garante o seu resultado</p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem',
-            marginBottom: '4rem'
-          }}>
-            <div className="info-card">
-              <Zap className="info-card-icon" />
-              <h3 className="info-card-title">Give First + Skin in the Game</h3>
-              <p>Começamos com uma Ativação Estratégica para provar valor rápido. O maior volume do investimento vem de Receita Nova gerada. Não ganhamos se você não ganhar.</p>
-            </div>
-            <div className="info-card">
-              <GitBranch className="info-card-icon" />
-              <h3 className="info-card-title">Dual-Track Revenue</h3>
-              <p>Discovery e Delivery acontecem em paralelo. Aprendizado de campo alimenta a execução. Ciclos rápidos garantem que não escalamos um problema.</p>
-            </div>
-            <div className="info-card">
-              <Users className="info-card-icon" />
-              <h3 className="info-card-title">Playbook, Não Dependência</h3>
-              <p>Nosso objetivo final é que você opere o sistema sem nós. Entregamos processos, scripts, KPIs e um playbook validado para sua capacidade interna.</p>
-            </div>
-          </div>
-
-          {/* Cortex GTM™ */}
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.08), rgba(56, 197, 177, 0.03))',
-            border: '1px solid var(--color-border)',
-            borderRadius: '16px',
-            padding: '3rem',
-            textAlign: 'center'
-          }}>
-            <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1.5rem'}}>
-              <Brain size={48} style={{color: 'var(--color-primary)'}} />
-            </div>
-            <h3 style={{fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1.5rem', fontWeight: 700}}>
-              Cortex GTM™: Nosso Sistema Operacional
-            </h3>
-            <p style={{fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: '1.8', marginBottom: '2rem'}}>
-              É nosso sistema proprietário de orquestração estratégica. Integra cinco lentes críticas (Fundador, Comprador, Receita, Neurociência e Andragogia) para traduzir sua genialidade técnica em uma Engenharia de Receita completa e coerente.
-            </p>
-
-            <AccordionItem 
-              title="Fundamentado nos maiores frameworks globais"
-              isOpen={openAccordion === 'frameworks'} 
-              onClick={() => setOpenAccordion(openAccordion === 'frameworks' ? null : 'frameworks')}
-            >
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: '2rem',
-                marginTop: '1.5rem',
-                textAlign: 'left'
-              }}>
-                <div>
-                  <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.75rem'}}>Engenharia de Go-To-Market</strong>
-                  <ul style={{listStyle: 'none', padding: 0, margin: 0, opacity: 0.9}}>
-                    <li>• Challenger Sale</li>
-                    <li>• Strategic Narrative</li>
-                    <li>• Category Design</li>
-                  </ul>
+          <div className="thesis-block">
+            <h2 className="section-title text-center">Nossa Tese Sobre o Mercado B2B</h2>
+            <div className="thesis-content">
+              <p className="thesis-statement">O mercado B2B brasileiro opera com uma falha sistêmica: empresas tecnicamente excelentes perdem porque não conseguem traduzir complexidade em decisão rápida.</p>
+              
+              {/* --- Bloco Refatorado: Usando .truths-grid-revolutionary --- */}
+              <div className="truths-grid-revolutionary" style={{margin: '3rem 0'}}>
+                <div className="truth-card-revolutionary text-left">
+                  <h3 className="truth-card-title" style={{textAlign: 'left'}}>O Problema Não é Produto</h3>
+                  <p>90% das empresas B2B que nos procuram têm produto validado, clientes satisfeitos e equipe competente. O problema nunca é o produto.</p>
                 </div>
-                <div>
-                  <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.75rem'}}>Ciência do Comportamento</strong>
-                  <ul style={{listStyle: 'none', padding: 0, margin: 0, opacity: 0.9}}>
-                    <li>• Neurociência Aplicada</li>
-                    <li>• Jobs-to-be-Done (JTBD)</li>
-                    <li>• Buyer Enablement</li>
-                  </ul>
+                
+                <div className="truth-card-revolutionary text-left">
+                  <h3 className="truth-card-title" style={{textAlign: 'left'}}>O Problema é Sistema</h3>
+                  <p>Crescimento depende de networking heroico. Ciclo de vendas é longo. Narrativa é confusa. Time comercial explica <em>features</em> ao invés de resolver problemas.</p>
                 </div>
-                <div>
-                  <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.75rem'}}>Orquestração de Escala</strong>
-                  <ul style={{listStyle: 'none', padding: 0, margin: 0, opacity: 0.9}}>
-                    <li>• Science of Scaling</li>
-                    <li>• Founder-Led Growth</li>
-                    <li>• Value Disciplines</li>
-                  </ul>
+                
+                <div className="truth-card-revolutionary text-left">
+                  <h3 className="truth-card-title" style={{textAlign: 'left'}}>A Solução é Engenharia</h3>
+                  <p>Receita previsível não vem de "vendedores excepcionais". Vem de instalar um sistema que qualquer vendedor mediano executa com excelência.</p>
                 </div>
               </div>
-            </AccordionItem>
+
+              <p className="thesis-conclusion">A Synapse B2B existe para instalar esse sistema. Não vendemos consultoria. Instalamos o motor de receita, executamos na linha de frente até validar, e entregamos o playbook para você escalar sozinho.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* ========================================================================
-          BLOCO 5: DEPOIMENTOS
-          ======================================================================== */}
+      {/* ====================================================================== */}
+      {/* QUEM SOMOS DE VERDADE                                                */}
+      {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">O Que Nossos Clientes Dizem</h2>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '2rem',
-            marginTop: '3rem'
-          }}>
-            <div style={{
-              background: 'rgba(10, 10, 10, 0.6)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '12px',
-              padding: '2rem',
-              textAlign: 'center'
-            }}>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '1.8', marginBottom: '2rem', fontStyle: 'italic'}}>
-                "A Synapse B2B não apenas traduziu nossa complexidade técnica. Eles nos ajudaram a entender nosso próprio valor de uma forma que nunca havíamos conseguido articular. O Cortex GTM™ conectou nossa paixão com a linguagem que hospitais precisavam ouvir."
-              </p>
-              <div>
-                <p style={{color: 'var(--color-heading)', fontWeight: 600, marginBottom: '0.25rem'}}>Isabella Caetano</p>
-                <p style={{color: 'var(--color-accent)', fontSize: '0.95rem'}}>CEO & Founder - Versão Holística</p>
-              </div>
+        <div className="container reveal-up">
+          <h2 className="section-title text-center">Quem Somos de Verdade</h2>
+          <div className="about-content">
+            <div className="founder-block">
+              <h3>Júlio Figueiredo</h3>
+              <p className="founder-role">Founder & Chief Revenue Architect</p>
+              <p>Mais de 20 anos liderando receita em ecossistemas B2B de alta complexidade: TOTVS, Google Cloud, Microsoft, Dell, Salesforce, Dynatrace, Keepit. Construiu e escalou operações de receita do zero em múltiplos segmentos.</p>
+              <p>A Synapse B2B nasceu de uma frustração pessoal: ver empresas tecnicamente superiores perderem para concorrentes medíocres com narrativas mais simples. A tese era clara: <strong>o mercado não compra o melhor produto, compra a melhor clareza</strong>.</p>
             </div>
 
-            <div style={{
-              background: 'rgba(10, 10, 10, 0.6)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '12px',
-              padding: '2rem',
-              textAlign: 'center'
-            }}>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)', lineHeight: '1.8', marginBottom: '2rem', fontStyle: 'italic'}}>
-                "Fomos de 100% dependência de indicação para motor de geração de demanda estruturado. Júlio não entregou consultoria. Ele fundou nossa Diretoria de Receita e nos entregou um playbook validado. Agora temos um sistema."
-              </p>
-              <div>
-                <p style={{color: 'var(--color-heading)', fontWeight: 600, marginBottom: '0.25rem'}}>Fabrício Firmo</p>
-                <p style={{color: 'var(--color-accent)', fontSize: '0.95rem'}}>CEO - Exclusiva Engenharias</p>
-              </div>
+            <div className="dna-block">
+              <h3>Nosso DNA</h3>
+              <ul className="dna-list">
+                <li><CheckCircle2 size={20} /> <strong>Operadores, não teóricos:</strong> Executamos na linha de frente. Não entregamos slides.</li>
+                <li><CheckCircle2 size={20} /> <strong>Cientistas, não criativos:</strong> Baseamos decisões em frameworks validados e neurociência aplicada, não em "achismos".</li>
+                <li><CheckCircle2 size={20} /> <strong>Construtores, não consultores:</strong> Construímos ativos (plataformas, ferramentas, processos) que geram receita enquanto você dorme.</li>
+                <li><CheckCircle2 size={20} /> <strong>Parceiros, não fornecedores:</strong> Skin in the Game. Ganhamos quando você ganha.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -308,76 +116,322 @@ export default function ASynapsePage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ========================================================================
-          BLOCO 6: NOSSA DEFINIÇÃO DE SUCESSO
-          ======================================================================== */}
+      {/* ====================================================================== */}
+      {/* PARA QUEM SERVIMOS (E NÃO SERVIMOS)                                  */}
+      {/* ====================================================================== */}
       <section className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Nossa Definição de Sucesso</h2>
-          <p className="lead-text">Sucesso não é fechar um contrato. Sucesso é você operar o sistema sem nós.</p>
+        <div className="container reveal-up">
+          <h2 className="section-title text-center">Para Quem Servimos (e Para Quem Não Servimos)</h2>
+          <p className="lead-text text-center">Transparência radical sobre fit. Não trabalhamos com todo mundo.</p>
+          
+          <div className="fit-matrix">
+            <div className="fit-column fit-yes">
+              <h3><CheckCircle2 size={24} /> Fit Ideal</h3>
+              <ul>
+                <li>Produto validado, mas receita imprevisível</li>
+                <li>Crescimento dependente de heroísmo comercial</li>
+                <li>Founders técnicos ou CEOs sobrecarregados com vendas</li>
+                <li>Empresas que vendem complexidade sem clareza</li>
+                <li>Ciclo de vendas longo (60+ dias)</li>
+                <li>Time de vendas explica <em>features</em>, não problemas</li>
+                <li>Disposição para executar junto (não delegar e esquecer)</li>
+                <li>Mindset de construir sistema, não de contratar mágica</li>
+              </ul>
+            </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
-            marginTop: '3rem',
-            textAlign: 'center'
-          }}>
-            <div style={{padding: '1.5rem'}}>
-              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                <CheckCircle2 size={32} style={{color: 'var(--color-primary)'}} />
-              </div>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)'}}>Entende sua proposta de valor melhor do que nós</p>
-            </div>
-            <div style={{padding: '1.5rem'}}>
-              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                <CheckCircle2 size={32} style={{color: 'var(--color-primary)'}} />
-              </div>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)'}}>Executa o playbook sem precisar nos ligar</p>
-            </div>
-            <div style={{padding: '1.5rem'}}>
-              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                <CheckCircle2 size={32} style={{color: 'var(--color-primary)'}} />
-              </div>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)'}}>Contrata um vendedor que performa desde o primeiro mês</p>
-            </div>
-            <div style={{padding: '1.5rem'}}>
-              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                <CheckCircle2 size={32} style={{color: 'var(--color-primary)'}} />
-              </div>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)'}}>Projeta a receita com 80% de acurácia</p>
-            </div>
-            <div style={{padding: '1.5rem'}}>
-              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                <CheckCircle2 size={32} style={{color: 'var(--color-primary)'}} />
-              </div>
-              <p style={{fontSize: '1.05rem', color: 'var(--color-text)'}}>Toma decisões comerciais com total confiança</p>
+            <div className="fit-column fit-no">
+              <h3><XCircle size={24} /> Não Servimos Para</h3>
+              <ul>
+                <li>Empresas que querem "só mais um site"</li>
+                <li>Quem busca resultado instantâneo sem sistema</li>
+                <li>Clientes que querem delegar 100% e não se envolver</li>
+                <li>Produtos em validação (ainda sem product-market fit)</li>
+                <li>Empresas com caixa para menos de 6 meses</li>
+                <li>Quem quer consultoria tradicional (relatórios sem execução)</li>
+                <li>Organizações que não acreditam em dados e frameworks</li>
+                <li>Empresas que crescem bem sozinhas (não precisa de nós)</li>
+              </ul>
             </div>
           </div>
-
-          <p style={{marginTop: '3rem', fontSize: '1.1rem', color: 'var(--color-text)', fontWeight: 600}}>
-            Aí sim, nós cumprimos nossa missão.
-          </p>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* ========================================================================
-          BLOCO 7: CTA FINAL
-          ======================================================================== */}
-      <section className="final-cta-section">
-        <div className="container text-center reveal-up">
-          <h2 className="final-cta-title">Vamos conversar sobre o seu sistema de receita?</h2>
-          <p className="lead-text">Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Apenas clareza.</p>
+      {/* ====================================================================== */}
+      {/* COMO ESCOLHEMOS PROJETOS (Refatorado com pillar-grid)                 */}
+      {/* ====================================================================== */}
+      <section className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <h2 className="section-title text-center">Como Escolhemos Projetos</h2>
+          <div className="selection-criteria">
+            <div className="criteria-intro">
+              <p>Não aceitamos todos os projetos que nos procuram. Avaliamos fit mútuo em três dimensões:</p>
+            </div>
+
+            {/* --- Bloco Refatorado: Usando .pillar-grid-revolutionary --- */}
+            <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', margin: '3rem 0'}}>
+              <div className="pillar-card-revolutionary">
+                <div className="pillar-card-content">
+                  <div className="pillar-icon-wrapper"><Target size={28} /></div>
+                  <h3 className="pillar-card-title">1. Fit Estratégico</h3>
+                  <p className="pillar-card-description">Seu desafio está na nossa zona de genialidade? Conseguimos gerar impacto real em 90 dias? Se a resposta for "talvez", não começamos.</p>
+                </div>
+              </div>
+
+              <div className="pillar-card-revolutionary">
+                <div className="pillar-card-content">
+                  <div className="pillar-icon-wrapper"><Users size={28} /></div>
+                  <h3 className="pillar-card-title">2. Fit Cultural</h3>
+                  <p className="pillar-card-description">Alinhamento de valores, velocidade de execução e abertura para desafiar premissas. Se você quer um fornecedor passivo, não somos o fit.</p>
+                </div>
+              </div>
+
+              <div className="pillar-card-revolutionary">
+                <div className="pillar-card-content">
+                  <div className="pillar-icon-wrapper"><TrendingUp size={28} /></div>
+                  <h3 className="pillar-card-title">3. Fit de Modelo</h3>
+                  <p className="pillar-card-description">Nosso modelo é Give First + Skin in the Game. Se não faz sentido amarrar remuneração a receita nova gerada, não é o projeto certo para nós.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="criteria-conclusion">
+              <AlertCircle size={20} />
+              <p>Se houver dúvida sobre fit em qualquer dimensão, nossa resposta padrão é "não agora". Preferimos dizer não do que comprometer resultado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider-glow"></div>
+
+      {/* ====================================================================== */}
+      {/* NOSSA DEFINIÇÃO DE PARCERIA (Refatorado com pillar-grid)             */}
+      {/* ====================================================================== */}
+      <section className="section-solid">
+        <div className="container reveal-up">
+          <div className="partnership-block">
+            <h2 className="section-title text-center">Nossa Definição de Parceria</h2>
+            <div className="partnership-content">
+              <p className="partnership-lead">Você não é nosso cliente. Você é nosso parceiro de construção.</p>
+              
+              {/* --- Bloco Refatorado: Usando .pillar-grid-revolutionary --- */}
+              <div className="pillar-grid-revolutionary" style={{margin: '3rem 0'}}>
+                <div className="pillar-card-revolutionary">
+                  <div className="pillar-card-content">
+                    <h3 className="pillar-card-title" style={{marginTop: '0'}}>Transparência Radical</h3>
+                    <p className="pillar-card-description">Você vê tudo: processo, dados, decisões, sucessos e fracassos. Sem caixa-preta.</p>
+                  </div>
+                </div>
+                
+                <div className="pillar-card-revolutionary">
+                  <div className="pillar-card-content">
+                    <h3 className="pillar-card-title" style={{marginTop: '0'}}>Execução Conjunta</h3>
+                    <p className="pillar-card-description">Não fazemos "para você". Fazemos "com você". Seu time aprende executando junto.</p>
+                  </div>
+                </div>
+                
+                <div className="pillar-card-revolutionary">
+                  <div className="pillar-card-content">
+                    <h3 className="pillar-card-title" style={{marginTop: '0'}}>Autonomia como Meta</h3>
+                    <p className="pillar-card-description">Sucesso não é renovar contrato. Sucesso é você operar o sistema sem precisar de nós.</p>
+                  </div>
+                </div>
+
+                <div className="pillar-card-revolutionary">
+                  <div className="pillar-card-content">
+                    <h3 className="pillar-card-title" style={{marginTop: '0'}}>Pele no Jogo</h3>
+                    <p className="pillar-card-description">Amarramos remuneração a resultado. Se não gerar receita nova, não ganhamos. Simples.</p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="partnership-conclusion">Se isso não faz sentido para você, não somos o parceiro certo. E está tudo bem.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider-glow"></div>
+
+      {/* ====================================================================== */}
+      {/* CTA FINAL (Refatorado com padrão revolutionary)                        */}
+      {/* ====================================================================== */}
+      <section className="final-cta-section final-cta-revolutionary">
+        <div className="pulsating-core-background"></div>
+        <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
+          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
+            Vamos Descobrir Se Existe Fit?
+          </h2>
+          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px'}}>
+            Primeira conversa: 21 minutos de diagnóstico estratégico. Zero pressão de vendas. Só avaliação honesta de fit mútuo.
+          </p>
           <div className="section-cta">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Agendar Diagnóstico Estratégico</span>
+            <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
+              <span>Agendar Diagnóstico</span>
               <ArrowRight size={20} />
             </Link>
           </div>
+          <p className="cta-support-text" style={{opacity: 0.8, marginTop: '1.5rem'}}>
+            Se não houver fit, diremos na primeira conversa. Se houver, construímos juntos.
+          </p>
         </div>
       </section>
+
+      {/* CSS Otimizado (Muitos blocos foram removidos e substituídos por classes globais) */}
+      <style jsx>{`
+        .thesis-block, .about-content, .fit-matrix, .selection-criteria, .partnership-block {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        .thesis-content {
+          text-align: left;
+        }
+        .thesis-statement {
+          font-size: 1.3rem;
+          line-height: 1.8;
+          color: var(--color-heading);
+          font-weight: 500;
+          margin-bottom: 3rem;
+          padding: 2rem;
+          background: rgba(0, 150, 132, 0.05);
+          border-left: 4px solid var(--color-primary);
+          border-radius: 8px;
+        }
+        .thesis-conclusion {
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid var(--color-border);
+          font-size: 1.1rem;
+          line-height: 1.8;
+          font-weight: 500;
+        }
+
+        .founder-block, .dna-block {
+          margin-bottom: 3rem;
+        }
+        .founder-block h3, .dna-block h3 {
+          font-size: 1.5rem;
+          color: var(--color-heading);
+          margin-bottom: 0.5rem;
+        }
+        .founder-role {
+          color: var(--color-accent);
+          font-size: 1.1rem;
+          margin-bottom: 1.5rem;
+        }
+        .founder-block p, .dna-block p {
+          line-height: 1.8;
+          margin-bottom: 1rem;
+        }
+        .dna-list {
+          list-style: none;
+          padding: 0;
+        }
+        .dna-list li {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.7;
+        }
+        .dna-list svg {
+          color: var(--color-primary);
+          flex-shrink: 0;
+          margin-top: 0.25rem;
+        }
+
+        .fit-matrix {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+        .fit-column {
+          padding: 2.5rem;
+          border-radius: 12px;
+        }
+        .fit-yes {
+          background: rgba(0, 150, 132, 0.05);
+          border: 1px solid var(--color-primary);
+        }
+        .fit-no {
+          background-color: var(--color-card-bg); /* AJUSTADO */
+          border: 1px solid var(--color-border);
+        }
+        .fit-column h3 {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          font-size: 1.3rem;
+          margin-bottom: 2rem;
+          color: var(--color-heading);
+        }
+        .fit-yes h3 {
+          color: var(--color-primary);
+        }
+        .fit-column ul {
+          list-style: none;
+          padding: 0;
+        }
+        .fit-column li {
+          padding-left: 1.5rem;
+          position: relative;
+          margin-bottom: 1rem;
+          line-height: 1.7;
+        }
+        .fit-column li::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: var(--color-primary);
+          font-weight: bold;
+        }
+
+        .criteria-intro {
+          text-align: center;
+          margin-bottom: 3rem;
+          font-size: 1.1rem;
+        }
+        .criteria-conclusion {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1.5rem;
+          background: rgba(0, 150, 132, 0.05);
+          border-left: 4px solid var(--color-primary);
+          border-radius: 8px;
+          margin-top: 3rem;
+        }
+        .criteria-conclusion svg {
+          color: var(--color-primary);
+          flex-shrink: 0;
+          margin-top: 0.25rem;
+        }
+
+        .partnership-content {
+          text-align: center;
+        }
+        .partnership-lead {
+          font-size: 1.3rem;
+          color: var(--color-heading);
+          font-weight: 500;
+          margin-bottom: 3rem;
+        }
+        .partnership-conclusion {
+          margin-top: 3rem;
+          font-size: 1.1rem;
+          font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+          .fit-matrix {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </>
   );
 }

@@ -1,14 +1,19 @@
-// components/Navbar.js (VERSÃO FINAL COM NOVA ESTRUTURA DE PÁGINAS)
+// components/Navbar.js (VERSÃO FINAL COM MENUS DROPDOWN INTELIGENTES)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 // Ícones atualizados para o novo menu
-import { Home, BookOpen, Award, Building, Mail, X } from 'lucide-react';
+import { Home, Layers, Award, Building, Mail, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  
+  // Estado para os acordeões do menu mobile
+  const [isSolucoesOpen, setIsSolucoesOpen] = useState(false);
+  const [isCasesOpen, setIsCasesOpen] = useState(false);
+  
   const router = useRouter();
 
   // Efeito para controlar o fundo da navbar ao rolar
@@ -32,9 +37,16 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-const handleLinkClick = () => {
-  setIsMenuOpen(false);
-};
+  // Função para fechar tudo ao clicar em um link
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+    setIsSolucoesOpen(false);
+    setIsCasesOpen(false);
+  };
+
+  // Lógica de estado ativo para os links pais
+  const isSolucoesActive = router.pathname.startsWith('/solucoes');
+  const isCasesActive = router.pathname.startsWith('/cases');
 
   return (
     <>
@@ -47,12 +59,39 @@ const handleLinkClick = () => {
             <span className="nav-logo-text">Synapse B2B</span>
           </Link>
           
-          {/* --- Menu Desktop (ATUALIZADO PARA NOVAS PÁGINAS) --- */}
+          {/* --- Menu Desktop (ATUALIZADO COM DROPDOWNS) --- */}
           <ul className="nav-menu">
             <li><Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-            <li><Link href="/como-trabalhamos" className={`nav-link ${router.pathname === '/como-trabalhamos' ? 'active' : ''}`}>Como Trabalhamos</Link></li>
-            <li><Link href="/cases" className={`nav-link ${router.pathname === '/cases' ? 'active' : ''}`}>Cases</Link></li>
+            
+            {/* Dropdown Soluções */}
+            <li className="dropdown-container">
+              <div className={`nav-link ${isSolucoesActive ? 'active' : ''}`}>
+                Soluções <ChevronDown size={16} />
+              </div>
+              <div className="dropdown-menu">
+                <Link href="/solucoes/plataformas-digitais" className="dropdown-link">Plataformas Digitais</Link>
+                <Link href="/solucoes/cortex-b2b" className="dropdown-link">Cortex B2B™</Link>
+                <Link href="/solucoes/match-maker" className="dropdown-link">Match-Maker B2B</Link>
+                <Link href="/solucoes/apps" className="dropdown-link">Apps Estratégicos</Link>
+              </div>
+            </li>
+
+            {/* Dropdown Cases */}
+            <li className="dropdown-container">
+              <div className={`nav-link ${isCasesActive ? 'active' : ''}`}>
+                Cases <ChevronDown size={16} />
+              </div>
+              <div className="dropdown-menu">
+                <Link href="/cases" className="dropdown-link">Ver Todos os Cases</Link>
+                <div className="dropdown-divider"></div>
+                <Link href="/cases/versao-holistica" className="dropdown-link">Versão Holística</Link>
+                <Link href="/cases/exclusiva-engenharias" className="dropdown-link">Exclusiva Engenharias</Link>
+                <Link href="/cases/aorkia" className="dropdown-link">AORKIA</Link>
+              </div>
+            </li>
+            
             <li><Link href="/a-synapse" className={`nav-link ${router.pathname === '/a-synapse' ? 'active' : ''}`}>A Synapse</Link></li>
+            
             <li>
               <Link href="/contato" legacyBehavior>
                 <a className="btn btn-nav-cta">Ativar Engenharia</a>
@@ -69,7 +108,7 @@ const handleLinkClick = () => {
         </div>
       </nav>
 
-      {/* --- Menu Overlay para Mobile (ATUALIZADO PARA NOVAS PÁGINAS) --- */}
+      {/* --- Menu Overlay para Mobile (ATUALIZADO COM ACORDEÃO) --- */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <span className="mobile-menu-title">Navegação</span>
@@ -77,18 +116,165 @@ const handleLinkClick = () => {
             <X size={30} />
           </button>
         </div>
+        
         <ul className="mobile-menu-links">
           <li><Link href="/" onClick={handleLinkClick}><Home /><span>Home</span></Link></li>
-          <li><Link href="/como-trabalhamos" onClick={handleLinkClick}><BookOpen /><span>Como Trabalhamos</span></Link></li>
-          <li><Link href="/cases" onClick={handleLinkClick}><Award /><span>Cases</span></Link></li>
+          
+          {/* Acordeão Soluções */}
+          <li className="mobile-dropdown">
+            <button onClick={() => setIsSolucoesOpen(!isSolucoesOpen)} className={isSolucoesOpen ? 'open' : ''}>
+              <div><Layers /><span>Soluções</span></div>
+              <ChevronDown size={24} />
+            </button>
+            <ul className={`mobile-sub-menu ${isSolucoesOpen ? 'open' : ''}`}>
+              <li><Link href="/solucoes/plataformas-digitais" onClick={handleLinkClick}>- Plataformas Digitais</Link></li>
+              <li><Link href="/solucoes/cortex-b2b" onClick={handleLinkClick}>- Cortex B2B™</Link></li>
+              <li><Link href="/solucoes/match-maker" onClick={handleLinkClick}>- Match-Maker B2B</Link></li>
+              <li><Link href="/solucoes/apps" onClick={handleLinkClick}>- Apps Estratégicos</Link></li>
+            </ul>
+          </li>
+
+          {/* Acordeão Cases */}
+           <li className="mobile-dropdown">
+            <button onClick={() => setIsCasesOpen(!isCasesOpen)} className={isCasesOpen ? 'open' : ''}>
+              <div><Award /><span>Cases</span></div>
+              <ChevronDown size={24} />
+            </button>
+            <ul className={`mobile-sub-menu ${isCasesOpen ? 'open' : ''}`}>
+              <li><Link href="/cases" onClick={handleLinkClick}>- Ver Todos os Cases</Link></li>
+              <li><Link href="/cases/versao-holistica" onClick={handleLinkClick}>- Versão Holística</Link></li>
+              <li><Link href="/cases/exclusiva-engenharias" onClick={handleLinkClick}>- Exclusiva Engenharias</Link></li>
+              <li><Link href="/cases/aorkia" onClick={handleLinkClick}>- AORKIA</Link></li>
+            </ul>
+          </li>
+
           <li><Link href="/a-synapse" onClick={handleLinkClick}><Building /><span>A Synapse</span></Link></li>
         </ul>
+        
         <div className="mobile-menu-footer">
            <Link href="/contato" onClick={handleLinkClick} className="btn btn-primary btn-large">
             <Mail /><span>Ativar Engenharia</span>
           </Link>
         </div>
       </div>
+
+      {/* --- CSS ADICIONAL PARA DROPDOWNS --- */}
+      <style jsx>{`
+        /* --- Desktop Dropdown --- */
+        .nav-menu .nav-link {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          cursor: pointer;
+        }
+        .nav-menu .nav-link svg {
+          transition: transform 0.3s ease;
+        }
+        .dropdown-container {
+          position: relative;
+        }
+        .dropdown-container:hover .nav-link svg {
+          transform: rotate(180deg);
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 260px;
+          background-color: rgba(0, 0, 0, 0.7); /* Fundo do menu_scrolled */
+          backdrop-filter: blur(10px);
+          border: 1px solid var(--color-border);
+          border-top: none;
+          border-radius: 0 0 12px 12px;
+          padding: 1rem;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+          transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+          z-index: 1001; /* Acima do conteúdo da página */
+        }
+        .dropdown-container:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        .dropdown-link {
+          display: block;
+          padding: 0.75rem 1rem;
+          color: var(--color-text);
+          text-decoration: none;
+          border-radius: 8px;
+          transition: background-color 0.3s, color 0.3s;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+        .dropdown-link:hover {
+          background-color: var(--color-primary);
+          color: var(--color-heading);
+        }
+        .dropdown-divider {
+          height: 1px;
+          background-color: var(--color-border);
+          margin: 0.5rem 1rem;
+        }
+
+        /* --- Mobile Accordion --- */
+        .mobile-dropdown button {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          background: none;
+          border: none;
+          font-size: 2rem;
+          font-weight: 700;
+          font-family: 'Montserrat', sans-serif;
+          color: var(--color-heading);
+          padding: 1rem;
+          transition: color 0.3s;
+          cursor: pointer;
+        }
+        .mobile-dropdown button:hover {
+          color: var(--color-primary);
+        }
+        .mobile-dropdown button div {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+        .mobile-dropdown button svg {
+          transition: transform 0.3s ease;
+        }
+        .mobile-dropdown button.open svg {
+          transform: rotate(180deg);
+        }
+
+        .mobile-sub-menu {
+          list-style: none;
+          padding-left: 4rem; /* Indentação para sub-itens */
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease-out;
+        }
+        .mobile-sub-menu.open {
+          max-height: 500px; /* Altura suficiente para todos os links */
+        }
+        .mobile-sub-menu a {
+          display: block;
+          font-size: 1.25rem; /* Menor que os links principais */
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+          color: var(--color-text);
+          padding: 0.75rem 1rem;
+          text-decoration: none;
+          transition: color 0.3s;
+        }
+        .mobile-sub-menu a:hover {
+          color: var(--color-primary);
+        }
+      `}</style>
     </>
   );
 }

@@ -79,7 +79,7 @@ export default function Home() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* Bloco 1: Hero Section (INTOCADO, CONFORME SOLICITADO)                 */}
+      {/* Bloco 1: Hero Section (CTAs ATUALIZADOS)                             */}
       {/* ====================================================================== */}
       <section className="hero-section">
         <div className="hero-video-background">
@@ -95,11 +95,13 @@ export default function Home() {
             Mas se o mercado não entende o valor, ele não compra na velocidade que você precisa crescer.
           </p>
           <div className="hero-ctas">
-            <Link href="/contato" className="btn btn-primary btn-large">
+            {/* --- ATUALIZAÇÃO 3: Adicionada classe btn-cta-pulse --- */}
+            <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Agendar Diagnóstico Estratégico</span>
               <ArrowRight size={20} />
             </Link>
-            <Link href="/como-trabalhamos" className="btn btn-secondary btn-large">
+            {/* --- ATUALIZAÇÃO 3: Adicionada classe btn-cta-pulse --- */}
+            <Link href="/como-trabalhamos" className="btn btn-secondary btn-large btn-cta-pulse">
               <span>Conhecer Nossas Soluções</span>
             </Link>
           </div>
@@ -109,7 +111,7 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 2: Os 4 Pilares da Engenharia de Receita (NOVO DESIGN)           */}
+      {/* Bloco 2: Os 4 Pilares da Engenharia de Receita (Centralizado por padrão) */}
       {/* ====================================================================== */}
       <section id="engenharia" className="section-solid section-pillars-revolutionary">
         <div className="container text-center reveal-up">
@@ -121,7 +123,6 @@ export default function Home() {
             Empresas B2B que escalam têm uma coisa em comum: elas pararam de improvisar e construíram um sistema.
           </p>
           
-          {/* --- NOVO GRID DE PILARES --- */}
           <div className="pillar-grid-revolutionary">
             
             {/* Pilar 1: Clareza de Valor */}
@@ -169,7 +170,6 @@ export default function Home() {
             </div>
 
           </div>
-          {/* --- FIM DO NOVO GRID --- */}
 
            <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '3rem auto 0' }}>
             Nós instalamos o sistema que transforma seu potencial técnico em receita previsível através da Engenharia de Receita.
@@ -180,15 +180,15 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 3: Cases de Sucesso (NOVO DESIGN - CARROSSEL)                  */}
+      {/* Bloco 3: Cases de Sucesso (ATUALIZADO)                                 */}
       {/* ====================================================================== */}
       <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Três histórias reais. Três resultados tangíveis.</h2>
         </div>
         
-        {/* --- NOVO CARROSSEL DE CASES --- */}
-        <div className="case-carousel-container reveal-up">
+        {/* --- ATUALIZAÇÃO 1: Adicionada classe text-center --- */}
+        <div className="case-carousel-container reveal-up text-center">
           <div className="case-carousel-track">
 
             {/* Case 1: Versão Holística */}
@@ -221,7 +221,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Case 3: AORKIA (NOVO) */}
+            {/* Case 3: AORKIA (ATUALIZADO) */}
             <div className="case-card-revolutionary">
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">AORKIA</h3>
@@ -229,29 +229,27 @@ export default function Home() {
               </div>
               <p><strong>Contexto:</strong> Empresa nova em mercado técnico competindo com gigantes globais. Zero histórico, zero clientes. Desafio: provar que nosso próprio método funciona em 45 dias.</p>
               <p><strong>O que fizemos:</strong> Sprint intensivo: marca, narrativa, plataforma digital e parceria estratégica com Keepit (líder global). Recodificamos 'backup imutável' para 'Seu SaaS não faz backup dos seus dados. Quanto custa cada minuto parado?'.</p>
-              <p><strong>Resultado tangível:</strong> De zero para Parceiro Global Keepit com primeira venda de 1.200+ usuários em 45 dias. A prova definitiva: nosso método aplicado em nós mesmos. Link: aorkia.com</p>
-              <a href="https://aorkia.com" target="_blank" rel="noopener noreferrer" className="btn-case-revolutionary">
-                <span>Ver Prova</span>
+              <p><strong>Resultado tangível:</strong> De zero para Parceiro Global Keepit com primeira venda de 1.200+ usuários em 45 dias. A prova definitiva: nosso método aplicado em nós mesmos.</p>
+              {/* --- ATUALIZAÇÃO 2: CTA alterado para Link e texto atualizado --- */}
+              <Link href="/cases/aorkia" className="btn-case-revolutionary">
+                <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
-              </a>
+              </Link>
             </div>
 
           </div>
         </div>
-        {/* --- FIM DO NOVO CARROSSEL --- */}
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 4: Princípio Unificador (NOVO DESIGN - NÚCLEO)                */}
+      {/* Bloco 4: Princípio Unificador (Centralizado por padrão)                */}
       {/* ====================================================================== */}
       <section id="principio" className="section-solid section-principle-revolutionary">
-        {/* Efeito de fundo animado será aplicado via CSS */}
         <div className="flowfield-background"></div>
 
         <div className="container text-center reveal-up">
-          {/* --- NOVO BLOCO DE NÚCLEO --- */}
           <div className="principle-core-block">
             <div className="principle-core-icon">
               <LineChart size={32} />
@@ -268,20 +266,18 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          {/* --- FIM DO BLOCO DE NÚCLEO --- */}
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 5: Por Que Empresas B2B nos Contratam (NOVO DESIGN)           */}
+      {/* Bloco 5: Por Que Empresas B2B nos Contratam (Centralizado por padrão)  */}
       {/* ====================================================================== */}
       <section id="por-que-synapse" className="section-solid section-truths-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Três verdades que todo empresário B2B já descobriu:</h2>
           
-          {/* --- NOVO GRID DE VERDADES --- */}
           <div className="truths-grid-revolutionary">
             
             <div className="truth-card-revolutionary">
@@ -303,12 +299,11 @@ export default function Home() {
             </div>
 
           </div>
-          {/* --- FIM DO NOVO GRID --- */}
         </div>
       </section>
 
       {/* ====================================================================== */}
-{/* Bloco 5.5: Nossas Soluções (NOVA SEÇÃO)                             */}
+      {/* Bloco 5.5: Nossas Soluções (Centralizado por padrão)                   */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid section-solutions-revolutionary">
         <div className="container text-center reveal-up">
@@ -362,10 +357,9 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 6: CTA Final (NOVO DESIGN - IMERSIVO)                         */}
+      {/* Bloco 6: CTA Final (Centralizado por padrão)                           */}
       {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
-        {/* Efeito de fundo pulsante será aplicado via CSS */}
         <div className="pulsating-core-background"></div>
 
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
@@ -374,7 +368,6 @@ export default function Home() {
             "Seu produto é genial, mas sua narrativa é confusa. Como você traduz complexidade em receita previsível?"
           </p>
           <div className="section-cta">
-            {/* --- NOVO BOTÃO COM EFEITO --- */}
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Agendar Diagnóstico Estratégico (21min)</span>
               <ArrowRight size={20} />
