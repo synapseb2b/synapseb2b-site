@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, BrainCircuit, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react'; // Ícones atualizados
+import { ArrowRight, BookOpen, BrainCircuit, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react';
 
 // --- Componente de Texto Rotativo (INTOCADO) ---
 const RotatingText = () => {
@@ -178,8 +178,8 @@ export default function Home() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Bloco 3: Cases de Sucesso (ATUALIZADO)                                 */}
+{/* ====================================================================== */}
+      {/* Bloco 3: Cases de Sucesso (ATUALIZADO)                               */}
       {/* ====================================================================== */}
       <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
         <div className="container text-center reveal-up">
@@ -192,6 +192,10 @@ export default function Home() {
 
             {/* Case 1: Versão Holística */}
             <div className="case-card-revolutionary">
+              {/* --- ÍCONE ADICIONADO --- */}
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
+                <Layers size={28} />
+              </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Versão Holística</h3>
                 <span className="case-card-tag-rev">Healthtech</span>
@@ -207,6 +211,10 @@ export default function Home() {
 
             {/* Case 2: Exclusiva Engenharias */}
             <div className="case-card-revolutionary">
+              {/* --- ÍCONE ADICIONADO --- */}
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
+                <GitBranch size={28} />
+              </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
                 <span className="case-card-tag-rev">Indústria / Engenharia</span>
@@ -222,6 +230,10 @@ export default function Home() {
 
             {/* Case 3: AORKIA (ATUALIZADO) */}
             <div className="case-card-revolutionary">
+              {/* --- ÍCONE ADICIONADO --- */}
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
+                <ShieldCheck size={28} />
+              </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">AORKIA</h3>
                 <span className="case-card-tag-rev">Prova de Conceito</span>
