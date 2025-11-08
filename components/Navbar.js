@@ -1,5 +1,5 @@
 // components/Navbar.js (VERSÃO FINAL COM MENUS DROPDOWN INTELIGENTES)
-// Refatorado por J.A.R.V.I.S. (com correção de rota)
+// Refatorado por J.A.R.V.I.S. (com correção de rota e scroll mobile)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -161,7 +161,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* --- CSS ADICIONAL PARA DROPDOWNS (CORREÇÃO ROBUSTA) --- */}
+      {/* --- CSS ADICIONAL PARA DROPDOWNS (CORREÇÃO DE SCROLL MOBILE) --- */}
       <style jsx>{`
         /* --- Desktop Dropdown --- */
         .nav-menu .nav-link {
@@ -205,23 +205,19 @@ export default function Navbar() {
         }
         
         /* --- CORREÇÃO ROBUSTA COM :global() --- */
-        /* Força o estilo na tag 'a' renderizada pelo Next/Link */
         .dropdown-menu :global(a.dropdown-link) {
-          display: block; /* Garante o empilhamento vertical (layout) */
-          padding: 0.75rem 1rem; /* Garante o espaçamento (organização) */
-          color: var(--color-text); /* Garante a cor (remove o roxo) */
-          text-decoration: none; /* Garante a remoção do sublinhado */
+          display: block; 
+          padding: 0.75rem 1rem; 
+          color: var(--color-text); 
+          text-decoration: none; 
           border-radius: 8px;
           transition: background-color 0.3s, color 0.3s;
           white-space: nowrap;
           font-weight: 500;
         }
-        
-        /* Força a cor no estado :visited */
         .dropdown-menu :global(a.dropdown-link:visited) {
           color: var(--color-text);
         }
-
         .dropdown-menu :global(a.dropdown-link:hover) {
           background-color: var(--color-primary);
           color: var(--color-heading);
@@ -233,6 +229,27 @@ export default function Navbar() {
           background-color: var(--color-border);
           margin: 0.5rem 1rem;
         }
+        
+        /* === CORREÇÃO DE SCROLL MOBILE === */
+        .mobile-menu-overlay.open {
+          display: flex;
+          flex-direction: column;
+          height: 100%; /* Garante altura total */
+          overflow: hidden; /* Impede o overlay inteiro de rolar */
+        }
+        .mobile-menu-header {
+          flex-shrink: 0; /* Trava o header no topo */
+        }
+        .mobile-menu-links {
+          flex-grow: 1; /* Faz a lista de links ocupar o espaço restante */
+          overflow-y: auto; /* ESTA É A CORREÇÃO: Permite scroll SÓ na lista */
+          padding-bottom: 2rem; /* Espaço para o fim do scroll */
+        }
+        .mobile-menu-footer {
+          flex-shrink: 0; /* Trava o footer na base */
+        }
+        /* === FIM DA CORREÇÃO DE SCROLL === */
+
 
         /* --- Mobile Accordion (AJUSTE DE LAYOUT) --- */
         .mobile-dropdown button {
