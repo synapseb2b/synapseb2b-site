@@ -1,4 +1,4 @@
-// components/Footer.js (Refatorado por J.A.R.V.I.S. com correção de rota e layout)
+// components/Footer.js (Refatorado por J.A.R.V.I.S. com arquitetura de 4 colunas)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -45,20 +45,29 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* --- ATUALIZAÇÃO DE LAYOUT: Revertido para 2 colunas de links explícitas --- */}
+            {/* --- ATUALIZAÇÃO DE LAYOUT: Arquitetura de 4 colunas --- */}
             
             {/* Coluna 2: Navegação */}
             <div className="footer-column footer-links">
               <h4 className="footer-title">Navegação</h4>
               <ul>
                 <li><Link href="/">Home</Link></li>
-                <li><Link href="/cases">Cases</Link></li>
                 <li><Link href="/a-synapse">A Synapse</Link></li>
                 <li><Link href="/contato">Contato</Link></li>
               </ul>
             </div>
+
+            {/* Coluna 3: Cases (NOVA) */}
+            <div className="footer-column footer-links">
+              <h4 className="footer-title">Cases</h4>
+              <ul>
+                <li><Link href="/cases/versao-holistica">Versão Holística</Link></li>
+                <li><Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link></li>
+                <li><Link href="/cases/aorkia">AORKIA</Link></li>
+              </ul>
+            </div>
             
-            {/* Coluna 3: Soluções */}
+            {/* Coluna 4: Soluções */}
             <div className="footer-column footer-links">
               <h4 className="footer-title">Soluções</h4>
               <ul>
@@ -95,7 +104,6 @@ export default function Footer() {
           list-style: none;
           padding: 0;
           margin: 0;
-          /* column-count: 2; <- REMOVIDO */
         }
         
         .footer-links li {
