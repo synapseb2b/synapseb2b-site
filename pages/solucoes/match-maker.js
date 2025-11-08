@@ -44,7 +44,7 @@ export default function MatchMakerB2B() {
           <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
             <Users size={48} style={{color: 'var(--color-primary)'}} />
           </div>
-          <h1 className="section-title">Synapse B2B Match-Maker</h1>
+          <h1 className="section-title">Match-Maker B2B</h1>
           <p className="hero-subheadline">
             Transforma caos relacional em inteligência de conexão. Matching em 10 segundos, baseado em dados estruturados.
           </p>
@@ -67,7 +67,7 @@ export default function MatchMakerB2B() {
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">1.</span>
               <h3 className="truth-card-title">Informação dispersa</h3>
-              <p>Grupos com 500+ pessoas. Competências valiosas perdidas em conversas assíncronas. Zero capacidade de confluência estratégica.</p>
+              <p>Grupos com 200+ pessoas. Competências valiosas perdidas em conversas assíncronas. Zero capacidade de confluência estratégica.</p>
             </div>
             
             <div className="truth-card-revolutionary">
@@ -94,7 +94,7 @@ export default function MatchMakerB2B() {
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
             <h2 className="section-title">Como o Match-Maker Funciona</h2>
-            <p className="lead-text">Sistema neural que executa a decisão cognitivamente cara no lugar do usuário.</p>
+            <p className="lead-text">Sistema que responde 'quem conhece X?' com os 5 melhores matches da sua rede em 10 segundos.</p>
           </div>
 
           {/* Screenshot da Interface */}
@@ -134,7 +134,7 @@ export default function MatchMakerB2B() {
                   <Zap size={28} />
                 </div>
                 <h3 className="pillar-card-title">Matching Inteligente</h3>
-                <p className="pillar-card-description">Algoritmo retorna Top 3 matches perfeitos em 5 segundos. Considera compatibilidade, disponibilidade e histórico de conexões bem-sucedidas.</p>
+                <p className="pillar-card-description">Algoritmo retorna Top 5 matches perfeitos em 10 segundos. Considera compatibilidade, disponibilidade e histórico de conexões bem-sucedidas.</p>
               </div>
             </div>
 
@@ -266,7 +266,7 @@ export default function MatchMakerB2B() {
             Sua rede tem valor invisível.
           </h2>
           <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px'}}>
-            Toda comunidade com 100+ pessoas tem oportunidades perdidas porque matching manual não escala. Match-Maker resolve isso.
+            Toda comunidade com 200+ pessoas tem oportunidades perdidas porque matching manual não escala. Match-Maker resolve isso.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
