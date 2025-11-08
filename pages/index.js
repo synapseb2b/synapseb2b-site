@@ -192,7 +192,7 @@ export default function Home() {
 
             {/* Case 1: Versão Holística */}
             <div className="case-card-revolutionary">
-              {/* --- ÍCONE ADICIONADO --- */}
+              {/* --- Ícone Mantido --- */}
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Layers size={28} />
               </div>
@@ -200,9 +200,10 @@ export default function Home() {
                 <h3 className="case-card-title-rev">Versão Holística</h3>
                 <span className="case-card-tag-rev">Healthtech</span>
               </div>
-              <p><strong>Contexto:</strong> Produto inovador ("Cuidado Farmacêutico Integrativo") que hospitais e investidores não entendiam. Pitch de 15 minutos gerava: "vamos pensar".</p>
-              <p><strong>O que fizemos:</strong> Recodificamos a narrativa. "Cuidado" virou "Plataforma que reduz custo de paciente crônico em 5.8x". Focamos no ROI para o CFO, não na metodologia para o médico.</p>
-              <p><strong>Resultado tangível:</strong> De "vamos pensar" para "quando começamos?". Posicionamento de categoria criado ("CareOps Integrativo") e tese de investimento pronta.</p>
+              {/* --- COPY ATUALIZADA --- */}
+              <p><strong>Contexto:</strong> Healthtech com metodologia validada pela UFMG e ROI de 5.8x comprovado. Pitch de 15 minutos gerava "vamos pensar". Hospitais não entendiam. Investidores não visualizavam tese.</p>
+              <p><strong>O que fizemos:</strong> Recodificamos "Cuidado Farmacêutico Integrativo" para "1ª Plataforma de CareOps Integrativo do Brasil". Criamos categoria nova com foco no CFO (não diretor clínico). Traduzimos metodologia em ROI tangível para decisor financeiro.</p>
+              <p><strong>Resultado tangível:</strong> De complexo para inevitável. R$ 500k captados no Compete Minas. Oceano azul criado — competição zero. Pitch de 3 minutos que gera "quando começamos?".</p>
               <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -211,7 +212,7 @@ export default function Home() {
 
             {/* Case 2: Exclusiva Engenharias */}
             <div className="case-card-revolutionary">
-              {/* --- ÍCONE ADICIONADO --- */}
+              {/* --- Ícone Mantido --- */}
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <GitBranch size={28} />
               </div>
@@ -219,9 +220,10 @@ export default function Home() {
                 <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
                 <span className="case-card-tag-rev">Indústria / Engenharia</span>
               </div>
-              <p><strong>Contexto:</strong> Excelência técnica com 100% de dependência de indicações. CEO era o principal vendedor e gargalo do crescimento.</p>
-              <p><strong>O que fizemos:</strong> Fundamos a Diretoria de Receita (CRO as a Service) e construímos o motor de demanda do zero: GTM, plataforma digital e prospecção ativa.</p>
-              <p><strong>Resultado tangível:</strong> De 100% indicação para um sistema replicável. Playbook de vendas validado e documentado, pronto para escalar o time.</p>
+              {/* --- COPY ATUALIZADA --- */}
+              <p><strong>Contexto:</strong> Excelência técnica em civil, elétrica, mecânica, automação. Narrativa fragmentada por tipo de obra. Crescimento 100% por indicação da liderança. Zero presença digital. Receita imprevisível.</p>
+              <p><strong>O que fizemos:</strong> Recusamos o pedido de "fazer um site". Reposicionamos de "três empresas de engenharia" para "Hub que resolve problemas industriais que outros evitam". Construímos GTM completo, plataforma digital e fundamos a Diretoria de Receita como CRO fracionado.</p>
+              <p><strong>Resultado tangível:</strong> De disperso para focado. De invisível para encontrável. Playbook comercial validado em 128 dias. Sistema replicável operando — pronto para escalar time sem depender de heroísmo.</p>
               <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -230,7 +232,7 @@ export default function Home() {
 
             {/* Case 3: AORKIA (ATUALIZADO) */}
             <div className="case-card-revolutionary">
-              {/* --- ÍCONE ADICIONADO --- */}
+              {/* --- Ícone Mantido --- */}
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <ShieldCheck size={28} />
               </div>
@@ -238,10 +240,10 @@ export default function Home() {
                 <h3 className="case-card-title-rev">AORKIA</h3>
                 <span className="case-card-tag-rev">Prova de Conceito</span>
               </div>
-              <p><strong>Contexto:</strong> Empresa nova em mercado técnico competindo com gigantes globais. Zero histórico, zero clientes. Desafio: provar que nosso próprio método funciona em 45 dias.</p>
-              <p><strong>O que fizemos:</strong> Sprint intensivo: marca, narrativa, plataforma digital e parceria estratégica com Keepit (líder global). Recodificamos 'backup imutável' para 'Seu SaaS não faz backup dos seus dados. Quanto custa cada minuto parado?'.</p>
-              <p><strong>Resultado tangível:</strong> De zero para Parceiro Global Keepit com primeira venda de 1.200+ usuários em 45 dias. A prova definitiva: nosso método aplicado em nós mesmos.</p>
-              {/* --- ATUALIZAÇÃO 2: CTA alterado para Link e texto atualizado --- */}
+              {/* --- COPY ATUALIZADA --- */}
+              <p><strong>Contexto:</strong> Startup entrando em mercado técnico dominado por gigantes (Veeam, Acronis, Druva). Zero histórico. Zero clientes. Zero marca. Parceria com Keepit (líder global) mas sem tração. Desafio: provar método próprio em 45 dias.</p>
+              <p><strong>O que fizemos:</strong> Transferência de credibilidade (Parceiro Oficial Keepit). Recodificamos "backup imutável" para "Seu SaaS não faz backup. Quanto custa cada hora parado?". Construímos plataforma com arquitetura de urgência. Skin in the game total — fundador aplicando método no próprio negócio.</p>
+              <p><strong>Resultado tangível:</strong> De zero para Parceiro Oficial Keepit com primeira venda de 1.200+ usuários em 45 dias. Prova definitiva: método validado sob condições extremas com pele no jogo.</p>
               <Link href="/cases/aorkia" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
