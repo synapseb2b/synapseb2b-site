@@ -11,10 +11,10 @@ const RotatingText = () => {
   
   const variations = [
     'realmente entende',
-    'consegue mensurar',
-    'gera valor',
     'resolve o problema',
+    'gera valor',
     'gera escala',
+    'consegue mensurar',
     'projeta retorno'
   ];
 
@@ -78,7 +78,7 @@ export default function Home() {
         <meta name="description" content="Instalamos a engenharia que transforma potencial técnico complexo em receita previsível. Clareza de Valor, Sistema Comercial, Governança de Execução e Ativos que Convertem." />
       </Head>
 
-      {/* ====================================================================== */}
+{/* ====================================================================== */}
       {/* Bloco 1: Hero Section (CTAs ATUALIZADOS)                             */}
       {/* ====================================================================== */}
       <section className="hero-section">
@@ -100,10 +100,11 @@ export default function Home() {
               <span>Agendar Diagnóstico Estratégico</span>
               <ArrowRight size={20} />
             </Link>
-            {/* --- ATUALIZAÇÃO 3: Adicionada classe btn-cta-pulse --- */}
-            <Link href="/como-trabalhamos" className="btn btn-secondary btn-large btn-cta-pulse">
-              <span>Conhecer Nossas Soluções</span>
-            </Link>
+            
+            {/* --- ATUALIZAÇÃO J.A.R.V.I.S.: Alterado para <a> tag para rolagem e texto atualizado --- */}
+            <a href="#engenharia-de-receita" className="btn btn-secondary btn-large btn-cta-pulse">
+              <span>Conhecer a Engenharia de Receita</span>
+            </a>
           </div>
         </div>
       </section>
