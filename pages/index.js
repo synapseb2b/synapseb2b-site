@@ -312,7 +312,16 @@ export default function Home() {
           
           <div className="solutions-grid-revolutionary">
             
-            {/* Solução 1: Plataformas Digitais */}
+            {/* Solução 1: Cortex B2B */}
+            <Link href="/solucoes/cortex-b2b" className="solution-card-revolutionary">
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
+                <BrainCircuit size={28} />
+              </div>
+              <h3 className="pillar-card-title">Cortex B2B™</h3>
+              <p className="pillar-card-description">Sistema de diagnóstico e arquitetura estratégica que decodifica negócios sob lentes de Engenharia de Receita, Neurociência e Orquestração de Escala.</p>
+            </Link>
+
+            {/* Solução 2: Plataformas Digitais */}
             <Link href="/solucoes/plataformas-digitais" className="solution-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Layers size={28} />
@@ -321,14 +330,6 @@ export default function Home() {
               <p className="pillar-card-description">Plataformas web que educam o mercado, qualificam leads e convertem autoridade em receita.</p>
             </Link>
 
-            {/* Solução 2: Cortex B2B */}
-            <Link href="/solucoes/cortex-b2b" className="solution-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <BrainCircuit size={28} />
-              </div>
-              <h3 className="pillar-card-title">Cortex B2B™</h3>
-              <p className="pillar-card-description">Sistema de diagnóstico e arquitetura estratégica que decodifica negócios sob lentes de Engenharia de Receita, Neurociência e Orquestração de Escala.</p>
-            </Link>
 
             {/* Solução 3: Match-Maker */}
             <Link href="/solucoes/match-maker" className="solution-card-revolutionary">
