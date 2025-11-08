@@ -238,7 +238,7 @@ export default function ExclusivaEngenhariasCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/exclusivaengenharias-home.png"
+                  src="/public/cases/exclusivaengenharias-home.png"
                   alt="Homepage Exclusiva Engenharias com proposta de valor"
                   width={1000}
                   height={500}
@@ -265,7 +265,7 @@ export default function ExclusivaEngenhariasCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/simulador_exclusiva.png"
+                  src="/public/cases/simulador_exclusiva.png"
                   alt="Interface do Simulador Exclusiva Engenharias"
                   width={1000}
                   height={500}
@@ -294,7 +294,7 @@ export default function ExclusivaEngenhariasCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/playbook_exclusiva.png"
+                  src="/public/cases/playbook-exclusiva.png"
                   alt="Capa do Playbook Comercial Exclusiva Engenharias"
                   width={1000}
                   height={500}
@@ -418,7 +418,7 @@ export default function ExclusivaEngenhariasCase() {
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                src="/cases/logo_exclusiva.png"
+                src="/public/cases/Fabricio-Tavares.png"
                 alt="Fabrício Tavares"
                 width={80}
                 height={80}
