@@ -1,4 +1,4 @@
-// components/Footer.js (Refatorado por J.A.R.V.I.S. com correção de rota)
+// components/Footer.js (Refatorado por J.A.R.V.I.S. com correção de rota e layout)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -45,29 +45,35 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Coluna 2: Navegação (ATUALIZADA: Agora com 2 colunas internas) */}
+            {/* --- ATUALIZAÇÃO DE LAYOUT: Revertido para 2 colunas de links explícitas --- */}
+            
+            {/* Coluna 2: Navegação */}
             <div className="footer-column footer-links">
               <h4 className="footer-title">Navegação</h4>
               <ul>
-                {/* Coluna 1 (Auto) */}
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/cases">Cases</Link></li>
                 <li><Link href="/a-synapse">A Synapse</Link></li>
                 <li><Link href="/contato">Contato</Link></li>
-                
-                {/* Coluna 2 (Auto) */}
+              </ul>
+            </div>
+            
+            {/* Coluna 3: Soluções */}
+            <div className="footer-column footer-links">
+              <h4 className="footer-title">Soluções</h4>
+              <ul>
                 <li><Link href="/solucoes/plataformas-digitais">Plataformas Digitais</Link></li>
                 <li><Link href="/solucoes/cortex-b2b">Cortex B2B™</Link></li>
                 <li><Link href="/solucoes/match-maker">Match-Maker B2B</Link></li>
                 <li><Link href="/solucoes/apps">Apps Estratégicos</Link></li>
-                {/* CORREÇÃO DE ROTA */}
                 <li><Link href="/solucoes/profissionais-de-saude">Para Profissionais de Saúde</Link></li>
               </ul>
             </div>
+            {/* --- FIM DA ATUALIZAÇÃO DE LAYOUT --- */}
             
           </div>
           
-          {/* Footer Bottom (ATUALIZADO: Estrutura e CSS corrigidos) */}
+          {/* Footer Bottom (Estrutura HTML mantida, CSS corrigido abaixo) */}
           <div className="footer-bottom">
             <div className="footer-bottom-left">
               <p>© {currentYear} Synapse B2B. Todos os direitos reservados.</p>
@@ -82,32 +88,36 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* CSS Adicional para os links legais movidos e colunas de navegação */}
+      {/* --- ATUALIZAÇÃO DE CSS: Correção robusta com :global() --- */}
       <style jsx>{`
-        /* --- ATUALIZAÇÃO 1: Coluna de navegação única com 2 colunas internas --- */
+        /* --- Regra geral para as colunas de links --- */
         .footer-links ul {
           list-style: none;
           padding: 0;
           margin: 0;
-          column-count: 2;
-          column-gap: 2rem;
+          /* column-count: 2; <- REMOVIDO */
         }
         
         .footer-links li {
           margin-bottom: 0.75rem;
         }
 
-        .footer-links a {
+        /* --- CORREÇÃO ROBUSTA (Links de Navegação) --- */
+        .footer-links :global(a) {
           text-decoration: none;
           color: var(--color-text);
           transition: color 0.3s;
         }
-        
-        .footer-links a:hover {
+        .footer-links :global(a:visited) {
+          color: var(--color-text); /* Remove o roxo */
+        }
+        .footer-links :global(a:hover) {
            color: var(--color-primary);
         }
+        /* --- FIM DA CORREÇÃO --- */
 
-        /* --- ATUALIZAÇÃO 2: Correção do layout do footer-bottom --- */
+
+        /* --- CSS do Footer Bottom (Mantido, mas agora será aplicado) --- */
         .footer-bottom {
           display: flex;
           justify-content: space-between;
@@ -140,14 +150,20 @@ export default function Footer() {
           color: var(--color-text);
           opacity: 0.8;
         }
-        .footer-legal-links a {
+
+        /* --- CORREÇÃO ROBUSTA (Links Legais) --- */
+        .footer-legal-links :global(a) {
           color: var(--color-text);
           text-decoration: none;
           transition: color 0.3s;
         }
-        .footer-legal-links a:hover {
+        .footer-legal-links :global(a:visited) {
+          color: var(--color-text); /* Remove o roxo */
+        }
+        .footer-legal-links :global(a:hover) {
           color: var(--color-primary);
         }
+        /* --- FIM DA CORREÇÃO --- */
 
         .footer-credits {
            font-size: 0.9rem;
