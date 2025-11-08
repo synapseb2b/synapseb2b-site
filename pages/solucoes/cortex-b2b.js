@@ -70,21 +70,29 @@ export default function CortexB2B() {
             margin: '0 auto',
             padding: '3rem',
             background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.03))',
-            border: '1px solid var(--color-primary-accent)', // ADEQUAÇÃO DE EXCELÊNCIA
+            border: '1px solid var(--color-primary-accent)', 
             borderRadius: '16px',
-            textAlign: 'left'
+            textAlign: 'center' // AJUSTE 5: Centralizado
           }}>
             <h3 style={{color: 'var(--color-heading)', fontSize: '1.3rem', marginBottom: '1.5rem'}}>Do Conhecimento Tácito ao Sistema Replicável</h3>
             
+            {/* AJUSTE 2: Copy Ecossistemas */}
             <p style={{lineHeight: '1.8', marginBottom: '1.5rem'}}>
-              Após 20 anos liderando receita em empresas como <strong>Google Cloud, Microsoft, Dell, TOTVS, Salesforce, Dynatrace e Keepit</strong>, tornou-se evidente um padrão: empresas tecnicamente superiores travavam por falta de clareza estratégica.
+              Após 20 anos liderando receita em Ecossistemas como <strong>TOTVS, Microsoft, Salesforce, Dell, Google e Keepit</strong>, tornou-se evidente um padrão: empresas tecnicamente superiores travavam por falta de clareza estratégica.
             </p>
 
             <p style={{lineHeight: '1.8', marginBottom: '1.5rem'}}>
               A solução exigia mais que frameworks isolados. Era necessário um <strong>meta-framework</strong> que integrasse:
             </p>
 
-            <ul style={{listStyle: 'none', padding: 0, marginBottom: '1.5rem'}}>
+            {/* AJUSTE 5: Lista centralizada (bloco) mas texto alinhado à esquerda (interno) */}
+            <ul style={{
+              listStyle: 'none', 
+              padding: 0, 
+              marginBottom: '1.5rem', 
+              display: 'inline-block', 
+              textAlign: 'left'
+            }}>
               <li style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <span><strong>Maiores frameworks globais</strong> de Go-To-Market, aceleração de receita e gestão de negócios B2B</span>
@@ -103,8 +111,9 @@ export default function CortexB2B() {
               </li>
             </ul>
 
+            {/* AJUSTE 1: Copy decodifica */}
             <p style={{lineHeight: '1.8', fontWeight: 500, color: 'var(--color-heading)'}}>
-              O resultado: <strong>Cortex B2B™</strong> — um sistema de inteligência que diagnostica negócios B2B complexos com a profundidade de 20 anos de experiência, mas em 10 minutos.
+              O resultado: <strong>Cortex B2B™</strong> — um sistema de inteligência que decodifica negócios B2B complexos com a profundidade de 20 anos de experiência, mas em 10 minutos.
             </p>
           </div>
         </div>
@@ -224,7 +233,8 @@ export default function CortexB2B() {
               <div className="cortex-step-number">3</div>
               <div className="cortex-step-content">
                 <h3>Diagnóstico Estruturado 360º</h3>
-                <p>Relatório em 4 blocos: Diagnóstico de Maturidade, Mapa de Recomendação Priorizado, Blueprint Estratégico, Roteiro 90 Dias.</p>
+                {/* AJUSTE 3: Copy Relatório 4 blocos */}
+                <p>Relatório em 4 blocos: Diagnóstico de Maturidade, Mapa de Recomendação Priorizado, Blueprint Estratégico, Plano de Ações priorizadas por impacto + Métricas de validação + KPIs de sucesso + Quick wins para gerar momentum (objetivos tangíveis, não aspiracionais)</p>
               </div>
             </div>
           </div>
@@ -317,18 +327,22 @@ export default function CortexB2B() {
 
           {/* Bloco de Entregáveis - Padrão de destaque */}
           <div style={{
-            // ADEQUAÇÃO DE EXCELÊNCIA: Fundo de destaque
             background: 'linear-gradient(135deg, rgba(0, 150, 132, 0.1), rgba(56, 197, 177, 0.05))',
-            // ADEQUAÇÃO DE EXCELÊNCIA: Borda de destaque
             border: '1px solid var(--color-primary-accent)',
             borderRadius: '16px',
             padding: '3rem',
             maxWidth: '900px',
             margin: '3rem auto',
-            textAlign: 'left'
+            textAlign: 'center' // AJUSTE 5: Centralizado
           }}>
             <h3 style={{color: 'var(--color-heading)', marginBottom: '2rem', textAlign: 'center'}}>O Que Você Recebe:</h3>
-            <ul style={{listStyle: 'none', padding: 0}}>
+            {/* AJUSTE 5: Lista centralizada (bloco) mas texto alinhado à esquerda (interno) */}
+            <ul style={{ 
+              listStyle: 'none', 
+              padding: 0, 
+              display: 'inline-block', 
+              textAlign: 'left' 
+            }}>
               <li style={{display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem'}}>
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <div>
@@ -340,7 +354,8 @@ export default function CortexB2B() {
                 <CheckCircle2 size={20} style={{color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px'}} />
                 <div>
                   <strong>Bloco 2: Mapa de Recomendação Priorizado</strong><br/>
-                  Qual frente ativar primeiro (GTM completo, Sprint de Validação, CRO fracionado, Plataforma de Aceleração, Ativação de Ecossistema) com justificativa técnica e matriz de impacto vs esforço
+                  {/* AJUSTE 4: Copy Mapa de Recomendação */}
+                  Qual frente ativar primeiro (Sprint de Validação, GTM completo, CRO fracionado, Plataforma de Aceleração, Ativação de Ecossistema ou Frente Personalizada) com justificativa técnica e matriz de impacto vs esforço
                 </div>
               </li>
               <li style={{display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem'}}>
@@ -397,10 +412,17 @@ export default function CortexB2B() {
             background: 'rgba(0, 150, 132, 0.05)',
             borderLeft: '4px solid var(--color-primary)',
             borderRadius: '8px',
-            textAlign: 'left'
+            textAlign: 'center' // AJUSTE 5: Centralizado
           }}>
             <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem'}}>Também Aplicável em:</h4>
-            <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+            {/* AJUSTE 5: Lista centralizada (bloco) mas texto alinhado à esquerda (interno) */}
+            <ul style={{ 
+              listStyle: 'none', 
+              padding: 0, 
+              margin: 0, 
+              display: 'inline-block', 
+              textAlign: 'left' 
+            }}>
               <li style={{marginBottom: '0.75rem'}}>→ <strong>Advisory & Consultoria:</strong> Economiza 20-30h/mês em análise manual de pitch decks e diagnósticos estratégicos</li>
               <li style={{marginBottom: '0.75rem'}}>→ <strong>Ecossistemas de Investimento:</strong> Triagem estruturada de dezenas de startups com consistência metodológica</li>
               <li style={{marginBottom: '0.75rem'}}>→ <strong>Founders & C-Level:</strong> Segunda opinião estratégica estruturada para validação de hipóteses críticas</li>
@@ -445,12 +467,13 @@ export default function CortexB2B() {
           margin: 0 auto;
         }
         .cortex-step {
+          /* AJUSTE 5: Centralizado (desktop) */
           display: flex;
-          align-items: flex-start;
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center; 
           gap: 2rem;
-          /* ADEQUAÇÃO DE EXCELÊNCIA: Fundo de destaque */
           background: linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.02));
-          /* ADEQUAÇÃO DE EXCELÊNCIA: Borda de destaque */
           border: 1px solid var(--color-primary-accent);
           border-radius: 12px;
           padding: 2rem;
@@ -502,11 +525,10 @@ export default function CortexB2B() {
         }
         .timeline-content {
           padding: 1.5rem;
-          /* ADEQUAÇÃO DE EXCELÊNCIA: Fundo de destaque */
           background: linear-gradient(135deg, rgba(0, 150, 132, 0.05), rgba(56, 197, 177, 0.02));
-          /* ADEQUAÇÃO DE EXCELÊNCIA: Borda de destaque */
           border: 1px solid var(--color-primary-accent);
           border-radius: 12px;
+          text-align: center; /* AJUSTE 5: Centralizado */
         }
         .timeline-content h4 {
           color: var(--color-heading);
@@ -519,9 +541,7 @@ export default function CortexB2B() {
 
         @media (max-width: 768px) {
           .cortex-step {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+             /* Estilos de centralização movidos para desktop */
           }
           .timeline-phase {
             grid-template-columns: 1fr;
