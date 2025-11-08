@@ -114,7 +114,7 @@ export default function Home() {
       {/* ====================================================================== */}
       {/* Bloco 2: Os 4 Pilares da Engenharia de Receita (Centralizado por padrão) */}
       {/* ====================================================================== */}
-      <section id="engenharia" className="section-solid section-pillars-revolutionary">
+      <section id="engenharia-de-receita" className="section-solid section-pillars-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Receita previsível não é acidente. <br/>
           É Engenharia.</h2>
