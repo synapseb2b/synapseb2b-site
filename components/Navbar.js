@@ -206,14 +206,16 @@ export default function Navbar() {
           visibility: visible;
           transform: translateY(0);
         }
+        
+        /* --- ESTA É A REGRA CRÍTICA PARA A CORREÇÃO --- */
         .dropdown-link {
-          display: block;
-          padding: 0.75rem 1rem;
+          display: block; /* Força empilhamento vertical */
+          padding: 0.75rem 1rem; /* Adiciona espaçamento (organização) */
           color: var(--color-text);
           text-decoration: none;
           border-radius: 8px;
           transition: background-color 0.3s, color 0.3s;
-          white-space: nowrap;
+          white-space: nowrap; /* Impede quebra de linha */
           font-weight: 500;
         }
         .dropdown-link:hover {
@@ -283,4 +285,4 @@ export default function Navbar() {
       `}</style>
     </>
   );
-} 
+}
