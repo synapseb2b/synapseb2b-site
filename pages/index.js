@@ -91,8 +91,8 @@ export default function Home() {
         <div className="container hero-content text-center page-hero-padding reveal-up">
           <RotatingText />
           <p className="hero-subheadline">
-            Seu produto resolve problemas reais, <br/>
-            mas se o mercado não consegue entender o valor rapidamente, ele simplesmente não compra.
+            Empresas B2B que escalam têm uma coisa em comum: <br/>
+            elas param de improvisar e constroem uma Engenharia de Receita.
           </p>
           <div className="hero-ctas">
             {/* --- ATUALIZAÇÃO 3: Adicionada classe btn-cta-pulse --- */}
@@ -119,10 +119,6 @@ export default function Home() {
           É Engenharia.</h2>
           <p className="lead-text">
             Quatro pilares integrados. Um resultado: você cresce sem depender de sorte.
-          </p>
-          <p className="text-center" style={{ maxWidth: '800px', margin: '1rem auto 0' }}>
-            Empresas B2B que escalam têm uma coisa em comum: <br/>
-            elas param de improvisar e construem uma Engenharia de Receita.
           </p>
           
           <div className="pillar-grid-revolutionary">
