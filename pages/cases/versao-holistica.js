@@ -1,4 +1,4 @@
-// pages/cases/versao-holistica.js (Corrigido)
+// pages/cases/versao-holistica.js (Corrigido e Refatorado por J.A.R.V.I.S.)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -55,22 +55,13 @@ export default function VersaoHolisticaCase() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* Bloco 1: Hero Section (Customizado para o Case)                      */}
+      {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean" Soluções)             */}
       {/* ====================================================================== */}
       <section className="hero-section" style={heroStyle}>
         <div className="hero-overlay" style={{backgroundColor: 'rgba(0,0,0,0.8)'}}></div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
-            <Image 
-              src="/cases/logo_vh.png"
-              alt="Logo Versão Holística"
-              width={250}
-              height={70}
-              quality={100}
-              style={{ objectFit: 'contain' }}
-            />
-          </div>
+          {/* LOGO, DESTAQUE E CTAS REMOVIDOS PARA MAIOR LIMPEZA */}
 
           <h1 className="hero-headline" style={{fontSize: '3.5rem'}}>
             DE NARRATIVA CONFUSA PARA NOVA CATEGORIA DE MERCADO 
@@ -80,96 +71,33 @@ export default function VersaoHolisticaCase() {
             complexidade incompreensível em clareza que captou R$ 500k.
           </p>
 
-          {/* Destaque de Resultado */}
-          <div 
-            className="case-hero-highlight-box" 
-            style={{
-              border: '2px solid var(--color-primary)', 
-              padding: '1rem 1.5rem', 
-              borderRadius: '12px', 
-              display: 'inline-block', 
-              margin: '2rem auto 2.5rem',
-              background: 'rgba(0, 150, 132, 0.1)',
-              backdropFilter: 'blur(5px)'
-            }}
-          >
-            <h3 style={{
-              color: 'var(--color-heading)', 
-              fontFamily: "'Montserrat', sans-serif", 
-              fontSize: '1.2rem',
-              fontWeight: 700,
-              margin: 0
-            }}>
-              1ª PLATAFORMA DE CAREOPS INTEGRATIVO DO BRASIL + R$ 500K CAPTADOS 
-            </h3>
-          </div>
-
-          <div className="hero-ctas">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Quero Transformação Similar</span> 
-              <ArrowRight size={20} />
-            </Link>
-            <Link href="#download-pdf" className="btn btn-secondary btn-large">
-              <span>Download PDF do Case</span> 
-              <Download size={20} />
-            </Link>
-          </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 2: Overview Card                                               */}
+      {/* Bloco 2: Overview Card (REMOVIDO POR J.A.R.V.I.S.)                     */}
+      {/* Bloco de sumário executivo quebrava a narrativa. Eliminado.            */}
       {/* ====================================================================== */}
-      <section className="section-solid reveal-up">
-        <div className="container">
-          {/* Reutilizando o estilo .decision-block de globals.css para o card */}
-          <div className="decision-block" style={{maxWidth: '900px', background: 'var(--color-card-bg)', textAlign: 'left'}}>
-            <ul style={{listStyle: 'none', padding: 0}}>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>CLIENTE:</strong> <span>Versão Holística</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>SETOR:</strong> <span>HealthTech B2B</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>DESAFIO:</strong> <span>Inovação validada mas impossível de explicar</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>SOLUÇÃO:</strong> <span>Criação de Categoria + Tese de Investimento</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>PRAZO:</strong> <span>90 dias (3 fases estratégicas)</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', padding: '1rem 0', fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--color-heading)'}}>
-                <strong>RESULTADO:</strong> <span style={{color: 'var(--color-primary)'}}>Nova categoria criada + R$ 500k captados</span> 
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
 
       {/* ====================================================================== */}
-      {/* Bloco 3: O Contexto                                                  */}
+      {/* Bloco 3: O Contexto (AJUSTADO: Promovido e reescrito)                 */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container" style={{maxWidth: '800px', textAlign: 'left'}}>
-          <h2 className="section-title text-center">O CENÁRIO ANTES DA SYNAPSE</h2> 
-          <p>Isabella Albuquerque não criou a Versão Holística por oportunidade de mercado. Ela criou por necessidade existencial.</p>
-          <p>Aos 12 anos, um tumor cerebral. Cirurgia de urgência. Perda total de movimentos. Anos de recuperação dolorosa.</p>
-          <p>E quando finalmente recebeu alta hospitalar? Zero acompanhamento. "Eu que me virasse."</p>
-          <p>As terapias integrativas a salvaram — mas nenhum hospital integrava isso ao cuidado convencional. A Versão Holística nasceu dessa lacuna.</p>
-          <p>Anos depois, Isabella tinha construído algo único: uma metodologia de cuidado farmacêutico integrativo com validação científica pela UFMG. ROI comprovado de 5.8x em pacientes de hemodiálise. Parceria com o Hospital Nossa Senhora das Dores. Tecnologia proprietária G-Ops desenvolvida em colaboração estratégica.</p>
           
-          <p className="lead-text" style={{fontStyle: 'italic', color: 'var(--color-heading)', textAlign: 'center', marginTop: '3rem', marginBottom: '3rem'}}>
-            Tinha tudo. Menos uma coisa: alguém que entendesse o que ela fazia.
-          </p>
+          {/* COPY AJUSTADA: Foco no problema de negócio, remoção da história pessoal */}
+          <h2 className="section-title text-center">O PONTO DE PARTIDA: INOVAÇÃO SEM CLAREZA</h2> 
+          
+          <p>A Versão Holística não tinha um problema de produto. Tinha uma metodologia com validação científica (UFMG), ROI comprovado de 5.8x em pacientes crônicos e parcerias hospitalares. Tinha tudo.</p>
+          
+          <p>Menos uma coisa: <strong>clareza</strong>.</p>
+          
+          <p>A genialidade estava aprisionada em complexidade técnica. O pitch de 15 minutos deixava decisores confusos. Investidores perguntavam: "É consultoria ou software?".</p>
 
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '3rem'}}>O PARADOXO DA INOVAÇÃO</h3>
-          <p>Pitch de 15 minutos que deixava decisores mais confusos do que antes. Investidores perguntando: "Vocês vendem consultoria ou software?"</p>
-          <p>Hospitais interessados mas sem conseguir visualizar a implementação. História pessoal de superação desconectada da proposta de valor.</p>
-          <p>A genialidade estava lá. Mas aprisionada em complexidade técnica intraduzível.</p>
+          <p>Resultado: Hospitais interessados, mas sem conversão. Ciclos de venda infinitos. Impossibilidade de captar investimento. A inovação, sem uma narrativa de negócio, era um gargalo.</p>
 
           <blockquote style={{
             borderLeft: '4px solid var(--color-primary)', 
@@ -179,7 +107,7 @@ export default function VersaoHolisticaCase() {
             fontStyle: 'italic',
             color: 'var(--color-heading)'
           }}>
-            E aqui está o insight cruel: inovação sem clareza não é vantagem competitiva. É desvantagem comercial.
+            O insight cruel: inovação sem clareza não é vantagem competitiva. É desvantagem comercial.
           </blockquote>
         </div>
       </section>
@@ -187,92 +115,14 @@ export default function VersaoHolisticaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 4: O Desafio Real                                              */}
+      {/* Bloco 4: O Desafio Real (REMOVIDO POR J.A.R.V.I.S.)                    */}
+      {/* Redundante. O novo "Ponto de Partida" já cobre o desafio e as          */}
+      {/* consequências.                                                       */}
       {/* ====================================================================== */}
-      <section id="por-que-synapse" className="section-with-gradient-glow section-truths-revolutionary reveal-up">
-        <div className="container text-center">
-          <h2 className="section-title">O Desafio Real</h2>
-          
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', marginTop: '-1rem'}}>POR QUE ISSO ERA CRÍTICO</h3>
 
-          {/* Reutilizando o grid de "3 Verdades" da index.js para as "3 Dores" */}
-          <div className="truths-grid-revolutionary">
-            
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <Target size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR OPERACIONAL</h3> 
-              <p>Pitch de 15 min que confundia em vez de clarificar decisores.</p>
-            </div>
-            
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <GitBranch size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR ESTRATÉGICA</h3> 
-              <p>Múltiplos modelos de negócio simultâneos sem hierarquia.</p>
-            </div>
-
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <LineChart size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR FINANCEIRA</h3> 
-              <p>ROI de 5.8x validado mas não comunicado de forma tangível.</p>
-            </div>
-          </div>
-
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '2rem', marginTop: '5rem'}}>
-            CONSEQUÊNCIAS DA INAÇÃO 
-          </h3>
-          <div style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Ciclos de venda infinitos com hospitais "interessados" mas nunca decidindo. 
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Impossibilidade de captar investimento (investidores não visualizavam tese). 
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Dispersão de energia em múltiplas verticais sem validar nenhuma. 
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              História da fundadora desperdiçada como anedota em vez de ser ativo estratégico. 
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Concorrentes explicando a categoria primeiro e capturando o mercado. 
-            </p>
-          </div>
-
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '5rem'}}>
-            A PERGUNTA QUE NÃO SAÍA DA CABEÇA 
-          </h3>
-          <blockquote style={{
-            borderLeft: '4px solid var(--color-primary)', 
-            paddingLeft: '2rem', 
-            margin: '2rem auto', 
-            fontSize: '1.2rem',
-            fontStyle: 'italic',
-            color: 'var(--color-heading)',
-            maxWidth: '700px',
-            textAlign: 'left'
-          }}>
-            <p>"Por que ninguém entende o valor do que fazemos?"</p> 
-            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>E a resposta não estava em explicar melhor. Estava em <strong>criar a categoria que ainda não existia</strong>.</p>
-          </blockquote>
-
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 5: A Solução (Timeline)                                        */}
+      {/* Bloco 5: A Solução (Timeline) (MANTIDO)                              */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container">
@@ -419,7 +269,7 @@ export default function VersaoHolisticaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 6: Resultados                                                  */}
+      {/* Bloco 6: Resultados (MANTIDO)                                        */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
         <div className="container text-center">
@@ -516,7 +366,7 @@ export default function VersaoHolisticaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 7: Voz do Cliente                                              */}
+      {/* Bloco 7: Voz do Cliente (MANTIDO)                                    */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container">
@@ -564,18 +414,17 @@ export default function VersaoHolisticaCase() {
 
       <div className="section-divider-glow"></div>
 
-{/* ====================================================================== */}
-      {/* Bloco 8: Learnings Estratégicos (CORRIGIDO)                           */}
+      {/* ====================================================================== */}
+      {/* Bloco 8: Learnings Estratégicos (MANTIDO)                             */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
         <div className="container">
           <h2 className="section-title text-center">Learnings Estratégicos</h2>
           <p className="lead-text text-center">O QUE ESTE CASO ENSINA</p>
           
-{/* Reutilizando o grid de "3 Verdades" para os "3 Insights" */}
+          {/* Reutilizando o grid de "3 Verdades" para os "3 Insights" */}
           <div className="truths-grid-revolutionary">
             
-            {/* --- Início Insight 1 --- */}
             <div className="truth-card-revolutionary text-left">
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
                 <Gem size={28} />
@@ -583,10 +432,8 @@ export default function VersaoHolisticaCase() {
               <h3 className="truth-card-title">INSIGHT 1: INOVAÇÃO SEM CLAREZA NÃO VENDE</h3>
               <p>VH tinha metodologia validada pela UFMG. Tinha ROI comprovado de 5.8x. Mas decisores não compravam porque não entendiam.</p>
               
-              {/* CORREÇÃO APLICADA AQUI */}
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Complexidade ≠ sofisticação aos olhos do comprador. Clareza &gt; Complexidade. Sempre.</p>
             </div>
-            {/* --- Fim Insight 1 --- */}
             
             <div className="truth-card-revolutionary text-left">
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
@@ -610,7 +457,7 @@ export default function VersaoHolisticaCase() {
       </section>
 
       {/* ====================================================================== */}
-      {/* Bloco 9: CTA Final (Copiado da index.js e adaptado)                  */}
+      {/* Bloco 9: CTA Final (MANTIDO)                                         */}
       {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>

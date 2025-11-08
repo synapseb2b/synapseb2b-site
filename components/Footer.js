@@ -1,4 +1,4 @@
-// components/Footer.js (VERSÃO ATUALIZADA COM NOVA ESTRUTURA DE SOLUÇÕES)
+// components/Footer.js (Refatorado por J.A.R.V.I.S.)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -45,39 +45,37 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Coluna 2: Navegação (ATUALIZADA) */}
+            {/* Coluna 2: Navegação (ATUALIZADA: Agora com 2 colunas internas) */}
             <div className="footer-column footer-links">
               <h4 className="footer-title">Navegação</h4>
               <ul>
+                {/* Coluna 1 (Auto) */}
                 <li><Link href="/">Home</Link></li>
-                {/* Link "Soluções" aponta para a âncora na homepage */}
-                <li><Link href="/#solucoes">Soluções</Link></li> 
                 <li><Link href="/cases">Cases</Link></li>
                 <li><Link href="/a-synapse">A Synapse</Link></li>
                 <li><Link href="/contato">Contato</Link></li>
+                
+                {/* Coluna 2 (Auto) */}
+                <li><Link href="/solucoes/plataformas-digitais">Plataformas Digitais</Link></li>
+                <li><Link href="/solucoes/cortex-b2b">Cortex B2B™</Link></li>
+                <li><Link href="/solucoes/match-maker">Match-Maker B2B</Link></li>
+                <li><Link href="/solucoes/apps">Apps Estratégicos</Link></li>
+                <li><Link href="/profissionais-de-saude">Para Profissionais de Saúde</Link></li>
               </ul>
             </div>
 
-            {/* Coluna 3: Soluções (NOVA - Substituindo "Legal") */}
-            <div className="footer-column footer-solucoes">
-              <h4 className="footer-title">Soluções</h4>
-              <ul>
-               <li><Link href="/solucoes/plataformas-digitais">Plataformas Digitais</Link></li>
-               <li><Link href="/solucoes/cortex-b2b">Cortex B2B™</Link></li>
-               <li><Link href="/solucoes/match-maker">Match-Maker B2B</Link></li>
-               <li><Link href="/solucoes/apps">Apps Estratégicos</Link></li>
-              </ul>
-            </div>
+            {/* Coluna 3: Soluções (REMOVIDA) */}
+            
           </div>
           
-          {/* Footer Bottom (ATUALIZADO com links Legais) */}
+          {/* Footer Bottom (ATUALIZADO: Estrutura e CSS corrigidos) */}
           <div className="footer-bottom">
-            <p>© {currentYear} Synapse B2B. Todos os direitos reservados.</p>
-            
-            <div className="footer-legal-links">
-               <Link href="/politica-de-privacidade">Política de Privacidade</Link>
-               <span>|</span>
-               <Link href="/termos-de-uso">Termos de Uso</Link>
+            <div className="footer-bottom-left">
+              <p>© {currentYear} Synapse B2B. Todos os direitos reservados.</p>
+              <div className="footer-legal-links">
+                <Link href="/politica-de-privacidade">Política de Privacidade</Link>
+                <Link href="/termos-de-uso">Termos de Uso</Link>
+              </div>
             </div>
 
             <p className="footer-credits">Desenvolvido por Synapse B2B | Plataformas Digitais arquitetadas em Engenharia de Receita.</p>
@@ -85,13 +83,60 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* CSS Adicional para os links legais movidos */}
+      {/* CSS Adicional para os links legais movidos e colunas de navegação */}
       <style jsx>{`
-        .footer-legal-links {
-          display: inline-flex;
+        /* --- ATUALIZAÇÃO 1: Coluna de navegação única com 2 colunas internas --- */
+        .footer-links ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          column-count: 2;
+          column-gap: 2rem;
+        }
+        
+        .footer-links li {
+          margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+          text-decoration: none;
+          color: var(--color-text);
+          transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+           color: var(--color-primary);
+        }
+
+        /* --- ATUALIZAÇÃO 2: Correção do layout do footer-bottom --- */
+        .footer-bottom {
+          display: flex;
+          justify-content: space-between;
           align-items: center;
-          gap: 0.75rem;
-          margin-top: 0.5rem;
+          flex-wrap: wrap;
+          gap: 1.5rem; /* Espaço entre os blocos */
+          margin-top: 2rem;
+          padding-top: 2rem;
+          border-top: 1px solid var(--color-border);
+        }
+
+        .footer-bottom-left {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem; /* Espaço entre copyright e links legais */
+        }
+        
+        .footer-bottom-left p {
+           margin: 0;
+           font-size: 0.9rem;
+           opacity: 0.8;
+        }
+
+        .footer-legal-links {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem; /* Remove a necessidade do '|' */
           font-size: 0.9rem;
           color: var(--color-text);
           opacity: 0.8;
@@ -103,6 +148,33 @@ export default function Footer() {
         }
         .footer-legal-links a:hover {
           color: var(--color-primary);
+        }
+
+        .footer-credits {
+           font-size: 0.9rem;
+           opacity: 0.8;
+           text-align: right;
+           flex-shrink: 0; /* Impede que quebre a linha desnecessariamente */
+           margin: 0;
+        }
+
+        @media (max-width: 768px) {
+           .footer-bottom {
+              flex-direction: column; /* Empilha no mobile */
+              justify-content: center;
+              text-align: center;
+              gap: 1rem;
+           }
+           .footer-bottom-left {
+              flex-direction: column;
+              justify-content: center;
+              width: 100%;
+              gap: 0.5rem;
+           }
+           .footer-credits {
+              text-align: center;
+              width: 100%;
+           }
         }
       `}</style>
     </>

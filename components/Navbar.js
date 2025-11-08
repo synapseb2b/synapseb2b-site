@@ -1,4 +1,5 @@
 // components/Navbar.js (VERSÃO FINAL COM MENUS DROPDOWN INTELIGENTES)
+// Refatorado por J.A.R.V.I.S.
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -45,7 +46,7 @@ export default function Navbar() {
   };
 
   // Lógica de estado ativo para os links pais
-  const isSolucoesActive = router.pathname.startsWith('/solucoes');
+  const isSolucoesActive = router.pathname.startsWith('/solucoes') || router.pathname === '/profissionais-de-saude';
   const isCasesActive = router.pathname.startsWith('/cases');
 
   return (
@@ -59,24 +60,11 @@ export default function Navbar() {
             <span className="nav-logo-text">Synapse B2B</span>
           </Link>
           
-          {/* --- Menu Desktop (ATUALIZADO COM DROPDOWNS) --- */}
+          {/* --- Menu Desktop (ATUALIZADO: ORDEM E CONTEÚDO) --- */}
           <ul className="nav-menu">
             <li><Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
             
-            {/* Dropdown Soluções */}
-            <li className="dropdown-container">
-              <div className={`nav-link ${isSolucoesActive ? 'active' : ''}`}>
-                Soluções <ChevronDown size={16} />
-              </div>
-              <div className="dropdown-menu">
-                <Link href="/solucoes/plataformas-digitais" className="dropdown-link">Plataformas Digitais</Link>
-                <Link href="/solucoes/cortex-b2b" className="dropdown-link">Cortex B2B™</Link>
-                <Link href="/solucoes/match-maker" className="dropdown-link">Match-Maker B2B</Link>
-                <Link href="/solucoes/apps" className="dropdown-link">Apps Estratégicos</Link>
-              </div>
-            </li>
-
-            {/* Dropdown Cases */}
+            {/* ATUALIZAÇÃO DE ORDEM 1: Cases */}
             <li className="dropdown-container">
               <div className={`nav-link ${isCasesActive ? 'active' : ''}`}>
                 Cases <ChevronDown size={16} />
@@ -87,6 +75,22 @@ export default function Navbar() {
                 <Link href="/cases/versao-holistica" className="dropdown-link">Versão Holística</Link>
                 <Link href="/cases/exclusiva-engenharias" className="dropdown-link">Exclusiva Engenharias</Link>
                 <Link href="/cases/aorkia" className="dropdown-link">AORKIA</Link>
+              </div>
+            </li>
+
+            {/* ATUALIZAÇÃO DE ORDEM 2: Soluções */}
+            <li className="dropdown-container">
+              <div className={`nav-link ${isSolucoesActive ? 'active' : ''}`}>
+                Soluções <ChevronDown size={16} />
+              </div>
+              <div className="dropdown-menu">
+                <Link href="/solucoes/plataformas-digitais" className="dropdown-link">Plataformas Digitais</Link>
+                <Link href="/solucoes/cortex-b2b" className="dropdown-link">Cortex B2B™</Link>
+                <Link href="/solucoes/match-maker" className="dropdown-link">Match-Maker B2B</Link>
+                <Link href="/solucoes/apps" className="dropdown-link">Apps Estratégicos</Link>
+                {/* AJUSTE ESTRATÉGICO: Página vertical adicionada */}
+                <div className="dropdown-divider"></div>
+                <Link href="/profissionais-de-saude" className="dropdown-link">Para Profissionais de Saúde</Link>
               </div>
             </li>
             
@@ -108,7 +112,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* --- Menu Overlay para Mobile (ATUALIZADO COM ACORDEÃO) --- */}
+      {/* --- Menu Overlay para Mobile (ATUALIZADO: ORDEM E CONTEÚDO) --- */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <span className="mobile-menu-title">Navegação</span>
@@ -120,7 +124,21 @@ export default function Navbar() {
         <ul className="mobile-menu-links">
           <li><Link href="/" onClick={handleLinkClick}><Home /><span>Home</span></Link></li>
           
-          {/* Acordeão Soluções */}
+          {/* ATUALIZAÇÃO DE ORDEM 1: Cases */}
+          <li className="mobile-dropdown">
+            <button onClick={() => setIsCasesOpen(!isCasesOpen)} className={isCasesOpen ? 'open' : ''}>
+              <div><Award /><span>Cases</span></div>
+              <ChevronDown size={24} />
+            </button>
+            <ul className={`mobile-sub-menu ${isCasesOpen ? 'open' : ''}`}>
+              <li><Link href="/cases" onClick={handleLinkClick}>- Ver Todos os Cases</Link></li>
+              <li><Link href="/cases/versao-holistica" onClick={handleLinkClick}>- Versão Holística</Link></li>
+              <li><Link href="/cases/exclusiva-engenharias" onClick={handleLinkClick}>- Exclusiva Engenharias</Link></li>
+              <li><Link href="/cases/aorkia" onClick={handleLinkClick}>- AORKIA</Link></li>
+            </ul>
+          </li>
+
+          {/* ATUALIZAÇÃO DE ORDEM 2: Soluções */}
           <li className="mobile-dropdown">
             <button onClick={() => setIsSolucoesOpen(!isSolucoesOpen)} className={isSolucoesOpen ? 'open' : ''}>
               <div><Layers /><span>Soluções</span></div>
@@ -131,20 +149,8 @@ export default function Navbar() {
               <li><Link href="/solucoes/cortex-b2b" onClick={handleLinkClick}>- Cortex B2B™</Link></li>
               <li><Link href="/solucoes/match-maker" onClick={handleLinkClick}>- Match-Maker B2B</Link></li>
               <li><Link href="/solucoes/apps" onClick={handleLinkClick}>- Apps Estratégicos</Link></li>
-            </ul>
-          </li>
-
-          {/* Acordeão Cases */}
-           <li className="mobile-dropdown">
-            <button onClick={() => setIsCasesOpen(!isCasesOpen)} className={isCasesOpen ? 'open' : ''}>
-              <div><Award /><span>Cases</span></div>
-              <ChevronDown size={24} />
-            </button>
-            <ul className={`mobile-sub-menu ${isCasesOpen ? 'open' : ''}`}>
-              <li><Link href="/cases" onClick={handleLinkClick}>- Ver Todos os Cases</Link></li>
-              <li><Link href="/cases/versao-holistica" onClick={handleLinkClick}>- Versão Holística</Link></li>
-              <li><Link href="/cases/exclusiva-engenharias" onClick={handleLinkClick}>- Exclusiva Engenharias</Link></li>
-              <li><Link href="/cases/aorkia" onClick={handleLinkClick}>- AORKIA</Link></li>
+              {/* AJUSTE ESTRATÉGICO: Página vertical adicionada */}
+              <li><Link href="/profissionais-de-saude" onClick={handleLinkClick}>- Para Profissionais de Saúde</Link></li>
             </ul>
           </li>
 
@@ -158,7 +164,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* --- CSS ADICIONAL PARA DROPDOWNS --- */}
+      {/* --- CSS ADICIONAL PARA DROPDOWNS (Mobile Otimizado) --- */}
       <style jsx>{`
         /* --- Desktop Dropdown --- */
         .nav-menu .nav-link {
@@ -220,7 +226,7 @@ export default function Navbar() {
           margin: 0.5rem 1rem;
         }
 
-        /* --- Mobile Accordion --- */
+        /* --- Mobile Accordion (AJUSTE DE LAYOUT) --- */
         .mobile-dropdown button {
           display: flex;
           align-items: center;
@@ -228,7 +234,7 @@ export default function Navbar() {
           width: 100%;
           background: none;
           border: none;
-          font-size: 2rem;
+          font-size: 1.5rem; /* AJUSTADO: Reduzido de 2rem */
           font-weight: 700;
           font-family: 'Montserrat', sans-serif;
           color: var(--color-heading);
@@ -253,7 +259,7 @@ export default function Navbar() {
 
         .mobile-sub-menu {
           list-style: none;
-          padding-left: 4rem; /* Indentação para sub-itens */
+          padding-left: 3rem; /* AJUSTADO: Reduzido de 4rem */
           max-height: 0;
           overflow: hidden;
           transition: max-height 0.4s ease-out;
@@ -263,11 +269,11 @@ export default function Navbar() {
         }
         .mobile-sub-menu a {
           display: block;
-          font-size: 1.25rem; /* Menor que os links principais */
+          font-size: 1.1rem; /* AJUSTADO: Reduzido de 1.25rem */
           font-family: 'Inter', sans-serif;
           font-weight: 500;
           color: var(--color-text);
-          padding: 0.75rem 1rem;
+          padding: 0.6rem 1rem; /* AJUSTADO: Reduzido de 0.75rem */
           text-decoration: none;
           transition: color 0.3s;
         }

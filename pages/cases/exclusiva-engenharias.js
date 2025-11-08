@@ -1,4 +1,4 @@
-// pages/cases/exclusiva-engenharias.js (Corrigido)
+// pages/cases/exclusiva-engenharias.js (Corrigido e Refatorado por J.A.R.V.I.S.)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -55,22 +55,13 @@ export default function ExclusivaEngenhariasCase() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* Bloco 1: Hero Section (Customizado para o Case)                      */}
+      {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean" Soluções)             */}
       {/* ====================================================================== */}
       <section className="hero-section" style={heroStyle}>
         <div className="hero-overlay" style={{backgroundColor: 'rgba(0,0,0,0.8)'}}></div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
-            <Image 
-              src="/cases/logo_exclusiva.png"
-              alt="Logo Exclusiva Engenharias"
-              width={250}
-              height={70}
-              quality={100}
-              style={{ objectFit: 'contain' }}
-            />
-          </div>
+          {/* LOGO, DESTAQUE E CTAS REMOVIDOS PARA MAIOR LIMPEZA */}
 
           <h1 className="hero-headline" style={{fontSize: '3.5rem'}}>
             DE FRAGMENTADO PARA HUB INTEGRADO 
@@ -79,185 +70,42 @@ export default function ExclusivaEngenhariasCase() {
             Como uma engenharia com excelência técnica transformou crescimento por indicação em Método comercial estruturado — em 128 dias. 
           </p>
 
-          {/* Destaque de Resultado */}
-          <div 
-            className="case-hero-highlight-box" 
-            style={{
-              border: '2px solid var(--color-primary)', 
-              padding: '1rem 1.5rem', 
-              borderRadius: '12px', 
-              display: 'inline-block', 
-              margin: '2rem auto 2.5rem',
-              background: 'rgba(0, 150, 132, 0.1)',
-              backdropFilter: 'blur(5px)'
-            }}
-          >
-            <h3 style={{
-              color: 'var(--color-heading)', 
-              fontFamily: "'Montserrat', sans-serif", 
-              fontSize: '1.2rem',
-              fontWeight: 700,
-              margin: 0
-            }}>
-              MÉTODO COMERCIAL OPERANDO COM PLAYBOOK VALIDADO EM 90 DIAS 
-            </h3>
-          </div>
-
-          <div className="hero-ctas">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Quero Transformação Similar</span> 
-              <ArrowRight size={20} />
-            </Link>
-            <Link href="#download-pdf" className="btn btn-secondary btn-large">
-              <span>Download PDF do Case</span> 
-              <Download size={20} />
-            </Link>
-          </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 2: Overview Card                                               */}
+      {/* Bloco 2: Overview Card (REMOVIDO POR J.A.R.V.I.S.)                     */}
+      {/* Bloco de sumário executivo quebrava a narrativa. Eliminado.            */}
       {/* ====================================================================== */}
-      <section className="section-solid reveal-up">
-        <div className="container">
-          {/* Reutilizando o estilo .decision-block de globals.css para o card */}
-          <div className="decision-block" style={{maxWidth: '900px', background: 'var(--color-card-bg)', textAlign: 'left'}}>
-            <ul style={{listStyle: 'none', padding: 0}}>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>CLIENTE:</strong> <span>Exclusiva Engenharias</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>SETOR:</strong> <span>Engenharia Industrial</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>DESAFIO:</strong> <span>Crescimento 100% por indicação</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>SOLUÇÃO:</strong> <span>GTM Completo + Plataforma + CRO Fracionado</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>PRAZO:</strong> <span>128 dias (4 fases estruturadas)</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', padding: '1rem 0', fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--color-heading)'}}>
-                <strong>RESULTADO:</strong> <span style={{color: 'var(--color-primary)'}}>Motor de receita com playbook validado</span> 
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
 
       {/* ====================================================================== */}
-      {/* Bloco 3: O Contexto                                                  */}
+      {/* Bloco 3: O Contexto (AJUSTADO: Promovido e reescrito)                 */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container" style={{maxWidth: '800px', textAlign: 'left'}}>
-          <h2 className="section-title text-center">O CENÁRIO ANTES DA SYNAPSE</h2> 
-          <p>A Exclusiva Engenharias não tinha problema de competência técnica. Tinha um problema de clareza estratégica.</p>
-          <p><strong>O que tinham:</strong></p> 
-          <ul style={{listStylePosition: 'inside', paddingLeft: '1rem', marginBottom: '1.5rem'}}>
-            <li>Um grupo de competências segregadas entre civil, elétrica, mecânica, automação, climatização, arquitetura e SST</li>
-            <li>Clientes de peso: Gerdau, Cimento Nacional, IVECO, IDV</li>
-            <li>Projetos industriais de alta complexidade entregues com excelência</li>
-          </ul>
-          <p><strong>O problema:</strong> Cada competência era apresentada como negócio separado. Dependendo do tipo de obra, a narrativa mudava. A empresa se fragmentava na própria comunicação.</p>
-          <p>O crescimento? 100% por indicação. Dependente do networking individual da liderança. Zero previsibilidade de pipeline. Nenhuma estrutura comercial replicável.</p>
           
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '3rem'}}>O PEDIDO QUE RECUSAMOS</h3> 
-          <p style={{
-            fontSize: '1.5rem', 
-            fontFamily: "'Montserrat', sans-serif", 
-            color: 'var(--color-heading)', 
-            textAlign: 'center', 
-            fontStyle: 'italic',
-            margin: '2rem 0'
-          }}>
-            "Precisamos de um site." 
-          </p>
-          <p>Essa foi a solicitação inicial. E nossa resposta imediata foi: <strong>não</strong>.</p>
-          <p>Não porque não fizéssemos plataformas digitais. Mas porque um site sem clareza estratégica seria apenas uma vitrine cara de um negócio indefinido.</p>
-          <p>O que eles realmente precisavam? Entender que história tinham para contar antes de escolher onde contá-la.</p>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* ====================================================================== */}
-      {/* Bloco 4: O Desafio Real                                              */}
-      {/* ====================================================================== */}
-      <section id="por-que-synapse" className="section-with-gradient-glow section-truths-revolutionary reveal-up">
-        <div className="container text-center">
-          <h2 className="section-title">O Desafio Real</h2>
+          {/* COPY AJUSTADA: Foco no problema de negócio, remoção de excessos */}
+          <h2 className="section-title text-center">O PONTO DE PARTIDA: EXCELÊNCIA TÉCNICA SEM MÉTODO</h2> 
           
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', marginTop: '-1rem'}}>POR QUE ISSO TRAVAVA O CRESCIMENTO</h3> 
+          <p>A Exclusiva Engenharias não tinha problema de competência. Tinha clientes de peso (Gerdau, IVECO) e executava projetos industriais complexos com excelência (civil, elétrica, automação).</p>
+          
+          <p>O problema: a empresa se fragmentava na própria comunicação. O crescimento era 100% por indicação, dependente do networking da liderança. Zero previsibilidade. Zero método.</p>
 
-          {/* Reutilizando o grid de "3 Verdades" da index.js para as "3 Dores" */}
-          <div className="truths-grid-revolutionary">
-            
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <Target size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR OPERACIONAL</h3> 
-              <p>Narrativa diferente para cada tipo de obra = confusão interna/externa.</p>
-            </div>
-            
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <GitBranch size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR ESTRATÉGICA</h3> 
-              <p>Impossível escalar sem depender de heroísmo da liderança.</p>
-            </div>
-
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <LineChart size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR FINANCEIRA</h3> 
-              <p>Receita imprevisível, dependente de ciclo longo não controlado.</p>
-            </div>
-          </div>
-
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '2rem', marginTop: '5rem'}}>
-            CONSEQUÊNCIAS DA INAÇÃO 
-          </h3>
-          <div style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Crescimento limitado ao tamanho da rede pessoal dos sócios.
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Incapacidade de criar equipe comercial (o que vender? como vender?).
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Perda de oportunidades por não ter resposta clara à pergunta "o que vocês fazem?".
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Commoditização por competir em cada disciplina isoladamente.
-            </p>
-          </div>
-
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '5rem'}}>
-            A PERGUNTA QUE NÃO SAÍA DA CABEÇA 
-          </h3>
+          <p>A solicitação inicial foi: "Precisamos de um site". Recusamos. Um site sem clareza estratégica não resolve o gargalo real.</p>
+          
           <blockquote style={{
             borderLeft: '4px solid var(--color-primary)', 
             paddingLeft: '2rem', 
-            margin: '2rem auto', 
+            margin: '3rem 0', 
             fontSize: '1.2rem',
             fontStyle: 'italic',
-            color: 'var(--color-heading)',
-            maxWidth: '700px',
-            textAlign: 'left'
+            color: 'var(--color-heading)'
           }}>
             <p>"Como crescer além de quem eu conheço?"</p> 
-            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>Essa era a questão real. E a resposta não estava em fazer mais networking. Estava em criar um Método.</p>
+            <p style={{marginTop: '1rem', fontStyle: 'normal'}}>Essa era a questão real. E a resposta não estava em mais networking. Estava em criar um Método.</p>
           </blockquote>
 
         </div>
@@ -266,7 +114,14 @@ export default function ExclusivaEngenhariasCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 5: A Solução (Timeline)                                        */}
+      {/* Bloco 4: O Desafio Real (REMOVIDO POR J.A.R.V.I.S.)                    */}
+      {/* Redundante. O novo "Ponto de Partida" já cobre o desafio e as          */}
+      {/* consequências.                                                       */}
+      {/* ====================================================================== */}
+
+
+      {/* ====================================================================== */}
+      {/* Bloco 5: A Solução (Timeline) (MANTIDO)                              */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container">
@@ -453,7 +308,7 @@ export default function ExclusivaEngenhariasCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 6: Resultados                                                  */}
+      {/* Bloco 6: Resultados (MANTIDO)                                        */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
         <div className="container text-center">
@@ -540,7 +395,7 @@ export default function ExclusivaEngenhariasCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 7: Voz do Cliente                                              */}
+      {/* Bloco 7: Voz do Cliente (MANTIDO)                                    */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container">
@@ -584,8 +439,8 @@ export default function ExclusivaEngenhariasCase() {
 
       <div className="section-divider-glow"></div>
 
-{/* ====================================================================== */}
-      {/* Bloco 8: Learnings Estratégicos                                      */}
+      {/* ====================================================================== */}
+      {/* Bloco 8: Learnings Estratégicos (MANTIDO)                             */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
         <div className="container">
@@ -620,7 +475,6 @@ export default function ExclusivaEngenhariasCase() {
               <h3 className="truth-card-title">INSIGHT 3: HEROÍSMO NÃO ESCALA</h3>
               <p>Crescimento por networking individual da liderança tem teto claro: o tamanho da rede.</p>
               
-              {/* CORREÇÃO APLICADA AQUI */}
               <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Método &gt; heroísmo. Playbook validado &gt; talento individual. Previsibilidade exige processo.</p>
             </div>
           </div>
@@ -628,7 +482,7 @@ export default function ExclusivaEngenhariasCase() {
       </section>
 
       {/* ====================================================================== */}
-      {/* Bloco 9: CTA Final (Copiado da index.js e adaptado)                  */}
+      {/* Bloco 9: CTA Final (MANTIDO)                                         */}
       {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
@@ -653,7 +507,7 @@ export default function ExclusivaEngenhariasCase() {
             Zero pressão. Apenas clareza estratégica. 
           </p>
 
-{/* Link de Download do PDF Adicional */}
+          {/* Link de Download do PDF Adicional */}
           <div id="download-pdf" className="cta-secondary-link" style={{marginTop: '3rem'}}>
             <p style={{marginBottom: '0.5rem'}}>Prefere estudar o caso antes?</p> 
             <Link href="/pdf/synapse-case-exclusiva.pdf" className="btn-case-revolutionary" style={{justifyContent: 'center', fontSize: '1rem'}}>

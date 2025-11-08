@@ -316,7 +316,7 @@ export default function Home() {
       </section>
 
 {/* ====================================================================== */}
-      {/* Bloco 5.5: Nossas Soluções (Centralizado por padrão)                */}
+      {/* Bloco 5.5: Nossas Soluções (ATUALIZADO POR J.A.R.V.I.S.)              */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid section-solutions-revolutionary">
         <div className="container text-center reveal-up">
@@ -345,8 +345,17 @@ export default function Home() {
               <p className="pillar-card-description">Plataformas web que educam o mercado, qualificam leads e convertem autoridade em receita.</p>
             </Link>
 
+            {/* --- CARD ADICIONADO --- */}
+            {/* Solução 3: Profissionais de Saúde */}
+            <Link href="/profissionais-de-saude" className="solution-card-revolutionary">
+              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
+                <Award size={28} />
+              </div>
+              <h3 className="pillar-card-title">Para Profissionais de Saúde</h3>
+              <p className="pillar-card-description">Transforme expertise clínica em receita previsível. Otimize sua agenda e crie novos modelos de negócio.</p>
+            </Link>
 
-            {/* Solução 3: Match-Maker */}
+            {/* Solução 4: Match-Maker */}
             <Link href="/solucoes/match-maker" className="solution-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Users size={28} />
@@ -355,7 +364,7 @@ export default function Home() {
               <p className="pillar-card-description">Plataforma de inteligência que conecta pessoas certas no momento certo, eliminando networking aleatório com recomendações estratégicas baseadas em dados.</p>
             </Link>
 
-            {/* Solução 4: Apps Estratégicos */}
+            {/* Solução 5: Apps Estratégicos */}
             <Link href="/solucoes/apps" className="solution-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Zap size={28} />

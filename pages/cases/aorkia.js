@@ -1,4 +1,4 @@
-// pages/cases/aorkia.js (Corrigido)
+// pages/cases/aorkia.js (Corrigido e Refatorado por J.A.R.V.I.S.)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -41,7 +41,7 @@ export default function AorkiaCase() {
 
   // Estilo customizado para o Hero deste case
   const heroStyle = {
-    backgroundImage: `url(/cases/aorkia-home.png)`, // CORREÇÃO: Token de citação removido
+    backgroundImage: `url(/cases/aorkia-home.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -55,22 +55,13 @@ export default function AorkiaCase() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* Bloco 1: Hero Section (Customizado para o Case)                      */}
+      {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean" Soluções)             */}
       {/* ====================================================================== */}
       <section className="hero-section" style={heroStyle}>
         <div className="hero-overlay" style={{backgroundColor: 'rgba(0,0,0,0.8)'}}></div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          <div className="case-hero-logo" style={{marginBottom: '2rem'}}>
-            <Image 
-              src="/cases/logo_aorkia.png" // CORREÇÃO: [cite_start]e comentário de citação removidos
-              alt="Logo AORKIA"
-              width={250}
-              height={70}
-              quality={100}
-              style={{ objectFit: 'contain' }}
-            />
-          </div>
+          {/* LOGO, DESTAQUE E CTAS REMOVIDOS PARA MAIOR LIMPEZA */}
 
           <h1 className="hero-headline" style={{fontSize: '3.5rem'}}>
             DE ZERO A PARCEIRO OFICIAL EM 45 DIAS 
@@ -80,90 +71,32 @@ export default function AorkiaCase() {
             por gigantes e fechou 1.200+ usuários na primeira venda. 
           </p>
 
-          {/* Destaque de Resultado */}
-          <div 
-            className="case-hero-highlight-box" 
-            style={{
-              border: '2px solid var(--color-primary)', 
-              padding: '1rem 1.5rem', 
-              borderRadius: '12px', 
-              display: 'inline-block', 
-              margin: '2rem auto 2.5rem',
-              background: 'rgba(0, 150, 132, 0.1)',
-              backdropFilter: 'blur(5px)'
-            }}
-          >
-            <h3 style={{
-              color: 'var(--color-heading)', 
-              fontFamily: "'Montserrat', sans-serif", 
-              fontSize: '1.2rem',
-              fontWeight: 700,
-              margin: 0
-            }}>
-              PARCEIRO OFICIAL KEEPIT + PRIMEIRA VENDA: 1.200+ USUÁRIOS 
-            </h3>
-          </div>
-
-          <div className="hero-ctas">
-            <Link href="/contato" className="btn btn-primary btn-large">
-              <span>Quero Transformação Similar</span> 
-              <ArrowRight size={20} />
-            </Link>
-            <Link href="#download-pdf" className="btn btn-secondary btn-large">
-              <span>Download PDF do Case</span> 
-              <Download size={20} />
-            </Link>
-          </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 2: Overview Card                                               */}
+      {/* Bloco 2: Overview Card (REMOVIDO POR J.A.R.V.I.S.)                     */}
+      {/* Bloco de sumário executivo quebrava a narrativa. Eliminado.            */}
       {/* ====================================================================== */}
-      <section className="section-solid reveal-up">
-        <div className="container">
-          {/* Reutilizando o estilo .decision-block de globals.css para o card */}
-          <div className="decision-block" style={{maxWidth: '900px', background: 'var(--color-card-bg)', textAlign: 'left'}}>
-            <ul style={{listStyle: 'none', padding: 0}}>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>CLIENTE:</strong> <span>AORKIA</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>SETOR:</strong> <span>Tecnologia - Backup SaaS & Disaster Recovery</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>DESAFIO:</strong> <span>Zero histórico em mercado dominado por gigantes</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>SOLUÇÃO:</strong> <span>Ancoragem de Autoridade + Urgência + Plataforma</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--color-border)', padding: '1rem 0', fontSize: '1.1rem'}}>
-                <strong>PRAZO:</strong> <span>45 dias (3 fases em modo acelerado)</span> 
-              </li>
-              <li style={{display: 'flex', justifyContent: 'space-between', padding: '1rem 0', fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--color-heading)'}}>
-                <strong>RESULTADO:</strong> <span style={{color: 'var(--color-primary)'}}>Parceiro Oficial Keepit + 1ª venda validada</span> 
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
 
       {/* ====================================================================== */}
-      {/* Bloco 3: O Contexto                                                  */}
+      {/* Bloco 3: O Contexto (AJUSTADO: Promovido e reescrito)                 */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container" style={{maxWidth: '800px', textAlign: 'left'}}>
-          <h2 className="section-title text-center">O CENÁRIO ANTES DA SYNAPSE</h2> 
-          <p>Este case é diferente. Porque não é sobre um cliente. É sobre <strong>aplicar o próprio método no próprio negócio sob pressão máxima</strong>.</p>
-          <p>A situação: startup entrando em mercado técnico de backup SaaS. Competição: Veeam, Acronis, Druva — gigantes globais. Budget de marketing: zero. Prazo para provar tração: 90 dias.</p>
-          <p>E a AORKIA? Zero clientes. Zero marca. Zero histórico. Zero tudo.</p>
-          <p>A única coisa que tínhamos: parceria estratégica com a Keepit, líder global em backup SaaS. Mas parceria sem tração é apenas um selo bonito sem valor comercial.</p>
           
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '3rem'}}>A APOSTA MÁXIMA: SKIN IN THE GAME TOTAL</h3> 
-          <p>Como fundador da Synapse B2B, eu poderia ter aplicado o método em clientes com menos risco. Mas decidi fazer diferente: <strong>criar a AORKIA e aplicar Engenharia de Receita no próprio negócio</strong>. [cite: 226-227] Não como consultor externo. Como <strong>fundador com pele no jogo</strong>.</p>
+          {/* COPY AJUSTADA: Foco no problema de negócio, remoção de excessos */}
+          <h2 className="section-title text-center">O PONTO DE PARTIDA: SKIN IN THE GAME TOTAL</h2> 
+          
+          <p>Este case é a prova definitiva do método. A AORKIA foi criada para aplicar Engenharia de Receita no próprio negócio, sob pressão máxima.</p>
+          
+          <p>O cenário: zero clientes, zero marca, zero budget e um mercado dominado por gigantes (Veeam, Acronis). A única vantagem: uma parceria estratégica com a Keepit (líder global). Mas parceria sem tração é irrelevante.</p>
 
+          <p>Não era consultoria. Era validação com pele no jogo. Se o método não funcionasse sob condições adversas, ele não funcionava.</p>
+          
           <blockquote style={{
             borderLeft: '4px solid var(--color-primary)', 
             paddingLeft: '2rem', 
@@ -172,99 +105,23 @@ export default function AorkiaCase() {
             fontStyle: 'italic',
             color: 'var(--color-heading)'
           }}>
-           "Se meu método não funcionar quando eu mesmo executo, sob condições adversas, então ele não funciona."
-          </blockquote>
-          <p>Resultado: Meta-case definitivo. Validação sob fogo real. Zero margem para teoria.</p>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* ====================================================================== */}
-      {/* Bloco 4: O Desafio Real                                              */}
-      {/* ====================================================================== */}
-      <section id="por-que-synapse" className="section-with-gradient-glow section-truths-revolutionary reveal-up">
-        <div className="container text-center">
-          <h2 className="section-title">O Desafio Real</h2>
-          
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', marginTop: '-1rem'}}>POR QUE ISSO ERA CRÍTICO</h3> 
-
-          {/* Reutilizando o grid de "3 Verdades" da index.js para as "3 Dores" */}
-          <div className="truths-grid-revolutionary">
-            
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <Target size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR OPERACIONAL</h3> 
-              [cite_start]<p>Zero histórico em mercado que exige prova de credibilidade imediata. [cite: 236, 238-239]</p>
-            </div>
-            
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <GitBranch size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR ESTRATÉGICA</h3> 
-              [cite_start]<p>Competição com gigantes que dominam o mercado há décadas. [cite: 237-239]</p>
-            </div>
-
-            <div className="truth-card-revolutionary">
-              <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}>
-                <LineChart size={28} />
-              </div>
-              <h3 className="truth-card-title">DOR FINANCEIRA</h3> 
-              [cite_start]<p>Zero budget para marketing pago, impossível competir em visibilidade. [cite: 237-238, 240]</p>
-            </div>
-          </div>
-
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '2rem', marginTop: '5rem'}}>
-            CONSEQUÊNCIAS DA INAÇÃO 
-          </h3>
-          <div style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Parceria com Keepit desperdiçada (selo sem tração = irrelevância).
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Impossibilidade de levantar capital (investidor precisa ver GTM funcionando).
-            </p>
-            <p style={{display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem'}}>
-              <ArrowRight size={20} color="var(--color-primary)" />
-              Validação do método Synapse não aconteceria — o impacto seria além da AORKIA.
-            </p>
-          </div>
-          
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '5rem'}}>
-            O DESAFIO INVISÍVEL 
-          </h3>
-          <p className="lead-text">Mas havia um problema mais sutil. O cliente não sentia urgência. "Meus dados estão no Google Workspace. O Google cuida disso, certo?" Errado.</p>
-
-
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem', marginTop: '3rem'}}>
-            A PERGUNTA QUE NÃO SAÍA DA CABEÇA 
-          </h3>
-          <blockquote style={{
-            borderLeft: '4px solid var(--color-primary)', 
-            paddingLeft: '2rem', 
-            margin: '2rem auto', 
-            fontSize: '1.2rem',
-            fontStyle: 'italic',
-            color: 'var(--color-heading)',
-            maxWidth: '700px',
-            textAlign: 'left'
-          }}>
             <p>"Como competir sem track record?"</p> 
             <p style={{marginTop: '1rem', fontStyle: 'normal'}}>E a resposta que apliquei: <strong>Não compete. Transfere credibilidade.</strong></p>
           </blockquote>
-
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 5: A Solução (Timeline)                                        */}
+      {/* Bloco 4: O Desafio Real (REMOVIDO POR J.A.R.V.I.S.)                    */}
+      {/* Redundante. O novo "Ponto de Partida" já cobre o desafio e as          */}
+      {/* consequências.                                                       */}
+      {/* ====================================================================== */}
+
+
+      {/* ====================================================================== */}
+      {/* Bloco 5: A Solução (Timeline) (MANTIDO)                              */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container">
@@ -361,7 +218,7 @@ export default function AorkiaCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/aorkia-home-urgencia.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/aorkia-home-urgencia.png"
                   alt="Homepage AORKIA com headline de urgência"
                   width={1000}
                   height={500}
@@ -371,7 +228,7 @@ export default function AorkiaCase() {
               </div>
               
               <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-              <p>O problema do backup: ele só importa quando é tarde demais. Ninguém acorda pensando "preciso de backup hoje". Nossa estratégia: fazer o cliente sentir a dor antes de sofrer a perda. A narrativa mudou de "recurso técnico" para "quanto custa sua empresa parada por 48 horas?". Financeiro. Tangível. [cite_start]Urgente. [cite: 278-279]</p>
+              <p>O problema do backup: ele só importa quando é tarde demais. Ninguém acorda pensando "preciso de backup hoje". Nossa estratégia: fazer o cliente sentir a dor antes de sofrer a perda. A narrativa mudou de "recurso técnico" para "quanto custa sua empresa parada por 48 horas?". Financeiro. Tangível. Urgente.</p>
             </div>
 
             {/* --- FASE 3 --- */}
@@ -388,7 +245,7 @@ export default function AorkiaCase() {
 
               <div className="case-image-wrapper" style={{margin: '2rem 0'}}>
                 <Image 
-                  src="/cases/aorkia-solucoes.png" // CORREÇÃO: Token de citação removido
+                  src="/cases/aorkia-solucoes.png"
                   alt="Página de soluções por vertical AORKIA"
                   width={1000}
                   height={500}
@@ -407,7 +264,7 @@ export default function AorkiaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 6: Resultados                                                  */}
+      {/* Bloco 6: Resultados (MANTIDO)                                        */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
         <div className="container text-center">
@@ -494,7 +351,7 @@ export default function AorkiaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 7: A Prova Definitiva (Adaptação do Testemunho)                */}
+      {/* Bloco 7: A Prova Definitiva (MANTIDO)                                */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container">
@@ -507,13 +364,13 @@ export default function AorkiaCase() {
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.8rem', fontFamily: "'Montserrat', sans-serif", color: 'var(--color-heading)', lineHeight: 1.4, marginBottom: '2.5rem'}}>
-                "Qualquer consultor pode vender método. [cite_start]Eu apliquei o meu no meu próprio negócio, sob condições extremas: zero histórico, mercado dominado por gigantes, 45 dias de prazo. [cite: 327-328] Resultado: Parceiro Oficial Keepit + primeira venda de 1.200+ usuários. Não é teoria. É Engenharia de Receita validada com pele no jogo."
+                "Qualquer consultor pode vender método. Eu apliquei o meu no meu próprio negócio, sob condições extremas: zero histórico, mercado dominado por gigantes, 45 dias de prazo. Resultado: Parceiro Oficial Keepit + primeira venda de 1.200+ usuários. Não é teoria. É Engenharia de Receita validada com pele no jogo."
               </p>
             </blockquote>
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                src="/cases/julio_figueiredo.png" // CORREÇÃO: Token de citação removido
+                src="/cases/julio_figueiredo.png"
                 alt="Júlio Figueiredo"
                 width={80}
                 height={80}
@@ -548,7 +405,7 @@ export default function AorkiaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Bloco 8: Learnings Estratégicos                                      */}
+      {/* Bloco 8: Learnings Estratégicos (MANTIDO)                             */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
         <div className="container">
@@ -564,7 +421,7 @@ export default function AorkiaCase() {
               </div>
               <h3 className="truth-card-title">INSIGHT 1: HISTÓRICO NÃO É PRÉ-REQUISITO</h3> 
               <p>AORKIA tinha zero clientes, zero marca. Mas tinha parceria com líder global.</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Quando você não tem credibilidade própria, transfira credibilidade de quem tem. [cite_start]"Se o líder global escolheu a AORKIA, você pode confiar." [cite: 347-349]</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Quando você não tem credibilidade própria, transfira credibilidade de quem tem. "Se o líder global escolheu a AORKIA, você pode confiar."</p>
             </div>
             
             <div className="truth-card-revolutionary text-left">
@@ -573,7 +430,7 @@ export default function AorkiaCase() {
               </div>
               <h3 className="truth-card-title">INSIGHT 2: ATIVE A DOR ANTES DE MOSTRAR SOLUÇÃO</h3> 
               <p>Backup é produto invisível até ser crítico. Cliente não acorda pensando "preciso de backup".</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Estratégia:</strong> Fazer sentir a dor ANTES da perda. [cite_start]"Quanto custa sua empresa parada 48h esperando recuperação de dados?". [cite: 357-359] Urgência não existe naturalmente. [cite_start]É criada. [cite: 361-363]</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Estratégia:</strong> Fazer sentir a dor ANTES da perda. "Quanto custa sua empresa parada 48h esperando recuperação de dados?". Urgência não existe naturalmente. É criada.</p>
             </div>
 
             <div className="truth-card-revolutionary text-left">
@@ -581,15 +438,15 @@ export default function AorkiaCase() {
                 <Gem size={28} />
               </div>
               <h3 className="truth-card-title">INSIGHT 3: MÉTODO SÓ É VÁLIDO COM SKIN IN THE GAME</h3> 
-              <p>Este case não foi consultoria. Foi laboratório pessoal. [cite_start]Zero histórico + mercado competitivo + 45 dias = condições extremas. [cite: 370-371] Funcionou.</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Metodologia não testada no próprio negócio do criador é teoria. [cite_start]Este case prova que funciona quando há pele no jogo total. [cite: 375-377]</p>
+              <p>Este case não foi consultoria. Foi laboratório pessoal. Zero histórico + mercado competitivo + 45 dias = condições extremas. Funcionou.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Metodologia não testada no próprio negócio do criador é teoria. Este case prova que funciona quando há pele no jogo total.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ====================================================================== */}
-      {/* Bloco 9: CTA Final (Copiado da index.js e adaptado)                  */}
+      {/* Bloco 9: CTA Final (MANTIDO)                                         */}
       {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
@@ -611,7 +468,7 @@ export default function AorkiaCase() {
             </Link>
           </div>
           <p className="cta-support-text" style={{opacity: 0.9}}>
-            [cite_start]Primeira conversa: 21 minutos para estruturar tração acelerada no seu negócio. [cite: 388-389]
+            Primeira conversa: 21 minutos para estruturar tração acelerada no seu negócio.
             Zero pressão. Apenas clareza estratégica. 
           </p>
 
