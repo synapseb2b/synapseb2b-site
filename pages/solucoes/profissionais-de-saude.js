@@ -3,7 +3,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { ArrowRight, Calendar, DollarSign, Clock, TrendingUp, CheckCircle2, AlertCircle } from 'lucide-react';
+// --- ÍCONE ADICIONADO ---
+import { ArrowRight, Calendar, DollarSign, Clock, TrendingUp, CheckCircle2, AlertCircle, Award } from 'lucide-react';
 
 export default function ProfissionaisDeSaudePage() {
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function ProfissionaisDeSaudePage() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean")                      */}
+      {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean")                     */}
       {/* ====================================================================== */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
@@ -41,6 +42,12 @@ export default function ProfissionaisDeSaudePage() {
         </div>
         <div className="container hero-content text-center page-hero-padding">
           <div className="reveal-up">
+            
+            {/* --- ÍCONE ADICIONADO --- */}
+            <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+              <Award size={48} style={{color: 'var(--color-primary)'}} />
+            </div>
+
             <h1 className="section-title">Você é Excelente no Que Faz.<br/>Mas o Negócio Não Cresce.</h1>
             <p className="hero-subheadline wider-on-desktop">
               Agenda cheia não significa caixa saudável. Vamos transformar sua expertise clínica em receita previsível.

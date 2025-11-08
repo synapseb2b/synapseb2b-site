@@ -11,7 +11,7 @@ import {
   Target, // Dor Operacional
   GitBranch, // Dor Estratégica
   LineChart, // Dor Financeira
-  ShieldCheck, // Insight 1 (Credibilidade)
+  ShieldCheck, // Insight 1 (Credibilidade) E HERO
   Zap, // Insight 2 (Urgência)
   Gem // Insight 3 (Validação/Skin in the game)
 } from 'lucide-react';
@@ -39,13 +39,7 @@ export default function AorkiaCase() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo customizado para o Hero deste case
-  const heroStyle = {
-    backgroundImage: `url(/cases/aorkia-home.png)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-  };
+  // REMOVIDO: const heroStyle
 
   return (
     <>
@@ -57,16 +51,27 @@ export default function AorkiaCase() {
       {/* ====================================================================== */}
       {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean" Soluções)             */}
       {/* ====================================================================== */}
-      <section className="hero-section" style={heroStyle}>
-        <div className="hero-overlay" style={{backgroundColor: 'rgba(0,0,0,0.8)'}}></div>
+      <section className="hero-section short-hero"> {/* Classe e estilo atualizados */}
+        
+        {/* --- VÍDEO DE FUNDO ADICIONADO --- */}
+        <div className="hero-video-background">
+          <video autoPlay muted loop playsInline className="hero-video">
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+        </div>
+
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          {/* LOGO, DESTAQUE E CTAS REMOVIDOS PARA MAIOR LIMPEZA */}
+          {/* --- ÍCONE ADICIONADO --- */}
+          <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+            <ShieldCheck size={48} style={{color: 'var(--color-primary)'}} />
+          </div>
 
-          <h1 className="hero-headline" style={{fontSize: '3.5rem'}}>
+          <h1 className="section-title"> {/* Classe atualizada */}
             DE ZERO A PARCEIRO OFICIAL EM 45 DIAS 
           </h1>
-          <p className="hero-subheadline wider-on-desktop">
+          <p className="hero-subheadline"> {/* Classe atualizada */}
             Como uma startup sem histórico entrou em mercado técnico dominado
             por gigantes e fechou 1.200+ usuários na primeira venda. 
           </p>

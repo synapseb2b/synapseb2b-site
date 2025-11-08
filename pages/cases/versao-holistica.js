@@ -12,7 +12,7 @@ import {
   GitBranch, // Usado para Dor Estratégica
   LineChart, // Usado para Dor Financeira
   Gem, // Usado para Insight 1
-  Layers, // Usado para Insight 2
+  Layers, // Usado para Insight 2 E HERO
   BrainCircuit // Usado para Insight 3
 } from 'lucide-react';
 
@@ -39,13 +39,7 @@ export default function VersaoHolisticaCase() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo customizado para o Hero deste case
-  const heroStyle = {
-    backgroundImage: `url(/cases/versaoholistica-home.png)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-  };
+  // REMOVIDO: const heroStyle
 
   return (
     <>
@@ -57,16 +51,27 @@ export default function VersaoHolisticaCase() {
       {/* ====================================================================== */}
       {/* Bloco 1: Hero Section (AJUSTADO: Padrão "clean" Soluções)             */}
       {/* ====================================================================== */}
-      <section className="hero-section" style={heroStyle}>
-        <div className="hero-overlay" style={{backgroundColor: 'rgba(0,0,0,0.8)'}}></div>
+      <section className="hero-section short-hero"> {/* Classe e estilo atualizados */}
+        
+        {/* --- VÍDEO DE FUNDO ADICIONADO --- */}
+        <div className="hero-video-background">
+          <video autoPlay muted loop playsInline className="hero-video">
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+        </div>
+
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          {/* LOGO, DESTAQUE E CTAS REMOVIDOS PARA MAIOR LIMPEZA */}
+          {/* --- ÍCONE ADICIONADO --- */}
+          <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+            <Layers size={48} style={{color: 'var(--color-primary)'}} />
+          </div>
 
-          <h1 className="hero-headline" style={{fontSize: '3.5rem'}}>
+          <h1 className="section-title"> {/* Classe atualizada */}
             DE NARRATIVA CONFUSA PARA NOVA CATEGORIA DE MERCADO 
           </h1>
-          <p className="hero-subheadline wider-on-desktop">
+          <p className="hero-subheadline"> {/* Classe atualizada */}
             Como uma healthtech com metodologia validada transformou
             complexidade incompreensível em clareza que captou R$ 500k.
           </p>
