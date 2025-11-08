@@ -1,4 +1,4 @@
-// components/Footer.js (Refatorado por J.A.R.V.I.S.)
+// components/Footer.js (Refatorado por J.A.R.V.I.S. com correção de rota)
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -60,11 +60,10 @@ export default function Footer() {
                 <li><Link href="/solucoes/cortex-b2b">Cortex B2B™</Link></li>
                 <li><Link href="/solucoes/match-maker">Match-Maker B2B</Link></li>
                 <li><Link href="/solucoes/apps">Apps Estratégicos</Link></li>
-                <li><Link href="/profissionais-de-saude">Para Profissionais de Saúde</Link></li>
+                {/* CORREÇÃO DE ROTA */}
+                <li><Link href="/solucoes/profissionais-de-saude">Para Profissionais de Saúde</Link></li>
               </ul>
             </div>
-
-            {/* Coluna 3: Soluções (REMOVIDA) */}
             
           </div>
           

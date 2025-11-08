@@ -1,5 +1,5 @@
 // components/Navbar.js (VERSÃO FINAL COM MENUS DROPDOWN INTELIGENTES)
-// Refatorado por J.A.R.V.I.S.
+// Refatorado por J.A.R.V.I.S. (com correção de rota)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -45,8 +45,8 @@ export default function Navbar() {
     setIsCasesOpen(false);
   };
 
-  // Lógica de estado ativo para os links pais
-  const isSolucoesActive = router.pathname.startsWith('/solucoes') || router.pathname === '/profissionais-de-saude';
+  // Lógica de estado ativo para os links pais (agora simplificada)
+  const isSolucoesActive = router.pathname.startsWith('/solucoes');
   const isCasesActive = router.pathname.startsWith('/cases');
 
   return (
@@ -70,8 +70,6 @@ export default function Navbar() {
                 Cases <ChevronDown size={16} />
               </div>
               <div className="dropdown-menu">
-                <Link href="/cases" className="dropdown-link">Ver Todos os Cases</Link>
-                <div className="dropdown-divider"></div>
                 <Link href="/cases/versao-holistica" className="dropdown-link">Versão Holística</Link>
                 <Link href="/cases/exclusiva-engenharias" className="dropdown-link">Exclusiva Engenharias</Link>
                 <Link href="/cases/aorkia" className="dropdown-link">AORKIA</Link>
@@ -88,9 +86,9 @@ export default function Navbar() {
                 <Link href="/solucoes/cortex-b2b" className="dropdown-link">Cortex B2B™</Link>
                 <Link href="/solucoes/match-maker" className="dropdown-link">Match-Maker B2B</Link>
                 <Link href="/solucoes/apps" className="dropdown-link">Apps Estratégicos</Link>
-                {/* AJUSTE ESTRATÉGICO: Página vertical adicionada */}
                 <div className="dropdown-divider"></div>
-                <Link href="/profissionais-de-saude" className="dropdown-link">Para Profissionais de Saúde</Link>
+                {/* CORREÇÃO DE ROTA */}
+                <Link href="/solucoes/profissionais-de-saude" className="dropdown-link">Para Profissionais de Saúde</Link>
               </div>
             </li>
             
@@ -131,7 +129,6 @@ export default function Navbar() {
               <ChevronDown size={24} />
             </button>
             <ul className={`mobile-sub-menu ${isCasesOpen ? 'open' : ''}`}>
-              <li><Link href="/cases" onClick={handleLinkClick}>- Ver Todos os Cases</Link></li>
               <li><Link href="/cases/versao-holistica" onClick={handleLinkClick}>- Versão Holística</Link></li>
               <li><Link href="/cases/exclusiva-engenharias" onClick={handleLinkClick}>- Exclusiva Engenharias</Link></li>
               <li><Link href="/cases/aorkia" onClick={handleLinkClick}>- AORKIA</Link></li>
@@ -149,8 +146,8 @@ export default function Navbar() {
               <li><Link href="/solucoes/cortex-b2b" onClick={handleLinkClick}>- Cortex B2B™</Link></li>
               <li><Link href="/solucoes/match-maker" onClick={handleLinkClick}>- Match-Maker B2B</Link></li>
               <li><Link href="/solucoes/apps" onClick={handleLinkClick}>- Apps Estratégicos</Link></li>
-              {/* AJUSTE ESTRATÉGICO: Página vertical adicionada */}
-              <li><Link href="/profissionais-de-saude" onClick={handleLinkClick}>- Para Profissionais de Saúde</Link></li>
+              {/* CORREÇÃO DE ROTA */}
+              <li><Link href="/solucoes/profissionais-de-saude" onClick={handleLinkClick}>- Para Profissionais de Saúde</Link></li>
             </ul>
           </li>
 
@@ -164,7 +161,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* --- CSS ADICIONAL PARA DROPDOWNS (Mobile Otimizado) --- */}
+      {/* --- CSS ADICIONAL PARA DROPDOWNS (CORREÇÃO ROBUSTA) --- */}
       <style jsx>{`
         /* --- Desktop Dropdown --- */
         .nav-menu .nav-link {
@@ -207,21 +204,30 @@ export default function Navbar() {
           transform: translateY(0);
         }
         
-        /* --- ESTA É A REGRA CRÍTICA PARA A CORREÇÃO --- */
-        .dropdown-link {
-          display: block; /* Força empilhamento vertical */
-          padding: 0.75rem 1rem; /* Adiciona espaçamento (organização) */
-          color: var(--color-text);
-          text-decoration: none;
+        /* --- CORREÇÃO ROBUSTA COM :global() --- */
+        /* Força o estilo na tag 'a' renderizada pelo Next/Link */
+        .dropdown-menu :global(a.dropdown-link) {
+          display: block; /* Garante o empilhamento vertical (layout) */
+          padding: 0.75rem 1rem; /* Garante o espaçamento (organização) */
+          color: var(--color-text); /* Garante a cor (remove o roxo) */
+          text-decoration: none; /* Garante a remoção do sublinhado */
           border-radius: 8px;
           transition: background-color 0.3s, color 0.3s;
-          white-space: nowrap; /* Impede quebra de linha */
+          white-space: nowrap;
           font-weight: 500;
         }
-        .dropdown-link:hover {
+        
+        /* Força a cor no estado :visited */
+        .dropdown-menu :global(a.dropdown-link:visited) {
+          color: var(--color-text);
+        }
+
+        .dropdown-menu :global(a.dropdown-link:hover) {
           background-color: var(--color-primary);
           color: var(--color-heading);
         }
+        /* --- FIM DA CORREÇÃO ROBUSTA --- */
+        
         .dropdown-divider {
           height: 1px;
           background-color: var(--color-border);

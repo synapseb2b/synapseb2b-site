@@ -345,9 +345,9 @@ export default function Home() {
               <p className="pillar-card-description">Plataformas web que educam o mercado, qualificam leads e convertem autoridade em receita.</p>
             </Link>
 
-            {/* --- CARD ADICIONADO --- */}
+            {/* --- CARD ADICIONADO (COM ROTA CORRIGIDA) --- */}
             {/* Solução 3: Profissionais de Saúde */}
-            <Link href="/profissionais-de-saude" className="solution-card-revolutionary">
+            <Link href="/solucoes/profissionais-de-saude" className="solution-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Award size={28} />
               </div>
