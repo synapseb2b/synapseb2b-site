@@ -330,7 +330,7 @@ export default function Home() {
             {/* Solução 1: Cortex B2B */}
             <Link href="/solucoes/cortex-b2b" className="solution-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <BrainCircuit size={28} />
+                <Brain size={28} />
               </div>
               <h3 className="pillar-card-title">Cortex B2B™</h3>
               <p className="pillar-card-description">Sistema de diagnóstico e arquitetura estratégica que decodifica negócios sob lentes de Engenharia de Receita, Neurociência e Orquestração de Escala.</p>
