@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, ExternalLink, CheckCircle2, Target, TrendingUp, Zap } from 'lucide-react';
+import { ArrowRight, ExternalLink, CheckCircle2, Layers, Target, TrendingUp, Zap } from 'lucide-react';
 
 export default function PlataformasDigitais() {
   useEffect(() => {
@@ -100,7 +100,7 @@ export default function PlataformasDigitais() {
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
-                  <Target size={28} />
+                  <Layers size={28} />
                 </div>
                 <h3 className="pillar-card-title">Arquitetura de Conversão</h3>
                 <p className="pillar-card-description">Páginas estruturadas por jornada do comprador (awareness → consideration → decision). Cada seção responde uma objeção específica.</p>
