@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link'; // <-- CORREÇÃO: Esta linha foi adicionada
+import Link from 'next/link';
 import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react';
 
 /* O componente RotatingText não é usado nesta versão da copy */
@@ -46,7 +46,7 @@ export default function Home() {
       </Head>
 
 {/* ====================================================================== */}
-      {/* Seção 1: Hero Section                                                */}
+      {/* Seção 1: Hero Section (H1 CORRIGIDO)                               */}
       {/* ====================================================================== */}
       <section className="hero-section">
         <div className="hero-video-background">
@@ -57,11 +57,11 @@ export default function Home() {
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          {/* HEADLINE PRÁTICA */}
-          <h1 className="hero-headline" style={{ fontSize: '3.2rem', lineHeight: '1.2' }}>
-            ENGENHARIA DE RECEITA PARA EMPRESAS B2B
+          {/* HEADLINE CORRIGIDA (Sem caixa alta, tamanho definido no style jsx) */}
+          <h1 className="hero-headline">
+            Engenharia de Receita para Empresas B2B
             <br/>
-            QUE PRECISAM DE CRESCIMENTO PREVISÍVEL
+            que Precisam de Crescimento Previsível
           </h1>
           
           {/* SUBHEADLINE PRÁTICA */}
@@ -198,7 +198,7 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita                           */}
+      {/* Seção 4: Soluções de Engenharia de Receita (PREÇOS ATUALIZADOS)    */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
@@ -220,7 +220,8 @@ export default function Home() {
                   <strong>Diagnóstico Cortex B2B™</strong>
                   <span>Nosso sistema proprietário de inteligência estratégica. Uma IA especializada que condensa 20+ anos de experiência B2B e os maiores frameworks globais de GTM em um diagnóstico 360° do seu negócio.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operação, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 2.100 (pagamento único).</span>
+                  {/* PREÇO ATUALIZADO (R$ 999) */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 999 (pagamento único).</span>
                   <Link href="/solucoes/cortex-b2b" passHref>
                     <a className="solution-cta">Conhecer o Cortex B2B™ <ArrowRight size={16}/></a>
                   </Link>
@@ -230,7 +231,8 @@ export default function Home() {
                   <strong>Sprint de Validação Comercial</strong>
                   <span>Valide a demanda real antes de construir a tese. Testamos seu produto, ICP e pitch de vendas em 30 dias (aplicando o Cortex B2B™) para que você decida escalar baseado em dados de campo, não em intuição.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Produto novo, pivô de modelo, expansão para novo mercado.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 1-3k (upfront) + % sobre receita nova (mínimo 12 meses).</span>
+                  {/* PREÇO ATUALIZADO (R$ 2-5k) */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 2-5k (upfront) + % sobre receita nova (mínimo 12 meses).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Agendar diagnóstico <ArrowRight size={16}/></a>
                   </Link>
@@ -430,14 +432,14 @@ export default function Home() {
 
       {/* --- ESTILOS JSX - Usados para Seção 1 (Headline), Seção 4 (2 Colunas) e Trust Bar --- */}
       <style jsx>{`
-        /* --- CORREÇÃO 1: Redução da Fonte da Headline --- */
+        /* --- CORREÇÃO 1 & 2: Tamanho da Fonte da Headline (2.8rem) --- */
         .hero-headline {
-          font-size: 3.2rem !important; /* Sobrescreve o 4rem do globals.css */
-          line-height: 1.2; /* Ajuste de espaçamento de linha */
+          font-size: 2.8rem !important; /* <--- MUDEI ESTE VALOR */
+          line-height: 1.25; /* Ajuste de espaçamento de linha */
         }
         @media (max-width: 768px) {
           .hero-headline {
-            font-size: 2.2rem !important; /* Mantém o tamanho mobile */
+            font-size: 2.0rem !important; /* Reduzido proporcionalmente */
           }
         }
         
@@ -466,7 +468,6 @@ export default function Home() {
           opacity: 0.6;
           filter: grayscale(100%) contrast(50%);
         }
-        /* Ajuste para garantir que as imagens da trust-bar sejam responsivas */
         .trust-bar-logos img {
           max-width: 100px;
           height: auto;
@@ -492,16 +493,16 @@ export default function Home() {
           font-size: 1.75rem;
           color: var(--color-primary);
           margin-bottom: 1rem;
-          text-align: center; /* CORREÇÃO 3: Alinhado ao centro */
+          text-align: center;
         }
         
         .solution-column-desc {
           font-size: 1rem;
           line-height: 1.7;
           color: var(--color-text);
-          margin-bottom: 2.5rem; /* Aumentado */
+          margin-bottom: 2.5rem;
           min-height: 3.4em;
-          text-align: center; /* CORREÇÃO 3: Alinhado ao centro */
+          text-align: center;
         }
         
         .solution-column-list {
@@ -510,20 +511,18 @@ export default function Home() {
           margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 2.5rem; /* Aumentado */
+          gap: 2.5rem;
         }
         
-        /* CORREÇÃO 3: Alinhamento central para o <li> */
         .solution-column-list li {
           display: flex;
           flex-direction: column;
-          align-items: center; /* Centraliza tudo */
-          text-align: center; /* Centraliza o texto */
+          align-items: center;
+          text-align: center;
           gap: 0.5rem;
           position: relative;
         }
 
-        /* CORREÇÃO 3: Estilo para o ícone */
         .solution-item-icon {
           color: var(--color-primary);
           margin-bottom: 0.75rem;
@@ -568,14 +567,13 @@ export default function Home() {
           color: var(--color-text) !important;
         }
         
-        /* CORREÇÃO 4: Estilo do CTA (agora aplicado ao <a>) */
         .solution-cta {
           display: inline-flex;
           align-items: center;
-          justify-content: center; /* Centraliza */
+          justify-content: center;
           gap: 0.5rem;
-          color: var(--color-accent) !important; /* !important para garantir */
-          text-decoration: none !important; /* Remove sublinhado */
+          color: var(--color-accent) !important;
+          text-decoration: none !important;
           font-weight: 600;
           margin-top: 0.75rem;
           transition: gap 0.3s ease, color 0.3s ease;
