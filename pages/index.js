@@ -4,12 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react';
 
-/* O componente RotatingText não é mais usado pela nova copy estática. 
-  Vamos manter o código aqui caso queira reativar, mas ele não será renderizado.
-*/
-const RotatingText = () => {
-  // ... (código original do componente)
-};
+/* O componente RotatingText não é usado nesta versão da copy */
+const RotatingText = () => {};
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,8 +56,8 @@ export default function Home() {
           <div className="hero-overlay"></div>
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
-          {/* Headline Estática (Substituindo o RotatingText) */}
-          <h1 className="hero-headline">
+          {/* CORREÇÃO 1: Headline com fonte menor (via style jsx) */}
+          <h1 className="hero-headline" style={{ fontSize: '3.2rem' }}> {/* Tamanho reduzido inline */}
             Seu produto é tecnicamente superior. <br/>Sua receita deveria ser também.
           </h1>
           
@@ -79,15 +75,16 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança (Trust Bar) */}
+          {/* CORREÇÃO 2: Barra de Confiança (Trust Bar) com caminhos de logo CORRIGIDOS */}
           <div className="trust-bar reveal-up">
             <p>Validado em ecossistemas de alta complexidade como:</p>
             <div className="trust-bar-logos">
-              <Image src="/logos/logo-google.png" alt="Google" width={100} height={32} />
-              <Image src="/logos/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
-              <Image src="/logos/logo-dell.png" alt="Dell" width={100} height={32} />
-              <Image src="/logos/logo-totvs.png" alt="TOTVS" width={100} height={32} />
-              <Image src="/logos/logo-keepit.png" alt="Keepit" width={100} height={32} />
+              {/* Caminhos atualizados com base no screenshot do GitHub (public/logo/) */}
+              <Image src="/logo/logo-google.png" alt="Google" width={100} height={32} />
+              <Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
+              <Image src="/logo/logo-dell.png" alt="Dell" width={100} height={32} />
+              <Image src="/logo/logo-totvs.png" alt="TOTVS" width={100} height={32} />
+              <Image src="/logo/logo-keepit.png" alt="Keepit" width={100} height={32} />
             </div>
           </div>
         </div>
@@ -198,7 +195,7 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita (2 Colunas)               */}
+      {/* Seção 4: Soluções de Engenharia de Receita (CORRIGIDA)               */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
@@ -209,68 +206,93 @@ export default function Home() {
 
           <div className="solutions-2col-grid">
             
-            {/* Coluna 1: Inteligência & Estratégia */}
+            {/* Coluna 1: Inteligência & Estratégia (CORRIGIDA) */}
             <div className="solution-column-card">
               <h3 className="solution-column-title">FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA</h3>
               <p className="solution-column-desc">Onde desenhamos a arquitetura do seu motor de receita.</p>
+              
+              {/* CORREÇÃO 3 e 4: Lista agora centralizada, com ícones e CTAs estilizados */}
               <ul className="solution-column-list">
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Diagnóstico Cortex B2B™</strong>
                   <span>Nosso sistema proprietário de inteligência estratégica. Uma IA especializada que condensa 20+ anos de experiência B2B e os maiores frameworks globais de GTM em um diagnóstico 360° do seu negócio.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operação, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 2.100 (pagamento único).</span>
-                  <Link href="/solucoes/cortex-b2b" className="solution-cta">Conhecer o Cortex B2B™ <ArrowRight size={16}/></Link>
+                  <Link href="/solucoes/cortex-b2b" passHref>
+                    <a className="solution-cta">Conhecer o Cortex B2B™ <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Sprint de Validação Comercial</strong>
                   <span>Valide a demanda real antes de construir a tese. Testamos seu produto, ICP e pitch de vendas em 30 dias (aplicando o Cortex B2B™) para que você decida escalar baseado em dados de campo, não em intuição.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Produto novo, pivô de modelo, expansão para novo mercado.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 1-3k (upfront) + % sobre receita nova (mínimo 12 meses).</span>
-                  <Link href="/contato" className="solution-cta">Agendar diagnóstico <ArrowRight size={16}/></Link>
+                  <Link href="/contato" passHref>
+                    <a className="solution-cta">Agendar diagnóstico <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Go-To-Market Completo</strong>
                   <span>A arquitetura completa do seu motor comercial do zero: posicionamento, ICP, proposta de valor, canais, pricing e retenção. Usamos o meta-framework Cortex B2B™ para entregar o blueprint estratégico.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Crescimento errático, CAC alto, ciclo longo, time vendendo features.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> Pequeno investimento para compromisso mútuo + % sobre receita nova (mínimo 12 meses).</span>
-                  <Link href="/contato" className="solution-cta">Ver metodologia completa <ArrowRight size={16}/></Link>
+                  <Link href="/contato" passHref>
+                    <a className="solution-cta">Ver metodologia completa <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Diretoria de Receita como Serviço</strong>
                   <span>Liderança C-level fracionada operando sua diretoria comercial. Injetamos estratégia sênior, executamos na linha de frente por 90-180 dias e validamos o playbook operando. Você ganha 5x mais resultado pagando uma fração do custo de um VP Comercial CLT.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> CEO sobrecarregado, time sem direção, receita travada há 3+ meses.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 5-7k/mês fixo + % sobre receita nova (mínimo 12 meses).</span>
-                  <Link href="/contato" className="solution-cta">Entender modelo de Parceria <ArrowRight size={16}/></Link>
+                  <Link href="/contato" passHref>
+                    <a className="solution-cta">Entender modelo de Parceria <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Advisory Board Estratégico</strong>
                   <span>Conselho sob demanda para decisões de alto impacto (pivôs, M&A, captação). Damos acesso à senioridade e visão externa para validar hipóteses e reduzir o risco de decisões críticas, sem contratação permanente.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Decisão estratégica de alto impacto, necessidade de sparring qualificado.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (modelo de retainer mensal ou projeto).</span>
-                  <Link href="/contato" className="solution-cta">Avaliar fit de Advisory <ArrowRight size={16}/></Link>
+                  <Link href="/contato" passHref>
+                    <a className="solution-cta">Avaliar fit de Advisory <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Coluna 2: Construção de Ativos Digitais */}
+            {/* Coluna 2: Construção de Ativos Digitais (CORRIGIDA) */}
             <div className="solution-column-card">
               <h3 className="solution-column-title">FRENTE 2: CONSTRUÇÃO DE ATIVOS DIGITAIS</h3>
               <p className="solution-column-desc">Onde transformamos estratégia em ferramentas que geram receita 24/7.</p>
+              
+              {/* CORREÇÃO 3 e 4: Lista agora centralizada, com ícones e CTAs estilizados */}
               <ul className="solution-column-list">
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Plataformas de Aceleração de Receita</strong>
                   <span>Não construímos "sites institucionais". Construímos plataformas digitais estratégicas projetadas como motores de receita: 30% credibilidade + 70% engenharia de conversão. Seu ativo digital educa o mercado e qualifica leads 24/7.</span>
                   <span className="solution-examples"><strong>Exemplos tangíveis:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
                   <span className="solution-examples"><strong>O que inclui:</strong> Arquitetura de conversão, copywriting estratégico (SEO e GEO), landing pages por ICP, integração com CRMs e bots.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 7-35k (projeto) ou sob consulta.</span>
-                  <Link href="/solucoes/plataformas-digitais" className="solution-cta">Ver casos de uso <ArrowRight size={16}/></Link>
+                  <Link href="/solucoes/plataformas-digitais" passHref>
+                    <a className="solution-cta">Ver casos de uso <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
                 <li>
+                  <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Ferramentas Estratégicas de Conversão (Apps)</strong>
                   <span>Construímos ativos que provam seu ROI antes da venda: calculadoras, simuladores, diagnósticos automatizados, bots (WhatsApp) e plataformas de match-making. O cliente "sente" o valor, não apenas ouve sobre ele.</span>
                   <span className="solution-examples"><strong>Exemplos tangíveis:</strong> Synapse B2B Match Maker, Simulador de Orçamento Exclusiva Engenharias</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 5-25k (projeto) ou sob consulta.</span>
-                  <Link href="/solucoes/apps" className="solution-cta">Explorar Ferramentas <ArrowRight size={16}/></Link>
+                  <Link href="/solucoes/apps" passHref>
+                    <a className="solution-cta">Explorar Ferramentas <ArrowRight size={16}/></a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -294,7 +316,7 @@ export default function Home() {
             {/* Case 1: Versão Holística */}
             <div className="case-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <Award size={28} /> {/* Ícone da Seção 7 original */}
+                <Award size={28} />
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Versão Holística</h3>
@@ -312,7 +334,7 @@ export default function Home() {
             {/* Case 2: Exclusiva Engenharias */}
             <div className="case-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <GitBranch size={28} /> {/* Ícone do Pilar 2 */}
+                <GitBranch size={28} />
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
@@ -330,7 +352,7 @@ export default function Home() {
             {/* Case 3: AORKIA */}
             <div className="case-card-revolutionary">
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <ShieldCheck size={28} /> {/* Ícone do Pilar 3 */}
+                <ShieldCheck size={28} />
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">AORKIA</h3>
@@ -405,8 +427,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- ESTILOS JSX - Usados para Seção 4 (2 Colunas) e Trust Bar --- */}
+      {/* --- ESTILOS JSX - Usados para Seção 1 (Headline), Seção 4 (2 Colunas) e Trust Bar --- */}
       <style jsx>{`
+        /* --- CORREÇÃO 1: Redução da Fonte da Headline --- */
+        .hero-headline {
+          font-size: 3.2rem !important; /* Sobrescreve o 4rem do globals.css */
+          line-height: 1.2; /* Ajuste de espaçamento de linha */
+        }
+        @media (max-width: 768px) {
+          .hero-headline {
+            font-size: 2.2rem !important; /* Mantém o tamanho mobile */
+          }
+        }
+        
         /* --- Estilos da Trust Bar (Seção 1) --- */
         .trust-bar {
           margin-top: 4rem;
@@ -432,6 +465,11 @@ export default function Home() {
           opacity: 0.6;
           filter: grayscale(100%) contrast(50%);
         }
+        /* Ajuste para garantir que as imagens da trust-bar sejam responsivas */
+        .trust-bar-logos img {
+          max-width: 100px;
+          height: auto;
+        }
 
         /* --- Estilos da Seção 4 (2 Colunas) --- */
         .solutions-2col-grid {
@@ -453,14 +491,16 @@ export default function Home() {
           font-size: 1.75rem;
           color: var(--color-primary);
           margin-bottom: 1rem;
+          text-align: center; /* CORREÇÃO 3: Alinhado ao centro */
         }
         
         .solution-column-desc {
           font-size: 1rem;
           line-height: 1.7;
           color: var(--color-text);
-          margin-bottom: 2rem;
-          min-height: 3.4em; /* 2 linhas */
+          margin-bottom: 2.5rem; /* Aumentado */
+          min-height: 3.4em;
+          text-align: center; /* CORREÇÃO 3: Alinhado ao centro */
         }
         
         .solution-column-list {
@@ -469,24 +509,23 @@ export default function Home() {
           margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 2rem; /* Aumentado para mais respiro */
+          gap: 2.5rem; /* Aumentado */
         }
         
+        /* CORREÇÃO 3: Alinhamento central para o <li> */
         .solution-column-list li {
           display: flex;
           flex-direction: column;
+          align-items: center; /* Centraliza tudo */
+          text-align: center; /* Centraliza o texto */
           gap: 0.5rem;
-          padding-left: 1.75rem;
           position: relative;
         }
 
-        .solution-column-list li::before {
-          content: '✔';
-          position: absolute;
-          left: 0;
-          top: 4px;
+        /* CORREÇÃO 3: Estilo para o ícone */
+        .solution-item-icon {
           color: var(--color-primary);
-          font-weight: bold;
+          margin-bottom: 0.75rem;
         }
         
         .solution-column-list li strong {
@@ -528,19 +567,21 @@ export default function Home() {
           color: var(--color-text) !important;
         }
         
+        /* CORREÇÃO 4: Estilo do CTA (agora aplicado ao <a>) */
         .solution-cta {
           display: inline-flex;
           align-items: center;
+          justify-content: center; /* Centraliza */
           gap: 0.5rem;
-          color: var(--color-accent);
-          text-decoration: none;
+          color: var(--color-accent) !important; /* !important para garantir */
+          text-decoration: none !important; /* Remove sublinhado */
           font-weight: 600;
           margin-top: 0.75rem;
           transition: gap 0.3s ease, color 0.3s ease;
         }
         .solution-cta:hover {
           gap: 1rem;
-          color: var(--color-heading);
+          color: var(--color-heading) !important;
         }
 
         @media (max-width: 900px) {
