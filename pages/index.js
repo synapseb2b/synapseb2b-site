@@ -81,7 +81,7 @@ export default function Home() {
 
           {/* Barra de Confiança (Trust Bar) */}
           <div className="trust-bar reveal-up">
-            <p>Validado em ecossistemas de alta complexidade como:</p>
+            <p>Forjado em ecossistemas de alta complexidade como:</p>
             <div className="trust-bar-logos">
               <Image src="/logo/logo-google.png" alt="Google" width={100} height={32} />
               <Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
