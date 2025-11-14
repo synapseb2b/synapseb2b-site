@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/link'; // Importação do Link (corrigindo o build)
 import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react';
 
 /* O componente RotatingText não é usado nesta versão da copy */
@@ -42,11 +42,11 @@ export default function Home() {
     <>
       <Head>
         <title>Synapse B2B | Engenharia de Receita para Empresas B2B</title>
-        <meta name="description" content="Assessoria de Engenharia de Receita que transforma produtos complexos em ofertas que o mercado entende, compra e escala." />
+        <meta name="description" content="Nós instalamos o sistema (GTM, Narrativa e Ativos) que transforma sua complexidade técnica em um motor de vendas que escala." />
       </Head>
 
 {/* ====================================================================== */}
-      {/* Seção 1: Hero Section (H1 CORRIGIDO)                               */}
+      {/* Seção 1: Hero Section (AJUSTE DE HEADLINE E TRUSTBAR)                */}
       {/* ====================================================================== */}
       <section className="hero-section">
         <div className="hero-video-background">
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          {/* HEADLINE CORRIGIDA (Sem caixa alta, tamanho definido no style jsx) */}
+          {/* HEADLINE CORRIGIDA (Sem caixa alta, tamanho 2.8rem definido no style jsx) */}
           <h1 className="hero-headline">
             Engenharia de Receita para Empresas B2B
             <br/>
@@ -79,7 +79,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança (Trust Bar) */}
+          {/* Barra de Confiança (Trust Bar) - COM "FORJADO" */}
           <div className="trust-bar reveal-up">
             <p>Forjado em ecossistemas de alta complexidade como:</p>
             <div className="trust-bar-logos">
@@ -198,7 +198,7 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita (PREÇOS ATUALIZADOS)    */}
+      {/* Seção 4: Soluções de Engenharia de Receita (SEM PREÇOS)            */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
@@ -219,9 +219,9 @@ export default function Home() {
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Diagnóstico Cortex B2B™</strong>
                   <span>Nosso sistema proprietário de inteligência estratégica. Uma IA especializada que condensa 20+ anos de experiência B2B e os maiores frameworks globais de GTM em um diagnóstico 360° do seu negócio.</span>
-                  <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operação, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
-                  {/* PREÇO ATUALIZADO (R$ 999) */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 999 (pagamento único).</span>
+                  <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operation, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
+                  {/* PREÇO REMOVIDO */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Diagnóstico Estratégico).</span>
                   <Link href="/solucoes/cortex-b2b" passHref>
                     <a className="solution-cta">Conhecer o Cortex B2B™ <ArrowRight size={16}/></a>
                   </Link>
@@ -231,8 +231,8 @@ export default function Home() {
                   <strong>Sprint de Validação Comercial</strong>
                   <span>Valide a demanda real antes de construir a tese. Testamos seu produto, ICP e pitch de vendas em 30 dias (aplicando o Cortex B2B™) para que você decida escalar baseado em dados de campo, não em intuição.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Produto novo, pivô de modelo, expansão para novo mercado.</span>
-                  {/* PREÇO ATUALIZADO (R$ 2-5k) */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 2-5k (upfront) + % sobre receita nova (mínimo 12 meses).</span>
+                  {/* PREÇO REMOVIDO */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial (upfront) + % sobre receita nova (mínimo 12 meses).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Agendar diagnóstico <ArrowRight size={16}/></a>
                   </Link>
@@ -242,7 +242,8 @@ export default function Home() {
                   <strong>Go-To-Market Completo</strong>
                   <span>A arquitetura completa do seu motor comercial do zero: posicionamento, ICP, proposta de valor, canais, pricing e retenção. Usamos o meta-framework Cortex B2B™ para entregar o blueprint estratégico.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Crescimento errático, CAC alto, ciclo longo, time vendendo features.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Pequeno investimento para compromisso mútuo + % sobre receita nova (mínimo 12 meses).</span>
+                  {/* PREÇO REMOVIDO */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial para compromisso mútuo + % sobre receita nova (mínimo 12 meses).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Ver metodologia completa <ArrowRight size={16}/></a>
                   </Link>
@@ -252,7 +253,8 @@ export default function Home() {
                   <strong>Diretoria de Receita como Serviço</strong>
                   <span>Liderança C-level fracionada operando sua diretoria comercial. Injetamos estratégia sênior, executamos na linha de frente por 90-180 dias e validamos o playbook operando. Você ganha 5x mais resultado pagando uma fração do custo de um VP Comercial CLT.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> CEO sobrecarregado, time sem direção, receita travada há 3+ meses.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 5-7k/mês fixo + % sobre receita nova (mínimo 12 meses).</span>
+                  {/* PREÇO REMOVIDO */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Fee mensal fixo + % sobre receita nova (mínimo 12 meses).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Entender modelo de Parceria <ArrowRight size={16}/></a>
                   </Link>
@@ -262,6 +264,7 @@ export default function Home() {
                   <strong>Advisory Board Estratégico</strong>
                   <span>Conselho sob demanda para decisões de alto impacto (pivôs, M&A, captação). Damos acesso à senioridade e visão externa para validar hipóteses e reduzir o risco de decisões críticas, sem contratação permanente.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Decisão estratégica de alto impacto, necessidade de sparring qualificado.</span>
+                  {/* PREÇO JÁ ESTAVA OCULTO */}
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (modelo de retainer mensal ou projeto).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Avaliar fit de Advisory <ArrowRight size={16}/></a>
@@ -282,7 +285,8 @@ export default function Home() {
                   <span>Não construímos "sites institucionais". Construímos plataformas digitais estratégicas projetadas como motores de receita: 30% credibilidade + 70% engenharia de conversão. Seu ativo digital educa o mercado e qualifica leads 24/7.</span>
                   <span className="solution-examples"><strong>Exemplos tangíveis:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
                   <span className="solution-examples"><strong>O que inclui:</strong> Arquitetura de conversão, copywriting estratégico (SEO e GEO), landing pages por ICP, integração com CRMs e bots.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 7-35k (projeto) ou sob consulta.</span>
+                  {/* PREÇO REMOVIDO */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (projeto).</span>
                   <Link href="/solucoes/plataformas-digitais" passHref>
                     <a className="solution-cta">Ver casos de uso <ArrowRight size={16}/></a>
                   </Link>
@@ -292,7 +296,8 @@ export default function Home() {
                   <strong>Ferramentas Estratégicas de Conversão (Apps)</strong>
                   <span>Construímos ativos que provam seu ROI antes da venda: calculadoras, simuladores, diagnósticos automatizados, bots (WhatsApp) e plataformas de match-making. O cliente "sente" o valor, não apenas ouve sobre ele.</span>
                   <span className="solution-examples"><strong>Exemplos tangíveis:</strong> Synapse B2B Match Maker, Simulador de Orçamento Exclusiva Engenharias</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> R$ 5-25k (projeto) ou sob consulta.</span>
+                  {/* PREÇO REMOVIDO */}
+                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (projeto).</span>
                   <Link href="/solucoes/apps" passHref>
                     <a className="solution-cta">Explorar Ferramentas <ArrowRight size={16}/></a>
                   </Link>
@@ -434,7 +439,7 @@ export default function Home() {
       <style jsx>{`
         /* --- CORREÇÃO 1 & 2: Tamanho da Fonte da Headline (2.8rem) --- */
         .hero-headline {
-          font-size: 2.8rem !important; /* <--- MUDEI ESTE VALOR */
+          font-size: 2.8rem !important; /* <--- VALOR CORRIGIDO */
           line-height: 1.25; /* Ajuste de espaçamento de linha */
         }
         @media (max-width: 768px) {
