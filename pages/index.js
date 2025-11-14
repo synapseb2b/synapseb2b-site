@@ -83,11 +83,11 @@ export default function Home() {
           <div className="trust-bar reveal-up">
             <p>Validado em ecossistemas de alta complexidade como:</p>
             <div className="trust-bar-logos">
-              <Image src="/logos/logo-google.svg" alt="Google" width={100} height={32} />
-              <Image src="/logos/logo-microsoft.svg" alt="Microsoft" width={100} height={32} />
-              <Image src="/logos/logo-dell.svg" alt="Dell" width={100} height={32} />
-              <Image src="/logos/logo-totvs.svg" alt="TOTVS" width={100} height={32} />
-              <Image src="/logos/logo-keepit.svg" alt="Keepit" width={100} height={32} />
+              <Image src="/logos/logo-google.png" alt="Google" width={100} height={32} />
+              <Image src="/logos/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
+              <Image src="/logos/logo-dell.png" alt="Dell" width={100} height={32} />
+              <Image src="/logos/logo-totvs.png" alt="TOTVS" width={100} height={32} />
+              <Image src="/logos/logo-keepit.png" alt="Keepit" width={100} height={32} />
             </div>
           </div>
         </div>
