@@ -1,20 +1,20 @@
-// components/Navbar.js (VERSÃO FINAL COM MENUS DROPDOWN INTELIGENTES)
-// Refatorado por J.A.R.V.I.S. (com correção de rota e scroll mobile)
+// components/Navbar.js (VERSÃO FINAL CORRIGIDA E ALINHADA)
+// Nomenclatura ajustada de "A Synapse" para "A Engenharia"
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-// Ícones atualizados para o novo menu
+// Ícones atualizados (Building agora representa 'A Engenharia')
 import { Home, Layers, Award, Building, Mail, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
-  
+
   // Estado para os acordeões do menu mobile
   const [isSolucoesOpen, setIsSolucoesOpen] = useState(false);
   const [isCasesOpen, setIsCasesOpen] = useState(false);
-  
+
   const router = useRouter();
 
   // Efeito para controlar o fundo da navbar ao rolar
@@ -45,9 +45,11 @@ export default function Navbar() {
     setIsCasesOpen(false);
   };
 
-  // Lógica de estado ativo para os links pais (agora simplificada)
+  // Lógica de estado ativo para os links pais
   const isSolucoesActive = router.pathname.startsWith('/solucoes');
   const isCasesActive = router.pathname.startsWith('/cases');
+  // CORREÇÃO: Verificando a página 'a-engenharia'
+  const isEngenhariaActive = router.pathname === '/a-engenharia';
 
   return (
     <>
@@ -59,12 +61,12 @@ export default function Navbar() {
             </video>
             <span className="nav-logo-text">Synapse B2B</span>
           </Link>
-          
-          {/* --- Menu Desktop (ATUALIZADO: ORDEM E CONTEÚDO) --- */}
+
+          {/* --- Menu Desktop (NOMENCLATURA CORRIGIDA) --- */}
           <ul className="nav-menu">
             <li><Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-            
-            {/* ATUALIZAÇÃO DE ORDEM 1: Cases */}
+
+            {/* Cases */}
             <li className="dropdown-container">
               <div className={`nav-link ${isCasesActive ? 'active' : ''}`}>
                 Cases <ChevronDown size={16} />
@@ -76,7 +78,7 @@ export default function Navbar() {
               </div>
             </li>
 
-            {/* ATUALIZAÇÃO DE ORDEM 2: Soluções */}
+            {/* Soluções */}
             <li className="dropdown-container">
               <div className={`nav-link ${isSolucoesActive ? 'active' : ''}`}>
                 Soluções <ChevronDown size={16} />
@@ -87,13 +89,13 @@ export default function Navbar() {
                 <Link href="/solucoes/match-maker" className="dropdown-link">Match-Maker B2B</Link>
                 <Link href="/solucoes/apps" className="dropdown-link">Apps Estratégicos</Link>
                 <div className="dropdown-divider"></div>
-                {/* CORREÇÃO DE ROTA */}
                 <Link href="/solucoes/profissionais-de-saude" className="dropdown-link">Para Profissionais de Saúde</Link>
               </div>
             </li>
-            
-            <li><Link href="/a-synapse" className={`nav-link ${router.pathname === '/a-synapse' ? 'active' : ''}`}>A Synapse</Link></li>
-            
+
+            {/* CORREÇÃO DE NOME E LINK */}
+            <li><Link href="/a-engenharia" className={`nav-link ${isEngenhariaActive ? 'active' : ''}`}>A Engenharia</Link></li>
+
             <li>
               <Link href="/contato" legacyBehavior>
                 <a className="btn btn-nav-cta">Ativar Engenharia</a>
@@ -110,7 +112,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* --- Menu Overlay para Mobile (ATUALIZADO: ORDEM E CONTEÚDO) --- */}
+      {/* --- Menu Overlay para Mobile (NOMENCLATURA CORRIGIDA) --- */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <span className="mobile-menu-title">Navegação</span>
@@ -118,11 +120,11 @@ export default function Navbar() {
             <X size={30} />
           </button>
         </div>
-        
+
         <ul className="mobile-menu-links">
           <li><Link href="/" onClick={handleLinkClick}><Home /><span>Home</span></Link></li>
-          
-          {/* ATUALIZAÇÃO DE ORDEM 1: Cases */}
+
+          {/* Cases */}
           <li className="mobile-dropdown">
             <button onClick={() => setIsCasesOpen(!isCasesOpen)} className={isCasesOpen ? 'open' : ''}>
               <div><Award /><span>Cases</span></div>
@@ -135,7 +137,7 @@ export default function Navbar() {
             </ul>
           </li>
 
-          {/* ATUALIZAÇÃO DE ORDEM 2: Soluções */}
+          {/* Soluções */}
           <li className="mobile-dropdown">
             <button onClick={() => setIsSolucoesOpen(!isSolucoesOpen)} className={isSolucoesOpen ? 'open' : ''}>
               <div><Layers /><span>Soluções</span></div>
@@ -146,14 +148,14 @@ export default function Navbar() {
               <li><Link href="/solucoes/cortex-b2b" onClick={handleLinkClick}>- Cortex B2B™</Link></li>
               <li><Link href="/solucoes/match-maker" onClick={handleLinkClick}>- Match-Maker B2B</Link></li>
               <li><Link href="/solucoes/apps" onClick={handleLinkClick}>- Apps Estratégicos</Link></li>
-              {/* CORREÇÃO DE ROTA */}
               <li><Link href="/solucoes/profissionais-de-saude" onClick={handleLinkClick}>- Para Profissionais de Saúde</Link></li>
             </ul>
           </li>
 
-          <li><Link href="/a-synapse" onClick={handleLinkClick}><Building /><span>A Synapse</span></Link></li>
+          {/* CORREÇÃO DE NOME E LINK */}
+          <li><Link href="/a-engenharia" onClick={handleLinkClick}><Building /><span>A Engenharia</span></Link></li>
         </ul>
-        
+
         <div className="mobile-menu-footer">
            <Link href="/contato" onClick={handleLinkClick} className="btn btn-primary btn-large">
             <Mail /><span>Ativar Engenharia</span>
@@ -161,7 +163,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* --- CSS ADICIONAL PARA DROPDOWNS (CORREÇÃO DE SCROLL MOBILE) --- */}
+      {/* --- CSS ADICIONAL PARA DROPDOWNS (SEM ALTERAÇÕES) --- */}
       <style jsx>{`
         /* --- Desktop Dropdown --- */
         .nav-menu .nav-link {
