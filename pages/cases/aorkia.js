@@ -1,5 +1,5 @@
 // pages/cases/aorkia.js
-// Versão Premium: Design Elevado, Correção de Imagem e Efeitos Visuais
+// Versão Final Ajustada: Alinhamento Central Rigoroso, Cards Uniformes, Copy Refinada.
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -38,19 +38,26 @@ export default function AorkiaCase() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilos inline para efeitos premium (Glassmorphism e Glow)
-  const glassStyle = {
+  // Estilo Unificado para Cards (Glassmorphism Elegante - Sem rotação/tilt)
+  const cardStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.05)',
     borderRadius: '16px',
+    padding: '3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center', // Força centro vertical
+    textAlign: 'center',   // Força centro horizontal
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   };
 
   const imageGlowStyle = {
     borderRadius: '12px', 
     border: '1px solid rgba(255,255,255,0.1)',
-    boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)' // Brilho ciano sutil
+    boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)',
+    margin: '0 auto' // Garante centralização da imagem
   };
 
   return (
@@ -61,7 +68,7 @@ export default function AorkiaCase() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* HERO (Com Gradiente de Fundo)                                          */}
+      {/* HERO                                                                   */}
       {/* ====================================================================== */}
       <section className="hero-section short-hero" style={{position: 'relative', overflow: 'hidden'}}> 
         <div className="hero-video-background">
@@ -71,7 +78,6 @@ export default function AorkiaCase() {
           <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.8), #000)'}}></div>
         </div>
 
-        {/* Glow Effect no Hero */}
         <div style={{
           position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)',
           width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%)',
@@ -86,7 +92,7 @@ export default function AorkiaCase() {
           <h1 className="section-title" style={{textTransform: 'none'}}>
             De Zero a Parceiro Oficial <br/>em 45 Dias
           </h1>
-          <p className="hero-subheadline wider-on-desktop">
+          <p className="hero-subheadline wider-on-desktop" style={{textAlign: 'center'}}>
             Como uma startup sem histórico entrou em mercado técnico dominado por gigantes e fechou 1.200+ usuários na primeira venda.
           </p>
         </div>
@@ -98,31 +104,47 @@ export default function AorkiaCase() {
       {/* SEÇÃO 1: O CONTEXTO                                                    */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up" style={{background: '#050505'}}>
-        <div className="container text-center">
+        <div className="container text-center"> {/* Container Centralizado */}
           <div style={{maxWidth: '800px', margin: '0 auto'}}>
-            <h2 className="section-title">O Ponto de Partida: Skin in the Game Total</h2>
-            <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '1rem', marginTop: '-1rem', fontWeight: 300}}>Validação sob Pressão Máxima</h3>
             
-            <p className="lead-text" style={{marginBottom: '3rem', opacity: 0.9}}>
-              Este case é a prova definitiva do método. A AORKIA foi criada para aplicar Engenharia de Receita no próprio negócio, sem rede de segurança.
+            {/* Título em Duas Linhas */}
+            <h2 className="section-title" style={{marginBottom: '0.5rem'}}>O Ponto de Partida:</h2>
+            <h2 className="section-title" style={{fontSize: '2.5rem', color: 'var(--color-primary)', marginTop: 0}}>Skin in the Game Total</h2>
+            
+            {/* Copy Refinada sobre a Relação das Empresas */}
+            <p className="lead-text" style={{marginBottom: '3rem', opacity: 0.9, textAlign: 'center'}}>
+              Este case é a prova definitiva do método. A AORKIA foi fundada pelo mesmo criador da Synapse B2B com um propósito claro: validar a Engenharia de Receita "dentro de casa", aplicando o método no próprio negócio, sem rede de segurança.
             </p>
 
-            <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '2rem'}}>O Cenário Adverso</h3>
-            
-            {/* Card Glassmorphism */}
-            <div style={{...glassStyle, padding: '2.5rem', margin: '2rem 0'}}>
-              <h4 style={{color: 'var(--color-heading)', marginBottom: '1.5rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '1px'}}>As Restrições do Projeto</h4>
-              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}>
-                <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><XCircle size={20} color="#ef4444"/> Zero base de clientes</li>
-                <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><XCircle size={20} color="#ef4444"/> Zero reconhecimento de marca</li>
-                <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><XCircle size={20} color="#ef4444"/> Budget de marketing limitado</li>
-                <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><Target size={20} color="var(--color-primary)"/> <strong>Meta:</strong> Provar tração em 45 dias</li>
-              </ul>
-            </div>
-            
-            <p style={{color: 'var(--color-text)', fontStyle: 'italic', fontSize: '1.1rem', marginTop: '3rem'}}>
-              "A única vantagem competitiva era uma parceria técnica com a Keepit (Líder Global). Mas parceria técnica sem motor de vendas é irrelevante."
-            </p>
+            {/* Blockquote Centralizado para o Cenário Adverso */}
+            <blockquote style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '16px',
+              padding: '3rem',
+              margin: '0 auto',
+              textAlign: 'center' // Garante texto interno centralizado
+            }}>
+              <h3 style={{color: 'var(--color-heading)', fontSize: '1.5rem', marginBottom: '2rem', textAlign: 'center'}}>O Cenário Adverso</h3>
+              
+              <p style={{fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)', textAlign: 'center'}}>
+                Entrar no mercado de Cyber Resilience (Backup SaaS) dominado por gigantes como Veeam e Acronis.
+              </p>
+
+              <div style={{display: 'inline-block', textAlign: 'left', marginBottom: '2rem'}}> {/* Lista interna alinhada para leitura, mas bloco centralizado */}
+                <ul style={{listStyle: 'none', padding: 0}}>
+                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Zero base de clientes</li>
+                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Zero reconhecimento de marca</li>
+                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Budget de marketing limitado</li>
+                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: 'var(--color-primary)'}}><Target size={20}/> <strong>Meta:</strong> Provar tração em 45 dias</li>
+                </ul>
+              </div>
+
+              <p style={{fontStyle: 'italic', color: 'var(--color-text)', opacity: 0.8, fontSize: '1.1rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', textAlign: 'center'}}>
+                "A única vantagem competitiva era uma parceria técnica com a Keepit (Líder Global). Mas parceria técnica sem motor de vendas é irrelevante."
+              </p>
+            </blockquote>
+
           </div>
         </div>
       </section>
@@ -133,9 +155,9 @@ export default function AorkiaCase() {
       {/* SEÇÃO 2: A SOLUÇÃO (TIMELINE & FASES)                                  */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up" style={{paddingTop: '5rem'}}>
-        <div className="container text-center">
+        <div className="container text-center"> {/* Container Centralizado */}
           <h2 className="section-title">A Solução (Timeline)</h2>
-          <p className="lead-text">Velocidade de Execução: 45 Dias</p>
+          <p className="lead-text" style={{textAlign: 'center'}}>Velocidade de Execução: 45 Dias</p>
           
           {/* Timeline Visual */}
           <div className="case-timeline-visual" style={{
@@ -165,38 +187,38 @@ export default function AorkiaCase() {
             </div>
           </div>
 
-          {/* GRID DE FASES (FULL WIDTH) */}
+          {/* GRID DE FASES (FULL WIDTH - 1 COLUNA) */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: '1fr', gap: '4rem'}}>
             
-            {/* FASE 1 */}
-            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '3rem', alignItems: 'center', textAlign: 'center'}}>
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}><ShieldCheck size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>Fase 1: Ancoragem de Autoridade</h3>
-              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Estratégia: Transferência de Credibilidade</p>
+            {/* FASE 1 - Card Estilizado */}
+            <div style={cardStyle}>
+              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><ShieldCheck size={32} /></div>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 1: Ancoragem de Autoridade</h3>
+              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Estratégia: Transferência de Credibilidade</p>
               
-              <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '700px', margin: '0 auto'}}>
-                  <div style={{background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid var(--color-text)', textAlign: 'left'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '600px', margin: '0 auto'}}>
+                  <div style={{background: 'rgba(0,0,0,0.2)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--color-border)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-text)', fontSize: '0.9rem', textTransform: 'uppercase'}}>De:</strong>
                       <p style={{fontSize: '1.1rem', margin: 0, color: 'var(--color-text)', opacity: 0.7}}>"Revendedor de backup Keepit"</p>
                   </div>
-                   <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid var(--color-primary)', textAlign: 'left'}}>
+                   <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--color-primary)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '0.9rem', textTransform: 'uppercase'}}>Para:</strong>
                       <p style={{fontSize: '1.2rem', margin: 0, color: 'var(--color-heading)', fontWeight: 600}}>"Parceiro Oficial Keepit — Líder Global em Backup SaaS"</p>
                   </div>
               </div>
 
-              <p style={{marginTop: '2rem', fontSize: '1rem', maxWidth: '700px', marginInline: 'auto', lineHeight: 1.6}}>
+              <p style={{marginTop: '2rem', fontSize: '1rem', maxWidth: '700px', marginInline: 'auto', lineHeight: 1.6, textAlign: 'center'}}>
                 Decisores B2B não compram de startups desconhecidas por medo do risco. Ao ancorar na Keepit, removemos o risco da equação.
               </p>
             </div>
 
-            {/* FASE 2 */}
-            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '3rem', alignItems: 'center', textAlign: 'center'}}>
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}><Zap size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>Fase 2: Ativação de Urgência</h3>
-              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Entrega: Narrativa de Risco Tangível</p>
+            {/* FASE 2 - Card Estilizado */}
+            <div style={cardStyle}>
+              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Zap size={32} /></div>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 2: Ativação de Urgência</h3>
+              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Entrega: Narrativa de Risco Tangível</p>
               
-               <div style={{background: 'rgba(0,0,0,0.2)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-border)', width: '100%', maxWidth: '700px', margin: '0 auto 2rem'}}>
+               <div style={{background: 'rgba(0,0,0,0.2)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-border)', width: '100%', maxWidth: '700px', margin: '0 auto 2rem', textAlign: 'center'}}>
                   <strong style={{display: 'block', marginBottom: '1rem', color: 'var(--color-heading)', fontSize: '1.2rem'}}>A Nova Narrativa:</strong>
                   <p style={{fontSize: '1.25rem', margin: 0, color: 'var(--color-primary)', fontFamily: 'Montserrat, sans-serif', fontWeight: 500}}>
                     "Seu Google Workspace NÃO faz backup. O que acontece se você for hackeado hoje?"
@@ -215,23 +237,23 @@ export default function AorkiaCase() {
               </div>
             </div>
 
-            {/* FASE 3 */}
-            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '3rem', alignItems: 'center', textAlign: 'center'}}>
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}><Gem size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>Fase 3: Plataforma + Canal</h3>
-              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Resultado: Primeira venda 1.200+ usuários</p>
+            {/* FASE 3 - Card Estilizado */}
+            <div style={cardStyle}>
+              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Gem size={32} /></div>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 3: Plataforma + Canal</h3>
+              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Resultado: Primeira venda 1.200+ usuários</p>
               
-              <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', width: '100%', textAlign: 'left'}}>
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-primary)'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%', maxWidth: '800px', margin: '0 auto'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-primary)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '1rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>O Que Fizemos</strong>
-                      <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.8rem'}}>
-                        <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Plataforma focada em risco</li>
-                        <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Outbound para CISOs</li>
-                        <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Pitch: "Seguro contra Ransomware"</li>
+                      <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center'}}>
+                        <li style={{display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Plataforma focada em risco</li>
+                        <li style={{display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Outbound para CISOs</li>
+                        <li style={{display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Pitch: "Seguro contra Ransomware"</li>
                       </ul>
                   </div>
 
-                   <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-accent)'}}>
+                   <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-accent)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '1rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Resultado (Dia 45)</strong>
                       <p style={{fontSize: '1.1rem', margin: 0, color: 'var(--color-text)'}}>
                         Primeira venda enterprise fechada: <br/>
@@ -262,10 +284,10 @@ export default function AorkiaCase() {
       {/* SEÇÃO 3: ANTES / DEPOIS                                              */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center">
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">Resultados</h2>
 
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', marginTop: '-1rem', fontWeight: 300}}>
+          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', marginTop: '-1rem', fontWeight: 300, textAlign: 'center'}}>
             Transformação em 45 Dias
           </h3>
 
@@ -304,25 +326,25 @@ export default function AorkiaCase() {
             </div>
           </div>
           
-          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', fontWeight: 300}}>
+          <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', fontWeight: 300, textAlign: 'center'}}>
             Números em Destaque
           </h3>
-          <div className="truths-grid-revolutionary">
-            <div className="truth-card-revolutionary" style={glassStyle}>
+          <div className="truths-grid-revolutionary" style={{justifyContent: 'center'}}> {/* Centralizado Grid */}
+            <div className="truth-card-revolutionary" style={cardStyle}>
               <h3 className="truth-card-title" style={{fontSize: '3.5rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>1.200+</h3> 
               <p style={{fontSize: '1.1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '1px'}}>usuários 1ª venda</p> 
             </div>
-            <div className="truth-card-revolutionary" style={glassStyle}>
+            <div className="truth-card-revolutionary" style={cardStyle}>
               <h3 className="truth-card-title" style={{fontSize: '3.5rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>45</h3> 
               <p style={{fontSize: '1.1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '1px'}}>dias</p> 
             </div>
-            <div className="truth-card-revolutionary" style={glassStyle}>
+            <div className="truth-card-revolutionary" style={cardStyle}>
               <h3 className="truth-card-title" style={{fontSize: '3.5rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>100%</h3> 
               <p style={{fontSize: '1.1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '1px'}}>método validado</p> 
             </div>
           </div>
 
-          <div style={{marginTop: '5rem', padding: '2rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '16px', display: 'inline-block'}}>
+          <div style={{marginTop: '5rem', padding: '2rem', background: 'rgba(0, 229, 255, 0.05)', borderRadius: '16px', display: 'inline-block', textAlign: 'center'}}>
             <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.5rem', color: 'var(--color-heading)', marginBottom: '1rem'}}>
               Métrica que Realmente Importa
             </h3>
@@ -340,7 +362,7 @@ export default function AorkiaCase() {
       {/* SEÇÃO 4: VOZ DO CLIENTE (A PROVA DEFINITIVA)                          */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center">
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">A Prova Definitiva</h2> 
           
           <div className="decision-block" style={{
@@ -353,14 +375,12 @@ export default function AorkiaCase() {
             border: '1px solid rgba(255,255,255,0.05)'
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
-              {/* AJUSTE: Fonte mais leve, tamanho reduzido, cor suave */}
               <p style={{fontSize: '1.35rem', fontFamily: "'Inter', sans-serif", color: '#e0e0e0', lineHeight: '1.8', marginBottom: '3rem', fontWeight: 300, fontStyle: 'italic'}}>
                 "Qualquer consultor pode vender método. Eu apliquei o meu no meu próprio negócio, sob condições extremas: zero histórico, mercado dominado por gigantes, 45 dias de prazo. Resultado: Parceiro Oficial Keepit + primeira venda de 1.200+ usuários. Não é teoria. É Engenharia de Receita validada com pele no jogo."
               </p>
             </blockquote>
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem'}}>
-              {/* IMAGEM CORRIGIDA: Julio-Figueiredo.jpg */}
               <Image
                 src="/cases/Julio-Figueiredo.jpg" 
                 alt="Júlio Figueiredo"
@@ -385,13 +405,14 @@ export default function AorkiaCase() {
       {/* SEÇÃO 5: LEARNINGS ESTRATÉGICOS                                       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
-        <div className="container text-center">
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">Learnings Estratégicos</h2>
-          <p className="lead-text" style={{marginBottom: '4rem'}}>O Que Este Caso Ensina</p>
+          <p className="lead-text" style={{marginBottom: '4rem', textAlign: 'center'}}>O Que Este Caso Ensina</p>
           
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
             
-            <div className="truth-card-revolutionary text-left" style={{...glassStyle, padding: '2rem'}}>
+            {/* Card Estilizado Uniforme */}
+            <div className="truth-card-revolutionary" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <ShieldCheck size={32} />
               </div>
@@ -399,7 +420,7 @@ export default function AorkiaCase() {
               <p style={{textAlign: 'center', fontSize: '0.95rem', lineHeight: 1.6}}>Quando você não tem credibilidade própria, transfira credibilidade de quem tem. "Se o líder global escolheu a AORKIA, você pode confiar."</p>
             </div>
             
-            <div className="truth-card-revolutionary text-left" style={{...glassStyle, padding: '2rem'}}>
+            <div className="truth-card-revolutionary" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <Zap size={32} />
               </div>
@@ -407,7 +428,7 @@ export default function AorkiaCase() {
               <p style={{textAlign: 'center', fontSize: '0.95rem', lineHeight: 1.6}}>Cliente não acorda pensando "preciso de backup". Acorda pensando em "risco". Fazer sentir a dor financeira <strong>antes</strong> da perda.</p>
             </div>
 
-            <div className="truth-card-revolutionary text-left" style={{...glassStyle, padding: '2rem'}}>
+            <div className="truth-card-revolutionary" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <Gem size={32} />
               </div>
@@ -425,11 +446,11 @@ export default function AorkiaCase() {
         <div className="pulsating-core-background"></div>
 
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
-          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none', fontSize: '2.5rem', marginBottom: '1.5rem'}}>
+          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none', fontSize: '2.5rem', marginBottom: '1.5rem', textAlign: 'center'}}>
             Você Também Está Entrando em Mercado <br/>
             Competitivo sem Histórico?
           </h2>
-          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.3rem', maxWidth: '700px', margin: '0 auto 3rem'}}>
+          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.3rem', maxWidth: '700px', margin: '0 auto 3rem', textAlign: 'center'}}>
             Zero track record não é sentença de morte.
             É oportunidade de fazer diferente desde o início.
           </p>
@@ -439,12 +460,12 @@ export default function AorkiaCase() {
               <ArrowRight size={20} />
             </Link>
           </div>
-          <p className="cta-support-text" style={{opacity: 0.7, marginTop: '2rem', fontSize: '0.9rem'}}>
+          <p className="cta-support-text" style={{opacity: 0.7, marginTop: '2rem', fontSize: '0.9rem', textAlign: 'center'}}>
             Primeira conversa: 21 minutos para estruturar tração acelerada no seu negócio.
           </p>
 
           {/* Link de Download do PDF Adicional */}
-          <div id="download-pdf" className="cta-secondary-link" style={{marginTop: '4rem'}}>
+          <div id="download-pdf" className="cta-secondary-link" style={{marginTop: '4rem', textAlign: 'center'}}>
             <p style={{marginBottom: '0.8rem', opacity: 0.8}}>Prefere estudar o case aorkia?</p> 
             <Link href="/pdf/synapse-case-aorkia.pdf" className="btn-case-revolutionary" style={{justifyContent: 'center', fontSize: '1rem', padding: '0.8rem 2rem'}}>
               <span>Download PDF Completo do Case</span> 
