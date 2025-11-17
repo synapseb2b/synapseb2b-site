@@ -1,5 +1,6 @@
 // pages/cases/exclusiva-engenharias.js
 // Versão Final Otimizada - Foco em Sistema, Execução e Resultados Reais
+// Correção de Build: Substituição de ">" por "&gt;" no JSX
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -234,11 +235,14 @@ export default function ExclusivaEngenhariasCase() {
                   {/* Estrutura */}
                   <div>
                     <h4 style={{color: 'var(--color-primary)', marginBottom: '1rem'}}>Estrutura Implementada (Primeiros 45 dias):</h4>
+                    {/* CORREÇÃO DE SINTAXE JSX AQUI */}
                     <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.95rem'}}>
                       <li style={{marginBottom: '0.5rem'}}>• <strong>Pipeline em Expansão:</strong> Prospecção ativa estruturada com roteiros validados</li>
                       <li style={{marginBottom: '0.5rem'}}>• <strong>Estratégia Dual-Channel:</strong> Inbound + Outbound</li>
                       <li style={{marginBottom: '0.5rem'}}>• <strong>Ferramentas de IA:</strong> Automação de qualificação e enriquecimento de leads</li>
                       <li style={{marginBottom: '0.5rem'}}>• <strong>CRM Proprietário:</strong> Desenvolvido pela Synapse para gestão industrial</li>
+                      {/* CORREÇÃO DE SINTAXE JSX NA PRÓXIMA LINHA: usar &gt; para maior que */}
+                      <li style={{marginBottom: '0.5rem'}}>• <strong>Conversão:</strong> Taxa de resposta documentada (LinkedIn &gt; Email &gt; Cold call)</li>
                     </ul>
                   </div>
 
@@ -334,7 +338,7 @@ export default function ExclusivaEngenhariasCase() {
               <ul className="solution-column-list" style={{gap: '1.5rem'}}>
                 <li>
                   <strong>Pipeline em Expansão</strong>
-                  <span>Prospecção ativa semanal com roteiros testados. Taxa de resposta documentada por canal (LinkedIn > Email > Cold call). Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</span>
+                  <span>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</span>
                 </li>
                 <li>
                   <strong>Estratégia Dual-Channel</strong>
