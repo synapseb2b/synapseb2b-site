@@ -1,5 +1,5 @@
 // pages/cases/aorkia.js
-// Versão Final Otimizada - Layout Corrigido (Centralizado, Horizontal e Mini-Cards)
+// Versão Final: Cards "Full Width" (Um abaixo do outro), Imagens e PDF corrigidos conforme repositório.
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -12,7 +12,7 @@ import {
   Target,
   GitBranch, 
   LineChart,
-  ShieldCheck, // Ícone principal (Segurança/Credibilidade)
+  ShieldCheck, 
   Zap,
   Gem,
   XCircle
@@ -46,7 +46,7 @@ export default function AorkiaCase() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* HERO: O IMPACTO IMEDIATO                                               */}
+      {/* HERO                                                                   */}
       {/* ====================================================================== */}
       <section className="hero-section short-hero"> 
         <div className="hero-video-background">
@@ -73,10 +73,10 @@ export default function AorkiaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* SEÇÃO 1: O CONTEXTO (SKIN IN THE GAME)                               */}
+      {/* SEÇÃO 1: O CONTEXTO                                                    */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center"> {/* Centralizado */}
+        <div className="container text-center">
           <div style={{maxWidth: '800px', margin: '0 auto'}}>
             <h2 className="section-title">O Ponto de Partida: Skin in the Game Total</h2>
             <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '1rem', marginTop: '-1rem'}}>Validação sob Pressão Máxima</h3>
@@ -96,7 +96,7 @@ export default function AorkiaCase() {
               margin: '2rem 0'
             }}>
               <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem'}}>As Restrições do Projeto:</h4>
-              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Lista alinhada, bloco centralizado */}
+              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><XCircle size={18} color="#ef4444"/> Zero base de clientes</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><XCircle size={18} color="#ef4444"/> Zero reconhecimento de marca</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><XCircle size={18} color="#ef4444"/> Budget de marketing limitado</li>
@@ -122,11 +122,11 @@ export default function AorkiaCase() {
       {/* SEÇÃO 2: A SOLUÇÃO (TIMELINE)                                        */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container text-center"> {/* Centralizado */}
+        <div className="container text-center">
           <h2 className="section-title">A Solução (Timeline)</h2>
           <p className="lead-text">Velocidade de Execução: 45 Dias</p>
           
-          {/* Timeline Visual Simplificado */}
+          {/* Timeline Visual */}
           <div className="case-timeline-visual" style={{
             display: 'flex', 
             justifyContent: 'space-between', 
@@ -154,10 +154,10 @@ export default function AorkiaCase() {
             </div>
           </div>
 
-          {/* Grid Horizontal de Fases */}
+          {/* GRID DE FASES (AJUSTADO: 1 COLUNA / FULL WIDTH) */}
           <div className="pillar-grid-revolutionary" style={{
-            gridTemplateColumns: 'repeat(3, 1fr)', 
-            gap: '2rem',
+            gridTemplateColumns: '1fr', /* AJUSTE: Uma coluna ocupando tudo */
+            gap: '3rem',
             marginTop: '2rem'
           }}>
             
@@ -165,7 +165,7 @@ export default function AorkiaCase() {
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><ShieldCheck size={28} /></div>
-                <h3 className="pillar-card-title">FASE 1: Ancoragem de Autoridade</h3>
+                <h3 className="pillar-card-title">FASE 1: Ancoragem de Autoridade (15 dias)</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Estratégia: Transferência de Credibilidade</p>
                 
                 <p className="pillar-card-description">
@@ -173,7 +173,7 @@ export default function AorkiaCase() {
                 </p>
                 
                 {/* Mini-Card Visual */}
-                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', marginTop: '1rem'}}>
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '600px', margin: '1rem auto'}}>
                     <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>De:</strong>
                         <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>"Revendedor de backup Keepit"</p>
@@ -184,7 +184,7 @@ export default function AorkiaCase() {
                     </div>
                 </div>
 
-                <div style={{marginTop: '1.5rem', padding: '1rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)'}}>
+                <div style={{marginTop: '1.5rem', padding: '1rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)', maxWidth: '800px'}}>
                   <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.5rem'}}>Por que funcionou:</strong>
                   <p style={{fontSize: '0.9rem', margin: 0}}>
                     Decisores B2B não compram de startups desconhecidas por medo do risco. Ao ancorar na Keepit, removemos o risco da equação.
@@ -197,7 +197,7 @@ export default function AorkiaCase() {
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><Zap size={28} /></div>
-                <h3 className="pillar-card-title">FASE 2: Ativação de Urgência</h3>
+                <h3 className="pillar-card-title">FASE 2: Ativação de Urgência (15 dias)</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Entrega: Narrativa de Risco Tangível</p>
                 
                 <p className="pillar-card-description">
@@ -205,19 +205,19 @@ export default function AorkiaCase() {
                 </p>
 
                  {/* Mini-Card Visual */}
-                 <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left', width: '100%', marginTop: '1rem'}}>
+                 <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left', width: '100%', maxWidth: '600px', margin: '1rem auto'}}>
                     <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>A Narrativa:</strong>
                     <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>"Seu Google Workspace NÃO faz backup. O que acontece se você for hackeado hoje?"</p>
                 </div>
 
-                <div className="case-image-wrapper" style={{margin: '1.5rem 0'}}>
+                <div className="case-image-wrapper" style={{margin: '1.5rem 0', maxWidth: '800px'}}>
                   <Image 
-                    src="/cases/aorkia-home-urgencia.png"
+                    src="/cases/aorkia-home.png" // IMAGEM CORRIGIDA CONFORME PRINT
                     alt="Homepage AORKIA com headline de urgência"
                     width={1000}
                     height={500}
                     quality={100}
-                    style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: '150px', borderRadius: '8px', border: '1px solid var(--color-border)' }}
+                    style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: 'auto', borderRadius: '8px', border: '1px solid var(--color-border)' }}
                   />
                 </div>
                  
@@ -232,15 +232,15 @@ export default function AorkiaCase() {
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><Gem size={28} /></div>
-                <h3 className="pillar-card-title">FASE 3: Plataforma + Canal</h3>
+                <h3 className="pillar-card-title">FASE 3: Plataforma + Canal (15 dias)</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Resultado: Primeira venda 1.200+ usuários</p>
                 
                 <p className="pillar-card-description">
                   Execução comercial agressiva baseada na nova narrativa.
                 </p>
 
-                {/* Mini-Card Visual */}
-                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', marginTop: '1rem'}}>
+                {/* Mini-Cards Visuais */}
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '600px', margin: '1rem auto'}}>
                     <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>O Que Fizemos</strong>
                         <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
@@ -256,14 +256,14 @@ export default function AorkiaCase() {
                     </div>
                 </div>
 
-                 <div className="case-image-wrapper" style={{marginTop: '1.5rem'}}>
+                 <div className="case-image-wrapper" style={{marginTop: '1.5rem', maxWidth: '800px'}}>
                     <Image 
-                      src="/cases/aorkia-solucoes.png"
+                      src="/cases/aorkia-backup-saas-estrategico.png" // IMAGEM CORRIGIDA CONFORME PRINT
                       alt="Página de soluções AORKIA"
                       width={1000}
                       height={500}
                       quality={100}
-                      style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: '150px', borderRadius: '8px', border: '1px solid var(--color-border)' }}
+                      style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: 'auto', borderRadius: '8px', border: '1px solid var(--color-border)' }}
                     />
                   </div>
               </div>
@@ -420,33 +420,37 @@ export default function AorkiaCase() {
           <h2 className="section-title">Learnings Estratégicos</h2>
           <p className="lead-text">O QUE ESTE CASO ENSINA</p>
           
-          <div className="truths-grid-revolutionary">
+          {/* Grid Horizontal de Learnings */}
+          <div className="truths-grid-revolutionary" style={{
+            gridTemplateColumns: '1fr', /* AJUSTE: Full width */
+            gap: '2rem'
+          }}>
             
             <div className="truth-card-revolutionary text-left">
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
+              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}> {/* Ícone centralizado */}
                 <ShieldCheck size={28} />
               </div>
-              <h3 className="truth-card-title">INSIGHT 1: HISTÓRICO NÃO É PRÉ-REQUISITO</h3> 
-              <p>AORKIA tinha zero clientes. Mas tinha parceria com líder global.</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Quando você não tem credibilidade própria, transfira credibilidade de quem tem. "Se o líder global escolheu a AORKIA, você pode confiar."</p>
+              <h3 className="truth-card-title" style={{textAlign: 'center'}}>INSIGHT 1: HISTÓRICO NÃO É PRÉ-REQUISITO</h3> 
+              <p style={{textAlign: 'center'}}>AORKIA tinha zero clientes. Mas tinha parceria com líder global.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem', textAlign: 'center'}}><strong>Lição:</strong> Quando você não tem credibilidade própria, transfira credibilidade de quem tem. "Se o líder global escolheu a AORKIA, você pode confiar."</p>
             </div>
             
             <div className="truth-card-revolutionary text-left">
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
+              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <Zap size={28} />
               </div>
-              <h3 className="truth-card-title">INSIGHT 2: ATIVE A DOR ANTES DA SOLUÇÃO</h3> 
-              <p>Cliente não acorda pensando "preciso de backup". Acorda pensando em "risco".</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Estratégia:</strong> Fazer sentir a dor ANTES da perda. "Quanto custa sua empresa parada 48h?". Urgência não existe naturalmente; é criada.</p>
+              <h3 className="truth-card-title" style={{textAlign: 'center'}}>INSIGHT 2: ATIVE A DOR ANTES DA SOLUÇÃO</h3> 
+              <p style={{textAlign: 'center'}}>Cliente não acorda pensando "preciso de backup". Acorda pensando em "risco".</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem', textAlign: 'center'}}><strong>Estratégia:</strong> Fazer sentir a dor ANTES da perda. "Quanto custa sua empresa parada 48h?". Urgência não existe naturalmente; é criada.</p>
             </div>
 
             <div className="truth-card-revolutionary text-left">
-              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem'}}>
+              <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <Gem size={28} />
               </div>
-              <h3 className="truth-card-title">INSIGHT 3: MÉTODO EXIGE PELE NO JOGO</h3> 
-              <p>Não foi consultoria. Foi laboratório pessoal.</p>
-              <p style={{color: 'var(--color-heading)', marginTop: '1rem'}}><strong>Lição:</strong> Metodologia não testada no próprio negócio do criador é teoria. Este case prova que funciona quando há risco real envolvido.</p>
+              <h3 className="truth-card-title" style={{textAlign: 'center'}}>INSIGHT 3: MÉTODO EXIGE PELE NO JOGO</h3> 
+              <p style={{textAlign: 'center'}}>Não foi consultoria. Foi laboratório pessoal.</p>
+              <p style={{color: 'var(--color-heading)', marginTop: '1rem', textAlign: 'center'}}><strong>Lição:</strong> Metodologia não testada no próprio negócio do criador é teoria. Este case prova que funciona quando há risco real envolvido.</p>
             </div>
           </div>
         </div>

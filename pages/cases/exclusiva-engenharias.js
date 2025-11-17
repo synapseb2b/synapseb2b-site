@@ -333,7 +333,7 @@ export default function ExclusivaEngenhariasCase() {
 
                     <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Estratégia Dual-Channel</strong>
-                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências.</p>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn + sequências.</p>
                     </div>
 
                     <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
@@ -367,7 +367,7 @@ export default function ExclusivaEngenhariasCase() {
 
                     <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Diferencial</strong>
-                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</p>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Não é CRM genérico. É sistema moldado ao processo da Exclusiva.</p>
                     </div>
                 </div>
               </div>
