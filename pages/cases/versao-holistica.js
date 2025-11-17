@@ -1,5 +1,6 @@
 // pages/cases/versao-holistica.js
 // Versão Final Otimizada - Foco em Criação de Categoria, Captação e Governança (G-Ops)
+// CORREÇÃO DE BUILD: Importação do ícone 'Download' adicionada
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -7,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { 
   ArrowRight, 
+  Download, // <-- IMPORTAÇÃO ADICIONADA AQUI
   CheckCircle2, 
   Target,
   Layers, 
