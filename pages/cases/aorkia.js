@@ -388,7 +388,7 @@ export default function AorkiaCase() {
             
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
               <Image
-                src="/cases/julio_figueiredo.jpg"
+                src="/cases/Julio_Figueiredo.jpg"
                 alt="Júlio Figueiredo"
                 width={80}
                 height={80}
