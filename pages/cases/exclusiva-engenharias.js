@@ -1,6 +1,5 @@
 // pages/cases/exclusiva-engenharias.js
-// Versão Final Otimizada - Foco em Sistema, Execução e Resultados Reais
-// Correção de Build: Substituição de ">" por "&gt;" no JSX
+// Versão Final Otimizada - Layout Corrigido (Centralizado e Horizontal)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -81,9 +80,9 @@ export default function ExclusivaEngenhariasCase() {
       {/* SEÇÃO 1: O DIAGNÓSTICO QUE MUDOU TUDO                                */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container">
-          <div style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left'}}>
-            <h2 className="section-title text-center">A Engenharia Começa no Diagnóstico</h2>
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <div style={{maxWidth: '800px', margin: '0 auto'}}>
+            <h2 className="section-title">A Engenharia Começa no Diagnóstico</h2>
             
             <p className="lead-text" style={{marginBottom: '2rem'}}>
               O cliente tinha excelência técnica comprovada e atendia gigantes como IVECO e Cimento Nacional. Mas o crescimento sem meta revelava um problema invisível.
@@ -100,7 +99,7 @@ export default function ExclusivaEngenhariasCase() {
               margin: '2rem 0'
             }}>
               <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem'}}>O Padrão Invisível:</h4>
-              <ul style={{listStyle: 'none', padding: 0}}>
+              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Mantendo lista alinhada para leitura, mas bloco centralizado */}
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Vendas 100% por indicação</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Crescimento sem meta = sem método</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> História fragmentada na mente dos sócios</li>
@@ -108,7 +107,7 @@ export default function ExclusivaEngenhariasCase() {
               </ul>
             </div>
             
-            <p style={{color: 'var(--color-text)', fontStyle: 'italic', borderLeft: '4px solid var(--color-primary)', paddingLeft: '1.5rem', margin: '2rem 0'}}>
+            <p style={{color: 'var(--color-text)', fontStyle: 'italic', borderLeft: '4px solid var(--color-primary)', paddingLeft: '1.5rem', margin: '2rem 0', textAlign: 'left'}}>
               "Eles tinham uma bela história, uma metodologia e um nicho claro. Mas tudo estava disperso. Faltava Engenharia de Receita."
             </p>
 
@@ -125,8 +124,8 @@ export default function ExclusivaEngenhariasCase() {
       {/* SEÇÃO 2: A ESTRATÉGIA ANTES DA TRAÇÃO (TIMELINE)                     */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container">
-          <h2 className="section-title text-center">A Estratégia Antes da Tração</h2>
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <h2 className="section-title">A Estratégia Antes da Tração</h2>
           
           {/* Timeline Visual Simplificado */}
           <div className="case-timeline-visual" style={{
@@ -161,104 +160,90 @@ export default function ExclusivaEngenhariasCase() {
             </div>
           </div>
 
-          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem'}}>
+          {/* CORREÇÃO 2: Fases em Colunas Horizontais (Grid) */}
+          <div className="pillar-grid-revolutionary" style={{
+            gridTemplateColumns: 'repeat(3, 1fr)', /* Força 3 colunas */
+            gap: '2rem',
+            marginTop: '2rem'
+          }}>
             
-            {/* FASE 1: Go-To-Market & Posicionamento */}
+            {/* FASE 1 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{textAlign: 'left', alignItems: 'flex-start'}}>
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
                 <div className="pillar-icon-wrapper"><Brain size={28} /></div>
                 <h3 className="pillar-card-title">FASE 1: Go-To-Market & Posicionamento</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 15 dias | Ferramenta: Cortex B2B™</p>
                 
                 <p className="pillar-card-description">
-                  Aplicamos diagnóstico 360° para extrair o diferencial real:
+                  Aplicamos diagnóstico 360° para extrair o diferencial real.
                 </p>
                 <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Segmento:</strong> Industrial (IVECO, Cimento Nacional, FPT)</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Nicho:</strong> Áreas de apoio essencial em plantas ativas</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Promessa:</strong> Zero interrupção de produção</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Metodologia:</strong> Cobertura total (civil, elétrica, mecânica)</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Segmento:</strong> Industrial</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Nicho:</strong> Áreas essenciais</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Promessa:</strong> Zero interrupção</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Metodologia:</strong> Cobertura total</li>
                 </ul>
 
-                <div style={{marginTop: '1.5rem', padding: '1.5rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)'}}>
+                <div style={{marginTop: '1.5rem', padding: '1rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)'}}>
                   <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.5rem'}}>O Buy-In Absoluto:</strong>
                   <p style={{fontSize: '0.9rem', margin: 0}}>
-                    Transformamos "Engenharia e Climatização" em <strong>"Exclusiva Engenharias"</strong>. A nova tese fez tanto sentido que a empresa alterou seu CNPJ por iniciativa própria — sem solicitação nossa. A clareza estratégica gerou convicção imediata.
+                    Transformamos "Engenharia e Climatização" em <strong>"Exclusiva Engenharias"</strong>. A nova tese fez tanto sentido que a empresa alterou seu CNPJ.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* FASE 2: Plataforma de Aceleração */}
+            {/* FASE 2 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{textAlign: 'left', alignItems: 'flex-start'}}>
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
                 <div className="pillar-icon-wrapper"><Zap size={28} /></div>
                 <h3 className="pillar-card-title">FASE 2: Plataforma de Aceleração</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 20 dias | Entrega: exclusivaengenharias.com</p>
                 
                 <p className="pillar-card-description">
-                  Construímos motor de receita, não site institucional:
+                  Construímos motor de receita, não site institucional.
                 </p>
                 <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>30%</strong> credibilidade (cases, metodologia)</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>70%</strong> conversão (simulador, jornadas, atendimento)</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>30%</strong> credibilidade</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>70%</strong> conversão</li>
                 </ul>
 
-                 <h4 style={{color: 'var(--color-heading)', fontSize: '1rem', marginTop: '1.5rem', marginBottom: '0.5rem'}}>Ferramentas Integradas:</h4>
+                 <h4 style={{color: 'var(--color-heading)', fontSize: '1rem', marginTop: '1rem', marginBottom: '0.5rem'}}>Ferramentas Integradas:</h4>
                  <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
-                   <li style={{marginBottom: '0.5rem'}}>✔ Simulador de Orçamento: Cliente recebe faixa em 10s</li>
-                   <li style={{marginBottom: '0.5rem'}}>✔ Atendimento Inteligente: Qualificação automática</li>
-                   <li>✔ Narrativa por segmento: Foco em continuidade operacional</li>
+                   <li style={{marginBottom: '0.5rem'}}>✔ Simulador de Orçamento</li>
+                   <li style={{marginBottom: '0.5rem'}}>✔ Atendimento Inteligente</li>
+                   <li>✔ Narrativa por segmento</li>
                  </ul>
                  
                  <div style={{marginTop: '1.5rem'}}>
                    <a href="https://exclusivaengenharias.com" target="_blank" rel="noopener noreferrer" className="btn-case-revolutionary" style={{fontSize: '0.9rem'}}>
-                     Ver plataforma funcionando <ArrowRight size={16} />
+                     Ver plataforma <ArrowRight size={16} />
                    </a>
                  </div>
               </div>
             </div>
 
-            {/* FASE 3: CRO as a Service */}
-            <div className="pillar-card-revolutionary" style={{gridColumn: '1 / -1'}}> {/* Ocupa largura total se possível */}
-              <div className="pillar-card-content" style={{textAlign: 'left', alignItems: 'flex-start'}}>
+            {/* FASE 3 */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
                 <div className="pillar-icon-wrapper"><TrendingUp size={28} /></div>
-                <h3 className="pillar-card-title">FASE 3: CRO as a Service (Em Andamento)</h3>
+                <h3 className="pillar-card-title">FASE 3: CRO as a Service</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 90 dias | Status: 50% concluído</p>
                 
                 <p className="pillar-card-description" style={{fontSize: '1.1rem', fontWeight: 500, color: 'var(--color-heading)'}}>
-                  Não entregamos consultoria. Operamos a diretoria comercial.
+                  Operamos a diretoria comercial.
                 </p>
 
-                <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '1.5rem', width: '100%'}}>
-                  
-                  {/* Estrutura */}
-                  <div>
-                    <h4 style={{color: 'var(--color-primary)', marginBottom: '1rem'}}>Estrutura Implementada (Primeiros 45 dias):</h4>
-                    {/* CORREÇÃO DE SINTAXE JSX AQUI */}
-                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Pipeline em Expansão:</strong> Prospecção ativa estruturada com roteiros validados</li>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Estratégia Dual-Channel:</strong> Inbound + Outbound</li>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Ferramentas de IA:</strong> Automação de qualificação e enriquecimento de leads</li>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>CRM Proprietário:</strong> Desenvolvido pela Synapse para gestão industrial</li>
-                      {/* CORREÇÃO DE SINTAXE JSX NA PRÓXIMA LINHA: usar &gt; para maior que */}
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Conversão:</strong> Taxa de resposta documentada (LinkedIn &gt; Email &gt; Cold call)</li>
-                    </ul>
-                  </div>
+                 <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
+                  <li style={{marginBottom: '0.5rem'}}>• Estrutura de prospecção</li>
+                  <li style={{marginBottom: '0.5rem'}}>• Validação de Playbook</li>
+                  <li style={{marginBottom: '0.5rem'}}>• Liderança de reuniões</li>
+                 </ul>
 
-                  {/* Resultados e Próximos Passos */}
-                  <div>
-                    <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem', border: '1px solid var(--color-primary)'}}>
-                      <h4 style={{color: 'var(--color-heading)', marginBottom: '0.5rem'}}>Resultado Parcial (45 dias):</h4>
-                      <p style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-primary)'}}>Forecast Mensal Gerado: 3x o melhor resultado anual histórico.</p>
-                      <p style={{fontSize: '0.9rem', fontStyle: 'italic', marginTop: '0.5rem'}}>"Não projetamos crescimento. Estamos gerando pipeline documentado com método replicável."</p>
-                    </div>
-
-                    <h4 style={{color: 'var(--color-heading)', marginBottom: '0.5rem'}}>Objetivo Final (Abril/2025):</h4>
-                    <p style={{fontSize: '0.95rem'}}>Expansão de 100% sobre 2024, com sistema operando independente da Synapse B2B.</p>
-                  </div>
-
-                </div>
+                 <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '1rem', borderRadius: '12px', marginTop: '1rem', border: '1px solid var(--color-primary)'}}>
+                      <h4 style={{color: 'var(--color-heading)', marginBottom: '0.5rem', fontSize: '0.9rem'}}>Resultado Parcial (45 dias):</h4>
+                      <p style={{fontSize: '1rem', fontWeight: 700, color: 'var(--color-primary)'}}>Forecast Mensal &gt; Melhor faturamento anual histórico.</p>
+                 </div>
               </div>
             </div>
 
@@ -321,56 +306,63 @@ export default function ExclusivaEngenhariasCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* SEÇÃO 4: O TRABALHO CONTINUA (NOVA SEÇÃO DE DETALHES)                */}
+      {/* SEÇÃO 4: O TRABALHO CONTINUA (NOVA SEÇÃO DE DETALHES EM CARDS)       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container">
-          <h2 className="section-title text-center">Da Fundação Estratégica para Escala Operacional</h2>
-          <p className="lead-text text-center" style={{marginBottom: '3rem'}}>
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <h2 className="section-title">Da Fundação Estratégica para Escala Operacional</h2>
+          <p className="lead-text" style={{marginBottom: '3rem'}}>
             Com clareza estratégica e plataforma digital validadas, o foco mudou de construir sistema para validar escala.
           </p>
 
-          <div className="solutions-2col-grid"> {/* Reutilizando grid de 2 colunas */}
+          {/* CORREÇÃO 3: Cards Destacados para as Frentes */}
+          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem'}}>
             
-            {/* Frente 1 */}
-            <div className="solution-column-card">
-              <h3 className="solution-column-title" style={{textAlign: 'left'}}>Frente 1: Construção do Motor Comercial</h3>
-              <ul className="solution-column-list" style={{gap: '1.5rem'}}>
-                <li>
-                  <strong>Pipeline em Expansão</strong>
-                  <span>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</span>
-                </li>
-                <li>
-                  <strong>Estratégia Dual-Channel</strong>
-                  <span><strong>Inbound:</strong> Conteúdo técnico otimizado para SEO (cases + guias).<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências personalizadas.</span>
-                </li>
-                <li>
-                  <strong>Ferramentas de IA</strong>
-                  <span>Enriquecimento automático de leads, qualificação via chatbot inteligente e follow-up automatizado com gatilhos.</span>
-                </li>
-              </ul>
+            {/* Frente 1: Card Destacado */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
+                <div className="pillar-icon-wrapper"><Target size={28} /></div>
+                <h3 className="pillar-card-title">Frente 1: Construção do Motor Comercial</h3>
+                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0, marginTop: '1.5rem'}}>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Pipeline em Expansão</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</p>
+                  </li>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Estratégia Dual-Channel</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências.</p>
+                  </li>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Ferramentas de IA</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Enriquecimento automático de leads, qualificação via chatbot inteligente.</p>
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            {/* Frente 2 */}
-            <div className="solution-column-card">
-              <h3 className="solution-column-title" style={{textAlign: 'left'}}>Frente 2: CRM Proprietário</h3>
-              <p className="solution-column-desc" style={{textAlign: 'left', minHeight: 'auto', marginBottom: '1.5rem'}}>
-                Sistema desenvolvido pela Synapse B2B especificamente para o segmento industrial.
-              </p>
-              <ul className="solution-column-list" style={{gap: '1.5rem'}}>
-                <li>
-                  <strong>Gestão Especializada</strong>
-                  <span>Gestão de pipeline por tipo de projeto (civil, elétrica, multidisciplinar). Histórico de interações documentado automaticamente.</span>
-                </li>
-                <li>
-                  <strong>Inteligência de Mercado</strong>
-                  <span>Alertas de oportunidade (obras anunciadas, licitações, expansões industriais).</span>
-                </li>
-                <li>
-                  <strong>Diferencial</strong>
-                  <span>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</span>
-                </li>
-              </ul>
+            {/* Frente 2: Card Destacado */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
+                <div className="pillar-icon-wrapper"><Layout size={28} /></div>
+                <h3 className="pillar-card-title">Frente 2: CRM Proprietário</h3>
+                <p className="pillar-card-description" style={{marginBottom: '1.5rem'}}>
+                  Sistema desenvolvido pela Synapse B2B especificamente para o segmento industrial.
+                </p>
+                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0}}>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Gestão Especializada</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Gestão de pipeline por tipo de projeto (civil, elétrica, multidisciplinar). Histórico automático.</p>
+                  </li>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Inteligência de Mercado</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Alertas de oportunidade (obras anunciadas, licitações, expansões industriais).</p>
+                  </li>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Diferencial</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -383,12 +375,13 @@ export default function ExclusivaEngenhariasCase() {
       {/* SEÇÃO 5: VOZ DO CLIENTE (ATUALIZADO)                                 */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container">
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
           <div className="decision-block" style={{
             maxWidth: '900px', 
             background: 'radial-gradient(circle, rgba(0, 150, 132, 0.05), transparent 80%)',
             textAlign: 'center',
-            padding: '3rem'
+            padding: '3rem',
+            margin: '0 auto'
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.1rem', fontFamily: "'Inter', sans-serif", color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '2rem', fontStyle: 'italic'}}>
@@ -414,7 +407,7 @@ export default function ExclusivaEngenhariasCase() {
             </div>
 
              <div style={{marginTop: '2rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap'}}>
-                <span className="case-card-tag-rev">Cliente desde 2024</span>
+                {/* CORREÇÃO 4: Removido "Cliente desde 2024" */}
                 <span className="case-card-tag-rev">Forecast 3x o ano histórico</span>
                 <span className="case-card-tag-rev">CRO as a Service ativo</span>
              </div>
@@ -473,6 +466,11 @@ export default function ExclusivaEngenhariasCase() {
          }
          .comparison-row:last-child {
             border-bottom: none;
+         }
+         @media (max-width: 900px) {
+            .pillar-grid-revolutionary {
+               grid-template-columns: 1fr !important;
+            }
          }
       `}</style>
     </>
