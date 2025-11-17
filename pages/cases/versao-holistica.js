@@ -1,5 +1,5 @@
 // pages/cases/versao-holistica.js
-// Versão Final Otimizada - Layout Corrigido (Centralizado e Horizontal)
+// Versão Final Otimizada - Layout Corrigido (Texto Centralizado + Frentes em Blocos)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -77,7 +77,7 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 1: O PARADOXO DA INOVAÇÃO                                      */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center"> {/* Centralizado */}
           <div style={{maxWidth: '800px', margin: '0 auto'}}>
             <h2 className="section-title">O Paradoxo da Inovação</h2>
             <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '1rem', marginTop: '-1rem'}}>Quando Genialidade Técnica Trava Receita</h3>
@@ -98,7 +98,7 @@ export default function VersaoHolisticaCase() {
               margin: '2rem 0'
             }}>
               <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem'}}>O Padrão Invisível:</h4>
-              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Mantendo lista alinhada para leitura */}
+              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Lista alinhada, bloco centralizado */}
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> "É consultoria ou software?"</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> ROI comprovado mas não comunicado</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Pitch para quem aprecia (clínicos) vs quem aprova orçamento (CFOs)</li>
@@ -124,11 +124,11 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 2: DA COMPLEXIDADE PARA CATEGORIA (TIMELINE)                   */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center">
           <h2 className="section-title">Da Complexidade para Categoria</h2>
           <p className="lead-text">Timeline: Transformação em 90 Dias</p>
           
-          {/* Timeline Visual Simplificado */}
+          {/* Timeline Visual */}
           <div className="case-timeline-visual" style={{
             display: 'flex', 
             justifyContent: 'space-between', 
@@ -156,16 +156,16 @@ export default function VersaoHolisticaCase() {
             </div>
           </div>
 
-          {/* CORREÇÃO 2: Fases em Colunas Horizontais (Grid) */}
+          {/* Grid de Fases (Horizontal) */}
           <div className="pillar-grid-revolutionary" style={{
-            gridTemplateColumns: 'repeat(3, 1fr)', /* Força 3 colunas */
+            gridTemplateColumns: 'repeat(3, 1fr)', 
             gap: '2rem',
             marginTop: '2rem'
           }}>
             
             {/* FASE 1 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><Target size={28} /></div>
                 <h3 className="pillar-card-title">FASE 1: Validação Comercial</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 15 dias | Ferramenta: Mapeamento de Decisão</p>
@@ -190,7 +190,7 @@ export default function VersaoHolisticaCase() {
 
             {/* FASE 2 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><Layers size={28} /></div>
                 <h3 className="pillar-card-title">FASE 2: Criação de Categoria</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 30 dias | Entrega: Oceano Azul</p>
@@ -220,7 +220,7 @@ export default function VersaoHolisticaCase() {
 
             {/* FASE 3 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><BrainCircuit size={28} /></div>
                 <h3 className="pillar-card-title">FASE 3: Plataforma + Captação</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 45 dias | Resultado: R$ 500k captados</p>
@@ -233,7 +233,7 @@ export default function VersaoHolisticaCase() {
                   <div>
                     <h4 style={{color: 'var(--color-primary)', marginBottom: '0.5rem', fontSize: '0.95rem'}}>ETAPA 1 — Fundação:</h4>
                     <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
-                      <li>• Plataforma focada na Arquitetura</li>
+                      <li>• Plataforma de Arquitetura</li>
                       <li>• ROI de 5.8x como centro</li>
                     </ul>
                   </div>
@@ -344,7 +344,7 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 4: O TRABALHO CONTINUA (NOVA SEÇÃO DE DETALHES EM CARDS)       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">Da Captação para Tração de Mercado</h2>
           <p className="lead-text" style={{marginBottom: '3rem'}}>
             Com categoria criada e R$ 500k captados, o foco mudou de validar tese para gerar tração.
@@ -353,7 +353,7 @@ export default function VersaoHolisticaCase() {
             Status Atual: Advisory Board (até dezembro/2025)
           </p>
 
-          {/* CORREÇÃO 3: Cards Destacados para as Frentes */}
+          {/* CORREÇÃO 3: Cards Destacados para as Frentes (Grid Horizontal) */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem'}}>
             
             {/* Frente 1: Card Destacado */}
@@ -363,16 +363,18 @@ export default function VersaoHolisticaCase() {
                 <h3 className="pillar-card-title">Frente 1: Validação de Mercado</h3>
                 <p className="pillar-card-description" style={{marginBottom: '1.5rem'}}>Participação ativa em eventos de Negócios e Tecnologia.</p>
                 
-                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0}}>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Objetivos</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Testar pitches, identificar objeções, refinar narrativa com feedback real e conectar com decisores.</p>
-                  </li>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Resultado Prático</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Cada evento é laboratório de validação. Pitch evolui com base em perguntas reais de CFOs.</p>
-                  </li>
-                </ul>
+                {/* Blocos visuais melhorados para a Frente 1 */}
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Objetivos</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Testar pitches, identificar objeções, refinar narrativa com feedback real e conectar com decisores.</p>
+                    </div>
+
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Resultado Prático</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Cada evento é laboratório de validação. Pitch evolui com base em perguntas reais de CFOs.</p>
+                    </div>
+                </div>
               </div>
             </div>
 
@@ -383,16 +385,18 @@ export default function VersaoHolisticaCase() {
                 <h3 className="pillar-card-title">Frente 2: Governança Estratégica</h3>
                 <p className="pillar-card-description" style={{marginBottom: '1.5rem'}}>Atuação como Advisory Board para guiar decisões críticas.</p>
                 
-                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0}}>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Decisões Críticas</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Priorização de verticais (Hospitais vs Empresas), estratégia de parcerias e modelagem de receita.</p>
-                  </li>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Princípio</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Decisões de alto impacto não podem ser baseadas em intuição quando você tem R$ 500k para investir.</p>
-                  </li>
-                </ul>
+                 {/* Blocos visuais melhorados para a Frente 2 */}
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Decisões Críticas</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Priorização de verticais (Hospitais vs Empresas), estratégia de parcerias e modelagem de receita.</p>
+                    </div>
+
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Princípio</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Decisões de alto impacto não podem ser baseadas em intuição quando você tem R$ 500k para investir.</p>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -406,7 +410,7 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 5: VOZ DO CLIENTE (ATUALIZADO)                                 */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">VOZ DO CLIENTE</h2> {/* CORREÇÃO 4: Título Adicionado */}
           <div className="decision-block" style={{
             maxWidth: '900px', 
@@ -462,10 +466,15 @@ export default function VersaoHolisticaCase() {
         <div className="pulsating-core-background"></div>
 
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
-          <Gem size={48} style={{color: 'var(--color-primary)', marginBottom: '1.5rem'}} />
+          <Gem size={48} style={{color: 'var(--color-primary)', marginBottom: '1.5rem', margin: '0 auto'}} />
           <h2 className="section-title">Sua solução também é inovadora mas ninguém investe?</h2>
           
-          <div style={{maxWidth: '700px', margin: '2rem auto', textAlign: 'left', display: 'inline-block'}}>
+          {/* CORREÇÃO 1: Texto centralizado na Lição Final */}
+          <p className="lead-text" style={{fontSize: '1.3rem', color: 'var(--color-heading)', margin: '2rem auto 3rem', fontWeight: 600, textAlign: 'center'}}>
+            Você não precisa de mais validação técnica. Você precisa de clareza de categoria + governança de execução.
+          </p>
+          
+          <div style={{maxWidth: '700px', margin: '0 auto', textAlign: 'left', display: 'inline-block'}}>
              <ul style={{listStyle: 'none', padding: 0, fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: 1.8}}>
                <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Metodologia validada mas pitch que não converte</li>
                <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Produto tecnicamente superior perdendo para narrativas mais simples</li>
@@ -475,11 +484,7 @@ export default function VersaoHolisticaCase() {
              </ul>
           </div>
 
-          <p className="lead-text" style={{fontSize: '1.3rem', color: 'var(--color-heading)', margin: '2rem 0', fontWeight: 600}}>
-            Você não precisa de mais validação técnica. Você precisa de clareza de categoria + governança de execução.
-          </p>
-
-          <div className="section-cta">
+          <div className="section-cta" style={{marginTop: '3rem'}}>
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Agendar Diagnóstico Estratégico</span> 
               <ArrowRight size={20} />
