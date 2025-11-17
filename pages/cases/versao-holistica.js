@@ -1,6 +1,5 @@
 // pages/cases/versao-holistica.js
-// Versão Final Otimizada - Foco em Criação de Categoria, Captação e Governança (G-Ops)
-// CORREÇÃO DE BUILD: Importação do ícone 'Download' adicionada
+// Versão Final Otimizada - Layout Corrigido (Centralizado e Horizontal)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -8,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { 
   ArrowRight, 
-  Download, // <-- IMPORTAÇÃO ADICIONADA AQUI
+  Download,
   CheckCircle2, 
   Target,
   Layers, 
@@ -78,15 +77,15 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 1: O PARADOXO DA INOVAÇÃO                                      */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container">
-          <div style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left'}}>
-            <h2 className="section-title text-center">O Paradoxo da Inovação</h2>
-            <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '1rem', textAlign: 'center', marginTop: '-1rem'}}>Quando Genialidade Técnica Trava Receita</h3>
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <div style={{maxWidth: '800px', margin: '0 auto'}}>
+            <h2 className="section-title">O Paradoxo da Inovação</h2>
+            <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '1rem', marginTop: '-1rem'}}>Quando Genialidade Técnica Trava Receita</h3>
             
             <p className="lead-text" style={{marginBottom: '2rem'}}>
               A Versão Holística tinha tudo para escalar: metodologia com validação científica (UFMG), ROI comprovado de 5.8x em pacientes crônicos, parcerias com hospitais de referência.
             </p>
-            <p style={{textAlign: 'center', fontWeight: 600, marginBottom: '3rem'}}>Menos uma coisa: <strong>clareza de negócio</strong>.</p>
+            <p style={{fontWeight: 600, marginBottom: '3rem'}}>Menos uma coisa: <strong>clareza de negócio</strong>.</p>
 
             <h3 style={{color: 'var(--color-heading)', fontSize: '1.4rem', marginBottom: '1rem'}}>O Pitch que Confundia Investidores</h3>
             <p>Pitch de 15 minutos. Decisores saíam impressionados, mas confusos:</p>
@@ -99,7 +98,7 @@ export default function VersaoHolisticaCase() {
               margin: '2rem 0'
             }}>
               <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem'}}>O Padrão Invisível:</h4>
-              <ul style={{listStyle: 'none', padding: 0}}>
+              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Mantendo lista alinhada para leitura */}
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> "É consultoria ou software?"</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> ROI comprovado mas não comunicado</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Pitch para quem aprecia (clínicos) vs quem aprova orçamento (CFOs)</li>
@@ -107,7 +106,7 @@ export default function VersaoHolisticaCase() {
               </ul>
             </div>
             
-            <p style={{color: 'var(--color-text)', fontStyle: 'italic', borderLeft: '4px solid var(--color-primary)', paddingLeft: '1.5rem', margin: '2rem 0'}}>
+            <p style={{color: 'var(--color-text)', fontStyle: 'italic', borderLeft: '4px solid var(--color-primary)', paddingLeft: '1.5rem', margin: '2rem 0', textAlign: 'left'}}>
               "Isabella vendia humanização do cuidado para diretores clínicos apaixonados. Mas quem aprovava o orçamento eram CFOs pressionados por custo. A conversa acontecia no canal errado."
             </p>
 
@@ -125,9 +124,9 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 2: DA COMPLEXIDADE PARA CATEGORIA (TIMELINE)                   */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container">
-          <h2 className="section-title text-center">Da Complexidade para Categoria</h2>
-          <p className="lead-text text-center">Timeline: Transformação em 90 Dias</p>
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <h2 className="section-title">Da Complexidade para Categoria</h2>
+          <p className="lead-text">Timeline: Transformação em 90 Dias</p>
           
           {/* Timeline Visual Simplificado */}
           <div className="case-timeline-visual" style={{
@@ -157,37 +156,41 @@ export default function VersaoHolisticaCase() {
             </div>
           </div>
 
-          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem'}}>
+          {/* CORREÇÃO 2: Fases em Colunas Horizontais (Grid) */}
+          <div className="pillar-grid-revolutionary" style={{
+            gridTemplateColumns: 'repeat(3, 1fr)', /* Força 3 colunas */
+            gap: '2rem',
+            marginTop: '2rem'
+          }}>
             
-            {/* FASE 1: Validação Comercial */}
+            {/* FASE 1 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{textAlign: 'left', alignItems: 'flex-start'}}>
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
                 <div className="pillar-icon-wrapper"><Target size={28} /></div>
-                <h3 className="pillar-card-title">FASE 1: Validação Comercial (Sprint)</h3>
-                <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 15 dias | Ferramenta: Mapeamento de Decisão Real</p>
+                <h3 className="pillar-card-title">FASE 1: Validação Comercial</h3>
+                <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 15 dias | Ferramenta: Mapeamento de Decisão</p>
                 
                 <p className="pillar-card-description">
-                  Decodificamos o processo decisório verdadeiro nos hospitais:
+                  Decodificamos o processo decisório verdadeiro nos hospitais.
                 </p>
                 <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Decisor real:</strong> CFO, não diretor clínico (insight crítico)</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Objeção principal:</strong> "Mais uma consultoria cara sem ROI"</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Gatilho de decisão:</strong> Case com métrica financeira tangível</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Erro estratégico:</strong> Vender para quem aprecia vs quem aprova</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Decisor real:</strong> CFO (não clínico)</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Objeção:</strong> "Mais uma consultoria"</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Gatilho:</strong> ROI tangível</li>
                 </ul>
 
-                <div style={{marginTop: '1.5rem', padding: '1.5rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)'}}>
+                <div style={{marginTop: '1.5rem', padding: '1rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)'}}>
                   <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.5rem'}}>O Ajuste de Canal:</strong>
                   <p style={{fontSize: '0.9rem', margin: 0}}>
-                    Isabella tinha a mensagem certa para o público errado. Diretores clínicos amavam a metodologia. CFOs não entendiam o ROI. Mudamos a conversa de "cuidado humanizado" para <strong>"redução de custo de paciente de alto valor em 5.8x"</strong>.
+                    Mudamos a conversa de "cuidado humanizado" para <strong>"redução de custo de paciente de alto valor em 5.8x"</strong>.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* FASE 2: Criação de Categoria */}
+            {/* FASE 2 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{textAlign: 'left', alignItems: 'flex-start'}}>
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
                 <div className="pillar-icon-wrapper"><Layers size={28} /></div>
                 <h3 className="pillar-card-title">FASE 2: Criação de Categoria</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 30 dias | Entrega: Oceano Azul</p>
@@ -196,101 +199,59 @@ export default function VersaoHolisticaCase() {
                   Não reposicionamos a empresa. Criamos a categoria.
                 </p>
                 <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Antes:</strong> "Cuidado Farmacêutico Integrativo" (incompreensível)</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Depois:</strong> "1ª Plataforma de CareOps Integrativo do Brasil" (competição zero)</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Antes:</strong> "Cuidado Farmacêutico"</li>
+                  <li style={{marginBottom: '0.5rem'}}>• <strong>Depois:</strong> "CareOps Integrativo"</li>
                 </ul>
 
-                 <h4 style={{color: 'var(--color-heading)', fontSize: '1rem', marginTop: '1.5rem', marginBottom: '0.5rem'}}>Estrutura da Nova Categoria:</h4>
+                 <h4 style={{color: 'var(--color-heading)', fontSize: '1rem', marginTop: '1rem', marginBottom: '0.5rem'}}>Estrutura:</h4>
                  <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
-                   <li style={{marginBottom: '0.5rem'}}>✔ Atenção Farmacêutica + Terapias Integrativas + Inteligência de Dados</li>
-                   <li style={{marginBottom: '0.5rem'}}>✔ Resultado tangível: 5.8x de redução no custo (validado UFMG)</li>
-                   <li>✔ 3 verticais com hierarquia: Core (Hospitais), Tração (Empresas), Validação (Escolas)</li>
+                   <li style={{marginBottom: '0.5rem'}}>✔ Atenção Farmacêutica + Dados</li>
+                   <li style={{marginBottom: '0.5rem'}}>✔ 5.8x redução de custo</li>
+                   <li>✔ 3 verticais claras</li>
                  </ul>
                  
-                 <div style={{marginTop: '1.5rem', padding: '1.5rem', background: 'var(--color-card-bg-hover)', borderRadius: '12px', border: '1px solid var(--color-border)'}}>
-                   <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.5rem'}}>Por que criar categoria é criar poder:</strong>
-                   <p style={{fontSize: '0.9rem', margin: 0}}>
-                     Antes: VH competia com clínicas digitais, apps de wellness. Depois: VH é CareOps Integrativo. Não há concorrência porque não há comparação. A história de Isabella virou prova viva da lacuna no sistema de saúde.
-                   </p>
+                 <div style={{marginTop: '1.5rem'}}>
+                   <a href="https://versaoholistica.com.br" target="_blank" rel="noopener noreferrer" className="btn-case-revolutionary" style={{fontSize: '0.9rem'}}>
+                     Ver a categoria <ArrowRight size={16} />
+                   </a>
                  </div>
-
-                  {/* Imagem da Categoria */}
-                  <div className="case-image-wrapper" style={{marginTop: '2rem'}}>
-                    <Image 
-                      src="/cases/versaoholistica-br-hospitais.png"
-                      alt="Visual da categoria CareOps Integrativo"
-                      width={1000}
-                      height={500}
-                      quality={100}
-                      style={{ objectFit: 'contain', width: '100%', height: 'auto', borderRadius: '8px', border: '1px solid var(--color-border)' }}
-                    />
-                  </div>
               </div>
             </div>
 
-            {/* FASE 3: Plataforma Digital + Tese de Investimento */}
-            <div className="pillar-card-revolutionary" style={{gridColumn: '1 / -1'}}> {/* Ocupa largura total */}
-              <div className="pillar-card-content" style={{textAlign: 'left', alignItems: 'flex-start'}}>
+            {/* FASE 3 */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
                 <div className="pillar-icon-wrapper"><BrainCircuit size={28} /></div>
-                <h3 className="pillar-card-title">FASE 3: Plataforma Digital + Tese de Investimento</h3>
+                <h3 className="pillar-card-title">FASE 3: Plataforma + Captação</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 45 dias | Resultado: R$ 500k captados</p>
                 
-                <p className="pillar-card-description" style={{fontSize: '1.1rem', fontWeight: 500, color: 'var(--color-heading)'}}>
+                <p className="pillar-card-description">
                   Materializamos a categoria em ativos de captação.
                 </p>
 
-                <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '1.5rem', width: '100%'}}>
-                  
-                  {/* Etapa 1: Fundação */}
+                <div style={{display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginTop: '1rem', width: '100%'}}>
                   <div>
-                    <h4 style={{color: 'var(--color-primary)', marginBottom: '1rem'}}>ETAPA 1 — Fundação Estratégica (30 dias):</h4>
-                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                      <li style={{marginBottom: '0.5rem'}}>• Plataforma 100% focada na Arquitetura de Cuidados Integrativos</li>
-                      <li style={{marginBottom: '0.5rem'}}>• Educação de mercado sobre a nova categoria</li>
-                      <li style={{marginBottom: '0.5rem'}}>• Modelo de receita estruturado por vertical</li>
-                      <li style={{marginBottom: '0.5rem'}}>• ROI de 5.8x como diferenciação central</li>
+                    <h4 style={{color: 'var(--color-primary)', marginBottom: '0.5rem', fontSize: '0.95rem'}}>ETAPA 1 — Fundação:</h4>
+                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
+                      <li>• Plataforma focada na Arquitetura</li>
+                      <li>• ROI de 5.8x como centro</li>
                     </ul>
-                     <div className="case-image-wrapper" style={{marginTop: '1.5rem'}}>
-                        <Image 
-                          src="/cases/versaoholistica-home.png"
-                          alt="Homepage versaoholistica.com.br"
-                          width={1000}
-                          height={500}
-                          quality={100}
-                          style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: '200px', borderRadius: '8px', border: '1px solid var(--color-border)' }}
-                        />
-                      </div>
                   </div>
 
-                  {/* Etapa 2: Expansão e O Diferencial G-Ops */}
                   <div>
-                    <h4 style={{color: 'var(--color-primary)', marginBottom: '1rem'}}>ETAPA 2 — Expansão Sistêmica (G-Ops):</h4>
-                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                      <li style={{marginBottom: '0.5rem'}}>• Camada G-Ops (Governance Operations) que eleva CareOps para plataforma tecnológica</li>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Interoperabilidade:</strong> Integração com sistemas hospitalares</li>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Wearable Nicehealth:</strong> Pulseira de dados em tempo real</li>
-                      <li style={{marginBottom: '0.5rem'}}>• <strong>Inteligência de Dados:</strong> Analytics de ROI para CFOs</li>
+                    <h4 style={{color: 'var(--color-primary)', marginBottom: '0.5rem', fontSize: '0.95rem'}}>ETAPA 2 — Expansão (G-Ops):</h4>
+                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
+                      <li>• Interoperabilidade sistêmica</li>
+                      <li>• Analytics de ROI em tempo real</li>
                     </ul>
-
-                    <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '1.5rem', borderRadius: '12px', marginTop: '1.5rem', border: '1px solid var(--color-primary)'}}>
-                      <h4 style={{color: 'var(--color-heading)', marginBottom: '0.5rem'}}>O Diferencial do G-Ops:</h4>
-                      <p style={{fontSize: '0.95rem'}}>
-                        Combina Metodologia validada + Interoperabilidade sistêmica + Monitoramento contínuo + ROI em tempo real. Não é mais "confie na metodologia". É "veja o resultado acontecendo ao vivo".
-                      </p>
-                    </div>
-
-                    <h4 style={{color: 'var(--color-heading)', marginTop: '1.5rem', marginBottom: '0.5rem'}}>Material de Captação:</h4>
-                     <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.95rem'}}>
-                      <li style={{marginBottom: '0.5rem'}}>• Tese de investimento fundamentada</li>
-                      <li style={{marginBottom: '0.5rem'}}>• Pitch deck de "inevitabilidade"</li>
-                      <li>• <strong>Resultado Imediato:</strong> R$ 500k captados (Compete Minas) em 45 dias.</li>
-                    </ul>
+                  </div>
+                  
+                  <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '1rem', borderRadius: '12px', marginTop: '0.5rem', border: '1px solid var(--color-primary)'}}>
+                      <h4 style={{color: 'var(--color-heading)', marginBottom: '0.25rem', fontSize: '0.9rem'}}>Resultado Imediato:</h4>
+                      <p style={{fontSize: '1rem', fontWeight: 700, color: 'var(--color-primary)'}}>R$ 500k captados (Compete Minas) em 45 dias.</p>
                   </div>
 
                 </div>
-
-                <h4 style={{color: 'var(--color-heading)', marginTop: '2rem'}}>Por que funcionou:</h4>
-                <p>Investidores não investem em soluções complexas. Investem em categorias inevitáveis com primeiro player claro. O pitch deixou de ser "entenda nossa metodologia" para virar "entenda por que CareOps Integrativo é a próxima fronteira". Clareza de categoria + ROI validado + história autêntica = tese irrefutável.</p>
               </div>
             </div>
 
@@ -349,7 +310,6 @@ export default function VersaoHolisticaCase() {
           <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem'}}>
             NÚMEROS EM DESTAQUE 
           </h3>
-          {/* Reutilizando o grid de "3 Verdades" para os "Números" */}
           <div className="truths-grid-revolutionary">
             <div className="truth-card-revolutionary">
               <h3 className="truth-card-title" style={{fontSize: '3rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>R$ 500k</h3> 
@@ -381,54 +341,59 @@ export default function VersaoHolisticaCase() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* SEÇÃO 4: O TRABALHO CONTINUA (NOVA SEÇÃO DE DETALHES)                */}
+      {/* SEÇÃO 4: O TRABALHO CONTINUA (NOVA SEÇÃO DE DETALHES EM CARDS)       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container">
-          <h2 className="section-title text-center">Da Captação para Tração de Mercado</h2>
-          <p className="lead-text text-center" style={{marginBottom: '3rem'}}>
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <h2 className="section-title">Da Captação para Tração de Mercado</h2>
+          <p className="lead-text" style={{marginBottom: '3rem'}}>
             Com categoria criada e R$ 500k captados, o foco mudou de validar tese para gerar tração.
           </p>
-          <p className="lead-text text-center" style={{fontSize: '1rem', color: 'var(--color-accent)', fontWeight: 600, marginTop: '-2rem', marginBottom: '3rem'}}>
+          <p className="lead-text" style={{fontSize: '1rem', color: 'var(--color-accent)', fontWeight: 600, marginTop: '-2rem', marginBottom: '3rem'}}>
             Status Atual: Advisory Board (até dezembro/2025)
           </p>
 
-          <div className="solutions-2col-grid"> {/* Reutilizando grid de 2 colunas */}
+          {/* CORREÇÃO 3: Cards Destacados para as Frentes */}
+          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem'}}>
             
-            {/* Frente 1 */}
-            <div className="solution-column-card">
-              <h3 className="solution-column-title" style={{textAlign: 'left'}}>Frente 1: Validação de Mercado via Eventos</h3>
-              <p className="solution-column-desc" style={{textAlign: 'left', minHeight: 'auto', marginBottom: '1.5rem'}}>
-                Participação ativa em eventos de Negócios e Tecnologia.
-              </p>
-              <ul className="solution-column-list" style={{gap: '1.5rem'}}>
-                <li>
-                  <strong>Objetivos:</strong>
-                  <span>Testar pitches, identificar objeções emergentes, refinar narrativa com feedback real e conectar Isabella com decisores.</span>
-                </li>
-                <li>
-                  <strong>Resultado prático:</strong>
-                  <span>Cada evento é laboratório de validação. Pitch evolui com base em perguntas reais de CFOs, não suposições.</span>
-                </li>
-              </ul>
+            {/* Frente 1: Card Destacado */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
+                <div className="pillar-icon-wrapper"><Target size={28} /></div>
+                <h3 className="pillar-card-title">Frente 1: Validação de Mercado</h3>
+                <p className="pillar-card-description" style={{marginBottom: '1.5rem'}}>Participação ativa em eventos de Negócios e Tecnologia.</p>
+                
+                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0}}>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Objetivos</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Testar pitches, identificar objeções, refinar narrativa com feedback real e conectar com decisores.</p>
+                  </li>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Resultado Prático</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Cada evento é laboratório de validação. Pitch evolui com base em perguntas reais de CFOs.</p>
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            {/* Frente 2 */}
-            <div className="solution-column-card">
-              <h3 className="solution-column-title" style={{textAlign: 'left'}}>Frente 2: Governança Estratégica</h3>
-              <p className="solution-column-desc" style={{textAlign: 'left', minHeight: 'auto', marginBottom: '1.5rem'}}>
-                Atuação como Advisory Board para guiar decisões críticas.
-              </p>
-              <ul className="solution-column-list" style={{gap: '1.5rem'}}>
-                <li>
-                  <strong>Decisões Críticas:</strong>
-                  <span>Priorização de verticais (Hospitais vs Empresas vs Escolas), estratégia de parcerias (wearable, integrações) e modelagem de receita recorrente.</span>
-                </li>
-                <li>
-                  <strong>Princípio:</strong>
-                  <span>Decisões de alto impacto não podem ser baseadas em intuição quando você tem R$ 500k para investir.</span>
-                </li>
-              </ul>
+            {/* Frente 2: Card Destacado */}
+            <div className="pillar-card-revolutionary">
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
+                <div className="pillar-icon-wrapper"><ShieldCheck size={28} /></div>
+                <h3 className="pillar-card-title">Frente 2: Governança Estratégica</h3>
+                <p className="pillar-card-description" style={{marginBottom: '1.5rem'}}>Atuação como Advisory Board para guiar decisões críticas.</p>
+                
+                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0}}>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Decisões Críticas</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Priorização de verticais (Hospitais vs Empresas), estratégia de parcerias e modelagem de receita.</p>
+                  </li>
+                  <li>
+                    <strong style={{color: 'var(--color-heading)'}}>Princípio</strong>
+                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Decisões de alto impacto não podem ser baseadas em intuição quando você tem R$ 500k para investir.</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -441,12 +406,14 @@ export default function VersaoHolisticaCase() {
       {/* SEÇÃO 5: VOZ DO CLIENTE (ATUALIZADO)                                 */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container">
+        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <h2 className="section-title">VOZ DO CLIENTE</h2> {/* CORREÇÃO 4: Título Adicionado */}
           <div className="decision-block" style={{
             maxWidth: '900px', 
             background: 'radial-gradient(circle, rgba(0, 150, 132, 0.05), transparent 80%)',
             textAlign: 'center',
-            padding: '3rem'
+            padding: '3rem',
+            margin: '0 auto'
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.1rem', fontFamily: "'Inter', sans-serif", color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '2rem', fontStyle: 'italic'}}>
@@ -471,7 +438,7 @@ export default function VersaoHolisticaCase() {
             </div>
 
              <div style={{marginTop: '2rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap'}}>
-                <span className="case-card-tag-rev">Cliente desde 2025</span>
+                {/* CORREÇÃO 5: Removido "Cliente desde 2025" */}
                 <span className="case-card-tag-rev">R$ 500k captados</span>
                 <span className="case-card-tag-rev">Advisory Board ativo</span>
              </div>
