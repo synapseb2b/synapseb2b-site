@@ -1,5 +1,5 @@
 // pages/cases/exclusiva-engenharias.js
-// Versão Final Otimizada - Layout Corrigido (Centralizado e Horizontal)
+// Versão Final Otimizada - Layout Corrigido (Centralizado, Mini-Cards e Título)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -80,7 +80,7 @@ export default function ExclusivaEngenhariasCase() {
       {/* SEÇÃO 1: O DIAGNÓSTICO QUE MUDOU TUDO                                */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center"> {/* Centralizado */}
           <div style={{maxWidth: '800px', margin: '0 auto'}}>
             <h2 className="section-title">A Engenharia Começa no Diagnóstico</h2>
             
@@ -99,7 +99,7 @@ export default function ExclusivaEngenhariasCase() {
               margin: '2rem 0'
             }}>
               <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem'}}>O Padrão Invisível:</h4>
-              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Mantendo lista alinhada para leitura, mas bloco centralizado */}
+              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> 
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Vendas 100% por indicação</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Crescimento sem meta = sem método</li>
                 <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> História fragmentada na mente dos sócios</li>
@@ -124,7 +124,7 @@ export default function ExclusivaEngenhariasCase() {
       {/* SEÇÃO 2: A ESTRATÉGIA ANTES DA TRAÇÃO (TIMELINE)                     */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">A Estratégia Antes da Tração</h2>
           
           {/* Timeline Visual Simplificado */}
@@ -160,16 +160,16 @@ export default function ExclusivaEngenhariasCase() {
             </div>
           </div>
 
-          {/* CORREÇÃO 2: Fases em Colunas Horizontais (Grid) */}
+          {/* Fases em Colunas Horizontais (Grid) */}
           <div className="pillar-grid-revolutionary" style={{
-            gridTemplateColumns: 'repeat(3, 1fr)', /* Força 3 colunas */
+            gridTemplateColumns: 'repeat(3, 1fr)', 
             gap: '2rem',
             marginTop: '2rem'
           }}>
             
             {/* FASE 1 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> 
                 <div className="pillar-icon-wrapper"><Brain size={28} /></div>
                 <h3 className="pillar-card-title">FASE 1: Go-To-Market & Posicionamento</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 15 dias | Ferramenta: Cortex B2B™</p>
@@ -195,7 +195,7 @@ export default function ExclusivaEngenhariasCase() {
 
             {/* FASE 2 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> 
                 <div className="pillar-icon-wrapper"><Zap size={28} /></div>
                 <h3 className="pillar-card-title">FASE 2: Plataforma de Aceleração</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 20 dias | Entrega: exclusivaengenharias.com</p>
@@ -225,7 +225,7 @@ export default function ExclusivaEngenhariasCase() {
 
             {/* FASE 3 */}
             <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> {/* CORREÇÃO 1: Centralizado */}
+              <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}> 
                 <div className="pillar-icon-wrapper"><TrendingUp size={28} /></div>
                 <h3 className="pillar-card-title">FASE 3: CRO as a Service</h3>
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 90 dias | Status: 50% concluído</p>
@@ -309,13 +309,13 @@ export default function ExclusivaEngenhariasCase() {
       {/* SEÇÃO 4: O TRABALHO CONTINUA (NOVA SEÇÃO DE DETALHES EM CARDS)       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
-        <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+        <div className="container text-center"> {/* Centralizado */}
           <h2 className="section-title">Da Fundação Estratégica para Escala Operacional</h2>
           <p className="lead-text" style={{marginBottom: '3rem'}}>
             Com clareza estratégica e plataforma digital validadas, o foco mudou de construir sistema para validar escala.
           </p>
 
-          {/* CORREÇÃO 3: Cards Destacados para as Frentes */}
+          {/* Cards Destacados para as Frentes */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem'}}>
             
             {/* Frente 1: Card Destacado */}
@@ -323,20 +323,24 @@ export default function ExclusivaEngenhariasCase() {
               <div className="pillar-card-content" style={{alignItems: 'center', textAlign: 'center'}}>
                 <div className="pillar-icon-wrapper"><Target size={28} /></div>
                 <h3 className="pillar-card-title">Frente 1: Construção do Motor Comercial</h3>
-                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0, marginTop: '1.5rem'}}>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Pipeline em Expansão</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</p>
-                  </li>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Estratégia Dual-Channel</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências.</p>
-                  </li>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Ferramentas de IA</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Enriquecimento automático de leads, qualificação via chatbot inteligente.</p>
-                  </li>
-                </ul>
+                
+                {/* CORREÇÃO 2: Mini-Cards visuais */}
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', marginTop: '1rem'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Pipeline em Expansão</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</p>
+                    </div>
+
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Estratégia Dual-Channel</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências.</p>
+                    </div>
+
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Ferramentas de IA</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Enriquecimento automático de leads, qualificação via chatbot inteligente.</p>
+                    </div>
+                </div>
               </div>
             </div>
 
@@ -348,20 +352,24 @@ export default function ExclusivaEngenhariasCase() {
                 <p className="pillar-card-description" style={{marginBottom: '1.5rem'}}>
                   Sistema desenvolvido pela Synapse B2B especificamente para o segmento industrial.
                 </p>
-                <ul className="solution-column-list" style={{gap: '1.5rem', listStyle: 'none', padding: 0}}>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Gestão Especializada</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Gestão de pipeline por tipo de projeto (civil, elétrica, multidisciplinar). Histórico automático.</p>
-                  </li>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Inteligência de Mercado</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Alertas de oportunidade (obras anunciadas, licitações, expansões industriais).</p>
-                  </li>
-                  <li>
-                    <strong style={{color: 'var(--color-heading)'}}>Diferencial</strong>
-                    <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</p>
-                  </li>
-                </ul>
+                
+                {/* CORREÇÃO 2: Mini-Cards visuais */}
+                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Gestão Especializada</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Gestão de pipeline por tipo de projeto (civil, elétrica, multidisciplinar). Histórico automático.</p>
+                    </div>
+
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Inteligência de Mercado</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Alertas de oportunidade (obras anunciadas, licitações, expansões industriais).</p>
+                    </div>
+
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                        <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Diferencial</strong>
+                        <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</p>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -376,6 +384,7 @@ export default function ExclusivaEngenhariasCase() {
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container text-center"> {/* CORREÇÃO 1: Centralizado */}
+          <h2 className="section-title">VOZ DO CLIENTE</h2> {/* CORREÇÃO 4: Título Adicionado */}
           <div className="decision-block" style={{
             maxWidth: '900px', 
             background: 'radial-gradient(circle, rgba(0, 150, 132, 0.05), transparent 80%)',
@@ -407,7 +416,7 @@ export default function ExclusivaEngenhariasCase() {
             </div>
 
              <div style={{marginTop: '2rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap'}}>
-                {/* CORREÇÃO 4: Removido "Cliente desde 2024" */}
+                {/* CORREÇÃO 5: Removido "Cliente desde 2024" */}
                 <span className="case-card-tag-rev">Forecast 3x o ano histórico</span>
                 <span className="case-card-tag-rev">CRO as a Service ativo</span>
              </div>
@@ -437,7 +446,8 @@ export default function ExclusivaEngenhariasCase() {
              </ul>
           </div>
 
-          <p className="lead-text" style={{fontSize: '1.3rem', color: 'var(--color-heading)', margin: '2rem 0', fontWeight: 600}}>
+          {/* CORREÇÃO 1: Texto centralizado na Lição Final */}
+          <p className="lead-text" style={{fontSize: '1.3rem', color: 'var(--color-heading)', margin: '2rem auto 3rem', fontWeight: 600, textAlign: 'center'}}>
             Você não precisa de mais esforço. Você precisa de Engenharia de Receita.
           </p>
 
