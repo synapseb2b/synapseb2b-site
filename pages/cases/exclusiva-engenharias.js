@@ -310,7 +310,7 @@ export default function ExclusivaEngenhariasCase() {
 
                <div className="case-image-wrapper" style={{margin: '2.5rem auto', maxWidth: '800px', ...imageGlowStyle}}>
                   <Image 
-                    src="/cases/playbook-exclusiva.png"
+                    src="/cases/playbook-exclusiva.jpg"
                     alt="Playbook Exclusiva"
                     width={1000}
                     height={500}
