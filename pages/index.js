@@ -331,7 +331,7 @@ export default function Home() {
                 <span className="case-card-tag-rev">R$ 500k captados</span>
               </div>
               <p><strong>Contexto:</strong> Healthtech com ROI de 5.8x validado pela UFMG, mas pitch confuso de 15 minutos gerava "vamos pensar". Decisores não entendiam a proposta.</p>
-              <p><strong>O que fizemos:</strong> Decodificamos o valor técnico ("Cuidado Farmacêutico") em linguagem de negócio ("1ª Plataforma de CareOps Integrativo"). Identificamos que o decisor real era o CFO (não o clínico) e ajustamos a narrativa para falar de redução de custo, não de humanização do cuidado.</p>
+              <p><strong>O que fizemos:</strong> Decodificamos o valor técnico ("Cuidado Farmacêutico") em linguagem de negócio ("Nova Arquitetura de Cuidado ao Paciente Crônico"). Identificamos que o decisor real era o CFO (não o clínico) e ajustamos a narrativa para falar de redução de custo, não de humanização do cuidado.</p>
               <p><strong>Resultado tangível:</strong> R$ 500k captados em 45 dias. Pitch de 3 minutos que gera "quando começamos?".</p>
               <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>

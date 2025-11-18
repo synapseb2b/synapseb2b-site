@@ -1,5 +1,5 @@
 // pages/cases/versao-holistica.js
-// Versão Final Otimizada - Layout Corrigido (Texto Centralizado + Frentes em Blocos)
+// Versão Final Otimizada - Alinhamento Central Rigoroso + Ajustes de Texto e Imagem
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -98,15 +98,15 @@ export default function VersaoHolisticaCase() {
               margin: '2rem 0'
             }}>
               <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem'}}>O Padrão Invisível:</h4>
-              <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}> {/* Lista alinhada, bloco centralizado */}
-                <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> "É consultoria ou software?"</li>
-                <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> ROI comprovado mas não comunicado</li>
-                <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Pitch para quem aprecia (clínicos) vs quem aprova orçamento (CFOs)</li>
-                <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> História de superação pessoal desconectada da tese comercial</li>
+              <ul style={{listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem'}}> 
+                <li style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> "É consultoria ou software?"</li>
+                <li style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> ROI comprovado mas não comunicado</li>
+                <li style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> Pitch para quem aprecia (clínicos) vs quem aprova orçamento (CFOs)</li>
+                <li style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}><CheckCircle2 size={18} color="var(--color-primary)"/> História de superação pessoal desconectada da tese comercial</li>
               </ul>
             </div>
             
-            <p style={{color: 'var(--color-text)', fontStyle: 'italic', borderLeft: '4px solid var(--color-primary)', paddingLeft: '1.5rem', margin: '2rem 0', textAlign: 'left'}}>
+            <p style={{color: 'var(--color-text)', fontStyle: 'italic', borderLeft: '4px solid var(--color-primary)', paddingLeft: '1.5rem', margin: '2rem 0', textAlign: 'center', borderLeft: 'none', borderTop: '4px solid var(--color-primary)', paddingTop: '1.5rem'}}> {/* Ajuste visual para centralizado */}
               "Isabella vendia humanização do cuidado para diretores clínicos apaixonados. Mas quem aprovava o orçamento eram CFOs pressionados por custo. A conversa acontecia no canal errado."
             </p>
 
@@ -171,7 +171,7 @@ export default function VersaoHolisticaCase() {
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 15 dias | Ferramenta: Mapeamento de Decisão</p>
                 
                 <p className="pillar-card-description">
-                  Decodificamos o processo decisório verdadeiro nos hospitais.
+                  Decodificamos o processo decisório real nos hospitais.
                 </p>
                 <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
                   <li style={{marginBottom: '0.5rem'}}>• <strong>Decisor real:</strong> CFO (não clínico)</li>
@@ -198,13 +198,13 @@ export default function VersaoHolisticaCase() {
                 <p className="pillar-card-description">
                   Não reposicionamos a empresa. Criamos a categoria.
                 </p>
-                <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem'}}>
+                <ul style={{listStyle: 'none', padding: 0, margin: '1rem 0', color: 'var(--color-text)', fontSize: '0.95rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                   <li style={{marginBottom: '0.5rem'}}>• <strong>Antes:</strong> "Cuidado Farmacêutico"</li>
-                  <li style={{marginBottom: '0.5rem'}}>• <strong>Depois:</strong> "CareOps Integrativo"</li>
+                  <li style={{marginBottom: '0.5rem', textAlign: 'center'}}>• <strong>Depois:</strong> "CareOps Integrativo: Nova Arquitetura de Cuidado ao Paciente Crônico"</li>
                 </ul>
 
                  <h4 style={{color: 'var(--color-heading)', fontSize: '1rem', marginTop: '1rem', marginBottom: '0.5rem'}}>Estrutura:</h4>
-                 <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
+                 <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                    <li style={{marginBottom: '0.5rem'}}>✔ Atenção Farmacêutica + Dados</li>
                    <li style={{marginBottom: '0.5rem'}}>✔ 5.8x redução de custo</li>
                    <li>✔ 3 verticais claras</li>
@@ -226,13 +226,13 @@ export default function VersaoHolisticaCase() {
                 <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '1rem'}}>Duração: 45 dias | Resultado: R$ 500k captados</p>
                 
                 <p className="pillar-card-description">
-                  Materializamos a categoria em ativos de captação.
+                   Com a clareza estabelecida, materializamos a nova tese em ativos executáveis: Pitch Deck estruturado e Plataforma Digital de conversão.
                 </p>
 
                 <div style={{display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginTop: '1rem', width: '100%'}}>
                   <div>
                     <h4 style={{color: 'var(--color-primary)', marginBottom: '0.5rem', fontSize: '0.95rem'}}>ETAPA 1 — Fundação:</h4>
-                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
+                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                       <li>• Plataforma de Arquitetura</li>
                       <li>• ROI de 5.8x como centro</li>
                     </ul>
@@ -240,7 +240,7 @@ export default function VersaoHolisticaCase() {
 
                   <div>
                     <h4 style={{color: 'var(--color-primary)', marginBottom: '0.5rem', fontSize: '0.95rem'}}>ETAPA 2 — Expansão (G-Ops):</h4>
-                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem'}}>
+                    <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '0.9rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                       <li>• Interoperabilidade sistêmica</li>
                       <li>• Analytics de ROI em tempo real</li>
                     </ul>
@@ -277,15 +277,15 @@ export default function VersaoHolisticaCase() {
             padding: '2rem'
           }}>
             <div style={{display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '2rem', alignItems: 'center'}}>
-              <div style={{textAlign: 'left'}}>
+              <div style={{textAlign: 'right'}}> {/* Antes alinhado à direita para espelhar */}
                 <h4 style={{color: 'var(--color-text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px'}}>Antes</h4>
-                <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', lineHeight: 1.8}}>
-                  <li style={{marginBottom: '0.5rem'}}><XCircle size={16} style={{display: 'inline', marginRight: '8px', color: '#ef4444'}}/> Pitch de 15 minutos confuso</li>
-                  <li style={{marginBottom: '0.5rem'}}><XCircle size={16} style={{display: 'inline', marginRight: '8px', color: '#ef4444'}}/> "O que vocês fazem?"</li>
-                  <li style={{marginBottom: '0.5rem'}}><XCircle size={16} style={{display: 'inline', marginRight: '8px', color: '#ef4444'}}/> ROI validado mas não comunicado</li>
-                  <li style={{marginBottom: '0.5rem'}}><XCircle size={16} style={{display: 'inline', marginRight: '8px', color: '#ef4444'}}/> Modelo disperso sem hierarquia</li>
-                  <li style={{marginBottom: '0.5rem'}}><XCircle size={16} style={{display: 'inline', marginRight: '8px', color: '#ef4444'}}/> Zero investimento captado</li>
-                  <li><XCircle size={16} style={{display: 'inline', marginRight: '8px', color: '#ef4444'}}/> História isolada da proposta</li>
+                <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', lineHeight: 1.8, display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
+                  <li style={{marginBottom: '0.5rem'}}>Pitch de 15 minutos confuso <XCircle size={16} style={{display: 'inline', marginLeft: '8px', color: '#ef4444'}}/></li>
+                  <li style={{marginBottom: '0.5rem'}}>"O que vocês fazem?" <XCircle size={16} style={{display: 'inline', marginLeft: '8px', color: '#ef4444'}}/></li>
+                  <li style={{marginBottom: '0.5rem'}}>ROI validado mas não comunicado <XCircle size={16} style={{display: 'inline', marginLeft: '8px', color: '#ef4444'}}/></li>
+                  <li style={{marginBottom: '0.5rem'}}>Modelo disperso sem hierarquia <XCircle size={16} style={{display: 'inline', marginLeft: '8px', color: '#ef4444'}}/></li>
+                  <li style={{marginBottom: '0.5rem'}}>Zero investimento captado <XCircle size={16} style={{display: 'inline', marginLeft: '8px', color: '#ef4444'}}/></li>
+                  <li>História isolada da proposta <XCircle size={16} style={{display: 'inline', marginLeft: '8px', color: '#ef4444'}}/></li>
                 </ul>
               </div>
 
@@ -293,7 +293,7 @@ export default function VersaoHolisticaCase() {
                 <ArrowRight size={32} />
               </div>
 
-              <div style={{textAlign: 'left'}}>
+              <div style={{textAlign: 'left'}}> {/* Depois alinhado à esquerda */}
                 <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px'}}>Depois</h4>
                 <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-heading)', lineHeight: 1.8, fontWeight: 500}}>
                   <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={16} style={{display: 'inline', marginRight: '8px', color: 'var(--color-primary)'}}/> Pitch de 3 minutos cristalino</li>
@@ -310,7 +310,7 @@ export default function VersaoHolisticaCase() {
           <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem'}}>
             NÚMEROS EM DESTAQUE 
           </h3>
-          <div className="truths-grid-revolutionary">
+          <div className="truths-grid-revolutionary" style={{justifyContent: 'center'}}>
             <div className="truth-card-revolutionary">
               <h3 className="truth-card-title" style={{fontSize: '3rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>R$ 500k</h3> 
               <p style={{fontSize: '1.2rem', color: 'var(--color-heading)'}}>captados</p> 
@@ -353,7 +353,7 @@ export default function VersaoHolisticaCase() {
             Status Atual: Advisory Board (até dezembro/2025)
           </p>
 
-          {/* CORREÇÃO 3: Cards Destacados para as Frentes (Grid Horizontal) */}
+          {/* Cards Destacados para as Frentes (Grid Horizontal) */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem'}}>
             
             {/* Frente 1: Card Destacado */}
@@ -365,12 +365,12 @@ export default function VersaoHolisticaCase() {
                 
                 {/* Blocos visuais melhorados para a Frente 1 */}
                 <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
-                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderTop: '3px solid var(--color-primary)', textAlign: 'center'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Objetivos</strong>
                         <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Testar pitches, identificar objeções, refinar narrativa com feedback real e conectar com decisores.</p>
                     </div>
 
-                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderTop: '3px solid var(--color-accent)', textAlign: 'center'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Resultado Prático</strong>
                         <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Cada evento é laboratório de validação. Pitch evolui com base em perguntas reais de CFOs.</p>
                     </div>
@@ -387,12 +387,12 @@ export default function VersaoHolisticaCase() {
                 
                  {/* Blocos visuais melhorados para a Frente 2 */}
                 <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
-                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-primary)', textAlign: 'left'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderTop: '3px solid var(--color-primary)', textAlign: 'center'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Decisões Críticas</strong>
                         <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Priorização de verticais (Hospitais vs Empresas), estratégia de parcerias e modelagem de receita.</p>
                     </div>
 
-                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--color-accent)', textAlign: 'left'}}>
+                    <div style={{background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', borderTop: '3px solid var(--color-accent)', textAlign: 'center'}}>
                         <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)'}}>Princípio</strong>
                         <p style={{fontSize: '0.9rem', margin: 0, color: 'var(--color-text)'}}>Decisões de alto impacto não podem ser baseadas em intuição quando você tem R$ 500k para investir.</p>
                     </div>
@@ -411,7 +411,7 @@ export default function VersaoHolisticaCase() {
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container text-center"> {/* Centralizado */}
-          <h2 className="section-title">VOZ DO CLIENTE</h2> {/* CORREÇÃO 4: Título Adicionado */}
+          <h2 className="section-title">VOZ DO CLIENTE</h2>
           <div className="decision-block" style={{
             maxWidth: '900px', 
             background: 'radial-gradient(circle, rgba(0, 150, 132, 0.05), transparent 80%)',
@@ -421,13 +421,14 @@ export default function VersaoHolisticaCase() {
           }}>
             <blockquote style={{border: 0, padding: 0, margin: 0}}>
               <p style={{fontSize: '1.1rem', fontFamily: "'Inter', sans-serif", color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '2rem', fontStyle: 'italic'}}>
-                "A Synapse B2B nos deu o que nenhuma aceleradora havia entregue: <strong>clareza</strong>. Eles conectaram nossa paixão com a linguagem que hospitais e investidores precisavam ouvir. Saímos de 'solução complexa' para 'nova categoria'. O resultado? R$ 500k captados. E agora continuam ao nosso lado como Advisory Board, guiando as decisões que vão transformar investimento em tração real."
+                "A Synapse B2B nos deu o que nenhuma aceleradora havia entregue: <strong>clareza</strong>. Eles conectaram nossa expertise técnica com a linguagem que hospitais e investidores precisavam ouvir. Saímos de 'solução complexa' para 'nova categoria'. O resultado? R$ 500k captados. E agora continuam ao nosso lado como Advisory Board, guiando as decisões que vão transformar investimento em tração real."
               </p>
             </blockquote>
 
             <div className="testimonial-author" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem'}}>
+              {/* IMAGEM CORRIGIDA PARA JPG */}
               <Image
-                src="/cases/Isabella_Albuquerque.png"
+                src="/cases/Isabella-Albuquerque.jpg"
                 alt="Isabella Albuquerque"
                 width={80}
                 height={80}
@@ -442,7 +443,6 @@ export default function VersaoHolisticaCase() {
             </div>
 
              <div style={{marginTop: '2rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap'}}>
-                {/* CORREÇÃO 5: Removido "Cliente desde 2025" */}
                 <span className="case-card-tag-rev">R$ 500k captados</span>
                 <span className="case-card-tag-rev">Advisory Board ativo</span>
              </div>
@@ -469,18 +469,17 @@ export default function VersaoHolisticaCase() {
           <Gem size={48} style={{color: 'var(--color-primary)', marginBottom: '1.5rem', margin: '0 auto'}} />
           <h2 className="section-title">Sua solução também é inovadora mas ninguém investe?</h2>
           
-          {/* CORREÇÃO 1: Texto centralizado na Lição Final */}
           <p className="lead-text" style={{fontSize: '1.3rem', color: 'var(--color-heading)', margin: '2rem auto 3rem', fontWeight: 600, textAlign: 'center'}}>
             Você não precisa de mais validação técnica. Você precisa de clareza de categoria + governança de execução.
           </p>
           
           <div style={{maxWidth: '700px', margin: '0 auto', textAlign: 'left', display: 'inline-block'}}>
-             <ul style={{listStyle: 'none', padding: 0, fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: 1.8}}>
-               <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Metodologia validada mas pitch que não converte</li>
-               <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Produto tecnicamente superior perdendo para narrativas mais simples</li>
-               <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Investidores impressionados mas sem cheque</li>
-               <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Você vende features, não impacto de negócio</li>
-               <li style={{marginBottom: '0.5rem'}}><CheckCircle2 size={20} style={{display: 'inline', marginRight: '10px', color: 'var(--color-primary)'}}/> Você captou mas não sabe qual vertical atacar primeiro</li>
+             <ul style={{listStyle: 'none', padding: 0, fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: 1.8, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+               <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Metodologia validada mas pitch que não converte</li>
+               <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Produto tecnicamente superior perdendo para narrativas mais simples</li>
+               <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Investidores impressionados mas sem cheque</li>
+               <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Você vende features, não impacto de negócio</li>
+               <li style={{marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Você captou mas não sabe qual vertical atacar primeiro</li>
              </ul>
           </div>
 
