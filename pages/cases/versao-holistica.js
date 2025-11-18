@@ -63,7 +63,7 @@ export default function VersaoHolisticaCase() {
           </div>
 
           <h1 className="section-title">
-            DE METODOLOGIA VALIDADA PARA <br/>CATEGORIA DE MERCADO
+            De Metodologia Validada para <br/>Categoria de Mercado
           </h1>
           <p className="hero-subheadline wider-on-desktop">
             ROI de 5.8x provado pela UFMG. Pitch que não convertia. <br/>90 dias depois: R$ 500k captados e oceano azul criado.

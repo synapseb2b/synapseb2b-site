@@ -87,8 +87,8 @@ export default function ExclusivaEngenhariasCase() {
           </div>
 
           <h1 className="section-title">
-            RECUSAMOS FAZER UM SITE.<br/>
-            ENTREGAMOS UM SISTEMA.
+            Recusamos fazer um Site.<br/>
+            Entregamos uma Plataforma.
           </h1>
           <p className="hero-subheadline wider-on-desktop">
             Forecast mensal gerado: 3x o melhor ano histórico. Tempo: 128 dias. Método: Engenharia de Receita.
