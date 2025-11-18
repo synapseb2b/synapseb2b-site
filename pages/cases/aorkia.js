@@ -1,5 +1,5 @@
 // pages/cases/aorkia.js
-// Versão Final Ajustada: Alinhamento Central Rigoroso, Cards Uniformes, Copy Refinada.
+// Versão Final Ajustada: Textos Corrigidos + Design do 'Cenário Adverso' Elevado (Padrão Fase 1)
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -111,39 +111,40 @@ export default function AorkiaCase() {
             <h2 className="section-title" style={{marginBottom: '0.5rem'}}>O Ponto de Partida:</h2>
             <h2 className="section-title" style={{fontSize: '2.5rem', color: 'var(--color-primary)', marginTop: 0}}>Skin in the Game Total</h2>
             
-            {/* Copy Refinada sobre a Relação das Empresas */}
             <p className="lead-text" style={{marginBottom: '3rem', opacity: 0.9, textAlign: 'center'}}>
               Este case é a prova definitiva do método. A AORKIA foi fundada pelo mesmo criador da Synapse B2B com um propósito claro: validar a Engenharia de Receita "dentro de casa", aplicando o método no próprio negócio, sem rede de segurança.
             </p>
 
-            {/* Blockquote Centralizado para o Cenário Adverso */}
-            <blockquote style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '16px',
-              padding: '3rem',
-              margin: '0 auto',
-              textAlign: 'center' // Garante texto interno centralizado
-            }}>
-              <h3 style={{color: 'var(--color-heading)', fontSize: '1.5rem', marginBottom: '2rem', textAlign: 'center'}}>O Cenário Adverso</h3>
-              
-              <p style={{fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)', textAlign: 'center'}}>
+            {/* DESIGN UPGRADE: "Cenário Adverso" agora usa o cardStyle completo + Container interno escuro */}
+            <div style={cardStyle}>
+              <h3 style={{color: 'var(--color-heading)', fontSize: '1.8rem', marginBottom: '1rem', textAlign: 'center'}}>O Cenário Adverso</h3>
+              <p style={{fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)', textAlign: 'center', maxWidth: '600px'}}>
                 Entrar no mercado de Cyber Resilience (Backup SaaS) dominado por gigantes como Veeam e Acronis.
               </p>
-
-              <div style={{display: 'inline-block', textAlign: 'left', marginBottom: '2rem'}}> {/* Lista interna alinhada para leitura, mas bloco centralizado */}
-                <ul style={{listStyle: 'none', padding: 0}}>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Zero base de clientes</li>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Zero reconhecimento de marca</li>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Budget de marketing limitado</li>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: 'var(--color-primary)'}}><Target size={20}/> <strong>Meta:</strong> Provar tração em 45 dias</li>
+              
+              {/* Bloco Interno Escuro (Igual Fase 1) */}
+              <div style={{
+                background: 'rgba(0,0,0,0.2)', 
+                padding: '2rem', 
+                borderRadius: '12px', 
+                border: '1px solid var(--color-border)', 
+                width: '100%', 
+                maxWidth: '600px', 
+                margin: '0 auto 2rem',
+                textAlign: 'center'
+              }}>
+                 <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'inline-block', textAlign: 'left'}}>
+                  <li style={{marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Zero base de clientes</li>
+                  <li style={{marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Zero reconhecimento de marca</li>
+                  <li style={{marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#ef4444'}}><XCircle size={20}/> Budget de marketing limitado</li>
+                  <li style={{marginBottom: '0', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: 'var(--color-primary)'}}><Target size={20}/> <strong>Meta:</strong> Provar tração em 45 dias</li>
                 </ul>
               </div>
 
-              <p style={{fontStyle: 'italic', color: 'var(--color-text)', opacity: 0.8, fontSize: '1.1rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', textAlign: 'center'}}>
-                "A única vantagem competitiva era uma parceria técnica com a Keepit (Líder Global). Mas parceria técnica sem motor de vendas é irrelevante."
+              <p style={{fontStyle: 'italic', color: 'var(--color-text)', opacity: 0.8, fontSize: '1.1rem', textAlign: 'center', maxWidth: '700px', margin: '0 auto'}}>
+                "A única vantagem competitiva era uma parceria técnica com a Keepit (Líder Global). Mas parceria técnica sem método comercial é irrelevante."
               </p>
-            </blockquote>
+            </div>
 
           </div>
         </div>
@@ -208,7 +209,7 @@ export default function AorkiaCase() {
               </div>
 
               <p style={{marginTop: '2rem', fontSize: '1rem', maxWidth: '700px', marginInline: 'auto', lineHeight: 1.6, textAlign: 'center'}}>
-                Decisores B2B não compram de startups desconhecidas por medo do risco. Ao ancorar na Keepit, removemos o risco da equação.
+                Decisores B2B não compram de startups desconhecidas por medo do risco. Ao ancorar na Keepit, transferimos credibilidade e reduzimos a barreira de entrada.
               </p>
             </div>
 
@@ -256,7 +257,7 @@ export default function AorkiaCase() {
                    <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-accent)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '1rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Resultado (Dia 45)</strong>
                       <p style={{fontSize: '1.1rem', margin: 0, color: 'var(--color-text)'}}>
-                        Primeira venda enterprise fechada: <br/>
+                        Primeira venda enterprise fechada em 45 dias: <br/>
                         <span style={{fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-heading)', display: 'block', marginTop: '1rem'}}>1.200+ usuários</span>
                       </p>
                   </div>
@@ -284,7 +285,7 @@ export default function AorkiaCase() {
       {/* SEÇÃO 3: ANTES / DEPOIS                                              */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center"> {/* Centralizado */}
+        <div className="container text-center">
           <h2 className="section-title">Resultados</h2>
 
           <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', marginTop: '-1rem', fontWeight: 300, textAlign: 'center'}}>
