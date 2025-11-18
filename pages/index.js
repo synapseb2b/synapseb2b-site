@@ -46,7 +46,7 @@ export default function Home() {
       </Head>
 
 {/* ====================================================================== */}
-      {/* Seção 1: Hero Section (AJUSTE DE HEADLINE E TRUSTBAR)                */}
+      {/* Seção 1: Hero Section                                                */}
       {/* ====================================================================== */}
       <section className="hero-section">
         <div className="hero-video-background">
@@ -57,16 +57,16 @@ export default function Home() {
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           
-          {/* HEADLINE CORRIGIDA (Sem caixa alta, tamanho 2.8rem definido no style jsx) */}
+          {/* HEADLINE */}
           <h1 className="hero-headline">
             Engenharia de Receita para Empresas B2B
             <br/>
             que Precisam de Crescimento Previsível
           </h1>
           
-          {/* SUBHEADLINE PRÁTICA */}
+          {/* SUBHEADLINE ATUALIZADA */}
           <p className="hero-subheadline wider-on-desktop">
-            Nós instalamos o sistema (GTM, Narrativa e Ativos) que transforma sua complexidade técnica em um motor de vendas que escala.
+            Instalamos o método completo — desde o diagnóstico estratégico até a execução na linha de frente — que transforma sua complexidade técnica em receita previsível e escalável.
           </p>
           
           <div className="hero-ctas">
@@ -79,7 +79,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança (Trust Bar) - COM "FORJADO" */}
+          {/* Barra de Confiança (Trust Bar) */}
           <div className="trust-bar reveal-up">
             <p>Forjado em ecossistemas de alta complexidade como:</p>
             <div className="trust-bar-logos">
@@ -107,28 +107,28 @@ export default function Home() {
             {/* Sintoma 1 */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">1.</span>
-              <h3 className="truth-card-title">Crescimento Dependente de Relacionamentos</h3>
-              <p>Sua receita depende de indicações, do CEO ou de um vendedor-herói. É um modelo que validou sua empresa, mas agora atingiu o teto. Você não consegue prever a próxima venda e escalar exige replicar o que não está documentado.</p>
+              <h3 className="truth-card-title">Táticas Sem Estratégia Clara</h3>
+              <p>Você testa anúncios, contrata SDRs, refaz o pitch. Nada trava por falta de esforço — trava por falta de clareza. O mercado não entende seu valor real, o time não sabe argumentar diferenciação, e cada venda exige convencimento do zero porque você não tem um posicionamento cristalino.</p>
             </div>
             
             {/* Sintoma 2 */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">2.</span>
-              <h3 className="truth-card-title">Marketing e Vendas Sem Retorno Claro</h3>
-              <p>Você investe em marketing, contrata SDRs e refaz o site. O resultado? Custo fixo alto, pipeline vazio e leads que não convertem. O problema não é o esforço. É a falta de um método que conecte cada real investido a um resultado de venda.</p>
+              <h3 className="truth-card-title">Investimento Sem Rastreabilidade</h3>
+              <p>Você investe em marketing, vendas e tecnologia, mas não consegue rastrear o que realmente converte. CAC sobe, ciclo de vendas não encurta, e você não sabe qual canal ou mensagem funciona. O problema não é falta de esforço — é a ausência de um método que conecte investimento a resultado mensurável.</p>
             </div>
 
             {/* Sintoma 3 */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">3.</span>
-              <h3 className="truth-card-title">Liderança Sobrecarregada com Operação</h3>
-              <p>O fundador (ou um único vendedor) é quem realmente vende. A empresa inteira depende dessa pessoa. Isso é um gargalo: enquanto o líder está na operação comercial, não está construindo o sistema para escalar. O crescimento depende de heroísmo, não de método.</p>
+              <h3 className="truth-card-title">Conhecimento Preso em Uma Pessoa</h3>
+              <p>O fundador (ou um vendedor específico) fecha as vendas críticas. O resto do time não consegue replicar. Isso cria um gargalo: enquanto a liderança está vendendo, não está construindo o método que permite escalar. O crescimento depende de conhecimento tácito, não de processo documentado.</p>
             </div>
           </div>
 
           {/* Conclusão da Seção 2 */}
           <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '3rem auto 0', fontStyle: 'italic', fontWeight: 500, color: 'var(--color-heading)' }}>
-            Você não precisa de mais esforço. Você precisa de um método. <br/>Para parar de improvisar, você precisa de Engenharia.
+            Você não precisa de mais esforço. Você precisa de método estruturado. <br/>A diferença entre improviso e engenharia está na aplicação de conhecimento codificado.
           </p>
         </div>
       </section>
@@ -142,7 +142,7 @@ export default function Home() {
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Método: Os 4 Pilares da Engenharia de Receita</h2>
           <p className="lead-text">
-            Instalamos o sistema de quatro pilares que move sua empresa do improviso para a receita previsível.
+            Aplicamos o método de quatro pilares que move sua empresa do improviso para a receita previsível.
           </p>
           
           <div className="pillar-grid-revolutionary">
@@ -158,14 +158,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 2: Sistema Comercial */}
+            {/* Pilar 2: Arquitetura Comercial */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <GitBranch size={28} />
                 </div>
-                <h3 className="pillar-card-title">Sistema Comercial</h3>
-                <p className="pillar-card-description">É o seu motor de demanda. Você para de depender de indicações e heroísmo. Instalamos um processo completo de Go-To-Market (GTM) que gera um pipeline estruturado e previsível.</p>
+                <h3 className="pillar-card-title">Arquitetura Comercial</h3>
+                <p className="pillar-card-description">É o blueprint do seu motor de receita. Decodificamos o valor real do seu negócio (muitas vezes invisível para você mesmo), desenhamos o GTM completo (posicionamento, ICP, canais, precificação) e entregamos a arquitetura executável. Você para de improvisar argumentos e passa a ter um método replicável de vendas.</p>
               </div>
             </div>
 
@@ -176,7 +176,7 @@ export default function Home() {
                   <ShieldCheck size={28} />
                 </div>
                 <h3 className="pillar-card-title">Governança de Execução</h3>
-                <p className="pillar-card-description">É a inteligência sênior que executa. Você ganha uma Diretoria Comercial como Serviço — sem o custo fixo e os riscos de um C-Level CLT — para garantir que a estratégia seja implementada na linha de frente.</p>
+                <p className="pillar-card-description">É ter liderança sênior operando na linha de frente sem comprometer seu caixa. Garantimos que a estratégia não fique no papel: implementamos, validamos e ajustamos em tempo real até o método rodar sozinho.</p>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function Home() {
                   <Layers size={28} />
                 </div>
                 <h3 className="pillar-card-title">Ativos que Convertem</h3>
-                <p className="pillar-card-description">São os seus ativos que vendem por você. Transformamos seu site, criamos calculadoras de ROI, simuladores e bots (incluindo WhatsApp) em ferramentas que educam o comprador e aceleram a decisão. É a sua tecnologia gerando receita 24/7.</p>
+                <p className="pillar-card-description">É ter ativos trabalhando para você 24/7. Criamos ferramentas que educam o comprador, provam seu valor antes da venda e aceleram a decisão — transformando cada visita em oportunidade qualificada.</p>
               </div>
             </div>
 
@@ -219,7 +219,7 @@ export default function Home() {
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Diagnóstico Cortex B2B™</strong>
                   <span>Nosso sistema proprietário de inteligência estratégica. Uma IA especializada que condensa 20+ anos de experiência B2B e os maiores frameworks globais de GTM em um diagnóstico 360° do seu negócio.</span>
-                  <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operation, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
+                  <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operação, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
                   {/* PREÇO REMOVIDO */}
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Diagnóstico Estratégico).</span>
                   <Link href="/solucoes/cortex-b2b" passHref>
@@ -328,11 +328,11 @@ export default function Home() {
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Versão Holística</h3>
-                <span className="case-card-tag-rev">Healthtech</span>
+                <span className="case-card-tag-rev">R$ 500k captados</span>
               </div>
-              <p><strong>Contexto:</strong> Healthtech com ROI de 5.8x, mas o pitch de 15 minutos gerava "vamos pensar". Decisores não entendiam.</p>
-              <p><strong>O que fizemos:</strong> Recodificamos "Cuidado Farmacêutico" (técnico) para "1ª Plataforma de CareOps Integrativo" (solução de negócio) após identificar a dor do CFO.</p>
-              <p><strong>Resultado tangível:</strong> R$ 500k captados. Pitch de 3 minutos que gera "quando começamos?".</p>
+              <p><strong>Contexto:</strong> Healthtech com ROI de 5.8x validado pela UFMG, mas pitch confuso de 15 minutos gerava "vamos pensar". Decisores não entendiam a proposta.</p>
+              <p><strong>O que fizemos:</strong> Decodificamos o valor técnico ("Cuidado Farmacêutico") em linguagem de negócio ("1ª Plataforma de CareOps Integrativo"). Identificamos que o decisor real era o CFO (não o clínico) e ajustamos a narrativa para falar de redução de custo, não de humanização do cuidado.</p>
+              <p><strong>Resultado tangível:</strong> R$ 500k captados em 45 dias. Pitch de 3 minutos que gera "quando começamos?".</p>
               <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -346,11 +346,11 @@ export default function Home() {
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
-                <span className="case-card-tag-rev">Indústria / Engenharia</span>
+                <span className="case-card-tag-rev">Forecast 3x o melhor ano</span>
               </div>
-              <p><strong>Contexto:</strong> Excelência técnica, mas crescimento 100% por indicação. Narrativa fragmentada. Zero presença digital. Receita imprevisível.</p>
-              <p><strong>O que fizemos:</strong> Recusamos "fazer um site". Reposicionamos a marca, construímos o GTM completo, a plataforma digital e atuamos como CRO fracionado.</p>
-              <p><strong>Resultado tangível:</strong> Pipeline de novas oportunidades gerado superior ao faturamento anual. Playbook comercial validado em 128 dias. Sistema replicável operando — pronto para escalar sem depender de heroísmo.</p>
+              <p><strong>Contexto:</strong> Excelência técnica comprovada, mas crescimento 100% por indicação. Narrativa fragmentada, zero presença digital, receita imprevisível.</p>
+              <p><strong>O que fizemos:</strong> Recusamos "fazer um site". Aplicamos diagnóstico profundo, reposicionamos a marca como hub estratégico (não fornecedor), construímos o GTM completo, desenvolvemos a plataforma digital e operamos como CRO fracionado na linha de frente.</p>
+              <p><strong>Resultado tangível:</strong> Pipeline de novas oportunidades superior ao faturamento anual. Playbook comercial validado em 128 dias. Método replicável operando sem depender de pessoas específicas.</p>
               <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -366,9 +366,9 @@ export default function Home() {
                 <h3 className="case-card-title-rev">AORKIA</h3>
                 <span className="case-card-tag-rev">Prova de Conceito</span>
               </div>
-              <p><strong>Contexto:</strong> Startup entrando em mercado técnico dominado por gigantes. Zero histórico, zero clientes, zero marca. Desafio: provar método próprio em 45 dias.</p>
-              <p><strong>O que fizemos:</strong> Transferência de credibilidade (Parceiro Oficial Keepit). Recodificamos a narrativa para focar no risco: "Seu SaaS não faz backup. Quanto custa cada hora parado?". Skin in the game total — o próprio fundador da Synapse B2B aplicando o método em negócio próprio.</p>
-              <p><strong>Resultado tangível:</strong> Primeira venda de +1.200 usuários em 45 dias. Prova definitiva: método validado sob condições extremas com pele no jogo.</p>
+              <p><strong>Contexto:</strong> Startup entrando em mercado técnico dominado por gigantes (Veeam, Acronis). Zero histórico, zero clientes, zero marca. Meta: provar tração em 45 dias.</p>
+              <p><strong>O que fizemos:</strong> Transferimos credibilidade através de parceria global (Parceiro Oficial Keepit). Recodificamos a narrativa de "backup SaaS" (técnico) para "seguro contra ransomware" (risco de negócio). Aplicamos o método com pele no jogo total: o fundador da Synapse validou o método no próprio negócio.</p>
+              <p><strong>Resultado tangível:</strong> Primeira venda de 1.200+ usuários em 45 dias. Prova definitiva do método validado sob condições extremas.</p>
               <Link href="/cases/aorkia" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
