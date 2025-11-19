@@ -1,11 +1,10 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão: Cinematic Cascade Scroll + Expansão Interativa
-// Design: Premium Dark Glassmorphism com Framer Motion
-// CORREÇÃO DE BUILD: Importação de 'Link' adicionada
+// Versão: 3D Coverflow (iTunes Style) + Detalhes Sincronizados
+// Efeito "UAU" solicitado: Navegação imersiva por capas de sites.
 
 import Head from 'next/head';
-import Link from 'next/link'; // <-- IMPORTAÇÃO CORRIGIDA AQUI
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight, 
   ExternalLink, 
@@ -13,93 +12,82 @@ import {
   Layers, 
   TrendingUp, 
   Zap, 
-  ChevronDown, 
-  Monitor, 
-  MousePointerClick 
+  ChevronLeft, 
+  ChevronRight, 
+  Monitor
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 
-// Dados das Plataformas para a Cascata
+// --- DADOS DAS PLATAFORMAS (Com imagens mapeadas) ---
 const platformsData = [
   {
     id: 'synapse',
     title: 'Synapse B2B',
     tagline: 'A Engenharia de Receita na Prática',
     description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
-    highlights: [
-      'Texto rotativo no hero (6 variações de valor)',
-      'Cases estruturados por resultado tangível',
-      'CTA contextual em cada seção'
-    ],
+    highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
-    // Gradiente sutil para diferenciar visualmente (ciano)
-    gradient: 'linear-gradient(135deg, rgba(0, 229, 255, 0.05), rgba(0, 0, 0, 0))'
+    image: '/cases/versao-holistica-home.png', // Placeholder (Use um print da home da Synapse se tiver)
+    color: '#00E5FF' // Ciano
   },
   {
     id: 'exclusiva',
     title: 'Exclusiva Engenharias',
     tagline: 'Hub Multidisciplinar Industrial',
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
-    highlights: [
-      'Simulador de orçamento integrado',
-      'Segmentação por setor (6 verticais)',
-      'Cases com foco em continuidade operacional'
-    ],
+    highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    // Gradiente sutil (amarelo/gold)
-    gradient: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0))'
+    image: '/cases/exclusivaengenharias-home.png',
+    color: '#FFD700' // Gold
   },
   {
     id: 'versao-holistica',
     title: 'Versão Holística',
-    tagline: 'Pioneirismo em CareOps Integrativo',
+    tagline: 'Pioneirismo em CareOps',
     description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
-    highlights: [
-      '3 verticais com jornadas distintas',
-      'História da fundadora como prova viva',
-      'Métricas validadas pela UFMG'
-    ],
+    highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
     link: 'https://versaoholistica.com.br/',
-    // Gradiente sutil (verde)
-    gradient: 'linear-gradient(135deg, rgba(0, 255, 127, 0.05), rgba(0, 0, 0, 0))'
+    image: '/cases/versao-holistica-home.png',
+    color: '#00FF7F' // Spring Green
   },
   {
     id: 'aorkia',
     title: 'AORKIA',
     tagline: 'Segurança e Backup SaaS',
-    description: 'Narrativa de urgência para produto invisível (backup SaaS). Ativa medo da perda antes de apresentar solução técnica.',
-    highlights: [
-      'Ancoragem em parceria global (Keepit)',
-      'ROI tangível (custo de parada vs investimento)',
-      'Compliance como gatilho'
-    ],
+    description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
+    highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
-    // Gradiente sutil (laranja)
-    gradient: 'linear-gradient(135deg, rgba(255, 69, 0, 0.05), rgba(0, 0, 0, 0))'
+    image: '/cases/aorkia-home.png',
+    color: '#FF4500' // Orange Red
   },
   {
     id: 'povoas',
     title: 'Póvoas & Partners',
     tagline: 'Ecossistema Omnicanal',
-    description: 'Ecossistema que transforma PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
-    highlights: [
-      '6 portais de entrada (1 por serviço)',
-      'Transferência de credibilidade para parceiros',
-      'Analytics de comportamento por vertical'
-    ],
+    description: 'Transformação de PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
+    highlights: ['6 portais de entrada', 'Transferência de autoridade', 'Analytics por vertical'],
     link: 'https://povoas.synapseb2b.com/',
-    // Gradiente sutil (roxo)
-    gradient: 'linear-gradient(135deg, rgba(147, 112, 219, 0.05), rgba(0, 0, 0, 0))'
+    image: '/cases/versao-holistica-home.png', // Placeholder (Use print da Povoas se tiver)
+    color: '#9370DB' // Purple
   }
 ];
 
 export default function PlataformasDigitais() {
-  const [expandedId, setExpandedId] = useState(null);
-
-  // Lógica de expansão (Accordion)
-  const togglePlatform = (id) => {
-    setExpandedId(expandedId === id ? null : id);
+  const [activeIndex, setActiveIndex] = useState(1); // Começa no segundo item (Exclusiva)
+  
+  // Navegação
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % platformsData.length);
   };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + platformsData.length) % platformsData.length);
+  };
+
+  // Define o índice clicado como ativo
+  const setIndex = (index) => {
+    setActiveIndex(index);
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -117,7 +105,7 @@ export default function PlataformasDigitais() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo Base Glassmorphism (Reutilizável)
+  // Estilo Glassmorphism Base
   const glassStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
@@ -134,14 +122,14 @@ export default function PlataformasDigitais() {
       </Head>
 
       {/* ====================================================================== */}
-      {/* Hero Section                                                         */}
+      {/* HERO                                                                   */}
       {/* ====================================================================== */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
-          <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), #000)'}}></div>
+          <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), #000)'}}></div>
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
@@ -157,7 +145,7 @@ export default function PlataformasDigitais() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* O Problema (Cards Glassmorphism)                                     */}
+      {/* O PROBLEMA                                                             */}
       {/* ====================================================================== */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
@@ -167,26 +155,17 @@ export default function PlataformasDigitais() {
           </p>
           
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
-            {/* Card 1 */}
-            <div className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-              <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>1.</span>
-              <h3 className="truth-card-title">Leads chegam sem contexto</h3>
-              <p>Seu time comercial gasta horas qualificando prospects que não entendem o produto, não têm budget ou não são decisores.</p>
-            </div>
-            
-            {/* Card 2 */}
-            <div className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-              <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>2.</span>
-              <h3 className="truth-card-title">Conteúdo genérico</h3>
-              <p>Seu site mostra "o que você faz" em vez de "o problema que você resolve". Cliente confuso não compra.</p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-              <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>3.</span>
-              <h3 className="truth-card-title">Ativo subutilizado</h3>
-              <p>Você gastou R$20-50k em um site que funciona como cartão de visita digital. Deveria ser seu melhor vendedor.</p>
-            </div>
+            {[
+              { num: '1.', title: 'Leads sem contexto', text: 'Seu time gasta horas qualificando prospects que não entendem o produto.' },
+              { num: '2.', title: 'Conteúdo genérico', text: 'Seu site mostra "o que você faz" em vez de "o problema que resolve".' },
+              { num: '3.', title: 'Ativo subutilizado', text: 'Um investimento alto que funciona apenas como cartão de visita digital.' }
+            ].map((item, i) => (
+              <div key={i} className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>{item.num}</span>
+                <h3 className="truth-card-title">{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -194,33 +173,26 @@ export default function PlataformasDigitais() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* A Solução (Cards Glassmorphism)                                      */}
+      {/* A SOLUÇÃO                                                              */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
             <h2 className="section-title">Nossa abordagem: 30% Institucional, 70% Motor de Receita</h2>
-            <p className="lead-text" style={{textAlign: 'center'}}>Cada página, palavra e CTA são desenhados para mover o cliente ideal pela jornada de compra.</p>
           </div>
 
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
-            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Layers size={28} /></div>
-                <h3 className="pillar-card-title">Arquitetura de Conversão</h3>
-                <p className="pillar-card-description">Páginas estruturadas por jornada do comprador (awareness → consideration → decision). Cada seção responde uma objeção específica.</p>
-            </div>
-
-            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><TrendingUp size={28} /></div>
-                <h3 className="pillar-card-title">Qualificação Inteligente</h3>
-                <p className="pillar-card-description">Conteúdo que educa o prospect sobre o problema antes de apresentar a solução. Lead que chega já entende o valor.</p>
-            </div>
-
-            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Zap size={28} /></div>
-                <h3 className="pillar-card-title">Motor 24/7</h3>
-                <p className="pillar-card-description">Seu melhor pitch de vendas acessível a qualquer hora. Time comercial recebe leads qualificados e educados, não contatos frios.</p>
-            </div>
+            {[
+              { icon: Layers, title: 'Arquitetura de Conversão', text: 'Páginas estruturadas pela jornada do comprador. Cada seção responde uma objeção.' },
+              { icon: TrendingUp, title: 'Qualificação Inteligente', text: 'Conteúdo que educa sobre o problema antes da solução. Lead chega pronto.' },
+              { icon: Zap, title: 'Motor 24/7', text: 'Seu melhor pitch acessível a qualquer hora. Leads educados, não frios.' }
+            ].map((item, i) => (
+              <div key={i} className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+                  <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><item.icon size={28} /></div>
+                  <h3 className="pillar-card-title">{item.title}</h3>
+                  <p className="pillar-card-description">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -228,22 +200,21 @@ export default function PlataformasDigitais() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* O RESULTADO (BLOCKQUOTE PREMIUM)                                      */}
+      {/* O RESULTADO                                                            */}
       {/* ====================================================================== */}
        <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O Resultado</h2>
-          
           <div style={{
-            ...glassStyle, // Reuso do estilo Glass
+            ...glassStyle, 
             padding: '3rem',
             maxWidth: '900px',
-            margin: '3rem auto',
+            margin: '0 auto',
           }}>
-            <p style={{fontSize: '1.2rem', color: 'var(--color-heading)', lineHeight: '1.8', marginBottom: '2rem', fontWeight: 600}}>
+            <h2 className="section-title" style={{fontSize: '2rem', marginBottom: '1.5rem'}}>O Resultado</h2>
+            <p style={{fontSize: '1.2rem', color: 'var(--color-heading)', lineHeight: '1.8', marginBottom: '1.5rem', fontWeight: 600}}>
               Seu time comercial para de perder tempo com leads frios e passa a ter conversas estratégicas com prospects que já entendem seu valor.
             </p>
-            <p style={{fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: '1.8'}}>
+            <p style={{fontSize: '1.1rem', color: 'var(--color-text)'}}>
               Custo de aquisição diminui. Velocidade de fechamento aumenta. Receita se torna previsível.
             </p>
           </div>
@@ -254,127 +225,191 @@ export default function PlataformasDigitais() {
 
 
       {/* ====================================================================== */}
-      {/* PORTFÓLIO EM CASCATA (CINEMATIC SCROLL)                                */}
+      {/* 3D COVERFLOW CAROUSEL (O EFEITO "UAU")                                 */}
       {/* ====================================================================== */}
-      <section className="section-with-gradient-glow" style={{paddingBottom: '8rem'}}>
+      <section className="section-with-gradient-glow" style={{paddingBottom: '6rem', overflow: 'hidden'}}>
         <div className="container">
-          <div className="text-center mb-16 reveal-up">
+          <div className="text-center mb-10 reveal-up">
             <h2 className="section-title">Plataformas Que Construímos</h2>
-            <p className="lead-text" style={{textAlign: 'center'}}>Clique nos cards para explorar a estratégia de cada plataforma.</p>
+            <p className="lead-text" style={{textAlign: 'center'}}>Explore nossos cases. Clique ou arraste para navegar.</p>
           </div>
 
-          {/* Container da Cascata */}
-          <div className="cascade-container" style={{display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '1000px', margin: '0 auto'}}>
+          {/* ÁREA DO CARROSSEL 3D */}
+          <div className="carousel-3d-container" style={{
+            position: 'relative', 
+            height: '500px', // Altura da área de rotação
+            perspective: '1000px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '2rem'
+          }}>
             
-            {platformsData.map((platform, index) => {
-              const isOpen = expandedId === platform.id;
-              
-              return (
-                <motion.div
-                  key={platform.id}
-                  layout
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 50 }}
-                  onClick={() => togglePlatform(platform.id)}
-                  style={{
-                    ...glassStyle, // Aplica o estilo base Glassmorphism
-                    padding: 0, // Padding controlado internamente
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    position: 'relative'
-                  }}
-                  className="platform-cascade-item"
-                >
-                  {/* HEADER DO CARD (Emulando "Capa" da Plataforma) */}
-                  <motion.div 
-                    layout="position"
-                    style={{
-                      padding: '2.5rem',
-                      background: platform.gradient, // Gradiente individual
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      borderBottom: isOpen ? '1px solid rgba(255,255,255,0.1)' : 'none'
+            {/* Botões de Navegação */}
+            <button onClick={prevSlide} className="carousel-nav-btn left" aria-label="Anterior">
+              <ChevronLeft size={32} />
+            </button>
+            <button onClick={nextSlide} className="carousel-nav-btn right" aria-label="Próximo">
+              <ChevronRight size={32} />
+            </button>
+
+            {/* Os Cards */}
+            <div className="carousel-track-3d" style={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              transformStyle: 'preserve-3d'
+            }}>
+              {platformsData.map((platform, index) => {
+                // Calcular a posição relativa ao ativo
+                let position = index - activeIndex;
+                
+                // Lógica de loop infinito visual (opcional, aqui mantemos linear limitado ou circular simples)
+                // Para simplificar e garantir robustez, usaremos lógica circular visual
+                if (position < -2) position += platformsData.length;
+                if (position > 2) position -= platformsData.length;
+
+                // Se o array for pequeno, ajustes manuais podem ser necessários, mas para 5 itens funciona bem.
+                // Ajuste fino para quando o index ativo é o primeiro ou último no array circular:
+                const total = platformsData.length;
+                const r = (index - activeIndex + total) % total; 
+                let dist = r;
+                if (r > total / 2) dist = r - total; // dist agora é -2, -1, 0, 1, 2
+
+                const isActive = dist === 0;
+                const isVisible = Math.abs(dist) <= 2; // Mostra só os 2 vizinhos de cada lado
+
+                if (!isVisible) return null;
+
+                return (
+                  <motion.div
+                    key={platform.id}
+                    onClick={() => setIndex(index)}
+                    initial={false}
+                    animate={{
+                      x: dist * 320, // Espaçamento horizontal (Desktop)
+                      scale: isActive ? 1.1 : 0.8,
+                      rotateY: dist * -25, // Rotação 3D
+                      zIndex: isActive ? 100 : 10 - Math.abs(dist),
+                      opacity: isActive ? 1 : 0.5,
+                      filter: isActive ? 'brightness(1)' : 'brightness(0.4) blur(2px)'
                     }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+                    style={{
+                      position: 'absolute',
+                      width: '380px', // Largura do Card
+                      height: '450px', // Altura do Card
+                      background: `url(${platform.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'top center',
+                      borderRadius: '20px',
+                      boxShadow: isActive 
+                        ? `0 20px 50px -10px ${platform.color}66` // Glow colorido ativo
+                        : '0 10px 20px rgba(0,0,0,0.5)',
+                      cursor: 'pointer',
+                      border: isActive ? `2px solid ${platform.color}` : '1px solid rgba(255,255,255,0.1)',
+                      overflow: 'hidden'
+                    }}
+                    className="carousel-card-3d"
                   >
-                    <h3 style={{fontSize: '2rem', marginBottom: '0.5rem', fontFamily: 'Montserrat, sans-serif', color: 'var(--color-heading)'}}>
-                      {platform.title}
-                    </h3>
-                    <p style={{fontSize: '1.1rem', color: 'var(--color-primary)', marginBottom: '1.5rem', fontWeight: 600}}>
-                      {platform.tagline}
-                    </p>
-                    
-                    {/* Ícone de expansão animado */}
-                    <motion.div 
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ChevronDown size={24} style={{color: 'var(--color-text)', opacity: 0.7}} />
-                    </motion.div>
-                    
-                    {!isOpen && (
-                       <motion.p 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        style={{fontSize: '0.8rem', marginTop: '1rem', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '8px'}}
-                       >
-                         <MousePointerClick size={14} /> Clique para ver detalhes
-                       </motion.p>
-                    )}
+                    {/* Overlay para legibilidade do título dentro do card quando não ativo (ou sempre) */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      width: '100%',
+                      padding: '2rem 1rem 1rem',
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)',
+                      textAlign: 'center'
+                    }}>
+                      <h3 style={{fontSize: '1.5rem', color: '#fff', marginBottom: '0.5rem', textShadow: '0 2px 4px rgba(0,0,0,0.8)'}}>
+                        {platform.title}
+                      </h3>
+                      {isActive && (
+                        <span style={{color: platform.color, fontSize: '0.9rem', fontWeight: 600, textTransform: 'uppercase'}}>
+                          Ver Detalhes
+                        </span>
+                      )}
+                    </div>
                   </motion.div>
-
-                  {/* CONTEÚDO EXPANDIDO (Accordion) */}
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        style={{borderTop: '1px solid rgba(255,255,255,0.05)'}}
-                      >
-                        <div style={{padding: '3rem 2rem', textAlign: 'center'}}>
-                          <p style={{fontSize: '1.1rem', lineHeight: 1.7, color: 'var(--color-text)', marginBottom: '2.5rem', maxWidth: '800px', marginInline: 'auto'}}>
-                            {platform.description}
-                          </p>
-                          
-                          {/* Highlights */}
-                          <div style={{marginBottom: '3rem'}}>
-                            <h4 style={{fontSize: '1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1.5rem'}}>Destaques da Estratégia</h4>
-                            <ul style={{listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>
-                              {platform.highlights.map((highlight, i) => (
-                                <li key={i} style={{display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--color-text)', fontSize: '1rem'}}>
-                                  <CheckCircle2 size={18} color="var(--color-primary)" />
-                                  {highlight}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* CTA Link Externo */}
-                          <a 
-                            href={platform.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="btn btn-primary btn-large btn-cta-pulse"
-                            style={{display: 'inline-flex', alignItems: 'center', gap: '10px'}}
-                            onClick={(e) => e.stopPropagation()} // Evita fechar o card ao clicar no link
-                          >
-                            <span>Visitar Plataforma</span>
-                            <ExternalLink size={18} />
-                          </a>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-
+                );
+              })}
+            </div>
           </div>
+
+          {/* ÁREA DE DETALHES SINCRONIZADA (Expandida abaixo do carrossel) */}
+          <div className="active-platform-details" style={{maxWidth: '900px', margin: '0 auto', minHeight: '300px'}}>
+            <AnimatePresence mode='wait'>
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                style={{
+                  ...glassStyle,
+                  padding: '3rem',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                 {/* Efeito de Glow de fundo baseado na cor da marca */}
+                 <div style={{
+                   position: 'absolute', top: 0, left: 0, width: '100%', height: '5px',
+                   background: `linear-gradient(90deg, transparent, ${platformsData[activeIndex].color}, transparent)`
+                 }} />
+
+                 <div className="details-content text-center">
+                   <h3 style={{fontSize: '2.2rem', color: 'var(--color-heading)', marginBottom: '0.5rem'}}>
+                     {platformsData[activeIndex].title}
+                   </h3>
+                   <p style={{color: platformsData[activeIndex].color, fontSize: '1.2rem', marginBottom: '2rem', fontWeight: 600}}>
+                     {platformsData[activeIndex].tagline}
+                   </p>
+
+                   <p style={{fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--color-text)', marginBottom: '2.5rem', maxWidth: '700px', marginInline: 'auto'}}>
+                     {platformsData[activeIndex].description}
+                   </p>
+
+                   <div style={{display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem'}}>
+                      {platformsData[activeIndex].highlights.map((highlight, i) => (
+                        <span key={i} style={{
+                          background: 'rgba(255,255,255,0.05)', 
+                          padding: '0.5rem 1rem', 
+                          borderRadius: '50px', 
+                          fontSize: '0.9rem',
+                          border: '1px solid rgba(255,255,255,0.1)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px'
+                        }}>
+                          <CheckCircle2 size={14} color={platformsData[activeIndex].color} />
+                          {highlight}
+                        </span>
+                      ))}
+                   </div>
+
+                   <a 
+                     href={platformsData[activeIndex].link} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="btn btn-primary btn-large"
+                     style={{
+                       boxShadow: `0 0 20px ${platformsData[activeIndex].color}40`,
+                       border: `1px solid ${platformsData[activeIndex].color}`
+                     }}
+                   >
+                     <span>Visitar Plataforma</span>
+                     <ExternalLink size={18} />
+                   </a>
+                 </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
         </div>
       </section>
 
@@ -402,14 +437,45 @@ export default function PlataformasDigitais() {
         </div>
       </section>
 
-      {/* CSS para garantir comportamento correto de hover */}
+      {/* CSS para o Carrossel 3D Responsivo */}
       <style jsx global>{`
-        .platform-cascade-item {
-           transition: border-color 0.3s ease, transform 0.3s ease;
+        .carousel-nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0,0,0,0.5);
+          border: 1px solid rgba(255,255,255,0.1);
+          color: white;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 200;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(5px);
         }
-        .platform-cascade-item:hover {
-          border-color: var(--color-primary) !important;
-          transform: scale(1.01) !important; /* Efeito sutil de elevação */
+        .carousel-nav-btn:hover {
+          background: var(--color-primary);
+          border-color: var(--color-primary);
+        }
+        .carousel-nav-btn.left { left: 0; }
+        .carousel-nav-btn.right { right: 0; }
+
+        /* Responsividade do Carrossel */
+        @media (max-width: 768px) {
+          .carousel-3d-container {
+            height: 400px !important;
+          }
+          .carousel-card-3d {
+            width: 280px !important;
+            height: 350px !important;
+          }
+          /* No mobile, reduz o afastamento lateral para caber na tela */
+          /* A lógica JS calcula pixels fixos (320px). No mobile precisaria ser menor. */
+          /* Como o inline style do motion tem precedência, a lógica JS é dominante. */
         }
       `}</style>
     </>
