@@ -29,7 +29,7 @@ const platformsData = [
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
     image: '/cases/synapse-b2b-home.png', 
-    color: '#00E5FF' 
+    color: '#00FFA3' 
   },
   {
     id: 'exclusiva',
@@ -59,7 +59,7 @@ const platformsData = [
     highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
     image: '/cases/aorkia-home.png',
-    color: '#00FFA3' 
+    color: '#00E5FF' 
   },
   {
     id: 'povoas',
