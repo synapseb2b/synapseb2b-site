@@ -64,7 +64,7 @@ export default function Home() {
             que Precisam de Crescimento Previsível
           </h1>
           
-          {/* SUBHEADLINE AJUSTADA */}
+          {/* SUBHEADLINE */}
           <p className="hero-subheadline wider-on-desktop">
             Transformamos operações comerciais dependentes de improviso e esforço manual em máquinas de receita previsível. Instalamos o método completo — da estratégia à execução — para sua empresa escalar com governança.
           </p>
@@ -102,31 +102,27 @@ export default function Home() {
         <div className="container reveal-up">
           <h2 className="section-title text-center">Você reconhece estes sintomas?</h2>
           
-          <div className="truths-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '4rem'}}>
+          <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
             
-            {/* Sintoma 1 */}
-            <div className="truth-card-revolutionary">
+            <div className="glass-card-premium">
               <span className="truth-card-number">1.</span>
               <h3 className="truth-card-title">Esforço Máximo, Resultado Instável</h3>
               <p>Você contrata ferramentas, testa canais e exige mais do time, mas o ponteiro não move na mesma proporção. O mercado não percebe seu valor real e cada venda exige um esforço desproporcional de convencimento porque falta posicionamento, não esforço.</p>
             </div>
             
-            {/* Sintoma 2 */}
-            <div className="truth-card-revolutionary">
+            <div className="glass-card-premium">
               <span className="truth-card-number">2.</span>
               <h3 className="truth-card-title">Investimento Sem Rastreabilidade</h3>
               <p>Você assina os cheques de marketing e vendas, mas não sabe dizer qual real investido trouxe o contrato assinado. O ciclo de vendas não encurta e a eficiência cai à medida que você tenta escalar. O problema é a ausência de Engenharia de Receita no processo comercial.</p>
             </div>
 
-            {/* Sintoma 3 */}
-            <div className="truth-card-revolutionary">
+            <div className="glass-card-premium">
               <span className="truth-card-number">3.</span>
               <h3 className="truth-card-title">Dependência de "Talento" vs. Processo</h3>
               <p>O faturamento depende da performance individual de vendedores sêniores (ou dos sócios). Se eles saírem, a receita cai. O crescimento está alicerçado em conhecimento tácito (na cabeça das pessoas), não em um playbook validado e transferível.</p>
             </div>
           </div>
 
-          {/* Conclusão da Seção 2 */}
           <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '3rem auto 0', fontStyle: 'italic', fontWeight: 500, color: 'var(--color-heading)' }}>
             Você não precisa de mais vendedores. Você precisa de um sistema de vendas. <br/>A diferença entre uma empresa estagnada e uma scale-up é a substituição do talento individual pelo método institucional.
           </p>
@@ -145,10 +141,9 @@ export default function Home() {
             A estrutura necessária para transformar vendas complexas em processo repetível.
           </p>
           
-          <div className="pillar-grid-revolutionary">
+          <div className="pillar-grid-revolutionary" style={{gap: '2rem'}}>
             
-            {/* Pilar 1 */}
-            <div className="pillar-card-revolutionary">
+            <div className="glass-card-premium">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Gem size={28} />
@@ -158,8 +153,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 2 */}
-            <div className="pillar-card-revolutionary">
+            <div className="glass-card-premium">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <GitBranch size={28} />
@@ -169,8 +163,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 3 */}
-            <div className="pillar-card-revolutionary">
+            <div className="glass-card-premium">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <ShieldCheck size={28} />
@@ -180,8 +173,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 4 */}
-            <div className="pillar-card-revolutionary">
+            <div className="glass-card-premium">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Layers size={28} />
@@ -198,7 +190,7 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita (NOVO LAYOUT DE CARDS)    */}
+      {/* Seção 4: Soluções de Engenharia de Receita                           */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
@@ -209,7 +201,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* --- FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA --- */}
+          {/* FRENTE 1 */}
           <div style={{marginBottom: '6rem'}}>
             <div className="frente-header text-center mb-10">
               <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4 border border-primary/20">
@@ -220,9 +212,8 @@ export default function Home() {
             </div>
 
             <div className="solutions-grid">
-              
-              {/* Card 1: Cortex */}
-              <div className="solution-card-premium">
+              {/* Cards da Frente 1 */}
+              <div className="glass-card-premium">
                 <div className="card-icon"><CheckCircle2 size={28} /></div>
                 <h4>Diagnóstico Cortex B2B™</h4>
                 <p className="card-desc"><strong>O que é:</strong> O "Raio-X" da sua maturidade comercial. Uma análise profunda sob 5 lentes para identificar gargalos de eficiência e alavancas de crescimento imediato.</p>
@@ -235,8 +226,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Card 2: Sprint */}
-              <div className="solution-card-premium">
+              <div className="glass-card-premium">
                 <div className="card-icon"><Zap size={28} /></div>
                 <h4>Sprint de Validação</h4>
                 <p className="card-desc"><strong>O que é:</strong> Teste de novas teses, produtos ou mercados em 30 dias. Validamos a demanda com dados reais antes de você comprometer estrutura fixa (OPEX).</p>
@@ -249,8 +239,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Card 3: GTM */}
-              <div className="solution-card-premium">
+              <div className="glass-card-premium">
                 <div className="card-icon"><Target size={28} /></div>
                 <h4>Go-To-Market Completo</h4>
                 <p className="card-desc"><strong>O que é:</strong> A arquitetura completa do seu motor comercial: posicionamento, ICP, proposta de valor, canais, pricing e retenção. O blueprint estratégico da operação.</p>
@@ -263,8 +252,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Card 4: CRO as a Service */}
-              <div className="solution-card-premium">
+              <div className="glass-card-premium">
                 <div className="card-icon"><Users size={28} /></div>
                 <h4>CRO as a Service</h4>
                 <p className="card-desc"><strong>O que é:</strong> Alugue um Executivo Sênior. Injetamos a visão de um Diretor de multinacional na sua operação, liderando o time para instalar o método na prática.</p>
@@ -277,8 +265,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Card 5: Advisory */}
-              <div className="solution-card-premium">
+              <div className="glass-card-premium">
                 <div className="card-icon"><ShieldCheck size={28} /></div>
                 <h4>Advisory Board</h4>
                 <p className="card-desc"><strong>O que é:</strong> Acesso a conselheiros experientes para validar decisões de alto risco (pivôs, M&A). Reduza a solidão da cadeira de CEO com sparring qualificado.</p>
@@ -290,7 +277,6 @@ export default function Home() {
                   Avaliar fit <ArrowRight size={16}/>
                 </Link>
               </div>
-
             </div>
           </div>
 
@@ -306,8 +292,7 @@ export default function Home() {
 
             <div className="solutions-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))'}}>
               
-              {/* Card 1: Plataformas */}
-              <div className="solution-card-premium">
+              <div className="glass-card-premium">
                 <div className="card-icon"><Layout size={28} /></div>
                 <h4>Plataformas de Aceleração</h4>
                 <p className="card-desc"><strong>O que é:</strong> Sites projetados para conversão B2B, não apenas vitrine. Arquitetura de informação que filtra curiosos e qualifica decisores 24/7.</p>
@@ -320,8 +305,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Card 2: Apps */}
-              <div className="solution-card-premium">
+              <div className="glass-card-premium">
                 <div className="card-icon"><TrendingUp size={28} /></div>
                 <h4>Apps e Simuladores de ROI</h4>
                 <p className="card-desc"><strong>O que é:</strong> Ferramentas que tangibilizam seu valor. Calculadoras e simuladores que provam o retorno financeiro da sua solução, eliminando a subjetividade.</p>
@@ -353,8 +337,7 @@ export default function Home() {
         <div className="case-carousel-container reveal-up text-center">
           <div className="case-carousel-track">
 
-            {/* Case 1: Versão Holística */}
-            <div className="case-card-revolutionary">
+            <div className="glass-card-premium" style={{width: '100%', maxWidth: '400px', margin: '0 auto'}}>
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <Award size={28} />
               </div>
@@ -371,8 +354,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Case 2: Exclusiva Engenharias */}
-            <div className="case-card-revolutionary">
+            <div className="glass-card-premium" style={{width: '100%', maxWidth: '400px', margin: '0 auto'}}>
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <GitBranch size={28} />
               </div>
@@ -389,8 +371,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Case 3: AORKIA */}
-            <div className="case-card-revolutionary">
+            <div className="glass-card-premium" style={{width: '100%', maxWidth: '400px', margin: '0 auto'}}>
               <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
                 <ShieldCheck size={28} />
               </div>
@@ -440,7 +421,6 @@ export default function Home() {
 
       <div className="section-divider-glow"></div>
 
-
       {/* ====================================================================== */}
       {/* Seção 7: CTA Final                                                   */}
       {/* ====================================================================== */}
@@ -451,8 +431,8 @@ export default function Home() {
           <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
             Sua empresa está pronta para o próximo nível de maturidade comercial?
           </h2>
-          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px'}}>
-            Se você fatura acima de R$ 2 milhões e sente que sua operação comercial é o gargalo, nós temos o método para destravar.
+          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto 2rem'}}>
+            Se você fatura e sente que sua operação comercial é o gargalo, nós temos o método para destravar.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
@@ -460,7 +440,7 @@ export default function Home() {
               <ArrowRight size={20} />
             </Link>
           </div>
-          <p className="cta-support-text" style={{opacity: 0.9}}>
+          <p className="cta-support-text" style={{opacity: 0.9, marginTop: '1.5rem', textAlign: 'center'}}>
             Uma conversa de negócios. Sem pressão de vendas, apenas alinhamento estratégico.
           </p>
         </div>
@@ -468,73 +448,34 @@ export default function Home() {
 
       {/* --- ESTILOS JSX --- */}
       <style jsx>{`
-        .hero-headline {
-          font-size: 2.8rem !important;
-          line-height: 1.25;
-        }
-        @media (max-width: 768px) {
-          .hero-headline {
-            font-size: 2.0rem !important;
-          }
-        }
-        
-        .trust-bar {
-          margin-top: 4rem;
-          width: 100%;
-          max-width: 900px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .trust-bar p {
-          font-size: 0.9rem;
-          font-weight: 500;
-          color: var(--color-text);
-          margin-bottom: 1.5rem;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        .trust-bar-logos {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          gap: 2.5rem;
-          opacity: 0.6;
-          filter: grayscale(100%) contrast(50%);
-        }
-        .trust-bar-logos img {
-          max-width: 100px;
-          height: auto;
-        }
-
-        /* --- NOVOS ESTILOS PREMIUM PARA CARDS DE SOLUÇÃO --- */
-        .solutions-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 2rem;
-          width: 100%;
-        }
-
-        .solution-card-premium {
+        /* CLASSE GLOBAL DO CARD PREMIUM */
+        .glass-card-premium {
           background: rgba(255, 255, 255, 0.03);
           backdrop-filter: blur(10px);
           border: 1px solid rgba(255, 255, 255, 0.05);
           border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease;
           padding: 2.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
-          transition: all 0.4s ease;
-          position: relative;
-          overflow: hidden;
+          height: 100%;
         }
 
-        .solution-card-premium:hover {
+        .glass-card-premium:hover {
           transform: translateY(-5px);
-          background: rgba(255, 255, 255, 0.05);
           border-color: var(--color-primary);
-          box-shadow: 0 10px 40px rgba(0, 150, 132, 0.15);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2);
+        }
+
+        /* Ajuste de Grid para Soluções */
+        .solutions-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          width: 100%;
         }
 
         .card-icon {
@@ -592,20 +533,45 @@ export default function Home() {
           gap: 0.8rem;
           color: var(--color-heading);
         }
-
-        @media (max-width: 900px) {
-          .solutions-grid {
-            grid-template-columns: 1fr;
+        
+        /* Hero Headline Size */
+        .hero-headline {
+          font-size: 2.8rem !important;
+          line-height: 1.25;
+        }
+        @media (max-width: 768px) {
+          .hero-headline {
+            font-size: 2.0rem !important;
           }
         }
         
-        @media (max-width: 768px) {
-          .trust-bar {
-            margin-top: 3rem;
-          }
-          .trust-bar-logos {
-            gap: 1.5rem;
-          }
+        .trust-bar {
+          margin-top: 4rem;
+          width: 100%;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .trust-bar p {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--color-text);
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        .trust-bar-logos {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 2.5rem;
+          opacity: 0.6;
+          filter: grayscale(100%) contrast(50%);
+        }
+        .trust-bar-logos img {
+          max-width: 100px;
+          height: auto;
         }
       `}</style>
     </>
