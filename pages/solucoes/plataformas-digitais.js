@@ -1,8 +1,10 @@
 // pages/solucoes/plataformas-digitais.js
 // Versão: Cinematic Cascade Scroll + Expansão Interativa
 // Design: Premium Dark Glassmorphism com Framer Motion
+// CORREÇÃO DE BUILD: Importação de 'Link' adicionada
 
 import Head from 'next/head';
+import Link from 'next/link'; // <-- IMPORTAÇÃO CORRIGIDA AQUI
 import { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
