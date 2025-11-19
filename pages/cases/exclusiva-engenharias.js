@@ -1,5 +1,5 @@
 // pages/cases/exclusiva-engenharias.js
-// Versão Final Otimizada - Texto Corrigido, Design Premium (Padrão AORKIA) e Alinhamento Central.
+// Versão Final Otimizada: Tom de Engenharia + Design Premium Unificado + Alinhamento Central
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -41,25 +41,26 @@ export default function ExclusivaEngenhariasCase() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilos Premium (Padrão AORKIA)
+  // Estilo Premium (Glassmorphism) - Padrão Cases
   const cardStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.05)',
     borderRadius: '16px',
-    padding: '3rem',
+    padding: '2.5rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-    height: '100%'
+    height: '100%', 
+    transition: 'all 0.4s ease'
   };
 
   const imageGlowStyle = {
     borderRadius: '12px', 
     border: '1px solid rgba(255,255,255,0.1)',
-    boxShadow: '0 0 40px rgba(0, 229, 255, 0.1)', // Brilho sutil
+    boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)',
     margin: '0 auto'
   };
 
@@ -73,24 +74,30 @@ export default function ExclusivaEngenhariasCase() {
       {/* ====================================================================== */}
       {/* HERO                                                                   */}
       {/* ====================================================================== */}
-      <section className="hero-section short-hero"> 
+      <section className="hero-section short-hero" style={{position: 'relative', overflow: 'hidden'}}> 
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
-          <div className="hero-overlay"></div>
+          <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.8), #000)'}}></div>
         </div>
 
-        <div className="container hero-content text-center page-hero-padding reveal-up">
+        <div style={{
+          position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)',
+          width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%)',
+          pointerEvents: 'none', zIndex: 1
+        }}></div>
+
+        <div className="container hero-content text-center page-hero-padding reveal-up" style={{position: 'relative', zIndex: 2}}>
           <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
             <GitBranch size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 10px var(--color-primary))'}} />
           </div>
 
-          <h1 className="section-title">
-            Recusamos fazer um Site.<br/>
+          <h1 className="section-title" style={{textTransform: 'none'}}>
+            Recusamos Fazer um Site.<br/>
             Entregamos uma Plataforma.
           </h1>
-          <p className="hero-subheadline wider-on-desktop">
+          <p className="hero-subheadline wider-on-desktop" style={{textAlign: 'center'}}>
             Forecast mensal gerado: 3x o melhor ano histórico. Tempo: 128 dias. Método: Engenharia de Receita.
           </p>
         </div>
@@ -104,14 +111,14 @@ export default function ExclusivaEngenhariasCase() {
       <section className="section-solid reveal-up" style={{background: '#050505'}}>
         <div className="container text-center">
           <div style={{maxWidth: '800px', margin: '0 auto'}}>
-            <h2 className="section-title">A Engenharia Começa no Diagnóstico</h2>
+            <h2 className="section-title">Do Improviso à Engenharia de Receita</h2>
             
             <p className="lead-text" style={{marginBottom: '3rem', opacity: 0.9}}>
               O cliente tinha excelência técnica comprovada e atendia gigantes como IVECO e Cimento Nacional. Mas o crescimento sem meta revelava um problema invisível.
             </p>
 
-            <div style={cardStyle}>
-              <h3 style={{color: 'var(--color-heading)', fontSize: '1.5rem', marginBottom: '1rem'}}>A Reunião de 42 Minutos</h3>
+            <div className="glass-card-premium" style={cardStyle}>
+              <h3 style={{color: 'var(--color-heading)', fontSize: '1.8rem', marginBottom: '1rem'}}>A Reunião de 42 Minutos</h3>
               <p style={{fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)'}}>Em uma sessão estratégica pro bono, decodificamos o padrão crítico:</p>
 
               <div style={{
@@ -126,14 +133,14 @@ export default function ExclusivaEngenhariasCase() {
               }}>
                 <h4 style={{color: 'var(--color-heading)', marginBottom: '1rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '1px'}}>O Padrão Invisível</h4>
                 <ul style={{listStyle: 'none', padding: 0, display: 'inline-block', textAlign: 'left'}}>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Vendas 100% por indicação</li>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Crescimento sem meta = sem método</li>
-                  <li style={{marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> História fragmentada na mente dos sócios</li>
+                  <li style={{marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Vendas 100% por indicação</li>
+                  <li style={{marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Crescimento sem meta = sem método</li>
+                  <li style={{marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> História fragmentada na mente dos sócios</li>
                   <li style={{marginBottom: '0', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem'}}><CheckCircle2 size={20} color="var(--color-primary)"/> Zero sistema comercial documentado</li>
                 </ul>
               </div>
               
-              <p style={{color: 'var(--color-text)', fontStyle: 'italic', fontSize: '1.1rem', opacity: 0.8, borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem'}}>
+              <p style={{color: 'var(--color-text)', fontStyle: 'italic', fontSize: '1.1rem', opacity: 0.8, borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', maxWidth: '700px', margin: '0 auto'}}>
                 "Eles tinham uma bela história, uma metodologia e um nicho claro. Mas tudo estava disperso. Faltava Engenharia de Receita."
               </p>
             </div>
@@ -152,7 +159,7 @@ export default function ExclusivaEngenhariasCase() {
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
         <div className="container text-center">
-          <h2 className="section-title">A Estratégia Antes da Tração</h2>
+          <h2 className="section-title">Arquitetura Comercial: A Estratégia Antes da Escala</h2>
           
           {/* Timeline Visual */}
           <div className="case-timeline-visual" style={{
@@ -195,12 +202,12 @@ export default function ExclusivaEngenhariasCase() {
           }}>
             
             {/* FASE 1 */}
-            <div style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Brain size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 1: Go-To-Market & Posicionamento</h3>
-              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Duração: 15 dias | Ferramenta: Cortex B2B™</p>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>FASE 1: Go-To-Market & Posicionamento</h3>
+              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Duração: 15 dias | Ferramenta: Cortex B2B™</p>
               
-              <p className="pillar-card-description" style={{marginBottom: '2rem', maxWidth: '700px', marginInline: 'auto'}}>
+              <p className="pillar-card-description" style={{marginBottom: '2rem', maxWidth: '700px', marginInline: 'auto', textAlign: 'center'}}>
                 Aplicamos diagnóstico 360° para decodificar o diferencial real.
               </p>
 
@@ -217,7 +224,7 @@ export default function ExclusivaEngenhariasCase() {
                  <span style={{background: 'rgba(255,255,255,0.05)', padding: '0.5rem 1rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)'}}><strong>Metodologia:</strong> Cobertura total</span>
               </div>
 
-              <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-primary)', maxWidth: '700px', margin: '0 auto'}}>
+              <div style={{background: 'rgba(0, 150, 132, 0.1)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-primary)', maxWidth: '700px', margin: '0 auto', textAlign: 'center'}}>
                 <strong style={{color: 'var(--color-heading)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>O Buy-In Absoluto:</strong>
                 <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}>
                   Transformamos "Engenharia e Climatização" em <strong>"Exclusiva Engenharias"</strong>. A nova tese fez tanto sentido que a empresa alterou seu CNPJ por iniciativa própria.
@@ -226,12 +233,12 @@ export default function ExclusivaEngenhariasCase() {
             </div>
 
             {/* FASE 2 */}
-            <div style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Zap size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 2: Plataforma de Aceleração</h3>
-              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Duração: 20 dias | Entrega: exclusivaengenharias.com</p>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>FASE 2: Plataforma de Aceleração</h3>
+              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Duração: 20 dias | Entrega: exclusivaengenharias.com</p>
               
-              <p className="pillar-card-description" style={{marginBottom: '2rem'}}>
+              <p className="pillar-card-description" style={{marginBottom: '2rem', textAlign: 'center'}}>
                 Construímos plataforma de conversão, não site institucional.
               </p>
               
@@ -246,7 +253,7 @@ export default function ExclusivaEngenhariasCase() {
                 </div>
               </div>
 
-               <h4 style={{color: 'var(--color-heading)', fontSize: '1.1rem', marginTop: '1rem', marginBottom: '1rem'}}>Ferramentas Integradas:</h4>
+               <h4 style={{color: 'var(--color-heading)', fontSize: '1.1rem', marginTop: '1rem', marginBottom: '1rem', textAlign: 'center'}}>Ferramentas Integradas:</h4>
                <ul style={{listStyle: 'none', padding: 0, color: 'var(--color-text)', fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center'}}>
                  <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Simulador de Orçamento</li>
                  <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Atendimento Inteligente</li>
@@ -264,7 +271,7 @@ export default function ExclusivaEngenhariasCase() {
                   />
                 </div>
                
-               <div style={{marginTop: '2rem'}}>
+               <div style={{marginTop: '2rem', textAlign: 'center'}}>
                  <a href="https://exclusivaengenharias.com" target="_blank" rel="noopener noreferrer" className="btn-case-revolutionary" style={{fontSize: '1rem'}}>
                    Ver plataforma <ArrowRight size={18} />
                  </a>
@@ -272,12 +279,12 @@ export default function ExclusivaEngenhariasCase() {
             </div>
 
             {/* FASE 3 */}
-            <div style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Target size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 3: Ferramenta de Conversão</h3>
-               <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Duração: 3 dias | Entrega: Simulador Integrado</p>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>FASE 3: Ferramenta de Conversão</h3>
+               <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Duração: 3 dias | Entrega: Simulador Integrado</p>
 
-               <p className="pillar-card-description" style={{marginBottom: '2rem'}}>
+               <p className="pillar-card-description" style={{marginBottom: '2rem', textAlign: 'center'}}>
                 Mecanismo de qualificação e comprometimento.
                </p>
 
@@ -299,12 +306,12 @@ export default function ExclusivaEngenhariasCase() {
             </div>
 
             {/* FASE 4 */}
-            <div style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><TrendingUp size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 4: CRO as a Service</h3>
-              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase'}}>Duração: 90 dias | Status: 50% concluído</p>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>FASE 4: CRO as a Service</h3>
+              <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Duração: 90 dias | Status: 50% concluído</p>
               
-              <p className="pillar-card-description" style={{fontSize: '1.2rem', fontWeight: 500, color: 'var(--color-heading)', maxWidth: '700px', marginInline: 'auto'}}>
+              <p className="pillar-card-description" style={{fontSize: '1.2rem', fontWeight: 500, color: 'var(--color-heading)', maxWidth: '700px', marginInline: 'auto', textAlign: 'center'}}>
                 Lideramos a execução comercial na linha de frente, validando o método em tempo real.
               </p>
 
@@ -325,7 +332,7 @@ export default function ExclusivaEngenhariasCase() {
                 <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Liderança de reuniões</li>
                </ul>
 
-               <div style={{background: 'rgba(0, 150, 132, 0.15)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-primary)', maxWidth: '600px', margin: '0 auto'}}>
+               <div style={{background: 'rgba(0, 150, 132, 0.15)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-primary)', maxWidth: '600px', margin: '0 auto', textAlign: 'center'}}>
                     <h4 style={{color: 'var(--color-heading)', marginBottom: '0.5rem', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px'}}>Resultado Parcial (45 dias)</h4>
                     <p style={{fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-primary)', margin: 0}}>Forecast Mensal &gt; Melhor faturamento anual histórico.</p>
                </div>
@@ -342,7 +349,7 @@ export default function ExclusivaEngenhariasCase() {
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
         <div className="container text-center">
-          <h2 className="section-title">Transformação Sistêmica</h2>
+          <h2 className="section-title">O Resultado da Profissionalização</h2>
 
           <div className="comparison-grid" style={{
             maxWidth: '900px', 
@@ -407,22 +414,22 @@ export default function ExclusivaEngenhariasCase() {
           }}>
             
             {/* Frente 1: Card Destacado */}
-            <div style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Target size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>Frente 1: Construção do Motor Comercial</h3>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Frente 1: Construção do Motor Comercial</h3>
               
               <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '700px', margin: '2rem auto 0'}}>
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Pipeline em Expansão</strong>
                       <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Estratégia Dual-Channel</strong>
                       <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências.</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Ferramentas de IA</strong>
                       <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}>Enriquecimento automático de leads, qualificação via chatbot inteligente.</p>
                   </div>
@@ -430,25 +437,25 @@ export default function ExclusivaEngenhariasCase() {
             </div>
 
             {/* Frente 2: Card Destacado */}
-            <div style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Layout size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>Frente 2: CRM Proprietário</h3>
-              <p className="pillar-card-description" style={{marginBottom: '2rem'}}>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Frente 2: CRM Proprietário</h3>
+              <p className="pillar-card-description" style={{marginBottom: '2rem', textAlign: 'center'}}>
                 Sistema desenvolvido pela Synapse B2B especificamente para o segmento industrial.
               </p>
               
               <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '700px', margin: '0 auto'}}>
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Gestão Especializada</strong>
                       <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}>Gestão de pipeline por tipo de projeto (civil, elétrica, multidisciplinar). Histórico automático.</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Inteligência de Mercado</strong>
                       <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}>Alertas de oportunidade (obras anunciadas, licitações, expansões industriais).</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', textAlign: 'center'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Diferencial</strong>
                       <p style={{fontSize: '1rem', margin: 0, color: 'var(--color-text)'}}>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</p>
                   </div>
@@ -561,6 +568,15 @@ export default function ExclusivaEngenhariasCase() {
 
       {/* Estilos específicos (CSS-in-JS) */}
       <style jsx>{`
+         .glass-card-premium {
+           transition: all 0.4s ease;
+           border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card-premium:hover {
+           transform: translateY(-5px);
+           border-color: var(--color-primary);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow */
+        }
          .case-phases-grid {
             /* Ajustes específicos se necessário */
          }
