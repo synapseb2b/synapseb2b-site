@@ -29,7 +29,7 @@ const platformsData = [
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
     image: '/cases/synapse-b2b-home.png', // PNG
-    color: '#27c93f' // Ciano (Logo Synapse)
+    color: '#009684' // Ciano (Logo Synapse)
   },
   {
     id: 'exclusiva',
@@ -333,7 +333,7 @@ export default function PlataformasDigitais() {
                     }}>
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
-                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#27c93f'}}></div>
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#009684'}}></div>
                        {/* URL Bar Falsa */}
                        <div style={{
                          flex: 1, 
