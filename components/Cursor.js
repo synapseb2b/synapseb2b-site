@@ -1,70 +1,110 @@
-// components/Cursor.js (OTIMIZADO PARA PERFORMANCE por J.A.R.V.I.S.)
+// components/Cursor.js
+// (VERSÃO FINAL PERFORMANCE: requestAnimationFrame + Direct DOM Manipulation)
 
-import { useState, useEffect, useRef } from 'react'; // 1. Importar o useRef
+import { useEffect, useRef } from 'react';
 
 const Cursor = () => {
-  // 2. REMOVER o state de 'position'. Ele é a causa da lentidão.
-  // const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const cursorRef = useRef(null); // 3. Criar uma 'ref' para o elemento do cursor
+  const cursorRef = useRef(null);
+  const requestRef = useRef(null); // Para guardar o ID da animação
+  const mouse = useRef({ x: -100, y: -100 }); // Guarda coordenadas sem re-render
 
   useEffect(() => {
-    setIsClient(true);
+    // Detecta touch devices para não iniciar lógica desnecessária
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    // 4. Adicionar a verificação da 'ref' na guarda
+    
     if (isTouchDevice || !cursorRef.current) {
-      if (cursorRef.current) {
-         cursorRef.current.style.display = 'none'; // Esconde o cursor em touch
-      }
+      if (cursorRef.current) cursorRef.current.style.display = 'none';
       return;
     }
 
-    // 5. Esta função agora manipula o DOM diretamente, sem causar re-render
-    const updatePosition = (e) => {
-      if (cursorRef.current) {
-        // Usar 'transform' é muito mais performático que 'left'/'top'
-        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-      }
+    // 1. Atualiza as coordenadas na memória (muito leve)
+    const handleMouseMove = (e) => {
+      mouse.current = { x: e.clientX, y: e.clientY };
     };
 
-    // A lógica de 'hover' é mantida, pois é uma atualização de baixa frequência
+    // 2. O Loop de Animação (sincronizado com os Hz do monitor)
+    const animate = () => {
+      if (cursorRef.current) {
+        // Move o elemento usando transform (aceleração de GPU)
+        const { x, y } = mouse.current;
+        cursorRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }
+      requestRef.current = requestAnimationFrame(animate);
+    };
+
+    // 3. Lógica de Hover sem React State (Manipulação direta de classe)
+    // Isso evita que o React recrie o componente ao passar o mouse em links
     const handleMouseOver = (e) => {
-      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button')) {
-        setIsHovering(true);
+      if (cursorRef.current && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button'))) {
+        cursorRef.current.classList.add('hover');
       }
     };
 
     const handleMouseOut = (e) => {
-      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button')) {
-        setIsHovering(false);
+      if (cursorRef.current && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a, button'))) {
+        cursorRef.current.classList.remove('hover');
       }
     };
 
-    window.addEventListener('mousemove', updatePosition);
+    // Inicia os listeners e o loop
+    window.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mouseout', handleMouseOut);
+    requestRef.current = requestAnimationFrame(animate);
 
+    // Limpeza
     return () => {
-      window.removeEventListener('mousemove', updatePosition);
+      window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseout', handleMouseOut);
+      if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
-  }, [isClient]); // 6. Depender de 'isClient' garante que a 'ref' esteja disponível
-
-  // Não renderiza nada no servidor
-  if (!isClient) {
-    return null;
-  }
+  }, []);
 
   return (
-    <div 
-      ref={cursorRef} // 7. Anexar a ref ao DIV
-      className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-      // 8. Remover o 'style' de 'left' e 'top'
-      // A posição inicial será 'fora da tela' via CSS/transform
-    />
+    <>
+      <div 
+        ref={cursorRef} 
+        className="custom-cursor"
+      />
+      {/* CSS Scoped para garantir a performance visual */}
+      <style jsx global>{`
+        .custom-cursor {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          border: 1px solid var(--color-primary, #00ff00); /* Fallback cor */
+          border-radius: 50%;
+          pointer-events: none; /* CRUCIAL: Para não bloquear cliques */
+          z-index: 9999;
+          mix-blend-mode: difference; /* Opcional: Efeito legal em fundos claros */
+          transition: width 0.3s, height 0.3s, background-color 0.3s;
+          will-change: transform; /* Avisa ao navegador para otimizar renderização */
+          transform: translate3d(-100px, -100px, 0); /* Começa fora da tela */
+        }
+
+        /* Estado de Hover (Controlado via ClassList JS) */
+        .custom-cursor.hover {
+          width: 50px;
+          height: 50px;
+          background-color: rgba(0, 255, 150, 0.1);
+          border-color: transparent;
+        }
+
+        /* Esconder cursor padrão do sistema */
+        body, a, button {
+          cursor: none;
+        }
+
+        /* Em telas touch, volta o cursor normal */
+        @media (hover: none) and (pointer: coarse) {
+          .custom-cursor { display: none; }
+          body, a, button { cursor: auto; }
+        }
+      `}</style>
+    </>
   );
 };
 
