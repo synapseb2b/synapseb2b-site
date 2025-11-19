@@ -29,7 +29,7 @@ const platformsData = [
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
     image: '/cases/synapse-b2b-home.png', // PNG
-    color: '#00E5FF' // Ciano (Logo Synapse)
+    color: '#27c93f' // Ciano (Logo Synapse)
   },
   {
     id: 'exclusiva',
