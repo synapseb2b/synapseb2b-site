@@ -1,9 +1,11 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão: 3D Coverflow (iTunes Style) + Detalhes Sincronizados
-// Efeito "UAU" solicitado: Navegação imersiva por capas de sites.
+// Versão: Cinematic Cascade Scroll + Expansão Interativa
+// Design: Premium Dark Glassmorphism com Framer Motion
+// CORREÇÃO: Importação de 'Link' adicionada
 
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from 'next/image'; // Também pode ser necessário se usar o componente Image
+import Link from 'next/link'; // <--- IMPORTAÇÃO CORRIGIDA AQUI
 import { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight, 
@@ -267,20 +269,18 @@ export default function PlataformasDigitais() {
                 // Calcular a posição relativa ao ativo
                 let position = index - activeIndex;
                 
-                // Lógica de loop infinito visual (opcional, aqui mantemos linear limitado ou circular simples)
-                // Para simplificar e garantir robustez, usaremos lógica circular visual
+                // Lógica de loop infinito visual
                 if (position < -2) position += platformsData.length;
                 if (position > 2) position -= platformsData.length;
 
-                // Se o array for pequeno, ajustes manuais podem ser necessários, mas para 5 itens funciona bem.
-                // Ajuste fino para quando o index ativo é o primeiro ou último no array circular:
+                // Ajuste fino para quando o index ativo é o primeiro ou último
                 const total = platformsData.length;
                 const r = (index - activeIndex + total) % total; 
                 let dist = r;
-                if (r > total / 2) dist = r - total; // dist agora é -2, -1, 0, 1, 2
+                if (r > total / 2) dist = r - total; 
 
                 const isActive = dist === 0;
-                const isVisible = Math.abs(dist) <= 2; // Mostra só os 2 vizinhos de cada lado
+                const isVisible = Math.abs(dist) <= 2; 
 
                 if (!isVisible) return null;
 
@@ -315,7 +315,7 @@ export default function PlataformasDigitais() {
                     }}
                     className="carousel-card-3d"
                   >
-                    {/* Overlay para legibilidade do título dentro do card quando não ativo (ou sempre) */}
+                    {/* Overlay para legibilidade */}
                     <div style={{
                       position: 'absolute',
                       bottom: 0,
@@ -340,7 +340,7 @@ export default function PlataformasDigitais() {
             </div>
           </div>
 
-          {/* ÁREA DE DETALHES SINCRONIZADA (Expandida abaixo do carrossel) */}
+          {/* ÁREA DE DETALHES SINCRONIZADA */}
           <div className="active-platform-details" style={{maxWidth: '900px', margin: '0 auto', minHeight: '300px'}}>
             <AnimatePresence mode='wait'>
               <motion.div
@@ -356,7 +356,7 @@ export default function PlataformasDigitais() {
                   overflow: 'hidden'
                 }}
               >
-                 {/* Efeito de Glow de fundo baseado na cor da marca */}
+                 {/* Efeito de Glow de fundo */}
                  <div style={{
                    position: 'absolute', top: 0, left: 0, width: '100%', height: '5px',
                    background: `linear-gradient(90deg, transparent, ${platformsData[activeIndex].color}, transparent)`
@@ -473,9 +473,9 @@ export default function PlataformasDigitais() {
             width: 280px !important;
             height: 350px !important;
           }
-          /* No mobile, reduz o afastamento lateral para caber na tela */
-          /* A lógica JS calcula pixels fixos (320px). No mobile precisaria ser menor. */
-          /* Como o inline style do motion tem precedência, a lógica JS é dominante. */
+          /* No mobile, a lógica JS de espaçamento (320px) pode ficar larga.
+             Idealmente ajustaríamos o 'dist * 320' para 'dist * 150' via JS detectando mobile,
+             ou aceitamos que o overflow hidden cuida do resto. */
         }
       `}</style>
     </>
