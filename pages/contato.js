@@ -48,7 +48,7 @@ export default function ContatoPage() {
   }, []);
 
   return (
-    <>
+<>
       <Head>
         <title>Contato | Agende Seu Diagnóstico Estratégico</title>
         <meta name="description" content="Sessão de diagnóstico de 21 minutos para mapear seu desafio de receita e avaliar fit mútuo. Sem pressão, apenas clareza." />
@@ -69,12 +69,9 @@ export default function ContatoPage() {
           <p className="lead-text">
             Uma sessão de diagnóstico de 21 minutos para mapear seu desafio de receita e avaliar o fit mútuo.
           </p>
-          <div className="hero-ctas">
-            <a href="#diagnostico" className="btn btn-primary btn-large">
-              <span>Agendar Diagnóstico</span>
-              <ArrowRight size={20} />
-            </a>
-          </div>
+          
+          {/* Botão removido conforme solicitado */}
+          
         </div>
       </section>
 

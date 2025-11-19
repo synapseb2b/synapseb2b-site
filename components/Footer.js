@@ -1,8 +1,9 @@
-// components/Footer.js (Refatorado para alinhar com o Navbar: Home | Cases | Soluções | A Engenharia)
+// components/Footer.js
+// Versão "Smart Footer" Final: Com Créditos e Copyright Ajustados
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,195 +14,339 @@ export default function Footer() {
       setCopySuccess('Copiado!');
       setTimeout(() => setCopySuccess(''), 2000);
     }, () => {
-      setCopySuccess('Falhou');
+      setCopySuccess('Erro');
       setTimeout(() => setCopySuccess(''), 2000);
     });
   };
 
   return (
     <>
-      <footer className="footer">
+      <footer className="smart-footer">
         <div className="container">
-          <div className="footer-content">
-            {/* Coluna 1: Institucional (Mantida) */}
-            <div className="footer-column footer-info">
-              <h4 className="footer-title">Synapse B2B</h4>
-              <p>Transformando Expertise Técnica em Receita Previsível.</p>
-              <div className="footer-contact">
-                <button onClick={handleCopyEmail} className="footer-contact-link as-button">
-                  <Mail size={16} />
+          
+          {/* === LINHA SUPERIOR: MARCA vs NAVEGAÇÃO === */}
+          <div className="footer-main-split">
+            
+            {/* LADO ESQUERDO: Identidade & Contato Direto */}
+            <div className="footer-brand-section">
+              <div className="brand-identity">
+                <h3 className="footer-logo-text">Synapse B2B</h3>
+                <p className="brand-tagline">
+                  Engenharia de Receita para quem cansou de depender da sorte.
+                </p>
+              </div>
+
+              <div className="footer-direct-contact">
+                <button onClick={handleCopyEmail} className="contact-pill" aria-label="Copiar E-mail">
+                  <Mail size={18} />
                   <span>contato@synapseb2b.com</span>
-                  {copySuccess && <span className="copy-feedback">{copySuccess}</span>}
+                  {copySuccess && <span className="pill-feedback">{copySuccess}</span>}
                 </button>
+                
                 <a 
-                  href="https://wa.me/553139586192" // Atualize se o número estiver incorreto
+                  href="https://wa.me/553139586192" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="footer-contact-link"
+                  className="contact-pill"
                 >
-                  <Phone size={16} />
+                  <Phone size={18} />
                   <span>+55 31 3958-6192</span>
+                  <ArrowUpRight size={14} className="arrow-icon"/>
                 </a>
               </div>
-            </div>
 
-            {/* --- LAYOUT CORRIGIDO: 4 colunas alinhadas ao Navbar --- */}
-
-            {/* Coluna 2: Navegação (Home e Manifesto) */}
-            <div className="footer-column footer-links">
-              <h4 className="footer-title">Navegação</h4>
-              <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/a-engenharia">A Engenharia</Link></li>
-                <li><Link href="/contato">Contato</Link></li>
-              </ul>
-            </div>
-
-            {/* Coluna 3: Cases (Prova Social) */}
-            <div className="footer-column footer-links">
-              <h4 className="footer-title">Cases</h4>
-              <ul>
-                <li><Link href="/cases/versao-holistica">Versão Holística</Link></li>
-                <li><Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link></li>
-                <li><Link href="/cases/aorkia">AORKIA</Link></li>
-              </ul>
-            </div>
-
-            {/* Coluna 4: Soluções (Produtos) */}
-            <div className="footer-column footer-links">
-              <h4 className="footer-title">Soluções</h4>
-              <ul>
-                <li><Link href="/solucoes/cortex-b2b">Cortex B2B™</Link></li>
-                <li><Link href="/solucoes/plataformas-digitais">Plataformas Digitais</Link></li>
-                <li><Link href="/solucoes/apps">Apps Estratégicos</Link></li>
-                <li><Link href="/solucoes/match-maker">Match-Maker B2B</Link></li>
-                <li><Link href="/solucoes/profissionais-de-saude">Para Profissionais de Saúde</Link></li>
-              </ul>
-            </div>
-            {/* --- FIM DA ATUALIZAÇÃO DE LAYOUT --- */}
-
-          </div>
-
-          {/* Footer Bottom (CSS Corrigido abaixo) */}
-          <div className="footer-bottom">
-            <div className="footer-bottom-left">
-              <p>© {currentYear} Synapse B2B. Todos os direitos reservados.</p>
-              <div className="footer-legal-links">
-                {/* Adicione os links corretos se/quando existirem */}
-                {/* <Link href="/politica-de-privacidade">Política de Privacidade</Link> */}
-                {/* <Link href="/termos-de-uso">Termos de Uso</Link> */}
+              {/* Redes Sociais */}
+              <div className="social-mini-links">
+                <span className="social-icon"><Linkedin size={20} /></span>
+                <span className="social-icon"><Instagram size={20} /></span>
               </div>
             </div>
 
-            <p className="footer-credits">Desenvolvido por Synapse B2B | Plataformas Digitais arquitetadas em Engenharia de Receita.</p>
+            {/* LADO DIREITO: Grid de Navegação Inteligente */}
+            <div className="footer-nav-grid">
+              
+              {/* Grupo 1: Plataforma */}
+              <div className="nav-group">
+                <h5 className="nav-group-title">Plataforma</h5>
+                <ul>
+                  <li><Link href="/">Home</Link></li>
+                  <li><Link href="/a-engenharia">A Engenharia</Link></li>
+                  <li><Link href="/contato">Diagnóstico</Link></li>
+                </ul>
+              </div>
+
+              {/* Grupo 2: Soluções */}
+              <div className="nav-group">
+                <h5 className="nav-group-title">Soluções</h5>
+                <ul>
+                  <li><Link href="/solucoes/cortex-b2b">Cortex B2B™</Link></li>
+                  <li><Link href="/solucoes/plataformas-digitais">Plataformas Digitais</Link></li>
+                  <li><Link href="/solucoes/match-maker">Match-Maker B2B</Link></li>
+                </ul>
+              </div>
+
+              {/* Grupo 3: Cases */}
+              <div className="nav-group">
+                <h5 className="nav-group-title">Resultados</h5>
+                <ul>
+                  <li><Link href="/cases/versao-holistica">Versão Holística</Link></li>
+                  <li><Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link></li>
+                  <li><Link href="/cases/aorkia">AORKIA</Link></li>
+                </ul>
+              </div>
+
+            </div>
           </div>
+
+          {/* === LINHA INFERIOR: LEGAL & CRÉDITOS === */}
+          <div className="footer-legal-bar">
+            
+            {/* Linha 1: Copyright e Links Legais */}
+            <div className="legal-top-row">
+                <div className="legal-left">
+                  <p>© {currentYear} Synapse B2B. Todos os direitos reservados.</p>
+                </div>
+
+                <div className="legal-links">
+                  <Link href="/politica-de-privacidade">Política de Privacidade</Link>
+                  <Link href="/termos-de-uso">Termos de Uso</Link>
+                  <Link href="/politica-de-cookies">Cookies</Link>
+                </div>
+            </div>
+
+            {/* Linha 2: Créditos (Inserido conforme solicitado) */}
+            <div className="legal-credits-row">
+                <p>Desenvolvido por Synapse B2B | Plataformas Forjada em Engenharia de Receita.</p>
+            </div>
+
+          </div>
+
         </div>
       </footer>
 
-      {/* --- CSS para garantir que os links do Footer não fiquem azuis/roxos --- */}
       <style jsx>{`
-        /* --- Regra geral para as colunas de links --- */
-        .footer-links ul {
+        .smart-footer {
+          background: #0a0a0a;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 5rem 0 2rem;
+          color: var(--color-text);
+          font-size: 0.95rem;
+        }
+
+        /* --- ESTRUTURA PRINCIPAL (SPLIT) --- */
+        .footer-main-split {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 4rem;
+          margin-bottom: 4rem; /* Reduzido levemente para aproximar do legal */
+        }
+
+        /* LADO ESQUERDO: MARCA */
+        .footer-brand-section {
+          flex: 1;
+          min-width: 280px;
+          max-width: 400px;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .footer-logo-text {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.5rem;
+          color: var(--color-heading);
+          margin-bottom: 0.5rem;
+          letter-spacing: -0.5px;
+        }
+
+        .brand-tagline {
+          opacity: 0.7;
+          line-height: 1.6;
+          font-size: 1rem;
+        }
+
+        .footer-direct-contact {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          align-items: flex-start;
+        }
+
+        /* LADO DIREITO: GRID DE NAVEGAÇÃO */
+        .footer-nav-grid {
+          flex: 1.5;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 2rem;
+        }
+
+        .nav-group-title {
+          color: var(--color-heading);
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 1.5rem;
+          opacity: 0.5;
+        }
+
+        .nav-group ul {
           list-style: none;
           padding: 0;
           margin: 0;
-        }
-        
-        .footer-links li {
-          margin-bottom: 0.75rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
         }
 
-        /* --- CORREÇÃO ROBUSTA (Links de Navegação) --- */
-        /* Aplica o estilo a todos os links (<a>) dentro de .footer-links */
-        .footer-links :global(a) {
+        /* --- LINKS INTELIGENTES (SEM AZUL) --- */
+        .smart-footer :global(a) {
           text-decoration: none;
           color: var(--color-text);
-          transition: color 0.3s;
-        }
-        .footer-links :global(a:visited) {
-          color: var(--color-text); /* Remove o roxo */
-        }
-        .footer-links :global(a:hover) {
-           color: var(--color-primary);
-        }
-        /* --- FIM DA CORREÇÃO --- */
-
-
-        /* --- CSS do Footer Bottom (Baseado no globals.css) --- */
-        .footer-bottom {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 1.5rem; /* Espaço entre os blocos */
-          margin-top: 2rem;
-          padding-top: 2rem;
-          border-top: 1px solid var(--color-border);
-        }
-
-        .footer-bottom-left {
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 1rem; /* Espaço entre copyright e links legais */
+          transition: all 0.2s ease;
         }
         
-        .footer-bottom-left p {
-           margin: 0;
-           font-size: 0.9rem;
-           opacity: 0.8;
-           color: var(--color-text); /* Garantia de cor */
+        .nav-group :global(a:hover) {
+          color: var(--color-primary);
+          transform: translateX(3px);
         }
 
-        .footer-legal-links {
-          display: flex;
+        /* --- BOTÕES DE CONTATO (PILLS) --- */
+        .contact-pill {
+          display: inline-flex;
           align-items: center;
           gap: 0.75rem;
+          padding: 0.6rem 1.2rem;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 50px;
+          color: var(--color-heading);
           font-size: 0.9rem;
-          color: var(--color-text);
-          opacity: 0.8;
-        }
-
-        /* --- CORREÇÃO ROBUSTA (Links Legais) --- */
-        .footer-legal-links :global(a) {
-          color: var(--color-text);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
           text-decoration: none;
-          transition: color 0.3s;
         }
-        .footer-legal-links :global(a:visited) {
-          color: var(--color-text); /* Remove o roxo */
+
+        .contact-pill:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: var(--color-primary);
         }
-        .footer-legal-links :global(a:hover) {
+
+        .contact-pill .arrow-icon {
+          opacity: 0.5;
+          transition: transform 0.3s;
+        }
+        .contact-pill:hover .arrow-icon {
+          transform: translate(2px, -2px);
+          opacity: 1;
+        }
+
+        .pill-feedback {
+          position: absolute;
+          right: -4rem;
+          font-size: 0.8rem;
           color: var(--color-primary);
+          animation: fadeIn 0.3s ease;
         }
-        /* --- FIM DA CORREÇÃO --- */
 
-        .footer-credits {
-           font-size: 0.9rem;
-           opacity: 0.8;
+        .social-mini-links {
+          display: flex;
+          gap: 1rem;
+          opacity: 0.6;
+        }
+        .social-icon:hover {
+          opacity: 1;
+          color: var(--color-primary);
+          cursor: pointer;
+        }
+
+
+        /* --- BARRA LEGAL (BOTTOM) --- */
+        .footer-legal-bar {
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          padding-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Linha Superior (Copyright + Links) */
+        .legal-top-row {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           flex-wrap: wrap;
+           gap: 1rem;
+        }
+
+        .legal-links {
+          display: flex;
+          gap: 1.5rem;
+        }
+
+        .legal-links :global(a) {
+          color: rgba(255, 255, 255, 0.4);
+        }
+        .legal-links :global(a:hover) {
+          color: var(--color-primary);
+          text-decoration: underline;
+        }
+        
+        /* Linha Inferior (Créditos) */
+        .legal-credits-row {
            text-align: right;
-           flex-shrink: 0; /* Impede que quebre a linha desnecessariamente */
-           margin: 0;
-           color: var(--color-text); /* Garantia de cor */
+           opacity: 0.6;
+           font-size: 0.8rem;
         }
 
+
+        /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-           .footer-bottom {
-              flex-direction: column; /* Empilha no mobile */
-              justify-content: center;
-              text-align: center;
-              gap: 1rem;
-           }
-           .footer-bottom-left {
-              flex-direction: column;
-              justify-content: center;
-              width: 100%;
-              gap: 0.5rem;
-           }
-           .footer-credits {
-              text-align: center;
-              width: 100%;
-           }
+          .footer-main-split {
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 3rem;
+          }
+
+          .footer-brand-section {
+            max-width: 100%;
+            align-items: center;
+            text-align: center;
+          }
+
+          .footer-direct-contact {
+            align-items: center;
+          }
+          
+          .footer-nav-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 2.5rem;
+          }
+
+          .legal-top-row {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+          }
+          
+          .legal-links {
+             justify-content: center;
+             flex-wrap: wrap;
+          }
+          
+          .legal-credits-row {
+             text-align: center;
+          }
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateX(-10px); }
+          to { opacity: 1; transform: translateX(0); }
         }
       `}</style>
     </>
