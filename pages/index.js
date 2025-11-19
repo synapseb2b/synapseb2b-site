@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react';
+import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem, Layout, MonitorSmartphone } from 'lucide-react';
 
 /* O componente RotatingText não é usado nesta versão da copy */
 const RotatingText = () => {};
@@ -45,7 +45,7 @@ export default function Home() {
         <meta name="description" content="Transformamos crescimento por indicação em receita previsível. O método que tira sua empresa do improviso e coloca você no controle." />
       </Head>
 
-      {/* ====================================================================== */}
+{/* ====================================================================== */}
       {/* Seção 1: Hero Section                                                */}
       {/* ====================================================================== */}
       <section className="hero-section">
@@ -79,7 +79,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança (Trust Bar) */}
+          {/* Barra de Confiança */}
           <div className="trust-bar reveal-up">
             <p>Método forjado em ecossistemas de alta performance:</p>
             <div className="trust-bar-logos">
@@ -100,7 +100,7 @@ export default function Home() {
       {/* ====================================================================== */}
       <section id="sintomas" className="section-solid section-truths-revolutionary">
         <div className="container reveal-up">
-          <h2 className="section-title text-center">Sua operação comercial limita o crescimento do negócio?</h2>
+          <h2 className="section-title text-center">Você reconhece estes sintomas?</h2>
           
           <div className="truths-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '4rem'}}>
             
@@ -114,7 +114,7 @@ export default function Home() {
             {/* Sintoma 2 */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">2.</span>
-              <h3 className="truth-card-title">Custo de Aquisição (CAC) na "Caixa Preta"</h3>
+              <h3 className="truth-card-title">Investimento Sem Rastreabilidade</h3>
               <p>Você assina os cheques de marketing e vendas, mas não sabe dizer qual real investido trouxe o contrato assinado. O ciclo de vendas não encurta e a eficiência cai à medida que você tenta escalar. O problema é a ausência de Engenharia de Receita no processo comercial.</p>
             </div>
 
@@ -147,7 +147,7 @@ export default function Home() {
           
           <div className="pillar-grid-revolutionary">
             
-            {/* Pilar 1: Clareza de Valor */}
+            {/* Pilar 1 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 2: Arquitetura Comercial */}
+            {/* Pilar 2 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
@@ -169,7 +169,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 3: Governança de Execução */}
+            {/* Pilar 3 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
@@ -180,7 +180,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pilar 4: Ativos que Convertem */}
+            {/* Pilar 4 */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
@@ -198,107 +198,145 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita                           */}
+      {/* Seção 4: Soluções de Engenharia de Receita (NOVO LAYOUT DE CARDS)    */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
-          <h2 className="section-title text-center">Como podemos atuar no seu negócio?</h2>
-          <p className="lead-text text-center" style={{maxWidth: '700px', margin: '0 auto 4rem'}}>
-            Do diagnóstico estratégico à gestão interina do comercial.
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="section-title">Como podemos atuar no seu negócio?</h2>
+            <p className="lead-text" style={{maxWidth: '700px', margin: '0 auto'}}>
+              Do diagnóstico estratégico à gestão interina do comercial.
+            </p>
+          </div>
 
-          <div className="solutions-2col-grid">
-            
-            {/* Coluna 1: Inteligência & Estratégia */}
-            <div className="solution-column-card">
-              <h3 className="solution-column-title">FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA</h3>
-              <p className="solution-column-desc">Para quem precisa de direção clara e correção de rota.</p>
-              
-              <ul className="solution-column-list">
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Diagnóstico Cortex B2B™</strong>
-                  <span><strong>O que é:</strong> O "Raio-X" da sua maturidade comercial. Uma análise profunda sob 5 lentes para identificar gargalos de eficiência e alavancas de crescimento imediato.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Direcionamento estratégico antes de novas rodadas de investimento, fusões ou expansão agressiva.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Produto de entrada / Diagnóstico pontual).</span>
-                  <Link href="/solucoes/cortex-b2b" className="solution-cta">
-                    Conhecer o Cortex B2B™ <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Sprint de Validação Comercial</strong>
-                  <span><strong>O que é:</strong> Teste de novas teses, produtos ou mercados em 30 dias. Validamos a demanda com dados reais antes de você comprometer estrutura fixa (OPEX).</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Lançamento de novos produtos, entrada em novos segmentos ou pivô de modelo de negócios.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial (upfront) + % sobre receita nova (Success Fee).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Agendar diagnóstico <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Go-To-Market Completo</strong>
-                  <span><strong>O que é:</strong> A arquitetura completa do seu motor comercial: posicionamento, ICP, proposta de valor, canais, pricing e retenção. Usamos o meta-framework Cortex B2B™ para entregar o blueprint estratégico que orienta toda a operação.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Empresas com crescimento errático, CAC alto, ciclo longo ou que precisam profissionalizar a forma de ir ao mercado.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial (upfront) + % sobre receita nova (Success Fee).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Ver metodologia completa <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Diretoria de Receita como Serviço (CRO as a Service)</strong>
-                  <span><strong>O que é:</strong> Alugue um Executivo Sênior. Injetamos a visão e a governança de um Diretor de multinacional na sua operação, liderando o time para instalar o método na prática.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Profissionalizar a gestão, reduzir a dependência operacional dos sócios e instalar cultura de alta performance.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Fee mensal fixo + % sobre receita nova (Success Fee).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Entender modelo de Parceria <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                 <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Advisory Board Estratégico</strong>
-                  <span><strong>O que é:</strong> Acesso a conselheiros experientes para validar decisões de alto risco (pivôs, M&A, GTM). Reduza a solidão da cadeira de CEO com sparring qualificado.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Momentos de decisão crítica onde o custo do erro é alto e é necessária uma visão externa isenta.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Retainer mensal ou Projeto específico).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Avaliar fit de Advisory <ArrowRight size={16}/>
-                  </Link>
-                </li>
-              </ul>
+          {/* --- FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA --- */}
+          <div style={{marginBottom: '6rem'}}>
+            <div className="frente-header text-center mb-10">
+              <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4 border border-primary/20">
+                 <Brain size={32} style={{color: 'var(--color-primary)'}} />
+              </div>
+              <h3 style={{fontSize: '1.8rem', color: 'var(--color-heading)', fontFamily: 'Montserrat, sans-serif', marginBottom: '0.5rem'}}>FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA</h3>
+              <p style={{color: 'var(--color-text)', fontSize: '1.1rem'}}>Para quem precisa de direção clara e correção de rota.</p>
             </div>
 
-            {/* Coluna 2: Construção de Ativos Digitais */}
-            <div className="solution-column-card">
-              <h3 className="solution-column-title">FRENTE 2: ATIVOS DIGITAIS</h3>
-              <p className="solution-column-desc">Ferramentas que vendem por você.</p>
+            <div className="solutions-grid">
               
-              <ul className="solution-column-list">
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Plataformas de Aceleração</strong>
-                  <span><strong>O que é:</strong> Sites projetados para conversão B2B, não apenas vitrine. Arquitetura de informação que filtra curiosos e qualifica decisores 24/7.</span>
-                  <span className="solution-examples"><strong>Exemplos tangíveis:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Empresas cujo site atual gera visitas mas não gera reuniões qualificadas para o time comercial.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Projeto).</span>
-                  <Link href="/solucoes/plataformas-digitais" className="solution-cta">
-                    Ver exemplos reais <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Apps e Simuladores de ROI</strong>
-                  <span><strong>O que é:</strong> Ferramentas que tangibilizam seu valor. Calculadoras e simuladores que provam o retorno financeiro da sua solução, eliminando a subjetividade da venda.</span>
-                  <span className="solution-examples"><strong>Exemplos tangíveis:</strong> Synapse B2B Match Maker, Simulador de Orçamento Exclusiva Engenharias</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Ciclos de vendas longos travados na etapa de "provar valor" ou "justificar preço".</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Projeto).</span>
-                  <Link href="/solucoes/apps" className="solution-cta">
-                    Explorar Ferramentas <ArrowRight size={16}/>
-                  </Link>
-                </li>
-              </ul>
+              {/* Card 1: Cortex */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><CheckCircle2 size={28} /></div>
+                <h4>Diagnóstico Cortex B2B™</h4>
+                <p className="card-desc"><strong>O que é:</strong> O "Raio-X" da sua maturidade comercial. Uma análise profunda sob 5 lentes para identificar gargalos de eficiência e alavancas de crescimento imediato.</p>
+                <div className="card-meta">
+                  <span><strong>Ideal para:</strong> Direcionamento estratégico antes de novas rodadas ou expansão.</span>
+                  <span><strong>Investimento:</strong> Sob consulta (Produto de entrada).</span>
+                </div>
+                <Link href="/solucoes/cortex-b2b" className="card-cta">
+                  Conhecer o Cortex B2B™ <ArrowRight size={16}/>
+                </Link>
+              </div>
+
+              {/* Card 2: Sprint */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><Zap size={28} /></div>
+                <h4>Sprint de Validação</h4>
+                <p className="card-desc"><strong>O que é:</strong> Teste de novas teses, produtos ou mercados em 30 dias. Validamos a demanda com dados reais antes de você comprometer estrutura fixa (OPEX).</p>
+                <div className="card-meta">
+                  <span><strong>Ideal para:</strong> Lançamento de novos produtos ou pivô de modelo.</span>
+                  <span><strong>Investimento:</strong> Inicial + % sobre receita nova.</span>
+                </div>
+                <Link href="/contato" className="card-cta">
+                  Agendar diagnóstico <ArrowRight size={16}/>
+                </Link>
+              </div>
+
+              {/* Card 3: GTM */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><Target size={28} /></div>
+                <h4>Go-To-Market Completo</h4>
+                <p className="card-desc"><strong>O que é:</strong> A arquitetura completa do seu motor comercial: posicionamento, ICP, proposta de valor, canais, pricing e retenção. O blueprint estratégico da operação.</p>
+                <div className="card-meta">
+                  <span><strong>Ideal para:</strong> Empresas com crescimento errático ou CAC alto.</span>
+                  <span><strong>Investimento:</strong> Inicial + % sobre receita nova.</span>
+                </div>
+                <Link href="/contato" className="card-cta">
+                  Ver metodologia <ArrowRight size={16}/>
+                </Link>
+              </div>
+
+              {/* Card 4: CRO as a Service */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><Users size={28} /></div>
+                <h4>CRO as a Service</h4>
+                <p className="card-desc"><strong>O que é:</strong> Alugue um Executivo Sênior. Injetamos a visão de um Diretor de multinacional na sua operação, liderando o time para instalar o método na prática.</p>
+                <div className="card-meta">
+                  <span><strong>Ideal para:</strong> Profissionalizar a gestão e tirar o sócio da operação.</span>
+                  <span><strong>Investimento:</strong> Fee mensal + % sobre receita.</span>
+                </div>
+                <Link href="/contato" className="card-cta">
+                  Entender parceria <ArrowRight size={16}/>
+                </Link>
+              </div>
+
+              {/* Card 5: Advisory */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><ShieldCheck size={28} /></div>
+                <h4>Advisory Board</h4>
+                <p className="card-desc"><strong>O que é:</strong> Acesso a conselheiros experientes para validar decisões de alto risco (pivôs, M&A). Reduza a solidão da cadeira de CEO com sparring qualificado.</p>
+                <div className="card-meta">
+                  <span><strong>Ideal para:</strong> Decisões críticas com alto custo de erro.</span>
+                  <span><strong>Investimento:</strong> Sob consulta (Retainer).</span>
+                </div>
+                <Link href="/contato" className="card-cta">
+                  Avaliar fit <ArrowRight size={16}/>
+                </Link>
+              </div>
+
             </div>
           </div>
+
+          {/* --- FRENTE 2: ATIVOS DIGITAIS --- */}
+          <div>
+            <div className="frente-header text-center mb-10">
+               <div className="inline-flex items-center justify-center p-3 rounded-full bg-accent/10 mb-4 border border-accent/20">
+                 <MonitorSmartphone size={32} style={{color: 'var(--color-accent)'}} />
+              </div>
+              <h3 style={{fontSize: '1.8rem', color: 'var(--color-heading)', fontFamily: 'Montserrat, sans-serif', marginBottom: '0.5rem'}}>FRENTE 2: ATIVOS DIGITAIS</h3>
+              <p style={{color: 'var(--color-text)', fontSize: '1.1rem'}}>Ferramentas que vendem por você.</p>
+            </div>
+
+            <div className="solutions-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))'}}>
+              
+              {/* Card 1: Plataformas */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><Layout size={28} /></div>
+                <h4>Plataformas de Aceleração</h4>
+                <p className="card-desc"><strong>O que é:</strong> Sites projetados para conversão B2B, não apenas vitrine. Arquitetura de informação que filtra curiosos e qualifica decisores 24/7.</p>
+                <div className="card-meta">
+                   <span className="solution-examples"><strong>Exemplos:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
+                  <span><strong>Ideal para:</strong> Sites que geram visitas mas não reuniões.</span>
+                </div>
+                <Link href="/solucoes/plataformas-digitais" className="card-cta">
+                  Ver exemplos reais <ArrowRight size={16}/>
+                </Link>
+              </div>
+
+              {/* Card 2: Apps */}
+              <div className="solution-card-premium">
+                <div className="card-icon"><TrendingUp size={28} /></div>
+                <h4>Apps e Simuladores de ROI</h4>
+                <p className="card-desc"><strong>O que é:</strong> Ferramentas que tangibilizam seu valor. Calculadoras e simuladores que provam o retorno financeiro da sua solução, eliminando a subjetividade.</p>
+                <div className="card-meta">
+                  <span className="solution-examples"><strong>Exemplos:</strong> Synapse Match Maker, Simulador Industrial</span>
+                  <span><strong>Ideal para:</strong> Ciclos travados em "provar valor".</span>
+                </div>
+                <Link href="/solucoes/apps" className="card-cta">
+                  Explorar Ferramentas <ArrowRight size={16}/>
+                </Link>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -469,122 +507,95 @@ export default function Home() {
           height: auto;
         }
 
-        /* Estilos da Seção 4 (2 Colunas) */
-        .solutions-2col-grid {
+        /* --- NOVOS ESTILOS PREMIUM PARA CARDS DE SOLUÇÃO --- */
+        .solutions-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: 2rem;
+          width: 100%;
         }
-        
-        .solution-column-card {
-          background-color: var(--color-card-bg);
-          border: 1px solid var(--color-border);
+
+        .solution-card-premium {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
           border-radius: 16px;
           padding: 2.5rem;
-          height: 100%;
-        }
-        
-        .solution-column-title {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.75rem;
-          color: var(--color-primary);
-          margin-bottom: 1rem;
-          text-align: center;
-        }
-        
-        .solution-column-desc {
-          font-size: 1rem;
-          line-height: 1.7;
-          color: var(--color-text);
-          margin-bottom: 2.5rem;
-          min-height: 3.4em;
-          text-align: center;
-        }
-        
-        .solution-column-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 2.5rem;
-        }
-        
-        .solution-column-list li {
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
-          gap: 0.5rem;
+          transition: all 0.4s ease;
           position: relative;
+          overflow: hidden;
         }
 
-        .solution-item-icon {
+        .solution-card-premium:hover {
+          transform: translateY(-5px);
+          background: rgba(255, 255, 255, 0.05);
+          border-color: var(--color-primary);
+          box-shadow: 0 10px 40px rgba(0, 150, 132, 0.15);
+        }
+
+        .card-icon {
           color: var(--color-primary);
-          margin-bottom: 0.75rem;
+          background: rgba(0, 150, 132, 0.1);
+          padding: 1rem;
+          border-radius: 50%;
+          margin-bottom: 1.5rem;
+          border: 1px solid rgba(0, 150, 132, 0.2);
         }
-        
-        .solution-column-list li strong {
+
+        .solution-card-premium h4 {
           font-family: 'Montserrat', sans-serif;
-          font-weight: 700;
+          font-size: 1.3rem;
           color: var(--color-heading);
-          font-size: 1.1rem;
+          margin-bottom: 1rem;
         }
-        
-        .solution-column-list li span {
+
+        .card-desc {
           font-size: 0.95rem;
-          line-height: 1.7;
           color: var(--color-text);
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+          flex-grow: 1;
         }
-        
-        .solution-details {
-          font-size: 0.9rem !important;
-          color: var(--color-text) !important;
-          opacity: 0.8;
+
+        .card-meta {
+          background: rgba(0, 0, 0, 0.2);
+          padding: 1rem;
+          border-radius: 8px;
+          width: 100%;
+          margin-bottom: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
         }
-        .solution-details strong {
-          font-family: 'Inter', sans-serif !important;
-          font-size: 0.9rem !important;
-          font-weight: 600 !important;
-          color: var(--color-text) !important;
+
+        .card-meta span {
+          font-size: 0.85rem;
+          color: var(--color-text);
           opacity: 0.9;
         }
 
-        .solution-examples {
-          font-size: 0.85rem !important;
-          color: var(--color-text) !important;
-          opacity: 0.8;
-          font-style: italic;
-        }
-        .solution-examples strong {
-          font-family: 'Inter', sans-serif !important;
-          font-size: 0.85rem !important;
-          font-weight: 600 !important;
-          color: var(--color-text) !important;
-        }
-        
-        .solution-cta {
+        .card-cta {
           display: inline-flex;
           align-items: center;
-          justify-content: center;
           gap: 0.5rem;
-          color: var(--color-accent) !important;
-          text-decoration: none !important;
+          color: var(--color-primary);
           font-weight: 600;
-          margin-top: 0.75rem;
-          transition: gap 0.3s ease, color 0.3s ease;
+          font-size: 0.95rem;
+          transition: gap 0.3s ease;
         }
-        .solution-cta:hover {
-          gap: 1rem;
-          color: var(--color-heading) !important;
+
+        .card-cta:hover {
+          gap: 0.8rem;
+          color: var(--color-heading);
         }
 
         @media (max-width: 900px) {
-          .solutions-2col-grid {
+          .solutions-grid {
             grid-template-columns: 1fr;
-          }
-          .solution-column-desc {
-            min-height: 0;
           }
         }
         
