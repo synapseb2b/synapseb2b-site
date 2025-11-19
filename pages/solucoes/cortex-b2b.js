@@ -1,12 +1,103 @@
-// pages/solucoes/cortex-b2b.js
-// Versão Final: Sem Preços + Design Premium Unificado + Alinhamento Central
+// pages/solucoes/plataformas-digitais.js
+// Versão: Cinematic Cascade + Efeito Hover Verde Padronizado + Design System
+// Status: Imagens Corrigidas, Links Corrigidos, CSS Refinado.
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Brain, Target, Zap, TrendingUp, CheckCircle2, Network, Layers, GitBranch, ShieldCheck } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ExternalLink, 
+  CheckCircle2, 
+  Layers, 
+  TrendingUp, 
+  Zap, 
+  ChevronLeft, 
+  ChevronRight, 
+  Monitor,
+  MousePointerClick
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function CortexB2B() {
+// --- DADOS DAS PLATAFORMAS ---
+const platformsData = [
+  {
+    id: 'synapse',
+    title: 'Synapse B2B',
+    tagline: 'A Engenharia de Receita na Prática',
+    description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
+    highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
+    link: 'https://www.synapseb2b.com/',
+    image: '/cases/synapse-b2b-home.jpg', 
+    color: '#00E5FF' 
+  },
+  {
+    id: 'exclusiva',
+    title: 'Exclusiva Engenharias',
+    tagline: 'Hub Multidisciplinar Industrial',
+    description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
+    highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
+    link: 'https://exclusivaengenharias.com/',
+    image: '/cases/exclusiva-home.jpg',
+    color: '#FFC107' 
+  },
+  {
+    id: 'versao-holistica',
+    title: 'Versão Holística',
+    tagline: 'Pioneirismo em CareOps',
+    description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
+    highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
+    link: 'https://versaoholistica.com.br/',
+    image: '/cases/vh-home.jpg',
+    color: '#00FF7F' 
+  },
+  {
+    id: 'aorkia',
+    title: 'AORKIA',
+    tagline: 'Segurança e Backup SaaS',
+    description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
+    highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
+    link: 'https://www.aorkia.com/',
+    image: '/cases/aorkia-home.jpg',
+    color: '#00FFA3' 
+  },
+  {
+    id: 'povoas',
+    title: 'Póvoas & Partners',
+    tagline: 'Ecossistema Omnicanal',
+    description: 'Transformação de PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
+    highlights: ['6 portais de entrada', 'Transferência de autoridade', 'Analytics por vertical'],
+    link: 'https://povoas.synapseb2b.com/',
+    image: '/cases/povoas-home.png',
+    color: '#FF8C00' 
+  }
+];
+
+export default function PlataformasDigitais() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % platformsData.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + platformsData.length) % platformsData.length);
+  };
+
+  const setIndex = (index) => {
+    setActiveIndex(index);
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,343 +114,400 @@ export default function CortexB2B() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo Premium (Glassmorphism) com Hover
-  const cardStyle = {
-    background: 'rgba(255, 255, 255, 0.03)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.05)',
-    borderRadius: '16px',
-    padding: '2.5rem',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-    height: '100%',
-    transition: 'all 0.4s ease'
-  };
+  // Configurações Dimensionais do Carrossel 3D
+  const cardWidth = isMobile ? 300 : 800; 
+  const cardHeight = isMobile ? 550 : 450; 
+  const xOffset = isMobile ? 320 : 650; 
 
   return (
     <>
       <Head>
-        <title>Cortex B2B™ | O Raio-X do seu Motor de Receita B2B | Synapse B2B</title>
-        <meta name="description" content="O Cortex B2B™ é nosso meta-framework proprietário de diagnóstico. Decodifica 20 anos de experiência operacional em um método acionável." />
+        <title>Plataformas Digitais | Synapse B2B</title>
+        <meta name="description" content="Transformamos sites institucionais em plataformas de aceleração de receita que educam, qualificam e convertem 24/7." />
       </Head>
 
-      {/* Hero Section */}
+      {/* HERO */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
             <source src="/video/video_home.mp4" type="video/mp4" />
           </video>
-          <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), #000)'}}></div>
+          <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), #000)'}}></div>
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
           <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
-            <Brain size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 15px var(--color-primary))'}} />
+             <Monitor size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 15px var(--color-primary))'}} />
           </div>
-          <h1 className="section-title">O Raio-X do seu Motor de Receita B2B</h1>
-          <p className="hero-subheadline wider-on-desktop" style={{textAlign: 'center'}}>
-            O Cortex B2B™ é nosso meta-framework proprietário de diagnóstico. Ele decodifica 20 anos de experiência operacional em um <strong>método acionável</strong> que mostra *exatamente* onde está o gargalo e qual alavanca puxar.
-          </p>
-          <div className="hero-ctas" style={{justifyContent: 'center'}}>
-            <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Quero meu Diagnóstico Cortex B2B</span> {/* Preço Removido */}
-              <ArrowRight size={20} />
-            </Link>
-          </div>
-           <p className="cta-support-text" style={{opacity: 0.9, fontSize: '1rem', marginTop: '1.5rem', textAlign: 'center'}}>
-            O primeiro passo para parar de improvisar. {/* Texto ajustado */}
+          <h1 className="section-title">Plataformas de Aceleração de Receita</h1>
+          <p className="hero-subheadline" style={{textAlign: 'center'}}>
+            Não construímos sites. Construímos motores de receita que operam 24/7.
           </p>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* O Problema */}
+      {/* O PROBLEMA */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Você não tem um "problema de vendas". <br/>Você tem um "problema de sistema".</h2>
-          <p className="lead-text" style={{maxWidth: '800px', margin: '0 auto 4rem', textAlign: 'center'}}>
-            A maioria das empresas B2B tenta consertar *sintomas* (pipeline vazio, CAC alto) com *táticas* (mais SDRs, mais anúncios). O Cortex B2B™ foi criado para encontrar a *causa-raiz* sistêmica.
+          <h2 className="section-title">Seu site gera tráfego. Mas não gera receita.</h2>
+          <p className="lead-text" style={{maxWidth: '700px', margin: '0 auto 4rem', textAlign: 'center'}}>
+            A maioria das empresas B2B tem um site institucional bonito. E completamente inútil para o time comercial.
           </p>
-
+          
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
-            
-            <div className="glass-card-hover" style={cardStyle}>
-              <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>1.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Expertise Não Escala</h3>
-              <p style={{textAlign: 'center'}}>A expertise de 20 anos de um CRO sênior não pode ser replicada para toda a equipe. O Cortex B2B™ codifica essa expertise em um <strong>método que escala</strong>.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>2.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Táticas Isoladas Queimam Caixa</h3>
-              <p style={{textAlign: 'center'}}>Contratar SDRs sem um GTM claro ou investir em anúncios sem uma narrativa validada é queimar caixa. O Cortex B2B™ <strong>estrutura o método</strong> *antes* de escalar o esforço.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>3.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Diagnóstico Genérico é Inútil</h3>
-              <p style={{textAlign: 'center'}}>Um relatório "padrão" não resolve um problema complexo. O Cortex B2B™ é um meta-framework que se adapta à sua operação e entrega um plano acionável.</p>
-            </div>
+            {[
+              { num: '1.', title: 'Leads sem contexto', text: 'Seu time gasta horas qualificando prospects que não entendem o produto.' },
+              { num: '2.', title: 'Conteúdo genérico', text: 'Seu site mostra "o que você faz" em vez de "o problema que resolve".' },
+              { num: '3.', title: 'Ativo subutilizado', text: 'Um investimento alto que funciona apenas como cartão de visita digital.' }
+            ].map((item, i) => (
+              <div key={i} className="glass-card-hover" style={{padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+                <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>{item.num}</span>
+                <h3 className="truth-card-title">{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* Como Funciona */}
+      {/* A SOLUÇÃO */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
-            <h2 className="section-title">Como o Cortex B2B™ Opera</h2>
-            <p className="lead-text" style={{textAlign: 'center'}}>Inteligência Artificial especializada + Meta-Framework proprietário = Diagnóstico 360º.</p>
+            <h2 className="section-title">Nossa abordagem: 30% Institucional, 70% Motor de Receita</h2>
           </div>
 
-          <div className="cortex-process" style={{display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '800px', margin: '0 auto'}}>
-            <div className="cortex-step glass-card-hover" style={cardStyle}>
-              <div className="cortex-step-number" style={{margin: '0 auto 1rem'}}>1</div>
-              <div className="cortex-step-content">
-                <h3 style={{textAlign: 'center'}}>Ingestão de Inteligência</h3>
-                <p style={{textAlign: 'center'}}>Você faz o upload dos seus materiais estratégicos: pitch deck, DRE, playbooks de vendas, roadmaps de produto e qualquer dado disponível que enriqueça a análise.</p>
+          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
+            {[
+              { icon: Layers, title: 'Arquitetura de Conversão', text: 'Páginas estruturadas pela jornada do comprador. Cada seção responde uma objeção.' },
+              { icon: TrendingUp, title: 'Qualificação Inteligente', text: 'Conteúdo que educa sobre o problema antes da solução. Lead chega pronto.' },
+              { icon: Zap, title: 'Motor 24/7', text: 'Seu melhor pitch acessível a qualquer hora. Leads qualificados e educados, não contatos frios.' }
+            ].map((item, i) => (
+              <div key={i} className="glass-card-hover" style={{padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+                  <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><item.icon size={28} /></div>
+                  <h3 className="pillar-card-title">{item.title}</h3>
+                  <p className="pillar-card-description">{item.text}</p>
               </div>
-            </div>
-
-            <div className="cortex-step glass-card-hover" style={cardStyle}>
-              <div className="cortex-step-number" style={{margin: '0 auto 1rem'}}>2</div>
-              <div className="cortex-step-content">
-                <h3 style={{textAlign: 'center'}}>Processamento Multi-Dimensional</h3>
-                <p style={{textAlign: 'center'}}>Nosso sistema aplica as 5 lentes analíticas (GTM, Arquitetura de Decisão, Escala, Valor e Ecossistema) simultaneamente para encontrar os gargalos e as oportunidades ocultas.</p>
-              </div>
-            </div>
-
-            <div className="cortex-step glass-card-hover" style={cardStyle}>
-              <div className="cortex-step-number" style={{margin: '0 auto 1rem'}}>3</div>
-              <div className="cortex-step-content">
-                <h3 style={{textAlign: 'center'}}>Geração do Raio-X</h3>
-                <p style={{textAlign: 'center'}}><strong>O Cortex gera</strong> o "Raio-X": um blueprint acionável em 4 blocos que entrega clareza imediata sobre o que precisa ser feito, em qual ordem.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
+
+      {/* O RESULTADO */}
+       <section className="section-solid" style={{background: '#050505'}}>
+        <div className="container text-center reveal-up">
+          <div className="glass-card-hover" style={{
+            padding: '3rem',
+            maxWidth: '900px',
+            margin: '0 auto',
+          }}>
+            <h2 className="section-title" style={{fontSize: '2rem', marginBottom: '1.5rem'}}>O Resultado</h2>
+            <p style={{fontSize: '1.2rem', color: 'var(--color-heading)', lineHeight: '1.8', marginBottom: '1.5rem', fontWeight: 600}}>
+              Seu time comercial para de perder tempo com leads frios e passa a ter conversas estratégicas com prospects que já entendem seu valor.
+            </p>
+            <p style={{fontSize: '1.1rem', color: 'var(--color-text)'}}>
+              Custo de aquisição diminui. Velocidade de fechamento aumenta. Receita se torna previsível.
+            </p>
+          </div>
+        </div>
+      </section>
       
-      {/* O Raio-X */}
-      <section className="section-solid" style={{background: '#050505'}}>
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">O Raio-X: O Que Você Recebe</h2>
-          <p className="lead-text" style={{maxWidth: '700px', margin: '0 auto 3rem', textAlign: 'center'}}>
-            Um blueprint acionável, não um PDF teórico. Este é o seu plano de engenharia.
-          </p>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem',
-            maxWidth: '1000px',
-            margin: '0 auto'
-          }}>
-            
-            <div className="glass-card-hover" style={cardStyle}>
-                <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
-                <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 1: Diagnóstico de Maturidade 360º</strong>
-                <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>Estágio atual do negócio sob 5 lentes + Gaps críticos priorizados por severidade, urgência e impacto.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-                <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
-                <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 2: Mapa de Recomendação Priorizado</strong>
-                <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>Qual frente ativar primeiro (Sprint, GTM, CRO fracionado, etc.) com justificativa técnica e matriz de impacto vs. esforço.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-                <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
-                <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 3: Blueprint Estratégico</strong>
-                <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>ICP refinado, Proposta de Valor otimizada, Canais validados, Modelo de precificação baseado em valor e Estratégia de ecossistema.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-                <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
-                <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 4: Roteiro 90 Dias</strong>
-                <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>Ações priorizadas por impacto, Métricas de validação, KPIs de sucesso e Quick wins para gerar momentum.</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
       <div className="section-divider-glow"></div>
 
-      {/* As 5 Lentes */}
-      <section className="section-with-gradient-glow section-pillars-revolutionary">
-        <div className="container reveal-up">
-          <div className="text-center" style={{marginBottom: '4rem'}}>
-            <h2 className="section-title">As 5 Lentes Analíticas do Cortex</h2>
-            <p className="lead-text" style={{textAlign: 'center'}}>Cada negócio é analisado sob múltiplas perspectivas integradas para uma visão 360º.</p>
+      {/* 3D BROWSER CAROUSEL */}
+      <section className="section-with-gradient-glow" style={{paddingBottom: '6rem', overflow: 'hidden'}}>
+        <div className="container">
+          <div className="text-center mb-10 reveal-up">
+            <h2 className="section-title">Plataformas Que Construímos</h2>
+            <p className="lead-text" style={{textAlign: 'center'}}>Explore nossos cases. Clique ou arraste para navegar.</p>
           </div>
 
-          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'stretch', gap: '2rem'}}>
-            
-            <div className="glass-card-hover" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Target size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 1: Engenharia de GTM</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Desenhamos sua <strong>categoria</strong> de mercado e seu <strong>posicionamento</strong>. Aplicamos modelos estratégicos para garantir que o mercado veja sua solução não como "melhor", mas como "a única".</p>
-              </div>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Brain size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 2: Arquitetura de Decisão</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Traduzimos sua complexidade técnica em narrativa. Usamos <strong>Neurociência Aplicada</strong> e modelos narrativos para criar <strong>urgência</strong> e focar na "dor invisível" (Aversão à Perda).</p>
-              </div>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><GitBranch size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 3: Orquestração de Escala</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Instalamos o "motor" de receita. Implementamos uma arquitetura de receita (RevOps) e frameworks de qualificação de elite para criar um <strong>método de vendas replicável que funciona sem depender de pessoas específicas.</strong></p>
-              </div>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Layers size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 4: Economia de Valor</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Construímos os ativos que provam seu valor <strong>antes</strong> da venda. Usamos <strong>modelos de habilitação do comprador</strong> para criar as ferramentas (Calculadoras de ROI, Simuladores) que aceleram a decisão.</p>
-              </div>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
-                <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><ShieldCheck size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 5: Ecossistema & "Skin in the Game"</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Usamos nossa experiência operacional para validar a teoria na prática. O <strong>Case AORKIA</strong> é a prova definitiva: o próprio fundador aplicou o Cortex B2B™ no próprio negócio, validando o método em 45 dias.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* Casos de Uso */}
-      <section className="section-solid" style={{background: '#050505'}}>
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Casos de Uso Ideais</h2>
-          <p className="lead-text" style={{marginBottom: '3rem', textAlign: 'center'}}>O Cortex B2B™ foi projetado para três cenários de alta complexidade estratégica.</p>
-
-          <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
-            <div className="glass-card-hover" style={cardStyle}>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Empresas em Platô de Crescimento</h3>
-              <p style={{textAlign: 'center'}}>Receita estagnou há 2-3 trimestres. Fórmula que funcionou até aqui não funciona mais. Precisa identificar qual alavanca puxar sem queimar caixa testando hipóteses aleatórias.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Startups Buscando Aceleração</h3>
-              <p style={{textAlign: 'center'}}>Product-market fit validado, mas crescimento é errático. Ciclo de vendas longo, CAC alto, narrativa confusa. Precisa de clareza estratégica antes de escalar esforço comercial.</p>
-            </div>
-
-            <div className="glass-card-hover" style={cardStyle}>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Diversificação de Canais de Receita</h3>
-              <p style={{textAlign: 'center'}}>Dependência excessiva de um canal ou segmento. Quer validar novos ICPs, testar novos canais, explorar modelos adjacentes. Precisa de diagnóstico rápido de viabilidade antes de comprometer recursos.</p>
-            </div>
-          </div>
-
-          {/* Bloco "Também Aplicável" */}
-          <div style={{
-            maxWidth: '800px',
-            margin: '4rem auto 0',
-            padding: '2rem',
-            background: 'rgba(255, 255, 255, 0.03)',
-            backdropFilter: 'blur(5px)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            borderRadius: '12px',
-            textAlign: 'center'
+          {/* ÁREA DO CARROSSEL 3D */}
+          <div className="carousel-3d-container" style={{
+            position: 'relative', 
+            height: isMobile ? '600px' : '550px', 
+            perspective: '1200px', 
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '2rem'
           }}>
-            <h4 style={{color: 'var(--color-heading)', marginBottom: '1.5rem'}}>Também Aplicável em:</h4>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0, 
-              margin: 0, 
-              display: 'flex', 
-              flexDirection: 'column',
+            
+            <button onClick={prevSlide} className="carousel-nav-btn left" aria-label="Anterior">
+              <ChevronLeft size={32} />
+            </button>
+            <button onClick={nextSlide} className="carousel-nav-btn right" aria-label="Próximo">
+              <ChevronRight size={32} />
+            </button>
+
+            <div className="carousel-track-3d" style={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
               alignItems: 'center',
-              gap: '1rem'
+              transformStyle: 'preserve-3d'
             }}>
-              <li>→ <strong>Founders & C-Level:</strong> Segunda opinião estratégica estruturada para validação de hipóteses críticas.</li>
-              
-              <li>
-                → <strong>Ecossistemas de Investimento (EM BREVE):</strong> Estamos finalizando o modelo de licenciamento do Cortex B2B™ para VCs, Aceleradoras e Consultorias que precisam analisar <strong>grandes volumes</strong> de empresas (como o caso da investidor.vc) com um método de diagnóstico padronizado e escalável.
-              </li>
-            </ul>
+              {platformsData.map((platform, index) => {
+                let position = index - activeIndex;
+                if (position < -2) position += platformsData.length;
+                if (position > 2) position -= platformsData.length;
+
+                const total = platformsData.length;
+                const r = (index - activeIndex + total) % total; 
+                let dist = r;
+                if (r > total / 2) dist = r - total; 
+
+                const isActive = dist === 0;
+                const isVisible = Math.abs(dist) <= 2; 
+
+                if (!isVisible) return null;
+
+                return (
+                  <motion.div
+                    key={platform.id}
+                    onClick={() => setIndex(index)}
+                    initial={false}
+                    animate={{
+                      x: dist * xOffset, 
+                      scale: isActive ? 1 : 0.85,
+                      rotateY: dist * -15, 
+                      zIndex: isActive ? 100 : 10 - Math.abs(dist),
+                      opacity: isActive ? 1 : 0.4,
+                      filter: isActive ? 'brightness(1)' : 'brightness(0.5) blur(3px)'
+                    }}
+                    transition={{ type: 'spring', stiffness: 150, damping: 20 }}
+                    style={{
+                      position: 'absolute',
+                      width: `${cardWidth}px`, 
+                      height: `${cardHeight}px`,
+                      borderRadius: '12px',
+                      boxShadow: isActive 
+                        ? `0 30px 60px -15px ${platform.color}40` 
+                        : '0 10px 30px rgba(0,0,0,0.8)',
+                      cursor: 'pointer',
+                      border: isActive ? `2px solid ${platform.color}` : '1px solid rgba(255,255,255,0.1)',
+                      overflow: 'hidden',
+                      background: '#111' 
+                    }}
+                    className="browser-card-3d"
+                  >
+                    {/* BARRA DE NAVEGADOR */}
+                    <div style={{
+                      height: '30px',
+                      background: 'rgba(255,255,255,0.05)',
+                      borderBottom: '1px solid rgba(255,255,255,0.05)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '0 1rem',
+                      gap: '6px'
+                    }}>
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#27c93f'}}></div>
+                       <div style={{
+                         flex: 1, 
+                         marginLeft: '1rem', 
+                         height: '16px', 
+                         background: 'rgba(0,0,0,0.3)', 
+                         borderRadius: '4px',
+                         display: 'flex',
+                         alignItems: 'center',
+                         justifyContent: 'center',
+                         fontSize: '9px',
+                         color: 'rgba(255,255,255,0.3)',
+                         fontFamily: 'monospace'
+                       }}>
+                         {platform.link.replace('https://', '')}
+                       </div>
+                    </div>
+
+                    {/* IMAGEM */}
+                    <div style={{position: 'relative', width: '100%', height: 'calc(100% - 30px)'}}>
+                      <div style={{
+                         width: '100%', 
+                         height: '100%', 
+                         backgroundImage: `url(${platform.image})`,
+                         backgroundSize: 'cover',
+                         backgroundPosition: 'top center'
+                      }} />
+                      
+                      <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        padding: '2rem 1rem 1rem',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.95), transparent)',
+                        textAlign: 'center'
+                      }}>
+                        <h3 style={{fontSize: '1.5rem', color: '#fff', marginBottom: '0.25rem', textShadow: '0 2px 4px rgba(0,0,0,0.8)'}}>
+                          {platform.title}
+                        </h3>
+                        {isActive && (
+                          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', color: platform.color, fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', marginTop: '0.5rem'}}>
+                            <MousePointerClick size={14} /> Ver Detalhes
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
+
+          {/* ÁREA DE DETALHES */}
+          <div className="active-platform-details" style={{maxWidth: '900px', margin: '0 auto', minHeight: '300px'}}>
+            <AnimatePresence mode='wait'>
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                className="glass-card-hover" // Aplicação da Classe Padronizada
+                style={{
+                  padding: '3rem',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                 <div style={{
+                   position: 'absolute', top: 0, left: 0, width: '100%', height: '4px',
+                   background: `linear-gradient(90deg, transparent, ${platformsData[activeIndex].color}, transparent)`
+                 }} />
+
+                 <div className="details-content text-center">
+                   <h3 style={{fontSize: '2.2rem', color: 'var(--color-heading)', marginBottom: '0.5rem'}}>
+                     {platformsData[activeIndex].title}
+                   </h3>
+                   <p style={{color: platformsData[activeIndex].color, fontSize: '1.2rem', marginBottom: '2rem', fontWeight: 600}}>
+                     {platformsData[activeIndex].tagline}
+                   </p>
+
+                   <p style={{fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--color-text)', marginBottom: '2.5rem', maxWidth: '700px', marginInline: 'auto'}}>
+                     {platformsData[activeIndex].description}
+                   </p>
+
+                   <div style={{display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem'}}>
+                      {platformsData[activeIndex].highlights.map((highlight, i) => (
+                        <span key={i} style={{
+                          background: 'rgba(255,255,255,0.05)', 
+                          padding: '0.5rem 1rem', 
+                          borderRadius: '50px', 
+                          fontSize: '0.9rem',
+                          border: '1px solid rgba(255,255,255,0.1)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px'
+                        }}>
+                          <CheckCircle2 size={14} color={platformsData[activeIndex].color} />
+                          {highlight}
+                        </span>
+                      ))}
+                   </div>
+
+                   <a 
+                     href={platformsData[activeIndex].link} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="btn btn-primary btn-large"
+                     style={{
+                       boxShadow: `0 0 20px ${platformsData[activeIndex].color}30`, 
+                       border: `1px solid ${platformsData[activeIndex].color}`
+                     }}
+                   >
+                     <span>Visitar Plataforma</span>
+                     <ExternalLink size={18} />
+                   </a>
+                 </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* CTA Final */}
+      {/* CTA FINAL */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
           <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
-            Pare de Adivinhar. Comece a Aplicar Engenharia.
+            Seu site deveria ser seu melhor vendedor.
           </h2>
           <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px', textAlign: 'center', margin: '0 auto 2rem'}}>
-            O Cortex B2B™ é o primeiro passo para parar de improvisar. É o "raio-X" que permite ao engenheiro trabalhar.
+            Se ele não educa, não qualifica e não converte, você está desperdiçando o ativo digital mais importante do seu negócio.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Quero meu Diagnóstico Cortex B2B</span> {/* Preço Removido */}
+              <span>Transformar Meu Site em Motor de Receita</span>
               <ArrowRight size={20} />
             </Link>
           </div>
-          <p className="cta-support-text" style={{opacity: 0.9, marginTop: '1.5rem', textAlign: 'center'}}>
-            Você recebe o diagnóstico 360º completo para executar por conta própria ou conosco. A decisão é sua.
-          </p>
+          <p className="cta-support-text" style={{opacity: 0.9, marginTop: '1.5rem', textAlign: 'center'}}>Primeira conversa: 21 minutos para avaliar seu ativo digital atual e mapear oportunidades de conversão.</p>
         </div>
       </section>
 
-      {/* CSS Global para o Hover Effect (Importante) */}
+      {/* CSS Global para o Hover Effect (Receita) + Carrossel */}
       <style jsx global>{`
+        /* A Receita do Card Premium */
         .glass-card-hover {
-           transition: all 0.4s ease;
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(10px);
+           border-radius: 16px;
+           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
            border: 1px solid rgba(255, 255, 255, 0.05);
+           transition: all 0.4s ease;
         }
         .glass-card-hover:hover {
-           transform: translateY(-8px);
-           border-color: var(--color-primary);
-           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow */
+           transform: translateY(-5px);
+           border-color: var(--color-primary); /* Verde Synapse */
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow Verde */
         }
-        .cortex-step-number {
-          flex-shrink: 0;
-          width: 48px;
-          height: 48px;
-          background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); 
+
+        /* Navegação Carrossel */
+        .carousel-nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0,0,0,0.6);
+          border: 1px solid rgba(255,255,255,0.2);
+          color: white;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: white;
+          cursor: pointer;
+          z-index: 200;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(5px);
         }
-        .cortex-step-content h3 {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.3rem;
-          color: var(--color-heading);
-          margin-bottom: 0.75rem;
+        .carousel-nav-btn:hover {
+          background: var(--color-primary);
+          border-color: var(--color-primary);
+          transform: translateY(-50%) scale(1.1);
         }
-        .cortex-step-content p {
-          color: var(--color-text);
-          line-height: 1.7;
+        .carousel-nav-btn.left { left: 20px; }
+        .carousel-nav-btn.right { right: 20px; }
+
+        @media (max-width: 768px) {
+          .carousel-nav-btn {
+             width: 40px;
+             height: 40px;
+          }
+          .carousel-nav-btn.left { left: 10px; }
+          .carousel-nav-btn.right { right: 10px; }
         }
       `}</style>
     </>
