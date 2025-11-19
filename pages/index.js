@@ -719,6 +719,32 @@ export default function Home() {
           line-height: 1.25;
         }
 
+        /* Botão dos Cards de Solução */
+.card-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;       /* Dá corpo ao botão */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borda visível e elegante */
+  border-radius: 8px;           /* Bordas arredondadas */
+  color: var(--color-heading);  /* Cor do texto (branco/claro) */
+  background: rgba(255, 255, 255, 0.03); /* Fundo sutil */
+  text-decoration: none;        /* Remove o sublinhado */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;          /* Garante que não quebre linha */
+}
+
+/* Efeito Hover do Botão */
+.card-cta-button:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #000; /* Texto escuro no hover para contraste */
+  box-shadow: 0 0 15px rgba(0, 150, 132, 0.4); /* Glow */
+  transform: translateX(5px); /* Pequeno movimento para a direita */
+}
+                 
         /* Responsividade */
         @media (max-width: 900px) {
           .pillar-grid-2x2 {
