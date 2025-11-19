@@ -1,5 +1,5 @@
 // pages/solucoes/match-maker.js
-// Versão Final Otimizada: Design Premium (Glassmorphism) + Alinhamento Central Total
+// Versão Final: Design Premium (Receita Exata) + Alinhamento Central Rigoroso + Copy Intacta
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -23,22 +23,6 @@ export default function MatchMakerB2B() {
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  // Estilo Premium (Glassmorphism) com Hover e Padding Robusto
-  const cardStyle = {
-    background: 'rgba(255, 255, 255, 0.03)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.05)',
-    borderRadius: '16px',
-    padding: '2.5rem',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-    height: '100%',
-    transition: 'all 0.4s ease'
-  };
 
   return (
     <>
@@ -81,19 +65,20 @@ export default function MatchMakerB2B() {
           </p>
           
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
-            <div className="glass-card-hover" style={cardStyle}>
+            
+            <div className="glass-card-premium">
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>1.</span>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Informação dispersa</h3>
               <p style={{textAlign: 'center'}}>Grupos com 200+ pessoas. Competências valiosas perdidas em conversas assíncronas. Zero capacidade de confluência estratégica.</p>
             </div>
             
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>2.</span>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Decisão cognitivamente cara</h3>
               <p style={{textAlign: 'center'}}>"Alguém conhece um designer especializado em SaaS?" → 47 mensagens depois, ninguém sabe se a conexão é boa. Energia desperdiçada.</p>
             </div>
 
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>3.</span>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Oportunidades perdidas</h3>
               <p style={{textAlign: 'center'}}>A pessoa certa está na sua rede, mas você não sabe. Ela também não sabe que você precisa dela. Matching não acontece.</p>
@@ -135,7 +120,7 @@ export default function MatchMakerB2B() {
 
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
             {/* Funcionalidade 1 */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Target size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Perfis Estruturados</h3>
@@ -144,7 +129,7 @@ export default function MatchMakerB2B() {
             </div>
 
             {/* Funcionalidade 2 */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Zap size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Matching Inteligente</h3>
@@ -153,7 +138,7 @@ export default function MatchMakerB2B() {
             </div>
 
             {/* Funcionalidade 3 */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><TrendingUp size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Analytics de Rede</h3>
@@ -178,9 +163,9 @@ export default function MatchMakerB2B() {
 
           <div className="matchmaker-verticals">
             {/* Vertical 1: Educação */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <h3 style={{fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-heading)'}}>Educação</h3>
-              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem'}}>Conecta <strong>alunos ↔ mentores</strong> por área de interesse, disponibilidade e experiência.</p>
+              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem', textAlign: 'center'}}>Conecta <strong>alunos ↔ mentores</strong> por área de interesse, disponibilidade e experiência.</p>
               <ul className="vertical-features">
                 <li><CheckCircle2 size={16} /> Matching por objetivo de carreira</li>
                 <li><CheckCircle2 size={16} /> Horários compatíveis (agenda integrada)</li>
@@ -189,9 +174,9 @@ export default function MatchMakerB2B() {
             </div>
 
             {/* Vertical 2: Investimento */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <h3 style={{fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-heading)'}}>Investimento</h3>
-              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem'}}>Conecta <strong>startups ↔ investidores</strong> por tese de investimento, ticket, setor e estágio.</p>
+              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem', textAlign: 'center'}}>Conecta <strong>startups ↔ investidores</strong> por tese de investimento, ticket, setor e estágio.</p>
               <ul className="vertical-features">
                 <li><CheckCircle2 size={16} /> Fit de tese validado automaticamente</li>
                 <li><CheckCircle2 size={16} /> Prioriza warm intros (conexões mútuas)</li>
@@ -200,9 +185,9 @@ export default function MatchMakerB2B() {
             </div>
 
             {/* Vertical 3: RH & Talentos */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <h3 style={{fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-heading)'}}>RH & Talentos</h3>
-              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem'}}>Conecta <strong>vagas ↔ talentos</strong> por hard skills, soft skills, cultura e momento de carreira.</p>
+              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem', textAlign: 'center'}}>Conecta <strong>vagas ↔ talentos</strong> por hard skills, soft skills, cultura e momento de carreira.</p>
               <ul className="vertical-features">
                 <li><CheckCircle2 size={16} /> Matching além de currículo (fit cultural)</li>
                 <li><CheckCircle2 size={16} /> Disponibilidade imediata vs futuro</li>
@@ -211,9 +196,9 @@ export default function MatchMakerB2B() {
             </div>
 
             {/* Vertical 4: Parcerias Comerciais */}
-            <div className="glass-card-hover" style={cardStyle}>
+            <div className="glass-card-premium">
               <h3 style={{fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-heading)'}}>Parcerias Comerciais</h3>
-              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem'}}>Conecta <strong>empresas ↔ fornecedores/parceiros</strong> por complementaridade de oferta e ICP compartilhado.</p>
+              <p className="vertical-description" style={{marginBottom: '1.5rem', color: 'var(--color-text)', fontSize: '0.95rem', textAlign: 'center'}}>Conecta <strong>empresas ↔ fornecedores/parceiros</strong> por complementaridade de oferta e ICP compartilhado.</p>
               <ul className="vertical-features">
                 <li><CheckCircle2 size={16} /> ICP overlap (cliente ideal em comum)</li>
                 <li><CheckCircle2 size={16} /> Complementaridade de portfólio</li>
@@ -232,15 +217,14 @@ export default function MatchMakerB2B() {
       <section className="section-with-gradient-glow">
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Resultado: De Caos para Confluência</h2>
-          <div className="glass-card-hover" style={{
-            ...cardStyle,
-            padding: '3rem',
+          
+          <div className="glass-card-premium" style={{
             maxWidth: '800px',
             margin: '3rem auto'
           }}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2rem', marginBottom: '2rem'}}>
               <div style={{textAlign: 'center'}}>
-                <Clock size={32} style={{color: 'var(--color-text)', marginBottom: '0.5rem'}} />
+                <Clock size={32} style={{color: 'var(--color-text)', marginBottom: '0.5rem', margin: '0 auto'}} />
                 <p style={{fontSize: '0.9rem', color: 'var(--color-text)'}}>Tempo para encontrar<br/>conexão perfeita</p>
               </div>
             </div>
@@ -290,23 +274,37 @@ export default function MatchMakerB2B() {
         </div>
       </section>
 
-      {/* CSS Global para Hover Effect */}
+      {/* CSS Global para Hover Effect (Receita Exata) */}
       <style jsx global>{`
-        .glass-card-hover {
-           transition: all 0.4s ease;
-           border: 1px solid rgba(255, 255, 255, 0.05);
+        .glass-card-premium {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 16px;
+          padding: 2.5rem;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          height: 100%;
         }
-        .glass-card-hover:hover {
-           transform: translateY(-8px);
+        
+        /* Estado Ativo/Hover (O "Efeito Uau") */
+        .glass-card-premium:hover {
+           transform: translateY(-5px);
            border-color: var(--color-primary);
            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow */
         }
+
         .matchmaker-verticals {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 2rem;
           margin-top: 4rem;
         }
+        
         .vertical-features {
           list-style: none;
           padding: 0;
@@ -315,6 +313,7 @@ export default function MatchMakerB2B() {
           align-items: center; /* Centraliza lista */
           gap: 0.75rem;
         }
+        
         .vertical-features li {
           display: flex;
           align-items: center; /* Centraliza item */
@@ -322,10 +321,12 @@ export default function MatchMakerB2B() {
           font-size: 0.9rem;
           color: var(--color-text);
         }
+        
         .vertical-features svg {
           color: var(--color-primary);
           flex-shrink: 0;
         }
+        
         @media (max-width: 768px) {
           .matchmaker-verticals {
             grid-template-columns: 1fr;
