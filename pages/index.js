@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link'; // Importação do Link (corrigindo o build)
+import Link from 'next/link';
 import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem } from 'lucide-react';
 
 /* O componente RotatingText não é usado nesta versão da copy */
@@ -42,7 +42,7 @@ export default function Home() {
     <>
       <Head>
         <title>Synapse B2B | Engenharia de Receita para Empresas B2B</title>
-        <meta name="description" content="Nós instalamos o sistema (GTM, Narrativa e Ativos) que transforma sua complexidade técnica em um motor de vendas que escala." />
+        <meta name="description" content="Transformamos crescimento por indicação em receita previsível. O método que tira sua empresa do improviso e coloca você no controle." />
       </Head>
 
 {/* ====================================================================== */}
@@ -64,9 +64,9 @@ export default function Home() {
             que Precisam de Crescimento Previsível
           </h1>
           
-          {/* SUBHEADLINE ATUALIZADA */}
+          [cite_start]{/* SUBHEADLINE AJUSTADA (Item a) [cite: 3] */}
           <p className="hero-subheadline wider-on-desktop">
-            Instalamos o método completo — desde o diagnóstico estratégico até a execução na linha de frente — que transforma sua complexidade técnica em receita previsível e escalável.
+            Transformamos operações comerciais dependentes de improviso e esforço manual em máquinas de receita previsível. Instalamos o método completo — da estratégia à execução — para sua empresa escalar com governança.
           </p>
           
           <div className="hero-ctas">
@@ -79,9 +79,9 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança (Trust Bar) */}
+          [cite_start]{/* Barra de Confiança (Trust Bar) (Item b) [cite: 5] */}
           <div className="trust-bar reveal-up">
-            <p>Forjado em ecossistemas de alta complexidade como:</p>
+            <p>Método forjado em ecossistemas de alta performance:</p>
             <div className="trust-bar-logos">
               <Image src="/logo/logo-google.png" alt="Google" width={100} height={32} />
               <Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
@@ -104,31 +104,31 @@ export default function Home() {
           
           <div className="truths-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '4rem'}}>
             
-            {/* Sintoma 1 */}
+            [cite_start]{/* Sintoma 1 (Item c, d) [cite: 7, 11, 12] */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">1.</span>
-              <h3 className="truth-card-title">Táticas Sem Estratégia Clara</h3>
-              <p>Você testa anúncios, contrata SDRs, refaz o pitch. Nada trava por falta de esforço — trava por falta de clareza. O mercado não entende seu valor real, o time não sabe argumentar diferenciação, e cada venda exige convencimento do zero porque você não tem um posicionamento cristalino.</p>
+              <h3 className="truth-card-title">Esforço Máximo, Resultado Instável</h3>
+              <p>Você contrata ferramentas, testa canais e exige mais do time, mas o ponteiro não move na mesma proporção. O mercado não percebe seu valor real e cada venda exige um esforço desproporcional de convencimento porque falta posicionamento, não esforço.</p>
             </div>
             
-            {/* Sintoma 2 */}
+            [cite_start]{/* Sintoma 2 (Item e) [cite: 16, 17, 18] */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">2.</span>
               <h3 className="truth-card-title">Investimento Sem Rastreabilidade</h3>
-              <p>Você investe em marketing, vendas e tecnologia, mas não consegue rastrear o que realmente converte. CAC sobe, ciclo de vendas não encurta, e você não sabe qual canal ou mensagem funciona. O problema não é falta de esforço — é a ausência de um método que conecte investimento a resultado mensurável.</p>
+              <p>Você assina os cheques de marketing e vendas, mas não sabe dizer qual real investido trouxe o contrato assinado. O ciclo de vendas não encurta e a eficiência cai à medida que você tenta escalar. O problema é a ausência de Engenharia de Receita no processo comercial.</p>
             </div>
 
-            {/* Sintoma 3 */}
+            [cite_start]{/* Sintoma 3 (Item f, g) [cite: 20, 24, 25] */}
             <div className="truth-card-revolutionary">
               <span className="truth-card-number">3.</span>
-              <h3 className="truth-card-title">Conhecimento Preso em Uma Pessoa</h3>
-              <p>O fundador (ou um vendedor específico) fecha as vendas críticas. O resto do time não consegue replicar. Isso cria um gargalo: enquanto a liderança está vendendo, não está construindo o método que permite escalar. O crescimento depende de conhecimento tácito, não de processo documentado.</p>
+              <h3 className="truth-card-title">Dependência de "Talento" vs. Processo</h3>
+              <p>O faturamento depende da performance individual de vendedores sêniores (ou dos sócios). Se eles saírem, a receita cai. O crescimento está alicerçado em conhecimento tácito (na cabeça das pessoas), não em um playbook validado e transferível.</p>
             </div>
           </div>
 
-          {/* Conclusão da Seção 2 */}
+          [cite_start]{/* Conclusão da Seção 2 (Item h) [cite: 30, 31] */}
           <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '3rem auto 0', fontStyle: 'italic', fontWeight: 500, color: 'var(--color-heading)' }}>
-            Você não precisa de mais esforço. Você precisa de método estruturado. <br/>A diferença entre improviso e engenharia está na aplicação de conhecimento codificado.
+            Você não precisa de mais vendedores. Você precisa de um sistema de vendas. <br/>A diferença entre uma empresa estagnada e uma scale-up é a substituição do talento individual pelo método institucional.
           </p>
         </div>
       </section>
@@ -142,52 +142,53 @@ export default function Home() {
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Método: Os 4 Pilares da Engenharia de Receita</h2>
           <p className="lead-text">
-            Aplicamos o método de quatro pilares que move sua empresa do improviso para a receita previsível.
+            [cite_start]{/* (Item i) [cite: 33] */}
+            A estrutura necessária para transformar vendas complexas em processo repetível.
           </p>
           
           <div className="pillar-grid-revolutionary">
             
-            {/* Pilar 1: Clareza de Valor */}
+            [cite_start]{/* Pilar 1: Clareza de Valor (Item j) [cite: 37] */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Gem size={28} />
                 </div>
                 <h3 className="pillar-card-title">Clareza de Valor</h3>
-                <p className="pillar-card-description">É a sua Proposta de Valor em 30 segundos. Seu cliente ideal entende o que você resolve, por que agora e por que você. Sem jargão técnico, sem 40 slides.</p>
+                <p className="pillar-card-description">Decodificamos sua competência técnica em autoridade de mercado. Seu cliente ideal precisa entender o impacto financeiro que você gera em 30 segundos, sem depender de reuniões técnicas intermináveis.</p>
               </div>
             </div>
 
-            {/* Pilar 2: Arquitetura Comercial */}
+            [cite_start]{/* Pilar 2: Arquitetura Comercial (Item k) [cite: 41] */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <GitBranch size={28} />
                 </div>
                 <h3 className="pillar-card-title">Arquitetura Comercial</h3>
-                <p className="pillar-card-description">É o blueprint do seu motor de receita. Decodificamos o valor real do seu negócio (muitas vezes invisível para você mesmo), desenhamos o GTM completo (posicionamento, ICP, canais, precificação) e entregamos a arquitetura executável. Você para de improvisar argumentos e passa a ter um método replicável de vendas.</p>
+                <p className="pillar-card-description">O blueprint do seu motor de receita. Definimos processos, canais e rituais de gestão para que a meta seja batida pelo processo, e não pelo heroísmo de fim de mês.</p>
               </div>
             </div>
 
-            {/* Pilar 3: Governança de Execução */}
+            [cite_start]{/* Pilar 3: Governança de Execução (Item l) [cite: 44] */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <ShieldCheck size={28} />
                 </div>
                 <h3 className="pillar-card-title">Governança de Execução</h3>
-                <p className="pillar-card-description">É ter liderança sênior operando na linha de frente sem comprometer seu caixa. Garantimos que a estratégia não fique no papel: implementamos, validamos e ajustamos em tempo real até o método rodar sozinho.</p>
+                <p className="pillar-card-description">Estratégia sem execução é alucinação. Atuamos com liderança sênior na linha de frente para garantir que o playbook seja seguido, os dados sejam limpos e a cultura de alta performance seja instalada.</p>
               </div>
             </div>
 
-            {/* Pilar 4: Ativos que Convertem */}
+            [cite_start]{/* Pilar 4: Ativos que Convertem (Item m) [cite: 46, 47] */}
             <div className="pillar-card-revolutionary">
               <div className="pillar-card-content">
                 <div className="pillar-icon-wrapper">
                   <Layers size={28} />
                 </div>
                 <h3 className="pillar-card-title">Ativos que Convertem</h3>
-                <p className="pillar-card-description">É ter ativos trabalhando para você 24/7. Criamos ferramentas que educam o comprador, provam seu valor antes da venda e aceleram a decisão — transformando cada visita em oportunidade qualificada.</p>
+                <p className="pillar-card-description">Transformamos sua presença digital em uma ferramenta de vendas 24/7. Educamos o comprador e provamos valor técnico antes mesmo da primeira reunião, encurtando ciclos de negociação.</p>
               </div>
             </div>
 
@@ -198,13 +199,13 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita (SEM PREÇOS)            */}
+      {/* Seção 4: Soluções de Engenharia de Receita                           */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
-          <h2 className="section-title text-center">Soluções de Engenharia de Receita</h2>
+          [cite_start]<h2 className="section-title text-center">Como podemos atuar no seu negócio?</h2> {/* (Item n) [cite: 49] */}
           <p className="lead-text text-center" style={{maxWidth: '700px', margin: '0 auto 4rem'}}>
-            Nosso método em duas frentes. Comece pelo diagnóstico ou pela execução.
+            Do diagnóstico estratégico à gestão interina do comercial. [cite_start]{/* (Item o) [cite: 51] */}
           </p>
 
           <div className="solutions-2col-grid">
@@ -218,9 +219,8 @@ export default function Home() {
                 <li>
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Diagnóstico Cortex B2B™</strong>
-                  <span>Nosso sistema proprietário de inteligência estratégica. Uma IA especializada que condensa 20+ anos de experiência B2B e os maiores frameworks globais de GTM em um diagnóstico 360° do seu negócio.</span>
-                  <span className="solution-details"><strong>Quando contratar:</strong> Para ter um "raio-X" imparcial da sua operação, antes de investir alto em marketing/vendas, ou quando o "achismo" está custando caro.</span>
-                  {/* PREÇO REMOVIDO */}
+                  [cite_start]<span>{/* (Item p, q) [cite: 54] */}O "Raio-X" da sua maturidade comercial. Uma análise profunda sob 5 lentes para identificar gargalos de eficiência e alavancas de crescimento imediato.</span>
+                  [cite_start]<span className="solution-details"><strong>Ideal para:</strong> {/* [cite: 55] */}Direcionamento estratégico antes de novas rodadas de investimento ou expansão.</span>
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Diagnóstico Estratégico).</span>
                   <Link href="/solucoes/cortex-b2b" passHref>
                     <a className="solution-cta">Conhecer o Cortex B2B™ <ArrowRight size={16}/></a>
@@ -229,10 +229,9 @@ export default function Home() {
                 <li>
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Sprint de Validação Comercial</strong>
-                  <span>Valide a demanda real antes de construir a tese. Testamos seu produto, ICP e pitch de vendas em 30 dias (aplicando o Cortex B2B™) para que você decida escalar baseado em dados de campo, não em intuição.</span>
-                  <span className="solution-details"><strong>Quando contratar:</strong> Produto novo, pivô de modelo, expansão para novo mercado.</span>
-                  {/* PREÇO REMOVIDO */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial (upfront) + % sobre receita nova (mínimo 12 meses).</span>
+                  [cite_start]<span>{/* (Item r) [cite: 63, 64] */}O que é: Teste de novas teses, produtos ou mercados em 30 dias. Validamos a demanda com dados reais antes de você comprometer estrutura fixa (OPEX).</span>
+                  [cite_start]<span className="solution-details"><strong>Ideal para:</strong> {/* [cite: 65] */}Lançamento de novos produtos, entrada em novos segmentos ou pivô de modelo de negócios.</span>
+                  [cite_start]<span className="solution-details"><strong>Modelo de Investimento:</strong> {/* [cite: 66] */}Investimento inicial (upfront) + % sobre receita nova (Success Fee).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Agendar diagnóstico <ArrowRight size={16}/></a>
                   </Link>
@@ -240,10 +239,9 @@ export default function Home() {
                 <li>
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Go-To-Market Completo</strong>
-                  <span>A arquitetura completa do seu motor comercial do zero: posicionamento, ICP, proposta de valor, canais, pricing e retenção. Usamos o meta-framework Cortex B2B™ para entregar o blueprint estratégico.</span>
-                  <span className="solution-details"><strong>Quando contratar:</strong> Crescimento errático, CAC alto, ciclo longo, time vendendo features.</span>
-                  {/* PREÇO REMOVIDO */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial para compromisso mútuo + % sobre receita nova (mínimo 12 meses).</span>
+                  [cite_start]<span>{/* (Item s) [cite: 205, 206] */}O que é: A arquitetura completa do seu motor comercial: posicionamento, ICP, proposta de valor, canais, pricing e retenção. Usamos o meta-framework Cortex B2B™ para entregar o blueprint estratégico que orienta toda a operação.</span>
+                  [cite_start]<span className="solution-details"><strong>Ideal para:</strong> {/* [cite: 207] */}Empresas com crescimento errático, CAC alto, ciclo longo ou que precisam profissionalizar a forma de ir ao mercado.</span>
+                  [cite_start]<span className="solution-details"><strong>Modelo de Investimento:</strong> {/* [cite: 208] */}Investimento inicial (upfront) + % sobre receita nova (Success Fee).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Ver metodologia completa <ArrowRight size={16}/></a>
                   </Link>
@@ -251,10 +249,9 @@ export default function Home() {
                 <li>
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Diretoria de Receita como Serviço</strong>
-                  <span>Liderança C-level fracionada operando sua diretoria comercial. Injetamos estratégia sênior, executamos na linha de frente por 90-180 dias e validamos o playbook operando. Você ganha 5x mais resultado pagando uma fração do custo de um VP Comercial CLT.</span>
-                  <span className="solution-details"><strong>Quando contratar:</strong> CEO sobrecarregado, time sem direção, receita travada há 3+ meses.</span>
-                  {/* PREÇO REMOVIDO */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Fee mensal fixo + % sobre receita nova (mínimo 12 meses).</span>
+                  [cite_start]<span>{/* (Item t) [cite: 211] */}O que é: Alugue um Executivo Sênior. Injetamos a visão e a governança de um Diretor de multinacional na sua operação, liderando o time para instalar o método na prática.</span>
+                  [cite_start]<span className="solution-details"><strong>Ideal para:</strong> {/* [cite: 212] */}Profissionalizar a gestão, reduzir a dependência operacional dos sócios e instalar cultura de alta performance.</span>
+                  [cite_start]<span className="solution-details"><strong>Modelo de Investimento:</strong> {/* [cite: 213] */}Fee mensal fixo + % sobre receita nova (Success Fee).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Entender modelo de Parceria <ArrowRight size={16}/></a>
                   </Link>
@@ -264,7 +261,6 @@ export default function Home() {
                   <strong>Advisory Board Estratégico</strong>
                   <span>Conselho sob demanda para decisões de alto impacto (pivôs, M&A, captação). Damos acesso à senioridade e visão externa para validar hipóteses e reduzir o risco de decisões críticas, sem contratação permanente.</span>
                   <span className="solution-details"><strong>Quando contratar:</strong> Decisão estratégica de alto impacto, necessidade de sparring qualificado.</span>
-                  {/* PREÇO JÁ ESTAVA OCULTO */}
                   <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (modelo de retainer mensal ou projeto).</span>
                   <Link href="/contato" passHref>
                     <a className="solution-cta">Avaliar fit de Advisory <ArrowRight size={16}/></a>
@@ -282,11 +278,10 @@ export default function Home() {
                 <li>
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Plataformas de Aceleração de Receita</strong>
-                  <span>Não construímos "sites institucionais". Construímos plataformas digitais estratégicas projetadas como motores de receita: 30% credibilidade + 70% engenharia de conversão. Seu ativo digital educa o mercado e qualifica leads 24/7.</span>
+                  [cite_start]<span>{/* (Item u) [cite: 216, 217] */}O que é: Não construímos "sites institucionais". Construímos plataformas digitais estratégicas projetadas como motores de receita: 30% credibilidade + 70% engenharia de conversão. Seu ativo digital educa o mercado e qualifica leads 24/7.</span>
                   <span className="solution-examples"><strong>Exemplos tangíveis:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
-                  <span className="solution-examples"><strong>O que inclui:</strong> Arquitetura de conversão, copywriting estratégico (SEO e GEO), landing pages por ICP, integração com CRMs e bots.</span>
-                  {/* PREÇO REMOVIDO */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (projeto).</span>
+                  [cite_start]<span className="solution-details"><strong>Ideal para:</strong> {/* [cite: 218] */}Empresas cujo site atual gera visitas mas não gera reuniões qualificadas para o time comercial.</span>
+                  [cite_start]<span className="solution-details"><strong>Modelo de Investimento:</strong> {/* [cite: 219] */}Sob consulta (Projeto).</span>
                   <Link href="/solucoes/plataformas-digitais" passHref>
                     <a className="solution-cta">Ver casos de uso <ArrowRight size={16}/></a>
                   </Link>
@@ -294,10 +289,10 @@ export default function Home() {
                 <li>
                   <CheckCircle2 size={20} className="solution-item-icon" />
                   <strong>Ferramentas Estratégicas de Conversão (Apps)</strong>
-                  <span>Construímos ativos que provam seu ROI antes da venda: calculadoras, simuladores, diagnósticos automatizados, bots (WhatsApp) e plataformas de match-making. O cliente "sente" o valor, não apenas ouve sobre ele.</span>
+                  [cite_start]<span>{/* (Item w) [cite: 222] */}O que é: Ferramentas que tangibilizam seu valor. Calculadoras e simuladores que provam o retorno financeiro da sua solução, eliminando a subjetividade da venda.</span>
                   <span className="solution-examples"><strong>Exemplos tangíveis:</strong> Synapse B2B Match Maker, Simulador de Orçamento Exclusiva Engenharias</span>
-                  {/* PREÇO REMOVIDO */}
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (projeto).</span>
+                  [cite_start]<span className="solution-details"><strong>Ideal para:</strong> {/* [cite: 223] */}Ciclos de vendas longos travados na etapa de "provar valor" ou "justificar preço".</span>
+                  [cite_start]<span className="solution-details"><strong>Modelo de Investimento:</strong> {/* [cite: 224] */}Sob consulta (Projeto).</span>
                   <Link href="/solucoes/apps" passHref>
                     <a className="solution-cta">Explorar Ferramentas <ArrowRight size={16}/></a>
                   </Link>
@@ -311,11 +306,11 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
 {/* ====================================================================== */}
-      {/* Seção 5: Cases de Sucesso (Carrossel)                              */}
+      {/* Seção 5: Cases de Sucesso (Carrossel - TEXTOS AJUSTADOS)           */}
       {/* ====================================================================== */}
       <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
         <div className="container text-center reveal-up">
-          <h2 className="section-title">Da Estratégia à Tração</h2>
+          [cite_start]<h2 className="section-title">Da Complexidade à Tração</h2> {/* (Item x) [cite: 260] */}
         </div>
         
         <div className="case-carousel-container reveal-up text-center">
@@ -330,9 +325,10 @@ export default function Home() {
                 <h3 className="case-card-title-rev">Versão Holística</h3>
                 <span className="case-card-tag-rev">R$ 500k captados</span>
               </div>
-              <p><strong>Contexto:</strong> Healthtech com ROI de 5.8x validado pela UFMG, mas pitch confuso de 15 minutos gerava "vamos pensar". Decisores não entendiam a proposta.</p>
-              <p><strong>O que fizemos:</strong> Decodificamos o valor técnico ("Cuidado Farmacêutico") em linguagem de negócio ("Nova Arquitetura de Cuidado ao Paciente Crônico"). Identificamos que o decisor real era o CFO (não o clínico) e ajustamos a narrativa para falar de redução de custo, não de humanização do cuidado.</p>
-              <p><strong>Resultado tangível:</strong> R$ 500k captados em 45 dias. Pitch de 3 minutos que gera "quando começamos?".</p>
+              [cite_start]{/* (Item x) [cite: 262, 263, 264] */}
+              <p><strong>Contexto:</strong> Tecnologia validada, mas com dificuldade de penetração em grandes contas (Hospitais) devido a um discurso excessivamente técnico.</p>
+              <p><strong>Ação:</strong> Reestruturação do GTM e tradução da oferta para "CareOps" (foco em eficiência operacional, não apenas clínica).</p>
+              <p><strong>Resultado:</strong> R$ 500k captados e validação de canal enterprise.</p>
               <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -346,11 +342,12 @@ export default function Home() {
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
-                <span className="case-card-tag-rev">Forecast 3x o melhor ano</span>
+                <span className="case-card-tag-rev">Forecast Recorde</span>
               </div>
-              <p><strong>Contexto:</strong> Excelência técnica comprovada, mas crescimento 100% por indicação. Narrativa fragmentada, zero presença digital, receita imprevisível.</p>
-              <p><strong>O que fizemos:</strong> Recusamos "fazer um site". Aplicamos diagnóstico profundo, reposicionamos a marca como hub estratégico (não fornecedor), construímos o GTM completo, desenvolvemos a plataforma digital e operamos como CRO fracionado na linha de frente.</p>
-              <p><strong>Resultado tangível:</strong> Pipeline de novas oportunidades superior ao faturamento anual. Playbook comercial validado em 128 dias. Método replicável operando sem depender de pessoas específicas.</p>
+              [cite_start]{/* (Item x) [cite: 266, 267, 268] */}
+              <p><strong>Contexto:</strong> Empresa de engenharia consolidada, mas refém de indicações e sazonalidade. Sem previsibilidade de novos contratos.</p>
+              <p><strong>Ação:</strong> Implementação de máquina de vendas Outbound e posicionamento como parceiro de "Continuidade Operacional".</p>
+              <p><strong>Resultado:</strong> Geração de pipeline recorde (3x histórico) e redução da dependência dos sócios na venda.</p>
               <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -364,11 +361,12 @@ export default function Home() {
               </div>
               <div className="case-card-header-rev">
                 <h3 className="case-card-title-rev">AORKIA</h3>
-                <span className="case-card-tag-rev">Prova de Conceito</span>
+                <span className="case-card-tag-rev">Zero ao Playbook</span>
               </div>
-              <p><strong>Contexto:</strong> Startup entrando em mercado técnico dominado por gigantes (Veeam, Acronis). Zero histórico, zero clientes, zero marca. Meta: provar tração em 45 dias.</p>
-              <p><strong>O que fizemos:</strong> Transferimos credibilidade através de parceria global (Parceiro Oficial Keepit). Recodificamos a narrativa de "backup SaaS" (técnico) para "seguro contra ransomware" (risco de negócio). Aplicamos o método com pele no jogo total: o fundador da Synapse validou o método no próprio negócio.</p>
-              <p><strong>Resultado tangível:</strong> Primeira venda de 1.200+ usuários em 45 dias. Prova definitiva do método validado sob condições extremas.</p>
+              [cite_start]{/* (Item x) [cite: 270, 271, 272] */}
+              <p><strong>Contexto:</strong> Desafio de entrar em um mercado comoditizado (Backup) dominado por gigantes globais, sem histórico de marca.</p>
+              <p><strong>Ação:</strong> Estratégia de "Ancoragem de Autoridade" e venda baseada em Risco (Compliance/Ransomware) e não em TI.</p>
+              <p><strong>Resultado:</strong> Validação do método com a conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
               <Link href="/cases/aorkia" className="btn-case-revolutionary">
                 <span>Ver Case Completo</span>
                 <ArrowRight size={18} />
@@ -392,11 +390,11 @@ export default function Home() {
             <div className="principle-core-icon">
               <LineChart size={32} />
             </div>
-            <h3>Esses três casos provam o mesmo princípio:</h3>
-            <p className="principle-core-highlight">Produtos tecnicamente superiores perdem para concorrentes medíocres com narrativas mais simples.</p>
-            <p>Nós traduzimos o que trava seu comprador — dúvida, comparação, análise exaustiva — em decisão rápida: confiança, urgência, ação.</p>
-            <p>Construímos sistemas que tomam decisões cognitivamente caras no lugar do usuário.</p>
-            <p>Lideramos a execução nos primeiros 90 dias porque sabemos que você não pode parar sua operação para implementar um novo processo sozinho.</p>
+            [cite_start]{/* (Item y) [cite: 274, 275, 276, 277, 278] */}
+            <h3>O que une estes resultados?</h3>
+            <p className="principle-core-highlight">Eles deixaram de vender "horas" ou "produtos" para vender <strong>resultados de negócio</strong>.</p>
+            <p>Trocaram a intuição pela <strong>metodologia</strong>.</p>
+            <p>Entenderam que para crescer, precisavam profissionalizar a interface com o mercado.</p>
             <p className="font-bold text-white mt-4" style={{color: 'var(--color-heading)', fontSize: '1.1rem'}}>Isso é Engenharia de Receita.</p>
             <div className="section-cta">
               <Link href="/a-engenharia" className="btn btn-secondary" style={{backdropFilter: 'blur(10px)'}}>
@@ -417,38 +415,40 @@ export default function Home() {
         <div className="pulsating-core-background"></div>
 
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
+          [cite_start]{/* (Item z) [cite: 286] */}
           <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
-            Sua transformação é a nossa próxima tese de negócio.
+            Sua empresa está pronta para o próximo nível de maturidade comercial?
           </h2>
+          [cite_start]{/* [cite: 287] */}
           <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px'}}>
-            Se você se viu em algum desses cenários, o desafio que você enfrenta não é único. A forma de resolvê-lo, sim. Nossa Engenharia de Receita funciona porque é um método, não um acaso.
+            Se você fatura acima de R$ 2 milhões e sente que sua operação comercial é o gargalo, nós temos o método para destravar.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Agende sua Sessão de Diagnóstico (21min)</span>
+              [cite_start]{/* [cite: 288] */}
+              <span>Agende um Diagnóstico Executivo (21min)</span>
               <ArrowRight size={20} />
             </Link>
           </div>
+          [cite_start]{/* [cite: 289] */}
           <p className="cta-support-text" style={{opacity: 0.9}}>
-            Primeira conversa: 21 minutos para entender seu contexto e avaliar fit mútuo. Sem pressão. Só clareza.
+            Uma conversa de negócios. Sem pressão de vendas, apenas alinhamento estratégico.
           </p>
         </div>
       </section>
 
       {/* --- ESTILOS JSX - Usados para Seção 1 (Headline), Seção 4 (2 Colunas) e Trust Bar --- */}
       <style jsx>{`
-        /* --- CORREÇÃO 1 & 2: Tamanho da Fonte da Headline (2.8rem) --- */
         .hero-headline {
-          font-size: 2.8rem !important; /* <--- VALOR CORRIGIDO */
-          line-height: 1.25; /* Ajuste de espaçamento de linha */
+          font-size: 2.8rem !important;
+          line-height: 1.25;
         }
         @media (max-width: 768px) {
           .hero-headline {
-            font-size: 2.0rem !important; /* Reduzido proporcionalmente */
+            font-size: 2.0rem !important;
           }
         }
         
-        /* --- Estilos da Trust Bar (Seção 1) --- */
         .trust-bar {
           margin-top: 4rem;
           width: 100%;
@@ -478,7 +478,7 @@ export default function Home() {
           height: auto;
         }
 
-        /* --- Estilos da Seção 4 (2 Colunas) --- */
+        /* Estilos da Seção 4 (2 Colunas) */
         .solutions-2col-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
