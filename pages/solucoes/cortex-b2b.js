@@ -1,5 +1,5 @@
 // pages/solucoes/cortex-b2b.js
-// Versão Final Otimizada: Textos Ajustados + Design Premium (Glassmorphism) + Alinhamento Central Total
+// Versão Final: Sem Preços + Design Premium Unificado + Alinhamento Central
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -23,7 +23,7 @@ export default function CortexB2B() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo Premium (Glassmorphism) - Padrão AORKIA/Cases
+  // Estilo Premium (Glassmorphism) com Hover
   const cardStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
@@ -36,7 +36,7 @@ export default function CortexB2B() {
     textAlign: 'center',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
     height: '100%',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+    transition: 'all 0.4s ease'
   };
 
   return (
@@ -46,9 +46,7 @@ export default function CortexB2B() {
         <meta name="description" content="O Cortex B2B™ é nosso meta-framework proprietário de diagnóstico. Decodifica 20 anos de experiência operacional em um método acionável." />
       </Head>
 
-      {/* ====================================================================== */}
-      {/* Seção 1: Hero Section                                                */}
-      {/* ====================================================================== */}
+      {/* Hero Section */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -66,21 +64,19 @@ export default function CortexB2B() {
           </p>
           <div className="hero-ctas" style={{justifyContent: 'center'}}>
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Quero meu Diagnóstico Cortex B2B (R$ 2.100)</span>
+              <span>Quero meu Diagnóstico Cortex B2B</span> {/* Preço Removido */}
               <ArrowRight size={20} />
             </Link>
           </div>
            <p className="cta-support-text" style={{opacity: 0.9, fontSize: '1rem', marginTop: '1.5rem', textAlign: 'center'}}>
-            Pagamento único. O primeiro passo para parar de improvisar.
+            O primeiro passo para parar de improvisar. {/* Texto ajustado */}
           </p>
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Seção 2: O Problema que Resolvemos (Tática vs. Sistema)              */}
-      {/* ====================================================================== */}
+      {/* O Problema */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
           <h2 className="section-title">Você não tem um "problema de vendas". <br/>Você tem um "problema de sistema".</h2>
@@ -90,19 +86,19 @@ export default function CortexB2B() {
 
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
             
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>1.</span>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Expertise Não Escala</h3>
               <p style={{textAlign: 'center'}}>A expertise de 20 anos de um CRO sênior não pode ser replicada para toda a equipe. O Cortex B2B™ codifica essa expertise em um <strong>método que escala</strong>.</p>
             </div>
 
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>2.</span>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Táticas Isoladas Queimam Caixa</h3>
               <p style={{textAlign: 'center'}}>Contratar SDRs sem um GTM claro ou investir em anúncios sem uma narrativa validada é queimar caixa. O Cortex B2B™ <strong>estrutura o método</strong> *antes* de escalar o esforço.</p>
             </div>
 
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>3.</span>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Diagnóstico Genérico é Inútil</h3>
               <p style={{textAlign: 'center'}}>Um relatório "padrão" não resolve um problema complexo. O Cortex B2B™ é um meta-framework que se adapta à sua operação e entrega um plano acionável.</p>
@@ -113,9 +109,7 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Seção 3: Como Funciona (O Processo)                                  */}
-      {/* ====================================================================== */}
+      {/* Como Funciona */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
@@ -124,8 +118,7 @@ export default function CortexB2B() {
           </div>
 
           <div className="cortex-process" style={{display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '800px', margin: '0 auto'}}>
-            {/* Passo 1 */}
-            <div className="cortex-step" style={cardStyle}>
+            <div className="cortex-step glass-card-hover" style={cardStyle}>
               <div className="cortex-step-number" style={{margin: '0 auto 1rem'}}>1</div>
               <div className="cortex-step-content">
                 <h3 style={{textAlign: 'center'}}>Ingestão de Inteligência</h3>
@@ -133,8 +126,7 @@ export default function CortexB2B() {
               </div>
             </div>
 
-            {/* Passo 2 */}
-            <div className="cortex-step" style={cardStyle}>
+            <div className="cortex-step glass-card-hover" style={cardStyle}>
               <div className="cortex-step-number" style={{margin: '0 auto 1rem'}}>2</div>
               <div className="cortex-step-content">
                 <h3 style={{textAlign: 'center'}}>Processamento Multi-Dimensional</h3>
@@ -142,8 +134,7 @@ export default function CortexB2B() {
               </div>
             </div>
 
-            {/* Passo 3 */}
-            <div className="cortex-step" style={cardStyle}>
+            <div className="cortex-step glass-card-hover" style={cardStyle}>
               <div className="cortex-step-number" style={{margin: '0 auto 1rem'}}>3</div>
               <div className="cortex-step-content">
                 <h3 style={{textAlign: 'center'}}>Geração do Raio-X</h3>
@@ -156,9 +147,7 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
       
-      {/* ====================================================================== */}
-      {/* Seção 4: O Raio-X (O Que Você Recebe)                                */}
-      {/* ====================================================================== */}
+      {/* O Raio-X */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Raio-X: O Que Você Recebe</h2>
@@ -166,7 +155,6 @@ export default function CortexB2B() {
             Um blueprint acionável, não um PDF teórico. Este é o seu plano de engenharia.
           </p>
 
-          {/* Transformado em Grid de Cards para Design Premium e Centralizado */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -175,25 +163,25 @@ export default function CortexB2B() {
             margin: '0 auto'
           }}>
             
-            <div style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
                 <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
                 <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 1: Diagnóstico de Maturidade 360º</strong>
                 <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>Estágio atual do negócio sob 5 lentes + Gaps críticos priorizados por severidade, urgência e impacto.</p>
             </div>
 
-            <div style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
                 <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
                 <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 2: Mapa de Recomendação Priorizado</strong>
                 <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>Qual frente ativar primeiro (Sprint, GTM, CRO fracionado, etc.) com justificativa técnica e matriz de impacto vs. esforço.</p>
             </div>
 
-            <div style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
                 <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
                 <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 3: Blueprint Estratégico</strong>
                 <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>ICP refinado, Proposta de Valor otimizada, Canais validados, Modelo de precificação baseado em valor e Estratégia de ecossistema.</p>
             </div>
 
-            <div style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
                 <div style={{marginBottom: '1rem'}}><CheckCircle2 size={32} color="var(--color-primary)"/></div>
                 <strong style={{color: 'var(--color-heading)', fontSize: '1.3rem', display: 'block', marginBottom: '1rem'}}>Bloco 4: Roteiro 90 Dias</strong>
                 <p style={{fontSize: '1rem', color: 'var(--color-text)', textAlign: 'center'}}>Ações priorizadas por impacto, Métricas de validação, KPIs de sucesso e Quick wins para gerar momentum.</p>
@@ -205,9 +193,7 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Seção 5: As 5 Lentes Analíticas                                      */}
-      {/* ====================================================================== */}
+      {/* As 5 Lentes */}
       <section className="section-with-gradient-glow section-pillars-revolutionary">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
@@ -217,7 +203,7 @@ export default function CortexB2B() {
 
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'stretch', gap: '2rem'}}>
             
-            <div className="pillar-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Target size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 1: Engenharia de GTM</h3>
@@ -225,7 +211,7 @@ export default function CortexB2B() {
               </div>
             </div>
 
-            <div className="pillar-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Brain size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 2: Arquitetura de Decisão</h3>
@@ -233,7 +219,7 @@ export default function CortexB2B() {
               </div>
             </div>
 
-            <div className="pillar-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><GitBranch size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 3: Orquestração de Escala</h3>
@@ -241,7 +227,7 @@ export default function CortexB2B() {
               </div>
             </div>
 
-            <div className="pillar-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Layers size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 4: Economia de Valor</h3>
@@ -249,7 +235,7 @@ export default function CortexB2B() {
               </div>
             </div>
 
-            <div className="pillar-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-card-content" style={{width: '100%'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><ShieldCheck size={28} /></div>
                 <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Lente 5: Ecossistema & "Skin in the Game"</h3>
@@ -262,32 +248,30 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Seção 6: Casos de Uso Ideais                                           */}
-      {/* ====================================================================== */}
+      {/* Casos de Uso */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
           <h2 className="section-title">Casos de Uso Ideais</h2>
           <p className="lead-text" style={{marginBottom: '3rem', textAlign: 'center'}}>O Cortex B2B™ foi projetado para três cenários de alta complexidade estratégica.</p>
 
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Empresas em Platô de Crescimento</h3>
               <p style={{textAlign: 'center'}}>Receita estagnou há 2-3 trimestres. Fórmula que funcionou até aqui não funciona mais. Precisa identificar qual alavanca puxar sem queimar caixa testando hipóteses aleatórias.</p>
             </div>
 
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Startups Buscando Aceleração</h3>
               <p style={{textAlign: 'center'}}>Product-market fit validado, mas crescimento é errático. Ciclo de vendas longo, CAC alto, narrativa confusa. Precisa de clareza estratégica antes de escalar esforço comercial.</p>
             </div>
 
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-hover" style={cardStyle}>
               <h3 className="truth-card-title" style={{textAlign: 'center'}}>Diversificação de Canais de Receita</h3>
               <p style={{textAlign: 'center'}}>Dependência excessiva de um canal ou segmento. Quer validar novos ICPs, testar novos canais, explorar modelos adjacentes. Precisa de diagnóstico rápido de viabilidade antes de comprometer recursos.</p>
             </div>
           </div>
 
-          {/* Bloco "Também Aplicável" Centralizado */}
+          {/* Bloco "Também Aplicável" */}
           <div style={{
             maxWidth: '800px',
             margin: '4rem auto 0',
@@ -311,7 +295,7 @@ export default function CortexB2B() {
               <li>→ <strong>Founders & C-Level:</strong> Segunda opinião estratégica estruturada para validação de hipóteses críticas.</li>
               
               <li>
-                → <strong>Ecossistemas de Investimento (EM BREVE):</strong> Estamos finalizando o modelo de licenciamento do Cortex B2B™ para VCs, Aceleradoras e Consultorias que precisam analisar <strong>grandes volumes</strong> de empresas (como o caso da investidor.vc) com um sistema de diagnóstico padronizado e escalável.
+                → <strong>Ecossistemas de Investimento (EM BREVE):</strong> Estamos finalizando o modelo de licenciamento do Cortex B2B™ para VCs, Aceleradoras e Consultorias que precisam analisar <strong>grandes volumes</strong> de empresas (como o caso da investidor.vc) com um método de diagnóstico padronizado e escalável.
               </li>
             </ul>
           </div>
@@ -320,9 +304,7 @@ export default function CortexB2B() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* Seção 7: CTA Final                                                   */}
-      {/* ====================================================================== */}
+      {/* CTA Final */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
@@ -334,7 +316,7 @@ export default function CortexB2B() {
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Quero meu Diagnóstico Cortex B2B (R$ 2.100)</span>
+              <span>Quero meu Diagnóstico Cortex B2B</span> {/* Preço Removido */}
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -344,8 +326,17 @@ export default function CortexB2B() {
         </div>
       </section>
 
-      {/* CSS Específico da Página */}
-      <style jsx>{`
+      {/* CSS Global para o Hover Effect (Importante) */}
+      <style jsx global>{`
+        .glass-card-hover {
+           transition: all 0.4s ease;
+           border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card-hover:hover {
+           transform: translateY(-8px);
+           border-color: var(--color-primary);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow */
+        }
         .cortex-step-number {
           flex-shrink: 0;
           width: 48px;
