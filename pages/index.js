@@ -1,5 +1,5 @@
 // pages/index.js
-// Versão Final Ajustada: Logos Espaçadas e Links Corrigidos
+// Versão Final Ajustada: Correção de Cor nos Botões (Remoção do azul padrão de links)
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -627,21 +627,26 @@ export default function Home() {
            flex-shrink: 0;
         }
 
-        /* AJUSTE 4: CSS do Botão (Link) */
+        /* AJUSTE 4: CSS do Botão (Link) - CORRIGIDO */
         .card-cta-button {
           display: inline-flex;
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
-          padding: 0.8rem 1.5rem;       /* Dá corpo ao botão */
-          border: 1px solid rgba(255, 255, 255, 0.15); /* Borda visível e elegante */
-          border-radius: 8px;           /* Bordas arredondadas */
-          color: var(--color-heading) !important;  /* CORRIGIDO PARA VISIBILIDADE */
-          background: rgba(255, 255, 255, 0.05); /* Fundo sutil */
-          text-decoration: none;        /* Remove o sublinhado */
+          padding: 0.8rem 1.5rem;       
+          border: 1px solid rgba(255, 255, 255, 0.15); 
+          border-radius: 8px;           
+          color: #ffffff !important;  /* FORÇADO BRANCO PARA ELIMINAR AZUL */
+          background: rgba(255, 255, 255, 0.05); 
+          text-decoration: none !important; /* FORÇADO SEM SUBLINHADO */
           font-weight: 600;
           transition: all 0.3s ease;
-          white-space: nowrap;          /* Garante que não quebre linha */
+          white-space: nowrap;
+          cursor: pointer;
+        }
+
+        .card-cta-button:visited {
+          color: #ffffff !important; /* Garante que visitados continuem brancos */
         }
 
         /* Efeito Hover do Botão */
@@ -649,8 +654,8 @@ export default function Home() {
           background: var(--color-primary);
           border-color: var(--color-primary);
           color: #000 !important; /* Texto escuro no hover para contraste */
-          box-shadow: 0 0 15px rgba(0, 150, 132, 0.4); /* Glow */
-          transform: translateX(5px); /* Pequeno movimento para a direita */
+          box-shadow: 0 0 15px rgba(0, 150, 132, 0.4); 
+          transform: translateX(5px); 
         }
 
         /* ESTILOS CASES (Vertical Stack) */
