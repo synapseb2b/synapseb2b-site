@@ -1,11 +1,11 @@
+// pages/index.js
+// Versão Final Premium: Layout Verticalizado (Soluções/Cases), Bordas Visíveis e Design Harmonizado.
+
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem, Layout, MonitorSmartphone } from 'lucide-react';
-
-/* O componente RotatingText não é usado nesta versão da copy */
-const RotatingText = () => {};
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,7 +144,7 @@ export default function Home() {
             A estrutura necessária para transformar vendas complexas em processo repetível.
           </p>
           
-          {/* Layout Ajustado: 2x2 no Desktop */}
+          {/* Layout 2x2 Desktop - Mantido conforme pedido anterior */}
           <div className="pillar-grid-2x2">
             
             {/* Pilar 1 */}
@@ -198,118 +198,186 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita                           */}
+      {/* Seção 4: Soluções de Engenharia de Receita (LAYOUT 1 POR VEZ)        */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
           <h2 className="section-title text-center">Como podemos atuar no seu negócio?</h2>
-          <p className="lead-text text-center" style={{maxWidth: '700px', margin: '0 auto 4rem'}}>
+          <p className="lead-text text-center" style={{maxWidth: '700px', margin: '0 auto 5rem'}}>
             Do diagnóstico estratégico à gestão interina do comercial.
           </p>
 
-          <div className="solutions-2col-grid">
+          {/* Container Verticalizado */}
+          <div className="solutions-vertical-stack">
             
             {/* FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA */}
-            <div className="glass-card-premium">
-              <div className="frente-header text-center mb-6">
+            <div className="frente-block">
+              <div className="frente-header">
                 <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4">
-                   <Brain size={32} style={{color: 'var(--color-primary)', marginBottom: '1rem'}} />
+                   <Brain size={40} style={{color: 'var(--color-primary)', marginBottom: '1rem'}} />
                 </div>
                 <h3 className="solution-column-title">FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA</h3>
-                {/* AJUSTE: Padding adicionado abaixo da descrição */}
-                <p className="solution-column-desc" style={{marginBottom: '2.5rem'}}>Para quem precisa de direção clara e correção de rota.</p>
+                <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Para quem precisa de direção clara e correção de rota.</p>
               </div>
               
-              <ul className="solution-column-list">
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Diagnóstico Cortex B2B™</strong>
-                  <span>O "Raio-X" da sua maturidade comercial. Uma análise profunda sob 5 lentes para identificar gargalos de eficiência e alavancas de crescimento imediato.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Direcionamento estratégico antes de novas rodadas de investimento ou expansão.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Diagnóstico Estratégico).</span>
-                  <Link href="/solucoes/cortex-b2b" className="solution-cta">
-                    Conhecer o Cortex B2B™ <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Sprint de Validação Comercial</strong>
-                  <span>Teste seu produto ou nova oferta em 30 dias. Validamos a demanda real com clientes antes de você investir em estrutura fixa.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Novos produtos ou expansão de mercado.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial (upfront) + % sobre receita nova (Success Fee).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Agendar diagnóstico <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Go-To-Market Completo</strong>
-                  <span>A arquitetura completa do seu motor comercial: posicionamento, ICP, proposta de valor, canais, pricing e retenção. Usamos o meta-framework Cortex B2B™ para entregar o blueprint estratégico que orienta toda a operação.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Empresas com crescimento errático, CAC alto, ciclo longo ou que precisam profissionalizar a forma de ir ao mercado.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Investimento inicial (upfront) + % sobre receita nova (Success Fee).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Ver metodologia completa <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Diretoria de Receita como Serviço (CRO as a Service)</strong>
-                  <span>Alugue um Executivo Sênior. Injetamos a visão e a governança de um Diretor de multinacional na sua operação, liderando o time para instalar o método na prática.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Profissionalizar a gestão, reduzir a dependência operacional dos sócios e instalar cultura de alta performance.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Fee mensal fixo + % sobre receita nova (Success Fee).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Entender modelo de Parceria <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                 <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Advisory Board Estratégico</strong>
-                  <span>Acesso a conselheiros experientes para validar decisões de alto risco (pivôs, M&A, GTM). Reduza a solidão da cadeira de CEO com sparring qualificado.</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Momentos de decisão crítica onde o custo do erro é alto e é necessária uma visão externa isenta.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Retainer mensal ou Projeto específico).</span>
-                  <Link href="/contato" className="solution-cta">
-                    Avaliar fit de Advisory <ArrowRight size={16}/>
-                  </Link>
-                </li>
-              </ul>
+              <div className="solutions-grid-wide">
+                {/* Card 1 */}
+                <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><CheckCircle2 size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Diagnóstico Cortex B2B™</h4>
+                        <p className="card-desc"><strong>O que é:</strong> O "Raio-X" da sua maturidade comercial. Uma análise profunda sob 5 lentes para identificar gargalos de eficiência e alavancas de crescimento imediato.</p>
+                        <div className="card-meta-inline">
+                          <span><strong>Ideal para:</strong> Direcionamento estratégico antes de novas rodadas ou expansão.</span>
+                          <span><strong>Investimento:</strong> Sob consulta (Produto de entrada).</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                         <Link href="/solucoes/cortex-b2b" className="card-cta-button">
+                           Conhecer <ArrowRight size={18}/>
+                         </Link>
+                      </div>
+                   </div>
+                </div>
+
+                {/* Card 2 */}
+                <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><Zap size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Sprint de Validação Comercial</h4>
+                        <p className="card-desc"><strong>O que é:</strong> Teste de novas teses, produtos ou mercados em 30 dias. Validamos a demanda com dados reais antes de você comprometer estrutura fixa (OPEX).</p>
+                        <div className="card-meta-inline">
+                          <span><strong>Ideal para:</strong> Lançamento de novos produtos ou pivô de modelo.</span>
+                          <span><strong>Investimento:</strong> Inicial + % sobre receita nova.</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                        <Link href="/contato" className="card-cta-button">
+                          Agendar <ArrowRight size={18}/>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+
+                {/* Card 3 */}
+                <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><Target size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Go-To-Market Completo</h4>
+                        <p className="card-desc"><strong>O que é:</strong> A arquitetura completa do seu motor comercial: posicionamento, ICP, proposta de valor, canais, pricing e retenção. O blueprint estratégico da operação.</p>
+                        <div className="card-meta-inline">
+                          <span><strong>Ideal para:</strong> Empresas com crescimento errático ou CAC alto.</span>
+                          <span><strong>Investimento:</strong> Inicial + % sobre receita nova.</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                        <Link href="/contato" className="card-cta-button">
+                          Ver mais <ArrowRight size={18}/>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+
+                {/* Card 4 */}
+                <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><Users size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Diretoria de Receita (CRO as a Service)</h4>
+                        <p className="card-desc"><strong>O que é:</strong> Alugue um Executivo Sênior. Injetamos a visão de um Diretor de multinacional na sua operação, liderando o time para instalar o método na prática.</p>
+                        <div className="card-meta-inline">
+                          <span><strong>Ideal para:</strong> Profissionalizar a gestão e tirar o sócio da operação.</span>
+                          <span><strong>Investimento:</strong> Fee mensal + % sobre receita.</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                        <Link href="/contato" className="card-cta-button">
+                          Entender <ArrowRight size={18}/>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+
+                {/* Card 5 */}
+                 <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><ShieldCheck size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Advisory Board Estratégico</h4>
+                        <p className="card-desc"><strong>O que é:</strong> Acesso a conselheiros experientes para validar decisões de alto risco (pivôs, M&A, GTM). Reduza a solidão da cadeira de CEO com sparring qualificado.</p>
+                        <div className="card-meta-inline">
+                          <span><strong>Ideal para:</strong> Decisões críticas com alto custo de erro.</span>
+                          <span><strong>Investimento:</strong> Sob consulta (Retainer).</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                        <Link href="/contato" className="card-cta-button">
+                          Avaliar fit <ArrowRight size={18}/>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+              </div>
             </div>
 
             {/* FRENTE 2: ATIVOS DIGITAIS */}
-            <div className="glass-card-premium">
-              <div className="frente-header text-center mb-6">
+            <div className="frente-block" style={{marginTop: '6rem'}}>
+              <div className="frente-header">
                  <div className="inline-flex items-center justify-center p-3 rounded-full bg-accent/10 mb-4">
-                   <MonitorSmartphone size={32} style={{color: 'var(--color-accent)', marginBottom: '1rem'}} />
+                   <MonitorSmartphone size={40} style={{color: 'var(--color-accent)', marginBottom: '1rem'}} />
                 </div>
                 <h3 className="solution-column-title">FRENTE 2: ATIVOS DIGITAIS</h3>
-                {/* AJUSTE: Padding adicionado abaixo da descrição */}
-                <p className="solution-column-desc" style={{marginBottom: '2.5rem'}}>Ferramentas que vendem por você.</p>
+                <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Ferramentas que vendem por você.</p>
               </div>
               
-              <ul className="solution-column-list">
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Plataformas de Aceleração de Receita</strong>
-                  <span>Não construímos "sites institucionais". Construímos plataformas digitais estratégicas projetadas como motores de receita: 30% credibilidade + 70% engenharia de conversão. Seu ativo digital educa o mercado e qualifica leads 24/7.</span>
-                  <span className="solution-examples"><strong>Exemplos tangíveis:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Empresas cujo site atual gera visitas mas não gera reuniões qualificadas para o time comercial.</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Projeto).</span>
-                  <Link href="/solucoes/plataformas-digitais" className="solution-cta">
-                    Ver exemplos reais <ArrowRight size={16}/>
-                  </Link>
-                </li>
-                <li>
-                  <CheckCircle2 size={20} className="solution-item-icon" />
-                  <strong>Apps e Simuladores de ROI</strong>
-                  <span>Ferramentas que tangibilizam seu valor. Calculadoras e simuladores que provam o retorno financeiro da sua solução, eliminando a subjetividade da venda.</span>
-                  <span className="solution-examples"><strong>Exemplos tangíveis:</strong> Synapse B2B Match Maker, Simulador de Orçamento Exclusiva Engenharias</span>
-                  <span className="solution-details"><strong>Ideal para:</strong> Ciclos de vendas longos travados na etapa de "provar valor" ou "justificar preço".</span>
-                  <span className="solution-details"><strong>Modelo de Investimento:</strong> Sob consulta (Projeto).</span>
-                  <Link href="/solucoes/apps" className="solution-cta">
-                    Explorar Ferramentas <ArrowRight size={16}/>
-                  </Link>
-                </li>
-              </ul>
+              <div className="solutions-grid-wide">
+                {/* Card 1: Plataformas */}
+                <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><Layout size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Plataformas de Aceleração</h4>
+                        <p className="card-desc"><strong>O que é:</strong> Sites projetados para conversão B2B, não apenas vitrine. Arquitetura de informação que filtra curiosos e qualifica decisores 24/7.</p>
+                        <div className="card-meta-inline">
+                           <span className="solution-examples"><strong>Exemplos:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
+                          <span><strong>Ideal para:</strong> Sites que geram visitas mas não reuniões.</span>
+                          <span><strong>Investimento:</strong> Sob consulta (Projeto).</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                        <Link href="/solucoes/plataformas-digitais" className="card-cta-button">
+                          Ver exemplos <ArrowRight size={18}/>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+
+                {/* Card 2: Apps */}
+                <div className="glass-card-premium solution-wide-card">
+                   <div className="card-content-row">
+                      <div className="card-icon-left"><TrendingUp size={32} /></div>
+                      <div className="card-text-content">
+                        <h4>Apps e Simuladores de ROI</h4>
+                        <p className="card-desc"><strong>O que é:</strong> Ferramentas que tangibilizam seu valor. Calculadoras e simuladores que provam o retorno financeiro da sua solução, eliminando a subjetividade.</p>
+                        <div className="card-meta-inline">
+                          <span className="solution-examples"><strong>Exemplos:</strong> Synapse Match Maker, Simulador Industrial</span>
+                          <span><strong>Ideal para:</strong> Ciclos travados em "provar valor".</span>
+                           <span><strong>Investimento:</strong> Sob consulta (Projeto).</span>
+                        </div>
+                      </div>
+                      <div className="card-action">
+                        <Link href="/solucoes/apps" className="card-cta-button">
+                          Explorar <ArrowRight size={18}/>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -317,71 +385,88 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
 {/* ====================================================================== */}
-      {/* Seção 5: Cases de Sucesso (Carrossel)                              */}
+      {/* Seção 5: Cases de Sucesso (Wide Cards - 16:9 Concept)                */}
       {/* ====================================================================== */}
       <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
         <div className="container text-center reveal-up">
           <h2 className="section-title">Da Complexidade à Tração</h2>
         </div>
         
-        <div className="case-carousel-container reveal-up text-center">
-          <div className="case-carousel-track" style={{gap: '2rem'}}>
-
+        {/* Vertical Stack de Cases */}
+        <div className="case-stack-container reveal-up">
+          
             {/* Case 1: Versão Holística */}
-            <div className="glass-card-premium" style={{width: '100%', padding: '2rem'}}>
-              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <Award size={28} />
+            <div className="glass-card-premium case-wide-card">
+              <div className="case-content-wrapper">
+                <div className="case-header-row">
+                  <div className="pillar-icon-wrapper"><Award size={32} /></div>
+                  <div className="case-title-group">
+                     <h3>Versão Holística</h3>
+                     <span className="case-tag">R$ 500k captados</span>
+                  </div>
+                </div>
+                <div className="case-body">
+                  <p><strong>Contexto:</strong> Tecnologia validada, mas com dificuldade de penetração em grandes contas (Hospitais) devido a um discurso excessivamente técnico.</p>
+                  <p><strong>Ação:</strong> Reestruturação do GTM e tradução da oferta para "CareOps" (foco em eficiência operacional, não apenas clínica).</p>
+                  <p><strong>Resultado:</strong> R$ 500k captados e validação de canal enterprise.</p>
+                </div>
+                <div className="case-footer">
+                  <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
+                    <span>Ver Case Completo</span>
+                    <ArrowRight size={18} />
+                  </Link>
+                </div>
               </div>
-              <div className="case-card-header-rev">
-                <h3 className="case-card-title-rev">Versão Holística</h3>
-                <span className="case-card-tag-rev">R$ 500k captados</span>
-              </div>
-              <p><strong>Contexto:</strong> Tecnologia validada, mas com dificuldade de penetração em grandes contas (Hospitais) devido a um discurso excessivamente técnico.</p>
-              <p><strong>Ação:</strong> Reestruturação do GTM e tradução da oferta para "CareOps" (foco em eficiência operacional, não apenas clínica).</p>
-              <p><strong>Resultado:</strong> R$ 500k captados e validação de canal enterprise.</p>
-              <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
-                <span>Ver Case Completo</span>
-                <ArrowRight size={18} />
-              </Link>
             </div>
 
             {/* Case 2: Exclusiva Engenharias */}
-            <div className="glass-card-premium" style={{width: '100%', padding: '2rem'}}>
-              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <GitBranch size={28} />
+            <div className="glass-card-premium case-wide-card">
+               <div className="case-content-wrapper">
+                <div className="case-header-row">
+                  <div className="pillar-icon-wrapper"><GitBranch size={32} /></div>
+                  <div className="case-title-group">
+                     <h3>Exclusiva Engenharias</h3>
+                     <span className="case-tag">Forecast Recorde</span>
+                  </div>
+                </div>
+                <div className="case-body">
+                  <p><strong>Contexto:</strong> Empresa de engenharia consolidada, mas refém de indicações e sazonalidade. Sem previsibilidade de novos contratos.</p>
+                  <p><strong>Ação:</strong> Implementação de máquina de vendas Outbound e posicionamento como parceiro de "Continuidade Operacional".</p>
+                  <p><strong>Resultado:</strong> Geração de pipeline recorde (3x histórico) e redução da dependência dos sócios na venda.</p>
+                </div>
+                <div className="case-footer">
+                  <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
+                    <span>Ver Case Completo</span>
+                    <ArrowRight size={18} />
+                  </Link>
+                </div>
               </div>
-              <div className="case-card-header-rev">
-                <h3 className="case-card-title-rev">Exclusiva Engenharias</h3>
-                <span className="case-card-tag-rev">Forecast Recorde</span>
-              </div>
-              <p><strong>Contexto:</strong> Empresa de engenharia consolidada, mas refém de indicações e sazonalidade. Sem previsibilidade de novos contratos.</p>
-              <p><strong>Ação:</strong> Implementação de máquina de vendas Outbound e posicionamento como parceiro de "Continuidade Operacional".</p>
-              <p><strong>Resultado:</strong> Geração de pipeline recorde (3x histórico) e redução da dependência dos sócios na venda.</p>
-              <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
-                <span>Ver Case Completo</span>
-                <ArrowRight size={18} />
-              </Link>
             </div>
 
             {/* Case 3: AORKIA */}
-            <div className="glass-card-premium" style={{width: '100%', padding: '2rem'}}>
-              <div className="pillar-icon-wrapper" style={{ margin: '0 auto 1.5rem' }}>
-                <ShieldCheck size={28} />
+            <div className="glass-card-premium case-wide-card">
+               <div className="case-content-wrapper">
+                <div className="case-header-row">
+                  <div className="pillar-icon-wrapper"><ShieldCheck size={32} /></div>
+                  <div className="case-title-group">
+                     <h3>AORKIA</h3>
+                     <span className="case-tag">Zero ao Playbook</span>
+                  </div>
+                </div>
+                <div className="case-body">
+                  <p><strong>Contexto:</strong> Desafio de entrar em um mercado comoditizado (Backup) dominado por gigantes globais, sem histórico de marca.</p>
+                  <p><strong>Ação:</strong> Estratégia de "Ancoragem de Autoridade" e venda baseada em Risco (Compliance/Ransomware) e não em TI.</p>
+                  <p><strong>Resultado:</strong> Validação do método com a conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
+                </div>
+                <div className="case-footer">
+                  <Link href="/cases/aorkia" className="btn-case-revolutionary">
+                    <span>Ver Case Completo</span>
+                    <ArrowRight size={18} />
+                  </Link>
+                </div>
               </div>
-              <div className="case-card-header-rev">
-                <h3 className="case-card-title-rev">AORKIA</h3>
-                <span className="case-card-tag-rev">Zero ao Playbook</span>
-              </div>
-              <p><strong>Contexto:</strong> Desafio de entrar em um mercado comoditizado (Backup) dominado por gigantes globais, sem histórico de marca.</p>
-              <p><strong>Ação:</strong> Estratégia de "Ancoragem de Autoridade" e venda baseada em Risco (Compliance/Ransomware) e não em TI.</p>
-              <p><strong>Resultado:</strong> Validação do método com a conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
-              <Link href="/cases/aorkia" className="btn-case-revolutionary">
-                <span>Ver Case Completo</span>
-                <ArrowRight size={18} />
-              </Link>
             </div>
 
-          </div>
         </div>
       </section>
 
@@ -442,11 +527,11 @@ export default function Home() {
 
       {/* --- ESTILOS JSX --- */}
       <style jsx>{`
-        /* CLASSE GLOBAL DO CARD PREMIUM */
+        /* CLASSE GLOBAL DO CARD PREMIUM (Receita Exata + Padding Robusto) */
         .glass-card-premium {
           background: rgba(255, 255, 255, 0.03);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.15); /* BORDA MAIS VISÍVEL */
           border-radius: 16px;
           padding: 2.5rem;
           display: flex;
@@ -464,6 +549,152 @@ export default function Home() {
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2);
         }
 
+        /* ESTILOS SOLUÇÕES (Vertical Stack) */
+        .solutions-vertical-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 6rem;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        
+        .frente-header {
+          text-align: center;
+        }
+
+        .solutions-grid-wide {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .solution-wide-card {
+           padding: 0 !important; /* Remove padding padrão para usar estrutura interna */
+           align-items: stretch !important; /* Estica para ocupar largura */
+           overflow: hidden;
+        }
+
+        .card-content-row {
+           display: flex;
+           align-items: center;
+           padding: 2.5rem;
+           gap: 2rem;
+           text-align: left; /* Texto interno alinhado à esquerda para leitura, bloco centralizado no layout */
+        }
+        
+        .card-icon-left {
+           color: var(--color-primary);
+           background: rgba(0, 150, 132, 0.1);
+           padding: 1rem;
+           border-radius: 12px;
+           flex-shrink: 0;
+        }
+
+        .card-text-content {
+           flex: 1;
+        }
+
+        .card-text-content h4 {
+           font-family: 'Montserrat', sans-serif;
+           font-size: 1.4rem;
+           color: var(--color-heading);
+           margin-bottom: 0.8rem;
+        }
+        
+        .card-desc {
+           color: var(--color-text);
+           margin-bottom: 1rem;
+           font-size: 1rem;
+           line-height: 1.6;
+        }
+        
+        .card-meta-inline {
+           display: flex;
+           gap: 1.5rem;
+           font-size: 0.9rem;
+           color: var(--color-text);
+           opacity: 0.8;
+        }
+
+        .card-action {
+           flex-shrink: 0;
+        }
+
+        .card-cta-button {
+           display: inline-flex;
+           align-items: center;
+           gap: 0.5rem;
+           padding: 0.8rem 1.5rem;
+           border: 1px solid var(--color-border);
+           border-radius: 8px;
+           color: var(--color-heading);
+           transition: all 0.3s ease;
+        }
+        .card-cta-button:hover {
+           background: var(--color-primary);
+           color: #000;
+           border-color: var(--color-primary);
+        }
+
+        /* ESTILOS CASES (Vertical Stack) */
+        .case-stack-container {
+           display: flex;
+           flex-direction: column;
+           gap: 3rem;
+           max-width: 900px;
+           margin: 4rem auto 0;
+        }
+        
+        .case-wide-card {
+           padding: 0 !important;
+        }
+        
+        .case-content-wrapper {
+           padding: 3rem;
+           text-align: center;
+        }
+        
+        .case-header-row {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           margin-bottom: 2rem;
+        }
+        
+        .case-title-group h3 {
+           font-size: 2rem;
+           font-family: 'Montserrat', sans-serif;
+           color: var(--color-heading);
+           margin-bottom: 0.5rem;
+        }
+        
+        .case-tag {
+           display: inline-block;
+           background: rgba(0, 150, 132, 0.15);
+           color: var(--color-primary);
+           padding: 0.4rem 1rem;
+           border-radius: 50px;
+           font-size: 0.9rem;
+           font-weight: 600;
+        }
+
+        .case-body {
+           text-align: center;
+           margin-bottom: 2rem;
+           color: var(--color-text);
+           font-size: 1.05rem;
+           line-height: 1.8;
+        }
+        
+        .case-body p {
+           margin-bottom: 1rem;
+        }
+
+        .case-footer {
+           margin-top: 1rem;
+        }
+
+
         /* Grid 2x2 para Pilares no Desktop */
         .pillar-grid-2x2 {
           display: grid;
@@ -476,145 +707,40 @@ export default function Home() {
           font-size: 2.8rem !important;
           line-height: 1.25;
         }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+          .pillar-grid-2x2 {
+            grid-template-columns: 1fr;
+          }
+          .card-content-row {
+             flex-direction: column;
+             text-align: center;
+             padding: 2rem;
+          }
+          .card-meta-inline {
+             flex-direction: column;
+             gap: 0.5rem;
+          }
+          .card-action {
+             width: 100%;
+          }
+          .card-cta-button {
+             width: 100%;
+             justify-content: center;
+          }
+        }
+        
         @media (max-width: 768px) {
           .hero-headline {
             font-size: 2.0rem !important;
           }
-          /* Pilares viram 1 coluna no mobile */
-          .pillar-grid-2x2 {
-            grid-template-columns: 1fr;
+          .trust-bar {
+            margin-top: 3rem;
           }
-          .solutions-2col-grid {
-            grid-template-columns: 1fr;
+          .trust-bar-logos {
+            gap: 1.5rem;
           }
-        }
-        
-        .trust-bar {
-          margin-top: 4rem;
-          width: 100%;
-          max-width: 900px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .trust-bar p {
-          font-size: 0.9rem;
-          font-weight: 500;
-          color: var(--color-text);
-          margin-bottom: 1.5rem;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        .trust-bar-logos {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          gap: 2.5rem;
-          opacity: 0.6;
-          filter: grayscale(100%) contrast(50%);
-        }
-        .trust-bar-logos img {
-          max-width: 100px;
-          height: auto;
-        }
-
-        .solutions-2col-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-        }
-        
-        .solution-column-title {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.75rem;
-          color: var(--color-primary);
-          margin-bottom: 1rem;
-          text-align: center;
-        }
-        
-        .solution-column-desc {
-          font-size: 1rem;
-          line-height: 1.7;
-          color: var(--color-text);
-          text-align: center;
-        }
-        
-        .solution-column-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 2.5rem;
-        }
-        
-        .solution-column-list li {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 0.5rem;
-          position: relative;
-        }
-
-        .solution-item-icon {
-          color: var(--color-primary);
-          margin-bottom: 0.75rem;
-        }
-        
-        .solution-column-list li strong {
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 700;
-          color: var(--color-heading);
-          font-size: 1.1rem;
-        }
-        
-        .solution-column-list li span {
-          font-size: 0.95rem;
-          line-height: 1.7;
-          color: var(--color-text);
-        }
-        
-        .solution-details {
-          font-size: 0.9rem !important;
-          color: var(--color-text) !important;
-          opacity: 0.8;
-        }
-        .solution-details strong {
-          font-family: 'Inter', sans-serif !important;
-          font-size: 0.9rem !important;
-          font-weight: 600 !important;
-          color: var(--color-text) !important;
-          opacity: 0.9;
-        }
-
-        .solution-examples {
-          font-size: 0.85rem !important;
-          color: var(--color-text) !important;
-          opacity: 0.8;
-          font-style: italic;
-        }
-        .solution-examples strong {
-          font-family: 'Inter', sans-serif !important;
-          font-size: 0.85rem !important;
-          font-weight: 600 !important;
-          color: var(--color-text) !important;
-        }
-        
-        .solution-cta {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          color: var(--color-accent) !important;
-          text-decoration: none !important;
-          font-weight: 600;
-          margin-top: 0.75rem;
-          transition: gap 0.3s ease, color 0.3s ease;
-        }
-        .solution-cta:hover {
-          gap: 1rem;
-          color: var(--color-heading) !important;
         }
       `}</style>
     </>
