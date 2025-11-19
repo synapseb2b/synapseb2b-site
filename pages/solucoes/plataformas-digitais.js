@@ -38,7 +38,7 @@ const platformsData = [
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
     highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    image: '/cases/exclusiva-home.pmg',
+    image: '/cases/exclusiva-home.png',
     color: '#FFC107' 
   },
   {
