@@ -1,12 +1,104 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão Final Otimizada: Texto Ajustado + Design Premium (Glassmorphism) + Alinhamento Central Total
+// Versão: Cinematic Cascade Scroll + Expansão Interativa
+// Design: Premium Dark Glassmorphism com Framer Motion
 
 import Head from 'next/head';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ArrowRight, ExternalLink, CheckCircle2, Layers, Target, TrendingUp, Zap } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ExternalLink, 
+  CheckCircle2, 
+  Layers, 
+  TrendingUp, 
+  Zap, 
+  ChevronDown, 
+  Monitor, 
+  MousePointerClick 
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Dados das Plataformas para a Cascata
+const platformsData = [
+  {
+    id: 'synapse',
+    title: 'Synapse B2B',
+    tagline: 'A Engenharia de Receita na Prática',
+    description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
+    highlights: [
+      'Texto rotativo no hero (6 variações de valor)',
+      'Cases estruturados por resultado tangível',
+      'CTA contextual em cada seção'
+    ],
+    link: 'https://www.synapseb2b.com/',
+    // Gradiente sutil para diferenciar visualmente (ciano)
+    gradient: 'linear-gradient(135deg, rgba(0, 229, 255, 0.05), rgba(0, 0, 0, 0))'
+  },
+  {
+    id: 'exclusiva',
+    title: 'Exclusiva Engenharias',
+    tagline: 'Hub Multidisciplinar Industrial',
+    description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
+    highlights: [
+      'Simulador de orçamento integrado',
+      'Segmentação por setor (6 verticais)',
+      'Cases com foco em continuidade operacional'
+    ],
+    link: 'https://exclusivaengenharias.com/',
+    // Gradiente sutil (amarelo/gold)
+    gradient: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0))'
+  },
+  {
+    id: 'versao-holistica',
+    title: 'Versão Holística',
+    tagline: 'Pioneirismo em CareOps Integrativo',
+    description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
+    highlights: [
+      '3 verticais com jornadas distintas',
+      'História da fundadora como prova viva',
+      'Métricas validadas pela UFMG'
+    ],
+    link: 'https://versaoholistica.com.br/',
+    // Gradiente sutil (verde)
+    gradient: 'linear-gradient(135deg, rgba(0, 255, 127, 0.05), rgba(0, 0, 0, 0))'
+  },
+  {
+    id: 'aorkia',
+    title: 'AORKIA',
+    tagline: 'Segurança e Backup SaaS',
+    description: 'Narrativa de urgência para produto invisível (backup SaaS). Ativa medo da perda antes de apresentar solução técnica.',
+    highlights: [
+      'Ancoragem em parceria global (Keepit)',
+      'ROI tangível (custo de parada vs investimento)',
+      'Compliance como gatilho'
+    ],
+    link: 'https://www.aorkia.com/',
+    // Gradiente sutil (laranja)
+    gradient: 'linear-gradient(135deg, rgba(255, 69, 0, 0.05), rgba(0, 0, 0, 0))'
+  },
+  {
+    id: 'povoas',
+    title: 'Póvoas & Partners',
+    tagline: 'Ecossistema Omnicanal',
+    description: 'Ecossistema que transforma PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
+    highlights: [
+      '6 portais de entrada (1 por serviço)',
+      'Transferência de credibilidade para parceiros',
+      'Analytics de comportamento por vertical'
+    ],
+    link: 'https://povoas.synapseb2b.com/',
+    // Gradiente sutil (roxo)
+    gradient: 'linear-gradient(135deg, rgba(147, 112, 219, 0.05), rgba(0, 0, 0, 0))'
+  }
+];
 
 export default function PlataformasDigitais() {
+  const [expandedId, setExpandedId] = useState(null);
+
+  // Lógica de expansão (Accordion)
+  const togglePlatform = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,20 +115,13 @@ export default function PlataformasDigitais() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo Premium (Glassmorphism) - Padrão Cases
-  const cardStyle = {
+  // Estilo Base Glassmorphism (Reutilizável)
+  const glassStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.05)',
     borderRadius: '16px',
-    padding: '2.5rem',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-    height: '100%',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease'
   };
 
   return (
@@ -57,6 +142,9 @@ export default function PlataformasDigitais() {
           <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), #000)'}}></div>
         </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
+          <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+             <Monitor size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 15px var(--color-primary))'}} />
+          </div>
           <h1 className="section-title">Plataformas de Aceleração de Receita</h1>
           <p className="hero-subheadline" style={{textAlign: 'center'}}>
             Não construímos sites. Construímos motores de receita que operam 24/7.
@@ -67,7 +155,7 @@ export default function PlataformasDigitais() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* O Problema (Design Premium + Centralizado)                           */}
+      {/* O Problema (Cards Glassmorphism)                                     */}
       {/* ====================================================================== */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
@@ -77,22 +165,25 @@ export default function PlataformasDigitais() {
           </p>
           
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            {/* Card 1 */}
+            <div className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>1.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Leads chegam sem contexto</h3>
-              <p style={{textAlign: 'center'}}>Seu time comercial gasta horas qualificando prospects que não entendem o produto, não têm budget ou não são decisores.</p>
+              <h3 className="truth-card-title">Leads chegam sem contexto</h3>
+              <p>Seu time comercial gasta horas qualificando prospects que não entendem o produto, não têm budget ou não são decisores.</p>
             </div>
             
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            {/* Card 2 */}
+            <div className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>2.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Conteúdo genérico</h3>
-              <p style={{textAlign: 'center'}}>Seu site mostra "o que você faz" em vez de "o problema que você resolve". Cliente confuso não compra.</p>
+              <h3 className="truth-card-title">Conteúdo genérico</h3>
+              <p>Seu site mostra "o que você faz" em vez de "o problema que você resolve". Cliente confuso não compra.</p>
             </div>
 
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            {/* Card 3 */}
+            <div className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>3.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Ativo subutilizado</h3>
-              <p style={{textAlign: 'center'}}>Você gastou R$20-50k em um site que funciona como cartão de visita digital. Deveria ser seu melhor vendedor.</p>
+              <h3 className="truth-card-title">Ativo subutilizado</h3>
+              <p>Você gastou R$20-50k em um site que funciona como cartão de visita digital. Deveria ser seu melhor vendedor.</p>
             </div>
           </div>
         </div>
@@ -101,7 +192,7 @@ export default function PlataformasDigitais() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* A Solução (Design Premium + Texto Ajustado)                          */}
+      {/* A Solução (Cards Glassmorphism)                                      */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
@@ -111,28 +202,22 @@ export default function PlataformasDigitais() {
           </div>
 
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
-            <div className="pillar-card-revolutionary" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
+            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Layers size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Arquitetura de Conversão</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Páginas estruturadas por jornada do comprador (awareness → consideration → decision). Cada seção responde uma objeção específica.</p>
-              </div>
+                <h3 className="pillar-card-title">Arquitetura de Conversão</h3>
+                <p className="pillar-card-description">Páginas estruturadas por jornada do comprador (awareness → consideration → decision). Cada seção responde uma objeção específica.</p>
             </div>
 
-            <div className="pillar-card-revolutionary" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
+            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><TrendingUp size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Qualificação Inteligente</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Conteúdo que educa o prospect sobre o problema antes de apresentar a solução. Lead que chega já entende o valor.</p>
-              </div>
+                <h3 className="pillar-card-title">Qualificação Inteligente</h3>
+                <p className="pillar-card-description">Conteúdo que educa o prospect sobre o problema antes de apresentar a solução. Lead que chega já entende o valor.</p>
             </div>
 
-            <div className="pillar-card-revolutionary" style={cardStyle}>
-              <div className="pillar-card-content" style={{width: '100%'}}>
+            <div className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
                 <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Zap size={28} /></div>
-                <h3 className="pillar-card-title" style={{textAlign: 'center'}}>Motor 24/7</h3>
-                <p className="pillar-card-description" style={{textAlign: 'center'}}>Seu melhor pitch de vendas acessível a qualquer hora. Time comercial recebe leads qualificados e educados, não contatos frios.</p>
-              </div>
+                <h3 className="pillar-card-title">Motor 24/7</h3>
+                <p className="pillar-card-description">Seu melhor pitch de vendas acessível a qualquer hora. Time comercial recebe leads qualificados e educados, não contatos frios.</p>
             </div>
           </div>
         </div>
@@ -141,21 +226,17 @@ export default function PlataformasDigitais() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Resultado (Design Case/Blockquote)                                   */}
+      {/* O RESULTADO (BLOCKQUOTE PREMIUM)                                      */}
       {/* ====================================================================== */}
-      <section className="section-solid" style={{background: '#050505'}}>
+       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
           <h2 className="section-title">O Resultado</h2>
           
           <div style={{
-            background: 'rgba(255, 255, 255, 0.03)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '16px',
+            ...glassStyle, // Reuso do estilo Glass
             padding: '3rem',
             maxWidth: '900px',
             margin: '3rem auto',
-            textAlign: 'center',
-            backdropFilter: 'blur(5px)'
           }}>
             <p style={{fontSize: '1.2rem', color: 'var(--color-heading)', lineHeight: '1.8', marginBottom: '2rem', fontWeight: 600}}>
               Seu time comercial para de perder tempo com leads frios e passa a ter conversas estratégicas com prospects que já entendem seu valor.
@@ -166,94 +247,131 @@ export default function PlataformasDigitais() {
           </div>
         </div>
       </section>
-
+      
       <div className="section-divider-glow"></div>
 
+
       {/* ====================================================================== */}
-      {/* Prova: Exemplos Reais (Design Premium + Centralizado)                */}
+      {/* PORTFÓLIO EM CASCATA (CINEMATIC SCROLL)                                */}
       {/* ====================================================================== */}
-      <section className="section-with-gradient-glow">
-        <div className="container reveal-up">
-          <div className="text-center" style={{marginBottom: '4rem'}}>
+      <section className="section-with-gradient-glow" style={{paddingBottom: '8rem'}}>
+        <div className="container">
+          <div className="text-center mb-16 reveal-up">
             <h2 className="section-title">Plataformas Que Construímos</h2>
-            <p className="lead-text" style={{textAlign: 'center'}}>Cada uma com arquitetura estratégica única, adaptada ao contexto do negócio.</p>
+            <p className="lead-text" style={{textAlign: 'center'}}>Clique nos cards para explorar a estratégia de cada plataforma.</p>
           </div>
 
-          <div className="platforms-grid">
-            {/* Plataforma 1: Synapse B2B */}
-            <div className="platform-card" style={cardStyle}>
-              <h3>Synapse B2B</h3>
-              <p className="platform-description">Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.</p>
-              <ul className="platform-highlights">
-                <li><CheckCircle2 size={16} /> Texto rotativo no hero (6 variações de valor)</li>
-                <li><CheckCircle2 size={16} /> Cases estruturados por resultado tangível</li>
-                <li><CheckCircle2 size={16} /> CTA contextual em cada seção</li>
-              </ul>
-              <a href="https://www.synapseb2b.com/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{marginTop: 'auto'}}>
-                <span>Ver Plataforma</span>
-                <ExternalLink size={18} />
-              </a>
-            </div>
+          {/* Container da Cascata */}
+          <div className="cascade-container" style={{display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '1000px', margin: '0 auto'}}>
+            
+            {platformsData.map((platform, index) => {
+              const isOpen = expandedId === platform.id;
+              
+              return (
+                <motion.div
+                  key={platform.id}
+                  layout
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 50 }}
+                  onClick={() => togglePlatform(platform.id)}
+                  style={{
+                    ...glassStyle, // Aplica o estilo base Glassmorphism
+                    padding: 0, // Padding controlado internamente
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    position: 'relative'
+                  }}
+                  className="platform-cascade-item"
+                >
+                  {/* HEADER DO CARD (Emulando "Capa" da Plataforma) */}
+                  <motion.div 
+                    layout="position"
+                    style={{
+                      padding: '2.5rem',
+                      background: platform.gradient, // Gradiente individual
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      borderBottom: isOpen ? '1px solid rgba(255,255,255,0.1)' : 'none'
+                    }}
+                  >
+                    <h3 style={{fontSize: '2rem', marginBottom: '0.5rem', fontFamily: 'Montserrat, sans-serif', color: 'var(--color-heading)'}}>
+                      {platform.title}
+                    </h3>
+                    <p style={{fontSize: '1.1rem', color: 'var(--color-primary)', marginBottom: '1.5rem', fontWeight: 600}}>
+                      {platform.tagline}
+                    </p>
+                    
+                    {/* Ícone de expansão animado */}
+                    <motion.div 
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown size={24} style={{color: 'var(--color-text)', opacity: 0.7}} />
+                    </motion.div>
+                    
+                    {!isOpen && (
+                       <motion.p 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1 }} 
+                        style={{fontSize: '0.8rem', marginTop: '1rem', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '8px'}}
+                       >
+                         <MousePointerClick size={14} /> Clique para ver detalhes
+                       </motion.p>
+                    )}
+                  </motion.div>
 
-            {/* Plataforma 2: Exclusiva Engenharias */}
-            <div className="platform-card" style={cardStyle}>
-              <h3>Exclusiva Engenharias</h3>
-              <p className="platform-description">Hub multidisciplinar que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.</p>
-              <ul className="platform-highlights">
-                <li><CheckCircle2 size={16} /> Simulador de orçamento integrado</li>
-                <li><CheckCircle2 size={16} /> Segmentação por setor (6 verticais)</li>
-                <li><CheckCircle2 size={16} /> Cases com foco em continuidade operacional</li>
-              </ul>
-              <a href="https://exclusivaengenharias.com/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{marginTop: 'auto'}}>
-                <span>Ver Plataforma</span>
-                <ExternalLink size={18} />
-              </a>
-            </div>
+                  {/* CONTEÚDO EXPANDIDO (Accordion) */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        style={{borderTop: '1px solid rgba(255,255,255,0.05)'}}
+                      >
+                        <div style={{padding: '3rem 2rem', textAlign: 'center'}}>
+                          <p style={{fontSize: '1.1rem', lineHeight: 1.7, color: 'var(--color-text)', marginBottom: '2.5rem', maxWidth: '800px', marginInline: 'auto'}}>
+                            {platform.description}
+                          </p>
+                          
+                          {/* Highlights */}
+                          <div style={{marginBottom: '3rem'}}>
+                            <h4 style={{fontSize: '1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1.5rem'}}>Destaques da Estratégia</h4>
+                            <ul style={{listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>
+                              {platform.highlights.map((highlight, i) => (
+                                <li key={i} style={{display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--color-text)', fontSize: '1rem'}}>
+                                  <CheckCircle2 size={18} color="var(--color-primary)" />
+                                  {highlight}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
 
-            {/* Plataforma 3: Versão Holística */}
-            <div className="platform-card" style={cardStyle}>
-              <h3>Versão Holística</h3>
-              <p className="platform-description">Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).</p>
-              <ul className="platform-highlights">
-                <li><CheckCircle2 size={16} /> 3 verticais com jornadas distintas</li>
-                <li><CheckCircle2 size={16} /> História da fundadora como prova viva</li>
-                <li><CheckCircle2 size={16} /> Métricas validadas pela UFMG</li>
-              </ul>
-              <a href="https://versaoholistica.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{marginTop: 'auto'}}>
-                <span>Ver Plataforma</span>
-                <ExternalLink size={18} />
-              </a>
-            </div>
+                          {/* CTA Link Externo */}
+                          <a 
+                            href={platform.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn btn-primary btn-large btn-cta-pulse"
+                            style={{display: 'inline-flex', alignItems: 'center', gap: '10px'}}
+                            onClick={(e) => e.stopPropagation()} // Evita fechar o card ao clicar no link
+                          >
+                            <span>Visitar Plataforma</span>
+                            <ExternalLink size={18} />
+                          </a>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
 
-            {/* Plataforma 4: AORKIA */}
-            <div className="platform-card" style={cardStyle}>
-              <h3>AORKIA</h3>
-              <p className="platform-description">Narrativa de urgência para produto invisível (backup SaaS). Ativa medo da perda antes de apresentar solução técnica.</p>
-              <ul className="platform-highlights">
-                <li><CheckCircle2 size={16} /> Ancoragem em parceria global (Keepit)</li>
-                <li><CheckCircle2 size={16} /> ROI tangível (custo de parada vs investimento)</li>
-                <li><CheckCircle2 size={16} /> Compliance como gatilho</li>
-              </ul>
-              <a href="https://www.aorkia.com/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{marginTop: 'auto'}}>
-                <span>Ver Plataforma</span>
-                <ExternalLink size={18} />
-              </a>
-            </div>
-
-            {/* Plataforma 5: Póvoas & Partners */}
-            <div className="platform-card" style={cardStyle}>
-              <h3>Póvoas & Partners</h3>
-              <p className="platform-description">Ecossistema omnicanal que transforma PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.</p>
-              <ul className="platform-highlights">
-                <li><CheckCircle2 size={16} /> 6 portais de entrada (1 por serviço)</li>
-                <li><CheckCircle2 size={16} /> Transferência de credibilidade para parceiros</li>
-                <li><CheckCircle2 size={16} /> Analytics de comportamento por vertical</li>
-              </ul>
-              <a href="https://povoas.synapseb2b.com/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{marginTop: 'auto'}}>
-                <span>Ver Plataforma</span>
-                <ExternalLink size={18} />
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -282,45 +400,14 @@ export default function PlataformasDigitais() {
         </div>
       </section>
 
-      {/* CSS Específico para ajustar o grid */}
-      <style jsx>{`
-        .platforms-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 2rem;
-          margin-top: 4rem;
+      {/* CSS para garantir comportamento correto de hover */}
+      <style jsx global>{`
+        .platform-cascade-item {
+           transition: border-color 0.3s ease, transform 0.3s ease;
         }
-        .platform-card h3 {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.5rem;
-          color: var(--color-heading);
-          margin-bottom: 1rem;
-        }
-        .platform-description {
-          font-size: 0.95rem;
-          color: var(--color-text);
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-        .platform-highlights {
-          list-style: none;
-          padding: 0;
-          margin-bottom: 2rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center; /* Centraliza a lista */
-          gap: 0.75rem;
-        }
-        .platform-highlights li {
-          display: flex;
-          align-items: center; /* Centraliza icone e texto */
-          gap: 10px;
-          font-size: 0.9rem;
-          color: var(--color-text);
-        }
-        .platform-highlights svg {
-          color: var(--color-primary);
-          flex-shrink: 0;
+        .platform-cascade-item:hover {
+          border-color: var(--color-primary) !important;
+          transform: scale(1.01) !important; /* Efeito sutil de elevação */
         }
       `}</style>
     </>
