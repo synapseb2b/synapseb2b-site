@@ -29,7 +29,7 @@ const platformsData = [
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
     // Nome conforme upload enviado
-    image: '/cases/synapse-b2b-home.jpg', 
+    image: '/cases/synapse-b2b-home.png', 
     color: '#00E5FF' 
   },
   {
