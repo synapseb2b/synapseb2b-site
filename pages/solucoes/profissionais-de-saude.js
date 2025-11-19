@@ -1,5 +1,5 @@
 // pages/profissionais-de-saude.js
-// Versão: Health Business Architecture - Foco no Negócio
+// Versão: Health Business Architecture - Foco em Legado e Autoridade
 // Design: Premium Dark Glassmorphism (Receita Exata) + Alinhamento Central
 
 import Head from 'next/head';
@@ -54,7 +54,7 @@ export default function HealthBusiness() {
     <>
       <Head>
         <title>Health Business Architecture™ | Synapse B2B</title>
-        <meta name="description" content="Transforme sua clínica em um ecossistema de receita recorrente. Engenharia de Receita aplicada a negócios de saúde que querem escalar além da agenda do dono." />
+        <meta name="description" content="Transforme sua autoridade médica em um ecossistema de negócios escalável. Engenharia de Receita para profissionais de saúde que buscam legado." />
       </Head>
 
       {/* ====================================================================== */}
@@ -72,15 +72,15 @@ export default function HealthBusiness() {
             <Activity size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 15px var(--color-primary))'}} />
           </div>
           <h1 className="section-title">
-            Sua Clínica Não Pode Ser<br/>
-            Refém das Suas Mãos
+            Sua expertise clínica já é uma referência.<br/>
+            Agora, ela precisa se tornar um legado.
           </h1>
           <p className="hero-subheadline wider-on-desktop" style={{textAlign: 'center'}}>
-            Transforme sua prática clínica em um <strong>Health Business</strong> escalável. Implementamos a <strong>Health Business Architecture™</strong> para criar receita recorrente e valor de marca que independe da sua agenda.
+            Transforme sua autoridade médica em um <strong>Ecossistema de Negócios</strong> escalável. Implementamos a <strong>Health Business Architecture™</strong> para diversificar suas fontes de receita e expandir seu impacto além do consultório.
           </p>
           <div className="hero-ctas" style={{justifyContent: 'center'}}>
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Avaliar Maturidade do Meu Negócio</span>
+              <span>Avaliar Potencial do meu Ecossistema</span>
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -94,29 +94,29 @@ export default function HealthBusiness() {
       {/* ====================================================================== */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O "Teto de Vidro" da Saúde</h2>
+          <h2 className="section-title">O Dilema da Excelência Técnica</h2>
           <p className="lead-text" style={{maxWidth: '800px', margin: '0 auto 4rem', textAlign: 'center'}}>
-            A maioria das clínicas atinge um platô perigoso: faturamento alto, margem apertada e dependência total da presença física dos sócios.
+            Grandes profissionais atingem um ponto onde o sucesso clínico cria uma complexidade operacional que limita a expansão do patrimônio.
           </p>
 
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
             
             <div className="glass-card-hover" style={cardStyle}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>1.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>A Armadilha da "Agenda Cheia"</h3>
-              <p style={{textAlign: 'center'}}>Agenda lotada não é sinal de sucesso, é sinal de gargalo. Se você não tem tempo para pensar o negócio, você é apenas um funcionário caro da sua própria empresa.</p>
+              <h3 className="truth-card-title" style={{textAlign: 'center'}}>A Agenda como Limite</h3>
+              <p style={{textAlign: 'center'}}>Você atingiu o topo da performance clínica, mas seu crescimento financeiro ainda está limitado às 24 horas do dia. Escalar exige ir além da venda de horas.</p>
             </div>
 
             <div className="glass-card-hover" style={cardStyle}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>2.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Ativos Ociosos</h3>
-              <p style={{textAlign: 'center'}}>Salas vazias, equipamentos caros parados e base de pacientes inativa. Você tem um "banco de dados" valioso (seus pacientes), mas não tem um método para monetizá-lo recorrentemente.</p>
+              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Ativos Subutilizados</h3>
+              <p style={{textAlign: 'center'}}>Sua base de pacientes confia cegamente em você. Essa confiança é um ativo valioso que poderia gerar receita recorrente através de produtos e serviços complementares, mas hoje está inativa.</p>
             </div>
 
             <div className="glass-card-hover" style={cardStyle}>
               <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>3.</span>
-              <h3 className="truth-card-title" style={{textAlign: 'center'}}>Venda de "Hora" vs. "Resultado"</h3>
-              <p style={{textAlign: 'center'}}>Enquanto você vender consultas ou procedimentos isolados, seu faturamento estará limitado às 24h do dia. O dinheiro real está na venda de Protocolos e Jornadas.</p>
+              <h3 className="truth-card-title" style={{textAlign: 'center'}}>A Exaustão do Modelo Tradicional</h3>
+              <p style={{textAlign: 'center'}}>Anos dedicados a uma rotina que exige sua presença física integral. O sucesso clínico trouxe reconhecimento, mas consolidou um modelo que drena sua energia e limita sua liberdade de tempo.</p>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function HealthBusiness() {
           <div className="text-center" style={{marginBottom: '4rem'}}>
             <h2 className="section-title">Health Business Architecture™</h2>
             <p className="lead-text" style={{textAlign: 'center'}}>
-              Nossa metodologia proprietária para transformar consultórios em empresas de saúde.
+              Nossa metodologia proprietária para transformar consultórios em empresas de saúde de alto valor.
             </p>
           </div>
 
@@ -141,22 +141,22 @@ export default function HealthBusiness() {
             {/* Pilar 1 */}
             <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Gem size={28} /></div>
-              <h3 className="pillar-card-title" style={{textAlign: 'center'}}>1. Produtização do Conhecimento</h3>
-              <p className="pillar-card-description" style={{textAlign: 'center'}}>Transformamos sua expertise técnica em produtos escaláveis: Protocolos Proprietários, Programas de Acompanhamento e Certificações. Deixe de vender tempo, comece a vender sua propriedade intelectual.</p>
+              <h3 className="pillar-card-title" style={{textAlign: 'center'}}>1. Produtização da Expertise</h3>
+              <p className="pillar-card-description" style={{textAlign: 'center'}}>Transformamos seus anos de estudo e prática em <strong>Protocolos Proprietários</strong> e <strong>Programas de Acompanhamento</strong>. Deixe de vender apenas consultas e passe a vender a sua metodologia única de tratamento.</p>
             </div>
 
             {/* Pilar 2 */}
             <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Layers size={28} /></div>
-              <h3 className="pillar-card-title" style={{textAlign: 'center'}}>2. Ecossistema de Receita</h3>
-              <p className="pillar-card-description" style={{textAlign: 'center'}}>Diversificação inteligente. Implementamos linhas de receita adjacentes: tecnologia embarcada, suplementação/produtos próprios e modelos de assinatura (Membership) para garantir LTV.</p>
+              <h3 className="pillar-card-title" style={{textAlign: 'center'}}>2. Diversificação de Canais</h3>
+              <p className="pillar-card-description" style={{textAlign: 'center'}}>Criamos novas linhas de receita que orbitam sua autoridade: seu <strong>Selo de Qualidade</strong> (Licenciamento), programas de <strong>Educação</strong> (Mentorias) e <strong>Monitoramento Contínuo</strong> (Outcomes de pacientes).</p>
             </div>
 
             {/* Pilar 3 */}
             <div className="glass-card-hover" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><Briefcase size={28} /></div>
-              <h3 className="pillar-card-title" style={{textAlign: 'center'}}>3. Governança Clínica</h3>
-              <p className="pillar-card-description" style={{textAlign: 'center'}}>Estruturamos a operação para que ela rode sem você. Padronização de processos comerciais e técnicos para que outros profissionais entreguem a sua qualidade.</p>
+              <h3 className="pillar-card-title" style={{textAlign: 'center'}}>3. Governança de Excelência</h3>
+              <p className="pillar-card-description" style={{textAlign: 'center'}}>Estruturamos processos que garantem o "Padrão Ouro" do seu atendimento. Permitimos que uma equipe multidisciplinar entregue resultados com a sua assinatura de qualidade, escalando sua reputação.</p>
             </div>
 
           </div>
@@ -170,7 +170,7 @@ export default function HealthBusiness() {
       {/* ====================================================================== */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
-          <h2 className="section-title">O Novo Modelo de Negócio</h2>
+          <h2 className="section-title">A Evolução do Modelo de Negócio</h2>
           
           <div className="glass-card-hover" style={{
             ...cardStyle,
@@ -181,15 +181,15 @@ export default function HealthBusiness() {
             <div style={{marginBottom: '2rem'}}>
               <TrendingUp size={48} style={{color: 'var(--color-primary)', margin: '0 auto 1rem'}} />
               <p style={{fontSize: '1.2rem', color: 'var(--color-heading)', lineHeight: '1.8', fontWeight: 600}}>
-                De: "Clínica do Dr. Fulano"<br/>
-                <span style={{opacity: 0.6, fontSize: '1rem', fontWeight: 400}}>Faturamento limitado, risco alto, sem valor de exit.</span>
+                De: Prática Clínica Tradicional<br/>
+                <span style={{opacity: 0.6, fontSize: '1rem', fontWeight: 400}}>Excelência focada na consulta, mas limitada pelo tempo e presença física.</span>
               </p>
             </div>
             
             <div style={{borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem'}}>
               <p style={{fontSize: '1.4rem', color: 'var(--color-primary)', lineHeight: '1.8', fontWeight: 700}}>
-                Para: Health Business & Tech<br/>
-                <span style={{color: 'var(--color-text)', fontSize: '1.1rem', fontWeight: 400}}>Receita recorrente, metodologia proprietária, valuation auditável.</span>
+                Para: Ecossistema de Negócios Escalável<br/>
+                <span style={{color: 'var(--color-text)', fontSize: '1.1rem', fontWeight: 400}}>Receita recorrente, metodologia proprietária e valor de marca que transcende o fundador.</span>
               </p>
             </div>
           </div>
@@ -205,10 +205,10 @@ export default function HealthBusiness() {
         <div className="pulsating-core-background"></div>
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
           <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
-            Sua expertise merece ser um negócio, não apenas um emprego.
+            Você construiu um nome. Agora vamos construir um império.
           </h2>
           <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px', textAlign: 'center', margin: '0 auto 2rem'}}>
-            A <strong>Health Business Architecture™</strong> é o método para médicos e empresários da saúde que querem construir legado e patrimônio, não apenas agenda cheia.
+            A Engenharia de Receita aplicada à saúde é para profissionais que não se contentam apenas com a medicina tradicional. É para quem quer deixar uma marca.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
@@ -217,7 +217,7 @@ export default function HealthBusiness() {
             </Link>
           </div>
           <p className="cta-support-text" style={{opacity: 0.9, marginTop: '1.5rem', textAlign: 'center'}}>
-            Diagnóstico exclusivo para clínicas e negócios de saúde com faturamento acima de R$ 2M/ano.
+            Exclusivo para clínicas e negócios de saúde já consolidados que buscam o próximo nível de expansão.
           </p>
         </div>
       </section>
