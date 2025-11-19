@@ -262,7 +262,7 @@ export default function ExclusivaEngenhariasCase() {
 
                <div className="case-image-wrapper" style={{marginTop: '2.5rem', maxWidth: '800px', ...imageGlowStyle}}>
                   <Image 
-                    src="/cases/exclusivaengenharias-home.png"
+                    src="/cases/exclusiva-home.png"
                     alt="Homepage Exclusiva Engenharias"
                     width={1000}
                     height={500}
