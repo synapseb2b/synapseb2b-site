@@ -1,14 +1,23 @@
-// PÁGINA: A ENGENHARIA (a-engenharia.js)
-// Copy final aprovada, focada no meta-sistema proprietário (Cortex B2B™).
+// pages/a-engenharia.js
+// Versão Final: Copy Institucional Aprovada + Card Premium CSS + Sem Caixa Alta
 
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { ArrowRight, Target, Brain, GitBranch, Gem, ShieldCheck, Zap, Layers, LineChart } from 'lucide-react'; // Ícones relevantes
+import { 
+  ArrowRight, 
+  Brain, 
+  Target, 
+  Rocket, 
+  Users, 
+  ShieldCheck, 
+  GitBranch, 
+  Gem 
+} from 'lucide-react';
 
-export default function AEngenhariaPage() {
+export default function AEngenharia() {
+  
   useEffect(() => {
-    // Lógica de animação (fade-in)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,19 +29,21 @@ export default function AEngenhariaPage() {
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal-up').forEach((el) => {
+      observer.observe(el);
+    });
     return () => observer.disconnect();
   }, []);
 
   return (
     <>
       <Head>
-        <title>A Arquitetura da Engenharia de Receita | Synapse B2B</title>
-        <meta name="description" content="Veja o meta-sistema e os frameworks que usamos para construir motores de receita B2B de alta complexidade." />
+        <title>A Engenharia | Synapse B2B</title>
+        <meta name="description" content="A Era da Intuição Comercial Acabou. Conheça a Engenharia de Receita da Synapse B2B." />
       </Head>
 
       {/* ====================================================================== */}
-      {/* Seção 1: Hero                                                        */}
+      {/* HERO SECTION: O MANIFESTO                                              */}
       {/* ====================================================================== */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
@@ -41,97 +52,116 @@ export default function AEngenhariaPage() {
           </video>
           <div className="hero-overlay"></div>
         </div>
-        <div className="container hero-content text-center page-hero-padding">
-          <div className="reveal-up">
-            <h1 className="section-title" style={{fontSize: '3.2rem'}}>A Arquitetura da Engenharia de Receita</h1>
-            <p className="hero-subheadline wider-on-desktop">
-              Você viu os <em>sintomas</em> e os <em>pilares</em>. Agora, veja o <em>meta-sistema</em> que usamos para construir motores de receita B2B de alta complexidade.
-            </p>
-            <div className="hero-ctas">
-              <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-                <span>Agendar Diagnóstico Estratégico (21min)</span>
-                <ArrowRight size={20} />
-              </Link>
-            </div>
+
+        <div className="container hero-content text-center page-hero-padding reveal-up">
+          <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+            <Brain size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 15px var(--color-primary))'}} />
           </div>
-        </div>
-      </section>
 
-      <div className="section-divider-glow"></div>
-
-      {/* ====================================================================== */}
-      {/* Seção 2: O Foco (Tática vs. Sistema)                                 */}
-      {/* ====================================================================== */}
-      <section className="section-solid">
-        <div className="container reveal-up text-center">
-          <div className="narrative-block">
-            <h2 className="section-title">O Foco: Tática vs. Sistema</h2>
-            <p className="narrative-text">
-              O crescimento em B2B falha quando táticas (anúncios, prospecção) e estratégias (planejamento, posicionamento) não estão conectadas por um <strong>sistema</strong>.
-            </p>
-            <p className="narrative-text">
-              A Engenharia de Receita não é uma tática isolada. É o <strong>meta-sistema</strong> que orquestra todas as frentes. É a arquitetura que garante que cada esforço contribua para um único fim: receita previsível.
-            </p>
-            <p className="narrative-text">
-              Nossa competência não é opinar. É construir este sistema.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
-
-      {/* ====================================================================== */}
-      {/* Seção 3: O Sistema (O Cortex B2B™)                                   */}
-      {/* ====================================================================== */}
-      <section className="section-with-gradient-glow section-pillars-revolutionary">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">O "Cérebro" da Operação: Conheça o Cortex B2B™</h2>
-          <p className="lead-text">
-            Nosso meta-framework proprietário decodifica seu negócio sob 5 lentes estratégicas. É assim que encontramos as alavancas de crescimento que outros não veem.
-          </p>
+          <h1 className="section-title" style={{textTransform: 'none'}}>
+            A Era da Intuição Comercial Acabou.<br/>
+            Bem-vindo à Era da Engenharia.
+          </h1>
           
-          {/* Reutilizando a classe .pillar-grid-revolutionary do globals.css */}
-          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', alignItems: 'stretch'}}>
+          <p className="hero-subheadline wider-on-desktop">
+            Não acreditamos em sorte, em "vendedor nato" ou em crescimento por acaso. Acreditamos que Receita é uma ciência exata que pode — e deve — ser projetada, construída e escalada. Nós somos a Synapse B2B.
+          </p>
+        </div>
+      </section>
+
+      <div className="section-divider-glow"></div>
+
+      {/* ====================================================================== */}
+      {/* O CONCEITO: O QUE É ENGENHARIA DE RECEITA?                             */}
+      {/* ====================================================================== */}
+      <section className="section-solid" style={{background: '#050505'}}>
+        <div className="container text-center reveal-up">
+          <h2 className="section-title" style={{textTransform: 'none'}}>Receita não é consequência. É projeto.</h2>
+          
+          <div style={{maxWidth: '800px', margin: '0 auto'}}>
+            <p className="lead-text" style={{marginBottom: '2rem'}}>
+              Durante décadas, o mercado B2B tratou vendas como uma "arte" subjetiva. O marketing gerava barulho, o comercial improvisava o fechamento, e a diretoria torcia pelo resultado no final do mês.
+            </p>
             
-            <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper"><Target size={28} /></div>
-                <h3 className="pillar-card-title">Lente 1: Engenharia de Go-To-Market</h3>
-                <p className="pillar-card-description">Desenhamos sua <strong>categoria</strong> de mercado e seu <strong>posicionamento</strong>. Aplicamos modelos estratégicos para garantir que o mercado veja sua solução não como "melhor", mas como "a única".</p>
-              </div>
+            <p className="lead-text" style={{marginBottom: '3rem', color: 'var(--color-primary)', fontWeight: 600}}>
+              A Engenharia de Receita rompe com esse modelo ao trazer a precisão técnica para o mundo comercial.
+            </p>
+
+            <p className="lead-text">
+              Nós tratamos sua operação como uma linha de produção de alto valor:
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: '2rem', 
+            marginTop: '3rem'
+          }}>
+            <div className="premium-card">
+               <GitBranch size={32} style={{color: 'var(--color-primary)', marginBottom: '1rem'}} />
+               <h3 style={{fontSize: '1.2rem', color: 'var(--color-heading)', marginBottom: '0.5rem'}}>1. Entrada Controlada</h3>
+               <p style={{fontSize: '0.95rem', color: 'var(--color-text)'}}>Definição precisa de quem entra no fluxo (ICP).</p>
+            </div>
+            <div className="premium-card">
+               <Rocket size={32} style={{color: 'var(--color-primary)', marginBottom: '1rem'}} />
+               <h3 style={{fontSize: '1.2rem', color: 'var(--color-heading)', marginBottom: '0.5rem'}}>2. Processo Codificado</h3>
+               <p style={{fontSize: '0.95rem', color: 'var(--color-text)'}}>Cada etapa da jornada tem um objetivo claro e mensurável.</p>
+            </div>
+            <div className="premium-card">
+               <Target size={32} style={{color: 'var(--color-primary)', marginBottom: '1rem'}} />
+               <h3 style={{fontSize: '1.2rem', color: 'var(--color-heading)', marginBottom: '0.5rem'}}>3. Saída Previsível</h3>
+               <p style={{fontSize: '0.95rem', color: 'var(--color-text)'}}>O resultado deixa de ser uma surpresa e vira uma métrica calculada.</p>
+            </div>
+          </div>
+
+          <p style={{marginTop: '3rem', fontStyle: 'italic', color: 'var(--color-text)', opacity: 0.8}}>
+            Não é mágica. É método aplicado à complexidade das vendas B2B.
+          </p>
+        </div>
+      </section>
+
+      <div className="section-divider-glow"></div>
+
+      {/* ====================================================================== */}
+      {/* NOSSOS DIFERENCIAIS: POR QUE A SYNAPSE?                                */}
+      {/* ====================================================================== */}
+      <section className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <div className="text-center" style={{marginBottom: '4rem'}}>
+            <h2 className="section-title" style={{textTransform: 'none'}}>Profundidade Estratégica com Tração Executiva</h2>
+            <p className="lead-text" style={{textAlign: 'center'}}>
+              Nossa atuação é pautada por três pilares que garantem a transferência de conhecimento e a perenidade dos resultados.
+            </p>
+          </div>
+
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
+            
+            {/* Diferencial 1 */}
+            <div className="premium-card">
+              <div style={{marginBottom: '1.5rem'}}><Users size={32} style={{color: 'var(--color-primary)'}} /></div>
+              <h3 style={{fontSize: '1.4rem', color: 'var(--color-heading)', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif'}}>01. Senioridade na Trincheira</h3>
+              <p style={{fontSize: '1rem', color: 'var(--color-text)', lineHeight: 1.7}}>
+                Acreditamos que a complexidade exige experiência. Na Synapse, a estratégia e a execução são conduzidas por especialistas que vivenciaram ecossistemas de alta performance (Google, Microsoft, Dell). Trazemos essa vivência corporativa aplicada, de forma ágil, à realidade do seu negócio.
+              </p>
             </div>
 
-            <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper"><Brain size={28} /></div>
-                <h3 className="pillar-card-title">Lente 2: Arquitetura de Decisão</h3>
-                <p className="pillar-card-description">Traduzimos sua complexidade técnica em narrativa. Usamos <strong>Neurociência Aplicada</strong> e modelos narrativos para criar <strong>urgência</strong> e focar na "dor invisível" (Aversão à Perda).</p>
-              </div>
+            {/* Diferencial 2 */}
+            <div className="premium-card">
+              <div style={{marginBottom: '1.5rem'}}><Brain size={32} style={{color: 'var(--color-primary)'}} /></div>
+              <h3 style={{fontSize: '1.4rem', color: 'var(--color-heading)', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif'}}>02. Inteligência Proprietária</h3>
+              <p style={{fontSize: '1rem', color: 'var(--color-text)', lineHeight: 1.7}}>
+                Nossas decisões são fundamentadas em dados, não em "achismos". Utilizamos o <strong>Cortex B2B™</strong>, nosso meta-framework de diagnóstico, para decodificar 20 anos de padrões de sucesso e identificar exatamente onde está a alavanca de crescimento da sua empresa.
+              </p>
             </div>
 
-            <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper"><GitBranch size={28} /></div>
-                <h3 className="pillar-card-title">Lente 3: Orquestração de Escala</h3>
-                <p className="pillar-card-description">Instalamos o "motor" de receita. Implementamos uma <strong>arquitetura de receita (RevOps)</strong> e <strong>frameworks de qualificação de elite</strong> para criar um playbook que funciona sem "vendedores-heróis".</p>
-              </div>
-            </div>
-
-            <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper"><Layers size={28} /></div>
-                <h3 className="pillar-card-title">Lente 4: Economia de Valor</h3>
-                <p className="pillar-card-description">Construímos os ativos que provam seu valor <strong>antes</strong> da venda. Usamos <strong>modelos de habilitação do comprador</strong> para criar as ferramentas (Calculadoras de ROI, Simuladores) que aceleram a decisão.</p>
-              </div>
-            </div>
-
-            <div className="pillar-card-revolutionary">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper"><ShieldCheck size={28} /></div>
-                <h3 className="pillar-card-title">Lente 5: Ecossistema & "Skin in the Game"</h3>
-                <p className="pillar-card-description">Usamos nossa experiência operacional para validar a teoria na prática. O <strong>Case AORKIA</strong> é a prova definitiva: o próprio fundador aplicou o Cortex B2B™ no próprio negócio, validando o método em 45 dias.</p>
-              </div>
+            {/* Diferencial 3 */}
+            <div className="premium-card">
+              <div style={{marginBottom: '1.5rem'}}><ShieldCheck size={32} style={{color: 'var(--color-primary)'}} /></div>
+              <h3 style={{fontSize: '1.4rem', color: 'var(--color-heading)', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif'}}>03. Skin in the Game</h3>
+              <p style={{fontSize: '1rem', color: 'var(--color-text)', lineHeight: 1.7}}>
+                Validamos nossas teses antes de implementá-las. A <strong>AORKIA</strong>, nossa spin-off de Cyber Resilience, foi construída do zero utilizando 100% da nossa Engenharia de Receita. Aplicamos nosso método com nosso próprio capital para garantir que ele funciona no mundo real.
+              </p>
             </div>
 
           </div>
@@ -141,99 +171,75 @@ export default function AEngenhariaPage() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 4: A Prova (Execução > Teoria)                                 */}
+      {/* INSTITUCIONAL: A ORIGEM                                                */}
       {/* ====================================================================== */}
-      <section className="section-solid">
-        <div className="container reveal-up text-center">
-          <div className="narrative-block">
-            <h2 className="section-title">Frameworks não bastam. É preciso execução na linha de frente.</h2>
-            <p className="narrative-text">
-              O Cortex B2B™ é o nosso blueprint, mas a engenharia de verdade acontece na execução.
+      <section className="section-solid" style={{background: '#050505'}}>
+        <div className="container text-center reveal-up">
+          
+          <div className="premium-card" style={{maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem', alignItems: 'center', textAlign: 'center'}}>
+            <h2 className="section-title" style={{textTransform: 'none', fontSize: '2rem', marginBottom: '2rem'}}>Nascemos para conectar a Estratégia à Execução.</h2>
+            
+            <p style={{fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '1.5rem'}}>
+              A Synapse B2B surgiu de uma observação clara: muitas empresas possuem produtos tecnicamente brilhantes, mas não conseguem traduzir essa competência em domínio de mercado. Vimos fundadores e líderes comerciais com visões poderosas, mas travados pela falta de um processo escalável.
             </p>
-            <p className="narrative-text" style={{
-              color: 'var(--color-heading)', 
-              fontWeight: 600, 
-              fontSize: '1.2rem', 
-              borderLeft: '4px solid var(--color-primary)', 
-              paddingLeft: '1.5rem', 
-              textAlign: 'left', 
-              maxWidth: '700px', 
-              margin: '2rem auto'
-            }}>
-              Nossa tese é simples: "Não entregamos teoria em PDFs."
+            
+            <p style={{fontSize: '1.1rem', color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '2rem'}}>
+              Entendemos que o mercado precisava de mais do que conselhos; precisava de <strong>arquitetura e construção</strong>.
             </p>
-            <p className="narrative-text">
-              Lideramos a execução nos primeiros 90-180 dias. Atuamos como seu CRO fracionado, rodamos o Sprint de Validação e entregamos o sistema funcionando — não apenas o plano.
-            </p>
-            <p className="narrative-text">
-              É por isso que atrelamos nosso sucesso financeiro ao seu.
+
+            <p style={{fontSize: '1.2rem', fontWeight: 600, color: 'var(--color-heading)', fontStyle: 'italic'}}>
+              Somos um laboratório de performance B2B. Somos arquitetos de crescimento.<br/>
+              Nosso papel é tirar sua empresa do improviso e colocá-la no controle do seu destino.
             </p>
           </div>
+
         </div>
       </section>
 
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* Seção 5: CTA Final (Alinhado com a Home)                             */}
+      {/* CTA FINAL                                                              */}
       {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
-          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
-            Pronto para o Raio-X?
+          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none', textTransform: 'none'}}>
+            Sua empresa tem um excelente produto,<br/>mas precisa de um método comercial à altura?
           </h2>
-          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px'}}>
-            O primeiro passo da engenharia é o diagnóstico. Vamos aplicar as 5 lentes do Cortex B2B™ na sua operação.
+          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px', textAlign: 'center', margin: '0 auto 2rem'}}>
+            Chegou a hora de profissionalizar sua geração de receita. Vamos desenhar a engenharia do seu crescimento.
           </p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Agende sua Sessão de Diagnóstico (21min)</span>
+              <span>Conhecer a Engenharia de Receita na Prática</span>
               <ArrowRight size={20} />
             </Link>
           </div>
-          <p className="cta-support-text" style={{opacity: 0.8, marginTop: '1.5rem'}}>
-            Primeira conversa: 21 minutos. Sem pressão. Só clareza.
-          </p>
         </div>
       </section>
 
-      {/* --- ESTILOS JSX - Usados para os blocos de narrativa --- */}
-      <style jsx>{`
-        .narrative-block {
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        .narrative-text {
-          font-size: 1.1rem;
-          line-height: 1.8;
-          color: var(--color-text);
-          margin-bottom: 1.5rem;
-          text-align: left; /* Padrão de leitura para texto corrido */
-        }
-        /* Centraliza o parágrafo de tese */
-        .narrative-block .section-title + .narrative-text {
+      {/* CSS Customizado: Card Premium */}
+      <style jsx global>{`
+        .premium-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 16px;
+          padding: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           text-align: center;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-          font-size: 1.2rem;
-        }
-        .narrative-text strong {
-          color: var(--color-heading);
-          font-weight: 600;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease;
+          height: 100%;
         }
 
-        /* Ajuste para alinhar cards da Seção 3 perfeitamente */
-        .pillar-grid-revolutionary {
-          align-items: stretch; /* Faz os cards terem a mesma altura */
-        }
-        .pillar-card-revolutionary {
-          display: flex; /* Permite que o conteúdo cresça */
-          flex-direction: column;
-        }
-        .pillar-card-content {
-          flex-grow: 1; /* Faz o conteúdo preencher o card */
+        .premium-card:hover {
+          transform: translateY(-5px);
+          border-color: var(--color-primary);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2);
         }
       `}</style>
     </>
