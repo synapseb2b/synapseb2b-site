@@ -1,5 +1,5 @@
 // pages/cases/aorkia.js
-// Versão Final Ajustada: Textos Corrigidos + Design do 'Cenário Adverso' Elevado (Padrão Fase 1)
+// Versão Final Otimizada: Tom de Engenharia + Design Premium Unificado + Alinhamento Central
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -38,26 +38,27 @@ export default function AorkiaCase() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo Unificado para Cards (Glassmorphism Elegante - Sem rotação/tilt)
+  // Estilo Premium (Glassmorphism) - Padrão Cases
   const cardStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.05)',
     borderRadius: '16px',
-    padding: '3rem',
+    padding: '2.5rem',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center', // Força centro vertical
-    textAlign: 'center',   // Força centro horizontal
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    alignItems: 'center',
+    textAlign: 'center',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+    height: '100%', // Garante altura igual em grids
+    transition: 'all 0.4s ease'
   };
 
   const imageGlowStyle = {
     borderRadius: '12px', 
     border: '1px solid rgba(255,255,255,0.1)',
     boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)',
-    margin: '0 auto' // Garante centralização da imagem
+    margin: '0 auto'
   };
 
   return (
@@ -104,25 +105,23 @@ export default function AorkiaCase() {
       {/* SEÇÃO 1: O CONTEXTO                                                    */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up" style={{background: '#050505'}}>
-        <div className="container text-center"> {/* Container Centralizado */}
+        <div className="container text-center">
           <div style={{maxWidth: '800px', margin: '0 auto'}}>
             
-            {/* Título em Duas Linhas */}
             <h2 className="section-title" style={{marginBottom: '0.5rem'}}>O Ponto de Partida:</h2>
-            <h2 className="section-title" style={{fontSize: '2.5rem', color: 'var(--color-primary)', marginTop: 0}}>Skin in the Game Total</h2>
+            <h2 className="section-title" style={{fontSize: '2.5rem', color: 'var(--color-primary)', marginTop: 0}}>Engenharia de Receita na Prática</h2>
             
             <p className="lead-text" style={{marginBottom: '3rem', opacity: 0.9, textAlign: 'center'}}>
-              Este case é a prova definitiva do método. A AORKIA foi fundada pelo mesmo criador da Synapse B2B com um propósito claro: validar a Engenharia de Receita "dentro de casa", aplicando o método no próprio negócio, sem rede de segurança.
+              Este case é a prova definitiva do método. A AORKIA foi fundada para validar a Engenharia de Receita "dentro de casa", aplicando o método no próprio negócio, sem rede de segurança.
             </p>
 
-            {/* DESIGN UPGRADE: "Cenário Adverso" agora usa o cardStyle completo + Container interno escuro */}
-            <div style={cardStyle}>
+            {/* Card Premium: Cenário Adverso */}
+            <div className="glass-card-premium" style={cardStyle}>
               <h3 style={{color: 'var(--color-heading)', fontSize: '1.8rem', marginBottom: '1rem', textAlign: 'center'}}>O Cenário Adverso</h3>
-              <p style={{fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)', textAlign: 'center', maxWidth: '600px'}}>
+              <p style={{fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)', textAlign: 'center', maxWidth: '600px', margin: '0 auto 2rem'}}>
                 Entrar no mercado de Cyber Resilience (Backup SaaS) dominado por gigantes como Veeam e Acronis.
               </p>
               
-              {/* Bloco Interno Escuro (Igual Fase 1) */}
               <div style={{
                 background: 'rgba(0,0,0,0.2)', 
                 padding: '2rem', 
@@ -156,7 +155,7 @@ export default function AorkiaCase() {
       {/* SEÇÃO 2: A SOLUÇÃO (TIMELINE & FASES)                                  */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up" style={{paddingTop: '5rem'}}>
-        <div className="container text-center"> {/* Container Centralizado */}
+        <div className="container text-center">
           <h2 className="section-title">A Solução (Timeline)</h2>
           <p className="lead-text" style={{textAlign: 'center'}}>Velocidade de Execução: 45 Dias</p>
           
@@ -191,10 +190,10 @@ export default function AorkiaCase() {
           {/* GRID DE FASES (FULL WIDTH - 1 COLUNA) */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: '1fr', gap: '4rem'}}>
             
-            {/* FASE 1 - Card Estilizado */}
-            <div style={cardStyle}>
+            {/* FASE 1 - Card Premium */}
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><ShieldCheck size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 1: Ancoragem de Autoridade</h3>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 1: Engenharia de Autoridade</h3>
               <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Estratégia: Transferência de Credibilidade</p>
               
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '600px', margin: '0 auto'}}>
@@ -213,10 +212,10 @@ export default function AorkiaCase() {
               </p>
             </div>
 
-            {/* FASE 2 - Card Estilizado */}
-            <div style={cardStyle}>
+            {/* FASE 2 - Card Premium */}
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Zap size={32} /></div>
-              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 2: Ativação de Urgência</h3>
+              <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 2: Arquitetura de Risco</h3>
               <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Entrega: Narrativa de Risco Tangível</p>
               
                <div style={{background: 'rgba(0,0,0,0.2)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--color-border)', width: '100%', maxWidth: '700px', margin: '0 auto 2rem', textAlign: 'center'}}>
@@ -238,8 +237,8 @@ export default function AorkiaCase() {
               </div>
             </div>
 
-            {/* FASE 3 - Card Estilizado */}
-            <div style={cardStyle}>
+            {/* FASE 3 - Card Premium */}
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}><Gem size={32} /></div>
               <h3 className="pillar-card-title" style={{fontSize: '1.8rem', textAlign: 'center'}}>Fase 3: Plataforma + Canal</h3>
               <p style={{color: 'var(--color-accent)', fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center'}}>Resultado: Primeira venda 1.200+ usuários</p>
@@ -330,16 +329,16 @@ export default function AorkiaCase() {
           <h3 style={{fontFamily: "'Montserrat', sans-serif", fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '3rem', fontWeight: 300, textAlign: 'center'}}>
             Números em Destaque
           </h3>
-          <div className="truths-grid-revolutionary" style={{justifyContent: 'center'}}> {/* Centralizado Grid */}
-            <div className="truth-card-revolutionary" style={cardStyle}>
+          <div className="truths-grid-revolutionary" style={{justifyContent: 'center'}}> 
+            <div className="glass-card-premium" style={cardStyle}>
               <h3 className="truth-card-title" style={{fontSize: '3.5rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>1.200+</h3> 
               <p style={{fontSize: '1.1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '1px'}}>usuários 1ª venda</p> 
             </div>
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <h3 className="truth-card-title" style={{fontSize: '3.5rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>45</h3> 
               <p style={{fontSize: '1.1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '1px'}}>dias</p> 
             </div>
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <h3 className="truth-card-title" style={{fontSize: '3.5rem', color: 'var(--color-primary)', fontFamily: "'Montserrat', sans-serif"}}>100%</h3> 
               <p style={{fontSize: '1.1rem', color: 'var(--color-heading)', textTransform: 'uppercase', letterSpacing: '1px'}}>método validado</p> 
             </div>
@@ -363,7 +362,7 @@ export default function AorkiaCase() {
       {/* SEÇÃO 4: VOZ DO CLIENTE (A PROVA DEFINITIVA)                          */}
       {/* ====================================================================== */}
       <section className="section-solid reveal-up">
-        <div className="container text-center"> {/* Centralizado */}
+        <div className="container text-center">
           <h2 className="section-title">A Prova Definitiva</h2> 
           
           <div className="decision-block" style={{
@@ -406,14 +405,13 @@ export default function AorkiaCase() {
       {/* SEÇÃO 5: LEARNINGS ESTRATÉGICOS                                       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow section-truths-revolutionary reveal-up">
-        <div className="container text-center"> {/* Centralizado */}
+        <div className="container text-center">
           <h2 className="section-title">Learnings Estratégicos</h2>
           <p className="lead-text" style={{marginBottom: '4rem', textAlign: 'center'}}>O Que Este Caso Ensina</p>
           
           <div className="truths-grid-revolutionary" style={{gap: '2rem'}}>
             
-            {/* Card Estilizado Uniforme */}
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <ShieldCheck size={32} />
               </div>
@@ -421,7 +419,7 @@ export default function AorkiaCase() {
               <p style={{textAlign: 'center', fontSize: '0.95rem', lineHeight: 1.6}}>Quando você não tem credibilidade própria, transfira credibilidade de quem tem. "Se o líder global escolheu a AORKIA, você pode confiar."</p>
             </div>
             
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <Zap size={32} />
               </div>
@@ -429,7 +427,7 @@ export default function AorkiaCase() {
               <p style={{textAlign: 'center', fontSize: '0.95rem', lineHeight: 1.6}}>Cliente não acorda pensando "preciso de backup". Acorda pensando em "risco". Fazer sentir a dor financeira <strong>antes</strong> da perda.</p>
             </div>
 
-            <div className="truth-card-revolutionary" style={cardStyle}>
+            <div className="glass-card-premium" style={cardStyle}>
               <div className="pillar-icon-wrapper" style={{marginBottom: '1.5rem', marginInline: 'auto'}}>
                 <Gem size={32} />
               </div>
@@ -475,6 +473,19 @@ export default function AorkiaCase() {
           </div>
         </div>
       </section>
+
+      {/* CSS Global para Hover Effect (Receita Exata) */}
+      <style jsx global>{`
+        .glass-card-premium {
+           transition: all 0.4s ease;
+           border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card-premium:hover {
+           transform: translateY(-5px);
+           border-color: var(--color-primary);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow */
+        }
+      `}</style>
     </>
   );
 }
