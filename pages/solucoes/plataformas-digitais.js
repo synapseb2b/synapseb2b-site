@@ -1,6 +1,6 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão: Cinematic Cascade Scroll
-// CORREÇÃO DE IMAGENS: Caminhos atualizados conforme print da pasta public/cases
+// Versão: Cinematic Cascade Scroll + Expansão Interativa
+// Design: Premium Dark Glassmorphism com Hover Effects (CSS Class based)
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// --- DADOS ATUALIZADOS COM NOMES REAIS DOS ARQUIVOS ---
+// --- DADOS DAS PLATAFORMAS ---
 const platformsData = [
   {
     id: 'synapse',
@@ -28,8 +28,7 @@ const platformsData = [
     description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
-    // Nome conforme upload enviado
-    image: '/cases/synapse-b2b-home.png', 
+    image: '/cases/synapse-b2b-home.jpg', 
     color: '#00E5FF' 
   },
   {
@@ -39,8 +38,7 @@ const platformsData = [
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
     highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    // Nome conforme print da pasta (PNG e nome longo)
-    image: '/cases/exclusivaengenharias-home.png', 
+    image: '/cases/exclusiva-home.jpg',
     color: '#FFC107' 
   },
   {
@@ -50,8 +48,7 @@ const platformsData = [
     description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
     highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
     link: 'https://versaoholistica.com.br/',
-    // Nome conforme print da pasta (PNG e nome longo)
-    image: '/cases/versaoholistica-home.png', 
+    image: '/cases/vh-home.jpg',
     color: '#00FF7F' 
   },
   {
@@ -61,8 +58,7 @@ const platformsData = [
     description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
     highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
-    // Nome conforme print da pasta (PNG)
-    image: '/cases/aorkia-home.png', 
+    image: '/cases/aorkia-home.jpg',
     color: '#00FFA3' 
   },
   {
@@ -72,8 +68,7 @@ const platformsData = [
     description: 'Transformação de PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
     highlights: ['6 portais de entrada', 'Transferência de autoridade', 'Analytics por vertical'],
     link: 'https://povoas.synapseb2b.com/',
-    // Nome conforme print da pasta (PNG)
-    image: '/cases/povoas-home.png', 
+    image: '/cases/povoas-home.png',
     color: '#FF8C00' 
   }
 ];
@@ -119,14 +114,7 @@ export default function PlataformasDigitais() {
     return () => observer.disconnect();
   }, []);
 
-  const glassStyle = {
-    background: 'rgba(255, 255, 255, 0.03)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.05)',
-    borderRadius: '16px',
-    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-  };
-
+  // Configurações Dimensionais
   const cardWidth = isMobile ? 300 : 800; 
   const cardHeight = isMobile ? 550 : 450; 
   const xOffset = isMobile ? 320 : 650; 
@@ -173,7 +161,7 @@ export default function PlataformasDigitais() {
               { num: '2.', title: 'Conteúdo genérico', text: 'Seu site mostra "o que você faz" em vez de "o problema que resolve".' },
               { num: '3.', title: 'Ativo subutilizado', text: 'Um investimento alto que funciona apenas como cartão de visita digital.' }
             ].map((item, i) => (
-              <div key={i} className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+              <div key={i} className="glass-card" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
                 <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>{item.num}</span>
                 <h3 className="truth-card-title">{item.title}</h3>
                 <p>{item.text}</p>
@@ -198,7 +186,7 @@ export default function PlataformasDigitais() {
               { icon: TrendingUp, title: 'Qualificação Inteligente', text: 'Conteúdo que educa sobre o problema antes da solução. Lead chega pronto.' },
               { icon: Zap, title: 'Motor 24/7', text: 'Seu melhor pitch acessível a qualquer hora. Leads educados, não frios.' }
             ].map((item, i) => (
-              <div key={i} className="pillar-card-revolutionary" style={{...glassStyle, padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+              <div key={i} className="glass-card" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
                   <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem'}}><item.icon size={28} /></div>
                   <h3 className="pillar-card-title">{item.title}</h3>
                   <p className="pillar-card-description">{item.text}</p>
@@ -213,12 +201,7 @@ export default function PlataformasDigitais() {
       {/* O RESULTADO */}
        <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
-          <div style={{
-            ...glassStyle, 
-            padding: '3rem',
-            maxWidth: '900px',
-            margin: '0 auto',
-          }}>
+          <div className="glass-card" style={{maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem'}}>
             <h2 className="section-title" style={{fontSize: '2rem', marginBottom: '1.5rem'}}>O Resultado</h2>
             <p style={{fontSize: '1.2rem', color: 'var(--color-heading)', lineHeight: '1.8', marginBottom: '1.5rem', fontWeight: 600}}>
               Seu time comercial para de perder tempo com leads frios e passa a ter conversas estratégicas com prospects que já entendem seu valor.
@@ -385,8 +368,8 @@ export default function PlataformasDigitais() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
+                className="glass-card" // Aplicando a classe Glass
                 style={{
-                  ...glassStyle,
                   padding: '3rem',
                   position: 'relative',
                   overflow: 'hidden'
@@ -470,8 +453,26 @@ export default function PlataformasDigitais() {
         </div>
       </section>
 
-      {/* CSS Customizado */}
+      {/* CSS Customizado: Glass Cards + Carrossel */}
       <style jsx global>{`
+        /* Glass Card Premium com Hover */
+        .glass-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+          border-color: var(--color-primary);
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
+                      0 0 20px rgba(0, 229, 255, 0.1); /* Glow ciano sutil */
+        }
+
+        /* Navegação do Carrossel */
         .carousel-nav-btn {
           position: absolute;
           top: 50%;
