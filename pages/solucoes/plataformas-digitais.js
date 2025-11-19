@@ -1,12 +1,9 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão: Cinematic Cascade Scroll + Expansão Interativa
-// Design: Premium Dark Glassmorphism com Framer Motion
-// CORREÇÃO: Importação de 'Link' adicionada
+// Versão: 3D Browser Flow (Horizontal Desktop / Taller Mobile)
+// Design: Premium Glassmorphism + Simulação de Browser
 
 import Head from 'next/head';
-import Image from 'next/image'; // Também pode ser necessário se usar o componente Image
-import Link from 'next/link'; // <--- IMPORTAÇÃO CORRIGIDA AQUI
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
   ExternalLink, 
@@ -16,11 +13,12 @@ import {
   Zap, 
   ChevronLeft, 
   ChevronRight, 
-  Monitor
+  Monitor,
+  MousePointerClick
 } from 'lucide-react';
-import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
-// --- DADOS DAS PLATAFORMAS (Com imagens mapeadas) ---
+// --- DADOS ATUALIZADOS (Cores e Imagens Corretas) ---
 const platformsData = [
   {
     id: 'synapse',
@@ -29,8 +27,8 @@ const platformsData = [
     description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
-    image: '/cases/versao-holistica-home.png', // Placeholder (Use um print da home da Synapse se tiver)
-    color: '#00E5FF' // Ciano
+    image: '/cases/synapse-b2b-home.png', // Imagem Atualizada
+    color: '#00E5FF' // Ciano (Logo Synapse)
   },
   {
     id: 'exclusiva',
@@ -39,8 +37,8 @@ const platformsData = [
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
     highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    image: '/cases/exclusivaengenharias-home.png',
-    color: '#FFD700' // Gold
+    image: '/cases/exclusiva-home.png', // Imagem Atualizada
+    color: '#FFC107' // Amarelo Ouro (Logo Exclusiva)
   },
   {
     id: 'versao-holistica',
@@ -49,8 +47,8 @@ const platformsData = [
     description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
     highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
     link: 'https://versaoholistica.com.br/',
-    image: '/cases/versao-holistica-home.png',
-    color: '#00FF7F' // Spring Green
+    image: '/cases/vh-home.png', // Imagem Atualizada
+    color: '#00FF7F' // Verde Primavera (Logo VH)
   },
   {
     id: 'aorkia',
@@ -59,8 +57,8 @@ const platformsData = [
     description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
     highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
-    image: '/cases/aorkia-home.png',
-    color: '#FF4500' // Orange Red
+    image: '/cases/aorkia-home.png', // Imagem Atualizada
+    color: '#00FFA3' // Verde Neon (Logo Aorkia)
   },
   {
     id: 'povoas',
@@ -69,13 +67,24 @@ const platformsData = [
     description: 'Transformação de PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
     highlights: ['6 portais de entrada', 'Transferência de autoridade', 'Analytics por vertical'],
     link: 'https://povoas.synapseb2b.com/',
-    image: '/cases/versao-holistica-home.png', // Placeholder (Use print da Povoas se tiver)
-    color: '#9370DB' // Purple
+    image: '/cases/povoas-home.png', // Imagem Atualizada
+    color: '#FF8C00' // Laranja (Logo Póvoas)
   }
 ];
 
 export default function PlataformasDigitais() {
-  const [activeIndex, setActiveIndex] = useState(1); // Começa no segundo item (Exclusiva)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar Mobile para ajustar dimensões do card
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); // Check inicial
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   // Navegação
   const nextSlide = () => {
@@ -86,7 +95,6 @@ export default function PlataformasDigitais() {
     setActiveIndex((prev) => (prev - 1 + platformsData.length) % platformsData.length);
   };
 
-  // Define o índice clicado como ativo
   const setIndex = (index) => {
     setActiveIndex(index);
   }
@@ -115,6 +123,11 @@ export default function PlataformasDigitais() {
     borderRadius: '16px',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   };
+
+  // Configurações Dimensionais (Desktop vs Mobile)
+  const cardWidth = isMobile ? 300 : 800; // Desktop bem largo (Retângulo)
+  const cardHeight = isMobile ? 550 : 450; // Mobile mais alto, Desktop 16:9
+  const xOffset = isMobile ? 320 : 650; // Espaçamento lateral
 
   return (
     <>
@@ -162,7 +175,7 @@ export default function PlataformasDigitais() {
               { num: '2.', title: 'Conteúdo genérico', text: 'Seu site mostra "o que você faz" em vez de "o problema que resolve".' },
               { num: '3.', title: 'Ativo subutilizado', text: 'Um investimento alto que funciona apenas como cartão de visita digital.' }
             ].map((item, i) => (
-              <div key={i} className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <div key={i} className="truth-card-revolutionary" style={{...glassStyle, padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
                 <span className="truth-card-number" style={{margin: '0 auto 1rem'}}>{item.num}</span>
                 <h3 className="truth-card-title">{item.title}</h3>
                 <p>{item.text}</p>
@@ -227,7 +240,7 @@ export default function PlataformasDigitais() {
 
 
       {/* ====================================================================== */}
-      {/* 3D COVERFLOW CAROUSEL (O EFEITO "UAU")                                 */}
+      {/* 3D BROWSER CAROUSEL (HORIZONTAL DESKTOP / TALLER MOBILE)               */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow" style={{paddingBottom: '6rem', overflow: 'hidden'}}>
         <div className="container">
@@ -239,8 +252,8 @@ export default function PlataformasDigitais() {
           {/* ÁREA DO CARROSSEL 3D */}
           <div className="carousel-3d-container" style={{
             position: 'relative', 
-            height: '500px', // Altura da área de rotação
-            perspective: '1000px',
+            height: isMobile ? '600px' : '550px', // Altura ajustada para o card maior
+            perspective: '1200px', // Perspectiva aumentada para o wide
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -266,14 +279,13 @@ export default function PlataformasDigitais() {
               transformStyle: 'preserve-3d'
             }}>
               {platformsData.map((platform, index) => {
-                // Calcular a posição relativa ao ativo
+                // Calcular a posição relativa
                 let position = index - activeIndex;
                 
-                // Lógica de loop infinito visual
+                // Loop infinito visual simples
                 if (position < -2) position += platformsData.length;
                 if (position > 2) position -= platformsData.length;
 
-                // Ajuste fino para quando o index ativo é o primeiro ou último
                 const total = platformsData.length;
                 const r = (index - activeIndex + total) % total; 
                 let dist = r;
@@ -290,49 +302,89 @@ export default function PlataformasDigitais() {
                     onClick={() => setIndex(index)}
                     initial={false}
                     animate={{
-                      x: dist * 320, // Espaçamento horizontal (Desktop)
-                      scale: isActive ? 1.1 : 0.8,
-                      rotateY: dist * -25, // Rotação 3D
+                      x: dist * xOffset, // Espaçamento horizontal dinâmico
+                      scale: isActive ? 1 : 0.85,
+                      rotateY: dist * -15, // Rotação mais suave para wide cards
                       zIndex: isActive ? 100 : 10 - Math.abs(dist),
-                      opacity: isActive ? 1 : 0.5,
-                      filter: isActive ? 'brightness(1)' : 'brightness(0.4) blur(2px)'
+                      opacity: isActive ? 1 : 0.4,
+                      filter: isActive ? 'brightness(1)' : 'brightness(0.5) blur(3px)'
                     }}
-                    transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+                    transition={{ type: 'spring', stiffness: 150, damping: 20 }}
                     style={{
                       position: 'absolute',
-                      width: '380px', // Largura do Card
-                      height: '450px', // Altura do Card
-                      background: `url(${platform.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'top center',
-                      borderRadius: '20px',
+                      width: `${cardWidth}px`, 
+                      height: `${cardHeight}px`,
+                      borderRadius: '12px',
                       boxShadow: isActive 
-                        ? `0 20px 50px -10px ${platform.color}66` // Glow colorido ativo
-                        : '0 10px 20px rgba(0,0,0,0.5)',
+                        ? `0 30px 60px -15px ${platform.color}40` // Sombra colorida com a cor da marca
+                        : '0 10px 30px rgba(0,0,0,0.8)',
                       cursor: 'pointer',
                       border: isActive ? `2px solid ${platform.color}` : '1px solid rgba(255,255,255,0.1)',
-                      overflow: 'hidden'
+                      overflow: 'hidden',
+                      background: '#111' // Fundo base
                     }}
-                    className="carousel-card-3d"
+                    className="browser-card-3d"
                   >
-                    {/* Overlay para legibilidade */}
+                    {/* BARRA DE NAVEGADOR (EMULAÇÃO) */}
                     <div style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      width: '100%',
-                      padding: '2rem 1rem 1rem',
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)',
-                      textAlign: 'center'
+                      height: '30px',
+                      background: 'rgba(255,255,255,0.05)',
+                      borderBottom: '1px solid rgba(255,255,255,0.05)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '0 1rem',
+                      gap: '6px'
                     }}>
-                      <h3 style={{fontSize: '1.5rem', color: '#fff', marginBottom: '0.5rem', textShadow: '0 2px 4px rgba(0,0,0,0.8)'}}>
-                        {platform.title}
-                      </h3>
-                      {isActive && (
-                        <span style={{color: platform.color, fontSize: '0.9rem', fontWeight: 600, textTransform: 'uppercase'}}>
-                          Ver Detalhes
-                        </span>
-                      )}
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
+                       <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#27c93f'}}></div>
+                       {/* URL Bar Falsa */}
+                       <div style={{
+                         flex: 1, 
+                         marginLeft: '1rem', 
+                         height: '16px', 
+                         background: 'rgba(0,0,0,0.3)', 
+                         borderRadius: '4px',
+                         display: 'flex',
+                         alignItems: 'center',
+                         justifyContent: 'center',
+                         fontSize: '9px',
+                         color: 'rgba(255,255,255,0.3)',
+                         fontFamily: 'monospace'
+                       }}>
+                         {platform.link.replace('https://', '')}
+                       </div>
+                    </div>
+
+                    {/* IMAGEM DO SITE */}
+                    <div style={{position: 'relative', width: '100%', height: 'calc(100% - 30px)'}}>
+                      <div style={{
+                         width: '100%', 
+                         height: '100%', 
+                         backgroundImage: `url(${platform.image})`,
+                         backgroundSize: 'cover',
+                         backgroundPosition: 'top center'
+                      }} />
+                      
+                      {/* Overlay Título (Sempre visível, mas mais forte se não ativo) */}
+                      <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        padding: '2rem 1rem 1rem',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.95), transparent)',
+                        textAlign: 'center'
+                      }}>
+                        <h3 style={{fontSize: '1.5rem', color: '#fff', marginBottom: '0.25rem', textShadow: '0 2px 4px rgba(0,0,0,0.8)'}}>
+                          {platform.title}
+                        </h3>
+                        {isActive && (
+                          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', color: platform.color, fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', marginTop: '0.5rem'}}>
+                            <MousePointerClick size={14} /> Ver Detalhes
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -356,9 +408,9 @@ export default function PlataformasDigitais() {
                   overflow: 'hidden'
                 }}
               >
-                 {/* Efeito de Glow de fundo */}
+                 {/* Linha de cor superior */}
                  <div style={{
-                   position: 'absolute', top: 0, left: 0, width: '100%', height: '5px',
+                   position: 'absolute', top: 0, left: 0, width: '100%', height: '4px',
                    background: `linear-gradient(90deg, transparent, ${platformsData[activeIndex].color}, transparent)`
                  }} />
 
@@ -398,7 +450,7 @@ export default function PlataformasDigitais() {
                      rel="noopener noreferrer"
                      className="btn btn-primary btn-large"
                      style={{
-                       boxShadow: `0 0 20px ${platformsData[activeIndex].color}40`,
+                       boxShadow: `0 0 20px ${platformsData[activeIndex].color}30`, // Glow botão
                        border: `1px solid ${platformsData[activeIndex].color}`
                      }}
                    >
@@ -437,14 +489,14 @@ export default function PlataformasDigitais() {
         </div>
       </section>
 
-      {/* CSS para o Carrossel 3D Responsivo */}
+      {/* CSS Customizado */}
       <style jsx global>{`
         .carousel-nav-btn {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: rgba(0,0,0,0.5);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(0,0,0,0.6);
+          border: 1px solid rgba(255,255,255,0.2);
           color: white;
           width: 50px;
           height: 50px;
@@ -460,22 +512,18 @@ export default function PlataformasDigitais() {
         .carousel-nav-btn:hover {
           background: var(--color-primary);
           border-color: var(--color-primary);
+          transform: translateY(-50%) scale(1.1);
         }
-        .carousel-nav-btn.left { left: 0; }
-        .carousel-nav-btn.right { right: 0; }
+        .carousel-nav-btn.left { left: 20px; }
+        .carousel-nav-btn.right { right: 20px; }
 
-        /* Responsividade do Carrossel */
         @media (max-width: 768px) {
-          .carousel-3d-container {
-            height: 400px !important;
+          .carousel-nav-btn {
+             width: 40px;
+             height: 40px;
           }
-          .carousel-card-3d {
-            width: 280px !important;
-            height: 350px !important;
-          }
-          /* No mobile, a lógica JS de espaçamento (320px) pode ficar larga.
-             Idealmente ajustaríamos o 'dist * 320' para 'dist * 150' via JS detectando mobile,
-             ou aceitamos que o overflow hidden cuida do resto. */
+          .carousel-nav-btn.left { left: 10px; }
+          .carousel-nav-btn.right { right: 10px; }
         }
       `}</style>
     </>
