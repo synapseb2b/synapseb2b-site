@@ -28,7 +28,7 @@ const platformsData = [
     description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
-    image: '/cases/synapse-b2b-home.jpg', 
+    image: '/cases/synapse-b2b-home.png', 
     color: '#00E5FF' 
   },
   {
@@ -38,7 +38,7 @@ const platformsData = [
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
     highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    image: '/cases/exclusiva-home.jpg',
+    image: '/cases/exclusiva-home.pmg',
     color: '#FFC107' 
   },
   {
@@ -48,7 +48,7 @@ const platformsData = [
     description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
     highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
     link: 'https://versaoholistica.com.br/',
-    image: '/cases/vh-home.jpg',
+    image: '/cases/vh-home.png',
     color: '#00FF7F' 
   },
   {
@@ -58,7 +58,7 @@ const platformsData = [
     description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
     highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
-    image: '/cases/aorkia-home.jpg',
+    image: '/cases/aorkia-home.png',
     color: '#00FFA3' 
   },
   {
