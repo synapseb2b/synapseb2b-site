@@ -1,9 +1,9 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão: Cinematic Cascade Scroll + Expansão Interativa
-// Design: Premium Dark Glassmorphism com Hover Effects (CSS Class based)
+// Versão Final: 3D Browser Flow + Correção de Build + Extensões PNG
+// Design: Premium Glassmorphism + Simulação de Browser
 
 import Head from 'next/head';
-import Link from 'next/link';
+import Link from 'next/link'; // <--- CORREÇÃO DE BUILD (Link importado)
 import { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// --- DADOS DAS PLATAFORMAS ---
+// --- DADOS ATUALIZADOS (Imagens PNG conforme pasta) ---
 const platformsData = [
   {
     id: 'synapse',
@@ -28,8 +28,8 @@ const platformsData = [
     description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
-    image: '/cases/synapse-b2b-home.png', 
-    color: '#00FFA3' 
+    image: '/cases/synapse-b2b-home.png', // PNG
+    color: '#00E5FF' // Ciano (Logo Synapse)
   },
   {
     id: 'exclusiva',
@@ -38,8 +38,8 @@ const platformsData = [
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
     highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    image: '/cases/exclusiva-home.png',
-    color: '#FFC107' 
+    image: '/cases/exclusiva-home.png', // PNG
+    color: '#FFC107' // Amarelo Ouro (Logo Exclusiva)
   },
   {
     id: 'versao-holistica',
@@ -48,8 +48,8 @@ const platformsData = [
     description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
     highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
     link: 'https://versaoholistica.com.br/',
-    image: '/cases/vh-home.png',
-    color: '#00FF7F' 
+    image: '/cases/vh-home.png', // PNG
+    color: '#00FF7F' // Verde Primavera (Logo VH)
   },
   {
     id: 'aorkia',
@@ -58,8 +58,8 @@ const platformsData = [
     description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
     highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
-    image: '/cases/aorkia-home.png',
-    color: '#00E5FF' 
+    image: '/cases/aorkia-home.png', // PNG
+    color: '#00FFA3' // Verde Neon (Logo Aorkia)
   },
   {
     id: 'povoas',
@@ -68,8 +68,8 @@ const platformsData = [
     description: 'Transformação de PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
     highlights: ['6 portais de entrada', 'Transferência de autoridade', 'Analytics por vertical'],
     link: 'https://povoas.synapseb2b.com/',
-    image: '/cases/povoas-home.png',
-    color: '#FF8C00' 
+    image: '/cases/povoas-home.png', // PNG
+    color: '#FF8C00' // Laranja (Logo Póvoas)
   }
 ];
 
@@ -77,15 +77,17 @@ export default function PlataformasDigitais() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Detectar Mobile para ajustar dimensões do card
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    handleResize(); 
+    handleResize(); // Check inicial
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   
+  // Navegação
   const nextSlide = () => {
     setActiveIndex((prev) => (prev + 1) % platformsData.length);
   };
@@ -114,10 +116,19 @@ export default function PlataformasDigitais() {
     return () => observer.disconnect();
   }, []);
 
-  // Configurações Dimensionais
-  const cardWidth = isMobile ? 300 : 800; 
-  const cardHeight = isMobile ? 550 : 450; 
-  const xOffset = isMobile ? 320 : 650; 
+  // Estilo Glassmorphism Base
+  const glassStyle = {
+    background: 'rgba(255, 255, 255, 0.03)',
+    backdropFilter: 'blur(10px)',
+    border: '1px solid rgba(255, 255, 255, 0.05)',
+    borderRadius: '16px',
+    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  };
+
+  // Configurações Dimensionais (Desktop vs Mobile)
+  const cardWidth = isMobile ? 300 : 800; // Desktop bem largo (Retângulo)
+  const cardHeight = isMobile ? 550 : 450; // Mobile mais alto, Desktop 16:9
+  const xOffset = isMobile ? 320 : 650; // Espaçamento lateral
 
   return (
     <>
@@ -126,7 +137,9 @@ export default function PlataformasDigitais() {
         <meta name="description" content="Transformamos sites institucionais em plataformas de aceleração de receita que educam, qualificam e convertem 24/7." />
       </Head>
 
-      {/* HERO */}
+      {/* ====================================================================== */}
+      {/* HERO                                                                   */}
+      {/* ====================================================================== */}
       <section className="hero-section short-hero">
         <div className="hero-video-background">
           <video autoPlay muted loop playsInline className="hero-video">
@@ -147,7 +160,9 @@ export default function PlataformasDigitais() {
 
       <div className="section-divider-glow"></div>
 
-      {/* O PROBLEMA */}
+      {/* ====================================================================== */}
+      {/* O PROBLEMA                                                             */}
+      {/* ====================================================================== */}
       <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
           <h2 className="section-title">Seu site gera tráfego. Mas não gera receita.</h2>
@@ -173,7 +188,9 @@ export default function PlataformasDigitais() {
 
       <div className="section-divider-glow"></div>
 
-      {/* A SOLUÇÃO */}
+      {/* ====================================================================== */}
+      {/* A SOLUÇÃO                                                              */}
+      {/* ====================================================================== */}
       <section className="section-with-gradient-glow">
         <div className="container reveal-up">
           <div className="text-center" style={{marginBottom: '4rem'}}>
@@ -198,7 +215,9 @@ export default function PlataformasDigitais() {
 
       <div className="section-divider-glow"></div>
 
-      {/* O RESULTADO */}
+      {/* ====================================================================== */}
+      {/* O RESULTADO                                                            */}
+      {/* ====================================================================== */}
        <section className="section-solid" style={{background: '#050505'}}>
         <div className="container text-center reveal-up">
           <div className="glass-card" style={{maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem'}}>
@@ -215,7 +234,10 @@ export default function PlataformasDigitais() {
       
       <div className="section-divider-glow"></div>
 
-      {/* 3D BROWSER CAROUSEL */}
+
+      {/* ====================================================================== */}
+      {/* 3D BROWSER CAROUSEL (HORIZONTAL DESKTOP / TALLER MOBILE)               */}
+      {/* ====================================================================== */}
       <section className="section-with-gradient-glow" style={{paddingBottom: '6rem', overflow: 'hidden'}}>
         <div className="container">
           <div className="text-center mb-10 reveal-up">
@@ -234,6 +256,7 @@ export default function PlataformasDigitais() {
             marginBottom: '2rem'
           }}>
             
+            {/* Botões de Navegação */}
             <button onClick={prevSlide} className="carousel-nav-btn left" aria-label="Anterior">
               <ChevronLeft size={32} />
             </button>
@@ -241,6 +264,7 @@ export default function PlataformasDigitais() {
               <ChevronRight size={32} />
             </button>
 
+            {/* Os Cards */}
             <div className="carousel-track-3d" style={{
               position: 'relative',
               width: '100%',
@@ -251,7 +275,10 @@ export default function PlataformasDigitais() {
               transformStyle: 'preserve-3d'
             }}>
               {platformsData.map((platform, index) => {
+                // Calcular a posição relativa
                 let position = index - activeIndex;
+                
+                // Loop infinito visual simples
                 if (position < -2) position += platformsData.length;
                 if (position > 2) position -= platformsData.length;
 
@@ -271,9 +298,9 @@ export default function PlataformasDigitais() {
                     onClick={() => setIndex(index)}
                     initial={false}
                     animate={{
-                      x: dist * xOffset, 
+                      x: dist * xOffset, // Espaçamento horizontal dinâmico
                       scale: isActive ? 1 : 0.85,
-                      rotateY: dist * -15, 
+                      rotateY: dist * -15, // Rotação mais suave para wide cards
                       zIndex: isActive ? 100 : 10 - Math.abs(dist),
                       opacity: isActive ? 1 : 0.4,
                       filter: isActive ? 'brightness(1)' : 'brightness(0.5) blur(3px)'
@@ -285,16 +312,16 @@ export default function PlataformasDigitais() {
                       height: `${cardHeight}px`,
                       borderRadius: '12px',
                       boxShadow: isActive 
-                        ? `0 30px 60px -15px ${platform.color}40` 
+                        ? `0 30px 60px -15px ${platform.color}40` // Sombra colorida com a cor da marca
                         : '0 10px 30px rgba(0,0,0,0.8)',
                       cursor: 'pointer',
                       border: isActive ? `2px solid ${platform.color}` : '1px solid rgba(255,255,255,0.1)',
                       overflow: 'hidden',
-                      background: '#111' 
+                      background: '#111' // Fundo base
                     }}
                     className="browser-card-3d"
                   >
-                    {/* BARRA DE NAVEGADOR */}
+                    {/* BARRA DE NAVEGADOR (EMULAÇÃO) */}
                     <div style={{
                       height: '30px',
                       background: 'rgba(255,255,255,0.05)',
@@ -307,6 +334,7 @@ export default function PlataformasDigitais() {
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#27c93f'}}></div>
+                       {/* URL Bar Falsa */}
                        <div style={{
                          flex: 1, 
                          marginLeft: '1rem', 
@@ -324,7 +352,7 @@ export default function PlataformasDigitais() {
                        </div>
                     </div>
 
-                    {/* IMAGEM */}
+                    {/* IMAGEM DO SITE */}
                     <div style={{position: 'relative', width: '100%', height: 'calc(100% - 30px)'}}>
                       <div style={{
                          width: '100%', 
@@ -334,6 +362,7 @@ export default function PlataformasDigitais() {
                          backgroundPosition: 'top center'
                       }} />
                       
+                      {/* Overlay Título (Sempre visível, mas mais forte se não ativo) */}
                       <div style={{
                         position: 'absolute',
                         bottom: 0,
@@ -359,7 +388,7 @@ export default function PlataformasDigitais() {
             </div>
           </div>
 
-          {/* ÁREA DE DETALHES */}
+          {/* ÁREA DE DETALHES SINCRONIZADA */}
           <div className="active-platform-details" style={{maxWidth: '900px', margin: '0 auto', minHeight: '300px'}}>
             <AnimatePresence mode='wait'>
               <motion.div
@@ -368,13 +397,14 @@ export default function PlataformasDigitais() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="glass-card" // Aplicando a classe Glass
+                className="glass-card"
                 style={{
                   padding: '3rem',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
               >
+                 {/* Linha de cor superior */}
                  <div style={{
                    position: 'absolute', top: 0, left: 0, width: '100%', height: '4px',
                    background: `linear-gradient(90deg, transparent, ${platformsData[activeIndex].color}, transparent)`
@@ -410,19 +440,19 @@ export default function PlataformasDigitais() {
                       ))}
                    </div>
 
-                   <a 
+                   <Link 
                      href={platformsData[activeIndex].link} 
                      target="_blank" 
                      rel="noopener noreferrer"
                      className="btn btn-primary btn-large"
                      style={{
-                       boxShadow: `0 0 20px ${platformsData[activeIndex].color}30`, 
+                       boxShadow: `0 0 20px ${platformsData[activeIndex].color}30`, // Glow botão
                        border: `1px solid ${platformsData[activeIndex].color}`
                      }}
                    >
                      <span>Visitar Plataforma</span>
                      <ExternalLink size={18} />
-                   </a>
+                   </Link>
                  </div>
               </motion.div>
             </AnimatePresence>
@@ -433,7 +463,9 @@ export default function PlataformasDigitais() {
 
       <div className="section-divider-glow"></div>
 
-      {/* CTA FINAL */}
+      {/* ====================================================================== */}
+      {/* CTA Final                                                            */}
+      {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary">
         <div className="pulsating-core-background"></div>
         <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
@@ -453,9 +485,9 @@ export default function PlataformasDigitais() {
         </div>
       </section>
 
-      {/* CSS Customizado: Glass Cards + Carrossel */}
+      {/* CSS Global para o Hover Effect */}
       <style jsx global>{`
-        /* Glass Card Premium com Hover */
+        /* Classe .glass-card: Aplica o efeito visual e o hover com PADDING ROBUSTO */
         .glass-card {
           background: rgba(255, 255, 255, 0.03);
           backdrop-filter: blur(10px);
@@ -463,13 +495,12 @@ export default function PlataformasDigitais() {
           border-radius: 16px;
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           transition: all 0.4s ease;
+          padding: 2.5rem; 
         }
-
         .glass-card:hover {
-          border-color: var(--color-primary);
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
-                      0 0 20px rgba(0, 229, 255, 0.1); /* Glow ciano sutil */
+           transform: translateY(-5px);
+           border-color: var(--color-primary);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2); /* Glow */
         }
 
         /* Navegação do Carrossel */
