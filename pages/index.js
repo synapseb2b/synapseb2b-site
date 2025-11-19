@@ -1,5 +1,5 @@
 // pages/index.js
-// Versão Final Premium: Ajustes de Espaçamento, Tipografia (Sem Caixa Alta) e Botões Corrigidos.
+// Versão Final Ajustada: Spacing Corrigido, Sem Caixa Alta, CSS de Links Reforçado
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -79,9 +79,9 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança (Ajuste 1: Mais respiro superior) */}
-          <div className="trust-bar reveal-up">
-            <p>Método forjado em ecossistemas de alta performance:</p>
+          {/* Barra de Confiança - AJUSTE 1: Mais Respiro */}
+          <div className="trust-bar reveal-up" style={{marginTop: '6rem', paddingBottom: '2rem'}}>
+            <p style={{marginBottom: '2rem', fontSize: '1rem', opacity: 0.8}}>Método forjado em ecossistemas de alta performance:</p>
             <div className="trust-bar-logos">
               <Image src="/logo/logo-google.png" alt="Google" width={100} height={32} />
               <Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
@@ -207,10 +207,9 @@ export default function Home() {
             Do diagnóstico estratégico à gestão interina do comercial.
           </p>
 
-          {/* Container Verticalizado */}
           <div className="solutions-vertical-stack">
             
-            {/* FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA (Ajuste 3: Sem Caixa Alta) */}
+            {/* FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA - AJUSTE 3: Title Case */}
             <div className="frente-block">
               <div className="frente-header">
                 <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4">
@@ -234,7 +233,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="card-action">
-                         {/* Ajuste 4: CSS do link */}
+                         {/* AJUSTE 4: CSS de Botão aplicado */}
                          <Link href="/solucoes/cortex-b2b" className="card-cta-button">
                            Conhecer <ArrowRight size={18}/>
                          </Link>
@@ -324,13 +323,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* FRENTE 2: ATIVOS DIGITAIS (Ajuste 2: Padding reduzido no topo) */}
-            <div className="frente-block" style={{marginTop: '3rem'}}>
+            {/* FRENTE 2: ATIVOS DIGITAIS - AJUSTE 2: Padding/Espaçamento Normalizado */}
+            <div className="frente-block" style={{marginTop: '4rem'}}>
               <div className="frente-header">
                  <div className="inline-flex items-center justify-center p-3 rounded-full bg-accent/10 mb-4">
                    <MonitorSmartphone size={40} style={{color: 'var(--color-accent)', marginBottom: '1rem'}} />
                 </div>
-                {/* Ajuste 3: Sem Caixa Alta */}
+                {/* AJUSTE 3: Title Case */}
                 <h3 className="solution-column-title">Frente 2: Ativos Digitais</h3>
                 <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Ferramentas que vendem por você.</p>
               </div>
@@ -387,7 +386,7 @@ export default function Home() {
       <div className="section-divider-glow"></div>
 
 {/* ====================================================================== */}
-      {/* Seção 5: Cases de Sucesso (Wide Cards - 16:9 Concept)                */}
+      {/* Seção 5: Cases de Sucesso (Wide Cards)                               */}
       {/* ====================================================================== */}
       <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
         <div className="container text-center reveal-up">
@@ -563,6 +562,14 @@ export default function Home() {
           text-align: center;
         }
 
+        .solution-column-title {
+           font-family: 'Montserrat', sans-serif;
+           font-size: 1.8rem;
+           color: var(--color-heading);
+           margin-bottom: 0.5rem;
+           text-transform: none; /* AJUSTE 3: Title Case */
+        }
+
         .solutions-grid-wide {
           display: flex;
           flex-direction: column;
@@ -621,7 +628,7 @@ export default function Home() {
            flex-shrink: 0;
         }
 
-        /* Ajuste 4: CSS do botão Link */
+        /* AJUSTE 4: CSS do Botão (Link) */
         .card-cta-button {
            display: inline-flex;
            align-items: center;
@@ -630,16 +637,14 @@ export default function Home() {
            border: 1px solid var(--color-border);
            border-radius: 8px;
            color: var(--color-heading);
-           text-decoration: none; /* Garante que não tenha sublinhado padrão */
-           background: rgba(255, 255, 255, 0.03); /* Fundo sutil inicial */
-           cursor: pointer;
            transition: all 0.3s ease;
+           text-decoration: none;
+           font-weight: 600;
         }
         .card-cta-button:hover {
            background: var(--color-primary);
            color: #000;
            border-color: var(--color-primary);
-           transform: translateY(-2px); /* Feedback tátil */
         }
 
         /* ESTILOS CASES (Vertical Stack) */
@@ -741,9 +746,8 @@ export default function Home() {
           .hero-headline {
             font-size: 2.0rem !important;
           }
-          /* Ajuste 1: Mais padding no topo mobile */
           .trust-bar {
-            margin-top: 6rem; 
+            margin-top: 3rem;
           }
           .trust-bar-logos {
             gap: 1.5rem;
