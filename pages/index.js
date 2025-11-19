@@ -1,5 +1,5 @@
 // pages/index.js
-// Versão Final Ajustada: Spacing Corrigido, Sem Caixa Alta, CSS de Links Reforçado
+// Versão Final Ajustada: Logos Espaçadas e Links Corrigidos
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -79,15 +79,15 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Barra de Confiança - AJUSTE 1: Mais Respiro */}
+          {/* Barra de Confiança - AJUSTE LOGOS */}
           <div className="trust-bar reveal-up" style={{marginTop: '6rem', paddingBottom: '2rem'}}>
             <p style={{marginBottom: '2rem', fontSize: '1rem', opacity: 0.8}}>Método forjado em ecossistemas de alta performance:</p>
             <div className="trust-bar-logos">
-              <Image src="/logo/logo-google.png" alt="Google" width={100} height={32} />
-              <Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} />
-              <Image src="/logo/logo-dell.png" alt="Dell" width={100} height={32} />
-              <Image src="/logo/logo-totvs.png" alt="TOTVS" width={100} height={32} />
-              <Image src="/logo/logo-keepit.png" alt="Keepit" width={100} height={32} />
+              <div className="trust-logo"><Image src="/logo/logo-google.png" alt="Google" width={100} height={32} objectFit="contain" /></div>
+              <div className="trust-logo"><Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} objectFit="contain" /></div>
+              <div className="trust-logo"><Image src="/logo/logo-dell.png" alt="Dell" width={100} height={32} objectFit="contain" /></div>
+              <div className="trust-logo"><Image src="/logo/logo-totvs.png" alt="TOTVS" width={100} height={32} objectFit="contain" /></div>
+              <div className="trust-logo"><Image src="/logo/logo-keepit.png" alt="Keepit" width={100} height={32} objectFit="contain" /></div>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function Home() {
 
           <div className="solutions-vertical-stack">
             
-            {/* FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA - AJUSTE 3: Title Case */}
+            {/* FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA */}
             <div className="frente-block">
               <div className="frente-header">
                 <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4">
@@ -233,7 +233,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="card-action">
-                         {/* AJUSTE 4: CSS de Botão aplicado */}
+                         {/* Link com classe corrigida */}
                          <Link href="/solucoes/cortex-b2b" className="card-cta-button">
                            Conhecer <ArrowRight size={18}/>
                          </Link>
@@ -323,13 +323,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* FRENTE 2: ATIVOS DIGITAIS - AJUSTE 2: Padding/Espaçamento Normalizado */}
+            {/* FRENTE 2: ATIVOS DIGITAIS */}
             <div className="frente-block" style={{marginTop: '4rem'}}>
               <div className="frente-header">
                  <div className="inline-flex items-center justify-center p-3 rounded-full bg-accent/10 mb-4">
                    <MonitorSmartphone size={40} style={{color: 'var(--color-accent)', marginBottom: '1rem'}} />
                 </div>
-                {/* AJUSTE 3: Title Case */}
                 <h3 className="solution-column-title">Frente 2: Ativos Digitais</h3>
                 <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Ferramentas que vendem por você.</p>
               </div>
@@ -531,7 +530,7 @@ export default function Home() {
         .glass-card-premium {
           background: rgba(255, 255, 255, 0.03);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.15); /* AJUSTE DE BORDA */
           border-radius: 16px;
           padding: 2.5rem;
           display: flex;
@@ -630,21 +629,28 @@ export default function Home() {
 
         /* AJUSTE 4: CSS do Botão (Link) */
         .card-cta-button {
-           display: inline-flex;
-           align-items: center;
-           gap: 0.5rem;
-           padding: 0.8rem 1.5rem;
-           border: 1px solid var(--color-border);
-           border-radius: 8px;
-           color: var(--color-heading);
-           transition: all 0.3s ease;
-           text-decoration: none;
-           font-weight: 600;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 0.8rem 1.5rem;       /* Dá corpo ao botão */
+          border: 1px solid rgba(255, 255, 255, 0.15); /* Borda visível e elegante */
+          border-radius: 8px;           /* Bordas arredondadas */
+          color: var(--color-heading) !important;  /* CORRIGIDO PARA VISIBILIDADE */
+          background: rgba(255, 255, 255, 0.05); /* Fundo sutil */
+          text-decoration: none;        /* Remove o sublinhado */
+          font-weight: 600;
+          transition: all 0.3s ease;
+          white-space: nowrap;          /* Garante que não quebre linha */
         }
+
+        /* Efeito Hover do Botão */
         .card-cta-button:hover {
-           background: var(--color-primary);
-           color: #000;
-           border-color: var(--color-primary);
+          background: var(--color-primary);
+          border-color: var(--color-primary);
+          color: #000 !important; /* Texto escuro no hover para contraste */
+          box-shadow: 0 0 15px rgba(0, 150, 132, 0.4); /* Glow */
+          transform: translateX(5px); /* Pequeno movimento para a direita */
         }
 
         /* ESTILOS CASES (Vertical Stack) */
@@ -718,33 +724,27 @@ export default function Home() {
           font-size: 2.8rem !important;
           line-height: 1.25;
         }
+        
+        .trust-bar {
+          width: 100%;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        .trust-bar-logos {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 4rem; /* AJUSTE 1: Mais espaço entre logos */
+          opacity: 0.6;
+          filter: grayscale(100%) contrast(50%);
+        }
+        .trust-logo {
+            flex: 0 0 auto; /* Garante que não encolha */
+        }
 
-        /* Botão dos Cards de Solução */
-.card-cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;       /* Dá corpo ao botão */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Borda visível e elegante */
-  border-radius: 8px;           /* Bordas arredondadas */
-  color: var(--color-heading);  /* Cor do texto (branco/claro) */
-  background: rgba(255, 255, 255, 0.03); /* Fundo sutil */
-  text-decoration: none;        /* Remove o sublinhado */
-  font-weight: 600;
-  transition: all 0.3s ease;
-  white-space: nowrap;          /* Garante que não quebre linha */
-}
-
-/* Efeito Hover do Botão */
-.card-cta-button:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #000; /* Texto escuro no hover para contraste */
-  box-shadow: 0 0 15px rgba(0, 150, 132, 0.4); /* Glow */
-  transform: translateX(5px); /* Pequeno movimento para a direita */
-}
-                 
         /* Responsividade */
         @media (max-width: 900px) {
           .pillar-grid-2x2 {
@@ -766,17 +766,14 @@ export default function Home() {
              width: 100%;
              justify-content: center;
           }
+          .trust-bar-logos {
+            gap: 2rem; /* Menor gap no mobile */
+          }
         }
         
         @media (max-width: 768px) {
           .hero-headline {
             font-size: 2.0rem !important;
-          }
-          .trust-bar {
-            margin-top: 3rem;
-          }
-          .trust-bar-logos {
-            gap: 1.5rem;
           }
         }
       `}</style>

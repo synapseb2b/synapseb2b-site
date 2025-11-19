@@ -89,7 +89,7 @@ export default function Navbar() {
                 <Link href="/solucoes/match-maker" className="dropdown-link">Match-Maker B2B</Link>
                 <Link href="/solucoes/apps" className="dropdown-link">Apps Estratégicos</Link>
                 <div className="dropdown-divider"></div>
-                <Link href="/solucoes/profissionais-de-saude" className="dropdown-link">Para Profissionais de Saúde</Link>
+                <Link href="/solucoes/profissionais-de-saude" className="dropdown-link"> Health Business Architecture™</Link>
               </div>
             </li>
 
@@ -148,7 +148,7 @@ export default function Navbar() {
               <li><Link href="/solucoes/cortex-b2b" onClick={handleLinkClick}>- Cortex B2B™</Link></li>
               <li><Link href="/solucoes/match-maker" onClick={handleLinkClick}>- Match-Maker B2B</Link></li>
               <li><Link href="/solucoes/apps" onClick={handleLinkClick}>- Apps Estratégicos</Link></li>
-              <li><Link href="/solucoes/profissionais-de-saude" onClick={handleLinkClick}>- Para Profissionais de Saúde</Link></li>
+              <li><Link href="/solucoes/profissionais-de-saude" onClick={handleLinkClick}>-  Health Business Architecture™</Link></li>
             </ul>
           </li>
 
