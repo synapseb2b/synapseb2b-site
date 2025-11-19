@@ -1,20 +1,21 @@
-// pages/contato.js (VERSÃO REVISADA E OTIMIZADA)
+// pages/contato.js
+// Versão Final: Seção removida + Formulário focado em Outcomes
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { 
   User, Mail, Building, ChevronDown, ArrowRight, XCircle, CheckCircle, 
-  Linkedin, Send // MessageSquare removido
+  Linkedin, Send 
 } from 'lucide-react';
 
 export default function ContatoPage() {
-  const whatsappNumber = "553139586192"; // Número de WhatsApp para envio
+  const whatsappNumber = "553139586192"; 
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
     empresa: '',
-    cenario: 'Preciso validar uma nova oferta ou mercado.',
+    cenario: '', // Inicia vazio para forçar seleção
     desafio: '',
   });
 
@@ -23,15 +24,13 @@ export default function ContatoPage() {
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  // Envia os dados do formulário para o WhatsApp
   const handleSubmit = (e) => {
     e.preventDefault();
-    const message = `*Diagnóstico Estratégico - Synapse B2B*\n\n*Nome:* ${formData.nome}\n*E-mail:* ${formData.email}\n*Empresa:* ${formData.empresa}\n\n*Cenário:*\n${formData.cenario}\n\n*Desafio Principal:*\n${formData.desafio}`;
+    const message = `*Diagnóstico Estratégico - Synapse B2B*\n\n*Nome:* ${formData.nome}\n*E-mail:* ${formData.email}\n*Empresa:* ${formData.empresa}\n\n*Cenário:* ${formData.cenario}\n\n*Desafio Principal:*\n${formData.desafio}`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message.trim())}`;
     window.open(whatsappUrl, '_blank');
   };
   
-  // Efeito de animação 'reveal-up'
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -81,40 +80,10 @@ export default function ContatoPage() {
 
       <div className="section-divider-glow"></div>
 
-      {/* ====================================================================== */}
-      {/* EXPECTATIVAS                                                         */}
-      {/* ====================================================================== */}
-      <section className="section-solid">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Diagnóstico, Não Vendas</h2>
-          <p className="lead-text">O objetivo desta primeira conversa é gerar clareza para você</p>
-          <div className="comparison-matrix">
-            <div className="comparison-col bad">
-              <h4><XCircle size={20} /> Chamada de Vendas Típica</h4>
-              <ul>
-                <li>Pressão para fechar</li>
-                <li>Diagnóstico superficial</li>
-                <li>Promessas genéricas</li>
-                <li>Proposta por e-mail</li>
-              </ul>
-            </div>
-            <div className="comparison-col good">
-              <h4><CheckCircle size={20} /> Nossa Sessão</h4>
-              <ul>
-                <li><strong>10min:</strong> Entendemos seu desafio real</li>
-                <li><strong>5min:</strong> Avaliamos fit mútuo</li>
-                <li><strong>6min:</strong> Mapeamos próximo passo</li>
-                <li><strong>Resultado:</strong> Caminho de ação claro</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
+      {/* SEÇÃO REMOVIDA: "Diagnóstico, Não Vendas" */}
 
       {/* ====================================================================== */}
-      {/* FORMULÁRIO                                                           */}
+      {/* FORMULÁRIO (REFINADO: FOCO EM OUTCOME)                               */}
       {/* ====================================================================== */}
       <section id="diagnostico" className="section-with-gradient-glow">
         <div className="container reveal-up">
@@ -122,7 +91,7 @@ export default function ContatoPage() {
             <div className="contact-info">
               <h2 className="section-title">Agende Seu Diagnóstico</h2>
               <p className="lead-text">Preencha o formulário para iniciar a conversa.</p>
-              <p>Um de nossos Arquitetos de Receita entrará em contato para agendar a sessão estratégica. Nosso objetivo: clareza imediata e um caminho de ação claro — com ou sem a Synapse.</p>
+              <p>Um de nossos Arquitetos de Receita entrará em contato. Nosso objetivo: clareza imediata sobre qual alavanca acionar para destravar seu crescimento.</p>
             </div>
             <div className="contact-form-container">
               <form onSubmit={handleSubmit} className="contact-form">
@@ -147,23 +116,39 @@ export default function ContatoPage() {
                     <input type="text" id="empresa" name="empresa" value={formData.empresa} onChange={handleChange} placeholder="Nome da empresa" required />
                   </div>
                 </div>
+                
+                {/* ITEM A: Cenário (Outcome-Driven) */}
                 <div className="form-group">
-                  <label htmlFor="cenario">Cenário de crescimento atual</label>
+                  <label htmlFor="cenario">Qual objetivo descreve seu momento?</label>
                   <div className="input-wrapper select-wrapper">
                     <select id="cenario" name="cenario" value={formData.cenario} onChange={handleChange} required>
-                      <option>Preciso validar uma nova oferta ou mercado.</option>
-                      <option>Preciso escalar um produto já validado.</option>
-                      <option>Preciso de liderança estratégica.</option>
+                      <option value="" disabled>Selecione o resultado que você busca</option>
+                      <option value="Identificar Gargalos">Quero identificar gargalos e destravar crescimento (Diagnóstico).</option>
+                      <option value="Validar Mercado">Quero validar um novo mercado ou produto com segurança (Validação).</option>
+                      <option value="Receita Previsível">Quero tornar minha receita previsível e escalável (GTM/CRO).</option>
+                      <option value="Ativos Digitais">Quero que meu site gere leads qualificados 24/7 (Plataformas/Apps).</option>
+                      <option value="Decisão Estratégica">Quero apoio sênior para decisões críticas (Advisory).</option>
                     </select>
                     <ChevronDown size={18} className="select-arrow-icon" />
                   </div>
                 </div>
+
+                {/* ITEM B: Desafio (Provocativo) */}
                 <div className="form-group">
-                  <label htmlFor="desafio">Principal desafio de receita</label>
+                  <label htmlFor="desafio">O que impede esse resultado hoje?</label>
                   <div className="input-wrapper">
-                    <textarea id="desafio" name="desafio" value={formData.desafio} onChange={handleChange} rows="4" placeholder="Ex: 'Ciclo de vendas muito longo', 'Dificuldade em gerar leads qualificados', etc." required></textarea>
+                    <textarea 
+                      id="desafio" 
+                      name="desafio" 
+                      value={formData.desafio} 
+                      onChange={handleChange} 
+                      rows="4" 
+                      placeholder="Ex: 'Dependo 100% de indicações', 'Meu ciclo de vendas é longo demais', 'Invisto em marketing mas não vejo retorno'..." 
+                      required
+                    ></textarea>
                   </div>
                 </div>
+
                 <button type="submit" className="btn btn-primary btn-large">
                   <span>Enviar e Agendar</span>
                   <ArrowRight size={20} />
@@ -177,7 +162,7 @@ export default function ContatoPage() {
       <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
-      {/* OUTRAS FORMAS (Refatorado para CTA Padrão)                           */}
+      {/* OUTRAS FORMAS                                                        */}
       {/* ====================================================================== */}
       <section className="final-cta-section final-cta-revolutionary" style={{padding: '6rem 0'}}>
         <div className="pulsating-core-background"></div>
@@ -210,46 +195,6 @@ export default function ContatoPage() {
 
       {/* CSS */}
       <style jsx>{`
-        .comparison-matrix {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          max-width: 900px;
-          margin: 3rem auto 0;
-        }
-        .comparison-col {
-          padding: 2rem;
-          border-radius: 12px;
-          text-align: left;
-        }
-        .comparison-col.bad {
-          background: var(--color-card-bg); /* AJUSTADO */
-          border: 1px solid var(--color-border);
-        }
-        .comparison-col.good {
-          background: rgba(0, 150, 132, 0.1);
-          border: 1px solid var(--color-primary);
-        }
-        .comparison-col h4 {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          font-size: 1.1rem;
-          margin-bottom: 1.5rem;
-          color: var(--color-text);
-        }
-        .comparison-col.good h4 {
-          color: var(--color-primary);
-        }
-        .comparison-col ul {
-          list-style: none;
-          padding: 0;
-        }
-        .comparison-col li {
-          margin-bottom: 0.75rem;
-          line-height: 1.6;
-        }
-
         .contact-grid {
           display: grid;
           grid-template-columns: 1fr 1.2fr;
@@ -260,13 +205,13 @@ export default function ContatoPage() {
           text-align: left;
         }
         .contact-form-container {
-          background: var(--color-card-bg); /* AJUSTADO */
+          background: var(--color-card-bg);
           border: 1px solid var(--color-border);
           border-radius: 16px;
           padding: 2.5rem;
         }
 
-        /* --- CSS ADICIONADO PARA O FORMULÁRIO --- */
+        /* FORMULÁRIO */
         .contact-form {
           display: flex;
           flex-direction: column;
@@ -280,7 +225,7 @@ export default function ContatoPage() {
         }
         .form-group label {
           font-weight: 500;
-          font-size: 0.9rem;
+          font-size: 0.95rem;
           color: var(--color-heading);
           padding-left: 0.25rem;
         }
@@ -300,7 +245,7 @@ export default function ContatoPage() {
         .input-wrapper textarea,
         .input-wrapper select {
           width: 100%;
-          padding: 1rem 1rem 1rem 3rem; /* Padding esquerdo para ícone */
+          padding: 1rem 1rem 1rem 3rem;
           background-color: var(--color-background);
           border: 1px solid var(--color-border);
           border-radius: 8px;
@@ -317,12 +262,12 @@ export default function ContatoPage() {
           box-shadow: 0 0 0 2px rgba(0, 150, 132, 0.3);
         }
         .input-wrapper textarea {
-          padding: 1rem; /* Textarea não tem ícone */
+          padding: 1rem;
         }
         .input-wrapper select {
           appearance: none;
           -webkit-appearance: none;
-          padding-right: 3rem; /* Espaço para seta */
+          padding-right: 3rem;
           cursor: pointer;
         }
         .select-wrapper {
@@ -341,8 +286,8 @@ export default function ContatoPage() {
           width: 100%;
           margin-top: 1rem;
         }
-        /* --- FIM DO CSS ADICIONADO --- */
 
+        /* CANAIS */
         .contact-channels {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -354,7 +299,7 @@ export default function ContatoPage() {
           flex-direction: column;
           align-items: center;
           padding: 2rem;
-          background: var(--color-card-bg); /* AJUSTADO */
+          background: var(--color-card-bg);
           border: 1px solid var(--color-border);
           border-radius: 12px;
           text-decoration: none;
@@ -380,7 +325,7 @@ export default function ContatoPage() {
         }
 
         @media (max-width: 768px) {
-          .comparison-matrix, .contact-grid {
+          .contact-grid {
             grid-template-columns: 1fr;
           }
         }
