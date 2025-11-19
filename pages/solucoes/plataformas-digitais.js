@@ -1,10 +1,9 @@
 // pages/solucoes/plataformas-digitais.js
-// Versão: Cinematic Cascade Scroll + Expansão Interativa
-// Design: Premium Glassmorphism com Framer Motion
-// CORREÇÃO FINAL: Importação de 'Link' verificada e garantida
+// Versão: Cinematic Cascade Scroll
+// CORREÇÃO DE IMAGENS: Caminhos atualizados conforme print da pasta public/cases
 
 import Head from 'next/head';
-import Link from 'next/link'; // <--- IMPORTAÇÃO ESSENCIAL
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
@@ -20,7 +19,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// --- DADOS DAS PLATAFORMAS (Com imagens mapeadas) ---
+// --- DADOS ATUALIZADOS COM NOMES REAIS DOS ARQUIVOS ---
 const platformsData = [
   {
     id: 'synapse',
@@ -29,6 +28,7 @@ const platformsData = [
     description: 'Plataforma própria que demonstra o método: 4 pilares de Engenharia de Receita traduzidos em narrativa que converte fundadores B2B.',
     highlights: ['Texto rotativo no hero', 'Cases por resultado', 'CTA contextual'],
     link: 'https://www.synapseb2b.com/',
+    // Nome conforme upload enviado
     image: '/cases/synapse-b2b-home.jpg', 
     color: '#00E5FF' 
   },
@@ -39,7 +39,8 @@ const platformsData = [
     description: 'Hub que traduz competências técnicas dispersas em proposta de valor unificada para decisores industriais.',
     highlights: ['Simulador de orçamento', 'Segmentação por setor', 'Foco em continuidade'],
     link: 'https://exclusivaengenharias.com/',
-    image: '/cases/exclusiva-home.jpg',
+    // Nome conforme print da pasta (PNG e nome longo)
+    image: '/cases/exclusivaengenharias-home.png', 
     color: '#FFC107' 
   },
   {
@@ -49,7 +50,8 @@ const platformsData = [
     description: 'Primeira plataforma de CareOps Integrativo do Brasil. Educação de mercado sobre categoria nova + ROI tangível (5.8x).',
     highlights: ['3 verticais distintas', 'História viva', 'Métricas validadas'],
     link: 'https://versaoholistica.com.br/',
-    image: '/cases/vh-home.jpg',
+    // Nome conforme print da pasta (PNG e nome longo)
+    image: '/cases/versaoholistica-home.png', 
     color: '#00FF7F' 
   },
   {
@@ -59,7 +61,8 @@ const platformsData = [
     description: 'Narrativa de urgência para produto invisível. Ativa medo da perda antes de apresentar solução técnica.',
     highlights: ['Ancoragem em líder global', 'ROI de risco', 'Compliance como gatilho'],
     link: 'https://www.aorkia.com/',
-    image: '/cases/aorkia-home.jpg',
+    // Nome conforme print da pasta (PNG)
+    image: '/cases/aorkia-home.png', 
     color: '#00FFA3' 
   },
   {
@@ -69,7 +72,8 @@ const platformsData = [
     description: 'Transformação de PDF estático em plataforma multi-entrada com 12 parceiros estratégicos visíveis.',
     highlights: ['6 portais de entrada', 'Transferência de autoridade', 'Analytics por vertical'],
     link: 'https://povoas.synapseb2b.com/',
-    image: '/cases/povoas-home.png',
+    // Nome conforme print da pasta (PNG)
+    image: '/cases/povoas-home.png', 
     color: '#FF8C00' 
   }
 ];
@@ -78,17 +82,15 @@ export default function PlataformasDigitais() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar Mobile para ajustar dimensões do card
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    handleResize(); // Check inicial
+    handleResize(); 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   
-  // Navegação
   const nextSlide = () => {
     setActiveIndex((prev) => (prev + 1) % platformsData.length);
   };
@@ -117,7 +119,6 @@ export default function PlataformasDigitais() {
     return () => observer.disconnect();
   }, []);
 
-  // Estilo Glassmorphism Base
   const glassStyle = {
     background: 'rgba(255, 255, 255, 0.03)',
     backdropFilter: 'blur(10px)',
@@ -126,7 +127,6 @@ export default function PlataformasDigitais() {
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   };
 
-  // Configurações Dimensionais (Desktop vs Mobile)
   const cardWidth = isMobile ? 300 : 800; 
   const cardHeight = isMobile ? 550 : 450; 
   const xOffset = isMobile ? 320 : 650; 
