@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO FINAL: DESIGN SYSTEM UNIFICADO & CENTRALIZADO */
+/* globals.css - VERSÃO FINAL: DESIGN SYSTEM UNIFICADO & CENTRALIZADO (PREMIUM REFINED) */
 
 /* ==========================================================================
    1. CORE: VARIÁVEIS & FONTES
@@ -15,12 +15,21 @@
   --color-text-muted: #a0a0a0;
   --color-heading: #ffffff;
   
-  /* Estética dos Cards (A Regra de Ouro) */
-  --card-bg-default: rgba(0, 20, 18, 0.3); /* Leve toque verde no fundo preto */
-  --card-border-default: rgba(255, 255, 255, 0.08); /* Borda branca translúcida */
-  --card-border-hover: #009684; /* Borda verde acesa */
-  --card-shadow-hover: 0 10px 40px -10px rgba(0, 150, 132, 0.3);
+  /* Estética dos Cards (A Regra de Ouro - Premium) */
+  --card-bg-default: rgba(0, 20, 18, 0.22); /* Ajustado para transparência premium */
+  --card-bg-hover: rgba(0, 20, 18, 0.38);   /* Novo estado hover */
+  --card-border-default: rgba(255, 255, 255, 0.08);
+  --card-border-hover: #009684;
   
+  /* Sistema de Sombras Premium */
+  --shadow-low: 0 4px 18px -4px rgba(0,150,132,0.12);
+  --shadow-mid: 0 8px 28px -6px rgba(0,150,132,0.18);
+  --shadow-high: 0 12px 48px -10px rgba(0,150,132,0.28);
+  --card-shadow-hover: var(--shadow-high); /* Alias para compatibilidade */
+
+  /* Motion Premium */
+  --ease-premium: cubic-bezier(.18,.89,.32,1.28);
+
   /* Tamanhos de Fonte Padronizados (Fluid Typography) */
   --font-h1: clamp(2.5rem, 5vw, 4.5rem);
   --font-h2: clamp(2rem, 4vw, 3rem);
@@ -36,6 +45,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  font-variation-settings: "wght" 430; /* Refinamento Tipográfico */
   
   /* A NOVA REGRA DE OURO: Tudo Centralizado */
   text-align: center !important;
@@ -51,9 +61,10 @@ h1, h2, h3,
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  text-align: center !important; /* Força bruta no alinhamento */
+  text-align: center !important;
   margin-left: auto;
   margin-right: auto;
+  font-variation-settings: "wght" 780; /* Refinamento Tipográfico */
 }
 
 h1, .hero-headline { 
@@ -77,25 +88,26 @@ p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  font-variation-settings: "wght" 430; /* Refinamento Tipográfico */
 }
 
 .lead-text { 
   font-size: 1.125rem; 
   max-width: 800px; 
-  margin: 0 auto 3rem auto; /* Margem auto garante centro em blocos */
+  margin: 0 auto 3rem auto; 
 }
 
 /* ==========================================================================
-   3. HERO & MINI-HERO (A Regra do Vídeo)
+   3. HERO & MINI-HERO
    ========================================================================== */
 .hero-section {
   position: relative;
   width: 100%;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Garante empilhamento centralizado */
-  align-items: center;    /* Centro horizontal */
-  justify-content: center; /* Centro vertical */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh; 
 }
 
@@ -126,7 +138,7 @@ p {
 }
 
 /* ==========================================================================
-   4. O "CARD UNIVERSAL" (Estética Match Maker)
+   4. O "CARD UNIVERSAL" (Estética Match Maker Premium)
    ========================================================================== */
 .glass-card-premium,
 .info-card,
@@ -145,13 +157,14 @@ blockquote,
   border: 1px solid var(--card-border-default);
   border-radius: 16px;
   padding: 2.5rem;
+  box-shadow: var(--shadow-low); /* Sombra Base Premium */
   
   /* Layout Centralizado Rigoroso */
   display: flex;
   flex-direction: column;
-  align-items: center;     /* Eixo X do Flex */
+  align-items: center;
   justify-content: flex-start;
-  text-align: center;      /* Herança de texto */
+  text-align: center;
   height: 100%;
   
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -166,29 +179,35 @@ blockquote,
 .pillar-card-revolutionary:hover,
 .solution-card-revolutionary:hover,
 blockquote:hover {
-  transform: translateY(-8px);
+  /* Microinterações Premium */
+  transform: translateY(-6px) scale(1.015);
+  background: var(--card-bg-hover);
   border-color: var(--card-border-hover);
-  box-shadow: var(--card-shadow-hover);
-  background: rgba(0, 20, 18, 0.6);
+  box-shadow: var(--shadow-high);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+              background 0.4s ease,
+              border-color 0.4s ease;
 }
 
-/* Ícones Centralizados */
+/* Ícones Centralizados & Glow Dinâmico */
 .pillar-icon-wrapper, .info-card svg, .case-card svg, .card-icon {
   color: var(--color-accent);
   filter: drop-shadow(0 0 8px rgba(56, 197, 177, 0.4));
-  margin: 0 auto 1.5rem auto !important; /* Margem auto força centro */
+  margin: 0 auto 1.5rem auto !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: premiumGlow 4s ease-in-out infinite; /* Glow Dinâmico */
 }
 
-/* Listas dentro de cards (Checklists) */
+/* Listas dentro de cards */
 ul { 
   list-style: none; 
   padding: 0; 
   display: flex; 
   flex-direction: column;
-  align-items: center; /* Centraliza os itens da lista */
+  align-items: center;
   width: 100%;
 }
 
@@ -197,10 +216,11 @@ li {
   color: var(--color-text-muted);
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza conteúdo interno do li */
+  justify-content: center;
   gap: 10px;
   width: 100%;
   text-align: center;
+  font-variation-settings: "wght" 430; /* Refinamento Tipográfico */
 }
 
 /* ==========================================================================
@@ -211,7 +231,7 @@ section {
   padding: 6rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Seção alinha filhos ao centro */
+  align-items: center;
 }
 
 section::after {
@@ -255,17 +275,16 @@ section::after {
   border-radius: 50px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.25s var(--ease-premium); /* Easing Customizado */
   
-  /* Garante que o botão não estique */
   margin: 2rem auto 0 auto; 
   width: fit-content;
 }
 
 .btn:hover, .btn-primary:hover {
   background: var(--color-primary);
-  box-shadow: 0 0 25px rgba(0, 150, 132, 0.6);
-  transform: scale(1.02);
+  transform: translateY(-3px); /* Melhoria em CTA */
+  box-shadow: 0 8px 20px -6px rgba(0,150,132,0.35);
 }
 
 /* ==========================================================================
@@ -277,10 +296,9 @@ section::after {
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Container mestre centraliza tudo */
+  align-items: center;
 }
 
-/* Grid Universal */
 .pillar-grid-revolutionary, 
 .case-grid, 
 .info-grid,
@@ -291,7 +309,7 @@ section::after {
   gap: 2rem;
   margin-top: 4rem;
   width: 100%;
-  justify-content: center; /* Centraliza o grid em si */
+  justify-content: center;
 }
 
 .footer { background: #050505; padding: 4rem 0; border-top: 1px solid #111; }
@@ -299,12 +317,55 @@ section::after {
   display: flex; 
   flex-wrap: wrap; 
   gap: 2rem; 
-  justify-content: center; /* Footer centralizado */
+  justify-content: center;
   text-align: center;
 }
 
 /* ==========================================================================
-   8. UTILITÁRIOS DE CORREÇÃO
+   8. ANIMAÇÕES E EFEITOS PREMIUM
+   ========================================================================== */
+
+/* Premium Glow Animation */
+@keyframes premiumGlow {
+  0% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); }
+  50% { filter: drop-shadow(0 0 12px rgba(56,197,177,0.35)); }
+  100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); }
+}
+
+.premium-glow {
+  animation: premiumGlow 4s ease-in-out infinite;
+}
+
+/* Animação Reveal-Up Suave */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Borda Premium Inteligente */
+.card-premium-border {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+}
+
+.card-premium-border:hover {
+  border-color: rgba(0,150,132,0.75);
+}
+
+/* Espaçamento Premium */
+.section-padding-premium {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+/* ==========================================================================
+   9. UTILITÁRIOS DE CORREÇÃO & MEDIA QUERIES
    ========================================================================== */
 hr, .section-divider-glow { display: none; } 
 blockquote { font-style: italic; font-size: 1.1rem; }
