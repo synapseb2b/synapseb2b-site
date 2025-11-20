@@ -1,5 +1,6 @@
 // components/Navbar.js
-// AJUSTES: Altura Desktop 60px + Padronização ABSOLUTA de Fontes Mobile (Tudo 0.95rem)
+// VERSÃO BLINDADA: Usa !important para ignorar o globals.css e corrigir fontes no Mobile
+// Altura Desktop: 60px ajustada.
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -188,7 +189,7 @@ export default function Navbar() {
                 </ul>
             </li>
 
-            {/* Link Simples - A SYNAPSE (Agora com classe padronizada) */}
+            {/* Link Simples - A SYNAPSE */}
             <li className="mobile-single-link">
                 <Link href="/a-engenharia" onClick={handleLinkClick} className="mobile-parent-style-link">
                   <div className="label-with-icon"><Building size={18} /><span>A Synapse</span></div>
@@ -223,16 +224,16 @@ export default function Navbar() {
         .nav-container {
           max-width: 1200px; margin: 0 auto; padding: 0.2rem 2rem;
           display: flex; align-items: center; justify-content: space-between;
-          /* AJUSTE SOLICITADO: Altura reduzida no Desktop para 60px */
+          /* AJUSTE: Altura reduzida no Desktop para 60px (padrão solicitado) */
           height: 60px; 
         }
 
         /* LOGO VIDEO */
         .nav-logo-link { display: flex; align-items: center; z-index: 10001; height: 100%; }
         .nav-logo-video {
-          width: auto; /* Largura auto para respeitar a altura */
+          width: auto;
           height: 100%; /* Ocupa a altura do container (60px) */
-          max-height: 60px; /* Trava de segurança */
+          max-height: 60px; 
           object-fit: contain;
         }
 
@@ -297,7 +298,6 @@ export default function Navbar() {
           cursor: pointer; background: none; border: none; padding: 0; z-index: 10002;
         }
         
-        /* Barras Brancas Forçadas */
         .nav-hamburger .bar {
           display: block; width: 100%; height: 2px; 
           background-color: #ffffff !important;
@@ -305,18 +305,17 @@ export default function Navbar() {
           border-radius: 2px;
         }
 
-        /* Animação X */
         .nav-hamburger.active .top { transform: translateY(9px) rotate(45deg); }
         .nav-hamburger.active .middle { opacity: 0; }
         .nav-hamburger.active .bottom { transform: translateY(-9px) rotate(-45deg); }
 
 
         /* ================================================================== */
-        /* MOBILE OVERLAY & ESTILOS DE FONTE                                  */
+        /* MOBILE OVERLAY & ESTILOS DE FONTE (BLINDADOS)                      */
         /* ================================================================== */
         .mobile-menu-overlay {
           position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-          background: #000000; z-index: 10000; padding-top: 85px; /* Espaço do header */
+          background: #000000; z-index: 10000; padding-top: 85px;
           opacity: 0; visibility: hidden; pointer-events: none;
           transition: opacity 0.3s ease;
         }
@@ -329,16 +328,15 @@ export default function Navbar() {
 
         .mobile-menu-links { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
 
-        /* PAI / NIVEL 1 (Padronizado) */
+        /* PAI / NIVEL 1 - USO DE !IMPORTANT PARA SOBRESCREVER GLOBALS */
         .mobile-parent-btn, .mobile-parent-style-link {
           width: 100%; display: flex; align-items: center; justify-content: space-between;
           background: none; border: none; 
           border-bottom: 1px solid rgba(255,255,255,0.08);
           padding: 1rem 0; 
-          color: #fff; 
-          /* AJUSTE SOLICITADO: Tamanho unificado (Pai e A Synapse) */
-          font-size: 0.95rem; 
-          font-weight: 500;
+          color: #fff !important; 
+          font-size: 0.95rem !important; /* Padronizado e Blindado */
+          font-weight: 500 !important;
           cursor: pointer; text-decoration: none; 
           font-family: 'Montserrat', sans-serif;
         }
@@ -348,7 +346,7 @@ export default function Navbar() {
         .chevron { opacity: 0.5; transition: transform 0.3s; }
         .chevron.rotate { transform: rotate(180deg); opacity: 1; }
 
-        /* FILHO / NIVEL 2 (Drilldown) */
+        /* FILHO / NIVEL 2 - USO DE !IMPORTANT PARA SOBRESCREVER GLOBALS */
         .mobile-sub-menu {
           list-style: none; padding: 0; margin: 0; overflow: hidden; max-height: 0;
           background: rgba(255,255,255,0.02);
@@ -358,14 +356,15 @@ export default function Navbar() {
 
         .mobile-sub-menu a {
           display: block; padding: 0.8rem 0 0.8rem 2.5rem;
-          /* AJUSTE SOLICITADO: Tamanho exato ao do pai */
-          font-size: 0.95rem !important; 
-          color: #aaaaaa; /* Mantendo cinza apenas para diferenciar que é clicável/item, mas o tamanho é igual */
-          text-decoration: none; font-weight: 400;
+          /* AQUI ESTÁ A SOLUÇÃO DE CONTORNO */
+          font-size: 0.85rem !important; /* Força tamanho menor que o pai */
+          color: #aaaaaa !important;     /* Força cor cinza */
+          text-decoration: none; font-weight: 400 !important;
           border-left: 2px solid transparent;
         }
+        
         .mobile-sub-menu a:hover {
-          color: #fff; border-left-color: var(--color-primary);
+          color: #fff !important; border-left-color: var(--color-primary);
           background: rgba(255,255,255,0.05);
         }
         
@@ -377,7 +376,7 @@ export default function Navbar() {
         /* ================================================================== */
         @media (max-width: 1024px) {
           .nav-menu { display: none; } 
-          .nav-hamburger { display: flex; } /* Mostra Hamburger */
+          .nav-hamburger { display: flex; }
           
           .nav-container { height: 70px; padding: 0 1.5rem; }
           .nav-logo-video { height: 100%; max-height: 50px; width: auto; } 
