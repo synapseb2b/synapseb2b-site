@@ -493,4 +493,4 @@ blockquote { font-style: italic; font-size: 1.1rem; }
   h1 { font-size: 2.5rem !important; }
   .pillar-grid-revolutionary, .case-grid { grid-template-columns: 1fr; }
   .footer-content { flex-direction: column; }
-}
+} 
