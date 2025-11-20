@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO MESTRA: CENTRALIZAÇÃO FORÇADA + EFEITO H1 GLOBAL */
+/* globals.css - VERSÃO MESTRA: CENTRALIZAÇÃO FORÇADA + EFEITO H1 E H2 GLOBAL */
 
 /* ==========================================================================
    1. CORE: VARIÁVEIS & FONTES
@@ -45,7 +45,7 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   font-variation-settings: "wght" 430;
-  /* FORÇA A CENTRALIZAÇÃO DE TODOS OS BLOCOS (Item 1) */
+  /* FORÇA A CENTRALIZAÇÃO DE TODOS OS BLOCOS */
   text-align: center; 
 }
 
@@ -75,7 +75,7 @@ h1, h2, h3,
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 1rem;
-  /* Garante que os títulos também sejam centralizados (Item 1) */
+  /* Garante que os títulos também sejam centralizados */
   text-align: center; 
 }
 
@@ -95,9 +95,9 @@ h3 {
   margin-bottom: 1rem; 
 }
 
-/* --- EFEITO ÁGUA SYNAPSE (Item 2: Aplicação Global em H1) --- */
-/* Aplica o efeito automaticamente em todos os H1 */
-h1, .hero-headline {
+/* --- EFEITO ÁGUA SYNAPSE (Aplicação Global em H1 E H2) --- */
+/* Aplica o efeito automaticamente em todos os H1, H2 e suas classes correspondentes */
+h1, h2, .hero-headline, .section-title {
   /* Estilos do efeito de água */
   background: linear-gradient(
     110deg, 
@@ -121,8 +121,8 @@ h1, .hero-headline {
   100% { background-position: 200% center; }
 }
 
-/* O .h1-water-effect continua existindo para override/uso específico, se necessário */
-.h1-water-effect { /* Sobrescrito com a mesma regra, mas garantindo especificidade */
+/* O .h1-water-effect continua existindo para uso específico, se necessário */
+.h1-water-effect {
   background: linear-gradient(
     110deg, 
     #ffffff 25%, 
@@ -145,7 +145,7 @@ p {
   color: var(--color-text-muted);
   margin-bottom: 1.5rem;
   max-width: 70ch; 
-  /* Centraliza textos de parágrafo (Item 1) */
+  /* Centraliza textos de parágrafo */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -156,7 +156,7 @@ p {
   max-width: 800px; 
   opacity: 0.9;
   margin-bottom: 3rem; 
-  text-align: center; /* Garante centralização */
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -168,7 +168,7 @@ p {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* Centraliza o conteúdo hero (Item 1) */
+  /* Centraliza o conteúdo hero */
   align-items: center; 
   justify-content: center;
   min-height: 90vh; 
@@ -201,7 +201,7 @@ p {
   max-width: 1380px;
   padding: 0 2rem;
   margin: 0 auto;
-  /* Centraliza o conteúdo hero (Item 1) */
+  /* Centraliza o conteúdo hero */
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -223,7 +223,8 @@ p {
   margin-top: 3rem;
   width: 100%;
   align-items: stretch; 
-  /* Centraliza os itens do grid (Item 1) */
+  /* Centraliza o grid em relação ao container e seus itens */
+  justify-content: center;
   justify-items: center; 
 }
 
@@ -245,7 +246,7 @@ blockquote {
   
   display: flex;
   flex-direction: column;
-  /* Centraliza o conteúdo dentro do card (Item 1) */
+  /* Centraliza o conteúdo dentro do card */
   align-items: center; 
   text-align: center;
   height: 100%;
@@ -280,7 +281,7 @@ ul {
   list-style: none; 
   padding: 0; 
   width: 100%;
-  /* Força a centralização da lista (Item 1) */
+  /* Força a centralização da lista */
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -290,7 +291,7 @@ li {
   color: var(--color-text-muted);
   display: flex;
   align-items: center;
-  /* Centraliza o item da lista (Item 1) */
+  /* Centraliza o item da lista */
   justify-content: center; 
   gap: 10px;
 }
@@ -308,6 +309,8 @@ li {
   transition: all 0.4s var(--ease-premium);
   background: transparent;
   border-bottom: 1px solid transparent;
+  /* Centraliza o Navbar no Viewport */
+  justify-content: center; 
 }
 
 .site-navbar.scrolled {
@@ -326,13 +329,23 @@ li {
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* Mantém justify-content: space-between para separar logo e menu */
+  justify-content: space-between; 
 }
 
 .nav-logo-link { display: flex; align-items: center; height: 100%; }
 .nav-logo-video { height: 40px; width: auto; object-fit: contain; }
 
 /* Links Desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Centraliza os links dentro do nav-menu */
+    justify-content: center; 
+}
 .nav-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.85rem;
@@ -344,6 +357,7 @@ li {
   position: relative;
   transition: color 0.3s;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 .nav-link:hover, .nav-link.active { color: #fff; }
 
@@ -388,7 +402,7 @@ li {
   padding: 6rem 0 2rem;
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  /* Centraliza o footer como um todo (Item 1) */
+  /* Centraliza o footer como um todo */
   text-align: center; 
 }
 
@@ -397,12 +411,12 @@ li {
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; 
   gap: 2rem;
   margin-bottom: 4rem;
-  /* Centraliza o grid e seus itens (Item 1) */
+  /* Centraliza o grid e seus itens */
   justify-content: center;
   justify-items: center; 
 }
 
-.footer-brand { /* Centraliza o conteúdo da coluna de marca (Item 1) */
+.footer-brand { /* Centraliza o conteúdo da coluna de marca */
     text-align: center;
     align-items: center;
     display: flex;
@@ -410,6 +424,10 @@ li {
 }
 .footer-brand h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
 .footer-brand p { opacity: 0.7; font-size: 0.9rem; line-height: 1.6; }
+.footer-brand > div { /* Centraliza os ícones sociais/contato */
+    justify-content: center; 
+    width: 100%; 
+}
 
 .footer-col h4 {
   color: #fff;
@@ -428,7 +446,6 @@ li {
 }
 .footer-links a:hover { 
   color: var(--color-primary); 
-  padding-left: 0; /* Remove microinteração lateral */
 }
 
 .footer-bottom {
@@ -439,11 +456,15 @@ li {
   align-items: center;
   font-size: 0.85rem;
   opacity: 0.5;
-  /* Garante que o bottom bar (direitos autorais) seja centralizado em mobile */
+  /* Garante que o bottom bar (direitos autorais) seja centralizado */
   flex-direction: column; 
   gap: 10px;
 }
-.footer-bottom > div { display: flex; gap: 1rem; }
+.footer-bottom > div { 
+    display: flex; 
+    gap: 1.5rem; 
+    justify-content: center; /* Centraliza os links legais */
+}
 
 /* ==========================================================================
    7. CTAs & ELEMENTOS GLOBAIS
@@ -468,7 +489,7 @@ li {
   position: relative;
   overflow: hidden;
   transition: all 0.3s var(--ease-premium);
-  /* Centraliza botões em blocos (Item 1) */
+  /* Centraliza botões em blocos */
   margin: 2rem auto 0 auto; 
 }
 
@@ -546,7 +567,12 @@ section::after {
 @media (max-width: 1024px) {
   .container { max-width: 100%; padding: 0 1.5rem; }
   .nav-menu { display: none; } 
-  .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 3rem; 
+    /* Garante que o grid de coluna única centralize */
+    justify-items: center; 
+  }
   
   .hero-section { padding-top: 6rem; }
   
