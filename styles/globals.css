@@ -16,8 +16,8 @@
   --color-heading: #ffffff;
   
   /* Estética dos Cards (A Regra de Ouro - Premium) */
-  --card-bg-default: rgba(0, 20, 18, 0.22); /* Padronização de Transparência Premium */
-  --card-bg-hover: rgba(0, 20, 18, 0.38);   /* Padronização de Transparência Premium */
+  --card-bg-default: rgba(0, 20, 18, 0.22); /* Transparência Premium Padronizada */
+  --card-bg-hover: rgba(0, 20, 18, 0.38);   /* Transparência Premium Padronizada */
   --card-border-default: rgba(255, 255, 255, 0.08);
   --card-border-hover: #009684;
   
@@ -45,7 +45,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  font-variation-settings: "wght" 430; /* Refinamento Tipográfico Premium */
+  font-variation-settings: "wght" 430; /* Tipografia Premium */
   text-align: left; /* Margens comprimidas - D */
 }
 
@@ -63,7 +63,7 @@ h1, h2, h3,
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  font-variation-settings: "wght" 780; /* Refinamento Tipográfico Premium */
+  font-variation-settings: "wght" 780; /* Tipografia Premium */
 }
 
 h1, .hero-headline { 
@@ -97,10 +97,13 @@ h3, .case-card-title, .pillar-card-title {
   100% { background-position: 0% 50%; filter: drop-shadow(0 0 0 rgba(0,150,132,0.0)); }
 }
 
-p { 
+p, li { 
+  font-variation-settings: "wght" 430; /* Tipografia Premium */
+}
+
+p {
   font-size: 1rem; 
   color: var(--color-text-muted);
-  font-variation-settings: "wght" 430; /* Refinamento Tipográfico Premium */
 }
 
 .lead-text { 
@@ -170,7 +173,7 @@ blockquote,
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border-default);
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 2.8rem 2.4rem; /* Ajuste Cards E */
   box-shadow: var(--shadow-low); /* Sistema de Sombras Premium */
   
   /* Layout */
@@ -180,11 +183,14 @@ blockquote,
   justify-content: flex-start;
   text-align: center;
   height: 100%;
+  min-height: 340px; /* Cards quando muitos E */
   
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
 }
+
+.glass-card-premium h3 { min-height: 70px; display: block; }
 
 /* Microinterações Premium em Cards */
 .glass-card-premium:hover,
@@ -195,9 +201,9 @@ blockquote,
 .solution-card-revolutionary:hover,
 blockquote:hover {
   transform: translateY(-6px) scale(1.015);
-  background: var(--card-bg-hover);
+  background: var(--card-bg-hover); /* Transparência Premium */
   border-color: var(--card-border-hover);
-  box-shadow: var(--shadow-high);
+  box-shadow: var(--shadow-high); /* Shadow High */
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
               box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1),
               background 0.4s ease,
@@ -205,15 +211,26 @@ blockquote:hover {
   will-change: transform, box-shadow;
 }
 
-/* Cards quando muitos - E */
-.glass-card-premium {
-  min-height: 340px;
-  padding: 2.8rem 2.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+/* Borda Premium Inteligente */
+.card-premium-border {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
 }
-.glass-card-premium h3 { min-height: 70px; display: block; }
+
+.card-premium-border:hover {
+  border-color: rgba(0,150,132,0.75);
+}
+
+/* Glow Premium Dinâmico */
+.premium-glow {
+  animation: premiumGlow 4s ease-in-out infinite;
+}
+
+@keyframes premiumGlow {
+  0% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); }
+  50% { filter: drop-shadow(0 0 12px rgba(56,197,177,0.35)); }
+  100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); }
+}
 
 /* Ícones Centralizados & Glow Dinâmico */
 .pillar-icon-wrapper, .info-card svg, .case-card svg, .card-icon {
@@ -245,7 +262,6 @@ li {
   gap: 10px;
   width: 100%;
   text-align: center;
-  font-variation-settings: "wght" 430; /* Refinamento Tipográfico Premium */
 }
 
 /* ==========================================================================
@@ -257,6 +273,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Espaçamento Premium */
+.section-padding-premium {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
 section::after {
@@ -348,7 +370,7 @@ section::after {
   text-align: center;
 }
 
-/* A. Navbar - Modernização */
+/* A. Navbar — Modernização Desktop & Mobile */
 .site-navbar {
   height: 72px;
   background: rgba(0,20,18,0.45);
@@ -389,6 +411,7 @@ section::after {
   opacity: 0.95;
 }
 .site-navbar .nav-link:hover::after { transform: scaleX(1); }
+
 .site-navbar.mobile {
   height: 60px;
   padding: 0 1rem;
@@ -411,7 +434,7 @@ section::after {
   transition: opacity 0.36s var(--ease-premium);
 }
 
-/* B. Footer - Modernização */
+/* B. Footer — Modernização Desktop & Mobile */
 .site-footer {
   background: #020B0A;
   border-top: 1px solid rgba(255,255,255,0.04);
@@ -437,17 +460,6 @@ section::after {
    8. ANIMAÇÕES E EFEITOS PREMIUM
    ========================================================================== */
 
-/* Premium Glow Animation */
-@keyframes premiumGlow {
-  0% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); }
-  50% { filter: drop-shadow(0 0 12px rgba(56,197,177,0.35)); }
-  100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); }
-}
-
-.premium-glow {
-  animation: premiumGlow 4s ease-in-out infinite;
-}
-
 /* Animação Reveal-Up Suavizada */
 .reveal-up {
   opacity: 0;
@@ -458,22 +470,6 @@ section::after {
 .reveal-up.in-view {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Borda Premium Inteligente */
-.card-premium-border {
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 18px;
-}
-
-.card-premium-border:hover {
-  border-color: rgba(0,150,132,0.75);
-}
-
-/* Espaçamento Premium */
-.section-padding-premium {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
 }
 
 /* ==========================================================================
