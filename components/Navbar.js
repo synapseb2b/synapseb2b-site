@@ -1,5 +1,5 @@
 // components/Navbar.js
-// AJUSTES FINAIS: Altura Compacta Desktop + Padronização Total Mobile + Hamburger Fix
+// AJUSTES FINAIS: Altura Desktop 60px + Redução de Fontes Mobile (Sub-menus e A Synapse)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -188,7 +188,7 @@ export default function Navbar() {
                 </ul>
             </li>
 
-            {/* Link Simples - A SYNAPSE (Padronizado com o Parent Btn) */}
+            {/* Link Simples - A SYNAPSE */}
             <li className="mobile-single-link">
                 <Link href="/a-engenharia" onClick={handleLinkClick} className="mobile-parent-style-link">
                   <div className="label-with-icon"><Building size={18} /><span>A Synapse</span></div>
@@ -223,14 +223,15 @@ export default function Navbar() {
         .nav-container {
           max-width: 1200px; margin: 0 auto; padding: 0.2rem 2rem;
           display: flex; align-items: center; justify-content: space-between;
-          height: 65px; /* AJUSTE: Altura reduzida no Desktop para abraçar o vídeo */
+          /* AJUSTE: Altura reduzida para 60px para coincidir com o vídeo */
+          height: 60px; 
         }
 
         /* LOGO VIDEO */
         .nav-logo-link { display: flex; align-items: center; z-index: 10001; height: 100%; }
         .nav-logo-video {
           width: auto; /* Largura auto para respeitar a altura */
-          height: 100%; /* Ocupa a altura do container (65px) */
+          height: 100%; /* Ocupa a altura do container (60px) */
           max-height: 60px; /* Trava de segurança */
           object-fit: contain;
         }
@@ -335,10 +336,15 @@ export default function Navbar() {
           border-bottom: 1px solid rgba(255,255,255,0.08);
           padding: 1rem 0; 
           color: #fff; 
-          font-size: 0.95rem; /* AJUSTE: Tamanho Elegante */
+          font-size: 0.95rem; /* Tamanho padrão para os acordeões principais */
           font-weight: 500;
           cursor: pointer; text-decoration: none; 
           font-family: 'Montserrat', sans-serif;
+        }
+
+        /* AJUSTE: A Synapse menor que os acordeões */
+        .mobile-single-link .mobile-parent-style-link {
+          font-size: 0.85rem; 
         }
 
         .label-with-icon { display: flex; align-items: center; gap: 0.8rem; }
@@ -356,7 +362,7 @@ export default function Navbar() {
 
         .mobile-sub-menu a {
           display: block; padding: 0.8rem 0 0.8rem 2.5rem;
-          font-size: 0.85rem; /* AJUSTE: Menor que o pai */
+          font-size: 0.75rem; /* AJUSTE: Reduzido de 0.85rem para 0.75rem */
           color: #aaaaaa; /* Cinza para hierarquia */
           text-decoration: none; font-weight: 400;
           border-left: 2px solid transparent;
