@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO MESTRA: TODAS AS FUNÇÕES RESTAURADAS + DESIGN ULTRA-MODERNO */
+/* globals.css - VERSÃO MESTRA: CENTRALIZAÇÃO FORÇADA + EFEITO H1 GLOBAL */
 
 /* ==========================================================================
    1. CORE: VARIÁVEIS & FONTES
@@ -27,10 +27,9 @@
   --shadow-high: 0 24px 50px -10px rgba(0, 150, 132, 0.22);
 
   /* --- MOTION DESIGN (EASING PREMIUM) --- */
-  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1); /* Movimento extremamente fluido */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1); 
 
   /* --- TYPOGRAPHY SCALE (REDUZIDA & EQUILIBRADA) --- */
-  /* H1 reduzido de 4.5rem para 3rem max para não "gritar" */
   --font-h1: clamp(2rem, 3.2vw, 3rem);
   --font-h2: clamp(1.75rem, 2.5vw, 2.5rem);
   --font-h3: clamp(1.25rem, 1.5vw, 1.5rem);
@@ -46,23 +45,23 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   font-variation-settings: "wght" 430;
-  /* ALINHAMENTO MODERNO: Esquerda é o novo padrão para leitura B2B */
-  text-align: left; 
+  /* FORÇA A CENTRALIZAÇÃO DE TODOS OS BLOCOS (Item 1) */
+  text-align: center; 
 }
 
 /* --- CONTAINER WIDE (1380px) --- */
-/* Dá mais respiro para o conteúdo não ficar espremido */
 .container { 
   max-width: 1380px; 
   margin: 0 auto; 
   padding: 0 2rem;
   width: 100%;
+  /* CENTRALIZAÇÃO DE CONTEÚDO DENTRO DO CONTAINER */
   display: flex;
   flex-direction: column;
-  /* Em mobile/tablet pode centralizar se necessário, mas padrão desktop é block */
+  align-items: center; 
 }
 
-/* Centralizador utilitário para seções específicas */
+/* Centralizador utilitário */
 .centered { text-align: center; margin-left: auto; margin-right: auto; }
 
 /* ==========================================================================
@@ -76,6 +75,8 @@ h1, h2, h3,
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 1rem;
+  /* Garante que os títulos também sejam centralizados (Item 1) */
+  text-align: center; 
 }
 
 h1, .hero-headline { 
@@ -94,23 +95,34 @@ h3 {
   margin-bottom: 1rem; 
 }
 
-p { 
-  font-size: 1.05rem; 
-  color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-  max-width: 70ch; /* Leitura confortável */
+/* --- EFEITO ÁGUA SYNAPSE (Item 2: Aplicação Global em H1) --- */
+/* Aplica o efeito automaticamente em todos os H1 */
+h1, .hero-headline {
+  /* Estilos do efeito de água */
+  background: linear-gradient(
+    110deg, 
+    #ffffff 25%, 
+    var(--color-primary) 45%, 
+    var(--color-accent) 55%, 
+    var(--color-primary) 65%, 
+    #ffffff 85%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waterFlow 6s linear infinite;
+  display: inline-block; /* Necessário para background-clip funcionar */
+  text-align: center;
 }
 
-.lead-text { 
-  font-size: 1.2rem; 
-  max-width: 800px; 
-  opacity: 0.9;
-  margin-bottom: 3rem; 
+@keyframes waterFlow {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
-/* --- EFEITO ÁGUA SYNAPSE (RESTAURADO) --- */
-/* Use a classe .h1-water-effect no seu H1 para ativar */
-.h1-water-effect {
+/* O .h1-water-effect continua existindo para override/uso específico, se necessário */
+.h1-water-effect { /* Sobrescrito com a mesma regra, mas garantindo especificidade */
   background: linear-gradient(
     110deg, 
     #ffffff 25%, 
@@ -127,13 +139,28 @@ p {
   display: inline-block;
 }
 
-@keyframes waterFlow {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+
+p { 
+  font-size: 1.05rem; 
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 70ch; 
+  /* Centraliza textos de parágrafo (Item 1) */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.lead-text { 
+  font-size: 1.2rem; 
+  max-width: 800px; 
+  opacity: 0.9;
+  margin-bottom: 3rem; 
+  text-align: center; /* Garante centralização */
 }
 
 /* ==========================================================================
-   3. HERO SECTION (RESTAURADA)
+   3. HERO SECTION (CENTRALIZAÇÃO RESTAURADA)
    ========================================================================== */
 .hero-section {
   position: relative;
@@ -141,7 +168,8 @@ p {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinhamento à esquerda moderno */
+  /* Centraliza o conteúdo hero (Item 1) */
+  align-items: center; 
   justify-content: center;
   min-height: 90vh; 
   padding-top: 8rem;
@@ -153,16 +181,15 @@ p {
   padding-top: 120px;
 }
 
-/* Video Background */
+/* Video Background e Overlay (Estrutura) */
 .hero-video-background {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
 }
 .hero-video {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.4; /* Opacidade ajustada */
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.4; 
 }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  /* Gradiente mais rico para o preto */
   background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%),
               linear-gradient(to bottom, rgba(0,0,0,0.3), #000000);
   z-index: 1;
@@ -174,24 +201,30 @@ p {
   max-width: 1380px;
   padding: 0 2rem;
   margin: 0 auto;
+  /* Centraliza o conteúdo hero (Item 1) */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
 }
 
 /* ==========================================================================
    4. CARDS UNIVERSAL & GRIDS INTELIGENTES
    ========================================================================== */
-/* O Grid "Inteligente" que evita buracos */
+/* Grid */
 .pillar-grid-revolutionary, 
 .case-grid, 
 .info-grid,
 .solutions-grid-revolutionary,
 .truths-grid-revolutionary {
   display: grid;
-  /* minmax de 280px permite 4 colunas em telas grandes e flui melhor */
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 3rem;
   width: 100%;
-  align-items: stretch; /* Garante altura igual */
+  align-items: stretch; 
+  /* Centraliza os itens do grid (Item 1) */
+  justify-items: center; 
 }
 
 /* Estilo Unificado dos Cards */
@@ -212,8 +245,9 @@ blockquote {
   
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Conteúdo alinhado à esquerda */
-  text-align: left;
+  /* Centraliza o conteúdo dentro do card (Item 1) */
+  align-items: center; 
+  text-align: center;
   height: 100%;
   
   transition: all 0.4s var(--ease-premium);
@@ -222,7 +256,7 @@ blockquote {
   box-shadow: var(--shadow-low);
 }
 
-/* Hover Premium */
+/* Hover Premium (Microinterações) */
 .glass-card-premium:hover,
 .info-card:hover,
 .case-card:hover,
@@ -233,7 +267,7 @@ blockquote:hover {
   box-shadow: var(--shadow-high);
 }
 
-/* Ícones e SVGs nos Cards */
+/* Ícones e SVGs nos Cards (Centralização) */
 .pillar-icon-wrapper, .info-card svg, .case-card svg, .card-icon {
   color: var(--color-accent);
   margin-bottom: 1.5rem !important;
@@ -241,17 +275,23 @@ blockquote:hover {
   filter: drop-shadow(0 0 8px rgba(56, 197, 177, 0.3));
 }
 
-/* Listas Internas (Restauradas) */
+/* Listas Internas (Centralização) */
 ul { 
   list-style: none; 
   padding: 0; 
   width: 100%;
+  /* Força a centralização da lista (Item 1) */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 li { 
   margin-bottom: 0.5rem; 
   color: var(--color-text-muted);
   display: flex;
   align-items: center;
+  /* Centraliza o item da lista (Item 1) */
+  justify-content: center; 
   gap: 10px;
 }
 
@@ -270,7 +310,6 @@ li {
   border-bottom: 1px solid transparent;
 }
 
-/* Estado Scrolled: Vidro Fosco Escuro */
 .site-navbar.scrolled {
   height: 70px;
   background: rgba(5, 5, 5, 0.85);
@@ -282,7 +321,7 @@ li {
 
 .nav-container {
   width: 100%;
-  max-width: 1440px; /* Navbar expandida */
+  max-width: 1440px; 
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -349,16 +388,26 @@ li {
   padding: 6rem 0 2rem;
   font-size: 0.95rem;
   color: var(--color-text-muted);
+  /* Centraliza o footer como um todo (Item 1) */
+  text-align: center; 
 }
 
 .footer-grid {
   display: grid;
-  /* Layout Assimétrico: Coluna 1 Larga, outras iguais */
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; 
   gap: 2rem;
   margin-bottom: 4rem;
+  /* Centraliza o grid e seus itens (Item 1) */
+  justify-content: center;
+  justify-items: center; 
 }
 
+.footer-brand { /* Centraliza o conteúdo da coluna de marca (Item 1) */
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
 .footer-brand h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
 .footer-brand p { opacity: 0.7; font-size: 0.9rem; line-height: 1.6; }
 
@@ -371,7 +420,7 @@ li {
   opacity: 0.8;
 }
 
-.footer-links { display: flex; flex-direction: column; gap: 0.8rem; }
+.footer-links { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
 .footer-links a {
   color: var(--color-text-muted);
   text-decoration: none;
@@ -379,7 +428,7 @@ li {
 }
 .footer-links a:hover { 
   color: var(--color-primary); 
-  padding-left: 4px; /* Microinteração */
+  padding-left: 0; /* Remove microinteração lateral */
 }
 
 .footer-bottom {
@@ -390,7 +439,11 @@ li {
   align-items: center;
   font-size: 0.85rem;
   opacity: 0.5;
+  /* Garante que o bottom bar (direitos autorais) seja centralizado em mobile */
+  flex-direction: column; 
+  gap: 10px;
 }
+.footer-bottom > div { display: flex; gap: 1rem; }
 
 /* ==========================================================================
    7. CTAs & ELEMENTOS GLOBAIS
@@ -415,7 +468,8 @@ li {
   position: relative;
   overflow: hidden;
   transition: all 0.3s var(--ease-premium);
-  margin-top: 2rem;
+  /* Centraliza botões em blocos (Item 1) */
+  margin: 2rem auto 0 auto; 
 }
 
 .btn:hover, .btn-primary:hover {
@@ -429,7 +483,12 @@ li {
    ========================================================================== */
 section {
   position: relative;
-  padding: 8rem 0; /* Espaçamento vertical generoso */
+  padding: 8rem 0; 
+  /* Garante centralização vertical de seções */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  width: 100%;
 }
 
 /* Linha de conexão (Synapse) no fundo das seções */
@@ -486,12 +545,10 @@ section::after {
 /* Media Queries de Correção */
 @media (max-width: 1024px) {
   .container { max-width: 100%; padding: 0 1.5rem; }
-  .nav-menu { display: none; } /* Esconde menu desktop */
+  .nav-menu { display: none; } 
   .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
   
-  .hero-section { padding-top: 6rem; align-items: center; text-align: center; }
-  .hero-content { align-items: center; }
-  .glass-card-premium { align-items: center; text-align: center; }
+  .hero-section { padding-top: 6rem; }
   
   h1 { font-size: 2.4rem !important; }
 }
