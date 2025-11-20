@@ -1,5 +1,5 @@
 // components/Navbar.js
-// VERSÃO CORRIGIDA: Design "Black Premium", Logo Ajustada, Fontes 0.85rem e Dropdowns Limpos.
+// AJUSTES FINAIS: Altura Compacta Desktop + Padronização Total Mobile + Hamburger Fix
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  // Estados Mobile
+  // Estados para os acordeões do menu mobile
   const [isIntelOpen, setIsIntelOpen] = useState(false);
   const [isAtivosOpen, setIsAtivosOpen] = useState(false);
   const [isVerticaisOpen, setIsVerticaisOpen] = useState(false);
@@ -42,6 +42,7 @@ export default function Navbar() {
     setIsCasesOpen(false);
   };
 
+  // Verificação de rota ativa
   const isIntelActive = router.pathname.includes('/inteligencia-e-estrategia');
   const isAtivosActive = router.pathname.includes('/ativos-digitais');
   const isVerticaisActive = router.pathname.includes('/solucoes-verticais');
@@ -53,16 +54,15 @@ export default function Navbar() {
       <nav className={`nav ${hasScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-container">
           
-          {/* LOGO (Tamanho Controlado) */}
+          {/* --- LOGO (VÍDEO) --- */}
           <Link href="/" className="nav-logo-link" onClick={handleLinkClick}>
             <video autoPlay loop muted playsInline className="nav-logo-video">
               <source src="/video/Logo_Animada_SynapseB2B.mp4" type="video/mp4" />
             </video>
           </Link>
 
-          {/* MENU DESKTOP */}
+          {/* --- MENU DESKTOP --- */}
           <ul className="nav-menu">
-            
             {/* 1. Inteligência */}
             <li className="dropdown-container">
               <div className={`nav-link ${isIntelActive ? 'active' : ''}`}>
@@ -122,16 +122,16 @@ export default function Navbar() {
             </li>
           </ul>
 
-          {/* MENU HAMBURGER (Visível no Mobile) */}
+          {/* --- HAMBURGER (Visível apenas no Mobile) --- */}
           <button className={`nav-hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Abrir menu">
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
+            <span className="bar top"></span>
+            <span className="bar middle"></span>
+            <span className="bar bottom"></span>
           </button>
         </div>
       </nav>
 
-      {/* OVERLAY MOBILE */}
+      {/* --- MOBILE OVERLAY --- */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-scroll-container">
             <ul className="mobile-menu-links">
@@ -188,8 +188,9 @@ export default function Navbar() {
                 </ul>
             </li>
 
+            {/* Link Simples - A SYNAPSE (Padronizado com o Parent Btn) */}
             <li className="mobile-single-link">
-                <Link href="/a-engenharia" onClick={handleLinkClick}>
+                <Link href="/a-engenharia" onClick={handleLinkClick} className="mobile-parent-style-link">
                   <div className="label-with-icon"><Building size={18} /><span>A Synapse</span></div>
                 </Link>
             </li>
@@ -205,148 +206,116 @@ export default function Navbar() {
 
       <style jsx>{`
         /* ================================================================== */
-        /* NAVBAR BASE & LOGO                                                 */
+        /* NAVBAR BASE                                                        */
         /* ================================================================== */
         .nav {
           position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
-          transition: all 0.4s ease;
-          background: #000000; /* Fundo PRETO Puro */
+          transition: background 0.4s ease, border 0.4s ease;
+          background: #000000;
         }
         
-        /* Scrolled State (Leve transparência para efeito moderno) */
         .nav.scrolled, .nav.menu-open {
-          background: rgba(0, 0, 0, 0.9);
-          backdrop-filter: blur(12px);
+          background: rgba(0, 0, 0, 0.92);
+          backdrop-filter: blur(10px);
           border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .nav-container {
-          max-width: 1200px; margin: 0 auto; padding: 0.5rem 2rem;
+          max-width: 1200px; margin: 0 auto; padding: 0.2rem 2rem;
           display: flex; align-items: center; justify-content: space-between;
-          height: 80px;
+          height: 65px; /* AJUSTE: Altura reduzida no Desktop para abraçar o vídeo */
         }
 
-        /* LOGO ADJUSTMENTS */
-        .nav-logo-link { display: flex; align-items: center; z-index: 10001; }
-        
-        /* Desktop Logo Size */
+        /* LOGO VIDEO */
+        .nav-logo-link { display: flex; align-items: center; z-index: 10001; height: 100%; }
         .nav-logo-video {
-          width: 120px; /* Máximo 130px conforme pedido, ajustado para 120px para elegância */
-          height: auto;
+          width: auto; /* Largura auto para respeitar a altura */
+          height: 100%; /* Ocupa a altura do container (65px) */
+          max-height: 60px; /* Trava de segurança */
           object-fit: contain;
         }
 
         /* ================================================================== */
-        /* DESKTOP MENU (Clean & Organized)                                   */
+        /* MENU DESKTOP                                                       */
         /* ================================================================== */
         .nav-menu {
           display: flex; align-items: center; gap: 2rem; list-style: none;
         }
 
-        /* Links Principais */
         .nav-link {
           display: flex; align-items: center; gap: 0.3rem;
           font-family: 'Montserrat', sans-serif; 
-          font-size: 0.85rem; /* Fonte Reduzida */
-          font-weight: 500; 
-          color: rgba(255,255,255,0.8); 
-          text-decoration: none;
-          cursor: pointer; position: relative; transition: color 0.2s;
-          letter-spacing: normal; /* Sem tracking-wide */
+          font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.8); 
+          text-decoration: none; cursor: pointer; transition: color 0.2s;
         }
-        .nav-link:hover, .nav-link.active {
-          color: #fff;
-        }
+        .nav-link:hover, .nav-link.active { color: #fff; }
 
         .chevron-desktop { transition: transform 0.2s; opacity: 0.5; }
         .dropdown-container:hover .chevron-desktop { transform: rotate(180deg); opacity: 1; }
 
-        /* DROPDOWNS (Fix Purple Issue & Disorganization) */
+        /* Dropdowns */
         .dropdown-container { position: relative; height: 100%; display: flex; align-items: center; }
-        
         .dropdown-menu {
-          position: absolute; 
-          top: 100%; 
-          left: 50%; 
-          transform: translateX(-50%) translateY(10px);
-          min-width: 220px;
-          background: #050505; /* Fundo Preto Sólido */
-          border: 1px solid rgba(255,255,255,0.1); /* Borda Sutil */
-          border-radius: 8px;
-          padding: 0.5rem 0;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-          opacity: 0; visibility: hidden;
-          transition: all 0.2s ease;
-          display: flex; flex-direction: column; /* Garante lista vertical */
+          position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+          min-width: 220px; background: #050505; 
+          border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+          padding: 0.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+          opacity: 0; visibility: hidden; transition: all 0.2s ease;
+          display: flex; flex-direction: column;
         }
-
         .dropdown-container:hover .dropdown-menu {
           opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
         }
-        
-        /* Itens do Dropdown (Forçando cores para evitar roxo) */
         .dropdown-menu :global(a.dropdown-link) {
-          display: block; 
-          padding: 0.7rem 1.2rem; 
-          color: #bbbbbb !important; /* Cinza claro forçado */
-          text-decoration: none !important; 
-          font-size: 0.85rem; 
-          transition: all 0.2s;
-          text-align: left;
+          display: block; padding: 0.7rem 1.2rem; 
+          color: #bbbbbb !important; text-decoration: none !important; 
+          font-size: 0.85rem; transition: all 0.2s; text-align: left;
           border-left: 2px solid transparent;
         }
         .dropdown-menu :global(a.dropdown-link:hover) {
-          background: rgba(255,255,255,0.05); 
-          color: #ffffff !important;
+          background: rgba(255,255,255,0.05); color: #ffffff !important;
           border-left-color: var(--color-primary);
         }
 
-        /* CTA Button */
+        /* CTA */
         .btn-nav-cta {
-          padding: 0.5rem 1.2rem; 
-          background: transparent;
-          border: 1px solid rgba(255,255,255,0.3); 
-          border-radius: 4px;
-          color: #fff; 
-          font-size: 0.8rem; 
-          font-weight: 600; 
-          text-decoration: none;
-          transition: all 0.3s ease;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
+          padding: 0.5rem 1.2rem; background: transparent;
+          border: 1px solid rgba(255,255,255,0.3); border-radius: 4px;
+          color: #fff; font-size: 0.8rem; font-weight: 600; 
+          text-decoration: none; transition: all 0.3s ease; text-transform: uppercase;
         }
-        .btn-nav-cta:hover {
-          border-color: var(--color-primary);
-          color: var(--color-primary);
-        }
+        .btn-nav-cta:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
         /* ================================================================== */
-        /* HAMBURGER MENU (Sanduíche)                                         */
+        /* MENU HAMBURGER (FIXED)                                             */
         /* ================================================================== */
         .nav-hamburger {
           display: none; /* Desktop hidden */
-          flex-direction: column; gap: 5px; cursor: pointer;
-          background: none; border: none; padding: 0.5rem; z-index: 10001;
+          flex-direction: column; justify-content: space-between;
+          width: 28px; height: 20px; /* Tamanho explícito do container */
+          cursor: pointer; background: none; border: none; padding: 0; z-index: 10002;
         }
-        /* Barras Brancas Visíveis */
+        
+        /* Barras Brancas Forçadas */
         .nav-hamburger .bar {
-          display: block; width: 24px; height: 2px; 
-          background-color: #ffffff !important; /* Forçado Branco */
+          display: block; width: 100%; height: 2px; 
+          background-color: #ffffff !important;
           transition: all 0.3s ease;
+          border-radius: 2px;
         }
-        /* X Animation */
-        .nav-hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .nav-hamburger.active .bar:nth-child(2) { opacity: 0; }
-        .nav-hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Animação X */
+        .nav-hamburger.active .top { transform: translateY(9px) rotate(45deg); }
+        .nav-hamburger.active .middle { opacity: 0; }
+        .nav-hamburger.active .bottom { transform: translateY(-9px) rotate(-45deg); }
+
 
         /* ================================================================== */
-        /* MOBILE OVERLAY & MENU                                              */
+        /* MOBILE OVERLAY & ESTILOS DE FONTE                                  */
         /* ================================================================== */
         .mobile-menu-overlay {
           position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-          background: #000000; /* Preto Absoluto */
-          z-index: 10000; 
-          padding-top: 90px;
+          background: #000000; z-index: 10000; padding-top: 85px; /* Espaço do header */
           opacity: 0; visibility: hidden; pointer-events: none;
           transition: opacity 0.3s ease;
         }
@@ -359,14 +328,14 @@ export default function Navbar() {
 
         .mobile-menu-links { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
 
-        /* Mobile Buttons (Uniform Size) */
-        .mobile-parent-btn, .mobile-single-link a {
+        /* PAI / NIVEL 1 (Padronizado) */
+        .mobile-parent-btn, .mobile-parent-style-link {
           width: 100%; display: flex; align-items: center; justify-content: space-between;
           background: none; border: none; 
           border-bottom: 1px solid rgba(255,255,255,0.08);
           padding: 1rem 0; 
           color: #fff; 
-          font-size: 1rem; /* Tamanho Uniforme */
+          font-size: 0.95rem; /* AJUSTE: Tamanho Elegante */
           font-weight: 500;
           cursor: pointer; text-decoration: none; 
           font-family: 'Montserrat', sans-serif;
@@ -377,7 +346,7 @@ export default function Navbar() {
         .chevron { opacity: 0.5; transition: transform 0.3s; }
         .chevron.rotate { transform: rotate(180deg); opacity: 1; }
 
-        /* Mobile Submenu */
+        /* FILHO / NIVEL 2 (Drilldown) - Menor e mais leve */
         .mobile-sub-menu {
           list-style: none; padding: 0; margin: 0; overflow: hidden; max-height: 0;
           background: rgba(255,255,255,0.02);
@@ -387,8 +356,9 @@ export default function Navbar() {
 
         .mobile-sub-menu a {
           display: block; padding: 0.8rem 0 0.8rem 2.5rem;
-          font-size: 0.9rem; /* Ligeiramente menor que o pai */
-          color: #aaaaaa; text-decoration: none;
+          font-size: 0.85rem; /* AJUSTE: Menor que o pai */
+          color: #aaaaaa; /* Cinza para hierarquia */
+          text-decoration: none; font-weight: 400;
           border-left: 2px solid transparent;
         }
         .mobile-sub-menu a:hover {
@@ -407,9 +377,9 @@ export default function Navbar() {
           .nav-hamburger { display: flex; } /* Mostra Hamburger */
           
           .nav-container { height: 70px; padding: 0 1.5rem; }
+          .nav-logo-video { height: 100%; max-height: 50px; width: auto; } 
           
-          /* Logo Mobile (Abaixo de 100px) */
-          .nav-logo-video { width: 90px; } 
+          .mobile-menu-overlay { padding-top: 80px; }
         }
       `}</style>
     </>
