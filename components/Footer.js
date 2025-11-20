@@ -1,5 +1,5 @@
 // components/Footer.js
-// ESTRUTURA LIMPA: 3 Colunas de Drill Down à Direita
+// ATUALIZADO: Inclusão da coluna "Cases de Sucesso"
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -33,7 +33,7 @@ export default function Footer() {
           
           <div className="footer-main-layout">
             
-            {/* --- LADO ESQUERDO: Mantido Intacto --- */}
+            {/* --- LADO ESQUERDO --- */}
             <div className="footer-left-col">
               <div className="brand-identity">
                 <h3 className="footer-logo-text">Synapse B2B</h3>
@@ -62,7 +62,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* --- LADO DIREITO: 3 Colunas Limpas --- */}
+            {/* --- LADO DIREITO: 4 Colunas --- */}
             <div className="footer-right-col">
               
               {/* Coluna 1: Inteligência */}
@@ -95,10 +95,20 @@ export default function Footer() {
                 </ul>
               </div>
 
+              {/* Coluna 4: Cases (NOVO) */}
+              <div className="nav-column">
+                <h5 className="nav-title">Cases de Sucesso</h5>
+                <ul className="nav-list">
+                  <li><Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link></li>
+                  <li><Link href="/cases/versao-holistica">Versão Holística</Link></li>
+                  <li><Link href="/cases/aorkia">AORKIA</Link></li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
-          {/* --- RODAPÉ LEGAL: Mantido Intacto --- */}
+          {/* --- RODAPÉ LEGAL --- */}
           <div className="footer-legal-bar">
             <div className="legal-top-row">
                 <div className="legal-left">
@@ -161,11 +171,11 @@ export default function Footer() {
         }
         .social-btn:hover { background: var(--color-primary); color: #000; transform: translateY(-3px); }
 
-        /* DIREITA (GRID LIMPO) */
+        /* DIREITA (GRID DE 4 COLUNAS) */
         .footer-right-col {
           flex: 1.5;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Colunas responsivas */
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsivo para 4 colunas */
           gap: 3rem;
         }
 
@@ -178,7 +188,7 @@ export default function Footer() {
           letter-spacing: 1px;
           margin-bottom: 1.5rem;
           opacity: 0.6;
-          border-bottom: 1px solid rgba(255,255,255,0.1); /* Detalhe visual sutil */
+          border-bottom: 1px solid rgba(255,255,255,0.1);
           padding-bottom: 0.5rem;
           display: inline-block;
         }
@@ -214,7 +224,7 @@ export default function Footer() {
           .footer-main-layout { flex-direction: column; gap: 3rem; }
           .footer-left-col { align-items: center; text-align: center; max-width: 100%; }
           .footer-right-col { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
-          .nav-title { border-bottom: none; } /* Remove borda no mobile para limpar */
+          .nav-title { border-bottom: none; }
           .legal-top-row { flex-direction: column; text-align: center; }
           .legal-links { justify-content: center; flex-wrap: wrap; }
           .legal-credits-row { text-align: center; }

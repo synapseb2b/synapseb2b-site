@@ -1,10 +1,11 @@
 // components/Navbar.js
-// NOVA ESTRUTURA: 3 Pilares + A Synapse + Logo Limpa
+// ATUALIZADO: Inclusão do Menu Drill-down "Cases"
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Brain, MonitorSmartphone, Box, Building, Mail, X, ChevronDown } from 'lucide-react';
+// Adicionei 'Award' para o ícone de Cases no mobile
+import { Brain, MonitorSmartphone, Box, Building, Mail, X, ChevronDown, Award } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Navbar() {
   const [isIntelOpen, setIsIntelOpen] = useState(false);
   const [isAtivosOpen, setIsAtivosOpen] = useState(false);
   const [isVerticaisOpen, setIsVerticaisOpen] = useState(false);
+  const [isCasesOpen, setIsCasesOpen] = useState(false); // Novo estado para Cases
 
   const router = useRouter();
 
@@ -41,12 +43,14 @@ export default function Navbar() {
     setIsIntelOpen(false);
     setIsAtivosOpen(false);
     setIsVerticaisOpen(false);
+    setIsCasesOpen(false);
   };
 
   // Verificação de rota ativa para highlight
   const isIntelActive = router.pathname.includes('/inteligencia-e-estrategia');
   const isAtivosActive = router.pathname.includes('/ativos-digitais');
   const isVerticaisActive = router.pathname.includes('/solucoes-verticais');
+  const isCasesActive = router.pathname.includes('/cases'); // Novo highlight
   const isSynapseActive = router.pathname === '/a-engenharia';
 
   return (
@@ -96,6 +100,18 @@ export default function Navbar() {
                 <Link href="/pilares/solucoes-verticais/cortex-b2b" className="dropdown-link">Cortex B2B™</Link>
                 <Link href="/pilares/solucoes-verticais/match-maker" className="dropdown-link">Match Maker B2B</Link>
                 <Link href="/pilares/solucoes-verticais/hba" className="dropdown-link">Health Business Architecture™</Link>
+              </div>
+            </li>
+
+            {/* NOVO: Cases (Drill Down) */}
+            <li className="dropdown-container">
+              <div className={`nav-link ${isCasesActive ? 'active' : ''}`}>
+                Cases <ChevronDown size={16} />
+              </div>
+              <div className="dropdown-menu">
+                <Link href="/cases/exclusiva-engenharias" className="dropdown-link">Exclusiva Engenharias</Link>
+                <Link href="/cases/versao-holistica" className="dropdown-link">Versão Holística</Link>
+                <Link href="/cases/aorkia" className="dropdown-link">AORKIA</Link>
               </div>
             </li>
 
@@ -166,6 +182,19 @@ export default function Navbar() {
               <li><Link href="/pilares/solucoes-verticais/cortex-b2b" onClick={handleLinkClick}>Cortex B2B™</Link></li>
               <li><Link href="/pilares/solucoes-verticais/match-maker" onClick={handleLinkClick}>Match Maker B2B</Link></li>
               <li><Link href="/pilares/solucoes-verticais/hba" onClick={handleLinkClick}>Health Business Architecture™</Link></li>
+            </ul>
+          </li>
+
+          {/* Mobile: Cases (NOVO) */}
+          <li className="mobile-dropdown">
+            <button onClick={() => setIsCasesOpen(!isCasesOpen)} className={isCasesOpen ? 'open' : ''}>
+              <div><Award /><span>Cases de Sucesso</span></div>
+              <ChevronDown size={24} />
+            </button>
+            <ul className={`mobile-sub-menu ${isCasesOpen ? 'open' : ''}`}>
+              <li><Link href="/cases/exclusiva-engenharias" onClick={handleLinkClick}>Exclusiva Engenharias</Link></li>
+              <li><Link href="/cases/versao-holistica" onClick={handleLinkClick}>Versão Holística</Link></li>
+              <li><Link href="/cases/aorkia" onClick={handleLinkClick}>AORKIA</Link></li>
             </ul>
           </li>
 

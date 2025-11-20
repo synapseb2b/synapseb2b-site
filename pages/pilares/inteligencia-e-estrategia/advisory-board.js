@@ -3,7 +3,8 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Globe, Lightbulb, Handshake, LineChart } from 'lucide-react';
+// CORREÇÃO: Trocamos 'Handshake' (quebra o build) por 'Users' (seguro e adequado para Board)
+import { ArrowRight, ShieldCheck, Globe, Lightbulb, Users, LineChart } from 'lucide-react';
 
 export default function AdvisoryBoard() {
   useEffect(() => {
