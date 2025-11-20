@@ -1,274 +1,317 @@
-/* globals.css - VERSÃO FINAL: DESIGN SYSTEM UNIFICADO */
+/* globals.css - VERSÃO FINAL: DESIGN SYSTEM UNIFICADO & CENTRALIZADO */
 
 /* ==========================================================================
-   1. VARIÁVEIS E BASE
+   1. CORE: VARIÁVEIS & FONTES
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
 
 :root {
-  --color-background: #000000;
-  --color-primary: #009684;
-  --color-secondary: #007a6c;
-  --color-accent: #38c5b1;
-  --color-text: #a6a6a6;
+  /* Paleta Synapse */
+  --color-bg: #000000;
+  --color-primary: #009684;       /* Verde Synapse */
+  --color-primary-glow: rgba(0, 150, 132, 0.5);
+  --color-accent: #38c5b1;        /* Verde Claro/Teal */
+  --color-text-main: #e0e0e0;
+  --color-text-muted: #a0a0a0;
   --color-heading: #ffffff;
-  --color-section-bg: #0A0A0A;
-  --color-border: rgba(0, 150, 132, 0.2);
   
-  /* Cores Premium (Efeito Glow/Glass) */
-  --color-card-bg: rgba(255, 255, 255, 0.03);
-  --color-card-border: rgba(255, 255, 255, 0.05);
-  --color-glow-primary: rgba(0, 150, 132, 0.2);
-  --color-glow-hover: rgba(56, 197, 177, 0.6);
+  /* Estética dos Cards (A Regra de Ouro) */
+  --card-bg-default: rgba(0, 20, 18, 0.3); /* Leve toque verde no fundo preto */
+  --card-border-default: rgba(255, 255, 255, 0.08); /* Borda branca translúcida */
+  --card-border-hover: #009684; /* Borda verde acesa */
+  --card-shadow-hover: 0 10px 40px -10px rgba(0, 150, 132, 0.3);
+  
+  /* Tamanhos de Fonte Padronizados (Fluid Typography) */
+  --font-h1: clamp(2.5rem, 5vw, 4.5rem);
+  --font-h2: clamp(2rem, 4vw, 3rem);
+  --font-h3: clamp(1.25rem, 2vw, 1.75rem);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
   font-family: 'Inter', sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
   overflow-x: hidden;
+  
+  /* A NOVA REGRA DE OURO: Tudo Centralizado */
+  text-align: center !important;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
 /* ==========================================================================
-   2. TIPOGRAFIA PADRONIZADA (H1, H2, H3)
+   2. TIPOGRAFIA UNIFICADA (H1, H2, H3)
    ========================================================================== */
-/* Regra Geral para Títulos */
-h1, h2, h3, .hero-headline, .section-title, .pillar-card-title, .case-card-title {
+h1, h2, h3, 
+.hero-headline, .section-title, .case-card-title, .pillar-card-title {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-heading);
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.2;
+  text-align: center !important; /* Força bruta no alinhamento */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* H1: Hero Title */
-h1, .hero-headline {
-  /* Responsivo: Mínimo 2.5rem, Ideal 5vw, Máximo 4rem */
-  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+h1, .hero-headline { 
+  font-size: var(--font-h1) !important; 
   margin-bottom: 1.5rem;
-  text-align: center;
-  /* Efeito Shine */
-  background: linear-gradient(to right, #fff 40%, var(--color-accent) 50%, #fff 60%);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine-effect 5s linear infinite;
 }
 
-/* H2: Section Title */
-h2, .section-title, .final-cta-title {
-  font-size: clamp(2rem, 4vw, 3rem) !important;
-  margin-bottom: 1.5rem;
-  text-align: center;
+h2, .section-title { 
+  font-size: var(--font-h2) !important; 
+  margin-bottom: 2rem;
 }
 
-/* H3: Card Title / Subtitles */
-h3, .pillar-card-title, .truth-card-title, .case-card-title {
-  font-size: clamp(1.25rem, 2vw, 1.5rem) !important;
+h3, .case-card-title, .pillar-card-title { 
+  font-size: var(--font-h3) !important; 
   margin-bottom: 1rem;
-  text-align: center;
 }
 
-@keyframes shine-effect {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+p { 
+  font-size: 1rem; 
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lead-text { 
+  font-size: 1.125rem; 
+  max-width: 800px; 
+  margin: 0 auto 3rem auto; /* Margem auto garante centro em blocos */
 }
 
 /* ==========================================================================
-   3. HERO & MINI-HERO (PADRONIZADO)
+   3. HERO & MINI-HERO (A Regra do Vídeo)
    ========================================================================== */
 .hero-section {
   position: relative;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  padding: 0;
+  display: flex;
+  flex-direction: column; /* Garante empilhamento centralizado */
+  align-items: center;    /* Centro horizontal */
+  justify-content: center; /* Centro vertical */
+  min-height: 100vh; 
 }
 
-/* Hero Padrão (Home) */
-.hero-section:not(.short-hero) {
-  min-height: 100vh;
-}
-
-/* Mini-Hero (Páginas Internas) - Regra Solicitada */
 .hero-section.short-hero {
-  min-height: 60vh; /* Altura fixa elegante */
-  padding-top: 80px; /* Espaço da Navbar */
+  min-height: 55vh !important;
+  padding-top: 80px;
 }
 
-/* Background de Vídeo Absoluto */
 .hero-video-background {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
 }
 .hero-video {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.6; /* Levemente escurecido */
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.5;
 }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), #000);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), #000);
   z-index: 1;
 }
-
-.hero-content {
-  position: relative; z-index: 2; width: 100%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-
-.hero-subheadline {
-  font-size: 1.2rem; max-width: 800px; margin: 0 auto; text-align: center; opacity: 0.9;
+.hero-content { 
+  position: relative; 
+  z-index: 2; 
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========================================================================
-   4. O "CARD UNIVERSAL" (ESTÉTICA MATCH-MAKER PARA TUDO)
+   4. O "CARD UNIVERSAL" (Estética Match Maker)
    ========================================================================== */
-/* Aqui acontece a mágica. Mapeamos TODAS as classes antigas para 
-   usar o design system novo.
-*/
 .glass-card-premium,
 .info-card,
-.pillar-card-revolutionary,
 .case-card,
 .case-card-revolutionary,
+.pillar-card-revolutionary,
 .solution-card-revolutionary,
 .truth-card-revolutionary,
 .vertical-card,
 blockquote,
-.decision-block {
-  /* Estética Base (Glassmorphism Dark) */
-  background: var(--color-card-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--color-card-border);
+.feature-card {
+  /* Estética */
+  background: var(--card-bg-default);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border-default);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   
-  /* Layout & Alinhamento Central Rigoroso */
+  /* Layout Centralizado Rigoroso */
   display: flex;
   flex-direction: column;
-  align-items: center;     /* Centraliza horizontalmente */
+  align-items: center;     /* Eixo X do Flex */
   justify-content: flex-start;
-  text-align: center;      /* Centraliza texto */
-  height: 100%;            /* Garante altura igual em grids */
+  text-align: center;      /* Herança de texto */
+  height: 100%;
   
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
 }
 
-/* Efeito Hover Unificado */
 .glass-card-premium:hover,
 .info-card:hover,
-.pillar-card-revolutionary:hover,
 .case-card:hover,
 .case-card-revolutionary:hover,
+.pillar-card-revolutionary:hover,
 .solution-card-revolutionary:hover,
-.truth-card-revolutionary:hover,
 blockquote:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-primary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--color-glow-primary);
-  background-color: #0E0E0E;
+  transform: translateY(-8px);
+  border-color: var(--card-border-hover);
+  box-shadow: var(--card-shadow-hover);
+  background: rgba(0, 20, 18, 0.6);
 }
 
-/* Ajuste de Ícones dentro dos cards */
-.pillar-icon-wrapper, .info-card-icon {
-  display: flex; align-items: center; justify-content: center;
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, rgba(0,150,132,0.1), rgba(56,197,177,0.1));
-  border: 1px solid rgba(255,255,255,0.1);
+/* Ícones Centralizados */
+.pillar-icon-wrapper, .info-card svg, .case-card svg, .card-icon {
   color: var(--color-accent);
-  margin: 0 auto 1.5rem auto !important; /* Força margem central */
-}
-
-/* Ajuste de Textos dentro dos cards */
-.pillar-card-description, .case-card p, .info-card p {
-  font-size: 0.95rem;
-  color: var(--color-text);
-  line-height: 1.6;
-  text-align: center; /* Força alinhamento */
-}
-
-/* ==========================================================================
-   5. GRIDS E LISTAS
-   ========================================================================== */
-.pillar-grid-revolutionary, 
-.case-grid, 
-.info-grid,
-.truths-grid-revolutionary,
-.solutions-grid-revolutionary {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  filter: drop-shadow(0 0 8px rgba(56, 197, 177, 0.4));
+  margin: 0 auto 1.5rem auto !important; /* Margem auto força centro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Listas dentro de cards (Checklists) */
-ul { list-style: none; padding: 0; }
-li { margin-bottom: 0.5rem; color: var(--color-text); }
+ul { 
+  list-style: none; 
+  padding: 0; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens da lista */
+  width: 100%;
+}
+
+li { 
+  margin-bottom: 0.75rem; 
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza conteúdo interno do li */
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
 
 /* ==========================================================================
-   6. BOTÕES (CTAS)
+   5. CONEXÃO SINÁPTICA
    ========================================================================== */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 0.75rem; padding: 16px 32px;
-  border-radius: 10px; font-weight: 600; text-decoration: none;
-  cursor: pointer; position: relative; overflow: hidden; border: none;
-  transition: all 0.3s ease;
+section {
+  position: relative;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Seção alinha filhos ao centro */
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-primary) 50%, transparent 100%);
+  opacity: 0.3;
+  box-shadow: 0 0 10px var(--color-primary);
+  animation: synapse-pulse 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes synapse-pulse {
+  0%, 100% { opacity: 0.1; transform: scaleX(0.8); }
+  50% { opacity: 0.6; transform: scaleX(1); }
+}
+
+/* ==========================================================================
+   6. CTAs ELEGANTES & CENTRALIZADOS
+   ========================================================================== */
+.btn, .btn-primary, .section-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-.btn-primary {
-  background: linear-gradient(145deg, var(--color-primary), var(--color-secondary));
+  letter-spacing: 1px;
   color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 150, 132, 0.3);
-}
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 150, 132, 0.5);
+  text-decoration: none;
+  
+  background: linear-gradient(90deg, rgba(0,150,132,0.2), rgba(0,150,132,0.4));
+  border: 1px solid var(--color-primary);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  /* Garante que o botão não estique */
+  margin: 2rem auto 0 auto; 
+  width: fit-content;
 }
 
-/* Botão Pulsação (Final CTA) */
-.btn-cta-pulse { animation: pulse-glow 3s infinite; }
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(0, 150, 132, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(56, 197, 177, 0.6); transform: scale(1.02); }
+.btn:hover, .btn-primary:hover {
+  background: var(--color-primary);
+  box-shadow: 0 0 25px rgba(0, 150, 132, 0.6);
+  transform: scale(1.02);
 }
 
 /* ==========================================================================
-   7. UTILITÁRIOS DE SEÇÃO
+   7. GRIDS E LAYOUTS
    ========================================================================== */
-.section-solid { background-color: #050505; padding: 6rem 0; }
-.section-with-gradient-glow { 
-  background: radial-gradient(circle at center, rgba(0,150,132,0.08), transparent 70%);
-  padding: 6rem 0; 
-}
-.section-divider-glow {
-  height: 1px; width: 100%; background: rgba(255,255,255,0.1);
-  position: relative; margin: 0;
-}
-.section-divider-glow::before {
-  content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 30%; height: 2px; background: var(--color-primary);
-  box-shadow: 0 0 15px var(--color-primary);
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Container mestre centraliza tudo */
 }
 
-/* Reveal Animation */
-.reveal-up {
-  opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out;
+/* Grid Universal */
+.pillar-grid-revolutionary, 
+.case-grid, 
+.info-grid,
+.solutions-grid-revolutionary,
+.truths-grid-revolutionary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  width: 100%;
+  justify-content: center; /* Centraliza o grid em si */
 }
-.reveal-up.in-view {
-  opacity: 1; transform: translateY(0);
+
+.footer { background: #050505; padding: 4rem 0; border-top: 1px solid #111; }
+.footer-content { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 2rem; 
+  justify-content: center; /* Footer centralizado */
+  text-align: center;
+}
+
+/* ==========================================================================
+   8. UTILITÁRIOS DE CORREÇÃO
+   ========================================================================== */
+hr, .section-divider-glow { display: none; } 
+blockquote { font-style: italic; font-size: 1.1rem; }
+
+@media (max-width: 768px) {
+  .hero-section.short-hero { min-height: 50vh !important; }
+  h1 { font-size: 2.5rem !important; }
+  .pillar-grid-revolutionary, .case-grid { grid-template-columns: 1fr; }
+  .footer-content { flex-direction: column; }
 }
