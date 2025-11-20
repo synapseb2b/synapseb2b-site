@@ -1,5 +1,5 @@
 // components/Navbar.js
-// AJUSTES FINAIS: Altura Desktop 60px + Redução de Fontes Mobile (Sub-menus e A Synapse)
+// AJUSTES: Altura Desktop 60px + Padronização ABSOLUTA de Fontes Mobile (Tudo 0.95rem)
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -188,7 +188,7 @@ export default function Navbar() {
                 </ul>
             </li>
 
-            {/* Link Simples - A SYNAPSE */}
+            {/* Link Simples - A SYNAPSE (Agora com classe padronizada) */}
             <li className="mobile-single-link">
                 <Link href="/a-engenharia" onClick={handleLinkClick} className="mobile-parent-style-link">
                   <div className="label-with-icon"><Building size={18} /><span>A Synapse</span></div>
@@ -223,7 +223,7 @@ export default function Navbar() {
         .nav-container {
           max-width: 1200px; margin: 0 auto; padding: 0.2rem 2rem;
           display: flex; align-items: center; justify-content: space-between;
-          /* AJUSTE: Altura reduzida para 60px para coincidir com o vídeo */
+          /* AJUSTE SOLICITADO: Altura reduzida no Desktop para 60px */
           height: 60px; 
         }
 
@@ -336,15 +336,11 @@ export default function Navbar() {
           border-bottom: 1px solid rgba(255,255,255,0.08);
           padding: 1rem 0; 
           color: #fff; 
-          font-size: 0.95rem; /* Tamanho padrão para os acordeões principais */
+          /* AJUSTE SOLICITADO: Tamanho unificado (Pai e A Synapse) */
+          font-size: 0.95rem; 
           font-weight: 500;
           cursor: pointer; text-decoration: none; 
           font-family: 'Montserrat', sans-serif;
-        }
-
-        /* AJUSTE: A Synapse menor que os acordeões */
-        .mobile-single-link .mobile-parent-style-link {
-          font-size: 0.85rem; 
         }
 
         .label-with-icon { display: flex; align-items: center; gap: 0.8rem; }
@@ -352,7 +348,7 @@ export default function Navbar() {
         .chevron { opacity: 0.5; transition: transform 0.3s; }
         .chevron.rotate { transform: rotate(180deg); opacity: 1; }
 
-        /* FILHO / NIVEL 2 (Drilldown) - Menor e mais leve */
+        /* FILHO / NIVEL 2 (Drilldown) */
         .mobile-sub-menu {
           list-style: none; padding: 0; margin: 0; overflow: hidden; max-height: 0;
           background: rgba(255,255,255,0.02);
@@ -362,8 +358,9 @@ export default function Navbar() {
 
         .mobile-sub-menu a {
           display: block; padding: 0.8rem 0 0.8rem 2.5rem;
-          font-size: 0.75rem; /* AJUSTE: Reduzido de 0.85rem para 0.75rem */
-          color: #aaaaaa; /* Cinza para hierarquia */
+          /* AJUSTE SOLICITADO: Tamanho exato ao do pai */
+          font-size: 0.95rem !important; 
+          color: #aaaaaa; /* Mantendo cinza apenas para diferenciar que é clicável/item, mas o tamanho é igual */
           text-decoration: none; font-weight: 400;
           border-left: 2px solid transparent;
         }
