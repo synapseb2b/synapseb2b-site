@@ -1,4 +1,5 @@
 // pages/pilares/inteligencia-e-estrategia/sprint-validacao.js
+// Design: Premium Glassmorphism (Igual Plataformas Digitais) + Mini Hero Video
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -26,16 +27,25 @@ export default function SprintValidacao() {
     <>
       <Head>
         <title>Sprint de Validação Comercial | Synapse B2B</title>
-        <meta name="description" content="Valide sua tese de mercado em 30 dias antes de investir OPEX. Dados reais, risco mitigado." />
+        <meta name="description" content="Valide sua tese de mercado em 30 dias antes de investir OPEX." />
       </Head>
 
-      {/* HERO */}
-      <section className="hero-section">
-        <div className="hero-overlay-static"></div>
+      {/* MINI HERO COM VIDEO */}
+      <section className="hero-section short-hero" style={{minHeight: '60vh'}}>
+        <div className="hero-video-background">
+          <video autoPlay muted loop playsInline className="hero-video">
+            <source src="/video/video_home.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), #000)'}}></div>
+        </div>
         <div className="container hero-content text-center page-hero-padding reveal-up">
-          <div className="icon-badge"><Zap size={32} /></div>
+          <div style={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+             <Zap size={64} style={{color: 'var(--color-primary)', filter: 'drop-shadow(0 0 15px var(--color-primary))'}} />
+          </div>
           <h1 className="hero-headline">A Verdade Antes do Investimento</h1>
-          <p className="hero-subheadline">30 dias para validar ou invalidar sua tese de mercado com dados reais.</p>
+          <p className="hero-subheadline" style={{textAlign: 'center'}}>
+            30 dias para validar ou invalidar sua tese de mercado com dados reais.
+          </p>
           <div className="hero-ctas">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Iniciar Validação Agora</span>
@@ -48,61 +58,67 @@ export default function SprintValidacao() {
       <div className="section-divider-glow"></div>
 
       {/* O PROBLEMA */}
-      <section className="section-solid">
+      <section className="section-solid" style={{background: '#050505'}}>
         <div className="container reveal-up">
           <div className="grid-2-col">
             <div className="text-content">
               <h2 className="section-title">O Risco Invisível</h2>
               <p className="lead-text">Você está prestes a apostar alto em uma hipótese não testada.</p>
-              <p>Lançar produto novo, entrar em novo mercado ou pivotar o modelo exige investimento pesado em estrutura.</p>
-              <div className="alert-box">
-                <AlertTriangle size={24} className="text-primary" />
-                <p><strong>Dado Crítico:</strong> 70% das iniciativas B2B falham por falta de aderência real ao mercado, não por execução ruim.</p>
+              <p style={{marginBottom: '2rem', color: 'var(--color-text)'}}>
+                Lançar produto novo, entrar em novo mercado ou pivotar o modelo exige investimento pesado em estrutura.
+              </p>
+              
+              <div className="glass-card" style={{borderColor: 'rgba(255, 50, 50, 0.3)', background: 'rgba(255, 0, 0, 0.05)'}}>
+                <div style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
+                    <AlertTriangle size={32} style={{color: '#ff5555'}} />
+                    <p style={{margin: 0}}><strong>Dado Crítico:</strong> 70% das iniciativas B2B falham por falta de aderência real ao mercado, não por execução ruim.</p>
+                </div>
               </div>
             </div>
-            <div className="glass-card-premium">
-              <h3>A Solução: Teste Controlado</h3>
-              <p>O Sprint de Validação é um protocolo de <strong>30 dias</strong> que testa sua tese com prospects reais antes de você comprometer OPEX.</p>
+
+            <div className="glass-card">
+              <h3 style={{fontSize: '1.8rem', color: 'var(--color-heading)', marginBottom: '1rem'}}>A Solução: Teste Controlado</h3>
+              <p style={{marginBottom: '1rem'}}>O Sprint de Validação é um protocolo de <strong>30 dias</strong> que testa sua tese com prospects reais antes de você comprometer OPEX.</p>
               <p>Usamos técnicas de Lean B2B e Customer Development para extrair sinais claros de compra ou rejeição, transformando intuição em evidência.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ENTREGÁVEIS */}
-      <section className="section-solid section-darker">
+      <div className="section-divider-glow"></div>
+
+      {/* ENTREGÁVEIS (GRID IDÊNTICO AO DA REFERÊNCIA) */}
+      <section className="section-with-gradient-glow">
         <div className="container reveal-up">
-          <h2 className="section-title text-center">O Que Você Recebe</h2>
-          <div className="features-grid">
-            <div className="glass-card-premium feature-card">
-              <Search size={32} className="text-primary" />
-              <h4>Validação de ICP</h4>
-              <p>Confirmação se o perfil alvo realmente tem a dor, a urgência e o budget para sua solução.</p>
-            </div>
-            <div className="glass-card-premium feature-card">
-              <Zap size={32} className="text-primary" />
-              <h4>Teste de Proposta de Valor</h4>
-              <p>Reação real do mercado à sua oferta. Descobrimos o que faz os olhos do cliente brilharem.</p>
-            </div>
-            <div className="glass-card-premium feature-card">
-              <Database size={32} className="text-primary" />
-              <h4>Precificação Validada</h4>
-              <p>Identificação da faixa de preço que o mercado aceita pagar e modelos de cobrança preferidos.</p>
-            </div>
-            <div className="glass-card-premium feature-card">
-              <FileCheck size={32} className="text-primary" />
-              <h4>Go/No-Go Report</h4>
-              <p>Uma decisão binária baseada em evidência: Acelerar, Pivotar ou Abortar a iniciativa.</p>
-            </div>
+          <h2 className="section-title text-center" style={{marginBottom: '4rem'}}>O Que Você Recebe</h2>
+          
+          <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem'}}>
+            {[
+              { icon: Search, title: 'Validação de ICP', text: 'Confirmação se o perfil alvo realmente tem a dor, a urgência e o budget para sua solução.' },
+              { icon: Zap, title: 'Teste de Proposta', text: 'Reação real do mercado à sua oferta. Descobrimos o que faz os olhos do cliente brilharem.' },
+              { icon: Database, title: 'Precificação Validada', text: 'Identificação da faixa de preço que o mercado aceita pagar e modelos de cobrança preferidos.' },
+              { icon: FileCheck, title: 'Go/No-Go Report', text: 'Uma decisão binária baseada em evidência: Acelerar, Pivotar ou Abortar a iniciativa.' }
+            ].map((item, i) => (
+              <div key={i} className="glass-card" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+                  <div className="pillar-icon-wrapper" style={{margin: '0 auto 1.5rem', color: 'var(--color-primary)'}}>
+                    <item.icon size={32} />
+                  </div>
+                  <h3 className="pillar-card-title" style={{fontSize: '1.4rem', marginBottom: '1rem'}}>{item.title}</h3>
+                  <p className="pillar-card-description">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA FINAL */}
-      <section className="final-cta-section">
-        <div className="container text-center reveal-up">
-          <h2 className="final-cta-title">Melhor descobrir a verdade em 30 dias do que em 12 meses.</h2>
-          <p className="cta-support-text">Investimento único pré-fixado. Sem surpresas.</p>
+      <section className="final-cta-section final-cta-revolutionary">
+        <div className="pulsating-core-background"></div>
+        <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
+          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset'}}>
+            Melhor descobrir a verdade em 30 dias do que em 12 meses.
+          </h2>
+          <p className="cta-support-text" style={{margin: '0 auto 2rem'}}>Investimento único pré-fixado. Sem surpresas.</p>
           <div className="section-cta">
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Solicitar Escopo do Sprint</span>
@@ -112,40 +128,30 @@ export default function SprintValidacao() {
         </div>
       </section>
 
-      <style jsx>{`
-        .hero-overlay-static {
-          position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-          background: radial-gradient(circle at center, rgba(0,150,132,0.15) 0%, rgba(10,10,10,1) 70%);
-          z-index: 1; pointer-events: none;
+      <style jsx global>{`
+        /* ESTILOS GLOBAIS DO GLASS CARD (PADRÃO REFERÊNCIA) */
+        .glass-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease;
+          padding: 2.5rem;
         }
-        .icon-badge {
-          display: inline-flex; padding: 1rem; background: rgba(255,255,255,0.05);
-          border-radius: 50%; margin-bottom: 1.5rem; color: var(--color-primary);
-          border: 1px solid rgba(255,255,255,0.1);
+        .glass-card:hover {
+           transform: translateY(-5px);
+           border-color: var(--color-primary);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2);
         }
+        
+        /* Grid Layouts */
         .grid-2-col {
           display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-        }
-        .features-grid {
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;
-        }
-        .feature-card { text-align: left; align-items: flex-start; gap: 1rem; }
-        .feature-card h4 { color: var(--color-heading); font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin: 1rem 0 0.5rem; }
-        .alert-box {
-          background: rgba(255, 50, 50, 0.1); border-left: 4px solid #ff3333;
-          padding: 1.5rem; margin-top: 2rem; display: flex; gap: 1rem; align-items: flex-start;
-          border-radius: 0 8px 8px 0;
         }
         @media (max-width: 900px) {
           .grid-2-col { grid-template-columns: 1fr; gap: 2rem; }
         }
-        .glass-card-premium {
-          background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 16px; padding: 2.5rem;
-          display: flex; flex-direction: column;
-        }
-        .hero-headline { font-size: 3rem; line-height: 1.2; margin-bottom: 1.5rem; color: var(--color-heading); }
-        .hero-subheadline { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem; opacity: 0.9; }
       `}</style>
     </>
   );
