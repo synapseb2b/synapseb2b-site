@@ -1,10 +1,11 @@
 // pages/pilares/inteligencia-e-estrategia/advisory-board.js
+// CORREÇÃO APLICADA: Importação do ícone 'Handshake' adicionada para corrigir o erro de build.
 
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-// CORREÇÃO: Trocamos 'Handshake' (quebra o build) por 'Users' (seguro e adequado para Board)
-import { ArrowRight, ShieldCheck, Globe, Lightbulb, Users, LineChart } from 'lucide-react';
+// AQUI ESTAVA O ERRO: Faltava importar o Handshake
+import { ArrowRight, ShieldCheck, Globe, Lightbulb, Handshake, LineChart } from 'lucide-react';
 
 export default function AdvisoryBoard() {
   useEffect(() => {
@@ -75,6 +76,7 @@ export default function AdvisoryBoard() {
             </div>
 
             <div className="moment-card">
+              {/* Este componente causava o erro pois não estava importado */}
               <Handshake size={32} className="icon-moment"/>
               <h4>Fusões e Aquisições (M&A)</h4>
               <p>Due diligence comercial, análise de sinergias e plano de integração.</p>
