@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect(() => { 
     const handleScroll = () => {
       setHasScrolled(window.scrollY > 10);
     };
