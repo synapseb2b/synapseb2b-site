@@ -1,4 +1,4 @@
-// pages/profissionais-de-saude.js
+// pages/hba.js
 // Versão: Health Business Architecture - Foco em Legado e Autoridade
 // Design: Premium Dark Glassmorphism (Receita Exata) + Alinhamento Central
 
