@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO MESTRA: FINAL - COMPLETO + CENTRALIZAÇÃO + GRID 2 COLUNAS */
+/* globals.css - VERSÃO MESTRA: FINAL - COMPLETO + GRID 2 COLUNAS + NAVBAR ALINHAMENTO */
 
 /* ==========================================================================
    1. CORE: VARIÁVEIS & FONTES
@@ -9,17 +9,18 @@
   /* --- PALETA SYNAPSE --- */
   --color-bg: #000000;
   --color-primary: #009684;       /* Verde Synapse Principal */
-  --color-primary-glow: rgba(0, 150, 132, 0.6);
+  --color-primary-glow: rgba(0, 150, 132, 0.75); /* Destaque Sináptico */
   --color-accent: #38c5b1;        /* Verde Claro/Teal */
   --color-text-main: #e0e0e0;
-  --color-text-muted: #9ca3af;    /* Cinza médio para leitura confortável */
+  --color-text-muted: #9ca3af;    
   --color-heading: #ffffff;
   
   /* --- ESTÉTICA DOS CARDS PREMIUM (GLASS) --- */
-  --card-bg-default: rgba(255, 255, 255, 0.02);
-  --card-bg-hover: rgba(255, 255, 255, 0.045);
-  --card-border-default: rgba(255, 255, 255, 0.06);
-  --card-border-hover: rgba(0, 150, 132, 0.5);
+  /* NOVO: Fundo esverdeado espelhado na fase estática */
+  --card-bg-default: rgba(18, 56, 50, 0.12); /* Base escura com tom verde */
+  --card-bg-hover: rgba(0, 150, 132, 0.15); /* Fica mais claro/verde no hover */
+  --card-border-default: rgba(255, 255, 255, 0.08); /* Borda neutra */
+  --card-border-hover: rgba(0, 150, 132, 0.6);
   
   /* --- SISTEMA DE SOMBRAS (HIERARQUIA) --- */
   --shadow-low: 0 10px 30px -10px rgba(0,0,0,0.6);
@@ -75,7 +76,6 @@ h1, h2, h3,
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 1rem;
-  /* Garante que os títulos também sejam centralizados */
   text-align: center; 
 }
 
@@ -143,7 +143,6 @@ p {
   color: var(--color-text-muted);
   margin-bottom: 1.5rem;
   max-width: 70ch; 
-  /* Centraliza textos de parágrafo */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -187,7 +186,6 @@ p {
 }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  /* Gradiente restaurado */
   background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%),
               linear-gradient(to bottom, rgba(0,0,0,0.3), #000000);
   z-index: 1;
@@ -235,6 +233,7 @@ p {
 .solution-card-revolutionary,
 .truth-card-revolutionary,
 blockquote {
+  /* Fundo esverdeado espelhado */
   background: var(--card-bg-default);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -244,7 +243,6 @@ blockquote {
   
   display: flex;
   flex-direction: column;
-  /* Centraliza o conteúdo dentro do card */
   align-items: center; 
   text-align: center;
   height: 100%;
@@ -260,6 +258,7 @@ blockquote {
 .info-card:hover,
 .case-card:hover,
 blockquote:hover {
+  /* Mantém o estilo de hover original (verde vibrante/claro) */
   transform: translateY(-6px) scale(1.01);
   background: var(--card-bg-hover);
   border-color: var(--card-border-hover);
@@ -279,7 +278,6 @@ ul {
   list-style: none; 
   padding: 0; 
   width: 100%;
-  /* Força a centralização da lista */
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -289,13 +287,12 @@ li {
   color: var(--color-text-muted);
   display: flex;
   align-items: center;
-  /* Centraliza o item da lista */
   justify-content: center; 
   gap: 10px;
 }
 
 /* ==========================================================================
-   5. NAVBAR ULTRA-MODERNA (FLUTUANTE) - CORREÇÃO DE ALINHAMENTO
+   5. NAVBAR ULTRA-MODERNA (FLUTUANTE) - CORREÇÃO DE ALINHAMENTO E ESTILO
    ========================================================================== */
 .site-navbar {
   position: fixed;
@@ -305,17 +302,18 @@ li {
   display: flex;
   align-items: center;
   transition: all 0.4s var(--ease-premium);
-  background: transparent;
+  /* Fundo preto sólido para desktop, sem blur */
+  background: var(--color-bg); 
   border-bottom: 1px solid transparent;
-  /* Centraliza o Navbar no Viewport (horizontalmente) */
   justify-content: center; 
 }
 
 .site-navbar.scrolled {
   height: 70px;
-  background: rgba(5, 5, 5, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  /* Fundo sólido ao rolar */
+  background: var(--color-bg); 
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -327,22 +325,26 @@ li {
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  /* Garante alinhamento entre logo e menu */
+  /* Alinha logo à esquerda e menu à direita */
   justify-content: space-between; 
 }
 
-.nav-logo-link { display: flex; align-items: center; height: 100%; }
-.nav-logo-video { height: 40px; width: auto; object-fit: contain; }
-
-/* Links Desktop */
+/* Container do Menu Desktop (para empurrar os links para a direita) */
 .nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: center; 
+    /* NOVO: Alinha os itens do menu à extrema direita */
+    justify-content: flex-end; 
+    flex-grow: 1; /* Permite ocupar o espaço para empurrar à direita */
 }
+
+.nav-logo-link { display: flex; align-items: center; height: 100%; }
+.nav-logo-video { height: 40px; width: auto; object-fit: contain; }
+
+/* Links Desktop */
 .nav-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.85rem;
@@ -483,7 +485,6 @@ li {
   position: relative;
   overflow: hidden;
   transition: all 0.3s var(--ease-premium);
-  /* Centraliza botões em blocos */
   margin: 2rem auto 0 auto; 
 }
 
@@ -498,28 +499,29 @@ li {
    ========================================================================== */
 section {
   position: relative;
-  padding: 8rem 0; 
-  /* Garante centralização vertical de seções */
+  /* NOVO: Padding de 6rem para menos afastamento */
+  padding: 6rem 0; 
   display: flex; 
   flex-direction: column; 
   align-items: center;
   width: 100%;
 }
 
-/* Linha de conexão (Synapse) no fundo das seções */
+/* Linha de conexão (Synapse) no fundo das seções - MAIOR DESTAQUE */
 section::after {
   content: '';
   position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--color-primary) 50%, transparent 100%);
-  opacity: 0.2;
-  box-shadow: 0 0 15px var(--color-primary);
+  /* Aumenta a opacidade do efeito sináptico */
+  opacity: 0.4; 
+  box-shadow: 0 0 20px var(--color-primary); /* Aumenta o brilho */
   animation: synapse-pulse 6s infinite ease-in-out;
   pointer-events: none;
 }
 
 @keyframes synapse-pulse {
-  0%, 100% { opacity: 0.1; transform: scaleX(0.7); }
-  50% { opacity: 0.5; transform: scaleX(1); }
+  0%, 100% { opacity: 0.2; transform: scaleX(0.7); } /* Aumenta opacidade mínima */
+  50% { opacity: 0.6; transform: scaleX(1); } /* Aumenta opacidade máxima */
 }
 
 /* Glow Premium para ícones */
