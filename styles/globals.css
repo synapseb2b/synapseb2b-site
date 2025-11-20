@@ -1,4 +1,4 @@
-/* globals.css - VERSÃO FINAL, COMPLETA E CORRIGIDA */
+/* globals.css - VERSÃO LIMPA E SEGURA (SEM NAVBAR/MENU) */
 
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E PALETA DE CORES
@@ -15,7 +15,7 @@
   --color-section-bg: #0A0A0A;
   --color-border: rgba(0, 150, 132, 0.2);
   
-  /* Novas cores para gradientes de energia */
+  /* Cores para gradientes e efeitos */
   --color-glow-start: rgba(0, 150, 132, 0.1);
   --color-glow-end: rgba(56, 197, 177, 0.15);
   --color-border-hover: rgba(56, 197, 177, 0.7);
@@ -24,15 +24,19 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
-  overflow-x: hidden; /* Prevenção extra contra overflow horizontal */
-  cursor: none;
+  overflow-x: hidden;
+  /* Cuidado: cursor: none esconde o mouse padrão. Certifique-se que o custom-cursor funciona */
+  cursor: none; 
 }
+
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .text-center { text-align: center; }
 
@@ -61,7 +65,7 @@ body {
 }
 
 /* ==========================================================================
-   3. ANIMAÇÕES
+   3. ANIMAÇÕES GERAIS
    ========================================================================== */
 .reveal-up {
   opacity: 0;
@@ -89,34 +93,13 @@ body {
 }
 
 /* ==========================================================================
-   4. NAVBAR
+   [REMOVIDO] 4. NAVBAR & 10. MENU MOBILE
+   Motivo: O código agora reside exclusivamente em components/Navbar.js
+   Isso previne conflitos de especificidade e problemas de fonte.
    ========================================================================== */
-.nav {
-  position: fixed; top: 0; left: 0; width: 100%;
-  padding: 1rem 0; z-index: 1000;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-}
-.nav.scrolled {
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
-}
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1300px;
-  padding: 0 3rem;
-  margin: 0 auto;
-}
-.nav-logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-logo-text { color: var(--color-heading); font-size: 1.5rem; font-family: 'Montserrat', sans-serif; }
-.nav-menu { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
-.nav-link { color: var(--color-text); font-weight: 500; text-decoration: none; transition: color 0.3s; }
-.nav-link:hover { color: var(--color-primary); }
-.nav-link.active { color: var(--color-primary); }
 
 /* ==========================================================================
-   5. CTAs (BOTÕES)
+   5. CTAs (BOTÕES GERAIS)
    ========================================================================== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -124,59 +107,31 @@ body {
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none; cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: none;
 }
+
 .btn-primary {
   background: linear-gradient(145deg, var(--color-primary), var(--color-secondary));
   color: var(--color-heading);
-  box-shadow: 0 4px 15px rgba(0, 150, 132, 0.2), 
-              inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 150, 132, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 .btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 150, 132, 0.3),
-              inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 150, 132, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .btn-secondary {
   background-color: rgba(10, 10, 10, 0.5);
   color: var(--color-heading);
-  position: relative;
   padding: 18px 34px;
-}
-.btn-secondary::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 10px; 
-  border: 2px solid transparent;
-  background: linear-gradient(145deg, var(--color-border), rgba(0, 150, 132, 0.1)) border-box;
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
 }
 .btn-secondary:hover {
   background-color: rgba(0, 150, 132, 0.1);
   transform: translateY(-2px);
 }
-.btn-nav-cta {
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none !important;
-  background: var(--color-primary);
-  color: var(--color-heading);
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 150, 132, 0.2);
-}
-.btn-nav-cta:hover { 
-  background-color: var(--color-secondary); 
-  transform: translateY(-2px);
-}
+
 .btn-large { padding: 20px 42px; font-size: 1.1rem; }
 
 /* ==========================================================================
@@ -188,53 +143,34 @@ body {
   overflow: hidden;
 }
 .section-title { font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 1.5rem; }
-.lead-text { font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
+.lead-text { font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; }
 .section-cta { margin-top: 3rem; }
+
 .section-divider-glow {
-  height: 1px;
-  width: 100%;
-  background: var(--color-border);
-  position: relative;
-  margin: 0;
+  height: 1px; width: 100%; background: var(--color-border); position: relative; margin: 0;
 }
 .section-divider-glow::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 3px;
-  background: var(--color-primary);
-  filter: blur(5px);
-  opacity: 0.7;
+  content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 40%; height: 3px; background: var(--color-primary); filter: blur(5px); opacity: 0.7;
 }
-.section-with-gradient-glow {
-  background-color: var(--color-section-bg);
-  position: relative;
-}
+
+.section-with-gradient-glow { background-color: var(--color-section-bg); }
 .section-with-gradient-glow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(0, 150, 132, 0.15), transparent 70%);
-  filter: blur(100px);
-  z-index: 0;
+  content: ''; position: absolute; top: 50%; left: 50%; width: 80%; height: 80%;
+  transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(0, 150, 132, 0.15), transparent 70%);
+  filter: blur(100px); z-index: 0;
 }
-.section-with-gradient-glow .container {
-  position: relative;
-  z-index: 1;
-}
+.section-with-gradient-glow .container { position: relative; z-index: 1; }
+
 .section-with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
-.section-with-bg .section-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1; }
+.section-with-bg .section-overlay { 
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+  background-color: rgba(0, 0, 0, 0.9); z-index: 1; 
+}
 .section-with-bg .container { position: relative; z-index: 2; }
+
 .section-solid { background-color: var(--color-section-bg); }
 .final-cta-section { background-color: var(--color-background); }
-.final-cta-title { font-size: 3rem; margin-bottom: 1.5rem; }
 
 /* ==========================================================================
    7. FOOTER
@@ -247,770 +183,177 @@ body {
 .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; text-align: left; }
 .footer-column .footer-title { font-family: 'Montserrat'; color: var(--color-heading); margin-bottom: 1.5rem; font-size: 1.2rem; }
 .footer-column p { margin-bottom: 1.5rem; }
-.footer-column a { text-decoration: none; transition: color 0.3s; }
+.footer-column a { text-decoration: none; transition: color 0.3s; color: var(--color-text); }
 .footer-column a:hover { color: var(--color-primary); }
 .footer-column ul { list-style: none; padding: 0; }
-.footer-column ul li a { display: block; margin-bottom: 0.75rem; color: var(--color-text); }
-.footer-contact-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-text);
-  justify-content: flex-start;
-}
-.footer-contact-link.as-button { background: none; border: none; padding: 0; font-family: inherit; font-size: inherit; cursor: pointer; position: relative; }
-.copy-feedback {
-  position: absolute;
-  right: -65px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--color-primary);
-  color: var(--color-heading);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
+.footer-column ul li a { display: block; margin-bottom: 0.75rem; }
+.footer-contact-link { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; justify-content: flex-start; }
+
 .footer-bottom { text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.9rem; color: var(--color-text); }
-.footer-credits {
-  font-size: 0.8rem;
-  opacity: 0.7;
-  margin-top: 0.5rem;
-}
+.footer-credits { font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem; }
 
 /* ==========================================================================
-   8. COMPONENTES GERAIS (EXISTENTES - INCLUINDO HERO)
+   8. HERO & COMPONENTES LEGADOS (Mantidos para compatibilidade)
    ========================================================================== */
 .hero-section {
-  min-height: 100vh;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh; padding: 0; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
 }
-.page-hero-padding {
-  padding-top: 120px;
-  padding-bottom: 40px;
-}
-.hero-section.short-hero { min-height: 50vh; }
+.page-hero-padding { padding-top: 120px; padding-bottom: 40px; }
 .hero-video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-video { width: 100%; height: 100%; object-fit: cover; }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
 .hero-content { position: relative; z-index: 1; }
+
 .hero-pre-headline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;
 }
-.hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; }
+.hero-headline { font-family: 'Montserrat', sans-serif; font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; min-height: 1.2em; }
 .hero-subheadline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2.5rem; }
-.hero-subheadline.wider-on-desktop { max-width: 850px; }
 .hero-ctas { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
-/* Estilos de Card Antigos (info-card) - Mantidos para Bloco 5 */
+/* Cards Antigos (Mantidos se ainda em uso) */
 .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
-.info-card { background-color: rgba(0, 0, 0, 0.3); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; transition: background-color 0.3s ease, transform 0.3s; }
+.info-card { 
+  background-color: rgba(0, 0, 0, 0.3); border: 1px solid var(--color-border); 
+  border-radius: 12px; padding: 2rem; transition: transform 0.3s; 
+}
 .info-card:hover { background-color: rgba(0, 150, 132, 0.1); transform: translateY(-5px); }
-.info-card .info-card-icon { color: var(--color-primary); margin: 0 auto 1.5rem; width: 40px; height: 40px; }
-.info-card-title { font-family: 'Montserrat', sans-serif; font-size:1.3rem; color: var(--color-heading); margin-bottom: 0.75rem; font-weight: 700; }
-.text-left { text-align: left; }
 
-/* Estilos de Card de Case Antigos */
 .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.case-card { background-color: rgba(10, 10, 10, 0.4); border: 1px solid var(--color-border); border-radius: 16px; padding: 2.5rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
-.case-card-header { margin-bottom: 1.5rem; }
-.case-card-title { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--color-heading); margin-bottom: 0.5rem; }
-.case-card-tag { font-size: 0.9rem; font-weight: 600; color: var(--color-primary); }
-.case-card p { margin-bottom: 1rem; }
-.case-card strong { color: var(--color-heading); }
-.btn-small { padding: 12px 24px; font-size: 0.95rem; margin-top: 1.5rem; }
+.case-card { 
+  background-color: rgba(10, 10, 10, 0.4); border: 1px solid var(--color-border); 
+  border-radius: 16px; padding: 2.5rem; display: flex; flex-direction: column; 
+}
 
-/* Estilos de Bloco de Decisão Antigo */
-.decision-block { margin: 5rem auto 0; padding: 3rem; max-width: 900px; border: 1px solid var(--color-border); border-radius: 16px; background: radial-gradient(circle, rgba(0, 150, 132, 0.05), transparent 80%); }
-.decision-block h3 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--color-heading); margin-bottom: 1.5rem; }
-.decision-block p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
-.decision-block .decision-highlight { font-weight: 600; color: var(--color-heading); margin-top: 2rem; }
-
-/* --- Estilos do CTA Final Antigo --- */
-.cta-lead-text { font-size: 1.5rem; font-weight: 500; color: var(--color-heading); margin-bottom: 2rem; }
-.cta-support-text { font-size: 1rem; color: var(--color-text); max-width: 500px; margin: 1.5rem auto 0; opacity: 0.8; }
-
-/* --- Estilos para Texto Rotativo --- */
+/* Rotating Text */
 .rotating-text {
-  display: inline-block;
-  position: relative;
-  font-weight: 700;
-  color: var(--color-accent);
-  animation: fadeInOut 300ms ease-in-out;
-  cursor: default;
-  transition: opacity 300ms ease-in-out;
-  background: none !important;
-  background-clip: unset !important;
-  -webkit-background-clip: unset !important;
-  -webkit-text-fill-color: var(--color-accent) !important;
+  display: inline-block; position: relative; font-weight: 700; color: var(--color-accent);
+  animation: fadeInOut 300ms ease-in-out; cursor: default;
+  background: none !important; -webkit-text-fill-color: var(--color-accent) !important;
 }
 @keyframes fadeInOut {
   0% { opacity: 0; transform: translateY(-5px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.hero-headline { min-height: 1.2em; }
-
 
 /* ==========================================================================
-   10. MENU MOBILE (EXISTENTE)
-   ========================================================================== */
-.nav-hamburger { display: none; }
-.mobile-menu-overlay { display: none; }
-@media (max-width: 768px) {
-  .nav-menu { display: none; }
-  .nav-hamburger {
-    display: flex; flex-direction: column; justify-content: space-around;
-    width: 28px; height: 24px; background: transparent; border: none;
-    cursor: pointer; padding: 0; z-index: 1002;
-  }
-  .nav-hamburger .line {
-    width: 100%; height: 3px; background-color: var(--color-heading);
-    border-radius: 10px; transition: all 0.3s linear; transform-origin: center;
-  }
-  .nav.menu-open .line1 { transform: translateY(10px) rotate(45deg); }
-  .nav.menu-open .line2 { opacity: 0; }
-  .nav.menu-open .line3 { transform: translateY(-11px) rotate(-45deg); }
-
-  .mobile-menu-overlay {
-    display: flex; flex-direction: column; justify-content: space-between;
-    background: var(--color-background); position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%; padding: 2rem; z-index: 1001;
-    transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    visibility: hidden;
-  }
-  .mobile-menu-overlay.open { transform: translateX(0); visibility: visible; }
-  .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-  .mobile-menu-title { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: var(--color-primary); }
-  .mobile-menu-close { background: none; border: none; color: var(--color-heading); cursor: pointer; }
-  .mobile-menu-links { list-style: none; padding: 0; text-align: center; margin: auto 0; }
-  .mobile-menu-links a {
-    display: flex; align-items: center; justify-content: center; gap: 1rem;
-    font-size: 2rem; font-weight: 700; font-family: 'Montserrat', sans-serif;
-    color: var(--color-heading); text-decoration: none; padding: 1rem; transition: color 0.3s;
-  }
-  .mobile-menu-links a:hover { color: var(--color-primary); }
-  .mobile-menu-footer { padding-top: 2rem; border-top: 1px solid var(--color-border); }
-  .mobile-menu-footer .btn { width: 100%; }
-}
-
-/* ==========================================================================
-   13. AJUSTES DE RESPONSIVIDADE (EXISTENTES)
-   ========================================================================== */
-@media (max-width: 768px) {
-  .container, .nav-container { padding: 0 1.5rem; }
-  .hero-section, .section-with-bg, .section-solid, .section-with-gradient-glow {
-    padding-top: 100px;
-    padding-bottom: 60px;
-  }
-  .hero-headline, .section-title, .final-cta-title {
-    font-size: 2.2rem;
-    line-height: 1.3;
-  }
-  .hero-headline-two-lines { display: flex; flex-direction: column; align-items: center; }
-  .hero-headline-fixed { display: block; }
-  .rotating-text { display: block; margin-top: 0.25rem; }
-  .page-hero-padding { padding-top: 0; padding-bottom: 0; }
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-  .footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-column .footer-title { margin-bottom: 1rem; }
-  .footer-contact-link { justify-content: center; }
-  .footer-column p { max-width: 320px; }
-  
-  /* Ajustes de Card Antigos */
-  .case-grid { grid-template-columns: 1fr; }
-  .info-grid { grid-template-columns: 1fr; }
-  .card-grid-three { grid-template-columns: 1fr; }
-  .case-card { padding: 2rem; }
-  .decision-block { padding: 2rem; }
-}
-
-
-/* ==========================================================================
-   ==========================================================================
-   
-   NOVOS ESTILOS - REVOLUÇÃO VISUAL SYNAPSE
-   A partir de "Engenharia de Receita"
-   
-   ==========================================================================
+   ESTILOS REVOLUCIONÁRIOS (PILARES, CASES, SOLUÇÕES, CTA FINAL)
+   (Estes estilos são essenciais para o layout atual da Home/Landing Pages)
    ========================================================================== */
 
-/* ==========================================================================
-   BLOCO 2: PILARES DA ENGENHARIA (NOVO DESIGN)
-   ========================================================================== */
-.section-pillars-revolutionary {
-  background-color: var(--color-background); /* Fundo mais escuro */
-}
-
+/* -- PILARES -- */
+.section-pillars-revolutionary { background-color: var(--color-background); }
 .pillar-grid-revolutionary {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 4rem;
-  perspective: 1500px; /* Ativa a perspectiva 3D para os cards */
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; perspective: 1500px;
 }
-
 .pillar-card-revolutionary {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--color-card-bg);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
+  position: relative; border-radius: 16px; overflow: hidden; background-color: var(--color-card-bg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid var(--color-border);
 }
-
-/* Efeito de "Grid de Engenharia" (Dot Pattern) */
-.pillar-card-revolutionary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
-  background-size: 16px 16px;
-  opacity: 0.3;
-  transition: opacity 0.5s ease;
-}
-
-/* Efeito de Borda/Glow no Hover */
-.pillar-card-revolutionary::after {
-  content: '';
-  position: absolute;
-  inset: -1px; /* Para a borda ficar "fora" */
-  border-radius: 16px;
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--color-border-hover), transparent 40%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-}
-
 .pillar-card-revolutionary:hover {
   transform: rotateX(5deg) rotateY(-5deg) scale(1.05);
   box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 40px rgba(0, 150, 132, 0.2);
   background-color: var(--color-card-bg-hover);
 }
-
-.pillar-card-revolutionary:hover::before {
-  opacity: 0.1; /* Diminui o grid */
-}
-
-.pillar-card-revolutionary:hover::after {
-  opacity: 1; /* Mostra o glow */
-}
-
-.pillar-card-content {
-  position: relative;
-  z-index: 2; /* Fica acima dos pseudo-elementos */
-  padding: 2.5rem 2rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
+.pillar-card-content { padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .pillar-icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;
+  border-radius: 50%; margin-bottom: 1.5rem;
   background: linear-gradient(145deg, var(--color-glow-start), var(--color-glow-end));
-  border: 1px solid var(--color-border);
-  color: var(--color-accent);
+  border: 1px solid var(--color-border); color: var(--color-accent);
 }
+.pillar-card-title { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: var(--color-heading); margin-bottom: 1rem; font-weight: 700; }
+.pillar-card-description { font-size: 0.95rem; color: var(--color-text); line-height: 1.6; }
 
-.pillar-card-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
-  color: var(--color-heading);
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.pillar-card-description {
-  font-size: 0.95rem;
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
-@media (max-width: 992px) {
-  .pillar-grid-revolutionary {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .pillar-grid-revolutionary {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .pillar-card-content {
-    padding: 2rem 1.5rem;
-  }
-  .pillar-card-revolutionary:hover {
-    transform: scale(1.03); /* Efeito 3D mais sutil no mobile */
-  }
-}
-
-/* ==========================================================================
-   BLOCO 3: CASES (NOVO DESIGN - CARROSSEL)
-   ========================================================================== */
-.section-cases-revolutionary {
-  padding-bottom: 8rem; /* Mais espaço para o carrossel */
-}
-   
+/* -- CASES CAROUSEL -- */
 .case-carousel-container {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory; /* Efeito de "trava" no scroll horizontal */
-  padding: 2rem 0;
-  margin-top: 3rem;
-  
-  /* Esconde a barra de scroll */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  max-width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 2rem 0; margin-top: 3rem;
+  scrollbar-width: none;
 }
-.case-carousel-container::-webkit-scrollbar { 
-    display: none;  /* Safari e Chrome */
-}
-
+.case-carousel-container::-webkit-scrollbar { display: none; }
 .case-carousel-track {
-  display: flex;
-  width: max-content; /* Permite que os filhos fiquem em linha */
-  gap: 2rem;
-  /* Padding para centralizar o primeiro e último item */
+  display: flex; width: max-content; gap: 2rem;
   padding-left: max(2rem, (100vw - 1200px) / 2 + 2rem);
   padding-right: max(2rem, (100vw - 1200px) / 2 + 2rem);
 }
-
 .case-card-revolutionary {
-  flex-shrink: 0;
-  width: 400px; /* Largura fixa para os cards */
-  scroll-snap-align: center; /* Centraliza o card no viewport */
+  flex-shrink: 0; width: 400px; scroll-snap-align: center;
   background: linear-gradient(145deg, var(--color-card-bg), #0F0F0F);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 2.5rem;
-  text-align: center; /* AJUSTE: Centralizado */
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid var(--color-border); border-radius: 16px; padding: 2.5rem;
+  text-align: center; display: flex; flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; position: relative;
 }
-
-.case-card-revolutionary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  opacity: 0.7;
-  transition: opacity 0.4s ease;
-}
-
 .case-card-revolutionary:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 30px var(--color-glow-start);
-  border-color: rgba(0, 150, 132, 0.4);
+  transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 30px var(--color-glow-start);
 }
-
-.case-card-header-rev {
-  margin-bottom: 1.5rem;
-}
-
-.case-card-title-rev {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  color: var(--color-heading);
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-.case-card-tag-rev {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.case-card-revolutionary p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--color-text);
-  margin-bottom: 1rem;
-}
-
-.case-card-revolutionary p:last-of-type {
-  margin-bottom: 2rem;
-}
-
-.case-card-revolutionary strong {
-  color: var(--color-heading);
-  font-weight: 600;
-}
-
+.case-card-title-rev { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--color-heading); margin-bottom: 0.5rem; font-weight: 700; }
 .btn-case-revolutionary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center; /* AJUSTE: Centraliza o botão */
-  gap: 0.5rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: auto; /* Empurra para o final do card */
-  transition: gap 0.3s ease, color 0.3s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  color: var(--color-accent); text-decoration: none; font-weight: 600; margin-top: auto;
+  transition: gap 0.3s ease;
 }
+.btn-case-revolutionary:hover { gap: 1rem; color: var(--color-heading); }
 
-.btn-case-revolutionary:hover {
-  gap: 1rem;
-  color: var(--color-heading);
-}
-
-@media (max-width: 768px) {
-  .case-card-revolutionary {
-    width: 320px;
-    padding: 2rem;
-  }
-  .case-card-revolutionary {
-    width: 320px;
-    padding: 2rem;
-  }
-  .principle-core-highlight {
-    font-size: 1.1rem;
-  }
-  .principle-core-block p {
-    font-size: 1rem;
-  }
-}
-
-/* ==========================================================================
-   BLOCO 5: TRÊS VERDADES (NOVO DESIGN)
-   ========================================================================== */
-.section-truths-revolutionary {
-  background-color: var(--color-section-bg);
-}
-   
-.truths-grid-revolutionary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-.truth-card-revolutionary {
-  position: relative;
-  padding: 2.5rem;
-  /* padding-top: 4rem; */ /* Removido para centralizar número */
-  text-align: center; /* AJUSTE: Centralizado */
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  transition: background-color 0.4s ease, border-color 0.4s ease;
-}
-
-.truth-card-revolutionary:hover {
-  background-color: var(--color-card-bg-hover);
-  border-color: rgba(0, 150, 132, 0.3);
-}
-
-.truth-card-number {
-  position: relative; /* AJUSTE: Posição relativa */
-  top: 0; /* AJUSTE: Removido */
-  left: 0; /* AJUSTE: Removido */
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  opacity: 0.5;
-  line-height: 1;
-  text-align: center; /* AJUSTE: Centralizado */
-  margin-bottom: 1rem; /* AJUSTE: Adicionado espaçamento */
-}
-
-.truth-card-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
-  color: var(--color-heading);
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.truth-card-revolutionary p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text);
-}
-
-@media (max-width: 992px) {
-  .truths-grid-revolutionary {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .truth-card-revolutionary {
-    padding: 2rem;
-    /* padding-top: 3.5rem; */ /* Removido */
-  }
-  .truth-card-number {
-    /* top: 1.5rem; */ /* Removido */
-    /* left: 2rem; */ /* Removido */
-    font-size: 2rem;
-  }
-}
-
-/* ==========================================================================
-   BLOCO 5.5: NOSSAS SOLUÇÕES (NOVO)
-   ========================================================================== */
-
-.section-solutions-revolutionary {
-  background-color: var(--color-background);
-}
-
-.solutions-grid-revolutionary {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 4rem;
-  perspective: 1500px;
-}
-
+/* -- SOLUÇÕES -- */
+.solutions-grid-revolutionary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; perspective: 1500px; }
 .solution-card-revolutionary {
-  position: relative;
-  display: block; /* Para o <Link> funcionar como card */
-  text-decoration: none;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--color-card-bg);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-  border: 1px solid var(--color-border);
-  padding: 2.5rem 2rem;
-  text-align: center;
+  display: block; text-decoration: none; border-radius: 16px; background-color: var(--color-card-bg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid var(--color-border);
+  padding: 2.5rem 2rem; text-align: center;
 }
-
-.solution-card-revolutionary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
-  background-size: 16px 16px;
-  opacity: 0.3;
-  transition: opacity 0.5s ease;
-}
-
-.solution-card-revolutionary::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 16px;
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), var(--color-border-hover), transparent 40%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-}
-
 .solution-card-revolutionary:hover {
-  transform: rotateX(5deg) rotateY(-5deg) scale(1.05);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 40px rgba(0, 150, 132, 0.2);
-  background-color: var(--color-card-bg-hover);
+  transform: rotateX(5deg) rotateY(-5deg) scale(1.05); background-color: var(--color-card-bg-hover);
 }
+.solution-card-revolutionary .pillar-card-title { color: var(--color-heading); }
+.solution-card-revolutionary .pillar-card-description { color: var(--color-text); }
 
-.solution-card-revolutionary:hover::before {
-  opacity: 0.1;
-}
-
-.solution-card-revolutionary:hover::after {
-  opacity: 1;
-}
-
-/* Reutilizando estilos de pillar-card para o conteúdo interno */
-.solution-card-revolutionary .pillar-icon-wrapper,
-.solution-card-revolutionary .pillar-card-title,
-.solution-card-revolutionary .pillar-card-description {
-  position: relative;
-  z-index: 2;
-}
-
-.solution-card-revolutionary .pillar-card-title {
-  color: var(--color-heading); /* Garantir que o link não mude a cor */
-}
-.solution-card-revolutionary .pillar-card-description {
-   color: var(--color-text);
-}
-
-@media (max-width: 992px) {
-  .solutions-grid-revolutionary {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .solutions-grid-revolutionary {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .solution-card-revolutionary {
-    padding: 2rem 1.5rem;
-  }
-  .solution-card-revolutionary:hover {
-    transform: scale(1.03);
-  }
-}
-
-/* ==========================================================================
-   BLOCO 6: CTA FINAL (NOVO DESIGN - IMERSIVO)
-   ========================================================================== */
-
-.final-cta-revolutionary {
-  padding: 8rem 0;
-  background-color: var(--color-background);
-  overflow: hidden;
-}
-
-@keyframes pulse-core-animation {
-  0% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0.5;
-  }
-}
-
-.pulsating-core-background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-/* Efeito de núcleo pulsante */
+/* -- CTA FINAL PULSANTE -- */
+.final-cta-revolutionary { padding: 8rem 0; background-color: var(--color-background); overflow: hidden; }
 .pulsating-core-background::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  max-width: 1400px;
-  padding-top: 100%; /* Mantém a proporção */
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--color-glow-end) 0%, transparent 60%);
-  filter: blur(150px);
-  animation: pulse-core-animation 8s ease-in-out infinite;
-  will-change: transform, opacity;
+  content: ''; position: absolute; top: 50%; left: 50%; width: 100%; max-width: 1400px; padding-top: 100%;
+  border-radius: 50%; background: radial-gradient(circle, var(--color-glow-end) 0%, transparent 60%);
+  filter: blur(150px); animation: pulse-core-animation 8s ease-in-out infinite; transform: translate(-50%, -50%);
 }
-
+@keyframes pulse-core-animation {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
 @keyframes pulse-button-glow {
-  0% {
-    box-shadow: 0 0 15px rgba(0, 150, 132, 0.3), 0 0 25px rgba(0, 150, 132, 0.2), 0 4px 15px rgba(0, 150, 132, 0.2);
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(56, 197, 177, 0.5), 0 0 50px rgba(56, 197, 177, 0.3), 0 8px 25px rgba(0, 150, 132, 0.3);
-    transform: translateY(-4px) scale(1.03);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(0, 150, 132, 0.3), 0 0 25px rgba(0, 150, 132, 0.2), 0 4px 15px rgba(0, 150, 132, 0.2);
-    transform: translateY(0) scale(1);
-  }
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 150, 132, 0.3); transform: translateY(0); }
+  50% { box-shadow: 0 0 30px rgba(56, 197, 177, 0.5); transform: translateY(-4px); }
 }
+.btn-cta-pulse { animation: pulse-button-glow 3s ease-in-out infinite; }
 
-.btn-cta-pulse {
-  animation: pulse-button-glow 3s ease-in-out infinite;
+/* -- WHATSAPP FLOAT -- */
+.whatsapp-float {
+  position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
+  background-color: var(--color-primary); color: #FFF; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); z-index: 1000; transition: all 0.3s ease;
+  animation: pulse-whatsapp 2s infinite; cursor: pointer;
 }
-
-.final-cta-revolutionary .final-cta-title {
-  /* Sobrescreve o -webkit-text-fill-color para ser visível */
-  color: var(--color-heading) !important;
-  background: none !important;
-  -webkit-text-fill-color: var(--color-heading) !important;
-  animation: none !important;
-  font-size: 3rem;
-}
-
-@media (max-width: 768px) {
-  .final-cta-revolutionary {
-    padding: 6rem 0;
-  }
-  .final-cta-revolutionary .final-cta-title {
-    font-size: 2.2rem;
-  }
-  .final-cta-revolutionary .cta-support-text {
-    font-size: 1.1rem;
-  }
+.whatsapp-float:hover { transform: translateY(-5px); animation-play-state: paused; }
+@keyframes pulse-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 150, 132, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 150, 132, 0); }
 }
 
 /* ==========================================================================
-   14. BOTÃO DO WHATSAPP (READICIONADO)
+   RESPONSIVIDADE GERAL
    ========================================================================== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background-color: var(--color-primary);
-  color: #FFF;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  animation: pulse-whatsapp 2s infinite;
-  cursor: pointer; /* Adicionado para indicar clicabilidade */
-}
-.whatsapp-float:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  animation-play-state: paused;
+@media (max-width: 992px) {
+  .pillar-grid-revolutionary, .solutions-grid-revolutionary { grid-template-columns: repeat(2, 1fr); }
 }
 
-@keyframes pulse-whatsapp {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(0, 150, 132, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 132, 0);
-  }
+@media (max-width: 768px) {
+  .hero-headline { font-size: 2.2rem; }
+  .pillar-grid-revolutionary, .solutions-grid-revolutionary { grid-template-columns: 1fr; gap: 1rem; }
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  .footer-column { align-items: center; }
+  .case-card-revolutionary { width: 320px; }
+  .final-cta-revolutionary .final-cta-title { font-size: 2.2rem; }
 }
