@@ -1,11 +1,11 @@
 // pages/index.js
-// Versão Atualizada: Novas Copys, Estrutura de Links Corrigida e Novo Estilo de Botão CTA
+// Versão Limpa: Usa 100% do CSS Global + Layouts Padronizados e Centralizados
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem, Layout, MonitorSmartphone, Box } from 'lucide-react';
+import { ArrowRight, Brain, Users, Award, GitBranch, Target, TrendingUp, Zap, CheckCircle2, Layers, LineChart, ShieldCheck, Gem, Layout, MonitorSmartphone, Box } from 'lucide-react';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,8 +45,8 @@ export default function Home() {
         <meta name="description" content="Transformamos crescimento por indicação em receita previsível. O método que tira sua empresa do improviso e coloca você no controle." />
       </Head>
 
-{/* ====================================================================== */}
-      {/* Seção 1: Hero Section                                                */}
+      {/* ====================================================================== */}
+      {/* Seção 1: Hero Section (Full Height na Home)                            */}
       {/* ====================================================================== */}
       <section className="hero-section">
         <div className="hero-video-background">
@@ -55,32 +55,30 @@ export default function Home() {
           </video>
           <div className="hero-overlay"></div>
         </div>
-        <div className="container hero-content text-center page-hero-padding reveal-up">
+        <div className="container hero-content page-hero-padding reveal-up">
           
-          {/* HEADLINE */}
           <h1 className="hero-headline">
             Engenharia de Receita para Empresas B2B
             <br/>
             que Precisam de Crescimento Previsível
           </h1>
           
-          {/* SUBHEADLINE */}
-          <p className="hero-subheadline wider-on-desktop">
+          <p className="hero-subheadline lead-text">
             Transformamos operações comerciais dependentes de improviso e esforço manual em máquinas de receita previsível. Instalamos o método completo — da estratégia à execução — para sua empresa escalar com governança.
           </p>
           
-          <div className="hero-ctas">
+          <div className="hero-ctas" style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
             <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
               <span>Agendar Diagnóstico Estratégico (21min)</span>
               <ArrowRight size={20} />
             </Link>
-            <Link href="/a-engenharia" className="btn btn-secondary btn-large">
+            <Link href="/a-engenharia" className="btn">
               <span>Conhecer a Engenharia de Receita</span>
             </Link>
           </div>
 
           {/* Barra de Confiança */}
-          <div className="trust-bar reveal-up" style={{marginTop: '6rem', paddingBottom: '2rem'}}>
+          <div className="trust-bar reveal-up">
             <p style={{marginBottom: '2rem', fontSize: '1rem', opacity: 0.8}}>Método forjado em ecossistemas de alta performance:</p>
             <div className="trust-bar-logos">
               <div className="trust-logo"><Image src="/logo/logo-google.png" alt="Google" width={100} height={32} objectFit="contain" /></div>
@@ -93,451 +91,247 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="section-divider-glow"></div>
-
       {/* ====================================================================== */}
       {/* Seção 2: O Diagnóstico Rápido (Sintomas)                             */}
       {/* ====================================================================== */}
-      <section id="sintomas" className="section-solid section-truths-revolutionary">
+      <section id="sintomas" className="section-solid">
         <div className="container reveal-up">
-          <h2 className="section-title text-center">Você reconhece estes sintomas?</h2>
+          <h2 className="section-title">Você reconhece estes sintomas?</h2>
           
-          <div className="truths-grid-revolutionary" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '4rem'}}>
-            
-            {/* Sintoma 1 */}
+          <div className="truths-grid-revolutionary">
             <div className="glass-card-premium">
-              <span className="truth-card-number">1.</span>
-              <h3 className="truth-card-title">Esforço Máximo, Resultado Instável</h3>
-              <p>Você contrata ferramentas, testa canais e exige mais do time, mas o ponteiro não move na mesma proporção. O mercado não percebe seu valor real e cada venda exige um esforço desproporcional de convencimento porque falta posicionamento, não esforço.</p>
+              <h3 className="truth-card-title">1. Esforço Máximo, Resultado Instável</h3>
+              <p>Você contrata ferramentas, testa canais e exige mais do time, mas o ponteiro não move na mesma proporção. O mercado não percebe seu valor real.</p>
             </div>
             
-            {/* Sintoma 2 */}
             <div className="glass-card-premium">
-              <span className="truth-card-number">2.</span>
-              <h3 className="truth-card-title">Investimento Sem Rastreabilidade</h3>
-              <p>Você assina os cheques de marketing e vendas, mas não sabe dizer qual real investido trouxe o contrato assinado. O ciclo de vendas não encurta e a eficiência cai à medida que você tenta escalar. O problema é a ausência de Engenharia de Receita no processo comercial.</p>
+              <h3 className="truth-card-title">2. Investimento Sem Rastreabilidade</h3>
+              <p>Você assina os cheques de marketing e vendas, mas não sabe dizer qual real investido trouxe o contrato assinado. Eficiência cai ao escalar.</p>
             </div>
 
-            {/* Sintoma 3 */}
             <div className="glass-card-premium">
-              <span className="truth-card-number">3.</span>
-              <h3 className="truth-card-title">Dependência de "Talento" vs. Processo</h3>
-              <p>O faturamento depende da performance individual de vendedores sêniores (ou dos sócios). Se eles saírem, a receita cai. O crescimento está alicerçado em conhecimento tácito (na cabeça das pessoas), não em um playbook validado e transferível.</p>
+              <h3 className="truth-card-title">3. Dependência de "Talento"</h3>
+              <p>O faturamento depende da performance individual de vendedores sêniores. Se eles saírem, a receita cai. Falta um playbook validado.</p>
             </div>
           </div>
 
-          <p className="lead-text text-center" style={{ maxWidth: '800px', margin: '4rem auto 0', fontStyle: 'italic', fontWeight: 500, color: 'var(--color-heading)' }}>
-            Você não precisa de mais vendedores. Você precisa de um sistema de vendas. <br/>A diferença entre uma empresa estagnada e uma scale-up é a substituição do talento individual pelo método institucional.
+          <p className="lead-text" style={{ marginTop: '4rem', fontStyle: 'italic', color: 'var(--color-heading)' }}>
+            Você não precisa de mais vendedores. Você precisa de um sistema de vendas.
           </p>
         </div>
       </section>
-
-      <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
       {/* Seção 3: A Engenharia de Receita (Os 4 Pilares)                      */}
       {/* ====================================================================== */}
-      <section id="engenharia-de-receita" className="section-solid section-pillars-revolutionary">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">O Método: Os 4 Pilares da Engenharia de Receita</h2>
+      <section id="engenharia-de-receita" className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <h2 className="section-title">O Método: Os 4 Pilares</h2>
           <p className="lead-text">
             A estrutura necessária para transformar vendas complexas em processo repetível.
           </p>
           
-          {/* Layout 2x2 Desktop */}
-          <div className="pillar-grid-2x2">
+          {/* Grid agora controlado pelo CSS Global */}
+          <div className="pillar-grid-revolutionary">
             
-            {/* Pilar 1 */}
             <div className="glass-card-premium">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper">
-                  <Gem size={28} />
-                </div>
-                <h3 className="pillar-card-title">Clareza de Valor</h3>
-                <p className="pillar-card-description">Decodificamos sua competência técnica em autoridade de mercado. Seu cliente ideal precisa entender o impacto financeiro que você gera em 30 segundos, sem depender de reuniões técnicas intermináveis.</p>
-              </div>
+              <div className="pillar-icon-wrapper"><Gem size={32} /></div>
+              <h3 className="pillar-card-title">Clareza de Valor</h3>
+              <p className="pillar-card-description">Decodificamos sua competência técnica em autoridade de mercado. Seu cliente ideal precisa entender o impacto financeiro em 30 segundos.</p>
             </div>
 
-            {/* Pilar 2 */}
             <div className="glass-card-premium">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper">
-                  <GitBranch size={28} />
-                </div>
-                <h3 className="pillar-card-title">Arquitetura Comercial</h3>
-                <p className="pillar-card-description">O blueprint do seu motor de receita. Definimos processos, canais e rituais de gestão para que a meta seja batida pelo processo, e não pelo heroísmo de fim de mês.</p>
-              </div>
+              <div className="pillar-icon-wrapper"><GitBranch size={32} /></div>
+              <h3 className="pillar-card-title">Arquitetura Comercial</h3>
+              <p className="pillar-card-description">O blueprint do seu motor de receita. Definimos processos, canais e rituais para que a meta seja batida pelo processo, não pelo heroísmo.</p>
             </div>
 
-            {/* Pilar 3 */}
             <div className="glass-card-premium">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper">
-                  <ShieldCheck size={28} />
-                </div>
-                <h3 className="pillar-card-title">Governança de Execução</h3>
-                <p className="pillar-card-description">Estratégia sem execução é alucinação. Atuamos com liderança sênior na linha de frente para garantir que o playbook seja seguido, os dados sejam limpos e a cultura de alta performance seja instalada.</p>
-              </div>
+              <div className="pillar-icon-wrapper"><ShieldCheck size={32} /></div>
+              <h3 className="pillar-card-title">Governança de Execução</h3>
+              <p className="pillar-card-description">Atuamos com liderança sênior na linha de frente para garantir que o playbook seja seguido e a cultura de alta performance seja instalada.</p>
             </div>
 
-            {/* Pilar 4 */}
             <div className="glass-card-premium">
-              <div className="pillar-card-content">
-                <div className="pillar-icon-wrapper">
-                  <Layers size={28} />
-                </div>
-                <h3 className="pillar-card-title">Ativos que Convertem</h3>
-                <p className="pillar-card-description">Transformamos sua presença digital em uma ferramenta de vendas 24/7. Educamos o comprador e provamos valor técnico antes mesmo da primeira reunião, encurtando ciclos de negociação.</p>
-              </div>
+              <div className="pillar-icon-wrapper"><Layers size={32} /></div>
+              <h3 className="pillar-card-title">Ativos que Convertem</h3>
+              <p className="pillar-card-description">Transformamos sua presença digital em ferramenta de vendas 24/7. Educamos o comprador e provamos valor antes da primeira reunião.</p>
             </div>
 
           </div>
         </div>
       </section>
 
-      <div className="section-divider-glow"></div>
-
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções de Engenharia de Receita                           */}
+      {/* Seção 4: Soluções (Padronizadas e Centralizadas)                     */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
         <div className="container reveal-up">
-          <h2 className="section-title text-center">Como podemos atuar no seu negócio?</h2>
-          <p className="lead-text text-center" style={{maxWidth: '700px', margin: '0 auto 5rem'}}>
-            Do diagnóstico estratégico à gestão interina do comercial.
-          </p>
+          <h2 className="section-title">Como podemos atuar?</h2>
+          <p className="lead-text">Do diagnóstico estratégico à gestão interina.</p>
 
-          <div className="solutions-vertical-stack">
+          {/* --- FRENTE 1 --- */}
+          <div style={{marginBottom: '6rem', width: '100%'}}>
+            <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+              <div className="pillar-icon-wrapper"><Brain size={40} /></div>
+              <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 1: Inteligência & Estratégia</h3>
+            </div>
             
-            {/* --- FRENTE 1: INTELIGÊNCIA & ESTRATÉGIA --- */}
-            <div className="frente-block">
-              <div className="frente-header">
-                <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4">
-                   <Brain size={40} style={{color: 'var(--color-primary)', marginBottom: '1rem'}} />
-                </div>
-                <h3 className="solution-column-title">Pilar 1: Inteligência & Estratégia</h3>
-                <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Para quem precisa de direção clara e correção de rota.</p>
-              </div>
-              
-              <div className="solutions-grid-wide">
-                [cite_start]{/* Card 1: Sprint de Validação [cite: 3, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><Zap size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Sprint de Validação Comercial</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Validação de mercado baseada em dados, não em intuição. O entregável é a verdade: testamos a aderência da tese antes de você escalar custos fixos. É um seguro para evitar que você gaste R$ 50k+ construindo a solução errada para o problema certo.</p>
-                        <div className="card-meta-inline">
-                          <span><strong>Ideal para:</strong> Mitigação de risco em lançamentos ou pivôs de modelo de negócio.</span>
-                          <span><strong>Investimento:</strong> Investimento Único (Pré-fixado).</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                         <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" className="btn-neon-glow">
-                           Agendar <ArrowRight size={18}/>
-                         </Link>
-                      </div>
-                   </div>
+            <div className="solutions-grid-revolutionary">
+               <div className="glass-card-premium">
+                  <div className="pillar-icon-wrapper"><Zap size={32} /></div>
+                  <h3 className="pillar-card-title">Sprint de Validação</h3>
+                  <p>Validação de mercado baseada em dados. Testamos a aderência da tese antes de escalar custos.</p>
+                  <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" className="btn">
+                     Agendar
+                  </Link>
+               </div>
+
+               <div className="glass-card-premium">
+                  <div className="pillar-icon-wrapper"><Target size={32} /></div>
+                  <h3 className="pillar-card-title">GTM Completo</h3>
+                  <p>Arquitetura de Receita completa. Do ICP à Retenção para garantir crescimento sistêmico.</p>
+                  <Link href="/pilares/inteligencia-e-estrategia/gtm-completo" className="btn">
+                    Ver mais
+                  </Link>
+               </div>
+
+               <div className="glass-card-premium">
+                  <div className="pillar-icon-wrapper"><Users size={32} /></div>
+                  <h3 className="pillar-card-title">CRO as a Service</h3>
+                  <p>Liderança executiva fracionada. Governança de C-Level para liderar a construção da máquina.</p>
+                  <Link href="/pilares/inteligencia-e-estrategia/cro-service" className="btn">
+                    Entender
+                  </Link>
+               </div>
+
+               <div className="glass-card-premium">
+                  <div className="pillar-icon-wrapper"><ShieldCheck size={32} /></div>
+                  <h3 className="pillar-card-title">Advisory Board</h3>
+                  <p>Sparring executivo para decisões estratégicas de alto impacto e eficiência de capital.</p>
+                  <Link href="/pilares/inteligencia-e-estrategia/advisory-board" className="btn">
+                    Solicitar Board
+                  </Link>
+               </div>
+            </div>
+          </div>
+
+          {/* --- FRENTE 2 --- */}
+          <div style={{marginBottom: '6rem', width: '100%'}}>
+             <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+                <div className="pillar-icon-wrapper"><MonitorSmartphone size={40} /></div>
+                <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 2: Ativos Digitais</h3>
+             </div>
+             
+             <div className="solutions-grid-revolutionary">
+                <div className="glass-card-premium">
+                   <div className="pillar-icon-wrapper"><Layout size={32} /></div>
+                   <h3 className="pillar-card-title">Plataformas Digitais</h3>
+                   <p>Sites como Revenue Hubs. Filtros de qualificação técnica que geram oportunidades maduras 24/7.</p>
+                   <Link href="/pilares/ativos-digitais/plataformas-digitais" className="btn">
+                     Ver exemplos
+                   </Link>
                 </div>
 
-                [cite_start]{/* Card 2: GTM Completo [cite: 3, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><Target size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Go-To-Market Completo (GTM)</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Engenharia de GTM aplicada. Não entregamos apenas um plano estático, mas a Arquitetura de Receita completa. Preenchemos a lacuna crítica entre estratégia e execução, desenhando do ICP à Retenção para garantir que o crescimento seja sistêmico, não acidental.</p>
-                        <div className="card-meta-inline">
-                          <span><strong>Ideal para:</strong> Empresas que precisam corrigir instabilidade de receita ou CAC insustentável.</span>
-                          <span><strong>Investimento:</strong> Setup Estratégico + % sobre Receita Nova.</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/inteligencia-e-estrategia/gtm-completo" className="btn-neon-glow">
-                          Ver mais <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
+                <div className="glass-card-premium">
+                   <div className="pillar-icon-wrapper"><TrendingUp size={32} /></div>
+                   <h3 className="pillar-card-title">Ferramentas de Aceleração</h3>
+                   <p>CRMs e calculadoras que materializam a promessa da marca e aceleram o ciclo de vendas.</p>
+                   <Link href="/pilares/ativos-digitais/apps" className="btn">
+                     Explorar
+                   </Link>
+                </div>
+             </div>
+          </div>
+
+          {/* --- FRENTE 3 --- */}
+          <div style={{marginBottom: '2rem', width: '100%'}}>
+             <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+                <div className="pillar-icon-wrapper"><Box size={40} /></div>
+                <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 3: Soluções Verticais</h3>
+             </div>
+             
+             <div className="solutions-grid-revolutionary">
+                <div className="glass-card-premium">
+                   <div className="pillar-icon-wrapper"><CheckCircle2 size={32} /></div>
+                   <h3 className="pillar-card-title">Cortex B2B™</h3>
+                   <p>Raio-X da maturidade do negócio. Identificamos o Gap de Execução e alavancas de crescimento.</p>
+                   <Link href="/pilares/solucoes-verticais/cortex-b2b" className="btn">
+                     Conhecer
+                   </Link>
                 </div>
 
-                [cite_start]{/* Card 3: CRO as a Service [cite: 3, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><Users size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Diretoria de Receita (CRO as a Service)</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Liderança executiva fracionada. Injetamos a governança de um C-Level sênior para liderar a construção da máquina, garantindo que a cultura de dados e a performance do time sejam instaladas sem o custo fixo integral de um executivo de mercado.</p>
-                        <div className="card-meta-inline">
-                          <span><strong>Ideal para:</strong> Profissionalizar a gestão comercial e potencializar a atuação estratégica dos fundadores (Founder Led Growth).</span>
-                          <span><strong>Investimento:</strong> Retainer Mensal (Fixo) + % sobre Receita Nova.</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/inteligencia-e-estrategia/cro-service" className="btn-neon-glow">
-                          Entender <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
+                <div className="glass-card-premium">
+                   <div className="pillar-icon-wrapper"><Zap size={32} /></div>
+                   <h3 className="pillar-card-title">Match Maker B2B</h3>
+                   <p>Inteligência de conexões. Transforma networking aleatório em matching estratégico.</p>
+                   <Link href="/pilares/solucoes-verticais/match-maker" className="btn">
+                     Agendar Demo
+                   </Link>
                 </div>
 
-                [cite_start]{/* Card 4: Advisory Board [cite: 3, 4] */}
-                 <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><ShieldCheck size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Advisory Board Estratégico</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Sparring executivo para momentos de inflexão. Acompanhamento sênior para navegar movimentações de mercado, fusões ou reestruturações, garantindo clareza na tomada de decisão estratégica sob a ótica de eficiência de capital.</p>
-                        <div className="card-meta-inline">
-                          <span><strong>Ideal para:</strong> Decisões de alto impacto que exigem validação externa qualificada.</span>
-                          <span><strong>Investimento:</strong> Sessões de Decisão ou Board Packs (Single Shot).</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/inteligencia-e-estrategia/advisory-board" className="btn-neon-glow">
-                          Solicitar Board <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
+                <div className="glass-card-premium">
+                   <div className="pillar-icon-wrapper"><Target size={32} /></div>
+                   <h3 className="pillar-card-title">Health Business Arch.™</h3>
+                   <p>Engenharia de receita para saúde. Converta autoridade clínica em ecossistema escalável.</p>
+                   <Link href="/pilares/solucoes-verticais/hba" className="btn">
+                     Ativar Receitas
+                   </Link>
                 </div>
-              </div>
+             </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* Seção 5: Cases de Sucesso (Centralizados)                            */}
+      {/* ====================================================================== */}
+      <section id="cases" className="section-with-gradient-glow">
+        <div className="container reveal-up">
+          <h2 className="section-title">Da Complexidade à Tração</h2>
+          
+          <div className="case-grid">
+            
+            <div className="glass-card-premium">
+               <div className="pillar-icon-wrapper"><Award size={32} /></div>
+               <h3 className="case-card-title">Versão Holística</h3>
+               <p><strong>R$ 500k captados.</strong> Reestruturação do GTM e tradução da oferta para "CareOps".</p>
+               <Link href="/cases/versao-holistica" className="btn">Ver Case</Link>
             </div>
 
-            {/* --- FRENTE 2: ATIVOS DIGITAIS --- */}
-            <div className="frente-block" style={{marginTop: '4rem'}}>
-              <div className="frente-header">
-                 <div className="inline-flex items-center justify-center p-3 rounded-full bg-accent/10 mb-4">
-                   <MonitorSmartphone size={40} style={{color: 'var(--color-accent)', marginBottom: '1rem'}} />
-                </div>
-                <h3 className="solution-column-title">Pilar 2: Ativos Digitais</h3>
-                <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Ferramentas que vendem por você.</p>
-              </div>
-              
-              <div className="solutions-grid-wide">
-                [cite_start]{/* Card 1: Plataformas [cite: 2, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><Layout size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Plataformas Digitais</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Engenharia de conversão aplicada ao digital. Transformamos sites institucionais em Revenue Hubs (centros operacionais de captação e processamento de demanda). Eles operam como filtros de qualificação técnica, educando decisores e gerando oportunidades maduras 24/7, sem intervenção humana inicial.</p>
-                        <div className="card-meta-inline">
-                           <span className="solution-examples"><strong>Exemplos:</strong> exclusivaengenharias.com, versaoholistica.com.br</span>
-                          <span><strong>Ideal para:</strong> Transformar tráfego de curiosos em reuniões com decisores.</span>
-                          <span><strong>Investimento:</strong> Projeto sob Medida (Discovery + Execução).</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/ativos-digitais/plataformas-digitais" className="btn-neon-glow">
-                          Ver exemplos <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
-                </div>
-
-                [cite_start]{/* Card 2: Ferramentas de Aceleração [cite: 2, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><TrendingUp size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Ferramentas de Aceleração de Receita</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Engenharia de Valor tangível. Desenvolvimento de CRMs, calculadoras e interfaces que materializam a promessa da marca. Traduzimos complexidade técnica em usabilidade para elevar a percepção de valor e acelerar o ciclo de vendas (Product-Led Sales).</p>
-                        <div className="card-meta-inline">
-                          <span><strong>Ideal para:</strong> Tangibilizar o posicionamento e oferecer uma primeira experiência real ao usuário.</span>
-                           <span><strong>Investimento:</strong> Projeto sob Medida.</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/ativos-digitais/apps" className="btn-neon-glow">
-                          Explorar <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
-                </div>
-              </div>
+            <div className="glass-card-premium">
+               <div className="pillar-icon-wrapper"><GitBranch size={32} /></div>
+               <h3 className="case-card-title">Exclusiva Engenharias</h3>
+               <p><strong>Forecast Recorde.</strong> Máquina de vendas Outbound e posicionamento de continuidade operacional.</p>
+               <Link href="/cases/exclusiva-engenharias" className="btn">Ver Case</Link>
             </div>
 
-            {/* --- FRENTE 3: SOLUÇÕES VERTICAIS --- */}
-            <div className="frente-block" style={{marginTop: '4rem'}}>
-              <div className="frente-header">
-                 <div className="inline-flex items-center justify-center p-3 rounded-full bg-primary/10 mb-4">
-                   <Box size={40} style={{color: '#fff', marginBottom: '1rem'}} />
-                </div>
-                <h3 className="solution-column-title">Pilar 3: Soluções Verticais</h3>
-                <p className="solution-column-desc" style={{marginBottom: '3rem'}}>Metodologias proprietárias para contextos específicos.</p>
-              </div>
-              
-              <div className="solutions-grid-wide">
-                [cite_start]{/* Card 1: Cortex [cite: 2, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><CheckCircle2 size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Diagnóstico Cortex B2B™</h4>
-                        <p className="card-desc"><strong>O que é:</strong> O "Raio-X" da maturidade do negócio sob 5 lentes analíticas. Identificamos o Gap de Execução — onde a estratégia falha na prática — e definimos as alavancas exatas de GTM Engineering para destravar o crescimento imediato.</p>
-                        <div className="card-meta-inline">
-                            <span><strong>Ideal para:</strong> Direcionamento estratégico fundamentado antes de rodadas ou expansão.</span>
-                            <span><strong>Investimento:</strong> Sob consulta.</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                         <Link href="/pilares/solucoes-verticais/cortex-b2b" className="btn-neon-glow">
-                           Conhecer <ArrowRight size={18}/>
-                         </Link>
-                      </div>
-                   </div>
-                </div>
-
-                [cite_start]{/* Card 2: Match Maker [cite: 2, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><Zap size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Match Maker B2B</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Inteligência de conexões para ecossistemas. Plataforma que organiza e potencializa o capital relacional (Ecosystem-Led Growth), transformando networking aleatório em conexões estratégicas baseadas em dados estruturados.</p>
-                        <div className="card-meta-inline">
-                            <span><strong>Ideal para:</strong> Comunidades B2B, aceleradoras e hubs de inovação.</span>
-                            <span><strong>Investimento:</strong> Setup da Plataforma + Licenciamento Mensal.</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/solucoes-verticais/match-maker" className="btn-neon-glow">
-                          Agendar Demo <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
-                </div>
-
-                [cite_start]{/* Card 3: HBA [cite: 2, 4] */}
-                <div className="glass-card-premium solution-wide-card">
-                   <div className="card-content-row">
-                      <div className="card-icon-left"><Target size={32} /></div>
-                      <div className="card-text-content">
-                        <h4>Health Business Architecture™</h4>
-                        <p className="card-desc"><strong>O que é:</strong> Engenharia de receita aplicada à saúde. Convertemos autoridade clínica em um ecossistema de negócios escalável, criando ativos de receita recorrente e processos que transcendem a agenda física do profissional de saúde.</p>
-                        <div className="card-meta-inline">
-                            <span><strong>Ideal para:</strong> Profissionais e Clínicas consolidadas buscando diversificação de receita e legado.</span>
-                            <span><strong>Investimento:</strong> Setup Premium + % sobre Receita Nova.</span>
-                        </div>
-                      </div>
-                      <div className="card-action">
-                        <Link href="/pilares/solucoes-verticais/hba" className="btn-neon-glow">
-                          Ativar Novas Receitas <ArrowRight size={18}/>
-                        </Link>
-                      </div>
-                   </div>
-                </div>
-              </div>
+            <div className="glass-card-premium">
+               <div className="pillar-icon-wrapper"><ShieldCheck size={32} /></div>
+               <h3 className="case-card-title">AORKIA</h3>
+               <p><strong>Zero ao Playbook.</strong> Conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
+               <Link href="/cases/aorkia" className="btn">Ver Case</Link>
             </div>
 
           </div>
         </div>
       </section>
-
-      {/* ====================================================================== */}
-      {/* Seção 5: Cases de Sucesso (Wide Cards)                               */}
-      {/* ====================================================================== */}
-      <section id="cases" className="section-with-gradient-glow section-cases-revolutionary">
-        <div className="container text-center reveal-up">
-          <h2 className="section-title">Da Complexidade à Tração</h2>
-        </div>
-        
-        <div className="case-stack-container reveal-up">
-          
-            {/* Case 1: Versão Holística */}
-            <div className="glass-card-premium case-wide-card">
-              <div className="case-content-wrapper">
-                <div className="case-header-row">
-                  <div className="pillar-icon-wrapper"><Award size={32} /></div>
-                  <div className="case-title-group">
-                     <h3>Versão Holística</h3>
-                     <span className="case-tag">R$ 500k captados</span>
-                  </div>
-                </div>
-                <div className="case-body">
-                  <p><strong>Contexto:</strong> Tecnologia validada, mas com dificuldade de penetração em grandes contas (Hospitais) devido a um discurso excessivamente técnico.</p>
-                  <p><strong>Ação:</strong> Reestruturação do GTM e tradução da oferta para "CareOps" (foco em eficiência operacional, não apenas clínica).</p>
-                  <p><strong>Resultado:</strong> R$ 500k captados e validação de canal enterprise.</p>
-                </div>
-                <div className="case-footer">
-                  <Link href="/cases/versao-holistica" className="btn-case-revolutionary">
-                    <span>Ver Case Completo</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Case 2: Exclusiva Engenharias */}
-            <div className="glass-card-premium case-wide-card">
-               <div className="case-content-wrapper">
-                <div className="case-header-row">
-                  <div className="pillar-icon-wrapper"><GitBranch size={32} /></div>
-                  <div className="case-title-group">
-                     <h3>Exclusiva Engenharias</h3>
-                     <span className="case-tag">Forecast Recorde</span>
-                  </div>
-                </div>
-                <div className="case-body">
-                  <p><strong>Contexto:</strong> Empresa de engenharia consolidada, mas refém de indicações e sazonalidade. Sem previsibilidade de novos contratos.</p>
-                  <p><strong>Ação:</strong> Implementação de máquina de vendas Outbound e posicionamento como parceiro de "Continuidade Operacional".</p>
-                  <p><strong>Resultado:</strong> Geração de pipeline recorde (3x histórico) e redução da dependência dos sócios na venda.</p>
-                </div>
-                <div className="case-footer">
-                  <Link href="/cases/exclusiva-engenharias" className="btn-case-revolutionary">
-                    <span>Ver Case Completo</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Case 3: AORKIA */}
-            <div className="glass-card-premium case-wide-card">
-               <div className="case-content-wrapper">
-                <div className="case-header-row">
-                  <div className="pillar-icon-wrapper"><ShieldCheck size={32} /></div>
-                  <div className="case-title-group">
-                     <h3>AORKIA</h3>
-                     <span className="case-tag">Zero ao Playbook</span>
-                  </div>
-                </div>
-                <div className="case-body">
-                  <p><strong>Contexto:</strong> Desafio de entrar em um mercado comoditizado (Backup) dominado por gigantes globais, sem histórico de marca.</p>
-                  <p><strong>Ação:</strong> Estratégia de "Ancoragem de Autoridade" e venda baseada em Risco (Compliance/Ransomware) e não em TI.</p>
-                  <p><strong>Resultado:</strong> Validação do método com a conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
-                </div>
-                <div className="case-footer">
-                  <Link href="/cases/aorkia" className="btn-case-revolutionary">
-                    <span>Ver Case Completo</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-        </div>
-      </section>
-
-      <div className="section-divider-glow"></div>
 
       {/* ====================================================================== */}
       {/* Seção 6: Princípio Unificador                                        */}
       {/* ====================================================================== */}
-      <section id="principio" className="section-solid section-principle-revolutionary">
-        <div className="flowfield-background"></div>
-
-        <div className="container text-center reveal-up">
+      <section id="principio" className="section-solid">
+        <div className="container reveal-up">
           <div className="glass-card-premium" style={{maxWidth: '800px', margin: '0 auto'}}>
-            <div className="principle-core-icon" style={{margin: '0 auto 1.5rem'}}>
+            <div className="pillar-icon-wrapper">
               <LineChart size={32} />
             </div>
             <h3>O Que Une Esses Resultados?</h3>
-            <p className="principle-core-highlight">Eles deixaram de vender "horas" ou "produtos" para vender <strong>resultados de negócio</strong>.</p>
+            <p>Eles deixaram de vender "horas" ou "produtos" para vender <strong>resultados de negócio</strong>.</p>
             <p>Trocaram a intuição pela <strong>metodologia</strong>.</p>
-            <p>Entenderam que para crescer, precisavam profissionalizar a interface com o mercado.</p>
-            <p className="font-bold text-white mt-4" style={{color: 'var(--color-heading)', fontSize: '1.1rem'}}>Isso é Engenharia de Receita.</p>
-            <div className="section-cta">
-              <Link href="/a-engenharia" className="btn btn-secondary" style={{backdropFilter: 'blur(10px)'}}>
+            <div style={{marginTop: '2rem'}}>
+              <Link href="/a-engenharia" className="btn">
                 <span>Conhecer Nossa Tese</span>
               </Link>
             </div>
@@ -545,258 +339,30 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="section-divider-glow"></div>
-
-
       {/* ====================================================================== */}
       {/* Seção 7: CTA Final                                                   */}
       {/* ====================================================================== */}
-      <section className="final-cta-section final-cta-revolutionary">
-        <div className="pulsating-core-background"></div>
-
-        <div className="container text-center reveal-up" style={{position: 'relative', zIndex: 2}}>
-          <h2 className="final-cta-title" style={{color: 'var(--color-heading)', background: 'none', WebkitTextFillColor: 'unset', animation: 'none'}}>
-            Sua empresa está pronta para o próximo nível de maturidade comercial?
+      <section className="final-cta-section">
+        <div className="container reveal-up">
+          <h2 className="section-title">
+            Sua empresa está pronta para o próximo nível?
           </h2>
-          <p className="cta-support-text" style={{color: 'var(--color-heading)', fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto 2rem'}}>
+          <p className="lead-text">
             Se você fatura e sente que sua operação comercial é o gargalo, nós temos o método para destravar.
           </p>
-          <div className="section-cta">
-            <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Agende um Diagnóstico Executivo (21min)</span>
-              <ArrowRight size={20} />
-            </Link>
-          </div>
-          <p className="cta-support-text" style={{opacity: 0.9, marginTop: '1.5rem', textAlign: 'center'}}>
-            Uma conversa de negócios. Sem pressão de vendas, apenas alinhamento estratégico.
-          </p>
+          <Link href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
+            <span>Agende um Diagnóstico Executivo</span>
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </section>
 
-      {/* --- ESTILOS JSX --- */}
+      {/* ESTILOS MÍNIMOS RESTANTES (Apenas Layout Específico que não vale a pena por no Global) */}
       <style jsx>{`
-        /* CLASSE GLOBAL DO CARD PREMIUM */
-        .glass-card-premium {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 16px;
-          padding: 2.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          transition: all 0.4s ease;
-          height: 100%;
-        }
-
-        .glass-card-premium:hover {
-          transform: translateY(-5px);
-          border-color: var(--color-primary);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 150, 132, 0.2);
-        }
-
-        /* ESTILOS SOLUÇÕES (Vertical Stack) */
-        .solutions-vertical-stack {
-          display: flex;
-          flex-direction: column;
-          gap: 6rem;
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-        
-        .frente-header {
-          text-align: center;
-        }
-
-        .solution-column-title {
-           font-family: 'Montserrat', sans-serif;
-           font-size: 1.8rem;
-           color: var(--color-heading);
-           margin-bottom: 0.5rem;
-           text-transform: none;
-        }
-
-        .solutions-grid-wide {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
-
-        .solution-wide-card {
-           padding: 0 !important;
-           align-items: stretch !important;
-           overflow: hidden;
-        }
-
-        .card-content-row {
-           display: flex;
-           align-items: center;
-           padding: 2.5rem;
-           gap: 2rem;
-           text-align: left;
-        }
-        
-        .card-icon-left {
-           color: var(--color-primary);
-           background: rgba(0, 150, 132, 0.1);
-           padding: 1rem;
-           border-radius: 12px;
-           flex-shrink: 0;
-        }
-
-        .card-text-content {
-           flex: 1;
-        }
-
-        .card-text-content h4 {
-           font-family: 'Montserrat', sans-serif;
-           font-size: 1.4rem;
-           color: var(--color-heading);
-           margin-bottom: 0.8rem;
-        }
-        
-        .card-desc {
-           color: var(--color-text);
-           margin-bottom: 1rem;
-           font-size: 1rem;
-           line-height: 1.6;
-        }
-        
-        .card-meta-inline {
-           display: flex;
-           flex-direction: column; /* Stack no card interno */
-           gap: 0.5rem;
-           font-size: 0.9rem;
-           color: var(--color-text);
-           opacity: 0.8;
-           margin-top: 1rem;
-        }
-
-        .card-action {
-           flex-shrink: 0;
-        }
-
-        /* ================================================================= */
-        /* NOVO ESTILO DE BOTÃO: NEON GLOW                                   */
-        /* ================================================================= */
-        .btn-neon-glow {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.6rem;
-          padding: 0.8rem 1.6rem;
-          background: transparent;
-          color: #ffffff;
-          border: 1px solid var(--color-primary);
-          border-radius: 50px; /* Pill shape */
-          font-weight: 600;
-          text-transform: uppercase;
-          font-size: 0.85rem;
-          letter-spacing: 0.5px;
-          text-decoration: none !important;
-          transition: all 0.3s ease;
-          box-shadow: 0 0 5px rgba(0, 150, 132, 0.2);
-          white-space: nowrap;
-          cursor: pointer;
-        }
-
-        .btn-neon-glow:hover {
-          background: var(--color-primary);
-          color: #000000; /* Texto preto para contraste no hover */
-          box-shadow: 0 0 20px rgba(0, 150, 132, 0.6);
-          transform: translateY(-2px);
-        }
-        
-        .btn-neon-glow:active {
-          transform: translateY(0);
-          box-shadow: 0 0 10px rgba(0, 150, 132, 0.4);
-        }
-
-        /* ESTILOS CASES (Vertical Stack) - MANTIDOS */
-        .case-stack-container {
-           display: flex;
-           flex-direction: column;
-           gap: 3rem;
-           max-width: 900px;
-           margin: 4rem auto 0;
-        }
-        
-        .case-wide-card {
-           padding: 0 !important;
-        }
-        
-        .case-content-wrapper {
-           padding: 3rem;
-           text-align: center;
-        }
-        
-        .case-header-row {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           margin-bottom: 2rem;
-        }
-        
-        .case-title-group h3 {
-           font-size: 2rem;
-           font-family: 'Montserrat', sans-serif;
-           color: var(--color-heading);
-           margin-bottom: 0.5rem;
-        }
-        
-        .case-tag {
-           display: inline-block;
-           background: rgba(0, 150, 132, 0.15);
-           color: var(--color-primary);
-           padding: 0.4rem 1rem;
-           border-radius: 50px;
-           font-size: 0.9rem;
-           font-weight: 600;
-        }
-
-        .case-body {
-           text-align: center;
-           margin-bottom: 2rem;
-           color: var(--color-text);
-           font-size: 1.05rem;
-           line-height: 1.8;
-        }
-        
-        .case-body p {
-           margin-bottom: 1rem;
-        }
-
-        .case-footer {
-           margin-top: 1rem;
-        }
-        
-        /* Estilo antigo para cases mantido */
-        .btn-case-revolutionary {
-             display: inline-flex; align-items: center; gap: 0.5rem;
-             color: var(--color-primary); text-decoration: none; font-weight: 600;
-             transition: gap 0.3s;
-        }
-        .btn-case-revolutionary:hover { gap: 0.8rem; }
-
-
-        /* Grid 2x2 para Pilares no Desktop */
-        .pillar-grid-2x2 {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          margin-top: 4rem;
-        }
-
-        .hero-headline {
-          font-size: 2.8rem !important;
-          line-height: 1.25;
-        }
-        
         .trust-bar {
           width: 100%;
           max-width: 900px;
+          margin-top: 6rem;
           margin-left: auto;
           margin-right: auto;
         }
@@ -806,7 +372,7 @@ export default function Home() {
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          gap: 4rem;
+          gap: 3rem;
           opacity: 0.6;
           filter: grayscale(100%) contrast(50%);
         }
@@ -814,35 +380,9 @@ export default function Home() {
             flex: 0 0 auto;
         }
 
-        /* Responsividade */
-        @media (max-width: 900px) {
-          .pillar-grid-2x2 {
-            grid-template-columns: 1fr;
-          }
-          .card-content-row {
-             flex-direction: column;
-             text-align: center;
-             padding: 2rem;
-          }
-          .card-meta-inline {
-             align-items: center;
-             text-align: center;
-          }
-          .card-action {
-             width: 100%;
-          }
-          .btn-neon-glow {
-             width: 100%;
-          }
-          .trust-bar-logos {
-            gap: 2rem;
-          }
-        }
-        
+        /* Ajuste Responsivo */
         @media (max-width: 768px) {
-          .hero-headline {
-            font-size: 2.0rem !important;
-          }
+          .trust-bar-logos { gap: 2rem; }
         }
       `}</style>
     </>
