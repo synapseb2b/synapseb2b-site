@@ -263,9 +263,9 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
 
 .footer-grid {
   display: grid; 
-  /* Novo Layout: Marca (2 partes) + 3 Colunas de Links (1 parte cada) */
-  grid-template-columns: 2.5fr 1fr 1fr 1fr; 
-  gap: 2rem; /* Gap levemente reduzido para caber tudo bem */
+  /* HARMONIA: Marca ocupa 40% do espaço útil, e as 3 colunas dividem os 60% restantes igualmente */
+  grid-template-columns: 2fr 1fr 1fr 1fr; 
+  gap: 3rem; /* Espaçamento equilibrado para não separar demais nem aglutinar */
   margin-bottom: 5rem; 
   justify-items: start;
   align-items: start;
