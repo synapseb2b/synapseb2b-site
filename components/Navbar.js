@@ -187,9 +187,12 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile: Links Simples */}
+            {/* Mobile: Links Simples (CORRIGIDO) */}
             <Link href="/a-engenharia" className="mobile-link-simple">
-                <Building size={18} className="text-primary"/> A Synapse
+                <div className="flex-row">
+                  <Building size={18} className="text-primary"/> 
+                  <span>A Synapse</span>
+                </div>
             </Link>
 
             <div style={{ marginTop: '2rem', width: '100%' }}>
@@ -200,106 +203,65 @@ export default function Navbar() {
         </div>
       </div>
 
-      <style jsx>{`
+<style jsx>{`
         /* ESTILOS LOCAIS PARA GARANTIR O LAYOUT DE DROPDOWN */
-        /* O resto é herdado do globals.css (.site-navbar, .nav-container, .nav-menu, .nav-link) */
-
+        
         .dropdown-group {
-          position: relative;
-          height: 100%;
-          display: flex;
-          align-items: center;
+          position: relative; height: 100%; display: flex; align-items: center;
         }
 
         .chevron {
-          margin-left: 6px;
-          transition: transform 0.3s ease;
-          opacity: 0.5;
+          margin-left: 6px; transition: transform 0.3s ease; opacity: 0.5;
         }
 
         .dropdown-group:hover .chevron {
-          transform: rotate(180deg);
-          opacity: 1;
-          color: var(--color-primary);
+          transform: rotate(180deg); opacity: 1; color: var(--color-primary);
         }
 
         /* Menu Suspenso Desktop */
         .dropdown-box {
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%) translateY(20px);
-          min-width: 240px;
-          background: rgba(10, 10, 10, 0.95); /* Fundo quase preto sólido */
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 8px;
-          padding: 0.5rem 0;
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-          display: flex;
-          flex-direction: column;
+          position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(20px);
+          min-width: 240px; background: rgba(10, 10, 10, 0.95); border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 8px; padding: 0.5rem 0; opacity: 0; visibility: hidden;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+          display: flex; flex-direction: column;
         }
 
         .dropdown-group:hover .dropdown-box {
-          opacity: 1;
-          visibility: visible;
-          transform: translateX(-50%) translateY(0);
+          opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
         }
 
-        /* Links dentro do Dropdown */
         .dropdown-box :global(a) {
-          display: block;
-          padding: 0.8rem 1.5rem;
-          color: #a0a0a0;
-          text-decoration: none;
-          font-size: 0.85rem;
-          font-family: 'Inter', sans-serif;
-          transition: all 0.2s ease;
-          border-left: 2px solid transparent;
-          text-align: left;
+          display: block; padding: 0.8rem 1.5rem; color: #a0a0a0; text-decoration: none;
+          font-size: 0.85rem; font-family: 'Inter', sans-serif; transition: all 0.2s ease;
+          border-left: 2px solid transparent; text-align: left;
         }
 
         .dropdown-box :global(a:hover) {
-          background: rgba(255,255,255,0.03);
-          color: #fff;
-          border-left-color: var(--color-primary);
-          padding-left: 1.8rem;
+          background: rgba(255,255,255,0.03); color: #fff; border-left-color: var(--color-primary); padding-left: 1.8rem;
         }
 
         /* Hamburger Mobile */
         .nav-hamburger {
-          display: none;
-          background: none;
-          border: none;
-          color: #fff;
-          cursor: pointer;
+          display: none; background: none; border: none; color: #fff; cursor: pointer;
         }
 
         /* Mobile Styles */
         .mobile-content {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
+          width: 100%; display: flex; flex-direction: column; gap: 1rem;
         }
 
+        /* CORREÇÃO AQUI: Unificando estilos de botão e link */
         .mobile-btn, .mobile-link-simple {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background: none;
-          border: none;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
-          padding: 1.2rem 0;
-          color: #fff;
-          font-size: 1rem;
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 500;
-          cursor: pointer;
-          text-decoration: none;
+          width: 100%; display: flex; align-items: center; justify-content: space-between;
+          background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.05);
+          padding: 1.2rem 0; color: #fff; font-size: 1rem; font-family: 'Montserrat', sans-serif;
+          font-weight: 500; cursor: pointer; text-decoration: none; text-align: left;
+        }
+        
+        /* Garante que o link simples tenha o flex interno para alinhar ícone e texto */
+        .mobile-link-simple .flex-row {
+           display: flex; align-items: center; gap: 10px; color: #fff;
         }
         
         .flex-row { display: flex; align-items: center; gap: 10px; }
@@ -309,25 +271,16 @@ export default function Navbar() {
         .mob-chevron.rotate { transform: rotate(180deg); color: var(--color-primary); opacity: 1; }
 
         .mobile-subs {
-          overflow: hidden;
-          max-height: 0;
-          transition: max-height 0.4s ease;
-          background: rgba(255,255,255,0.02);
+          overflow: hidden; max-height: 0; transition: max-height 0.4s ease; background: rgba(255,255,255,0.02);
         }
         .mobile-subs.show { max-height: 500px; }
 
         .mobile-subs :global(a) {
-          display: block;
-          padding: 1rem 0 1rem 2.5rem;
-          color: #9ca3af;
-          font-size: 0.9rem;
-          text-decoration: none;
-          border-left: 2px solid transparent;
+          display: block; padding: 1rem 0 1rem 2.5rem; color: #9ca3af; font-size: 0.9rem;
+          text-decoration: none; border-left: 2px solid transparent;
         }
         .mobile-subs :global(a:hover) {
-          color: #fff;
-          background: rgba(255,255,255,0.03);
-          border-left-color: var(--color-primary);
+          color: #fff; background: rgba(255,255,255,0.03); border-left-color: var(--color-primary);
         }
 
         @media (max-width: 1024px) {

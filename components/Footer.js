@@ -1,18 +1,16 @@
 // components/Footer.js
-// VERSÃO FINAL: Estilos centralizados no globals.css
+// ATUALIZADO: Barra de Créditos Segregada e Estilizada
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Mail, Linkedin, Instagram, Phone, Cookie, X } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Phone, Cookie, X, Zap } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
-  // Estado do Banner de Cookies
   const [showCookies, setShowCookies] = useState(false);
 
   useEffect(() => {
-    // Verifica se já aceitou os cookies
     const consent = localStorage.getItem('synapse-cookie-consent');
     if (!consent) {
       const timer = setTimeout(() => setShowCookies(true), 1500);
@@ -30,7 +28,7 @@ export default function Footer() {
       <footer className="site-footer">
         <div className="container">
           
-          {/* ESTRUTURA: 3 COLUNAS (Definida no globals.css) */}
+          {/* GRID PRINCIPAL (3 COLUNAS) */}
           <div className="footer-grid">
             
             {/* COLUNA 1: MARCA & CONTATO */}
@@ -38,7 +36,6 @@ export default function Footer() {
               <h3>Synapse B2B</h3>
               <p>Engenharia de Receita para Empresas que buscam crescimento previsível e governança comercial.</p>
               
-              {/* Contatos */}
               <div className="contact-info">
                 <a href="mailto:contato@synapseb2b.com" className="contact-link">
                   <Mail size={18} />
@@ -50,7 +47,6 @@ export default function Footer() {
                 </a>
               </div>
 
-              {/* Ícones Sociais */}
               <div className="social-icons">
                 <a href="https://www.linkedin.com/company/synapse-b2b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin size={20} />
@@ -83,7 +79,7 @@ export default function Footer() {
 
           </div>
 
-          {/* BARRA INFERIOR */}
+          {/* BARRA INFERIOR (Copyright + Legal) */}
           <div className="footer-bottom">
             <div className="copyright-legal">
               <span>© {currentYear} Synapse B2B. Todos os direitos reservados.</span>
@@ -93,10 +89,15 @@ export default function Footer() {
                   <Link href="/termos-de-uso">Termos de Uso</Link>
               </div>
             </div>
-            
-            <div className="developer-credit">
-              <p>Desenvolvido por Synapse B2B | Plataformas Forjada em Engenharia de Receita.</p>
-            </div>
+          </div>
+
+          {/* BARRA DE CRÉDITOS (Segregada) */}
+          <div className="footer-credits-bar">
+            <p>
+              Desenvolvido por <span className="brand-highlight">Synapse B2B</span> 
+              <span className="divider-dot">•</span> 
+              Plataformas Forjadas em Engenharia de Receita.
+            </p>
           </div>
 
         </div>
