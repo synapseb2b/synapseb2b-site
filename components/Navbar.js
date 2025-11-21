@@ -1,10 +1,10 @@
 // components/Navbar.js
-// CORREÇÃO FINAL: Vídeo do Logo + Estrutura de Classes alinhada com Global CSS
+// CORRIGIDO: CSS A Engenharia, Texto Botões e Remoção de Contato
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Mail, Award } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Award } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +44,7 @@ export default function Navbar() {
       <nav className={`site-navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           
-          {/* LOGO (VÍDEO) - CORRIGIDO PARA USAR A CLASSE DO GLOBAL.CSS */}
+          {/* LOGO (VÍDEO) */}
           <Link href="/" className="nav-logo-link">
             <video 
               autoPlay 
@@ -97,7 +97,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 4. A ENGENHARIA */}
+            {/* 4. A ENGENHARIA - Agora usa a mesma classe base */}
             <Link href="/a-engenharia" className={`nav-link-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
               A Engenharia
             </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
 
           <div className="nav-actions">
             <Link href="/contato" className="btn-nav-cta desktop-only">
-              Diagnóstico
+              Ativar Engenharia
             </Link>
 
             <button className="mobile-hamburger" onClick={() => setIsMobileOpen(!isMobileOpen)} aria-label="Menu">
@@ -169,7 +169,7 @@ export default function Navbar() {
             <Link href="/cases/aorkia" onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
           </div>
 
-          {/* LINKS SIMPLES */}
+          {/* LINKS SIMPLES - CORRIGIDO */}
           <Link href="/a-engenharia" className="mobile-link-simple" onClick={() => setIsMobileOpen(false)}>
             <div className="flex-row">
               <Box size={20} className="text-primary" />
@@ -177,16 +177,11 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <Link href="/contato" className="mobile-link-simple" onClick={() => setIsMobileOpen(false)}>
-            <div className="flex-row">
-              <Mail size={20} className="text-primary" />
-              Contato
-            </div>
-          </Link>
+          {/* ITEM "CONTATO" REMOVIDO DAQUI */}
 
           <div style={{marginTop: '2rem'}}>
             <Link href="/contato" className="btn btn-primary" style={{width: '100%', justifyContent: 'center'}} onClick={() => setIsMobileOpen(false)}>
-              Agendar Diagnóstico
+              Ativar Engenharia
             </Link>
           </div>
 
@@ -222,7 +217,8 @@ export default function Navbar() {
           text-transform: uppercase; cursor: default; display: flex; align-items: center; gap: 6px;
           text-decoration: none; transition: color 0.2s; height: 100%; letter-spacing: 0.5px;
         }
-        a.nav-link-desktop { cursor: pointer; }
+        /* Garante que o link direto tenha cursor pointer e mesma cor */
+        a.nav-link-desktop { cursor: pointer; color: #ccc; }
         
         .nav-link-desktop:hover, .nav-item-desktop.active .nav-link-desktop { color: #fff; }
         
@@ -270,6 +266,7 @@ export default function Navbar() {
           font-weight: 500; cursor: pointer; text-align: left;
         }
         
+        /* Estilo unificado para o link simples mobile */
         .mobile-link-simple {
           display: flex; align-items: center; width: 100%;
           border-bottom: 1px solid rgba(255,255,255,0.05);
