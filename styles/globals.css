@@ -513,3 +513,88 @@ section::after {
     border-left: none; border-top: 4px solid var(--color-primary);
   }
 }
+
+/* ==========================================================================
+   12. FORMULÁRIOS PREMIUM (ADICIONADO PARA PÁGINA DE CONTATO)
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--color-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-left: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-input, 
+.form-select, 
+.form-textarea {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem; /* Espaço para o ícone à esquerda */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-textarea {
+  padding-left: 1rem; /* Textarea geralmente não tem ícone dentro */
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-input:focus, 
+.form-select:focus, 
+.form-textarea:focus {
+  border-color: var(--color-primary);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px var(--color-primary), 0 0 15px rgba(0, 150, 132, 0.2);
+}
+
+.form-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.field-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.form-input:focus + .field-icon,
+.input-wrapper:focus-within .field-icon {
+  color: var(--color-primary);
+}
+
+.select-chevron {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Placeholder Styling */
+::placeholder { color: rgba(255, 255, 255, 0.3); }
