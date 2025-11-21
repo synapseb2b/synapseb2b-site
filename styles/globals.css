@@ -183,6 +183,23 @@ p strong, li strong, .glass-card-premium strong {
 ul { list-style: none; padding: 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
 li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; gap: 12px; }
 
+/* --- AUTO-CENTER: Correção Automática para Cards Ímpares --- */
+/* Se houver um número ímpar de cards (ex: 3), o último expande e centraliza automaticamente.
+   Aplica-se apenas em Desktop (> 1024px), pois no mobile já é tudo 1 coluna. */
+@media (min-width: 1025px) {
+  .pillar-grid-revolutionary > :last-child:nth-child(odd),
+  .case-grid > :last-child:nth-child(odd),
+  .info-grid > :last-child:nth-child(odd),
+  .solutions-grid-revolutionary > :last-child:nth-child(odd),
+  .truths-grid-revolutionary > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;      /* Ocupa todas as colunas da linha */
+    max-width: 1000px;        /* Limita a largura para não ficar muito esticado */
+    width: 100%;
+    margin-left: auto;        /* Centraliza horizontalmente */
+    margin-right: auto;
+  }
+}
+
 /* ==========================================================================
    5. NAVBAR (LOGO MAIOR & ALINHAMENTO)
    ========================================================================== */
@@ -399,10 +416,13 @@ section::after {
   
   h1 { font-size: 2.4rem !important; }
   
-  /* Cards Mobile: 1 Coluna */
+  /* Cards Mobile: 1 Coluna (COM SAFETY LOCK !important) */
   .pillar-grid-revolutionary, .case-grid, .info-grid, .solutions-grid-revolutionary, .truths-grid-revolutionary {
-    grid-template-columns: 1fr; gap: 1.5rem;
+    grid-template-columns: 1fr !important; /* Força bruta para evitar quebra de layout */
+    gap: 1.5rem;
+    width: 100%;
   }
+  
   .card-wide { grid-column: auto; max-width: 100%; }
   .whatsapp-float { bottom: 1rem; right: 1rem; width: 50px; height: 50px; font-size: 24px; }
   
