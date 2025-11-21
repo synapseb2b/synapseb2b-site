@@ -1,5 +1,5 @@
 // pages/index.js
-// VERSÃO DEFINITIVA: COPY 100% FIEL + AJUSTES DE LAYOUT
+// VERSÃO CORRIGIDA: BUG DO ESPAÇO EM BRANCO RESOLVIDO (ANIMAÇÃO GRANULAR)
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -27,7 +27,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 } // 10% do item precisa estar visível para animar
     );
 
     document.querySelectorAll('.reveal-up').forEach((el) => {
@@ -162,22 +162,24 @@ export default function Home() {
       </section>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções                                                      */}
+      {/* Seção 4: Soluções (CORREÇÃO DO BUG AQUI)                               */}
       {/* ====================================================================== */}
       <section id="solucoes" className="section-solid">
-        <div className="container reveal-up">
-          <h2 className="section-title">Soluções de Engenharia de Receita</h2>
-          <p className="lead-text">Do diagnóstico estratégico à gestão interina.</p>
+        {/* CORREÇÃO: Removido 'reveal-up' do container pai para evitar que a seção inteira fique invisível */}
+        <div className="container"> 
+          <h2 className="section-title reveal-up">Soluções de Engenharia de Receita</h2>
+          <p className="lead-text reveal-up">Do diagnóstico estratégico à gestão interina.</p>
 
           {/* FRENTE 1: 4 CARDS (2X2) */}
           <div style={{marginBottom: '6rem', width: '100%'}}>
-            <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+            <div style={{textAlign: 'center', marginBottom: '2rem'}} className="reveal-up">
               <div className="pillar-icon-wrapper premium-glow"><Brain size={40} /></div>
               <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 1: Inteligência & Estratégia</h3>
               <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Para quem precisa de direção clara e correção de rota.</p>
             </div>
             
-            <div className="solutions-grid-revolutionary">
+            {/* Adicionado 'reveal-up' diretamente no grid */}
+            <div className="solutions-grid-revolutionary reveal-up">
                
                <div className="glass-card-premium">
                   <div className="pillar-icon-wrapper premium-glow"><Zap size={32} /></div>
@@ -219,13 +221,13 @@ export default function Home() {
 
           {/* FRENTE 2: 2 CARDS (1X2) */}
           <div style={{marginBottom: '6rem', width: '100%'}}>
-             <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+             <div style={{textAlign: 'center', marginBottom: '2rem'}} className="reveal-up">
                 <div className="pillar-icon-wrapper premium-glow"><MonitorSmartphone size={40} /></div>
                 <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 2: Ativos Digitais</h3>
                 <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Ferramentas que vendem por você.</p>
              </div>
              
-             <div className="solutions-grid-revolutionary">
+             <div className="solutions-grid-revolutionary reveal-up">
                 <div className="glass-card-premium">
                    <div className="pillar-icon-wrapper premium-glow"><Layout size={32} /></div>
                    <h3 className="pillar-card-title">Plataformas Digitais</h3>
@@ -248,13 +250,13 @@ export default function Home() {
 
           {/* FRENTE 3: 3 CARDS (1 WIDE) */}
           <div style={{marginBottom: '2rem', width: '100%'}}>
-             <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+             <div style={{textAlign: 'center', marginBottom: '2rem'}} className="reveal-up">
                 <div className="pillar-icon-wrapper premium-glow"><Box size={40} /></div>
                 <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 3: Soluções Verticais</h3>
                 <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Metodologias proprietárias para contextos específicos.</p>
              </div>
              
-             <div className="solutions-grid-revolutionary">
+             <div className="solutions-grid-revolutionary reveal-up">
                 <div className="glass-card-premium">
                    <div className="pillar-icon-wrapper premium-glow"><CheckCircle2 size={32} /></div>
                    <h3 className="pillar-card-title">Diagnóstico Cortex B2B™</h3>
