@@ -1,10 +1,10 @@
 // components/Navbar.js
-// CORRIGIDO: CSS A Engenharia, Texto Botões e Remoção de Contato
+// SOLUÇÃO DEFINITIVA: Estrutura Desktop Unificada e CSS Mobile Reforçado
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Award } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Mail, Award } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -97,10 +97,13 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 4. A ENGENHARIA - Agora usa a mesma classe base */}
-            <Link href="/a-engenharia" className={`nav-link-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
-              A Engenharia
-            </Link>
+            {/* 4. A ENGENHARIA (CORRIGIDO: ENVOLVIDO EM DIV PARA ALINHAMENTO PERFEITO) */}
+            <div className={`nav-item-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
+              <Link href="/a-engenharia" className="nav-link-desktop clickable">
+                A Engenharia
+              </Link>
+            </div>
+
           </div>
 
           <div className="nav-actions">
@@ -169,7 +172,7 @@ export default function Navbar() {
             <Link href="/cases/aorkia" onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
           </div>
 
-          {/* LINKS SIMPLES - CORRIGIDO */}
+          {/* LINKS SIMPLES (A ENGENHARIA) */}
           <Link href="/a-engenharia" className="mobile-link-simple" onClick={() => setIsMobileOpen(false)}>
             <div className="flex-row">
               <Box size={20} className="text-primary" />
@@ -177,7 +180,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* ITEM "CONTATO" REMOVIDO DAQUI */}
+          {/* CONTATO (REMOVIDO) - Não deve aparecer aqui, apenas o botão abaixo */}
 
           <div style={{marginTop: '2rem'}}>
             <Link href="/contato" className="btn btn-primary" style={{width: '100%', justifyContent: 'center'}} onClick={() => setIsMobileOpen(false)}>
@@ -202,7 +205,6 @@ export default function Navbar() {
           display: flex; align-items: center; justify-content: space-between;
         }
         
-        /* CLASSE DO GLOBAL CSS APLICADA AQUI */
         .nav-logo-video { height: 65px; width: auto; }
         .site-navbar.scrolled .nav-logo-video { height: 50px; }
 
@@ -210,18 +212,26 @@ export default function Navbar() {
 
         /* --- DESKTOP MENU --- */
         .nav-menu-desktop { display: flex; gap: 2rem; align-items: center; height: 100%; }
+        
+        /* Item de Menu (Pai) */
         .nav-item-desktop { position: relative; height: 100%; display: flex; align-items: center; }
         
+        /* Link/Botão do Menu */
         .nav-link-desktop {
           background: none; border: none; color: #ccc; font-size: 0.85rem; font-weight: 600;
           text-transform: uppercase; cursor: default; display: flex; align-items: center; gap: 6px;
           text-decoration: none; transition: color 0.2s; height: 100%; letter-spacing: 0.5px;
         }
-        /* Garante que o link direto tenha cursor pointer e mesma cor */
-        a.nav-link-desktop { cursor: pointer; color: #ccc; }
         
-        .nav-link-desktop:hover, .nav-item-desktop.active .nav-link-desktop { color: #fff; }
+        /* Modificador para Links Clicáveis (A Engenharia) */
+        .nav-link-desktop.clickable { cursor: pointer; }
         
+        /* Hover Effect */
+        .nav-link-desktop:hover, .nav-item-desktop:hover .nav-link-desktop, .nav-item-desktop.active .nav-link-desktop { 
+          color: #fff; 
+        }
+        
+        /* Dropdown Menu */
         .dropdown-menu-desktop {
           position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(20px);
           background: rgba(10,10,10,0.95); border: 1px solid rgba(255,255,255,0.1);
@@ -259,6 +269,7 @@ export default function Navbar() {
         }
         .mobile-menu.open { transform: translateX(0); }
         
+        /* Botão Expansível Mobile (Padronizado) */
         .mobile-btn-expand {
           width: 100%; display: flex; align-items: center; justify-content: space-between;
           background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -266,7 +277,7 @@ export default function Navbar() {
           font-weight: 500; cursor: pointer; text-align: left;
         }
         
-        /* Estilo unificado para o link simples mobile */
+        /* Link Simples Mobile (Padronizado) */
         .mobile-link-simple {
           display: flex; align-items: center; width: 100%;
           border-bottom: 1px solid rgba(255,255,255,0.05);
