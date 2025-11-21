@@ -1,5 +1,5 @@
 // pages/cases/exclusiva-engenharias.js
-// Versão Limpa: Usa 100% do CSS Global (Design System Unificado)
+// REFATORADO: Alinhamento Central + Estética Plataformas + Browser Window Images
 
 import { useEffect } from 'react';
 import Head from 'next/head';
@@ -14,9 +14,8 @@ import {
   Brain,
   Zap,
   TrendingUp,
-  XCircle,
   Layout,
-  ShieldCheck
+  MessageSquare
 } from 'lucide-react';
 
 export default function ExclusivaEngenhariasCase() {
@@ -73,7 +72,7 @@ export default function ExclusivaEngenhariasCase() {
       </section>
 
       {/* ====================================================================== */}
-      {/* SEÇÃO 1: O DIAGNÓSTICO                                                 */}
+      {/* SEÇÃO 1: O DIAGNÓSTICO (Centralizado)                                  */}
       {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container reveal-up">
@@ -106,7 +105,7 @@ export default function ExclusivaEngenhariasCase() {
               </ul>
             </div>
             
-            <p style={{fontStyle: 'italic', fontSize: '1.1rem', opacity: 0.8, maxWidth: '700px'}}>
+            <p style={{fontStyle: 'italic', fontSize: '1.1rem', opacity: 0.8, maxWidth: '700px', marginInline: 'auto'}}>
               "Eles tinham uma bela história, uma metodologia e um nicho claro. Mas tudo estava disperso. Faltava Engenharia de Receita."
             </p>
           </div>
@@ -135,29 +134,21 @@ export default function ExclusivaEngenhariasCase() {
             position: 'relative',
             paddingTop: '2rem'
           }}>
-            <div style={{textAlign: 'center', position: 'relative', flex: 1}}>
-              <span style={{position: 'absolute', top: '-2.5rem', left: '50%', transform: 'translateX(-50%)', width: '16px', height: '16px', background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 15px var(--color-primary)'}}></span>
-              <div style={{fontWeight: 'bold', color: 'var(--color-heading)', marginBottom: '0.25rem'}}>Diagnóstico</div>
-              <div style={{color: 'var(--color-text-muted)', fontSize: '0.85rem'}}>42 min</div> 
-            </div>
-            <div style={{textAlign: 'center', position: 'relative', flex: 1}}>
-              <span style={{position: 'absolute', top: '-2.5rem', left: '50%', transform: 'translateX(-50%)', width: '16px', height: '16px', background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 15px var(--color-primary)'}}></span>
-              <div style={{fontWeight: 'bold', color: 'var(--color-heading)', marginBottom: '0.25rem'}}>Estratégia</div>
-              <div style={{color: 'var(--color-text-muted)', fontSize: '0.85rem'}}>15 dias</div> 
-            </div>
-            <div style={{textAlign: 'center', position: 'relative', flex: 1}}>
-              <span style={{position: 'absolute', top: '-2.5rem', left: '50%', transform: 'translateX(-50%)', width: '16px', height: '16px', background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 15px var(--color-primary)'}}></span>
-              <div style={{fontWeight: 'bold', color: 'var(--color-heading)', marginBottom: '0.25rem'}}>Plataforma</div>
-              <div style={{color: 'var(--color-text-muted)', fontSize: '0.85rem'}}>20 dias</div> 
-            </div>
-            <div style={{textAlign: 'center', position: 'relative', flex: 1}}>
-              <span style={{position: 'absolute', top: '-2.5rem', left: '50%', transform: 'translateX(-50%)', width: '16px', height: '16px', background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 15px var(--color-primary)'}}></span>
-              <div style={{fontWeight: 'bold', color: 'var(--color-heading)', marginBottom: '0.25rem'}}>Liderança</div>
-              <div style={{color: 'var(--color-text-muted)', fontSize: '0.85rem'}}>Em andamento</div> 
-            </div>
+            {[
+                { title: 'Diagnóstico', time: '42 min' },
+                { title: 'Estratégia', time: '15 dias' },
+                { title: 'Plataforma', time: '20 dias' },
+                { title: 'Liderança', time: 'Em andamento' }
+            ].map((item, index) => (
+                <div key={index} style={{textAlign: 'center', position: 'relative', flex: 1}}>
+                    <span style={{position: 'absolute', top: '-2.5rem', left: '50%', transform: 'translateX(-50%)', width: '16px', height: '16px', background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 15px var(--color-primary)'}}></span>
+                    <div style={{fontWeight: 'bold', color: 'var(--color-heading)', marginBottom: '0.25rem'}}>{item.title}</div>
+                    <div style={{color: 'var(--color-text-muted)', fontSize: '0.85rem'}}>{item.time}</div> 
+                </div>
+            ))}
           </div>
 
-          {/* GRID DE FASES (1 Coluna para narrativa linear) */}
+          {/* GRID DE FASES (Centralizado com Molduras de Browser) */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: '1fr', gap: '4rem'}}>
             
             {/* FASE 1 */}
@@ -191,7 +182,7 @@ export default function ExclusivaEngenhariasCase() {
               </div>
             </div>
 
-            {/* FASE 2 */}
+            {/* FASE 2 - Browser Window */}
             <div className="glass-card-premium">
               <div className="pillar-icon-wrapper"><Zap size={32} /></div>
               <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 2: Plataforma de Aceleração</h3>
@@ -213,27 +204,34 @@ export default function ExclusivaEngenhariasCase() {
               </div>
 
                <h4 style={{color: 'var(--color-heading)', fontSize: '1.1rem', marginTop: '1rem', marginBottom: '1rem'}}>Ferramentas Integradas:</h4>
-               <ul style={{padding: 0, fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center'}}>
+               <ul style={{padding: 0, fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', marginBottom: '2.5rem'}}>
                  <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Simulador de Orçamento</li>
                  <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Atendimento Inteligente</li>
                  <li style={{display: 'flex', alignItems: 'center', gap: '10px'}}><CheckCircle2 size={16} color="var(--color-primary)"/> Narrativa por segmento</li>
                </ul>
 
+               {/* Imagem estilo Browser */}
                <div style={{
-                 marginTop: '2.5rem', 
-                 maxWidth: '800px', 
-                 borderRadius: '12px', 
-                 border: '1px solid rgba(255,255,255,0.1)',
-                 boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)',
-                 overflow: 'hidden'
+                 width: '100%', maxWidth: '800px', marginInline: 'auto',
+                 borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)',
+                 boxShadow: '0 20px 50px -10px rgba(0, 150, 132, 0.2)',
+                 overflow: 'hidden', background: '#111'
                }}>
+                  <div style={{
+                    height: '30px', background: 'rgba(255,255,255,0.05)',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex',
+                    alignItems: 'center', padding: '0 1rem', gap: '6px'
+                  }}>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#009684'}}></div>
+                  </div>
                   <Image 
                     src="/cases/exclusiva-home.png"
                     alt="Homepage Exclusiva Engenharias"
                     width={1000}
                     height={500}
-                    quality={100}
-                    style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
+                    style={{ objectFit: 'cover', width: '100%', height: 'auto', display: 'block' }}
                   />
                 </div>
                
@@ -244,7 +242,7 @@ export default function ExclusivaEngenhariasCase() {
                </div>
             </div>
 
-            {/* FASE 3 */}
+            {/* FASE 3 - Browser Window */}
             <div className="glass-card-premium">
               <div className="pillar-icon-wrapper"><Target size={32} /></div>
               <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 3: Ferramenta de Conversão</h3>
@@ -254,21 +252,28 @@ export default function ExclusivaEngenhariasCase() {
                 Mecanismo de qualificação e comprometimento.
                </p>
 
+               {/* Imagem estilo Browser */}
                <div style={{
-                 margin: '0 auto 2.5rem', 
-                 maxWidth: '800px',
-                 borderRadius: '12px', 
-                 border: '1px solid rgba(255,255,255,0.1)',
-                 boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)',
-                 overflow: 'hidden'
+                 width: '100%', maxWidth: '800px', margin: '0 auto 2.5rem',
+                 borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)',
+                 boxShadow: '0 20px 50px -10px rgba(0, 150, 132, 0.2)',
+                 overflow: 'hidden', background: '#111'
                }}>
+                  <div style={{
+                    height: '30px', background: 'rgba(255,255,255,0.05)',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex',
+                    alignItems: 'center', padding: '0 1rem', gap: '6px'
+                  }}>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#009684'}}></div>
+                  </div>
                   <Image 
                     src="/cases/simulador_exclusiva.png"
                     alt="Simulador de Orçamento"
                     width={1000}
                     height={500}
-                    quality={100}
-                    style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+                    style={{ objectFit: 'contain', width: '100%', height: 'auto', display: 'block' }}
                   />
                 </div>
 
@@ -278,7 +283,7 @@ export default function ExclusivaEngenhariasCase() {
                </ul>
             </div>
 
-            {/* FASE 4 */}
+            {/* FASE 4 - Browser Window */}
             <div className="glass-card-premium">
               <div className="pillar-icon-wrapper"><TrendingUp size={32} /></div>
               <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>FASE 4: CRO as a Service</h3>
@@ -288,21 +293,28 @@ export default function ExclusivaEngenhariasCase() {
                 Lideramos a execução comercial na linha de frente, validando o método em tempo real.
               </p>
 
+               {/* Imagem estilo Browser */}
                <div style={{
-                 margin: '2.5rem auto', 
-                 maxWidth: '800px', 
-                 borderRadius: '12px', 
-                 border: '1px solid rgba(255,255,255,0.1)',
-                 boxShadow: '0 0 40px rgba(0, 229, 255, 0.15)',
-                 overflow: 'hidden'
+                 width: '100%', maxWidth: '800px', margin: '2.5rem auto',
+                 borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)',
+                 boxShadow: '0 20px 50px -10px rgba(0, 150, 132, 0.2)',
+                 overflow: 'hidden', background: '#111'
                }}>
+                  <div style={{
+                    height: '30px', background: 'rgba(255,255,255,0.05)',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex',
+                    alignItems: 'center', padding: '0 1rem', gap: '6px'
+                  }}>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
+                     <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#009684'}}></div>
+                  </div>
                   <Image 
                     src="/cases/playbook-exclusiva.jpg"
                     alt="Playbook Exclusiva"
                     width={1000}
                     height={500}
-                    quality={100}
-                    style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+                    style={{ objectFit: 'contain', width: '100%', height: 'auto', display: 'block' }}
                   />
                 </div>
 
@@ -331,9 +343,9 @@ export default function ExclusivaEngenhariasCase() {
 
           <div className="glass-card-premium" style={{maxWidth: '900px', margin: '3rem auto'}}>
             <div style={{display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '3rem', alignItems: 'center', width: '100%'}}>
-              <div style={{textAlign: 'right'}}>
+              <div style={{textAlign: 'center'}}>
                 <h4 style={{color: 'var(--color-text-muted)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem'}}>Antes</h4>
-                <ul style={{padding: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem'}}>
+                <ul style={{padding: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem'}}>
                   <li style={{opacity: 0.7}}>3 empresas fragmentadas</li>
                   <li style={{opacity: 0.7}}>Zero presença digital</li>
                   <li style={{opacity: 0.7}}>100% crescimento por indicação</li>
@@ -346,9 +358,9 @@ export default function ExclusivaEngenhariasCase() {
                 <ArrowRight size={32} />
               </div>
 
-              <div style={{textAlign: 'left'}}>
+              <div style={{textAlign: 'center'}}>
                 <h4 style={{color: 'var(--color-heading)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem'}}>Depois</h4>
-                <ul style={{padding: 0, fontWeight: 500, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem'}}>
+                <ul style={{padding: 0, fontWeight: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem'}}>
                   <li>Hub integrado reconhecível</li>
                   <li>Motor de demanda ativo</li>
                   <li>Canais estruturados (In/Out)</li>
@@ -366,7 +378,7 @@ export default function ExclusivaEngenhariasCase() {
       </section>
 
       {/* ====================================================================== */}
-      {/* SEÇÃO 4: O TRABALHO CONTINUA                                           */}
+      {/* SEÇÃO 4: O TRABALHO CONTINUA (Grid Centralizado)                       */}
       {/* ====================================================================== */}
       <section className="section-with-gradient-glow reveal-up">
         <div className="container text-center">
@@ -375,7 +387,6 @@ export default function ExclusivaEngenhariasCase() {
             Com clareza estratégica e plataforma digital validadas, o foco mudou de construir sistema para validar escala.
           </p>
 
-          {/* GRID DE FRENTES */}
           <div className="pillar-grid-revolutionary" style={{gridTemplateColumns: '1fr', gap: '3rem'}}>
             
             {/* Frente 1 */}
@@ -383,18 +394,18 @@ export default function ExclusivaEngenhariasCase() {
               <div className="pillar-icon-wrapper"><Target size={32} /></div>
               <h3 className="pillar-card-title" style={{fontSize: '1.8rem'}}>Frente 1: Construção do Motor Comercial</h3>
               
-              <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '700px', margin: '2rem auto 0'}}>
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '700px', margin: '2rem auto 0', alignItems: 'center'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', width: '100%'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Pipeline em Expansão</strong>
                       <p style={{fontSize: '1rem', margin: 0}}>Prospecção ativa semanal com roteiros testados. Pipeline mapeado: Prospecção → Qualificação → Proposta → Negociação.</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)', width: '100%'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Estratégia Dual-Channel</strong>
                       <p style={{fontSize: '1rem', margin: 0}}><strong>Inbound:</strong> Conteúdo técnico otimizado.<br/><strong>Outbound:</strong> LinkedIn Sales Navigator + sequências.</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', width: '100%'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Ferramentas de IA</strong>
                       <p style={{fontSize: '1rem', margin: 0}}>Enriquecimento automático de leads, qualificação via chatbot inteligente.</p>
                   </div>
@@ -409,18 +420,18 @@ export default function ExclusivaEngenhariasCase() {
                 Sistema desenvolvido pela Synapse B2B especificamente para o segmento industrial.
               </p>
               
-              <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '700px', margin: '0 auto'}}>
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '700px', margin: '0 auto', alignItems: 'center'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', width: '100%'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Gestão Especializada</strong>
                       <p style={{fontSize: '1rem', margin: 0}}>Gestão de pipeline por tipo de projeto (civil, elétrica, multidisciplinar). Histórico automático.</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-accent)', width: '100%'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Inteligência de Mercado</strong>
                       <p style={{fontSize: '1rem', margin: 0}}>Alertas de oportunidade (obras anunciadas, licitações, expansões industriais).</p>
                   </div>
 
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)'}}>
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', borderTop: '3px solid var(--color-primary)', width: '100%'}}>
                       <strong style={{display: 'block', marginBottom: '0.5rem', color: 'var(--color-heading)', fontSize: '1.1rem'}}>Diferencial</strong>
                       <p style={{fontSize: '1rem', margin: 0}}>Não é Salesforce genérico. É sistema moldado ao processo da Exclusiva.</p>
                   </div>
@@ -471,7 +482,7 @@ export default function ExclusivaEngenhariasCase() {
       </section>
 
       {/* ====================================================================== */}
-      {/* SEÇÃO 6: CTA FINAL                                                     */}
+      {/* SEÇÃO 6: CTA FINAL + PDF                                               */}
       {/* ====================================================================== */}
       <section className="final-cta-section">
         <div className="pulsating-core-background"></div>
@@ -509,12 +520,19 @@ export default function ExclusivaEngenhariasCase() {
               <p><strong>NOTA TÉCNICA:</strong> Status do Projeto: Em andamento | Fase Atual: CRO as a Service (50% concluído) | Próximas Entregas: Playbook validado + Autonomia operacional + Meta de expansão 100%</p>
            </div>
            
-           {/* Link de Download PDF */}
+           {/* Link de Download PDF Corrigido */}
            <div id="download-pdf" style={{marginTop: '2rem'}}>
-            <Link href="/pdf/synapse-case-exclusiva.pdf" className="btn" style={{display: 'inline-flex', alignItems: 'center', gap: '0.5rem'}}>
+            <a 
+              href="/pdf/synapse-case-exclusiva.pdf" 
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn" 
+              style={{display: 'inline-flex', alignItems: 'center', gap: '0.5rem'}}
+            >
               <span>Download PDF Completo do Case</span> 
               <Download size={18} />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
