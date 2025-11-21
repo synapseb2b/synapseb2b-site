@@ -1,5 +1,5 @@
 // components/Footer.js
-// REFATORADO: Links Corretos + Menu Ativos Ajustado + Banner de Cookies Premium
+// VERSÃO FINAL: Estilos centralizados no globals.css
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -15,7 +15,6 @@ export default function Footer() {
     // Verifica se já aceitou os cookies
     const consent = localStorage.getItem('synapse-cookie-consent');
     if (!consent) {
-      // Pequeno delay para animação de entrada suave
       const timer = setTimeout(() => setShowCookies(true), 1500);
       return () => clearTimeout(timer);
     }
@@ -31,7 +30,7 @@ export default function Footer() {
       <footer className="site-footer">
         <div className="container">
           
-          {/* ESTRUTURA: 3 COLUNAS (Marca Larga + 2 Menus) */}
+          {/* ESTRUTURA: 3 COLUNAS (Definida no globals.css) */}
           <div className="footer-grid">
             
             {/* COLUNA 1: MARCA & CONTATO */}
@@ -51,7 +50,7 @@ export default function Footer() {
                 </a>
               </div>
 
-              {/* Ícones Sociais (Links Corrigidos) */}
+              {/* Ícones Sociais */}
               <div className="social-icons">
                 <a href="https://www.linkedin.com/company/synapse-b2b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin size={20} />
@@ -73,7 +72,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* COLUNA 3: ATIVOS DIGITAIS (Ajustado) */}
+            {/* COLUNA 3: ATIVOS DIGITAIS */}
             <div className="footer-col">
               <h4>Ativos Digitais</h4>
               <ul className="footer-links">
@@ -103,7 +102,7 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* BANNER DE COOKIES FLUTUANTE */}
+      {/* BANNER DE COOKIES */}
       <div className={`cookie-banner ${showCookies ? 'visible' : ''}`}>
         <div className="cookie-content">
           <div className="cookie-icon">
@@ -126,122 +125,6 @@ export default function Footer() {
           </button>
         </div>
       </div>
-
-      {/* ESTILOS LOCAIS (Footer + Cookie Banner) */}
-      <style jsx>{`
-        /* --- FOOTER STYLES --- */
-        .contact-info {
-          display: flex; flex-direction: column; gap: 0.8rem; margin: 1.5rem 0; width: 100%;
-        }
-        .contact-link {
-          display: flex; align-items: center; gap: 10px; color: var(--color-text-muted);
-          text-decoration: none; font-size: 0.9rem; justify-content: center; transition: color 0.2s;
-        }
-        .contact-link:hover { color: var(--color-primary); }
-        
-        .social-icons {
-          display: flex; gap: 1.5rem; justify-content: center; margin-top: 0.5rem;
-        }
-        .social-icons a { color: var(--color-text-muted); transition: color 0.2s; }
-        .social-icons a:hover { color: var(--color-primary); }
-
-        .copyright-legal {
-            display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem;
-        }
-        .separator { opacity: 0.3; }
-        .legal-links-row { display: flex; gap: 1.5rem; }
-        .developer-credit { margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6; }
-
-        /* --- COOKIE BANNER STYLES (PREMIUM GLASS) --- */
-        .cookie-banner {
-          position: fixed;
-          bottom: 2rem;
-          right: 2rem;
-          width: 100%;
-          max-width: 420px;
-          background: rgba(10, 15, 13, 0.85); /* Fundo escuro translúcido */
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-left: 4px solid var(--color-primary);
-          border-radius: 12px;
-          padding: 1.5rem;
-          box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8);
-          z-index: 10000;
-          display: flex;
-          flex-direction: column;
-          gap: 1.2rem;
-          
-          /* Animação de Entrada */
-          opacity: 0;
-          transform: translateY(50px) scale(0.95);
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          pointer-events: none;
-        }
-
-        .cookie-banner.visible {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-          pointer-events: all;
-        }
-
-        .cookie-content { display: flex; gap: 1rem; align-items: flex-start; }
-        
-        .cookie-icon {
-          color: var(--color-primary);
-          background: rgba(0, 150, 132, 0.1);
-          padding: 8px;
-          border-radius: 50%;
-          flex-shrink: 0;
-        }
-
-        .cookie-text h4 {
-          color: #fff; font-size: 0.95rem; margin: 0 0 0.3rem 0; font-weight: 600; text-align: left;
-        }
-        .cookie-text p {
-          color: #a0a0a0; font-size: 0.8rem; margin: 0; line-height: 1.5; text-align: left;
-        }
-        .cookie-text a { color: var(--color-primary); text-decoration: none; border-bottom: 1px solid transparent; }
-        .cookie-text a:hover { border-bottom-color: var(--color-primary); }
-
-        .cookie-actions {
-          display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-        }
-
-        .btn-cookie-close {
-          background: transparent; border: none; color: #666; cursor: pointer; padding: 5px;
-          transition: color 0.2s;
-        }
-        .btn-cookie-close:hover { color: #fff; }
-
-        .btn-cookie-accept {
-          background: var(--color-primary);
-          color: #fff;
-          border: none;
-          padding: 0.6rem 1.2rem;
-          border-radius: 6px;
-          font-size: 0.85rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          box-shadow: 0 4px 15px rgba(0, 150, 132, 0.3);
-          flex-grow: 1;
-        }
-        .btn-cookie-accept:hover {
-          background: #00bca5; /* Tom levemente mais claro */
-          transform: translateY(-2px);
-        }
-
-        /* Responsividade Footer & Banner */
-        @media (max-width: 768px) {
-            .separator { display: none; }
-            .copyright-legal { flex-direction: column; gap: 0.5rem; }
-            
-            .cookie-banner {
-              bottom: 0; right: 0; max-width: 100%; border-radius: 12px 12px 0 0; border-left: none; border-top: 4px solid var(--color-primary);
-            }
-        }
-      `}</style>
     </>
   );
 }
