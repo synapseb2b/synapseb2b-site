@@ -61,6 +61,29 @@ body {
 }
 
 /* ==========================================================================
+   00. CURSOR PERSONALIZADO (SYNAPSE B2B)
+   ========================================================================== */
+
+body {
+  /* Cursor padrão para o corpo do site */
+  /* Certifique-se de que o caminho da imagem está correto */
+  cursor: url('/images/cursor-synapse.png') 12 12, auto; 
+  /* Os números 12 12 são as coordenadas do "hotspot" (ponta do clique) */
+  /* Ajuste esses números para o centro da sua imagem, se necessário. */
+  /* Para uma imagem 24x24, 12 12 é o centro. */
+}
+
+/* Garante que elementos clicáveis ainda tenham o cursor padrão de "mão" */
+a, button, input[type="submit"], input[type="button"], .btn, .glass-card-premium, .pillar-card-title, .mobile-btn {
+  cursor: pointer !important;
+}
+
+/* Opcional: Cursor para texto selecionável */
+p, span, li, h1, h2, h3, h4, h5, h6 {
+  cursor: text;
+}
+
+/* ==========================================================================
    2. TIPOGRAFIA & DESTAQUES INTELIGENTES
    ========================================================================== */
 h1, h2, h3, .hero-headline, .section-title, .card-title {
