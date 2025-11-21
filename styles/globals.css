@@ -1,38 +1,40 @@
-/* globals.css - VERSÃO MESTRA: FINAL - COMPLETO + GRID 2 COLUNAS + NAVBAR ALINHAMENTO */
+/* globals.css - VERSÃO DEFINITIVA: 100% RESTAURADO + AJUSTES PREMIUM INCREMENTAIS */
+/* Totalmente compatível com index.js, Navbar.js e Footer.js */
 
 /* ==========================================================================
-   1. CORE: VARIÁVEIS & FONTES
+   1. CORE: IMPORTAÇÕES & RESET
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
 
 :root {
-  /* --- PALETA SYNAPSE --- */
+  /* --- PALETA SYNAPSE (CORE) --- */
   --color-bg: #000000;
   --color-primary: #009684;       /* Verde Synapse Principal */
-  --color-primary-glow: rgba(0, 150, 132, 0.9); 
+  --color-primary-glow: rgba(0, 150, 132, 0.9); /* Glow Intenso */
   --color-accent: #38c5b1;        /* Verde Claro/Teal */
   --color-text-main: #e0e0e0;
   --color-text-muted: #9ca3af;    
   --color-heading: #ffffff;
   
-  /* --- ESTÉTICA DOS CARDS PREMIUM (GLASS) --- */
-  --card-bg-default: rgba(18, 56, 50, 0.25); /* Fundo esverdeado espelhado com mais contraste */
-  --card-bg-hover: rgba(0, 150, 132, 0.25); 
-  --card-border-default: rgba(255, 255, 255, 0.18); /* Borda mais evidente */
-  --card-border-hover: rgba(0, 150, 132, 0.7);
+  /* --- ESTÉTICA DOS CARDS PREMIUM (ESPELHADO ESVERDEADO) --- */
+  --card-bg-default: rgba(18, 56, 50, 0.25); /* Fundo verde escuro espelhado (Estático) */
+  --card-bg-hover: rgba(0, 150, 132, 0.25);  /* Mais luz no hover */
+  
+  --card-border-default: rgba(255, 255, 255, 0.18); /* Borda Esbranquiçada (Neutro) */
+  --card-border-hover: rgba(0, 150, 132, 0.8);      /* Borda Verde (Hover) */
   
   /* --- SISTEMA DE SOMBRAS (HIERARQUIA) --- */
-  --shadow-low: 0 10px 30px -10px rgba(0,0,0,0.6);
-  --shadow-mid: 0 15px 40px -12px rgba(0, 150, 132, 0.12);
-  --shadow-high: 0 24px 50px -10px rgba(0, 150, 132, 0.25); 
+  --shadow-low: 0 10px 30px -10px rgba(0,0,0,0.7);
+  --shadow-mid: 0 15px 40px -12px rgba(0, 150, 132, 0.15);
+  --shadow-high: 0 24px 50px -10px rgba(0, 150, 132, 0.3); 
 
-  /* --- MOTION DESIGN (EASING PREMIUM) --- */
+  /* --- MOTION & EASING --- */
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1); 
 
-  /* --- TYPOGRAPHY SCALE (REDUZIDA & EQUILIBRADA) --- */
-  --font-h1: clamp(2rem, 3.2vw, 3rem);
-  --font-h2: clamp(1.75rem, 2.5vw, 2.5rem);
-  --font-h3: clamp(1.25rem, 1.5vw, 1.5rem);
+  /* --- TYPOGRAPHY SCALE (FLUIDA) --- */
+  --font-h1: clamp(2.2rem, 3.5vw, 3.2rem);
+  --font-h2: clamp(1.8rem, 2.8vw, 2.6rem);
+  --font-h3: clamp(1.3rem, 2vw, 1.8rem);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,37 +47,32 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   font-variation-settings: "wght" 430;
-  /* FORÇA A CENTRALIZAÇÃO DE TODOS OS BLOCOS */
-  text-align: center; 
+  text-align: center; /* Centralização Mestra */
 }
 
-/* --- CONTAINER WIDE (1380px) --- */
+/* --- CONTAINER WIDE --- */
 .container { 
   max-width: 1380px; 
   margin: 0 auto; 
   padding: 0 2rem;
   width: 100%;
-  /* CENTRALIZAÇÃO DE CONTEÚDO DENTRO DO CONTAINER */
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center; /* Força itens ao centro */
 }
 
-/* Centralizador utilitário */
-.centered { text-align: center; margin-left: auto; margin-right: auto; }
-
 /* ==========================================================================
-   2. TIPOGRAFIA & EFEITOS ESPECIAIS
+   2. TIPOGRAFIA & EFEITOS VISUAIS
    ========================================================================== */
 h1, h2, h3, 
-.hero-headline, .section-title, .case-card-title, .pillar-card-title {
+.hero-headline, .section-title, .case-card-title, .pillar-card-title, .truth-card-title {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-heading);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 1rem;
-  text-align: center; 
+  text-align: center;
 }
 
 h1, .hero-headline { 
@@ -86,7 +83,7 @@ h1, .hero-headline {
 
 h2, .section-title { 
   font-size: var(--font-h2) !important; 
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 h3 { 
@@ -94,32 +91,8 @@ h3 {
   margin-bottom: 1rem; 
 }
 
-/* --- EFEITO ÁGUA SYNAPSE (Aplicação Global em H1 E H2) --- */
+/* --- EFEITO ÁGUA SYNAPSE (GLOBAL EM H1/H2) --- */
 h1, h2, .hero-headline, .section-title {
-  background: linear-gradient(
-    110deg, 
-    #ffffff 25%, 
-    var(--color-primary) 45%, 
-    var(--color-accent) 55%, 
-    var(--color-primary) 65%, 
-    #ffffff 85%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: waterFlow 6s linear infinite;
-  display: inline-block; 
-  text-align: center;
-}
-
-@keyframes waterFlow {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-/* O .h1-water-effect continua existindo para uso específico, se necessário */
-.h1-water-effect {
   background: linear-gradient(
     110deg, 
     #ffffff 25%, 
@@ -136,27 +109,37 @@ h1, h2, .hero-headline, .section-title {
   display: inline-block;
 }
 
+@keyframes waterFlow {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Fallback e utilitário */
+.h1-water-effect {
+  background: linear-gradient(110deg, #fff 25%, var(--color-primary) 45%, var(--color-accent) 55%, var(--color-primary) 65%, #fff 85%);
+  background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: waterFlow 6s linear infinite; display: inline-block;
+}
 
 p { 
   font-size: 1.05rem; 
   color: var(--color-text-muted);
   margin-bottom: 1.5rem;
   max-width: 70ch; 
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto; margin-right: auto;
   text-align: center;
 }
 
 .lead-text { 
-  font-size: 1.2rem; 
-  max-width: 800px; 
-  opacity: 0.9;
-  margin-bottom: 3rem; 
+  font-size: 1.25rem; 
+  max-width: 850px; 
+  opacity: 0.95;
+  margin-bottom: 4rem; 
   text-align: center;
 }
 
 /* ==========================================================================
-   3. HERO SECTION (RESTAURADA E CENTRALIZADA)
+   3. HERO SECTION & BACKGROUNDS
    ========================================================================== */
 .hero-section {
   position: relative;
@@ -176,15 +159,16 @@ p {
   padding-top: 120px;
 }
 
-/* Video Background e Overlay (Estrutura) */
+/* Video Background */
 .hero-video-background {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
 }
 .hero-video {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.4; 
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.35; /* Leve ajuste */
 }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  /* Gradiente rico restaurado */
   background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%),
               linear-gradient(to bottom, rgba(0,0,0,0.3), #000000);
   z-index: 1;
@@ -203,26 +187,33 @@ p {
 }
 
 /* ==========================================================================
-   4. CARDS UNIVERSAL & GRIDS INTELIGENTES (2 COLUNAS)
+   4. CARDS & GRIDS (EXPANDIDO E RESTAURADO)
    ========================================================================== */
-/* Grid de 2 Colunas mais largos (para textos longos) */
+/* Grid Principal (Wide 2 Colunas) */
 .pillar-grid-revolutionary, 
 .case-grid, 
 .info-grid,
 .solutions-grid-revolutionary,
 .truths-grid-revolutionary {
   display: grid;
-  /* minmax de 450px força no máximo 2 colunas em telas grandes */
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  /* Grid de 2 colunas largas (min 480px) */
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
   gap: 2rem; 
   margin-top: 3rem;
   width: 100%;
   align-items: stretch; 
   justify-content: center;
-  justify-items: center; 
 }
 
-/* Estilo Unificado dos Cards */
+/* Utilitário: Card que ocupa a largura total (para ímpares ou destaque) */
+.card-wide {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Definição Mestra de Cards (Incluindo todas as variações legadas) */
 .glass-card-premium,
 .info-card,
 .case-card,
@@ -230,347 +221,256 @@ p {
 .pillar-card-revolutionary,
 .solution-card-revolutionary,
 .truth-card-revolutionary,
+.vertical-card,
+.feature-card,
 blockquote {
+  /* Estilo Base */
   background: var(--card-bg-default);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border-default);
-  border-radius: 16px;
-  padding: 2.5rem; 
+  border-radius: 18px;
+  padding: 3rem 2.5rem; /* Padding generoso */
   
+  /* Layout Interno */
   display: flex;
   flex-direction: column;
   align-items: center; 
   text-align: center;
   height: 100%;
   
+  /* Transições */
   transition: all 0.4s var(--ease-premium);
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-low);
 }
 
-/* Hover Premium (Microinterações) */
+/* Hover State Unificado */
 .glass-card-premium:hover,
 .info-card:hover,
 .case-card:hover,
+.truth-card-revolutionary:hover,
 blockquote:hover {
-  transform: translateY(-6px) scale(1.01);
+  transform: translateY(-6px) scale(1.015);
   background: var(--card-bg-hover);
   border-color: var(--card-border-hover);
   box-shadow: var(--shadow-high);
 }
 
-/* Ícones e SVGs nos Cards (Centralização) */
-.pillar-icon-wrapper, .info-card svg, .case-card svg, .card-icon {
+/* Ícones e SVGs nos Cards */
+.pillar-icon-wrapper, 
+.info-card svg, 
+.case-card svg, 
+.card-icon,
+.truth-card-revolutionary svg {
   color: var(--color-accent);
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1.8rem !important;
   display: inline-flex;
-  filter: drop-shadow(0 0 8px rgba(56, 197, 177, 0.3));
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(56, 197, 177, 0.3));
+  transition: transform 0.4s var(--ease-premium);
 }
 
-/* Listas Internas (Centralização) */
+.glass-card-premium:hover .pillar-icon-wrapper {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(56, 197, 177, 0.6));
+}
+
+/* Listas Internas */
 ul { 
-  list-style: none; 
-  padding: 0; 
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+  list-style: none; padding: 0; width: 100%;
+  display: flex; flex-direction: column; align-items: center; 
 }
 li { 
-  margin-bottom: 0.5rem; 
-  color: var(--color-text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  gap: 10px;
+  margin-bottom: 0.8rem; color: var(--color-text-muted);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
 
 /* ==========================================================================
-   5. NAVBAR ULTRA-MODERNA (FLUTUANTE) - CORREÇÃO DE ALINHAMENTO E ESTILO
+   5. NAVBAR DESKTOP (SOFISTICADA & ALINHADA)
    ========================================================================== */
 .site-navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 80px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
+  position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
   transition: all 0.4s var(--ease-premium);
-  background: var(--color-bg); 
+  background: var(--color-bg); /* Fundo Preto Sólido */
   border-bottom: 1px solid transparent;
-  justify-content: center; 
 }
 
 .site-navbar.scrolled {
   height: 70px;
-  background: var(--color-bg); 
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .nav-container {
-  width: 100%;
-  max-width: 1440px; 
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
+  width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
 }
 
 .nav-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: flex-end; 
-    flex-grow: 1; 
+    display: flex; align-items: center; list-style: none; padding: 0; margin: 0;
+    justify-content: flex-end; flex-grow: 1; /* Empurra links para direita */
 }
 
 .nav-logo-link { display: flex; align-items: center; height: 100%; }
-.nav-logo-video { height: 40px; width: auto; object-fit: contain; }
+.nav-logo-video { height: 45px; width: auto; object-fit: contain; }
 
-/* Links Desktop */
+/* Estilo dos Links */
 .nav-link {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  padding: 0.5rem 0;
-  margin: 0 1.2rem;
-  position: relative;
-  transition: color 0.3s;
-  letter-spacing: 0.5px;
-  text-align: center;
+  font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600;
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  padding: 0.5rem 0; margin: 0 1.5rem; /* Espaçamento lateral */
+  position: relative; transition: color 0.3s; letter-spacing: 0.5px;
+  text-transform: uppercase; font-size: 0.75rem; /* Estilo sofisticado */
 }
 .nav-link:hover, .nav-link.active { color: #fff; }
 
-/* Linha animada no hover */
+/* Linha animada sob o link */
 .nav-link::after {
-  content: '';
-  position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px;
-  background: var(--color-primary);
-  transform: scaleX(0); transform-origin: right;
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px;
+  background: var(--color-primary); transform: scaleX(0); transform-origin: right;
   transition: transform 0.4s var(--ease-premium);
 }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
-/* CTA da Navbar */
+/* Botão CTA Navbar */
 .btn-nav-cta {
-  padding: 0.7rem 1.5rem;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 6px;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-left: 2rem;
+  padding: 0.7rem 1.8rem; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
+  color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; text-decoration: none; transition: all 0.3s ease; margin-left: 3rem;
 }
 .btn-nav-cta:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #000;
-  box-shadow: 0 0 15px rgba(0,150,132,0.4);
+  background: var(--color-primary); border-color: var(--color-primary); color: #000;
+  box-shadow: 0 0 20px rgba(0,150,132,0.4);
 }
 
 /* ==========================================================================
-   6. FOOTER CLEAN GRID (MODERNO E CENTRALIZADO)
+   6. FOOTER (GRID CENTRALIZADO)
    ========================================================================== */
 .site-footer {
-  background: #030303;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 6rem 0 2rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  text-align: center; 
+  background: #030303; border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 6rem 0 3rem; font-size: 0.95rem; color: var(--color-text-muted);
+  text-align: center;
 }
-
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; 
-  gap: 2rem;
-  margin-bottom: 4rem;
-  justify-content: center;
-  justify-items: center; 
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 2rem;
+  margin-bottom: 5rem; justify-content: center; justify-items: center;
 }
-
-.footer-brand { 
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-.footer-brand h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
-.footer-brand p { opacity: 0.7; font-size: 0.9rem; line-height: 1.6; }
-.footer-brand > div { 
-    justify-content: center; 
-    width: 100%; 
-}
-
+.footer-brand { display: flex; flex-direction: column; align-items: center; }
+.footer-brand > div { justify-content: center; width: 100%; }
 .footer-col h4 {
-  color: #fff;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-  opacity: 0.8;
+  color: #fff; font-size: 0.85rem; text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 1.8rem; opacity: 0.9;
 }
-
-.footer-links { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
-.footer-links a {
-  color: var(--color-text-muted);
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.footer-links a:hover { 
-  color: var(--color-primary); 
-}
-
+.footer-links { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.footer-links a { color: var(--color-text-muted); text-decoration: none; transition: all 0.2s; }
+.footer-links a:hover { color: var(--color-primary); }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  opacity: 0.5;
-  flex-direction: column; 
-  gap: 10px;
+  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-direction: column; gap: 1.5rem; opacity: 0.6; font-size: 0.85rem;
 }
-.footer-bottom > div { 
-    display: flex; 
-    gap: 1.5rem; 
-    justify-content: center; 
-}
+.footer-bottom > div { display: flex; gap: 2rem; justify-content: center; }
 
 /* ==========================================================================
    7. CTAs & ELEMENTOS GLOBAIS
    ========================================================================== */
 .btn, .btn-primary, .section-cta a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 36px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #fff;
-  text-decoration: none;
-  
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 18px 40px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem;
+  text-transform: uppercase; letter-spacing: 1px; color: #fff; text-decoration: none;
   background: linear-gradient(90deg, rgba(0,150,132,0.2), rgba(0,150,132,0.4));
-  border: 1px solid var(--color-primary);
-  border-radius: 50px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s var(--ease-premium);
-  margin: 2rem auto 0 auto; 
+  border: 1px solid var(--color-primary); border-radius: 50px;
+  transition: all 0.3s var(--ease-premium); margin: 2.5rem auto 0 auto;
 }
-
-.btn:hover, .btn-primary:hover {
-  background: var(--color-primary);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(0,150,132,0.4);
+.btn:hover {
+  background: var(--color-primary); transform: translateY(-4px);
+  box-shadow: 0 12px 30px -6px rgba(0,150,132,0.5);
 }
 
 /* ==========================================================================
-   8. ANIMAÇÕES & SYNAPSE PULSE
+   8. SEÇÕES ESPECÍFICAS & UTILITÁRIOS (RESTAURADOS)
    ========================================================================== */
+/* Padding padronizado e reduzido (6rem) */
 section {
-  position: relative;
-  padding: 6rem 0; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-  width: 100%;
+  position: relative; padding: 6rem 0; 
+  display: flex; flex-direction: column; align-items: center; width: 100%;
 }
 
-/* Linha de conexão (Synapse) no fundo das seções - MAIOR DESTAQUE */
+/* Tipos de Seção (Restaurados) */
+.section-solid { background-color: var(--color-bg); }
+.section-with-gradient-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 150, 132, 0.08) 0%, transparent 70%);
+}
+.final-cta-section {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0, 150, 132, 0.1) 100%);
+  padding-bottom: 8rem;
+}
+
+/* Trust Bar (Movido para Global) */
+.trust-bar { width: 100%; max-width: 900px; margin: 6rem auto 0 auto; }
+.trust-bar-logos {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 4rem; opacity: 0.5; filter: grayscale(100%) contrast(50%); transition: opacity 0.3s;
+}
+.trust-bar-logos:hover { opacity: 0.8; }
+
+/* ==========================================================================
+   9. ANIMAÇÕES & SYNAPSE PULSE
+   ========================================================================== */
+/* Linha de conexão (Synapse) - DESTAQUE MÁXIMO */
 section::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
+  content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--color-primary) 50%, transparent 100%);
-  opacity: 0.6; 
-  box-shadow: 0 0 30px var(--color-primary); 
-  animation: synapse-pulse 6s infinite ease-in-out;
-  pointer-events: none;
+  opacity: 0.7; box-shadow: 0 0 35px var(--color-primary); /* Glow forte */
+  animation: synapse-pulse 6s infinite ease-in-out; pointer-events: none;
 }
-
-@keyframes synapse-pulse {
+@keyframes synapse-pulse { 
   0%, 100% { opacity: 0.4; transform: scaleX(0.7); } 
-  50% { opacity: 0.8; transform: scaleX(1); } 
+  50% { opacity: 0.9; transform: scaleX(1); } 
 }
 
-/* Glow Premium para ícones */
-.premium-glow {
-  animation: premiumGlow 4s ease-in-out infinite;
-}
-@keyframes premiumGlow {
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.1)); }
-  50% { filter: drop-shadow(0 0 12px rgba(56,197,177,0.4)); }
+.premium-glow { animation: premiumGlow 4s ease-in-out infinite; }
+@keyframes premiumGlow { 
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); } 
+  50% { filter: drop-shadow(0 0 15px rgba(56,197,177,0.5)); } 
 }
 
-/* Reveal Up (Scroll Animation) - MAIS DINÂMICO */
+/* Reveal Up Rápido (Mobile fix) */
 .reveal-up {
-  opacity: 0;
-  /* NOVO: Reduz deslocamento de 40px para 15px (mais sutil) */
-  transform: translateY(15px);
-  /* NOVO: Mantém transição rápida */
+  opacity: 0; transform: translateY(20px);
   transition: opacity 0.5s var(--ease-premium), transform 0.5s var(--ease-premium);
 }
-.reveal-up.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal-up.in-view { opacity: 1; transform: translateY(0); }
 
 /* ==========================================================================
-   9. MOBILE MENU & RESPONSIVIDADE
+   10. MOBILE MENU & RESPONSIVIDADE
    ========================================================================== */
 .mobile-menu {
   position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-  background: rgba(0,0,0,0.96);
-  backdrop-filter: blur(15px);
-  z-index: 9998;
-  padding: 7rem 2rem 2rem;
-  transform: translateY(-100%);
-  transition: transform 0.5s var(--ease-premium);
+  background: rgba(0,0,0,0.98); backdrop-filter: blur(20px);
+  z-index: 9998; padding: 7rem 2rem 2rem;
+  transform: translateY(-100%); transition: transform 0.5s var(--ease-premium);
   display: flex; flex-direction: column;
 }
 .mobile-menu.open { transform: translateY(0); }
 
-/* Media Queries de Correção */
 @media (max-width: 1024px) {
   .container { max-width: 100%; padding: 0 1.5rem; }
   .nav-menu { display: none; } 
-  .footer-grid { 
-    grid-template-columns: 1fr; 
-    gap: 3rem; 
-    justify-items: center; 
-  }
+  .footer-grid { grid-template-columns: 1fr; gap: 3rem; justify-items: center; }
+  .hero-section { padding-top: 6rem; min-height: auto; }
+  .hero-headline { font-size: 2.2rem !important; }
+  .trust-bar-logos { gap: 2rem; }
   
-  .hero-section { padding-top: 6rem; }
-  
-  h1 { font-size: 2.4rem !important; }
-
-  /* Grid em Mobile volta para 1 coluna */
-  .pillar-grid-revolutionary, 
-  .case-grid, 
-  .info-grid,
-  .solutions-grid-revolutionary,
-  .truths-grid-revolutionary {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  /* Grid em Mobile: 1 Coluna */
+  .pillar-grid-revolutionary, .case-grid, .info-grid, .solutions-grid-revolutionary, .truths-grid-revolutionary {
+    grid-template-columns: 1fr; gap: 1.5rem;
   }
+  /* Card Wide volta ao normal no mobile */
+  .card-wide { grid-column: auto; max-width: 100%; }
 }
