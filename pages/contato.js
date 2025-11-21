@@ -189,22 +189,25 @@ export default function ContatoPage() {
           
           <div className="pillar-grid-revolutionary">
             
-            <Link href="mailto:contato@synapseb2b.com" className="glass-card-premium" style={{textDecoration: 'none'}}>
+<Link href="mailto:contato@synapseb2b.com" className="glass-card-premium" style={{textDecoration: 'none'}}>
               <div className="pillar-icon-wrapper"><Mail size={32} /></div>
               <h3 className="pillar-card-title">E-mail</h3>
-              <p style={{color: 'var(--color-text)'}}>contato@synapseb2b.com</p>
+              {/* CORRIGIDO: var(--color-text-muted) */}
+              <p style={{color: 'var(--color-text-muted)'}}>contato@synapseb2b.com</p>
             </Link>
 
             <Link href="https://www.linkedin.com/in/juliofigueiredo-synapseb2b/" target="_blank" className="glass-card-premium" style={{textDecoration: 'none'}}>
               <div className="pillar-icon-wrapper"><Linkedin size={32} /></div>
               <h3 className="pillar-card-title">LinkedIn</h3>
-              <p style={{color: 'var(--color-text)'}}>Júlio Figueiredo</p>
+              {/* CORRIGIDO: var(--color-text-muted) */}
+              <p style={{color: 'var(--color-text-muted)'}}>Conectar com o Founder</p>
             </Link>
 
             <Link href={`https://wa.me/${whatsappNumber}`} target="_blank" className="glass-card-premium" style={{textDecoration: 'none'}}>
               <div className="pillar-icon-wrapper"><Send size={32} /></div>
               <h3 className="pillar-card-title">WhatsApp</h3>
-              <p style={{color: 'var(--color-text)'}}>Mensagem direta</p>
+              {/* CORRIGIDO: var(--color-text-muted) */}
+              <p style={{color: 'var(--color-text-muted)'}}>Mensagem direta</p>
             </Link>
 
           </div>
