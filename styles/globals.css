@@ -1,5 +1,5 @@
-/* globals.css - VERSÃO FINAL DE PRODUÇÃO (INTEGRADA) */
-/* Design System, Componentes, Layouts Específicos e Correções */
+/* globals.css - VERSÃO DEFINITIVA DE PRODUÇÃO */
+/* Contém: Design System, Cursor, WhatsApp, Footer Ajustado, Grid Inteligente */
 
 /* ==========================================================================
    1. CORE: IMPORTAÇÕES & RESET
@@ -88,8 +88,7 @@ h1, h2, .hero-headline, .section-title {
 p { font-size: 1.05rem; color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 70ch; margin-left: auto; margin-right: auto; text-align: center; }
 .lead-text { font-size: 1.25rem; max-width: 850px; opacity: 0.95; margin-bottom: 4rem; text-align: center; }
 
-/* REGRA 3: DESTAQUE DE CONTEÚDO ANTES DE ":" */
-/* Aplica-se a tags <strong>, assumindo que elas envolvem o texto antes dos dois pontos */
+/* REGRA 3: DESTAQUE DE CONTEÚDO ANTES DE ":" (Aplicado em tags strong) */
 p strong, li strong, .glass-card-premium strong {
   color: var(--color-primary);
   font-weight: 700;
@@ -102,8 +101,16 @@ p strong, li strong, .glass-card-premium strong {
 .hero-section {
   position: relative; width: 100%; overflow: hidden;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  min-height: 90vh; padding: 8rem 0;
+  /* REGRA HERO: Home Fullscreen */
+  min-height: 100vh; padding: 0;
 }
+/* Hero Curta para páginas internas */
+.hero-section.short-hero {
+  min-height: 55vh !important;
+  padding-top: 80px;
+  padding-bottom: 4rem;
+}
+
 .hero-video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
 .hero-overlay {
@@ -114,21 +121,26 @@ p strong, li strong, .glass-card-premium strong {
 }
 .hero-content { position: relative; z-index: 2; width: 100%; max-width: 1380px; padding: 0 2rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
 
+/* Barra de Confiança (Logos) */
+.trust-bar { width: 100%; max-width: 1000px; margin: 4rem auto 0 auto; }
+.trust-bar-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4rem; }
+.trust-logo img { height: 35px; width: auto; object-fit: contain; filter: grayscale(100%) brightness(1.2); opacity: 0.6; transition: all 0.3s ease; }
+.trust-logo:hover img { filter: grayscale(0%) brightness(1); opacity: 1; }
+
 /* ==========================================================================
-   4. GRID INTELIGENTE E CARDS (REGRA 2)
+   4. GRID INTELIGENTE E CARDS
    ========================================================================== */
-/* REGRA 2 (Parte A): Dois Cards por Linha (Abaixo de 250 chars) */
-/* Usamos minmax de 480px para garantir que em desktops comuns caibam apenas 2 */
+/* REGRA 2 (Parte A): Dois Cards por Linha (Padrão) */
 .pillar-grid-revolutionary, .case-grid, .info-grid, .solutions-grid-revolutionary, .truths-grid-revolutionary {
   display: grid;
+  /* Min 480px força 2 colunas em telas largas, 1 em mobile */
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
   gap: 2rem; margin-top: 3rem; width: 100%; align-items: stretch; justify-content: center;
 }
 
-/* REGRA 2 (Parte B): Card Wide (Acima de 250 chars ou destaque) */
-/* Esta classe deve ser aplicada manualmente no JSX quando o texto for longo */
+/* REGRA 2 (Parte B): Card Wide (Ocupa linha inteira) */
 .card-wide {
-  grid-column: 1 / -1; /* Ocupa todas as colunas */
+  grid-column: 1 / -1; 
   max-width: 1000px; 
   margin-left: auto; margin-right: auto;
 }
@@ -196,7 +208,7 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
 }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
-/* Botão CTA Padrão Navbar */
+/* Botão CTA Navbar */
 .btn-nav-cta {
   padding: 0.8rem 2rem; background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
@@ -210,24 +222,24 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
 }
 
 /* ==========================================================================
-   6. FOOTER (ALINHAMENTO & ESTILO)
+   6. FOOTER (AJUSTE: LAYOUT ASSIMÉTRICO & ALINHAMENTO ESQUERDA)
    ========================================================================== */
 .site-footer {
   background: #030303; border-top: 1px solid rgba(255,255,255,0.08);
   padding: 6rem 0 3rem; font-size: 0.95rem; color: var(--color-text-muted);
-  text-align: left; /* REGRA 1: Alinhamento Geral à Esquerda */
+  /* REGRA 1: Forçar alinhamento à esquerda no footer inteiro */
+  text-align: left; 
 }
 
 .footer-grid {
   display: grid; 
-  /* Layout assimétrico: Coluna 1 larga, outras normais */
-  grid-template-columns: 2fr 1fr 1fr; 
+  /* REGRA 1b: Coluna 1 ocupa 3 partes, empurrando as outras para a direita */
+  grid-template-columns: 3fr 1fr 1fr; 
   gap: 4rem; margin-bottom: 5rem; 
-  justify-items: start; /* REGRA 1: Itens alinhados ao início (esquerda) */
+  justify-items: start; /* Alinha itens à esquerda */
   align-items: start;
 }
 
-/* REGRA 1a: Coluna Esquerda alinhada à esquerda */
 .footer-brand { 
   display: flex; flex-direction: column; align-items: flex-start; 
   text-align: left; 
@@ -235,7 +247,6 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
 .footer-brand h3 { text-align: left; margin-bottom: 1rem; }
 .footer-brand p { text-align: left; margin-left: 0; opacity: 0.7; line-height: 1.6; max-width: 400px; }
 
-/* REGRA 1b: Demais colunas (já controlado pelo grid e justify-items: start) */
 .footer-col h4 {
   color: #fff; font-size: 0.85rem; text-transform: uppercase;
   letter-spacing: 1px; margin-bottom: 1.8rem; opacity: 0.9; text-align: left;
@@ -244,10 +255,9 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
   display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; /* Esquerda */
 }
 
-/* REGRA 1c: Links sem cor roxa/azul */
+/* REGRA 1c: Remover cor azul de links */
 .footer-links a { 
-  color: var(--color-text-muted); /* Cor cinza padrão */
-  text-decoration: none; transition: all 0.2s; 
+  color: var(--color-text-muted); text-decoration: none; transition: all 0.2s; 
 }
 .footer-links a:hover { color: var(--color-primary); padding-left: 5px; }
 
@@ -276,23 +286,22 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
 }
 
 /* REGRA 4: Botão "Ativar Engenharia" (Destaque Especial) */
-/* Seletor para texto exato ou classe utilitária */
+/* Aplica-se a links que apontam para /contato */
 a[href*="/contato"].btn, .btn-activate-engineering {
-  background: linear-gradient(135deg, #009684 0%, #00dcb0 100%); /* Gradiente mais vibrante */
+  background: linear-gradient(135deg, #009684 0%, #00dcb0 100%); /* Gradiente Vibrante */
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 25px rgba(0, 150, 132, 0.6); /* Glow forte permanente */
-  color: #000; /* Texto escuro para contraste no verde claro */
-  font-weight: 800;
+  box-shadow: 0 0 25px rgba(0, 150, 132, 0.6); /* Glow forte */
+  color: #000; font-weight: 800;
 }
 a[href*="/contato"].btn:hover, .btn-activate-engineering:hover {
   box-shadow: 0 0 50px rgba(0, 220, 176, 0.8);
   transform: translateY(-4px) scale(1.03);
-  background: #fff; /* Fica branco no hover para impacto máximo */
+  background: #fff; 
   color: #009684;
 }
 
 /* ==========================================================================
-   8. COMPONENTES ESPECIAIS (ABSORVIDOS)
+   8. COMPONENTES ESPECIAIS
    ========================================================================== */
 /* WhatsApp Button */
 .whatsapp-float {
@@ -364,10 +373,13 @@ section::after {
   .container { max-width: 100%; padding: 0 1.5rem; }
   .nav-menu { display: none; } 
   
-  /* Footer Mobile: Volta para 1 coluna centralizada */
+  /* Footer Mobile: Volta para 1 coluna, mas mantém alinhamento à esquerda */
   .footer-grid { grid-template-columns: 1fr; gap: 3rem; justify-items: start; }
   
-  .hero-section { padding-top: 6rem; }
+  .hero-section { padding-top: 6rem; min-height: auto; }
+  /* Em mobile, a hero curta também pode ser menor */
+  .hero-section.short-hero { min-height: auto !important; padding-bottom: 3rem; }
+  
   h1 { font-size: 2.4rem !important; }
   
   /* Cards Mobile: 1 Coluna */
@@ -376,4 +388,7 @@ section::after {
   }
   .card-wide { grid-column: auto; max-width: 100%; }
   .whatsapp-float { bottom: 1rem; right: 1rem; width: 50px; height: 50px; font-size: 24px; }
+  
+  /* Trust Bar Mobile */
+  .trust-bar-logos { gap: 2rem; justify-content: center; }
 }
