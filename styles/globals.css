@@ -1,6 +1,9 @@
 /* globals.css - VERSÃO DEFINITIVA DE PRODUÇÃO (ATUALIZADA) */
 /* Contém: Design System, Hero Inteligente, Footer Completo, Cookies Premium */
 
+/* globals.css - VERSÃO DEFINITIVA DE PRODUÇÃO (ATUALIZADA) */
+/* Contém: Design System, Hero Inteligente, Footer Completo, Cookies Premium */
+
 /* ==========================================================================
    1. CORE: IMPORTAÇÕES & RESET
    ========================================================================== */
@@ -36,41 +39,19 @@
   --font-h3: clamp(1.3rem, 2vw, 1.8rem);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; /* Cursor Customizado Global */ }
-html { scroll-behavior: smooth; }
-
+/* --- CURSOR DE IMAGEM ÚNICO E RÁPIDO (AQUI ESTÁ A CHAVE) --- */
 body {
+  /* Definição de Cores e Fontes */
   background-color: var(--color-bg);
   color: var(--color-text-main);
   font-family: 'Inter', sans-serif;
   line-height: 1.65;
   overflow-x: hidden;
   font-variation-settings: "wght" 430;
-  text-align: center; /* Centralização Padrão (Footer terá override) */
-}
-
-/* Container Mestre */
-.container { 
-  max-width: 1380px; 
-  margin: 0 auto; 
-  padding: 0 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-
-/* ==========================================================================
-   00. CURSOR PERSONALIZADO (SYNAPSE B2B)
-   ========================================================================== */
-
-body {
-  /* Cursor padrão para o corpo do site */
-  /* Certifique-se de que o caminho da imagem está correto */
+  text-align: center; 
+  
+  /* CURSOR SYNAPSE (Imposto aqui) */
   cursor: url('/images/cursor-synapse.png') 12 12, auto; 
-  /* Os números 12 12 são as coordenadas do "hotspot" (ponta do clique) */
-  /* Ajuste esses números para o centro da sua imagem, se necessário. */
-  /* Para uma imagem 24x24, 12 12 é o centro. */
 }
 
 /* Garante que elementos clicáveis ainda tenham o cursor padrão de "mão" */
@@ -81,6 +62,21 @@ a, button, input[type="submit"], input[type="button"], .btn, .glass-card-premium
 /* Opcional: Cursor para texto selecionável */
 p, span, li, h1, h2, h3, h4, h5, h6 {
   cursor: text;
+}
+
+/* Reset Básico com Cursor removido do * */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+/* Container Mestre */
+.container { 
+  max-width: 1380px; 
+  margin: 0 auto; 
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 /* ==========================================================================
@@ -373,18 +369,6 @@ a[href*="/contato"].btn:hover, .btn-activate-engineering:hover {
   background-color: #00bca5; /* Levemente mais claro no hover */
 }
 
-/* Custom Cursor - CORREÇÃO 1: Performance (Sem transição de posição) */
-.custom-cursor {
-  position: fixed; top: 0; left: 0; width: 20px; height: 20px;
-  border: 1px solid var(--color-primary); border-radius: 50%;
-  pointer-events: none; z-index: 9999; mix-blend-mode: difference;
-  transition: width 0.3s, height 0.3s, background-color 0.3s; 
-  will-change: transform; transform: translate3d(-100px, -100px, 0);
-}
-.custom-cursor.hover {
-  width: 50px; height: 50px;
-  background-color: rgba(0, 255, 150, 0.1); border-color: transparent;
-}
 @media (hover: none) and (pointer: coarse) {
   .custom-cursor { display: none; }
   body, a, button { cursor: auto; }
