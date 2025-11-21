@@ -1,10 +1,10 @@
 // components/Navbar.js
-// SOLUÇÃO DEFINITIVA: Estrutura Desktop Unificada e CSS Mobile Reforçado
+// CORREÇÃO FINAL: Classes explícitas para forçar estilo nos links mobile e ocultar botão desktop
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Mail, Award } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Award, Mail } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -97,16 +97,16 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 4. A ENGENHARIA (CORRIGIDO: ENVOLVIDO EM DIV PARA ALINHAMENTO PERFEITO) */}
+            {/* 4. A ENGENHARIA */}
             <div className={`nav-item-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
               <Link href="/a-engenharia" className="nav-link-desktop clickable">
                 A Engenharia
               </Link>
             </div>
-
           </div>
 
           <div className="nav-actions">
+            {/* BOTÃO DESKTOP (Classe 'desktop-only' será forçada a sumir no mobile) */}
             <Link href="/contato" className="btn-nav-cta desktop-only">
               Ativar Engenharia
             </Link>
@@ -129,14 +129,14 @@ export default function Navbar() {
           >
             <div className="flex-row">
               <Brain size={20} className="text-primary" />
-              Inteligência e Estratégia
+              <span className="menu-text">Inteligência e Estratégia</span>
             </div>
             <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.intel ? 'rotate' : ''}`} />
           </button>
           <div className={`mobile-subs ${mobileDropdowns.intel ? 'show' : ''}`}>
-            <Link href="/pilares/inteligencia-e-estrategia/cro-service" onClick={() => setIsMobileOpen(false)}>CRO as a Service</Link>
-            <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" onClick={() => setIsMobileOpen(false)}>Sprint de Validação</Link>
-            <Link href="/solucoes/cortex-b2b" onClick={() => setIsMobileOpen(false)}>Cortex B2B™</Link>
+            <Link href="/pilares/inteligencia-e-estrategia/cro-service" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>CRO as a Service</Link>
+            <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Sprint de Validação</Link>
+            <Link href="/solucoes/cortex-b2b" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Cortex B2B™</Link>
           </div>
 
           {/* ATIVOS */}
@@ -146,13 +146,13 @@ export default function Navbar() {
           >
             <div className="flex-row">
               <MonitorSmartphone size={20} className="text-primary" />
-              Ativos Digitais
+              <span className="menu-text">Ativos Digitais</span>
             </div>
             <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.ativos ? 'rotate' : ''}`} />
           </button>
           <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
-            <Link href="/pilares/ativos-digitais/plataformas-digitais" onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
-            <Link href="/pilares/ativos-digitais/growth-engineering" onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
+            <Link href="/pilares/ativos-digitais/plataformas-digitais" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
+            <Link href="/pilares/ativos-digitais/growth-engineering" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
           </div>
 
           {/* CASES */}
@@ -162,25 +162,23 @@ export default function Navbar() {
           >
             <div className="flex-row">
               <Award size={20} className="text-primary" />
-              Cases
+              <span className="menu-text">Cases</span>
             </div>
             <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.cases ? 'rotate' : ''}`} />
           </button>
           <div className={`mobile-subs ${mobileDropdowns.cases ? 'show' : ''}`}>
-            <Link href="/cases/versao-holistica" onClick={() => setIsMobileOpen(false)}>Versão Holística</Link>
-            <Link href="/cases/exclusiva-engenharias" onClick={() => setIsMobileOpen(false)}>Exclusiva Engenharias</Link>
-            <Link href="/cases/aorkia" onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
+            <Link href="/cases/versao-holistica" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Versão Holística</Link>
+            <Link href="/cases/exclusiva-engenharias" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Exclusiva Engenharias</Link>
+            <Link href="/cases/aorkia" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
           </div>
 
-          {/* LINKS SIMPLES (A ENGENHARIA) */}
+          {/* LINKS SIMPLES */}
           <Link href="/a-engenharia" className="mobile-link-simple" onClick={() => setIsMobileOpen(false)}>
             <div className="flex-row">
               <Box size={20} className="text-primary" />
-              A Engenharia
+              <span className="menu-text">A Engenharia</span>
             </div>
           </Link>
-
-          {/* CONTATO (REMOVIDO) - Não deve aparecer aqui, apenas o botão abaixo */}
 
           <div style={{marginTop: '2rem'}}>
             <Link href="/contato" className="btn btn-primary" style={{width: '100%', justifyContent: 'center'}} onClick={() => setIsMobileOpen(false)}>
@@ -212,26 +210,17 @@ export default function Navbar() {
 
         /* --- DESKTOP MENU --- */
         .nav-menu-desktop { display: flex; gap: 2rem; align-items: center; height: 100%; }
-        
-        /* Item de Menu (Pai) */
         .nav-item-desktop { position: relative; height: 100%; display: flex; align-items: center; }
         
-        /* Link/Botão do Menu */
         .nav-link-desktop {
           background: none; border: none; color: #ccc; font-size: 0.85rem; font-weight: 600;
           text-transform: uppercase; cursor: default; display: flex; align-items: center; gap: 6px;
           text-decoration: none; transition: color 0.2s; height: 100%; letter-spacing: 0.5px;
         }
-        
-        /* Modificador para Links Clicáveis (A Engenharia) */
         .nav-link-desktop.clickable { cursor: pointer; }
         
-        /* Hover Effect */
-        .nav-link-desktop:hover, .nav-item-desktop:hover .nav-link-desktop, .nav-item-desktop.active .nav-link-desktop { 
-          color: #fff; 
-        }
+        .nav-link-desktop:hover, .nav-item-desktop.active .nav-link-desktop { color: #fff; }
         
-        /* Dropdown Menu */
         .dropdown-menu-desktop {
           position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(20px);
           background: rgba(10,10,10,0.95); border: 1px solid rgba(255,255,255,0.1);
@@ -263,53 +252,65 @@ export default function Navbar() {
         /* --- MOBILE MENU ITENS --- */
         .mobile-menu {
           position: fixed; top: 90px; left: 0; width: 100%; height: calc(100vh - 90px);
-          background: #000; padding: 1rem 1.5rem 4rem; overflow-y: auto;
+          background: #000 !important; /* Força fundo preto sólido */
+          padding: 1rem 1.5rem 6rem; overflow-y: auto;
           transform: translateX(100%); transition: transform 0.3s ease;
           display: flex; flex-direction: column;
+          z-index: 9998;
         }
         .mobile-menu.open { transform: translateX(0); }
         
-        /* Botão Expansível Mobile (Padronizado) */
         .mobile-btn-expand {
           width: 100%; display: flex; align-items: center; justify-content: space-between;
-          background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.05);
-          padding: 1.2rem 0; color: #fff; font-size: 1rem; font-family: 'Montserrat', sans-serif;
-          font-weight: 500; cursor: pointer; text-align: left;
+          background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+          padding: 1.5rem 0; color: #fff; cursor: pointer; text-align: left;
         }
         
-        /* Link Simples Mobile (Padronizado) */
+        /* Estilo para links simples (A Engenharia) */
         .mobile-link-simple {
           display: flex; align-items: center; width: 100%;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
-          padding: 1.2rem 0; color: #fff; font-size: 1rem; font-family: 'Montserrat', sans-serif;
-          font-weight: 500; text-decoration: none; cursor: pointer;
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          padding: 1.5rem 0; color: #fff; text-decoration: none; cursor: pointer;
         }
         
-        .flex-row { display: flex; align-items: center; gap: 12px; }
+        .menu-text {
+          font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; color: #fff;
+        }
+        
+        .flex-row { display: flex; align-items: center; gap: 15px; }
         .text-primary { color: var(--color-primary); }
         
         .mob-chevron { transition: transform 0.3s; color: #666; }
         .mob-chevron.rotate { transform: rotate(180deg); color: var(--color-primary); }
 
+        /* SUBMENU LINKS - CORREÇÃO DO BUG AZUL */
         .mobile-subs {
-          overflow: hidden; max-height: 0; transition: max-height 0.4s ease; background: rgba(255,255,255,0.03);
+          overflow: hidden; max-height: 0; transition: max-height 0.4s ease; 
+          background: rgba(255,255,255,0.03);
         }
-        .mobile-subs.show { max-height: 500px; }
-        .mobile-subs a {
-          display: block; padding: 1rem 0 1rem 2.5rem; color: #aaa; font-size: 0.9rem;
-          text-decoration: none; border-left: 2px solid transparent;
+        .mobile-subs.show { max-height: 600px; }
+        
+        /* Classe específica para os links do submenu para vencer conflitos globais */
+        .mobile-sub-link {
+          display: block !important; 
+          padding: 1rem 0 1rem 3rem !important; 
+          color: #b0b0b0 !important; /* Cor cinza claro forçada */
+          font-size: 0.95rem !important;
+          text-decoration: none !important; 
+          border-bottom: 1px solid rgba(255,255,255,0.02);
+          width: 100%;
         }
-        .mobile-subs a:hover { color: #fff; border-left-color: var(--color-primary); }
+        .mobile-sub-link:hover { color: #fff !important; background: rgba(255,255,255,0.05); }
 
         /* RESPONSIVIDADE */
         @media (max-width: 1024px) {
           .nav-menu-desktop { display: none; }
-          .desktop-only { display: none; }
+          /* Força o botão desktop a sumir no mobile com !important */
+          .desktop-only { display: none !important; } 
           .mobile-hamburger { display: block; }
           .site-navbar { height: 70px; padding: 0 1rem; }
           .site-navbar.scrolled { height: 70px; }
           .mobile-menu { top: 70px; height: calc(100vh - 70px); }
-          /* Ajuste do tamanho do logo no mobile */
           .nav-logo-video { height: 40px; }
         }
       `}</style>
