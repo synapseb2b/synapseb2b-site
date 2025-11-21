@@ -4,7 +4,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, Users, TrendingUp, BarChart, Briefcase, UserCheck } from 'lucide-react';
+import { ArrowRight, Users, TrendingUp, BarChart, Briefcase, UserCheck, AlertTriangle, XCircle } from 'lucide-react';
 
 export default function CroService() {
   useEffect(() => {
@@ -64,14 +64,64 @@ export default function CroService() {
 
           <div className="truths-grid-revolutionary" style={{marginTop: '3rem'}}>
              
-             {/* O Dilema */}
+{/* O Dilema (Refatorado) */}
              <div className="glass-card-premium" style={{borderColor: 'rgba(255,255,255,0.1)'}}>
-               <h3 className="truth-card-title" style={{color: 'var(--color-text-muted)'}}>O Dilema Atual</h3>
-               <p style={{marginBottom: '1rem'}}>Para escalar, você precisa sair da operação. Mas as opções tradicionais são falhas:</p>
-               <ul style={{textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.8rem'}}>
-                 <li>❌ <strong>VP Sales Jr:</strong> Barato, mas sem bagagem estratégica. Comete erros que você paga caro.</li>
-                 <li>❌ <strong>CRO Sênior de Mercado:</strong> Custa R$ 1M+/ano (Salário + Equity), inviável para o estágio atual.</li>
-               </ul>
+               
+               {/* Cabeçalho do Card */}
+               <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem'}}>
+                 <div style={{marginBottom: '0.8rem', opacity: 0.7}}>
+                    <AlertTriangle size={32} color="var(--color-text-muted)" />
+                 </div>
+                 <h3 className="truth-card-title" style={{color: 'var(--color-text-muted)', marginBottom: '0.5rem'}}>O Dilema Atual</h3>
+                 <p style={{fontSize: '0.95rem', maxWidth: '90%'}}>
+                   Para escalar, você precisa sair da operação. Mas as opções tradicionais falham:
+                 </p>
+               </div>
+
+               {/* Lista Visual Organizada */}
+               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
+                 
+                 {/* Item 1 */}
+                 <div style={{
+                   display: 'flex', 
+                   alignItems: 'flex-start', 
+                   gap: '12px', 
+                   textAlign: 'left', 
+                   padding: '1rem', 
+                   borderRadius: '8px', 
+                   background: 'rgba(255,255,255,0.03)', 
+                   border: '1px solid rgba(255,255,255,0.05)'
+                 }}>
+                   <XCircle size={20} style={{color: '#ef4444', marginTop: '3px', flexShrink: 0}} />
+                   <div>
+                     <strong style={{display: 'block', color: '#e0e0e0', marginBottom: '4px', fontSize: '1rem'}}>VP Sales Jr</strong>
+                     <span style={{fontSize: '0.85rem', color: 'var(--color-text-muted)', lineHeight: '1.4'}}>
+                       Barato, mas sem bagagem estratégica. Comete erros básicos que custam caro ao caixa.
+                     </span>
+                   </div>
+                 </div>
+
+                 {/* Item 2 */}
+                 <div style={{
+                   display: 'flex', 
+                   alignItems: 'flex-start', 
+                   gap: '12px', 
+                   textAlign: 'left', 
+                   padding: '1rem', 
+                   borderRadius: '8px', 
+                   background: 'rgba(255,255,255,0.03)', 
+                   border: '1px solid rgba(255,255,255,0.05)'
+                 }}>
+                   <XCircle size={20} style={{color: '#ef4444', marginTop: '3px', flexShrink: 0}} />
+                   <div>
+                     <strong style={{display: 'block', color: '#e0e0e0', marginBottom: '4px', fontSize: '1rem'}}>CRO Sênior de Mercado</strong>
+                     <span style={{fontSize: '0.85rem', color: 'var(--color-text-muted)', lineHeight: '1.4'}}>
+                       Custo inviável (R$ 1M+/ano entre Salário e Equity) para o estágio atual da operação.
+                     </span>
+                   </div>
+                 </div>
+
+               </div>
              </div>
 
              {/* A Solução Synapse */}
