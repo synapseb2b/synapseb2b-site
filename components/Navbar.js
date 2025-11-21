@@ -1,20 +1,21 @@
 // components/Navbar.js
-// REFATORADO: Conectado ao globals.css (.site-navbar) + Sequência Correta + Dropdowns Estilizados
+// ATUALIZADO: Incluindo Menu Dropdown "Cases" antes de "A Synapse"
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link'; // Importação corrigida para Next.js padrão
+import Link from 'next/link';
 import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Building, Mail, Award } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   
-  // Estados para Dropdowns Mobile
+  // Estado para Dropdowns Mobile (Adicionado 'cases')
   const [mobileDropdowns, setMobileDropdowns] = useState({
     intel: false,
     ativos: false,
-    verticais: false
+    verticais: false,
+    cases: false
   });
 
   const router = useRouter();
@@ -29,7 +30,7 @@ export default function Navbar() {
   // Fechar menu ao mudar de rota
   useEffect(() => {
     setIsMobileOpen(false);
-    setMobileDropdowns({ intel: false, ativos: false, verticais: false });
+    setMobileDropdowns({ intel: false, ativos: false, verticais: false, cases: false });
   }, [router.asPath]);
 
   // Travar scroll quando mobile aberto
@@ -46,7 +47,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Usa .site-navbar definido no globals.css para fundo preto e blur */}
+      {/* Usa .site-navbar definido no globals.css */}
       <header className={`site-navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           
@@ -57,7 +58,7 @@ export default function Navbar() {
             </video>
           </Link>
 
-          {/* DESKTOP MENU (Alinhado à Direita pelo globals.css) */}
+          {/* DESKTOP MENU (Direita) */}
           <nav className="nav-menu">
             
             {/* 1. Inteligência e Estratégia */}
@@ -96,12 +97,24 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 4. A Synapse */}
+            {/* 4. Cases (NOVO) */}
+            <div className="dropdown-group">
+              <Link href="/#cases" className={`nav-link ${isActive('cases')}`}>
+                Cases <ChevronDown size={12} className="chevron" />
+              </Link>
+              <div className="dropdown-box">
+                <Link href="/cases/versao-holistica">Versão Holística</Link>
+                <Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link>
+                <Link href="/cases/aorkia">AORKIA</Link>
+              </div>
+            </div>
+
+            {/* 5. A Synapse */}
             <Link href="/a-engenharia" className={`nav-link ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
               A Synapse
             </Link>
 
-            {/* 5. CTA Final */}
+            {/* 6. CTA Final */}
             <Link href="/contato" className="btn-nav-cta">
               Ativar Engenharia
             </Link>
@@ -158,6 +171,19 @@ export default function Navbar() {
                     <Link href="/pilares/solucoes-verticais/cortex-b2b">Cortex B2B™</Link>
                     <Link href="/pilares/solucoes-verticais/match-maker">Match Maker B2B</Link>
                     <Link href="/pilares/solucoes-verticais/hba">Health Business Arch.™</Link>
+                </div>
+            </div>
+
+            {/* Mobile: Cases (NOVO) */}
+            <div className="mobile-item">
+                <button onClick={() => toggleMobileDropdown('cases')} className={`mobile-btn ${mobileDropdowns.cases ? 'active' : ''}`}>
+                    <div className="flex-row"><Award size={18} className="text-primary"/> Cases</div>
+                    <ChevronDown size={16} className={`mob-chevron ${mobileDropdowns.cases ? 'rotate' : ''}`} />
+                </button>
+                <div className={`mobile-subs ${mobileDropdowns.cases ? 'show' : ''}`}>
+                    <Link href="/cases/versao-holistica">Versão Holística</Link>
+                    <Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link>
+                    <Link href="/cases/aorkia">AORKIA</Link>
                 </div>
             </div>
 
