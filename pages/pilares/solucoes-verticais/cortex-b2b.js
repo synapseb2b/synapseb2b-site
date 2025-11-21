@@ -224,7 +224,7 @@ export default function CortexB2B() {
         </div>
       </section>
 
-{/* ====================================================================== */}
+      {/* ====================================================================== */}
       {/* Casos de Uso                                                         */}
       {/* ====================================================================== */}
       <section className="section-solid">
@@ -232,6 +232,7 @@ export default function CortexB2B() {
           <h2 className="section-title">Casos de Uso Ideais</h2>
           <p className="lead-text">O Cortex B2B™ foi projetado para cenários de alta complexidade estratégica.</p>
 
+          {/* GRID COM 3 ITENS (O 3º será centralizado automaticamente pelo CSS Global) */}
           <div className="truths-grid-revolutionary">
             <div className="glass-card-premium">
               <h3 className="truth-card-title">Empresas em Platô</h3>
@@ -243,38 +244,59 @@ export default function CortexB2B() {
               <p>Product-market fit validado, mas o crescimento é errático. O Cortex estrutura a máquina de vendas antes de você escalar o time comercial.</p>
             </div>
 
+            {/* Este card agora é o último do grid, então o CSS Global vai centralizá-lo */}
             <div className="glass-card-premium">
               <h3 className="truth-card-title">Diversificação de Canais</h3>
               <p>Dependência excessiva de uma única fonte de leads. O Cortex diagnostica a viabilidade de novos canais antes de comprometer recursos.</p>
             </div>
-            
-            {/* Bloco "Também Aplicável" - Reorganizado como Card Wide Bipartido */}
-            <div className="glass-card-premium card-wide" style={{marginTop: '2rem', textAlign: 'left'}}>
-               <h4 style={{color: 'var(--color-heading)', marginBottom: '1.5rem', fontSize: '1.3rem', textAlign: 'center', width: '100%'}}>
-                 Também Aplicável em:
-               </h4>
-               
-               <div style={{
-                 display: 'grid', 
-                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                 gap: '2rem', 
-                 width: '100%'
-               }}>
-                  {/* Item A */}
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)'}}>
-                    <strong style={{color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>Founders & C-Level</strong>
-                    <p style={{fontSize: '0.95rem', margin: 0}}>Segunda opinião estratégica (Sparring) para validação de hipóteses críticas antes de tomadas de decisão.</p>
-                  </div>
-                  
-                  {/* Item B */}
-                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)'}}>
-                    <strong style={{color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>Ecossistemas de Investimento</strong>
-                    <p style={{fontSize: '0.95rem', margin: 0}}>Método de diagnóstico padronizado para análise de maturidade de portfólio e Due Diligence.</p>
-                  </div>
-               </div>
-            </div>
-
           </div>
+
+          {/* Bloco "Também Aplicável" - FORA DO GRID para não interferir na contagem */}
+          {/* Ajustado para alinhamento central total */}
+          <div className="glass-card-premium card-wide" style={{marginTop: '3rem', textAlign: 'center', alignItems: 'center'}}>
+             <h4 style={{color: 'var(--color-heading)', marginBottom: '2rem', fontSize: '1.3rem', width: '100%'}}>
+               Também Aplicável em:
+             </h4>
+             
+             <div style={{
+               display: 'grid', 
+               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+               gap: '2rem', 
+               width: '100%',
+               justifyItems: 'center' // Garante que os itens do grid fiquem no centro das células
+             }}>
+                {/* Item A */}
+                <div style={{
+                    background: 'rgba(255,255,255,0.03)', 
+                    padding: '1.5rem', 
+                    borderRadius: '12px', 
+                    border: '1px solid rgba(255,255,255,0.05)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center', // Centraliza conteúdo interno
+                    textAlign: 'center'    // Centraliza texto
+                }}>
+                  <strong style={{color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>Founders & C-Level</strong>
+                  <p style={{fontSize: '0.95rem', margin: 0}}>Segunda opinião estratégica (Sparring) para validação de hipóteses críticas antes de tomadas de decisão.</p>
+                </div>
+                
+                {/* Item B */}
+                <div style={{
+                    background: 'rgba(255,255,255,0.03)', 
+                    padding: '1.5rem', 
+                    borderRadius: '12px', 
+                    border: '1px solid rgba(255,255,255,0.05)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center', // Centraliza conteúdo interno
+                    textAlign: 'center'    // Centraliza texto
+                }}>
+                  <strong style={{color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>Ecossistemas de Investimento</strong>
+                  <p style={{fontSize: '0.95rem', margin: 0}}>Método de diagnóstico padronizado para análise de maturidade de portfólio e Due Diligence.</p>
+                </div>
+             </div>
+          </div>
+
         </div>
       </section>
 
