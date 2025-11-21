@@ -14,7 +14,6 @@ export default function Navbar() {
   const [mobileDropdowns, setMobileDropdowns] = useState({
     intel: false,
     ativos: false,
-    verticais: false,
     cases: false
   });
 
@@ -85,19 +84,8 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 3. Soluções Verticais */}
-            <div className="dropdown-group">
-              <Link href="/pilares/solucoes-verticais" className={`nav-link ${isActive('verticais')}`}>
-                Soluções Verticais <ChevronDown size={12} className="chevron" />
-              </Link>
-              <div className="dropdown-box">
-                <Link href="/pilares/solucoes-verticais/cortex-b2b">Cortex B2B™</Link>
-                <Link href="/pilares/solucoes-verticais/match-maker">Match Maker B2B</Link>
-                <Link href="/pilares/solucoes-verticais/hba">Health Business Arch.™</Link>
-              </div>
-            </div>
 
-            {/* 4. Cases (NOVO) */}
+            {/* 3. Cases (NOVO) */}
             <div className="dropdown-group">
               <Link href="/#cases" className={`nav-link ${isActive('cases')}`}>
                 Cases <ChevronDown size={12} className="chevron" />
@@ -109,12 +97,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 5. A Synapse */}
+            {/* 4. A Synapse */}
             <Link href="/a-engenharia" className={`nav-link ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
               A Synapse
             </Link>
 
-            {/* 6. CTA Final */}
+            {/* 5. CTA Final */}
             <Link href="/contato" className="btn-nav-cta">
               Ativar Engenharia
             </Link>
@@ -158,19 +146,6 @@ export default function Navbar() {
                 <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
                     <Link href="/pilares/ativos-digitais/plataformas-digitais">Plataformas Digitais</Link>
                     <Link href="/pilares/ativos-digitais/apps">Apps Estratégicos</Link>
-                </div>
-            </div>
-
-            {/* Mobile: Verticais */}
-            <div className="mobile-item">
-                <button onClick={() => toggleMobileDropdown('verticais')} className={`mobile-btn ${mobileDropdowns.verticais ? 'active' : ''}`}>
-                    <div className="flex-row"><Box size={18} className="text-primary"/> Soluções Verticais</div>
-                    <ChevronDown size={16} className={`mob-chevron ${mobileDropdowns.verticais ? 'rotate' : ''}`} />
-                </button>
-                <div className={`mobile-subs ${mobileDropdowns.verticais ? 'show' : ''}`}>
-                    <Link href="/pilares/solucoes-verticais/cortex-b2b">Cortex B2B™</Link>
-                    <Link href="/pilares/solucoes-verticais/match-maker">Match Maker B2B</Link>
-                    <Link href="/pilares/solucoes-verticais/hba">Health Business Arch.™</Link>
                 </div>
             </div>
 

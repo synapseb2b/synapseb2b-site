@@ -77,6 +77,16 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* COLUNA 4: SOLUÇÕES VERTICAIS (NOVO) */}
+            <div className="footer-col">
+              <h4>Soluções Verticais</h4>
+              <ul className="footer-links">
+                <li><Link href="/pilares/solucoes-verticais/cortex-b2b">Cortex B2B™</Link></li>
+                <li><Link href="/pilares/solucoes-verticais/match-maker">Match Maker B2B</Link></li>
+                <li><Link href="/pilares/solucoes-verticais/hba">Health Business Arch.™</Link></li>
+              </ul>
+            </div>
+
           </div>
 
           {/* BARRA INFERIOR (Copyright + Legal) */}

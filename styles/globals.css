@@ -263,10 +263,11 @@ li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align
 
 .footer-grid {
   display: grid; 
-  /* REGRA 1b: Coluna 1 ocupa 3 partes, empurrando as outras para a direita */
-  grid-template-columns: 3fr 1fr 1fr; 
-  gap: 4rem; margin-bottom: 5rem; 
-  justify-items: start; /* Alinha itens à esquerda */
+  /* Novo Layout: Marca (2 partes) + 3 Colunas de Links (1 parte cada) */
+  grid-template-columns: 2.5fr 1fr 1fr 1fr; 
+  gap: 2rem; /* Gap levemente reduzido para caber tudo bem */
+  margin-bottom: 5rem; 
+  justify-items: start;
   align-items: start;
 }
 
