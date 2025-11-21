@@ -57,23 +57,31 @@ export default function CroService() {
       {/* PROBLEMA vs SOLUÇÃO */}
       <section className="section-solid">
         <div className="container reveal-up">
-          
-          {/* Usando o grid global para layout responsivo automático */}
-          <div className="pillar-grid-revolutionary" style={{marginTop: '0', alignItems: 'center'}}>
+          <h2 className="section-title">Founder-led sales tem limite.</h2>
+          <p className="lead-text">
+             Você ainda lidera vendas porque "ninguém vende como o fundador". Mas isso se tornou o gargalo do crescimento.
+          </p>
+
+          <div className="truths-grid-revolutionary" style={{marginTop: '3rem'}}>
              
-             {/* Coluna Esquerda: Texto */}
-             <div style={{textAlign: 'center', padding: '2rem'}}>
-               <h2 className="section-title" style={{textAlign: 'center'}}>Founder-led sales tem limite.</h2>
-               <p className="lead-text" style={{marginBottom: '1.5rem'}}>Você ainda lidera vendas porque "ninguém vende como o fundador". Mas isso trava seu crescimento.</p>
-               <p>Escalar exige profissionalização, foco estratégico e tirar o gargalo (você) da operação. O dilema: contratar um VP Sales Jr. é arriscado, e um CRO sênior custa R$ 1M+/ano.</p>
+             {/* O Dilema */}
+             <div className="glass-card-premium" style={{borderColor: 'rgba(255,255,255,0.1)'}}>
+               <h3 className="truth-card-title" style={{color: 'var(--color-text-muted)'}}>O Dilema Atual</h3>
+               <p style={{marginBottom: '1rem'}}>Para escalar, você precisa sair da operação. Mas as opções tradicionais são falhas:</p>
+               <ul style={{textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.8rem'}}>
+                 <li>❌ <strong>VP Sales Jr:</strong> Barato, mas sem bagagem estratégica. Comete erros que você paga caro.</li>
+                 <li>❌ <strong>CRO Sênior de Mercado:</strong> Custa R$ 1M+/ano (Salário + Equity), inviável para o estágio atual.</li>
+               </ul>
              </div>
 
-             {/* Coluna Direita: Card Solução */}
-             <div className="glass-card-premium">
-               <h3 style={{marginBottom: '1rem'}}>A Solução Fracionada</h3>
-               <p style={{fontSize: '1.1rem', marginBottom: '1.5rem'}}><strong>Experiência de multinacional aplicada ao seu negócio.</strong></p>
-               <p style={{marginBottom: '1rem'}}>Assumimos a liderança executiva do comercial: estruturamos o time, instalamos rituais de gestão, implementamos cultura de dados e garantimos a execução do playbook.</p>
-               <p style={{color: 'var(--color-primary)', fontWeight: 600}}>Você ganha tempo para focar em produto e visão.</p>
+             {/* A Solução Synapse */}
+             <div className="glass-card-premium" style={{border: '1px solid var(--color-primary)', background: 'rgba(0, 150, 132, 0.05)'}}>
+               <h3 className="truth-card-title" style={{color: '#fff'}}>A Solução Fracionada</h3>
+               <p style={{marginBottom: '1rem'}}><strong>Experiência de multinacional aplicada ao seu negócio.</strong></p>
+               <p>Nós assumimos a cadeira de liderança executiva (Interim VP/CRO). Estruturamos o time, instalamos rituais de gestão, implementamos cultura de dados e garantimos a execução.</p>
+               <p style={{marginTop: '1rem', fontWeight: 700, color: 'var(--color-primary)'}}>
+                 Você ganha tempo para focar em produto e visão.
+               </p>
              </div>
 
           </div>

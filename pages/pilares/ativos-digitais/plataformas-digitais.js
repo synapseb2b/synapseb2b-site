@@ -204,7 +204,7 @@ export default function PlataformasDigitais() {
         </div>
       </section>
       
-      {/* 3D BROWSER CAROUSEL */}
+{/* 3D BROWSER CAROUSEL */}
       <section className="section-with-gradient-glow" style={{paddingBottom: '6rem', overflow: 'hidden'}}>
         <div className="container">
           <div className="text-center mb-10 reveal-up">
@@ -215,31 +215,37 @@ export default function PlataformasDigitais() {
           {/* ÁREA DO CARROSSEL */}
           <div className="carousel-3d-container" style={{
             position: 'relative', 
-            height: isMobile ? '600px' : '550px', 
+            height: isMobile ? '500px' : '550px', 
             perspective: '1200px', 
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
+            width: '100%' // Garante largura total
           }}>
             
-            {/* Botões de Navegação (Estilo Inline para evitar CSS local) */}
-            <button onClick={prevSlide} aria-label="Anterior" style={{
-               position: 'absolute', left: isMobile ? '10px' : '20px', top: '50%', transform: 'translateY(-50%)',
-               background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', color: 'white',
-               width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center',
-               justifyContent: 'center', cursor: 'pointer', zIndex: 200, backdropFilter: 'blur(5px)'
+            {/* Botões de Navegação - Posicionados nas EXTREMIDADES */}
+            <div style={{
+                position: 'absolute', top: '50%', left: 0, right: 0, transform: 'translateY(-50%)',
+                zIndex: 200, display: 'flex', justifyContent: 'space-between', pointerEvents: 'none',
+                padding: isMobile ? '0 5px' : '0 20px', width: '100%'
             }}>
-              <ChevronLeft size={32} />
-            </button>
-            <button onClick={nextSlide} aria-label="Próximo" style={{
-               position: 'absolute', right: isMobile ? '10px' : '20px', top: '50%', transform: 'translateY(-50%)',
-               background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', color: 'white',
-               width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center',
-               justifyContent: 'center', cursor: 'pointer', zIndex: 200, backdropFilter: 'blur(5px)'
-            }}>
-              <ChevronRight size={32} />
-            </button>
+                <button onClick={prevSlide} aria-label="Anterior" style={{
+                   background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.3)', color: 'white',
+                   width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center',
+                   justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(5px)', pointerEvents: 'all'
+                }}>
+                  <ChevronLeft size={32} />
+                </button>
+                
+                <button onClick={nextSlide} aria-label="Próximo" style={{
+                   background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.3)', color: 'white',
+                   width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center',
+                   justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(5px)', pointerEvents: 'all'
+                }}>
+                  <ChevronRight size={32} />
+                </button>
+            </div>
 
             {/* Track 3D */}
             <div style={{
@@ -277,7 +283,7 @@ export default function PlataformasDigitais() {
                     transition={{ type: 'spring', stiffness: 150, damping: 20 }}
                     style={{
                       position: 'absolute',
-                      width: `${cardWidth}px`, 
+                      width: isMobile ? '85vw' : `${cardWidth}px`, // Mobile usa 85% da largura da tela
                       height: `${cardHeight}px`,
                       borderRadius: '12px',
                       boxShadow: isActive 
@@ -298,21 +304,16 @@ export default function PlataformasDigitais() {
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ff5f56'}}></div>
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#ffbd2e'}}></div>
                        <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'#009684'}}></div>
-                       <div style={{
-                         flex: 1, marginLeft: '1rem', height: '16px', background: 'rgba(0,0,0,0.3)', 
-                         borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                         fontSize: '9px', color: 'rgba(255,255,255,0.3)', fontFamily: 'monospace'
-                       }}>
-                         {platform.link.replace('https://', '')}
-                       </div>
                     </div>
 
-                    {/* Imagem */}
+                    {/* Imagem - Ajuste Mobile para 'Cover' focado no Topo */}
                     <div style={{position: 'relative', width: '100%', height: 'calc(100% - 30px)'}}>
                       <div style={{
                          width: '100%', height: '100%', 
                          backgroundImage: `url(${platform.image})`,
-                         backgroundSize: 'cover', backgroundPosition: 'top center'
+                         backgroundSize: 'cover', // Cover garante preenchimento
+                         backgroundPosition: 'top center', // Foca no Hero da imagem
+                         backgroundRepeat: 'no-repeat'
                       }} />
                       
                       <div style={{

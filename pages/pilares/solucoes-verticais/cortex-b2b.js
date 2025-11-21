@@ -224,46 +224,56 @@ export default function CortexB2B() {
         </div>
       </section>
 
-      {/* ====================================================================== */}
+{/* ====================================================================== */}
       {/* Casos de Uso                                                         */}
       {/* ====================================================================== */}
       <section className="section-solid">
         <div className="container reveal-up">
           <h2 className="section-title">Casos de Uso Ideais</h2>
-          <p className="lead-text">O Cortex B2B™ foi projetado para três cenários de alta complexidade estratégica.</p>
+          <p className="lead-text">O Cortex B2B™ foi projetado para cenários de alta complexidade estratégica.</p>
 
           <div className="truths-grid-revolutionary">
             <div className="glass-card-premium">
-              <h3 className="truth-card-title">Empresas em Platô de Crescimento</h3>
-              <p>Receita estagnou há 2-3 trimestres. Fórmula que funcionou até aqui não funciona mais. Precisa identificar qual alavanca puxar sem queimar caixa.</p>
+              <h3 className="truth-card-title">Empresas em Platô</h3>
+              <p>Receita estagnada há trimestres. A fórmula antiga parou de funcionar. O Cortex identifica qual alavanca puxar sem queimar caixa em testes aleatórios.</p>
             </div>
 
             <div className="glass-card-premium">
-              <h3 className="truth-card-title">Startups Buscando Aceleração</h3>
-              <p>Product-market fit validado, mas crescimento é errático. Precisa de clareza estratégica antes de escalar esforço comercial.</p>
+              <h3 className="truth-card-title">Startups em Aceleração</h3>
+              <p>Product-market fit validado, mas o crescimento é errático. O Cortex estrutura a máquina de vendas antes de você escalar o time comercial.</p>
             </div>
 
             <div className="glass-card-premium">
               <h3 className="truth-card-title">Diversificação de Canais</h3>
-              <p>Dependência excessiva de um canal. Precisa de diagnóstico rápido de viabilidade antes de comprometer recursos.</p>
+              <p>Dependência excessiva de uma única fonte de leads. O Cortex diagnostica a viabilidade de novos canais antes de comprometer recursos.</p>
             </div>
-          </div>
+            
+            {/* Bloco "Também Aplicável" - Reorganizado como Card Wide Bipartido */}
+            <div className="glass-card-premium card-wide" style={{marginTop: '2rem', textAlign: 'left'}}>
+               <h4 style={{color: 'var(--color-heading)', marginBottom: '1.5rem', fontSize: '1.3rem', textAlign: 'center', width: '100%'}}>
+                 Também Aplicável em:
+               </h4>
+               
+               <div style={{
+                 display: 'grid', 
+                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+                 gap: '2rem', 
+                 width: '100%'
+               }}>
+                  {/* Item A */}
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)'}}>
+                    <strong style={{color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>Founders & C-Level</strong>
+                    <p style={{fontSize: '0.95rem', margin: 0}}>Segunda opinião estratégica (Sparring) para validação de hipóteses críticas antes de tomadas de decisão.</p>
+                  </div>
+                  
+                  {/* Item B */}
+                  <div style={{background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)'}}>
+                    <strong style={{color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem'}}>Ecossistemas de Investimento</strong>
+                    <p style={{fontSize: '0.95rem', margin: 0}}>Método de diagnóstico padronizado para análise de maturidade de portfólio e Due Diligence.</p>
+                  </div>
+               </div>
+            </div>
 
-          {/* Bloco "Também Aplicável" */}
-          <div className="glass-card-premium" style={{maxWidth: '800px', margin: '4rem auto 0'}}>
-            <h4 style={{color: 'var(--color-heading)', marginBottom: '1.5rem', fontSize: '1.2rem'}}>Também Aplicável em:</h4>
-            <ul style={{ 
-              padding: 0, 
-              margin: 0, 
-              display: 'flex', 
-              flexDirection: 'column',
-              gap: '1rem'
-            }}>
-              <li><strong>Founders & C-Level:</strong> Segunda opinião estratégica estruturada para validação de hipóteses críticas.</li>
-              <li>
-                <strong>Ecossistemas de Investimento:</strong> Método de diagnóstico padronizado e escalável para análise de portfólio.
-              </li>
-            </ul>
           </div>
         </div>
       </section>

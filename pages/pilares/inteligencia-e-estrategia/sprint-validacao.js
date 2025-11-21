@@ -55,39 +55,41 @@ export default function SprintValidacao() {
         </div>
       </section>
 
-      {/* O PROBLEMA */}
+{/* O PROBLEMA */}
       <section className="section-solid">
         <div className="container reveal-up">
+          <h2 className="section-title">O Risco Invisível</h2>
+          <p className="lead-text">Você está prestes a apostar alto em uma hipótese não testada.</p>
           
-          {/* Layout padronizado com Grid Global */}
-          <div className="pillar-grid-revolutionary" style={{marginTop: '0', alignItems: 'center'}}>
+          {/* Grid de Contraste: Cenário vs Dado */}
+          <div className="pillar-grid-revolutionary">
             
-            {/* Coluna Esquerda: Texto */}
-            <div style={{textAlign: 'center', padding: '2rem'}}>
-              <h2 className="section-title">O Risco Invisível</h2>
-              <p className="lead-text" style={{marginBottom: '1.5rem'}}>Você está prestes a apostar alto em uma hipótese não testada.</p>
-              <p>
-                Lançar produto novo, entrar em novo mercado ou pivotar o modelo exige investimento pesado em estrutura.
-              </p>
-              
-              {/* Card de Destaque (Agora padronizado) */}
-              <div className="glass-card-premium" style={{marginTop: '2rem'}}>
-                <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>
-                    <div className="pillar-icon-wrapper">
-                      <AlertTriangle size={32} style={{color: 'var(--color-accent)'}} />
-                    </div>
-                    <p style={{margin: 0}}><strong>Dado Crítico:</strong> 70% das iniciativas B2B falham por falta de aderência real ao mercado, não por execução ruim.</p>
-                </div>
-              </div>
+            {/* Card 1: O Cenário */}
+            <div className="glass-card-premium" style={{alignItems: 'flex-start', textAlign: 'left'}}>
+              <h3 style={{fontSize: '1.4rem', marginBottom: '1rem'}}>A Aposta Cega</h3>
+              <p>Lançar um produto novo, entrar em um novo mercado ou pivotar o modelo de negócio exige um investimento pesado em estrutura (OPEX) e tempo.</p>
+              <p>Muitos fundadores tomam essa decisão baseados apenas na intuição ou no feedback de "amigos do mercado".</p>
             </div>
 
-            {/* Coluna Direita: Solução */}
-            <div className="glass-card-premium">
-              <h3 style={{marginBottom: '1rem'}}>A Solução: Teste Controlado</h3>
-              <p style={{marginBottom: '1rem'}}>O Sprint de Validação é um protocolo de <strong>30 dias</strong> que testa sua tese com prospects reais antes de você comprometer OPEX.</p>
-              <p>Usamos técnicas de Lean B2B e Customer Development para extrair sinais claros de compra ou rejeição, transformando intuição em evidência.</p>
+            {/* Card 2: O Alerta (Visualmente destacado) */}
+            <div className="glass-card-premium" style={{border: '1px solid var(--color-accent)', background: 'rgba(56, 197, 177, 0.05)'}}>
+                <div className="pillar-icon-wrapper">
+                   <AlertTriangle size={40} style={{color: 'var(--color-accent)'}} />
+                </div>
+                <h3 style={{fontSize: '3rem', color: 'var(--color-heading)', lineHeight: 1, margin: '0.5rem 0'}}>70%</h3>
+                <p style={{fontSize: '1.1rem'}}>Das iniciativas B2B falham.</p>
+                <p style={{fontSize: '0.9rem', opacity: 0.8, marginTop: '1rem'}}>
+                  A causa não é execução ruim. É <strong>falta de aderência real ao mercado</strong> (No Market Need).
+                </p>
             </div>
+
           </div>
+
+          <div style={{marginTop: '3rem', maxWidth: '800px', margin: '3rem auto 0', textAlign: 'center'}}>
+             <h3 style={{marginBottom: '1rem'}}>A Solução: Teste Controlado</h3>
+             <p>O Sprint de Validação é um protocolo de <strong>30 dias</strong> que transforma intuição em evidência. Testamos sua tese com prospects reais antes de você escalar o investimento.</p>
+          </div>
+
         </div>
       </section>
 
