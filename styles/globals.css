@@ -1,5 +1,5 @@
-/* globals.css - VERSÃO DEFINITIVA: 100% RESTAURADO + AJUSTES PREMIUM INCREMENTAIS */
-/* Totalmente compatível com index.js, Navbar.js e Footer.js */
+/* globals.css - VERSÃO FINAL DE PRODUÇÃO (INTEGRADA) */
+/* Design System, Componentes, Layouts Específicos e Correções */
 
 /* ==========================================================================
    1. CORE: IMPORTAÇÕES & RESET
@@ -7,37 +7,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
 
 :root {
-  /* --- PALETA SYNAPSE (CORE) --- */
+  /* --- PALETA SYNAPSE --- */
   --color-bg: #000000;
-  --color-primary: #009684;       /* Verde Synapse Principal */
-  --color-primary-glow: rgba(0, 150, 132, 0.9); /* Glow Intenso */
+  --color-primary: #009684;       /* Verde Synapse */
+  --color-primary-glow: rgba(0, 150, 132, 0.9);
   --color-accent: #38c5b1;        /* Verde Claro/Teal */
   --color-text-main: #e0e0e0;
   --color-text-muted: #9ca3af;    
   --color-heading: #ffffff;
   
-  /* --- ESTÉTICA DOS CARDS PREMIUM (ESPELHADO ESVERDEADO) --- */
-  --card-bg-default: rgba(18, 56, 50, 0.25); /* Fundo verde escuro espelhado (Estático) */
-  --card-bg-hover: rgba(0, 150, 132, 0.25);  /* Mais luz no hover */
+  /* --- CARDS (Verde Espelhado Profundo) --- */
+  --card-bg-default: rgba(18, 56, 50, 0.25); 
+  --card-bg-hover: rgba(0, 150, 132, 0.20);  
+  --card-border-default: rgba(255, 255, 255, 0.15); /* Borda mais evidente */
+  --card-border-hover: rgba(0, 150, 132, 0.8);      
   
-  --card-border-default: rgba(255, 255, 255, 0.18); /* Borda Esbranquiçada (Neutro) */
-  --card-border-hover: rgba(0, 150, 132, 0.8);      /* Borda Verde (Hover) */
-  
-  /* --- SISTEMA DE SOMBRAS (HIERARQUIA) --- */
+  /* --- SOMBRAS --- */
   --shadow-low: 0 10px 30px -10px rgba(0,0,0,0.7);
   --shadow-mid: 0 15px 40px -12px rgba(0, 150, 132, 0.15);
   --shadow-high: 0 24px 50px -10px rgba(0, 150, 132, 0.3); 
 
-  /* --- MOTION & EASING --- */
+  /* --- MOTION --- */
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1); 
 
-  /* --- TYPOGRAPHY SCALE (FLUIDA) --- */
+  /* --- TYPOGRAPHY --- */
   --font-h1: clamp(2.2rem, 3.5vw, 3.2rem);
   --font-h2: clamp(1.8rem, 2.8vw, 2.6rem);
   --font-h3: clamp(1.3rem, 2vw, 1.8rem);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; /* Cursor Customizado Global */ }
 html { scroll-behavior: smooth; }
 
 body {
@@ -47,10 +46,10 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   font-variation-settings: "wght" 430;
-  text-align: center; /* Centralização Mestra */
+  text-align: center; /* Centralização Padrão (Footer terá override) */
 }
 
-/* --- CONTAINER WIDE --- */
+/* Container Mestre */
 .container { 
   max-width: 1380px; 
   margin: 0 auto; 
@@ -58,14 +57,13 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Força itens ao centro */
+  align-items: center; 
 }
 
 /* ==========================================================================
-   2. TIPOGRAFIA & EFEITOS VISUAIS
+   2. TIPOGRAFIA & DESTAQUES INTELIGENTES
    ========================================================================== */
-h1, h2, h3, 
-.hero-headline, .section-title, .case-card-title, .pillar-card-title, .truth-card-title {
+h1, h2, h3, .hero-headline, .section-title, .card-title {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-heading);
   font-weight: 700;
@@ -75,311 +73,196 @@ h1, h2, h3,
   text-align: center;
 }
 
-h1, .hero-headline { 
-  font-size: var(--font-h1) !important; 
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-}
+h1, .hero-headline { font-size: var(--font-h1) !important; font-weight: 800; margin-bottom: 1.5rem; }
+h2, .section-title { font-size: var(--font-h2) !important; margin-bottom: 3rem; }
+h3 { font-size: var(--font-h3) !important; margin-bottom: 1rem; }
 
-h2, .section-title { 
-  font-size: var(--font-h2) !important; 
-  margin-bottom: 3rem;
-}
-
-h3 { 
-  font-size: var(--font-h3) !important; 
-  margin-bottom: 1rem; 
-}
-
-/* --- EFEITO ÁGUA SYNAPSE (GLOBAL EM H1/H2) --- */
+/* Efeito Água H1/H2 */
 h1, h2, .hero-headline, .section-title {
-  background: linear-gradient(
-    110deg, 
-    #ffffff 25%, 
-    var(--color-primary) 45%, 
-    var(--color-accent) 55%, 
-    var(--color-primary) 65%, 
-    #ffffff 85%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: waterFlow 6s linear infinite;
-  display: inline-block;
-}
-
-@keyframes waterFlow {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-/* Fallback e utilitário */
-.h1-water-effect {
-  background: linear-gradient(110deg, #fff 25%, var(--color-primary) 45%, var(--color-accent) 55%, var(--color-primary) 65%, #fff 85%);
+  background: linear-gradient(110deg, #ffffff 25%, var(--color-primary) 45%, var(--color-accent) 55%, var(--color-primary) 65%, #ffffff 85%);
   background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   animation: waterFlow 6s linear infinite; display: inline-block;
 }
+@keyframes waterFlow { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
 
-p { 
-  font-size: 1.05rem; 
-  color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-  max-width: 70ch; 
-  margin-left: auto; margin-right: auto;
-  text-align: center;
-}
+p { font-size: 1.05rem; color: var(--color-text-muted); margin-bottom: 1.5rem; max-width: 70ch; margin-left: auto; margin-right: auto; text-align: center; }
+.lead-text { font-size: 1.25rem; max-width: 850px; opacity: 0.95; margin-bottom: 4rem; text-align: center; }
 
-.lead-text { 
-  font-size: 1.25rem; 
-  max-width: 850px; 
-  opacity: 0.95;
-  margin-bottom: 4rem; 
-  text-align: center;
+/* REGRA 3: DESTAQUE DE CONTEÚDO ANTES DE ":" */
+/* Aplica-se a tags <strong>, assumindo que elas envolvem o texto antes dos dois pontos */
+p strong, li strong, .glass-card-premium strong {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(0, 150, 132, 0.25);
 }
 
 /* ==========================================================================
-   3. HERO SECTION & BACKGROUNDS
+   3. HERO & BACKGROUNDS
    ========================================================================== */
 .hero-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  min-height: 90vh; 
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  position: relative; width: 100%; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 90vh; padding: 8rem 0;
 }
-
-.hero-section.short-hero {
-  min-height: 60vh !important;
-  padding-top: 120px;
-}
-
-/* Video Background */
-.hero-video-background {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-}
-.hero-video {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.35; /* Leve ajuste */
-}
+.hero-video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  /* Gradiente rico restaurado */
   background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%),
               linear-gradient(to bottom, rgba(0,0,0,0.3), #000000);
   z-index: 1;
 }
-.hero-content { 
-  position: relative; 
-  z-index: 2; 
-  width: 100%; 
-  max-width: 1380px;
-  padding: 0 2rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: center;
-}
+.hero-content { position: relative; z-index: 2; width: 100%; max-width: 1380px; padding: 0 2rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
 
 /* ==========================================================================
-   4. CARDS & GRIDS (EXPANDIDO E RESTAURADO)
+   4. GRID INTELIGENTE E CARDS (REGRA 2)
    ========================================================================== */
-/* Grid Principal (Wide 2 Colunas) */
-.pillar-grid-revolutionary, 
-.case-grid, 
-.info-grid,
-.solutions-grid-revolutionary,
-.truths-grid-revolutionary {
+/* REGRA 2 (Parte A): Dois Cards por Linha (Abaixo de 250 chars) */
+/* Usamos minmax de 480px para garantir que em desktops comuns caibam apenas 2 */
+.pillar-grid-revolutionary, .case-grid, .info-grid, .solutions-grid-revolutionary, .truths-grid-revolutionary {
   display: grid;
-  /* Grid de 2 colunas largas (min 480px) */
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-  gap: 2rem; 
-  margin-top: 3rem;
-  width: 100%;
-  align-items: stretch; 
-  justify-content: center;
+  gap: 2rem; margin-top: 3rem; width: 100%; align-items: stretch; justify-content: center;
 }
 
-/* Utilitário: Card que ocupa a largura total (para ímpares ou destaque) */
+/* REGRA 2 (Parte B): Card Wide (Acima de 250 chars ou destaque) */
+/* Esta classe deve ser aplicada manualmente no JSX quando o texto for longo */
 .card-wide {
-  grid-column: 1 / -1;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-column: 1 / -1; /* Ocupa todas as colunas */
+  max-width: 1000px; 
+  margin-left: auto; margin-right: auto;
 }
 
-/* Definição Mestra de Cards (Incluindo todas as variações legadas) */
-.glass-card-premium,
-.info-card,
-.case-card,
-.case-card-revolutionary,
-.pillar-card-revolutionary,
-.solution-card-revolutionary,
-.truth-card-revolutionary,
-.vertical-card,
-.feature-card,
-blockquote {
-  /* Estilo Base */
+/* Estilos dos Cards */
+.glass-card-premium, .info-card, .case-card, blockquote {
   background: var(--card-bg-default);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border-default);
-  border-radius: 18px;
-  padding: 3rem 2.5rem; /* Padding generoso */
-  
-  /* Layout Interno */
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: center;
-  height: 100%;
-  
-  /* Transições */
-  transition: all 0.4s var(--ease-premium);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-low);
+  border-radius: 18px; padding: 3rem 2.5rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%;
+  transition: all 0.4s var(--ease-premium); position: relative; overflow: hidden; box-shadow: var(--shadow-low);
 }
 
-/* Hover State Unificado */
-.glass-card-premium:hover,
-.info-card:hover,
-.case-card:hover,
-.truth-card-revolutionary:hover,
-blockquote:hover {
+.glass-card-premium:hover, .case-card:hover {
   transform: translateY(-6px) scale(1.015);
-  background: var(--card-bg-hover);
-  border-color: var(--card-border-hover);
-  box-shadow: var(--shadow-high);
+  background: var(--card-bg-hover); border-color: var(--card-border-hover); box-shadow: var(--shadow-high);
 }
 
-/* Ícones e SVGs nos Cards */
-.pillar-icon-wrapper, 
-.info-card svg, 
-.case-card svg, 
-.card-icon,
-.truth-card-revolutionary svg {
-  color: var(--color-accent);
-  margin-bottom: 1.8rem !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 0 10px rgba(56, 197, 177, 0.3));
-  transition: transform 0.4s var(--ease-premium);
+.pillar-icon-wrapper, .card-icon {
+  color: var(--color-accent); margin-bottom: 1.8rem !important; display: inline-flex;
+  filter: drop-shadow(0 0 10px rgba(56, 197, 177, 0.3)); transition: transform 0.4s var(--ease-premium);
 }
+.glass-card-premium:hover .pillar-icon-wrapper { transform: scale(1.1); filter: drop-shadow(0 0 15px rgba(56, 197, 177, 0.6)); }
 
-.glass-card-premium:hover .pillar-icon-wrapper {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 15px rgba(56, 197, 177, 0.6));
-}
-
-/* Listas Internas */
-ul { 
-  list-style: none; padding: 0; width: 100%;
-  display: flex; flex-direction: column; align-items: center; 
-}
-li { 
-  margin-bottom: 0.8rem; color: var(--color-text-muted);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
+ul { list-style: none; padding: 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
+li { margin-bottom: 0.8rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; gap: 12px; }
 
 /* ==========================================================================
-   5. NAVBAR DESKTOP (SOFISTICADA & ALINHADA)
+   5. NAVBAR (LOGO MAIOR & ALINHAMENTO)
    ========================================================================== */
 .site-navbar {
-  position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 9999;
+  position: fixed; top: 0; left: 0; right: 0; height: 90px; z-index: 9999;
   display: flex; align-items: center; justify-content: center;
   transition: all 0.4s var(--ease-premium);
-  background: var(--color-bg); /* Fundo Preto Sólido */
-  border-bottom: 1px solid transparent;
+  background: var(--color-bg); border-bottom: 1px solid transparent;
 }
-
 .site-navbar.scrolled {
-  height: 70px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  height: 80px;
+  border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
-
 .nav-container {
   width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 2rem;
   display: flex; align-items: center; justify-content: space-between;
 }
-
 .nav-menu {
     display: flex; align-items: center; list-style: none; padding: 0; margin: 0;
-    justify-content: flex-end; flex-grow: 1; /* Empurra links para direita */
+    justify-content: flex-end; flex-grow: 1;
 }
-
 .nav-logo-link { display: flex; align-items: center; height: 100%; }
-.nav-logo-video { height: 45px; width: auto; object-fit: contain; }
 
-/* Estilo dos Links */
+/* REGRA 5: Logo Maior */
+.nav-logo-video { height: 65px; width: auto; object-fit: contain; transition: height 0.3s ease; }
+.site-navbar.scrolled .nav-logo-video { height: 55px; }
+
 .nav-link {
   font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600;
-  color: rgba(255,255,255,0.65); text-decoration: none;
-  padding: 0.5rem 0; margin: 0 1.5rem; /* Espaçamento lateral */
-  position: relative; transition: color 0.3s; letter-spacing: 0.5px;
-  text-transform: uppercase; font-size: 0.75rem; /* Estilo sofisticado */
+  color: rgba(255,255,255,0.65); text-decoration: none; padding: 0.5rem 0; margin: 0 1.5rem;
+  position: relative; transition: color 0.3s; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.75rem;
 }
 .nav-link:hover, .nav-link.active { color: #fff; }
-
-/* Linha animada sob o link */
 .nav-link::after {
   content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px;
-  background: var(--color-primary); transform: scaleX(0); transform-origin: right;
-  transition: transform 0.4s var(--ease-premium);
+  background: var(--color-primary); transform: scaleX(0); transform-origin: right; transition: transform 0.4s var(--ease-premium);
 }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
-/* Botão CTA Navbar */
+/* Botão CTA Padrão Navbar */
 .btn-nav-cta {
-  padding: 0.7rem 1.8rem; background: rgba(255,255,255,0.05);
+  padding: 0.8rem 2rem; background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
-  color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  color: #fff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
   letter-spacing: 1px; text-decoration: none; transition: all 0.3s ease; margin-left: 3rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .btn-nav-cta:hover {
   background: var(--color-primary); border-color: var(--color-primary); color: #000;
-  box-shadow: 0 0 20px rgba(0,150,132,0.4);
+  box-shadow: 0 0 25px rgba(0, 150, 132, 0.5); transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   6. FOOTER (GRID CENTRALIZADO)
+   6. FOOTER (ALINHAMENTO & ESTILO)
    ========================================================================== */
 .site-footer {
   background: #030303; border-top: 1px solid rgba(255,255,255,0.08);
   padding: 6rem 0 3rem; font-size: 0.95rem; color: var(--color-text-muted);
-  text-align: center;
+  text-align: left; /* REGRA 1: Alinhamento Geral à Esquerda */
 }
+
 .footer-grid {
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 2rem;
-  margin-bottom: 5rem; justify-content: center; justify-items: center;
+  display: grid; 
+  /* Layout assimétrico: Coluna 1 larga, outras normais */
+  grid-template-columns: 2fr 1fr 1fr; 
+  gap: 4rem; margin-bottom: 5rem; 
+  justify-items: start; /* REGRA 1: Itens alinhados ao início (esquerda) */
+  align-items: start;
 }
-.footer-brand { display: flex; flex-direction: column; align-items: center; }
-.footer-brand > div { justify-content: center; width: 100%; }
+
+/* REGRA 1a: Coluna Esquerda alinhada à esquerda */
+.footer-brand { 
+  display: flex; flex-direction: column; align-items: flex-start; 
+  text-align: left; 
+}
+.footer-brand h3 { text-align: left; margin-bottom: 1rem; }
+.footer-brand p { text-align: left; margin-left: 0; opacity: 0.7; line-height: 1.6; max-width: 400px; }
+
+/* REGRA 1b: Demais colunas (já controlado pelo grid e justify-items: start) */
 .footer-col h4 {
   color: #fff; font-size: 0.85rem; text-transform: uppercase;
-  letter-spacing: 1px; margin-bottom: 1.8rem; opacity: 0.9;
+  letter-spacing: 1px; margin-bottom: 1.8rem; opacity: 0.9; text-align: left;
 }
-.footer-links { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
-.footer-links a { color: var(--color-text-muted); text-decoration: none; transition: all 0.2s; }
-.footer-links a:hover { color: var(--color-primary); }
+.footer-links { 
+  display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; /* Esquerda */
+}
+
+/* REGRA 1c: Links sem cor roxa/azul */
+.footer-links a { 
+  color: var(--color-text-muted); /* Cor cinza padrão */
+  text-decoration: none; transition: all 0.2s; 
+}
+.footer-links a:hover { color: var(--color-primary); padding-left: 5px; }
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem;
   display: flex; justify-content: space-between; align-items: center;
-  flex-direction: column; gap: 1.5rem; opacity: 0.6; font-size: 0.85rem;
+  flex-wrap: wrap; gap: 1.5rem; opacity: 0.6; font-size: 0.85rem;
 }
-.footer-bottom > div { display: flex; gap: 2rem; justify-content: center; }
+.footer-bottom a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--color-primary); }
 
 /* ==========================================================================
-   7. CTAs & ELEMENTOS GLOBAIS
+   7. CTAs & BOTÕES ESPECIAIS
    ========================================================================== */
-.btn, .btn-primary, .section-cta a {
+.btn, .btn-primary {
   display: inline-flex; align-items: center; justify-content: center; gap: 12px;
   padding: 18px 40px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem;
   text-transform: uppercase; letter-spacing: 1px; color: #fff; text-decoration: none;
@@ -392,59 +275,77 @@ li {
   box-shadow: 0 12px 30px -6px rgba(0,150,132,0.5);
 }
 
-/* ==========================================================================
-   8. SEÇÕES ESPECÍFICAS & UTILITÁRIOS (RESTAURADOS)
-   ========================================================================== */
-/* Padding padronizado e reduzido (6rem) */
-section {
-  position: relative; padding: 6rem 0; 
-  display: flex; flex-direction: column; align-items: center; width: 100%;
+/* REGRA 4: Botão "Ativar Engenharia" (Destaque Especial) */
+/* Seletor para texto exato ou classe utilitária */
+a[href*="/contato"].btn, .btn-activate-engineering {
+  background: linear-gradient(135deg, #009684 0%, #00dcb0 100%); /* Gradiente mais vibrante */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 150, 132, 0.6); /* Glow forte permanente */
+  color: #000; /* Texto escuro para contraste no verde claro */
+  font-weight: 800;
+}
+a[href*="/contato"].btn:hover, .btn-activate-engineering:hover {
+  box-shadow: 0 0 50px rgba(0, 220, 176, 0.8);
+  transform: translateY(-4px) scale(1.03);
+  background: #fff; /* Fica branco no hover para impacto máximo */
+  color: #009684;
 }
 
-/* Tipos de Seção (Restaurados) */
+/* ==========================================================================
+   8. COMPONENTES ESPECIAIS (ABSORVIDOS)
+   ========================================================================== */
+/* WhatsApp Button */
+.whatsapp-float {
+  position: fixed; bottom: 2rem; right: 2rem;
+  background-color: #25d366; color: #fff;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+  z-index: 10000; transition: all 0.3s ease;
+  text-decoration: none;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.6); }
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed; top: 0; left: 0; width: 20px; height: 20px;
+  border: 1px solid var(--color-primary); border-radius: 50%;
+  pointer-events: none; z-index: 9999; mix-blend-mode: difference;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  will-change: transform; transform: translate3d(-100px, -100px, 0);
+}
+.custom-cursor.hover {
+  width: 50px; height: 50px;
+  background-color: rgba(0, 255, 150, 0.1); border-color: transparent;
+}
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor { display: none; }
+  body, a, button { cursor: auto; }
+}
+
+/* ==========================================================================
+   9. SEÇÕES & ANIMAÇÕES
+   ========================================================================== */
+section { position: relative; padding: 6rem 0; display: flex; flex-direction: column; align-items: center; width: 100%; }
+
 .section-solid { background-color: var(--color-bg); }
-.section-with-gradient-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(0, 150, 132, 0.08) 0%, transparent 70%);
-}
-.final-cta-section {
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0, 150, 132, 0.1) 100%);
-  padding-bottom: 8rem;
-}
+.section-with-gradient-glow { background: radial-gradient(circle at 50% 50%, rgba(0, 150, 132, 0.08) 0%, transparent 70%); }
+.final-cta-section { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0, 150, 132, 0.1) 100%); padding-bottom: 8rem; }
 
-/* Trust Bar (Movido para Global) */
-.trust-bar { width: 100%; max-width: 900px; margin: 6rem auto 0 auto; }
-.trust-bar-logos {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-  gap: 4rem; opacity: 0.5; filter: grayscale(100%) contrast(50%); transition: opacity 0.3s;
-}
-.trust-bar-logos:hover { opacity: 0.8; }
-
-/* ==========================================================================
-   9. ANIMAÇÕES & SYNAPSE PULSE
-   ========================================================================== */
-/* Linha de conexão (Synapse) - DESTAQUE MÁXIMO */
+/* Linha Sináptica */
 section::after {
   content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--color-primary) 50%, transparent 100%);
-  opacity: 0.7; box-shadow: 0 0 35px var(--color-primary); /* Glow forte */
+  opacity: 0.6; box-shadow: 0 0 30px var(--color-primary); 
   animation: synapse-pulse 6s infinite ease-in-out; pointer-events: none;
 }
-@keyframes synapse-pulse { 
-  0%, 100% { opacity: 0.4; transform: scaleX(0.7); } 
-  50% { opacity: 0.9; transform: scaleX(1); } 
-}
+@keyframes synapse-pulse { 0%, 100% { opacity: 0.4; transform: scaleX(0.7); } 50% { opacity: 0.8; transform: scaleX(1); } }
 
 .premium-glow { animation: premiumGlow 4s ease-in-out infinite; }
-@keyframes premiumGlow { 
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.15)); } 
-  50% { filter: drop-shadow(0 0 15px rgba(56,197,177,0.5)); } 
-}
+@keyframes premiumGlow { 0%, 100% { filter: drop-shadow(0 0 0 rgba(56,197,177,0.1)); } 50% { filter: drop-shadow(0 0 12px rgba(56,197,177,0.4)); } }
 
-/* Reveal Up Rápido (Mobile fix) */
-.reveal-up {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.5s var(--ease-premium), transform 0.5s var(--ease-premium);
-}
+/* Reveal Up Rápido */
+.reveal-up { opacity: 0; transform: translateY(15px); transition: opacity 0.5s var(--ease-premium), transform 0.5s var(--ease-premium); }
 .reveal-up.in-view { opacity: 1; transform: translateY(0); }
 
 /* ==========================================================================
@@ -462,15 +363,17 @@ section::after {
 @media (max-width: 1024px) {
   .container { max-width: 100%; padding: 0 1.5rem; }
   .nav-menu { display: none; } 
-  .footer-grid { grid-template-columns: 1fr; gap: 3rem; justify-items: center; }
-  .hero-section { padding-top: 6rem; min-height: auto; }
-  .hero-headline { font-size: 2.2rem !important; }
-  .trust-bar-logos { gap: 2rem; }
   
-  /* Grid em Mobile: 1 Coluna */
+  /* Footer Mobile: Volta para 1 coluna centralizada */
+  .footer-grid { grid-template-columns: 1fr; gap: 3rem; justify-items: start; }
+  
+  .hero-section { padding-top: 6rem; }
+  h1 { font-size: 2.4rem !important; }
+  
+  /* Cards Mobile: 1 Coluna */
   .pillar-grid-revolutionary, .case-grid, .info-grid, .solutions-grid-revolutionary, .truths-grid-revolutionary {
     grid-template-columns: 1fr; gap: 1.5rem;
   }
-  /* Card Wide volta ao normal no mobile */
   .card-wide { grid-column: auto; max-width: 100%; }
+  .whatsapp-float { bottom: 1rem; right: 1rem; width: 50px; height: 50px; font-size: 24px; }
 }

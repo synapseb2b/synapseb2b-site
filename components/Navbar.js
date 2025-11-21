@@ -80,7 +80,7 @@ export default function Navbar() {
               </Link>
               <div className="dropdown-box">
                 <Link href="/pilares/ativos-digitais/plataformas-digitais">Plataformas Digitais</Link>
-                <Link href="/pilares/ativos-digitais/apps">Ferramentas de Aceleração</Link>
+                <Link href="/pilares/ativos-digitais/apps">Apps Estratégicos</Link>
               </div>
             </div>
 
@@ -144,7 +144,7 @@ export default function Navbar() {
                 </button>
                 <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
                     <Link href="/pilares/ativos-digitais/plataformas-digitais">Plataformas Digitais</Link>
-                    <Link href="/pilares/ativos-digitais/apps">Ferramentas de Aceleração</Link>
+                    <Link href="/pilares/ativos-digitais/apps">Apps Estratégicos</Link>
                 </div>
             </div>
 
