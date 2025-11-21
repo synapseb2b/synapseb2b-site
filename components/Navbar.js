@@ -1,10 +1,10 @@
 // components/Navbar.js
-// CORREÇÃO FINAL: Classes explícitas para forçar estilo nos links mobile e ocultar botão desktop
+// VERSÃO NUCLEAR: Estilos Inline para forçar correção visual imediata no Mobile
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Award, Mail } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Mail, Award } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,13 +38,24 @@ export default function Navbar() {
     return () => { document.body.style.overflow = 'auto'; };
   }, [isMobileOpen]);
 
+  // Estilo Inline de Segurança para Links do Submenu Mobile
+  const mobileSubLinkStyle = {
+    display: 'block',
+    width: '100%',
+    padding: '1rem 0 1rem 3rem',
+    color: '#b0b0b0',
+    textDecoration: 'none',
+    fontSize: '0.95rem',
+    borderBottom: '1px solid rgba(255,255,255,0.05)',
+    textAlign: 'left'
+  };
+
   return (
     <>
       {/* --- NAVBAR DESKTOP --- */}
       <nav className={`site-navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           
-          {/* LOGO (VÍDEO) */}
           <Link href="/" className="nav-logo-link">
             <video 
               autoPlay 
@@ -58,8 +69,7 @@ export default function Navbar() {
           </Link>
 
           <div className="nav-menu-desktop">
-            
-            {/* 1. INTELIGÊNCIA */}
+            {/* INTELIGÊNCIA */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/inteligencia') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Inteligência e Estratégia</span>
@@ -72,7 +82,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 2. ATIVOS DIGITAIS */}
+            {/* ATIVOS DIGITAIS */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/ativos') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Ativos Digitais</span>
@@ -84,7 +94,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 3. CASES */}
+            {/* CASES */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/cases') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Cases</span>
@@ -97,7 +107,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 4. A ENGENHARIA */}
+            {/* A ENGENHARIA */}
             <div className={`nav-item-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
               <Link href="/a-engenharia" className="nav-link-desktop clickable">
                 A Engenharia
@@ -106,10 +116,12 @@ export default function Navbar() {
           </div>
 
           <div className="nav-actions">
-            {/* BOTÃO DESKTOP (Classe 'desktop-only' será forçada a sumir no mobile) */}
-            <Link href="/contato" className="btn-nav-cta desktop-only">
-              Ativar Engenharia
-            </Link>
+            {/* Botão Desktop (Suma no mobile!) */}
+            <div className="desktop-btn-wrapper">
+              <Link href="/contato" className="btn-nav-cta">
+                Ativar Engenharia
+              </Link>
+            </div>
 
             <button className="mobile-hamburger" onClick={() => setIsMobileOpen(!isMobileOpen)} aria-label="Menu">
               {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -129,14 +141,15 @@ export default function Navbar() {
           >
             <div className="flex-row">
               <Brain size={20} className="text-primary" />
-              <span className="menu-text">Inteligência e Estratégia</span>
+              Inteligência e Estratégia
             </div>
             <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.intel ? 'rotate' : ''}`} />
           </button>
+          {/* Submenu com Estilo Inline Forçado */}
           <div className={`mobile-subs ${mobileDropdowns.intel ? 'show' : ''}`}>
-            <Link href="/pilares/inteligencia-e-estrategia/cro-service" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>CRO as a Service</Link>
-            <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Sprint de Validação</Link>
-            <Link href="/solucoes/cortex-b2b" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Cortex B2B™</Link>
+            <Link href="/pilares/inteligencia-e-estrategia/cro-service" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>CRO as a Service</Link>
+            <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Sprint de Validação</Link>
+            <Link href="/solucoes/cortex-b2b" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Cortex B2B™</Link>
           </div>
 
           {/* ATIVOS */}
@@ -146,13 +159,13 @@ export default function Navbar() {
           >
             <div className="flex-row">
               <MonitorSmartphone size={20} className="text-primary" />
-              <span className="menu-text">Ativos Digitais</span>
+              Ativos Digitais
             </div>
             <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.ativos ? 'rotate' : ''}`} />
           </button>
           <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
-            <Link href="/pilares/ativos-digitais/plataformas-digitais" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
-            <Link href="/pilares/ativos-digitais/growth-engineering" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
+            <Link href="/pilares/ativos-digitais/plataformas-digitais" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
+            <Link href="/pilares/ativos-digitais/growth-engineering" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
           </div>
 
           {/* CASES */}
@@ -162,21 +175,21 @@ export default function Navbar() {
           >
             <div className="flex-row">
               <Award size={20} className="text-primary" />
-              <span className="menu-text">Cases</span>
+              Cases
             </div>
             <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.cases ? 'rotate' : ''}`} />
           </button>
           <div className={`mobile-subs ${mobileDropdowns.cases ? 'show' : ''}`}>
-            <Link href="/cases/versao-holistica" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Versão Holística</Link>
-            <Link href="/cases/exclusiva-engenharias" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Exclusiva Engenharias</Link>
-            <Link href="/cases/aorkia" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
+            <Link href="/cases/versao-holistica" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Versão Holística</Link>
+            <Link href="/cases/exclusiva-engenharias" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Exclusiva Engenharias</Link>
+            <Link href="/cases/aorkia" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
           </div>
 
           {/* LINKS SIMPLES */}
           <Link href="/a-engenharia" className="mobile-link-simple" onClick={() => setIsMobileOpen(false)}>
             <div className="flex-row">
               <Box size={20} className="text-primary" />
-              <span className="menu-text">A Engenharia</span>
+              A Engenharia
             </div>
           </Link>
 
@@ -240,7 +253,7 @@ export default function Navbar() {
         .btn-nav-cta {
           padding: 0.8rem 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
           border-radius: 4px; color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-          text-decoration: none; transition: all 0.3s;
+          text-decoration: none; transition: all 0.3s; display: block;
         }
         .btn-nav-cta:hover { background: var(--color-primary); border-color: var(--color-primary); color: #000; transform: translateY(-2px); }
 
@@ -252,61 +265,42 @@ export default function Navbar() {
         /* --- MOBILE MENU ITENS --- */
         .mobile-menu {
           position: fixed; top: 90px; left: 0; width: 100%; height: calc(100vh - 90px);
-          background: #000 !important; /* Força fundo preto sólido */
-          padding: 1rem 1.5rem 6rem; overflow-y: auto;
+          background: #000 !important; /* Força fundo preto */
+          padding: 1rem 1.5rem 4rem; overflow-y: auto;
           transform: translateX(100%); transition: transform 0.3s ease;
-          display: flex; flex-direction: column;
-          z-index: 9998;
+          display: flex; flex-direction: column; z-index: 9998;
         }
         .mobile-menu.open { transform: translateX(0); }
         
         .mobile-btn-expand {
           width: 100%; display: flex; align-items: center; justify-content: space-between;
-          background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
-          padding: 1.5rem 0; color: #fff; cursor: pointer; text-align: left;
+          background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.05);
+          padding: 1.2rem 0; color: #fff; font-size: 1rem; font-family: 'Montserrat', sans-serif;
+          font-weight: 500; cursor: pointer; text-align: left;
         }
         
-        /* Estilo para links simples (A Engenharia) */
         .mobile-link-simple {
           display: flex; align-items: center; width: 100%;
-          border-bottom: 1px solid rgba(255,255,255,0.1);
-          padding: 1.5rem 0; color: #fff; text-decoration: none; cursor: pointer;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+          padding: 1.2rem 0; color: #fff; font-size: 1rem; font-family: 'Montserrat', sans-serif;
+          font-weight: 500; text-decoration: none; cursor: pointer;
         }
         
-        .menu-text {
-          font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; color: #fff;
-        }
-        
-        .flex-row { display: flex; align-items: center; gap: 15px; }
+        .flex-row { display: flex; align-items: center; gap: 12px; }
         .text-primary { color: var(--color-primary); }
         
         .mob-chevron { transition: transform 0.3s; color: #666; }
         .mob-chevron.rotate { transform: rotate(180deg); color: var(--color-primary); }
 
-        /* SUBMENU LINKS - CORREÇÃO DO BUG AZUL */
         .mobile-subs {
-          overflow: hidden; max-height: 0; transition: max-height 0.4s ease; 
-          background: rgba(255,255,255,0.03);
+          overflow: hidden; max-height: 0; transition: max-height 0.4s ease; background: rgba(255,255,255,0.03);
         }
         .mobile-subs.show { max-height: 600px; }
-        
-        /* Classe específica para os links do submenu para vencer conflitos globais */
-        .mobile-sub-link {
-          display: block !important; 
-          padding: 1rem 0 1rem 3rem !important; 
-          color: #b0b0b0 !important; /* Cor cinza claro forçada */
-          font-size: 0.95rem !important;
-          text-decoration: none !important; 
-          border-bottom: 1px solid rgba(255,255,255,0.02);
-          width: 100%;
-        }
-        .mobile-sub-link:hover { color: #fff !important; background: rgba(255,255,255,0.05); }
 
         /* RESPONSIVIDADE */
         @media (max-width: 1024px) {
           .nav-menu-desktop { display: none; }
-          /* Força o botão desktop a sumir no mobile com !important */
-          .desktop-only { display: none !important; } 
+          .desktop-btn-wrapper { display: none !important; } /* Esconde CTA Desktop */
           .mobile-hamburger { display: block; }
           .site-navbar { height: 70px; padding: 0 1rem; }
           .site-navbar.scrolled { height: 70px; }
