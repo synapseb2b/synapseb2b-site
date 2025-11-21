@@ -1,16 +1,15 @@
 // components/Navbar.js
-// VERSÃO ESTÁVEL: Títulos são apenas gatilhos de menu (Drilldown puro) - Sem links ambíguos.
+// CORREÇÃO FINAL: Vídeo do Logo + Estrutura de Classes alinhada com Global CSS
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Building, Mail, Award } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Mail, Award } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   
-  // Estado dos Dropdowns Mobile
   const [mobileDropdowns, setMobileDropdowns] = useState({
     intel: false,
     ativos: false,
@@ -19,7 +18,6 @@ export default function Navbar() {
 
   const router = useRouter();
 
-  // Toggle simples para mobile (Abre/Fecha)
   const toggleMobileDropdown = (key) => {
     setMobileDropdowns(prev => ({ ...prev, [key]: !prev[key] }));
   };
@@ -30,13 +28,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Fecha tudo ao mudar de rota
   useEffect(() => {
     setIsMobileOpen(false);
     setMobileDropdowns({ intel: false, ativos: false, cases: false });
   }, [router.asPath]);
 
-  // Trava o scroll do corpo quando menu mobile está aberto
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
@@ -48,15 +44,24 @@ export default function Navbar() {
       <nav className={`site-navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           
-          <Link href="/" className="logo-link">
-            <img src="/synapse-logo-white-no-tag.svg" alt="Synapse B2B" className="nav-logo" />
+          {/* LOGO (VÍDEO) - CORRIGIDO PARA USAR A CLASSE DO GLOBAL.CSS */}
+          <Link href="/" className="nav-logo-link">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="nav-logo-video"
+            >
+              <source src="/video/Logo_Animada_SynapseB2B.mp4" type="video/mp4" />
+            </video>
           </Link>
 
           <div className="nav-menu-desktop">
             
-            {/* 1. INTELIGÊNCIA (Apenas Dropdown) */}
+            {/* 1. INTELIGÊNCIA */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/inteligencia') ? 'active' : ''}`}>
-              <div className="nav-link-desktop"> {/* Mudado de button para div para evitar comportamento de clique */}
+              <div className="nav-link-desktop">
                 <span>Inteligência e Estratégia</span>
                 <ChevronDown size={12} className="chevron" />
               </div>
@@ -67,7 +72,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 2. ATIVOS DIGITAIS (Apenas Dropdown) */}
+            {/* 2. ATIVOS DIGITAIS */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/ativos') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Ativos Digitais</span>
@@ -79,7 +84,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 3. CASES (Apenas Dropdown) */}
+            {/* 3. CASES */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/cases') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Cases</span>
@@ -92,7 +97,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 4. A ENGENHARIA (Link Direto) */}
+            {/* 4. A ENGENHARIA */}
             <Link href="/a-engenharia" className={`nav-link-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
               A Engenharia
             </Link>
@@ -110,11 +115,11 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* --- MENU MOBILE OVERLAY --- */}
+      {/* --- MENU MOBILE --- */}
       <div className={`mobile-menu ${isMobileOpen ? 'open' : ''}`}>
         <div className="mobile-content">
           
-          {/* 1. INTELIGÊNCIA (Apenas Expande) */}
+          {/* INTELIGÊNCIA */}
           <button 
             className={`mobile-btn-expand ${mobileDropdowns.intel ? 'active' : ''}`} 
             onClick={() => toggleMobileDropdown('intel')}
@@ -131,7 +136,7 @@ export default function Navbar() {
             <Link href="/solucoes/cortex-b2b" onClick={() => setIsMobileOpen(false)}>Cortex B2B™</Link>
           </div>
 
-          {/* 2. ATIVOS DIGITAIS (Apenas Expande) */}
+          {/* ATIVOS */}
           <button 
             className={`mobile-btn-expand ${mobileDropdowns.ativos ? 'active' : ''}`} 
             onClick={() => toggleMobileDropdown('ativos')}
@@ -147,7 +152,7 @@ export default function Navbar() {
             <Link href="/pilares/ativos-digitais/growth-engineering" onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
           </div>
 
-          {/* 3. CASES (Apenas Expande) */}
+          {/* CASES */}
           <button 
             className={`mobile-btn-expand ${mobileDropdowns.cases ? 'active' : ''}`} 
             onClick={() => toggleMobileDropdown('cases')}
@@ -191,56 +196,58 @@ export default function Navbar() {
       <style jsx>{`
         /* --- LAYOUT PRINCIPAL --- */
         .site-navbar {
-          position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 9999;
+          position: fixed; top: 0; left: 0; right: 0; height: 90px; z-index: 9999;
           background: var(--color-bg); transition: all 0.3s ease;
           display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
+        .site-navbar.scrolled { height: 80px; background: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
         .nav-container {
-          width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 1.5rem;
+          width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem;
           display: flex; align-items: center; justify-content: space-between;
         }
         
-        .nav-logo { height: 40px; width: auto; }
+        /* CLASSE DO GLOBAL CSS APLICADA AQUI */
+        .nav-logo-video { height: 65px; width: auto; }
+        .site-navbar.scrolled .nav-logo-video { height: 50px; }
+
         .nav-actions { display: flex; align-items: center; gap: 1rem; }
 
         /* --- DESKTOP MENU --- */
-        .nav-menu-desktop { display: flex; gap: 1.5rem; align-items: center; height: 100%; }
+        .nav-menu-desktop { display: flex; gap: 2rem; align-items: center; height: 100%; }
         .nav-item-desktop { position: relative; height: 100%; display: flex; align-items: center; }
         
-        /* Item de menu desktop (Texto puro, cursor default se tiver dropdown) */
         .nav-link-desktop {
-          background: none; border: none; color: #ccc; font-size: 0.85rem; font-weight: 500;
-          text-transform: uppercase; cursor: default; display: flex; align-items: center; gap: 5px;
-          text-decoration: none; transition: color 0.2s; height: 100%; padding: 0 0.5rem;
+          background: none; border: none; color: #ccc; font-size: 0.85rem; font-weight: 600;
+          text-transform: uppercase; cursor: default; display: flex; align-items: center; gap: 6px;
+          text-decoration: none; transition: color 0.2s; height: 100%; letter-spacing: 0.5px;
         }
-        /* Link real (sem dropdown) tem cursor pointer */
         a.nav-link-desktop { cursor: pointer; }
         
         .nav-link-desktop:hover, .nav-item-desktop.active .nav-link-desktop { color: #fff; }
         
-        /* Dropdown Menu */
         .dropdown-menu-desktop {
-          position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+          position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(20px);
           background: rgba(10,10,10,0.95); border: 1px solid rgba(255,255,255,0.1);
           border-radius: 8px; padding: 0.5rem 0; min-width: 240px; opacity: 0; visibility: hidden;
-          transition: all 0.2s; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column;
+          transition: all 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column;
         }
         .nav-item-desktop:hover .dropdown-menu-desktop {
           opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
         }
         .dropdown-menu-desktop a {
           padding: 0.8rem 1.5rem; color: #aaa; text-decoration: none; font-size: 0.85rem; text-align: left;
-          white-space: nowrap; display: block;
+          white-space: nowrap; display: block; transition: all 0.2s;
         }
-        .dropdown-menu-desktop a:hover { background: rgba(255,255,255,0.05); color: var(--color-primary); }
+        .dropdown-menu-desktop a:hover { background: rgba(255,255,255,0.05); color: var(--color-primary); padding-left: 1.8rem; }
 
         /* --- CTA BUTTON --- */
         .btn-nav-cta {
-          padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
+          padding: 0.8rem 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
           border-radius: 4px; color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
           text-decoration: none; transition: all 0.3s;
         }
-        .btn-nav-cta:hover { background: var(--color-primary); border-color: var(--color-primary); color: #000; }
+        .btn-nav-cta:hover { background: var(--color-primary); border-color: var(--color-primary); color: #000; transform: translateY(-2px); }
 
         /* --- MOBILE HAMBURGER --- */
         .mobile-hamburger {
@@ -249,14 +256,13 @@ export default function Navbar() {
 
         /* --- MOBILE MENU ITENS --- */
         .mobile-menu {
-          position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
+          position: fixed; top: 90px; left: 0; width: 100%; height: calc(100vh - 90px);
           background: #000; padding: 1rem 1.5rem 4rem; overflow-y: auto;
           transform: translateX(100%); transition: transform 0.3s ease;
           display: flex; flex-direction: column;
         }
         .mobile-menu.open { transform: translateX(0); }
         
-        /* Botão Expansível Mobile (Ocupa toda a largura) */
         .mobile-btn-expand {
           width: 100%; display: flex; align-items: center; justify-content: space-between;
           background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -264,7 +270,6 @@ export default function Navbar() {
           font-weight: 500; cursor: pointer; text-align: left;
         }
         
-        /* Link Simples Mobile */
         .mobile-link-simple {
           display: flex; align-items: center; width: 100%;
           border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -293,6 +298,11 @@ export default function Navbar() {
           .nav-menu-desktop { display: none; }
           .desktop-only { display: none; }
           .mobile-hamburger { display: block; }
+          .site-navbar { height: 70px; padding: 0 1rem; }
+          .site-navbar.scrolled { height: 70px; }
+          .mobile-menu { top: 70px; height: calc(100vh - 70px); }
+          /* Ajuste do tamanho do logo no mobile */
+          .nav-logo-video { height: 40px; }
         }
       `}</style>
     </>
