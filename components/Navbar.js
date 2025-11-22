@@ -165,7 +165,7 @@ export default function Navbar() {
           </button>
           <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
             <Link href="/pilares/ativos-digitais/plataformas-digitais" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
-            <Link href="/pilares/ativos-digitais/growth-engineering" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
+            <Link href="/pilares/ativos-digitais/apps" style={mobileSubLinkStyle} onClick={() => setIsMobileOpen(false)}>Apps Estratégicos</Link>
           </div>
 
           {/* CASES */}
