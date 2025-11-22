@@ -90,7 +90,7 @@ export default function Navbar() {
               </div>
               <div className="dropdown-menu-desktop">
                 <Link href="/pilares/ativos-digitais/plataformas-digitais">Plataformas Digitais</Link>
-                <Link href="/pilares/ativos-digitais/growth-engineering">Growth Engineering</Link>
+                <Link href="/pilares/ativos-digitais/apps">Apps Estratégicos</Link>
               </div>
             </div>
 
