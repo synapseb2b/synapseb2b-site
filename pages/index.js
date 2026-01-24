@@ -1,5 +1,5 @@
 // pages/index.js
-// VERSÃO CORRIGIDA: BUG DO ESPAÇO EM BRANCO RESOLVIDO (ANIMAÇÃO GRANULAR)
+// VERSÃO ATUALIZADA: Nova copy da Hero + Estrutura de navegação simplificada
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -27,7 +27,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 } // 10% do item precisa estar visível para animar
+      { threshold: 0.1 }
     );
 
     document.querySelectorAll('.reveal-up').forEach((el) => {
@@ -40,8 +40,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Synapse B2B | Engenharia de Receita para Empresas B2B</title>
-        <meta name="description" content="Transformamos crescimento por indicação em receita previsível. O método que tira sua empresa do improviso e coloca você no controle." />
+        <title>Synapse B2B | Engenharia de Receita e Governança de Crescimento</title>
+        <meta name="description" content="Entregamos os instrumentos para que a liderança retome o controle sobre a trajetória de receita. Método, não improviso. Governança, não sorte." />
       </Head>
 
       {/* ====================================================================== */}
@@ -57,28 +57,28 @@ export default function Home() {
         <div className="container hero-content reveal-up">
           
           <h1 className="hero-headline">
-            Engenharia de Receita para Empresas B2B
-            <br/>
-            que Precisam de Crescimento Previsível
+            Engenharia de Receita e Governança de Crescimento
           </h1>
           
           <p className="hero-subheadline lead-text">
-            Transformamos operações comerciais dependentes de improviso e esforço manual em máquinas de receita previsível. Instalamos o método completo — da estratégia à execução — para sua empresa escalar com governança.
+            Entregamos os instrumentos para que a liderança retome o controle sobre a trajetória de receita. Método, não improviso. Governança, não sorte.
           </p>
           
           <div className="hero-ctas" style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
-            <a href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-              <span>Agendar Diagnóstico Estratégico (21min)</span>
+            <a href="#metodo" className="btn btn-primary btn-large btn-cta-pulse">
+              <span>Conhecer o Método</span>
               <ArrowRight size={20} />
             </a>
-            <a href="/a-engenharia" className="btn">
-              <span>Conhecer a Engenharia de Receita</span>
+            <a href="/cases" className="btn">
+              <span>Ver Cases de Sucesso</span>
             </a>
           </div>
 
-          {/* Barra de Confiança */}
+          {/* Trust Bar */}
           <div className="trust-bar reveal-up">
-            <p style={{marginBottom: '2rem', fontSize: '1rem', opacity: 0.8, textAlign: 'center'}}>Método forjado em ecossistemas de alta performance:</p>
+            <p style={{marginBottom: '2rem', fontSize: '1rem', opacity: 0.8, textAlign: 'center'}}>
+              Experiência acumulada nos maiores ecossistemas B2B do mundo:
+            </p>
             <div className="trust-bar-logos">
               <div className="trust-logo"><Image src="/logo/logo-google.png" alt="Google" width={100} height={32} objectFit="contain" /></div>
               <div className="trust-logo"><Image src="/logo/logo-microsoft.png" alt="Microsoft" width={100} height={32} objectFit="contain" /></div>
@@ -108,7 +108,6 @@ export default function Home() {
               <p>Você assina os cheques de marketing e vendas, mas não sabe dizer qual real investido trouxe o contrato assinado. O ciclo de vendas não encurta e a eficiência cai à medida que você tenta escalar. O problema é a ausência de Engenharia de Receita no processo comercial.</p>
             </div>
 
-            {/* CARD WIDE PARA DESTAQUE DO 3º PONTO */}
             <div className="glass-card-premium card-wide">
               <h3 className="truth-card-title">Dependência de "Talento" vs. Processo</h3>
               <p>O faturamento depende da performance individual de vendedores sêniores (ou dos sócios). Se eles saírem, a receita cai. O crescimento está alicerçado em conhecimento tácito (na cabeça das pessoas), não em um playbook validado e transferível.</p>
@@ -122,9 +121,9 @@ export default function Home() {
       </section>
 
       {/* ====================================================================== */}
-      {/* Seção 3: O Método (4 Pilares)                                          */}
+      {/* Seção 3: O Método (Âncora #metodo)                                     */}
       {/* ====================================================================== */}
-      <section id="engenharia-de-receita" className="section-with-gradient-glow">
+      <section id="metodo" className="section-with-gradient-glow">
         <div className="container reveal-up">
           <h2 className="section-title">O Método: Os 4 Pilares da Engenharia de Receita</h2>
           <p className="lead-text">
@@ -162,127 +161,74 @@ export default function Home() {
       </section>
 
       {/* ====================================================================== */}
-      {/* Seção 4: Soluções (CORREÇÃO DO BUG AQUI)                               */}
+      {/* Seção 4: Frentes de Atuação (2 Pilares)                                */}
       {/* ====================================================================== */}
-      <section id="solucoes" className="section-solid">
-        {/* CORREÇÃO: Removido 'reveal-up' do container pai para evitar que a seção inteira fique invisível */}
+      <section id="frentes" className="section-solid">
         <div className="container"> 
-          <h2 className="section-title reveal-up">Soluções de Engenharia de Receita</h2>
-          <p className="lead-text reveal-up">Do diagnóstico estratégico à gestão interina.</p>
+          <h2 className="section-title reveal-up">Frentes de Atuação</h2>
+          <p className="lead-text reveal-up">Do diagnóstico estratégico à infraestrutura digital de alta performance.</p>
 
-          {/* FRENTE 1: 4 CARDS (2X2) */}
+          {/* PILAR 1: Inteligência & Estratégia */}
           <div style={{marginBottom: '6rem', width: '100%'}}>
             <div style={{textAlign: 'center', marginBottom: '2rem'}} className="reveal-up">
               <div className="pillar-icon-wrapper premium-glow"><Brain size={40} /></div>
-              <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 1: Inteligência & Estratégia</h3>
-              <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Para quem precisa de direção clara e correção de rota.</p>
+              <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Inteligência & Estratégia</h3>
+              <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Direção clara, correção de rota e governança executiva.</p>
             </div>
             
-            {/* Adicionado 'reveal-up' diretamente no grid */}
             <div className="solutions-grid-revolutionary reveal-up">
                
                <div className="glass-card-premium">
-                  <div className="pillar-icon-wrapper premium-glow"><Zap size={32} /></div>
-                  <h3 className="pillar-card-title">Sprint de Validação Comercial</h3>
-                  <p><strong>O que é:</strong> Validação de mercado baseada em dados, não em intuição. O entregável é a verdade: testamos a aderência da tese antes de você escalar custos fixos. É um seguro para evitar que você gaste R$ 50k+ construindo a solução errada para o problema certo.</p>
-                  <p><strong>Ideal para:</strong> Mitigação de risco em lançamentos ou pivôs de modelo de negócio.</p>
-                  <p><strong>Investimento:</strong> One shot</p>
-                  <a href="/pilares/inteligencia-e-estrategia/sprint-validacao" className="btn">Agendar</a>
+                  <div className="pillar-icon-wrapper premium-glow"><CheckCircle2 size={32} /></div>
+                  <h3 className="pillar-card-title">Diagnóstico de Maturidade B2B</h3>
+                  <p>Análise técnica e imparcial dos processos atuais para identificar gargalos de receita e falhas estruturais de posicionamento. O "Raio-X" que revela onde a estratégia falha na prática.</p>
+                  <a href="/inteligencia-e-estrategia" className="btn">Saber mais</a>
                </div>
 
                <div className="glass-card-premium">
                   <div className="pillar-icon-wrapper premium-glow"><Target size={32} /></div>
-                  <h3 className="pillar-card-title">Go-To-Market Completo (GTM)</h3>
-                  <p><strong>O que é:</strong> Engenharia de GTM aplicada. Não entregamos apenas um plano estático, mas a Arquitetura de Receita completa. Preenchemos a lacuna crítica entre estratégia e execução, desenhando do ICP à Retenção para garantir que o crescimento seja sistêmico, não acidental.</p>
-                  <p><strong>Ideal para:</strong> Empresas que precisam corrigir instabilidade de receita ou CAC insustentável.</p>
-                  <p><strong>Investimento:</strong> Setup Estratégico + % sobre Receita Nova.</p>
-                  <a href="/pilares/inteligencia-e-estrategia/gtm-completo" className="btn">Ver mais</a>
+                  <h3 className="pillar-card-title">Blueprint de Go-To-Market</h3>
+                  <p>Plano diretor que define o perfil de cliente ideal (ICP), segmentação de mercado e a arquitetura de canais mais eficiente para o seu ticket médio. Estratégia que vira execução.</p>
+                  <a href="/inteligencia-e-estrategia" className="btn">Saber mais</a>
+               </div>
+
+               <div className="glass-card-premium">
+                  <div className="pillar-icon-wrapper premium-glow"><Gem size={32} /></div>
+                  <h3 className="pillar-card-title">Narrativa de Valor Autoritativa</h3>
+                  <p>Reestruturação da mensagem comercial para evidenciar o problema crítico que a empresa resolve, eliminando a comparação por preço e estabelecendo autoridade imediata.</p>
+                  <a href="/inteligencia-e-estrategia" className="btn">Saber mais</a>
                </div>
 
                <div className="glass-card-premium">
                   <div className="pillar-icon-wrapper premium-glow"><Users size={32} /></div>
-                  <h3 className="pillar-card-title">Diretoria de Receita (CRO as a Service)</h3>
-                  <p><strong>O que é:</strong> Liderança executiva fracionada. Injetamos a governança de um C-Level sênior para liderar a construção da máquina, garantindo que a cultura de dados e a performance do time sejam instaladas sem o custo fixo integral de um executivo de mercado.</p>
-                  <p><strong>Ideal para:</strong> Profissionalizar a gestão comercial e potencializar a atuação estratégica dos fundadores (Founder Led Growth).</p>
-                  <p><strong>Investimento:</strong> Retainer Mensal (Fixo) + % sobre Receita Nova.</p>
-                  <a href="/pilares/inteligencia-e-estrategia/cro-service" className="btn">Entender</a>
-               </div>
-
-               <div className="glass-card-premium">
-                  <div className="pillar-icon-wrapper premium-glow"><ShieldCheck size={32} /></div>
-                  <h3 className="pillar-card-title">Advisory Board Estratégico</h3>
-                  <p><strong>O que é:</strong> Sparring executivo para momentos de inflexão. Acompanhamento sênior para navegar movimentações de mercado, fusões ou reestruturações, garantindo clareza na tomada de decisão estratégica sob a ótica de eficiência de capital.</p>
-                  <p><strong>Ideal para:</strong> Decisões de alto impacto que exigem validação externa qualificada.</p>
-                  <p><strong>Investimento:</strong> Sessões de Decisão ou Board Packs (One Shot).</p>
-                  <a href="/pilares/inteligencia-e-estrategia/advisory-board" className="btn">Solicitar Board</a>
+                  <h3 className="pillar-card-title">Advisory Board & Mentoria</h3>
+                  <p>Suporte executivo sênior para momentos de expansão, mudança de modelo de negócio ou destravamento de canais, garantindo disciplina na execução da estratégia.</p>
+                  <a href="/inteligencia-e-estrategia" className="btn">Saber mais</a>
                </div>
             </div>
           </div>
 
-          {/* FRENTE 2: 2 CARDS (1X2) */}
-          <div style={{marginBottom: '6rem', width: '100%'}}>
+          {/* PILAR 2: Ativos de Performance */}
+          <div style={{marginBottom: '2rem', width: '100%'}}>
              <div style={{textAlign: 'center', marginBottom: '2rem'}} className="reveal-up">
                 <div className="pillar-icon-wrapper premium-glow"><MonitorSmartphone size={40} /></div>
-                <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 2: Ativos Digitais</h3>
-                <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Ferramentas que vendem por você.</p>
+                <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Ativos de Performance</h3>
+                <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Infraestrutura digital que educa, qualifica e vende 24/7.</p>
              </div>
              
              <div className="solutions-grid-revolutionary reveal-up">
                 <div className="glass-card-premium">
                    <div className="pillar-icon-wrapper premium-glow"><Layout size={32} /></div>
-                   <h3 className="pillar-card-title">Plataformas Digitais</h3>
-                   <p><strong>O que é:</strong> Engenharia de conversão aplicada ao digital. Transformamos sites institucionais em Revenue Hubs (centros operacionais de captação e processamento de demanda). Eles operam como filtros de qualificação técnica, educando decisores e gerando oportunidades maduras 24/7, sem intervenção humana inicial.</p>
-                   <p><strong>Ideal para:</strong> Transformar tráfego de curiosos em reuniões com decisores.</p>
-                   <p><strong>Investimento:</strong> Projeto sob Medida (Discovery + Execução).</p>
-                   <a href="/pilares/ativos-digitais/plataformas-digitais" className="btn">Ver exemplos</a>
+                   <h3 className="pillar-card-title">Plataformas de Conversão</h3>
+                   <p>Interfaces focadas em Qualificação e Educação, garantindo que o prospect chegue à reunião comercial consciente do valor da solução. Não construímos sites institucionais — projetamos máquinas de demanda.</p>
+                   <a href="/ativos-de-performance" className="btn">Saber mais</a>
                 </div>
 
                 <div className="glass-card-premium">
                    <div className="pillar-icon-wrapper premium-glow"><TrendingUp size={32} /></div>
-                   <h3 className="pillar-card-title">Ferramentas de Aceleração de Receita</h3>
-                   <p><strong>O que é:</strong> Engenharia de Valor tangível. Desenvolvimento de CRMs, calculadoras e interfaces que materializam a promessa da marca. Traduzimos complexidade técnica em usabilidade para elevar a percepção de valor e acelerar o ciclo de vendas (Product-Led Sales).</p>
-                   <p><strong>Ideal para:</strong> Tangibilizar o posicionamento e oferecer uma primeira experiência real ao usuário.</p>
-                   <p><strong>Investimento:</strong> Projeto sob Medida.</p>
-                   <a href="/pilares/ativos-digitais/apps" className="btn">Explorar</a>
-                </div>
-             </div>
-          </div>
-
-          {/* FRENTE 3: 3 CARDS (1 WIDE) */}
-          <div style={{marginBottom: '2rem', width: '100%'}}>
-             <div style={{textAlign: 'center', marginBottom: '2rem'}} className="reveal-up">
-                <div className="pillar-icon-wrapper premium-glow"><Box size={40} /></div>
-                <h3 style={{fontSize: '1.8rem', marginBottom: '0.5rem'}}>Pilar 3: Soluções Verticais</h3>
-                <p style={{marginTop: '0.5rem', marginBottom: '0'}}>Metodologias proprietárias para contextos específicos.</p>
-             </div>
-             
-             <div className="solutions-grid-revolutionary reveal-up">
-                <div className="glass-card-premium">
-                   <div className="pillar-icon-wrapper premium-glow"><CheckCircle2 size={32} /></div>
-                   <h3 className="pillar-card-title">Diagnóstico Cortex B2B™</h3>
-                   <p><strong>O que é:</strong> O "Raio-X" da maturidade do negócio sob 5 lentes analíticas. Identificamos o Gap de Execução — onde a estratégia falha na prática — e definimos as alavancas exatas de GTM Engineering para destravar o crescimento imediato.</p>
-                   <p><strong>Ideal para:</strong> Direcionamento estratégico fundamentado antes de rodadas ou expansão.</p>
-                   <p><strong>Investimento:</strong> Projeto sob Medida.</p>
-                   <a href="/pilares/solucoes-verticais/cortex-b2b" className="btn">Conhecer</a>
-                </div>
-
-                <div className="glass-card-premium">
-                   <div className="pillar-icon-wrapper premium-glow"><Zap size={32} /></div>
-                   <h3 className="pillar-card-title">Match Maker B2B</h3>
-                   <p><strong>O que é:</strong> Inteligência de conexões para ecossistemas. Plataforma que organiza e potencializa o capital relacional (Ecosystem-Led Growth), transformando networking aleatório em conexões estratégicas baseadas em dados estruturados.</p>
-                   <p><strong>Ideal para:</strong> Comunidades B2B, aceleradoras e hubs de inovação.</p>
-                   <p><strong>Investimento:</strong> Setup da Plataforma + Licenciamento Mensal.</p>
-                   <a href="/pilares/solucoes-verticais/match-maker" className="btn">Agendar Demo</a>
-                </div>
-
-                {/* CARD WIDE: Health */}
-                <div className="glass-card-premium card-wide">
-                   <div className="pillar-icon-wrapper premium-glow"><Target size={32} /></div>
-                   <h3 className="pillar-card-title">Health Business Architecture™</h3>
-                   <p><strong>O que é:</strong> Engenharia de receita aplicada à saúde. Convertemos autoridade clínica em um ecossistema de negócios escalável, criando ativos de receita recorrente e processos que transcendem a agenda física do profissional de saúde.</p>
-                   <p><strong>Ideal para:</strong> Profissionais e Clínicas consolidadas buscando diversificação de receita e legado.</p>
-                   <p><strong>Investimento:</strong> Setup Premium + % sobre Receita Nova.</p>
-                   <a href="/pilares/solucoes-verticais/hba" className="btn">Ativar Novas Receitas</a>
+                   <h3 className="pillar-card-title">Apps Estratégicos de Receita</h3>
+                   <p>Calculadoras de ROI, simuladores de viabilidade e dashboards que tornam o benefício técnico tangível para o decisor financeiro. Ferramentas que aceleram o ciclo de venda.</p>
+                   <a href="/ativos-de-performance" className="btn">Saber mais</a>
                 </div>
              </div>
           </div>
@@ -291,11 +237,12 @@ export default function Home() {
       </section>
 
       {/* ====================================================================== */}
-      {/* Seção 5: Cases (3 CARDS - 1 WIDE)                                      */}
+      {/* Seção 5: Cases                                                         */}
       {/* ====================================================================== */}
       <section id="cases" className="section-with-gradient-glow">
         <div className="container reveal-up">
           <h2 className="section-title">Da Complexidade à Tração</h2>
+          <p className="lead-text">Resultados reais de quem substituiu intuição por método.</p>
           
           <div className="case-grid">
             
@@ -303,55 +250,56 @@ export default function Home() {
                <div className="pillar-icon-wrapper premium-glow"><Award size={32} /></div>
                <h3 className="case-card-title">Versão Holística</h3>
                <p><strong>Contexto:</strong> Tecnologia validada, mas com dificuldade de penetração em grandes contas (Hospitais) devido a um discurso excessivamente técnico.</p>
-               <p><strong>Ação:</strong> Reestruturação do GTM e tradução da oferta para "CareOps" (foco em eficiência operacional, não apenas clínica).</p>
                <p><strong>Resultado:</strong> R$ 500k captados e validação de canal enterprise.</p>
-               <a href="/cases/versao-holistica" className="btn">Ver Case</a>
+               <a href="/cases" className="btn">Ver Case</a>
             </div>
 
             <div className="glass-card-premium">
                <div className="pillar-icon-wrapper premium-glow"><GitBranch size={32} /></div>
                <h3 className="case-card-title">Exclusiva Engenharias</h3>
                <p><strong>Contexto:</strong> Empresa de engenharia consolidada, mas refém de indicações e sazonalidade. Sem previsibilidade de novos contratos.</p>
-               <p><strong>Ação:</strong> Implementação de máquina de vendas Outbound e posicionamento como parceiro de "Continuidade Operacional".</p>
-               <p><strong>Resultado:</strong> Geração de pipeline recorde (3x histórico) e redução da dependência dos sócios na venda.</p>
-               <a href="/cases/exclusiva-engenharias" className="btn">Ver Case</a>
+               <p><strong>Resultado:</strong> Pipeline recorde (3x histórico) e redução da dependência dos sócios.</p>
+               <a href="/cases" className="btn">Ver Case</a>
             </div>
 
-            {/* CARD WIDE: AORKIA */}
             <div className="glass-card-premium card-wide">
                <div className="pillar-icon-wrapper premium-glow"><ShieldCheck size={32} /></div>
                <h3 className="case-card-title">AORKIA</h3>
                <p><strong>Contexto:</strong> Desafio de entrar em um mercado comoditizado (Backup) dominado por gigantes globais, sem histórico de marca.</p>
-               <p><strong>Ação:</strong> Estratégia de "Ancoragem de Autoridade" e venda baseada em Risco (Compliance/Ransomware) e não em TI.</p>
-               <p><strong>Resultado:</strong> Validação do método com a conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
-               <a href="/cases/aorkia" className="btn">Ver Case</a>
+               <p><strong>Resultado:</strong> Conquista de grande conta (1.200 usuários) em apenas 45 dias.</p>
+               <a href="/cases" className="btn">Ver Case</a>
             </div>
 
+          </div>
+
+          <div style={{textAlign: 'center', marginTop: '3rem'}}>
+            <Link href="/cases" className="btn">
+              <span>Ver todos os cases detalhados</span>
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ====================================================================== */}
-      {/* Seção 6: Princípio Unificador                                          */}
+      {/* Seção 6: Diferencial (20 anos)                                         */}
       {/* ====================================================================== */}
-      <section id="principio" className="section-solid">
+      <section id="diferencial" className="section-solid">
         <div className="container reveal-up">
           <div className="glass-card-premium card-wide">
             <div className="pillar-icon-wrapper premium-glow">
               <LineChart size={32} />
             </div>
-            <h3>O Que Une Esses Resultados?</h3>
+            <h3>O Diferencial Synapse B2B</h3>
             <p className="lead-text">
-                Eles deixaram de vender <strong>"horas" ou "produtos"</strong> para vender <strong>resultados de negócio</strong>.
+              Não somos uma agência. Somos engenheiros que entendem a dor da cadeira de CEO.
             </p>
-            <p>Trocaram a intuição pela <strong>metodologia</strong>.</p>
-            <p>Entenderam que para crescer, precisavam profissionalizar a interface com o mercado.</p>
-            <p style={{marginTop: '2rem', fontWeight: 'bold'}}>Isso é Engenharia de Receita.</p>
-            <div style={{marginTop: '2rem'}}>
-              <a href="/a-engenharia" className="btn">
-                <span>Conhecer Nossa Tese</span>
-              </a>
-            </div>
+            <p>Aplicamos o que aprendemos em <strong>20 anos de Big Tech</strong> — Dell, Google, Microsoft, Totvs — para negócios que não podem falhar.</p>
+            <p style={{marginTop: '1.5rem'}}>
+              <strong>Precisão Técnica:</strong> Diagnóstico via Cortex B2B™, meta-framework proprietário.<br/>
+              <strong>Segurança Executiva:</strong> Direcionamento de quem operou nos maiores ecossistemas.<br/>
+              <strong>Escala com Governança:</strong> Playbooks e ativos que retiram o fundador do gargalo.
+            </p>
           </div>
         </div>
       </section>
@@ -368,7 +316,7 @@ export default function Home() {
             Se você fatura e sente que sua operação comercial é o gargalo, nós temos o método para destravar.
           </p>
           <a href="/contato" className="btn btn-primary btn-large btn-cta-pulse">
-            <span>Agende um Diagnóstico Executivo (21min)</span>
+            <span>Agendar Diagnóstico Executivo</span>
             <ArrowRight size={20} />
           </a>
           <p style={{marginTop: '1rem', fontStyle: 'italic', opacity: 0.8, fontSize: '0.9rem'}}>
