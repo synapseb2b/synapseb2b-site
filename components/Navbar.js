@@ -1,5 +1,5 @@
 // components/Navbar.js
-// ATUALIZADO: Submenus de Inteligência & Estratégia corrigidos
+// ATUALIZADO: Correção de "Growth Engineering" para "Apps Estratégicos"
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -60,7 +60,7 @@ export default function Navbar() {
 
           <div className="nav-menu-desktop">
             
-            {/* 1. INTELIGÊNCIA (CORRIGIDO) */}
+            {/* 1. INTELIGÊNCIA */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/inteligencia') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Inteligência e Estratégia</span>
@@ -74,7 +74,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* 2. ATIVOS DIGITAIS */}
+            {/* 2. ATIVOS DIGITAIS (CORRIGIDO) */}
             <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/ativos') ? 'active' : ''}`}>
               <div className="nav-link-desktop">
                 <span>Ativos Digitais</span>
@@ -82,7 +82,8 @@ export default function Navbar() {
               </div>
               <div className="dropdown-menu-desktop">
                 <Link href="/pilares/ativos-digitais/plataformas-digitais">Plataformas Digitais</Link>
-                <Link href="/pilares/ativos-digitais/growth-engineering">Growth Engineering</Link>
+                {/* Alterado aqui: Link e Texto */}
+                <Link href="/pilares/ativos-digitais/apps">Apps Estratégicos</Link>
               </div>
             </div>
 
@@ -138,7 +139,7 @@ export default function Navbar() {
       <div className={`mobile-menu ${isMobileOpen ? 'open' : ''}`}>
         <div className="mobile-content">
           
-          {/* 1. INTELIGÊNCIA (CORRIGIDO) */}
+          {/* 1. INTELIGÊNCIA */}
           <button className={`mobile-btn-expand ${mobileDropdowns.intel ? 'active' : ''}`} onClick={() => toggleMobileDropdown('intel')}>
             <div className="flex-row">
               <Brain size={20} className="text-primary" />
@@ -153,7 +154,7 @@ export default function Navbar() {
             <Link href="/pilares/inteligencia-e-estrategia/advisory-board" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Advisory Board Estratégico</Link>
           </div>
 
-          {/* 2. ATIVOS */}
+          {/* 2. ATIVOS (CORRIGIDO) */}
           <button className={`mobile-btn-expand ${mobileDropdowns.ativos ? 'active' : ''}`} onClick={() => toggleMobileDropdown('ativos')}>
             <div className="flex-row">
               <MonitorSmartphone size={20} className="text-primary" />
@@ -163,7 +164,8 @@ export default function Navbar() {
           </button>
           <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
             <Link href="/pilares/ativos-digitais/plataformas-digitais" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
-            <Link href="/pilares/ativos-digitais/growth-engineering" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Growth Engineering</Link>
+            {/* Alterado aqui: Link e Texto */}
+            <Link href="/pilares/ativos-digitais/apps" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Apps Estratégicos</Link>
           </div>
 
           {/* 3. CASES */}
