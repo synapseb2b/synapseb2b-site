@@ -1,27 +1,15 @@
 // components/Navbar.js
-// ATUALIZADO: Correção de "Growth Engineering" para "Apps Estratégicos"
+// VERSÃO SIMPLIFICADA: 5 páginas, sem dropdowns
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Brain, MonitorSmartphone, Box, Mail, Award, Layers } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  
-  const [mobileDropdowns, setMobileDropdowns] = useState({
-    intel: false,
-    ativos: false,
-    cases: false,
-    verticais: false
-  });
-
   const router = useRouter();
-
-  const toggleMobileDropdown = (key) => {
-    setMobileDropdowns(prev => ({ ...prev, [key]: !prev[key] }));
-  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -31,13 +19,24 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileOpen(false);
-    setMobileDropdowns({ intel: false, ativos: false, cases: false, verticais: false });
   }, [router.asPath]);
 
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
   }, [isMobileOpen]);
+
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/inteligencia-e-estrategia', label: 'Inteligência e Estratégia' },
+    { href: '/ativos-de-performance', label: 'Ativos de Performance' },
+    { href: '/cases', label: 'Cases' },
+  ];
+
+  const isActive = (href) => {
+    if (href === '/') return router.pathname === '/';
+    return router.pathname.startsWith(href);
+  };
 
   return (
     <>
@@ -58,77 +57,33 @@ export default function Navbar() {
             </video>
           </Link>
 
+          {/* MENU DESKTOP */}
           <div className="nav-menu-desktop">
-            
-            {/* 1. INTELIGÊNCIA */}
-            <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/inteligencia') ? 'active' : ''}`}>
-              <div className="nav-link-desktop">
-                <span>Inteligência e Estratégia</span>
-                <ChevronDown size={12} className="chevron" />
+            {navLinks.map((link) => (
+              <div 
+                key={link.href} 
+                className={`nav-item-desktop ${isActive(link.href) ? 'active' : ''}`}
+              >
+                <Link href={link.href} className="nav-link-desktop clickable">
+                  {link.label}
+                </Link>
               </div>
-              <div className="dropdown-menu-desktop">
-                <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao">Sprint de Validação Comercial</Link>
-                <Link href="/pilares/inteligencia-e-estrategia/gtm-completo">Go-To-Market Completo (GTM)</Link>
-                <Link href="/pilares/inteligencia-e-estrategia/cro-service">Diretoria de Receita (CRO as a Service)</Link>
-                <Link href="/pilares/inteligencia-e-estrategia/advisory-board">Advisory Board Estratégico</Link>
-              </div>
-            </div>
-
-            {/* 2. ATIVOS DIGITAIS (CORRIGIDO) */}
-            <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/ativos') ? 'active' : ''}`}>
-              <div className="nav-link-desktop">
-                <span>Ativos Digitais</span>
-                <ChevronDown size={12} className="chevron" />
-              </div>
-              <div className="dropdown-menu-desktop">
-                <Link href="/pilares/ativos-digitais/plataformas-digitais">Plataformas Digitais</Link>
-                {/* Alterado aqui: Link e Texto */}
-                <Link href="/pilares/ativos-digitais/apps">Apps Estratégicos</Link>
-              </div>
-            </div>
-
-            {/* 3. CASES */}
-            <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/cases') ? 'active' : ''}`}>
-              <div className="nav-link-desktop">
-                <span>Cases</span>
-                <ChevronDown size={12} className="chevron" />
-              </div>
-              <div className="dropdown-menu-desktop">
-                <Link href="/cases/versao-holistica">Versão Holística</Link>
-                <Link href="/cases/exclusiva-engenharias">Exclusiva Engenharias</Link>
-                <Link href="/cases/aorkia">Aorkia</Link>
-              </div>
-            </div>
-
-            {/* 4. VERTICAIS */}
-            <div className={`nav-item-desktop has-dropdown ${router.pathname.startsWith('/pilares/solucoes-verticais') ? 'active' : ''}`}>
-              <div className="nav-link-desktop">
-                <span>Verticais</span>
-                <ChevronDown size={12} className="chevron" />
-              </div>
-              <div className="dropdown-menu-desktop">
-                <Link href="/pilares/solucoes-verticais/cortex-b2b">Cortex B2B™</Link>
-                <Link href="/pilares/solucoes-verticais/match-maker">Match Maker B2B</Link>
-                <Link href="/pilares/solucoes-verticais/hba">Health Business Arch.™</Link>
-              </div>
-            </div>
-
-            {/* 5. A ENGENHARIA */}
-            <div className={`nav-item-desktop ${router.pathname === '/a-engenharia' ? 'active' : ''}`}>
-              <Link href="/a-engenharia" className="nav-link-desktop clickable">
-                A Engenharia
-              </Link>
-            </div>
+            ))}
           </div>
 
+          {/* CTA */}
           <div className="nav-actions">
             <div className="desktop-btn-wrapper">
               <Link href="/contato" className="btn-nav-cta">
-                Ativar Engenharia
+                Agendar Diagnóstico
               </Link>
             </div>
 
-            <button className="mobile-hamburger" onClick={() => setIsMobileOpen(!isMobileOpen)} aria-label="Menu">
+            <button 
+              className="mobile-hamburger" 
+              onClick={() => setIsMobileOpen(!isMobileOpen)} 
+              aria-label="Menu"
+            >
               {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -139,75 +94,25 @@ export default function Navbar() {
       <div className={`mobile-menu ${isMobileOpen ? 'open' : ''}`}>
         <div className="mobile-content">
           
-          {/* 1. INTELIGÊNCIA */}
-          <button className={`mobile-btn-expand ${mobileDropdowns.intel ? 'active' : ''}`} onClick={() => toggleMobileDropdown('intel')}>
-            <div className="flex-row">
-              <Brain size={20} className="text-primary" />
-              <span>Inteligência e Estratégia</span>
-            </div>
-            <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.intel ? 'rotate' : ''}`} />
-          </button>
-          <div className={`mobile-subs ${mobileDropdowns.intel ? 'show' : ''}`}>
-            <Link href="/pilares/inteligencia-e-estrategia/sprint-validacao" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Sprint de Validação Comercial</Link>
-            <Link href="/pilares/inteligencia-e-estrategia/gtm-completo" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Go-To-Market Completo (GTM)</Link>
-            <Link href="/pilares/inteligencia-e-estrategia/cro-service" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Diretoria de Receita (CRO)</Link>
-            <Link href="/pilares/inteligencia-e-estrategia/advisory-board" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Advisory Board Estratégico</Link>
-          </div>
-
-          {/* 2. ATIVOS (CORRIGIDO) */}
-          <button className={`mobile-btn-expand ${mobileDropdowns.ativos ? 'active' : ''}`} onClick={() => toggleMobileDropdown('ativos')}>
-            <div className="flex-row">
-              <MonitorSmartphone size={20} className="text-primary" />
-              <span>Ativos Digitais</span>
-            </div>
-            <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.ativos ? 'rotate' : ''}`} />
-          </button>
-          <div className={`mobile-subs ${mobileDropdowns.ativos ? 'show' : ''}`}>
-            <Link href="/pilares/ativos-digitais/plataformas-digitais" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Plataformas Digitais</Link>
-            {/* Alterado aqui: Link e Texto */}
-            <Link href="/pilares/ativos-digitais/apps" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Apps Estratégicos</Link>
-          </div>
-
-          {/* 3. CASES */}
-          <button className={`mobile-btn-expand ${mobileDropdowns.cases ? 'active' : ''}`} onClick={() => toggleMobileDropdown('cases')}>
-            <div className="flex-row">
-              <Award size={20} className="text-primary" />
-              <span>Cases</span>
-            </div>
-            <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.cases ? 'rotate' : ''}`} />
-          </button>
-          <div className={`mobile-subs ${mobileDropdowns.cases ? 'show' : ''}`}>
-            <Link href="/cases/versao-holistica" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Versão Holística</Link>
-            <Link href="/cases/exclusiva-engenharias" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Exclusiva Engenharias</Link>
-            <Link href="/cases/aorkia" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Aorkia</Link>
-          </div>
-
-          {/* 4. VERTICAIS */}
-          <button className={`mobile-btn-expand ${mobileDropdowns.verticais ? 'active' : ''}`} onClick={() => toggleMobileDropdown('verticais')}>
-            <div className="flex-row">
-              <Layers size={20} className="text-primary" />
-              <span>Verticais</span>
-            </div>
-            <ChevronDown size={18} className={`mob-chevron ${mobileDropdowns.verticais ? 'rotate' : ''}`} />
-          </button>
-          <div className={`mobile-subs ${mobileDropdowns.verticais ? 'show' : ''}`}>
-            <Link href="/pilares/solucoes-verticais/cortex-b2b" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Cortex B2B™</Link>
-            <Link href="/pilares/solucoes-verticais/match-maker" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Match Maker B2B</Link>
-            <Link href="/pilares/solucoes-verticais/hba" className="mobile-sub-link" onClick={() => setIsMobileOpen(false)}>Health Business Arch.™</Link>
-          </div>
-
-          {/* 5. A ENGENHARIA */}
-          <Link href="/a-engenharia" className="mobile-link-simple" onClick={() => setIsMobileOpen(false)}>
-            <div className="flex-row">
-              <Box size={20} className="text-primary" />
-              <span>A Engenharia</span>
-            </div>
-          </Link>
+          {navLinks.map((link) => (
+            <Link 
+              key={link.href}
+              href={link.href} 
+              className={`mobile-link-simple ${isActive(link.href) ? 'active' : ''}`}
+              onClick={() => setIsMobileOpen(false)}
+            >
+              <span>{link.label}</span>
+            </Link>
+          ))}
 
           {/* CTA MOBILE */}
           <div className="mobile-cta-container">
-            <Link href="/contato" className="btn btn-primary" onClick={() => setIsMobileOpen(false)}>
-              Ativar Engenharia
+            <Link 
+              href="/contato" 
+              className="btn btn-primary" 
+              onClick={() => setIsMobileOpen(false)}
+            >
+              Agendar Diagnóstico
             </Link>
           </div>
 
