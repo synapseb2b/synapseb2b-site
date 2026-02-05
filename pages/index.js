@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Zap, BarChart3, Users, Layout } from 'lucide-react';
+import { ArrowRight, Check, Zap, BarChart3 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Home() {
   
   // Variantes de animação para entrada suave (ritmo Nava)
+  // Mantendo a suavidade sem exageros para preservar a elegância
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -75,34 +75,37 @@ export default function Home() {
         {/* ==================== 2. TRUST BAR ==================== */}
         <section className="py-16 px-6 border-b border-white/10 bg-zinc-950">
           <div className="max-w-7xl mx-auto">
+            {/* Bloco 1: Repertório Big Tech */}
             <div className="mb-10">
               <p className="text-xs font-mono text-gray-500 mb-6 uppercase tracking-widest">
                 Experiência de 20+ anos nos maiores ecossistemas B2B:
               </p>
               <div className="flex flex-wrap gap-8 md:gap-16 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                {/* Substitua por SVGs reais se tiver, usando texto estilizado por enquanto para garantir o conteúdo */}
-                <span className="text-xl md:text-2xl font-bold text-white">Google</span>
-                <span className="text-xl md:text-2xl font-bold text-white">Microsoft</span>
-                <span className="text-xl md:text-2xl font-bold text-white">Dell</span>
-                <span className="text-xl md:text-2xl font-bold text-white">TOTVS</span>
+                {/* Usando texto estilizado como placeholder para logos, garantindo alinhamento visual */}
+                <span className="text-xl md:text-2xl font-bold text-white tracking-tight">Google</span>
+                <span className="text-xl md:text-2xl font-bold text-white tracking-tight">Microsoft</span>
+                <span className="text-xl md:text-2xl font-bold text-white tracking-tight">Dell</span>
+                <span className="text-xl md:text-2xl font-bold text-white tracking-tight">TOTVS</span>
               </div>
             </div>
 
+            {/* Separador Visual */}
             <div className="h-px w-full bg-white/5 my-8"></div>
 
+            {/* Bloco 2: Clientes Atuais */}
             <div>
               <p className="text-xs font-mono text-gray-500 mb-6 uppercase tracking-widest">
                 Quem confia na nossa Engenharia de Receita:
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 text-sm text-gray-400">
-                <span>Giornata</span>
-                <span>Mr. Job</span>
-                <span>ControllerTech</span>
-                <span>Way Sistemas</span>
-                <span>Skippers</span>
-                <span>Exclusiva Eng.</span>
-                <span>VH Health</span>
-                <span>TOTTEC</span>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 text-sm text-gray-400 font-medium">
+                <span className="hover:text-white transition-colors">Giornata</span>
+                <span className="hover:text-white transition-colors">Mr. Job</span>
+                <span className="hover:text-white transition-colors">ControllerTech</span>
+                <span className="hover:text-white transition-colors">Way Sistemas</span>
+                <span className="hover:text-white transition-colors">Skippers</span>
+                <span className="hover:text-white transition-colors">Exclusiva Eng.</span>
+                <span className="hover:text-white transition-colors">VH Health</span>
+                <span className="hover:text-white transition-colors">TOTTEC</span>
               </div>
             </div>
           </div>
@@ -137,8 +140,8 @@ export default function Home() {
                   desc: "As vendas só fecham quando você ou aquele vendedor experiente entram na sala. O conhecimento está na cabeça das pessoas, não no processo. Isso não escala."
                 }
               ].map((item, idx) => (
-                <div key={idx} className="bg-white/5 p-8 border border-white/5 hover:border-indigo-500/30 transition-colors">
-                  <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
+                <div key={idx} className="bg-white/5 p-8 border border-white/5 hover:border-indigo-500/30 transition-colors group">
+                  <h3 className="text-xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">{item.title}</h3>
                   <p className="text-gray-400 leading-relaxed text-sm">{item.desc}</p>
                 </div>
               ))}
@@ -202,20 +205,21 @@ export default function Home() {
               </span>
             </div>
 
+            {/* Layout de 3 Colunas: Entrada / Core / Premium */}
             <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10 border-t border-b border-white/10">
               
-              {/* Coluna 1 */}
-              <div className="py-12 lg:pr-12 lg:py-0">
+              {/* Coluna 1: Entrada */}
+              <div className="py-12 lg:pr-12 lg:py-12">
                 <h3 className="text-3xl font-bold mb-2">Diagnóstico <br />& Direção.</h3>
                 <p className="text-sm text-gray-500 mb-8 font-mono">Para descobrir por que a venda está travada.</p>
                 <ul className="space-y-6 mb-10">
                   <li className="block">
                     <strong className="text-white block mb-1">Diagnóstico Cortex Express</strong>
-                    <span className="text-sm text-gray-400">Ferramenta online rápida. O sistema aponta onde está o gargalo.</span>
+                    <span className="text-sm text-gray-400">Ferramenta online rápida. O sistema aponta onde está o gargalo (leads, processo ou fechamento).</span>
                   </li>
                   <li className="block">
                     <strong className="text-white block mb-1">Diagnóstico Cortex Completo</strong>
-                    <span className="text-sm text-gray-400">Diagnóstico + Reunião estratégica individual para plano de correção.</span>
+                    <span className="text-sm text-gray-400">Diagnóstico + Reunião estratégica individual para desenhar o plano de correção.</span>
                   </li>
                 </ul>
                 <Link href="/contato" className="inline-flex items-center text-indigo-400 text-sm font-bold hover:text-white transition-colors">
@@ -223,8 +227,8 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Coluna 2 */}
-              <div className="py-12 lg:px-12 lg:py-0">
+              {/* Coluna 2: Core */}
+              <div className="py-12 lg:px-12 lg:py-12">
                 <h3 className="text-3xl font-bold mb-2">Construção <br />Do Sistema.</h3>
                 <p className="text-sm text-gray-500 mb-8 font-mono">Para colocar a máquina de vendas de pé.</p>
                 <ul className="space-y-6 mb-10">
@@ -234,7 +238,7 @@ export default function Home() {
                   </li>
                   <li className="block">
                     <strong className="text-white block mb-1">Ativos de Conversão</strong>
-                    <span className="text-sm text-gray-400">Sites e calculadoras que funcionam como "vendedores 24h".</span>
+                    <span className="text-sm text-gray-400">Sites e calculadoras que funcionam como "vendedores 24h", qualificando o cliente.</span>
                   </li>
                 </ul>
                 <Link href="/ativos-de-performance" className="inline-flex items-center text-indigo-400 text-sm font-bold hover:text-white transition-colors">
@@ -242,18 +246,18 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Coluna 3 */}
-              <div className="py-12 lg:pl-12 lg:py-0">
+              {/* Coluna 3: Premium */}
+              <div className="py-12 lg:pl-12 lg:py-12">
                 <h3 className="text-3xl font-bold mb-2">Execução <br />Contínua.</h3>
                 <p className="text-sm text-gray-500 mb-8 font-mono">Para quem quer terceirizar a inteligência.</p>
                 <ul className="space-y-6 mb-10">
                   <li className="block">
                     <strong className="text-white block mb-1">CRO as a Service</strong>
-                    <span className="text-sm text-gray-400">90 dias de construção do motor de vendas. Entregamos rodando.</span>
+                    <span className="text-sm text-gray-400">Ciclo de 90 dias onde construímos o motor de vendas. Entregamos rodando.</span>
                   </li>
                   <li className="block">
                     <strong className="text-white block mb-1">Advisory</strong>
-                    <span className="text-sm text-gray-400">Acompanhamento mensal para garantir a meta batida.</span>
+                    <span className="text-sm text-gray-400">Acompanhamento mensal para garantir que a meta seja batida.</span>
                   </li>
                 </ul>
                 <Link href="/contato" className="inline-flex items-center text-indigo-400 text-sm font-bold hover:text-white transition-colors">
