@@ -19,7 +19,7 @@ const TRUST_CLIENTS = [
 
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({ nome: '', email: '', site: '' });
+  const [formData, setFormData] = useState({ nome: '', email: '', linkedin: '' });
   const [submitted, setSubmitted] = useState(false);
 
   // Lock body scroll when modal is open
@@ -46,13 +46,13 @@ export default function HomePage() {
     setSubmitted(true);
   };
 
-  const whatsappMessage = `*Interesse — Synapse B2B*\n\n*Nome:* ${formData.nome}\n*E-mail:* ${formData.email}\n*Site/LinkedIn:* ${formData.site}`;
+  const whatsappMessage = `*Interesse — Synapse B2B*\n\n*Nome:* ${formData.nome}\n*E-mail:* ${formData.email}\n*LinkedIn:* ${formData.linkedin}`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const closeModal = () => {
     if (submitted) {
       setSubmitted(false);
-      setFormData({ nome: '', email: '', site: '' });
+      setFormData({ nome: '', email: '', linkedin: '' });
     }
     setShowModal(false);
   };
@@ -85,8 +85,8 @@ export default function HomePage() {
             Sua empresa já entrega resultado. Mas entre o que ela faz de verdade
             e o que o mercado consegue enxergar,{' '}
             <strong>
-              existem oportunidades que ninguém organizou — e conexões que
-              ninguém fez.
+              existem oportunidades que ninguém organizou — e insights que
+              ninguém teve ainda.
             </strong>{' '}
             Nós encontramos as duas coisas.
           </p>
@@ -110,8 +110,6 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="landing-divider" />
-
         {/* Trust Bar */}
         <div className="trust-bar">
           <p className="trust-label">
@@ -128,6 +126,8 @@ export default function HomePage() {
             ))}
           </p>
         </div>
+
+        <div className="landing-divider" />
 
         <p className="microcopy">
           Estamos construindo a nova plataforma da Synapse B2B.
@@ -155,7 +155,7 @@ export default function HomePage() {
 
             {!submitted ? (
               <>
-                <h3 className="modal-title">Sessão de Decodificação</h3>
+                <h3 className="modal-title">Sua Sessão em 3 passos</h3>
                 <form
                   name="decodificacao"
                   method="POST"
@@ -178,21 +178,21 @@ export default function HomePage() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="E-mail corporativo"
+                    placeholder="E-mail"
                     className="modal-input"
                     required
                   />
                   <input
                     type="text"
-                    name="site"
-                    value={formData.site}
+                    name="linkedin"
+                    value={formData.linkedin}
                     onChange={handleChange}
-                    placeholder="Site ou LinkedIn"
+                    placeholder="LinkedIn"
                     className="modal-input"
                     required
                   />
                   <button type="submit" className="modal-submit">
-                    <span>Solicitar Decodificação</span>
+                    <span>Enviar</span>
                     <ArrowRight size={16} />
                   </button>
                 </form>
@@ -200,15 +200,11 @@ export default function HomePage() {
             ) : (
               <div className="success-state">
                 <p className="success-message">
-                  Recebemos suas informações. Nossa equipe fará uma análise
-                  preliminar da sua presença digital e entraremos em contato via
-                  e-mail para agendar nossa conversa de fundador para fundador.
+                  Pronto. Recebemos seus dados. Vamos entrar em contato para
+                  agendar sua sessão de 21 minutos.
                 </p>
                 <p className="success-fasttrack">
-                  Tem urgência em parar de deixar dinheiro na mesa?
-                  <br />
-                  Acione nosso Fast Track e fale diretamente com um sócio agora
-                  mesmo.
+                  Prefere agendar agora?
                 </p>
                 <a
                   href={whatsappUrl}
