@@ -63,7 +63,7 @@ export default function HomePage() {
         <title>Synapse B2B | Engenharia de Receita</title>
         <meta
           name="description"
-          content="Pare de deixar dinheiro na mesa. Engenharia de Receita para empresas B2B de alta complexidade."
+          content="Pare de deixar dinheiro na mesa. Entre o que sua empresa faz de verdade e o que o mercado enxerga, existem oportunidades e insights que ninguém encontrou. Até agora."
         />
       </Head>
 
