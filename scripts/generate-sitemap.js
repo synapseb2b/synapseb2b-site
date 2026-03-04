@@ -7,11 +7,6 @@ const today = new Date().toISOString().split('T')[0];
 // Lista de todas as páginas do seu site
 const pages = [
   { path: '/', changeFreq: 'weekly', priority: '1.0' },
-  { path: '/metodologia', changeFreq: 'monthly', priority: '0.8' },
-  { path: '/casos-de-uso', changeFreq: 'monthly', priority: '0.8' },
-  { path: '/contato', changeFreq: 'yearly', priority: '0.7' },
-  { path: '/termos-de-uso', changeFreq: 'yearly', priority: '0.3' },
-  { path: '/politica-de-privacidade', changeFreq: 'yearly', priority: '0.3' },
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

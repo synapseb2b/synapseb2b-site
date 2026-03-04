@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"D:/Dados/Documentos/GitHub/synapseb2b-site/postcss.config\"*)",
+      "Bash(npx sharp-cli -i \"public/image/nova logo_hero_2.png\" -o \"public/image/nova logo_hero_2_opt.png\" -- resize 800 800 --png --quality 85)",
+      "Bash(node -e \":*)",
+      "Bash(npm install sharp --save-dev)",
+      "Bash(npm run build)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
