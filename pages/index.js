@@ -91,6 +91,11 @@ export default function HomePage() {
             Nós encontramos as duas coisas.
           </p>
 
+          <p className="ecosystem-text">
+            Experiência acumulada nos maiores ecossistemas B2B do mundo:{' '}
+            <strong>Google</strong> | <strong>Microsoft</strong> | <strong>Dell</strong> | <strong>TOTVS</strong>
+          </p>
+
           <button
             type="button"
             className="landing-cta"
@@ -100,13 +105,12 @@ export default function HomePage() {
             <ArrowRight size={18} />
           </button>
 
-          <div className="landing-divider" />
-
-          <p className="microcopy">
-            Estamos construindo a nova plataforma da Synapse B2B. Enquanto isso,
-            agende uma Sessão de Decodificação — 21 minutos, sem compromisso.
+          <p className="cta-support">
+            21 minutos, sem compromisso. De Fundador para Fundador.
           </p>
         </div>
+
+        <div className="landing-divider" />
 
         {/* Trust Bar */}
         <div className="trust-bar">
@@ -124,6 +128,10 @@ export default function HomePage() {
             ))}
           </p>
         </div>
+
+        <p className="microcopy">
+          Estamos construindo a nova plataforma da Synapse B2B.
+        </p>
 
         {/* WhatsApp Flutuante */}
         <a

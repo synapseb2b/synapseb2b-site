@@ -74,6 +74,7 @@ body {
   color: var(--color-heading);
   letter-spacing: -0.02em;
   line-height: 1.08;
+  white-space: nowrap;
 }
 
 .landing-h2 {
@@ -122,13 +123,36 @@ body {
 }
 
 /* ==========================================================================
-   5. MICROCOPY + DIVIDER
+   5. ECOSYSTEM, CTA-SUPPORT, MICROCOPY + DIVIDER
    ========================================================================== */
+.ecosystem-text {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.ecosystem-text strong {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+.cta-support {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin-top: -0.6rem;
+}
+
 .landing-divider {
   width: 80px;
   height: 1px;
-  background-color: var(--color-surface);
-  margin: 0.6rem 0;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin: 0.4rem 0;
+  margin-top: auto;
 }
 
 .microcopy {
@@ -138,6 +162,8 @@ body {
   opacity: 0.6;
   max-width: 520px;
   line-height: 1.6;
+  text-align: center;
+  padding-bottom: 0.5rem;
 }
 
 /* ==========================================================================
@@ -308,9 +334,7 @@ body {
   width: 100%;
   max-width: 780px;
   text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(26, 26, 46, 0.8);
-  margin-top: auto;
+  padding-top: 0.6rem;
 }
 
 .trust-label {
@@ -383,10 +407,15 @@ body {
 
   .landing-h1 {
     font-size: 1.8rem;
+    white-space: normal;
   }
 
   .landing-h2 {
     font-size: 0.9rem;
+  }
+
+  .ecosystem-text {
+    font-size: 0.78rem;
   }
 
   .landing-cta {
@@ -417,6 +446,7 @@ body {
 @media (max-width: 480px) {
   .landing-h1 {
     font-size: 1.5rem;
+    white-space: normal;
   }
 
   .landing-h2 {
