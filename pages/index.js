@@ -79,16 +79,11 @@ export default function HomePage() {
 
         {/* Conteudo central */}
         <div className="landing-content">
-          <h1 className="landing-h1">Pare de deixar dinheiro na mesa.</h1>
+          <h1 className="landing-h1">Toda empresa tem receita que não está sendo capturada.</h1>
 
           <p className="landing-h2">
-            Sua empresa já entrega resultado. Mas entre o que ela faz de verdade
-            e o que o mercado consegue enxergar,{' '}
-            <strong>
-              existem oportunidades que ninguém organizou — e insights que
-              ninguém teve ainda.
-            </strong>{' '}
-            Nós encontramos as duas coisas.
+            Ela não está escondida.{' '}
+            <strong>Está desalinhada.</strong>
           </p>
 
           <p className="ecosystem-text">
@@ -101,7 +96,7 @@ export default function HomePage() {
             className="landing-cta"
             onClick={() => setShowModal(true)}
           >
-            <span>Reservar minha Sessão de Decodificação</span>
+            <span>Iniciar Diagnóstico</span>
             <ArrowRight size={18} />
           </button>
 
