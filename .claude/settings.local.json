@@ -6,7 +6,8 @@
       "Bash(node -e \":*)",
       "Bash(npm install sharp --save-dev)",
       "Bash(npm run build)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python -c ':*)"
     ]
   }
 }

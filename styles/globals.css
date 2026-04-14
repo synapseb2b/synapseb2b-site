@@ -74,7 +74,6 @@ body {
   color: var(--color-heading);
   letter-spacing: -0.02em;
   line-height: 1.08;
-  white-space: nowrap;
 }
 
 .landing-h2 {
