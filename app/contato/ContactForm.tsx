@@ -6,7 +6,6 @@ import { ArrowRight, Building2, User, Mail, Phone, Target } from 'lucide-react'
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { getWhatsAppUrl } from '@/lib/constants'
-import { submitContact } from '@/app/actions/contact'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 
 const COMPANY_SIZES = [
@@ -56,9 +55,6 @@ export function ContactForm() {
 
     // 2. Atualiza UI
     setSent(true)
-
-    // 3. Salva no Supabase em background (não bloqueia o fluxo)
-    submitContact({ name, email, phone, company, size, interest, message }).catch(console.error)
   }
 
   const inputClass =

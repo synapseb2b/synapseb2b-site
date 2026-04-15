@@ -12,15 +12,15 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <SocialProofSection />
-      <section className="border-t border-white/[0.08] py-10">
+      <section className="border-b border-white/[0.08] py-10">
         <div className="w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
           <p className="text-center text-[#CCD6E0] text-xs uppercase tracking-[0.2em] mb-8">
             {"Empresas que fecharam a dist\u00e2ncia entre compet\u00eancia e receita."}
           </p>
-          <LogoMarquee items={[...TRUST_CLIENTS]} speed={35} />
+          <LogoMarquee items={[...TRUST_CLIENTS]} speed={15} />
         </div>
       </section>
+      <SocialProofSection />
       <PillarsSection />
       <DeliverablesSection />
       <CortexSection />

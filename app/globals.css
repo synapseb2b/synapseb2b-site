@@ -47,7 +47,7 @@ body {
 
 /* --- Typography System (clamp fluid) --- */
 .hero-headline {
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-size: clamp(2rem, 5vw, 5rem);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.03em;

@@ -41,9 +41,15 @@ export function HeroSection() {
             variants={fadeInLeft}
             className="hero-headline max-w-5xl mb-6 md:mb-8"
           >
-            {"Sua compet\u00eancia j\u00e1 \u00e9 inquestion\u00e1vel."}
+            {"Sua compet\u00eancia"}
+            <br className="md:hidden" />
+            {" j\u00e1 \u00e9 inquestion\u00e1vel."}
             <br className="hidden lg:block" />
-            <span className="text-primary">{" Tornamos ela inevit\u00e1vel."}</span>
+            <span className="text-primary">
+              {" Tornamos ela"}
+              <br className="md:hidden" />
+              {" inevit\u00e1vel."}
+            </span>
           </motion.h1>
 
           {/* H2 */}

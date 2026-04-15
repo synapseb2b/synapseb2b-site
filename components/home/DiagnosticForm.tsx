@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ArrowLeft, Send } from 'lucide-react'
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
 import { DIAGNOSTIC_QUESTIONS, getWhatsAppUrl } from '@/lib/constants'
-import { submitDiagnostic } from '@/app/actions/diagnostic'
 
 const stepVariants = {
   enter: (direction: number) => ({
@@ -58,8 +57,6 @@ export function DiagnosticForm() {
     // 2. Atualiza UI
     setSubmitted(true)
 
-    // 3. Salva no Supabase em background (não bloqueia o fluxo)
-    submitDiagnostic({ name, email, answers }).catch(console.error)
   }
 
   const progress = contactStep ? 100 : ((step + 1) / (totalSteps + 1)) * 100

@@ -1,11 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Check, ArrowRight } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 import { services } from '@/lib/services-data'
 import { cn } from '@/lib/utils'
+import { getWhatsAppUrl } from '@/lib/constants'
+
+const SERVICE_WHATSAPP_MESSAGES: Record<string, string> = {
+  diagnostico:
+    'Ol\u00e1, J\u00falio. Tenho interesse no Diagn\u00f3stico CORTEX B2B\u2122. Quero entender onde est\u00e1 o gap entre o que minha empresa entrega e o que o mercado percebe.',
+  projeto:
+    'Ol\u00e1, J\u00falio. Tenho interesse no Projeto Estrat\u00e9gico de Engenharia de Receita. Quero construir o sistema comercial da minha empresa.',
+  advisor:
+    'Ol\u00e1, J\u00falio. Tenho interesse no Advisor de Receita. J\u00e1 tenho uma opera\u00e7\u00e3o rodando e quero otimizar o crescimento.',
+}
 
 export function DeliverablesSection() {
   return (
@@ -102,7 +112,7 @@ export function DeliverablesSection() {
 
               {/* CTA */}
               <button
-                onClick={() => document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open(getWhatsAppUrl(SERVICE_WHATSAPP_MESSAGES[service.id]), '_blank')}
                 className={cn(
                   'w-full py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] cursor-pointer',
                   service.featured
