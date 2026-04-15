@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import { cases } from '@/lib/cases-data'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { LogoMarquee } from '@/components/ui/LogoMarquee'
+import { TRUST_CLIENTS } from '@/lib/constants'
 
 export function CasesList() {
   return (
@@ -99,6 +101,17 @@ export function CasesList() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Clients marquee */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <LogoMarquee items={[...TRUST_CLIENTS]} />
         </motion.div>
 
         {/* CTA */}
