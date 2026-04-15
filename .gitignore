@@ -40,6 +40,12 @@ Thumbs.db
 *.swp
 *.swo
 
+# Claude Code
+.claude/
+
+# PDFs
+*.pdf
+
 # Temporary files
 *.tmp
 *.temp
