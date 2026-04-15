@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Cores: Synapse B2B Premium --- */
+  --color-primary: #4a90d9;
+  --color-primary-hover: #3a7bc8;
+  --color-background: #ffffff;
+  --color-background-dark: #050a18;
+  --color-text-main: #000000;
+  --color-text-muted: #B8C4D0;
+
+  /* Navy */
+  --color-navy-950: #040c1f;
+  --color-navy-900: #081a3e;
+  --color-navy-800: #0a2463;
+
+  /* Accent */
+  --color-accent-600: #3574b8;
+  --color-accent-500: #4a90d9;
+  --color-accent-400: #6aa8e8;
+  --color-accent-300: #8ec0f5;
+  --color-accent-200: #b8d8fc;
+
+  /* --- Bordas --- */
+  --radius-pill: 9999px;
+  --radius-premium: 2.5rem;
+
+  /* --- Espaçamento (Axeris Scale) --- */
+  --spacing-container-mobile: 1.5rem;
+  --spacing-container-desktop: 8vw;
+
+  /* Fonts */
+  --font-heading: var(--font-montserrat), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+/* --- Base --- */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background-dark);
+  color: #CCD6E0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* --- Typography System (clamp fluid) --- */
+.hero-headline {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: white;
+}
+
+.hero-subtext {
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* --- Container System (igual Fast Club) --- */
+.container-hero {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-left: var(--spacing-container-mobile);
+  padding-right: var(--spacing-container-mobile);
+}
+
+@media (min-width: 768px) {
+  .container-hero {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-hero {
+    padding-left: var(--spacing-container-desktop);
+    padding-right: var(--spacing-container-desktop);
+  }
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-background-dark); }
+::-webkit-scrollbar-thumb { background: rgba(74, 144, 217, 0.2); border-radius: 3px; }
+
+/* --- Selection --- */
+::selection {
+  background: rgba(74, 144, 217, 0.3);
+  color: white;
+}
+
+/* --- WhatsApp Pulse --- */
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(74, 144, 217, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 144, 217, 0); }
+}
+.animate-pulse-wa { animation: pulse-wa 2.5s infinite; }
