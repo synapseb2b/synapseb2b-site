@@ -41,7 +41,7 @@ export function CasesList() {
             variants={fadeInUp}
             className="mt-6 text-base md:text-lg text-white/40 leading-relaxed max-w-2xl"
           >
-            {"Empresas que redescobriram o pr\u00f3prio potencial com a Synapse B2B."}
+            {"Empresas que fecharam a dist\u00e2ncia entre compet\u00eancia e receita."}
           </motion.p>
 
           <motion.div variants={fadeInUp} className="w-full mt-10">

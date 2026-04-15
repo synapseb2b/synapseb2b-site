@@ -60,9 +60,9 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
           >
-            {"De coworking a Hub de Neg\u00f3cios."}
+            {"De coworking a Hub de Neg\u00f3cios e Bem-Estar Corporativo."}
             <br className="hidden md:block" />
-            <span className="text-primary">{"Em 3 meses."}</span>
+            <span className="text-primary">{"Em pouco mais de 3 meses."}</span>
           </motion.h2>
 
           <motion.p
@@ -115,7 +115,7 @@ export function SocialProofSection() {
         {/* Client logos marquee */}
         <div className="mt-16 md:mt-20 pt-10 border-t border-white/[0.08]">
           <p className="text-center text-[#CCD6E0] text-xs uppercase tracking-[0.2em] mb-8">
-            {"Empresas que redescobriram o pr\u00f3prio potencial com a Synapse B2B"}
+            {"Empresas que fecharam a dist\u00e2ncia entre compet\u00eancia e receita."}
           </p>
           <LogoMarquee items={[...TRUST_CLIENTS]} speed={35} />
         </div>
