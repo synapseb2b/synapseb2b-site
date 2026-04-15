@@ -34,14 +34,14 @@ export function CasesList() {
           >
             Resultados reais.
             <br />
-            <span className="text-primary">{"Neg\u00f3cios reais."}</span>
+            <span className="text-primary">{"Negócios reais."}</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="mt-6 text-base md:text-lg text-white/40 leading-relaxed max-w-2xl"
           >
-            {"Empresas que fecharam a dist\u00e2ncia entre compet\u00eancia e receita."}
+            {"Empresas que fecharam a distância entre competência e receita."}
           </motion.p>
 
           <motion.div variants={fadeInUp} className="w-full mt-10">
@@ -119,7 +119,7 @@ export function CasesList() {
             href="/#diagnostico"
             className="group inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-8 pr-2 py-2 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
           >
-            <span className="font-bold">{"Iniciar Diagn\u00f3stico"}</span>
+            <span className="font-bold">{"Iniciar Diagnóstico"}</span>
             <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
               <ArrowRight size={16} />
             </span>

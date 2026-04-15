@@ -31,8 +31,8 @@ export function CTASection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-4xl mb-6"
           >
-            {"5 perguntas sobre o seu neg\u00f3cio. "}
-            <span className="text-primary">{"Uma an\u00e1lise no mesmo dia."}</span>
+            {"5 perguntas sobre o seu negócio. "}
+            <span className="text-primary">{"Uma análise no mesmo dia."}</span>
           </motion.h2>
 
           <motion.p

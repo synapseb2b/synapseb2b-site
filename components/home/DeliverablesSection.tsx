@@ -10,11 +10,11 @@ import { getWhatsAppUrl } from '@/lib/constants'
 
 const SERVICE_WHATSAPP_MESSAGES: Record<string, string> = {
   diagnostico:
-    'Ol\u00e1, J\u00falio. Tenho interesse no Diagn\u00f3stico CORTEX B2B\u2122. Quero entender onde est\u00e1 o gap entre o que minha empresa entrega e o que o mercado percebe.',
+    'Olá, Júlio. Tenho interesse no Diagnóstico CORTEX B2B™. Quero entender onde está o gap entre o que minha empresa entrega e o que o mercado percebe.',
   projeto:
-    'Ol\u00e1, J\u00falio. Tenho interesse no Projeto Estrat\u00e9gico de Engenharia de Receita. Quero construir o sistema comercial da minha empresa.',
+    'Olá, Júlio. Tenho interesse no Projeto Estratégico de Engenharia de Receita. Quero construir o sistema comercial da minha empresa.',
   advisor:
-    'Ol\u00e1, J\u00falio. Tenho interesse no Advisor de Receita. J\u00e1 tenho uma opera\u00e7\u00e3o rodando e quero otimizar o crescimento.',
+    'Olá, Júlio. Tenho interesse no Advisor de Receita. Já tenho uma operação rodando e quero otimizar o crescimento.',
 }
 
 export function DeliverablesSection() {
@@ -44,7 +44,7 @@ export function DeliverablesSection() {
               variants={fadeInUp}
               className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
             >
-              {"Tr\u00eas formas de come\u00e7ar."}
+              {"Três formas de começar."}
               <br className="hidden md:block" />
               <span className="text-primary">{"Escolha a sua."}</span>
             </motion.h2>

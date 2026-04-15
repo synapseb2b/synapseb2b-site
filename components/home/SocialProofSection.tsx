@@ -59,7 +59,7 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
           >
-            {"De coworking a Hub de Neg\u00f3cios e Bem-Estar Corporativo."}
+            {"De coworking a Hub de Negócios e Bem-Estar Corporativo."}
             <br className="hidden md:block" />
             <span className="text-primary">{"Em pouco mais de 3 meses."}</span>
           </motion.h2>
@@ -68,7 +68,7 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-2xl"
           >
-            {"Mr. Job Hub \u2014 Resultado real de um projeto de Engenharia de Receita."}
+            {"Mr. Job Hub — Resultado real de um projeto de Engenharia de Receita."}
           </motion.p>
         </motion.div>
 

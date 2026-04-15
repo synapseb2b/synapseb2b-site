@@ -8,23 +8,23 @@ import { SynapseBackground } from '@/components/ui/SynapseBackground'
 const features = [
   {
     icon: Brain,
-    title: '20 anos de repert\u00f3rio',
-    description: 'Conhecimento constru\u00eddo em Google, Microsoft, Dell e TOTVS aplicado a cada projeto.',
+    title: '20 anos de repertório',
+    description: 'Conhecimento construído em Google, Microsoft, Dell e TOTVS aplicado a cada projeto.',
   },
   {
     icon: Layers,
     title: '30+ metodologias',
-    description: 'Frameworks de vendas, go-to-market, growth e neuroci\u00eancia integrados.',
+    description: 'Frameworks de vendas, go-to-market, growth e neurociência integrados.',
   },
   {
     icon: Zap,
-    title: 'Intelig\u00eancia cumulativa',
-    description: 'Acumula conhecimento a cada intera\u00e7\u00e3o. Nenhum insight se perde.',
+    title: 'Inteligência cumulativa',
+    description: 'Acumula conhecimento a cada interação. Nenhum insight se perde.',
   },
   {
     icon: Database,
-    title: 'Cruzamento de padr\u00f5es',
-    description: 'Conecta dados que a opera\u00e7\u00e3o do dia a dia n\u00e3o permite ver.',
+    title: 'Cruzamento de padrões',
+    description: 'Conecta dados que a operação do dia a dia não permite ver.',
   },
 ]
 
@@ -47,7 +47,7 @@ export function CortexSection() {
               className="mb-8 px-5 py-1.5 border border-primary/50 rounded-full text-primary inline-block"
             >
               <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                {"Tecnologia Propriet\u00e1ria"}
+                {"Tecnologia Proprietária"}
               </span>
             </motion.div>
 
@@ -57,14 +57,14 @@ export function CortexSection() {
             >
               {"Cada projeto opera com o"}
               <br className="hidden md:block" />
-              <span className="text-primary">{" CORTEX B2B\u2122."}</span>
+              <span className="text-primary">{" CORTEX B2B™."}</span>
             </motion.h2>
 
             <motion.p
               variants={fadeInUp}
               className="mt-8 text-base md:text-lg text-white/60 leading-relaxed max-w-3xl"
             >
-              {"Nosso agente cognitivo propriet\u00e1rio que integra d\u00e9cadas de experi\u00eancia com mais de 30 metodologias de refer\u00eancia em vendas, posicionamento e arquitetura de receita."}
+              {"Nosso agente cognitivo proprietário que integra décadas de experiência com mais de 30 metodologias de referência em vendas, posicionamento e arquitetura de receita."}
             </motion.p>
           </motion.div>
         </div>

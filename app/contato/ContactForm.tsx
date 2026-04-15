@@ -9,7 +9,7 @@ import { getWhatsAppUrl } from '@/lib/constants'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 
 const COMPANY_SIZES = [
-  'At\u00e9 5 pessoas',
+  'Até 5 pessoas',
   '6 a 20 pessoas',
   '21 a 50 pessoas',
   '51 a 200 pessoas',
@@ -17,8 +17,8 @@ const COMPANY_SIZES = [
 ] as const
 
 const INTERESTS = [
-  'Diagn\u00f3stico CORTEX B2B\u2122',
-  'Projeto Estrat\u00e9gico de Engenharia de Receita',
+  'Diagnóstico CORTEX B2B™',
+  'Projeto Estratégico de Engenharia de Receita',
   'Advisor de Receita',
   'Quero entender melhor antes de decidir',
 ] as const
@@ -38,7 +38,7 @@ export function ContactForm() {
 
     // 1. Abre WhatsApp imediatamente (síncrono — antes de qualquer await)
     const whatsappText = [
-      `*Contato via Site \u2014 Synapse B2B*`,
+      `*Contato via Site — Synapse B2B*`,
       ``,
       `*Nome:* ${name}`,
       `*Email:* ${email}`,
@@ -77,7 +77,7 @@ export function ContactForm() {
               Mensagem enviada!
             </h2>
             <p className="text-white/60 text-base leading-relaxed mb-6">
-              {"Sua mensagem foi direcionada para o WhatsApp de J\u00falio Figueiredo. Ele vai retornar o mais r\u00e1pido poss\u00edvel."}
+              {"Sua mensagem foi direcionada para o WhatsApp de Júlio Figueiredo. Ele vai retornar o mais rápido possível."}
             </p>
             <a
               href="/"
@@ -125,7 +125,7 @@ export function ContactForm() {
             variants={fadeInUp}
             className="text-base md:text-lg text-[#CCD6E0] leading-relaxed max-w-2xl"
           >
-            {"Preencha o formul\u00e1rio abaixo. As informa\u00e7\u00f5es v\u00e3o direto para o WhatsApp de J\u00falio Figueiredo. Sem intermedi\u00e1rios."}
+            {"Preencha o formulário abaixo. As informações vão direto para o WhatsApp de Júlio Figueiredo. Sem intermediários."}
           </motion.p>
         </motion.div>
 
@@ -246,7 +246,7 @@ export function ContactForm() {
           <div className="mt-6 flex items-center justify-center gap-2 text-white/30">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             <span className="text-[11px] tracking-wide">
-              {"Suas informa\u00e7\u00f5es v\u00e3o direto para J\u00falio. Sem spam, sem intermedi\u00e1rios."}
+              {"Suas informações vão direto para Júlio. Sem spam, sem intermediários."}
             </span>
           </div>
         </motion.form>

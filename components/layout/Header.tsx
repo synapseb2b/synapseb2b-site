@@ -60,7 +60,7 @@ export function Header() {
               href="#diagnostico"
               className="bg-primary hover:bg-primary-hover text-white rounded-full px-6 py-2.5 text-sm font-bold transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50"
             >
-              {"Iniciar Diagn\u00f3stico CORTEX B2B\u2122"}
+              {"Iniciar Diagnóstico CORTEX B2B™"}
             </Link>
           </div>
 
@@ -123,7 +123,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="bg-primary text-white px-8 py-4 rounded-full text-lg font-bold shadow-[0_0_30px_rgba(74,144,217,0.4)]"
                 >
-                  {"Iniciar Diagn\u00f3stico CORTEX B2B\u2122"}
+                  {"Iniciar Diagnóstico CORTEX B2B™"}
                 </Link>
               </motion.div>
             </nav>

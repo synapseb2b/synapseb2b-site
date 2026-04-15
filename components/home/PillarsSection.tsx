@@ -8,21 +8,21 @@ import { SynapseBackground } from '@/components/ui/SynapseBackground'
 const pillars = [
   {
     number: '01',
-    title: 'Tradu\u00e7\u00e3o de Valor',
+    title: 'Tradução de Valor',
     description:
-      'A forma como sua empresa comunica o que faz n\u00e3o acompanha a profundidade do que entrega. N\u00f3s reconstru\u00edmos essa resposta. Extra\u00edmos a intelig\u00eancia que j\u00e1 existe na opera\u00e7\u00e3o e transformamos tudo em narrativa que o mercado entende, confia e paga o que vale.',
+      'A forma como sua empresa comunica o que faz não acompanha a profundidade do que entrega. Nós reconstruímos essa resposta. Extraímos a inteligência que já existe na operação e transformamos tudo em narrativa que o mercado entende, confia e paga o que vale.',
   },
   {
     number: '02',
     title: 'Design de Receita',
     description:
-      'Entre o que sua empresa fatura hoje e o que deveria faturar, existe um gap mensur\u00e1vel. Ele aparece na base de clientes, nos segmentos adjacentes, na precifica\u00e7\u00e3o e nas conex\u00f5es que ningu\u00e9m mapeou. Nosso trabalho \u00e9 encontrar esse gap e construir a arquitetura para captur\u00e1-lo.',
+      'Entre o que sua empresa fatura hoje e o que deveria faturar, existe um gap mensurável. Ele aparece na base de clientes, nos segmentos adjacentes, na precificação e nas conexões que ninguém mapeou. Nosso trabalho é encontrar esse gap e construir a arquitetura para capturá-lo.',
   },
   {
     number: '03',
     title: 'Arquitetura Comercial',
     description:
-      'Posicionamento que diferencia, cliente ideal que qualifica, modelo de vendas que n\u00e3o depende de improviso e playbook que qualquer pessoa na opera\u00e7\u00e3o consegue seguir. A funda\u00e7\u00e3o que substitui a inconst\u00e2ncia por um sistema que gera resultado com consist\u00eancia.',
+      'Posicionamento que diferencia, cliente ideal que qualifica, modelo de vendas que não depende de improviso e playbook que qualquer pessoa na operação consegue seguir. A fundação que substitui a inconstância por um sistema que gera resultado com consistência.',
   },
 ]
 
@@ -110,7 +110,7 @@ export function PillarsSection() {
             className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
           >
             <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              {"Os Tr\u00eas Pilares"}
+              {"Os Três Pilares"}
             </span>
           </motion.div>
 
@@ -118,10 +118,10 @@ export function PillarsSection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
           >
-            {"Compet\u00eancia t\u00e9cnica sem arquitetura"}
+            {"Competência técnica sem arquitetura"}
             <br className="hidden md:block" />
             <span className="text-primary">
-              {"\u00e9 potencial desperdi\u00e7ado."}
+              {"é potencial desperdiçado."}
             </span>
           </motion.h2>
         </motion.div>

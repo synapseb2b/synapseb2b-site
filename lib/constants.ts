@@ -31,18 +31,18 @@ export const NAV_ITEMS = [
 export const AUTHORITY_BRANDS = ['Google', 'Microsoft', 'Dell', 'TOTVS'] as const
 
 export const BIG_NUMBERS = [
-  { value: 100, suffix: '%', label: 'Ocupa\u00e7\u00e3o F\u00edsica' },
+  { value: 100, suffix: '%', label: 'Ocupação Física' },
   { value: 28, prefix: '+', suffix: '%', label: 'Faturamento Mensal' },
-  { value: 167, prefix: '+', suffix: '%', label: 'Eventos no Audit\u00f3rio' },
+  { value: 167, prefix: '+', suffix: '%', label: 'Eventos no Auditório' },
   { value: 3, suffix: ' meses', label: 'Para atingir esses resultados' },
 ] as const
 
 export const DIAGNOSTIC_QUESTIONS = [
-  'Se um cliente indicasse sua empresa para algu\u00e9m, o que ele diria?',
-  'Qual \u00e9 a maior venda que voc\u00ea j\u00e1 fez e por que ela aconteceu?',
-  'De onde vieram seus \u00faltimos 5 clientes?',
+  'Se um cliente indicasse sua empresa para alguém, o que ele diria?',
+  'Qual é a maior venda que você já fez e por que ela aconteceu?',
+  'De onde vieram seus últimos 5 clientes?',
   'O que sua empresa faz e para quem?',
-  'O que te trouxe at\u00e9 aqui?',
+  'O que te trouxe até aqui?',
 ] as const
 
 export function getWhatsAppUrl(message: string) {

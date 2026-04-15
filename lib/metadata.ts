@@ -37,41 +37,41 @@ export function generateJsonLd() {
       {
         '@type': 'Person',
         '@id': `${SITE_URL}/#person`,
-        name: 'J\u00falio Figueiredo',
+        name: 'Júlio Figueiredo',
         jobTitle: 'Fundador',
         worksFor: { '@id': `${SITE_URL}/#organization` },
         description:
-          'Duas d\u00e9cadas em ecossistemas como Google, Microsoft, Dell e TOTVS. Fundador da Synapse B2B e criador da Engenharia de Receita\u2122 e do CORTEX B2B\u2122.',
+          'Duas décadas em ecossistemas como Google, Microsoft, Dell e TOTVS. Fundador da Synapse B2B e criador da Engenharia de Receita™ e do CORTEX B2B™.',
       },
       {
         '@type': 'ProfessionalService',
         '@id': `${SITE_URL}/#service`,
-        name: 'Engenharia de Receita\u2122',
+        name: 'Engenharia de Receita™',
         provider: { '@id': `${SITE_URL}/#organization` },
-        serviceType: 'Consultoria Estrat\u00e9gica B2B',
+        serviceType: 'Consultoria Estratégica B2B',
         areaServed: 'BR',
         description:
-          'Disciplina que transforma compet\u00eancia t\u00e9cnica em receita previs\u00edvel. Posicionamento, narrativa, processo comercial e ativos digitais integrados.',
+          'Disciplina que transforma competência técnica em receita previsível. Posicionamento, narrativa, processo comercial e ativos digitais integrados.',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Servi\u00e7os de Engenharia de Receita',
+          name: 'Serviços de Engenharia de Receita',
           itemListElement: [
             {
               '@type': 'Offer',
-              name: 'Diagn\u00f3stico CORTEX B2B\u2122',
+              name: 'Diagnóstico CORTEX B2B™',
               description: 'Leitura completa do sistema de receita. Clareza em 30 dias.',
               url: `${SITE_URL}/#entregas`,
             },
             {
               '@type': 'Offer',
-              name: 'Projeto Estrat\u00e9gico de Engenharia de Receita',
-              description: 'Constru\u00e7\u00e3o completa do sistema de receita em 3 a 5 semanas.',
+              name: 'Projeto Estratégico de Engenharia de Receita',
+              description: 'Construção completa do sistema de receita em 3 a 5 semanas.',
               url: `${SITE_URL}/#entregas`,
             },
             {
               '@type': 'Offer',
               name: 'Advisor de Receita',
-              description: 'Crescimento cont\u00ednuo p\u00f3s-projeto com sess\u00f5es estrat\u00e9gicas recorrentes.',
+              description: 'Crescimento contínuo pós-projeto com sessões estratégicas recorrentes.',
               url: `${SITE_URL}/#entregas`,
             },
           ],
@@ -85,7 +85,7 @@ export function generateJsonLd() {
           name: q,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Esta \u00e9 uma das 5 perguntas do Diagn\u00f3stico Synapse B2B. Ao respond\u00ea-la, o CORTEX B2B\u2122 processa sua resposta e J\u00falio Figueiredo entrega uma an\u00e1lise personalizada no mesmo dia. Inicie seu diagn\u00f3stico em ${SITE_URL}`,
+            text: `Esta é uma das 5 perguntas do Diagnóstico Synapse B2B. Ao respondê-la, o CORTEX B2B™ processa sua resposta e Júlio Figueiredo entrega uma análise personalizada no mesmo dia. Inicie seu diagnóstico em ${SITE_URL}`,
           },
         })),
       },

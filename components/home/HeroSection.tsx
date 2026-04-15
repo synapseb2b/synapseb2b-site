@@ -41,14 +41,14 @@ export function HeroSection() {
             variants={fadeInLeft}
             className="hero-headline max-w-5xl mb-6 md:mb-8"
           >
-            {"Sua compet\u00eancia"}
+            {"Sua competência"}
             <br className="md:hidden" />
-            {" j\u00e1 \u00e9 inquestion\u00e1vel."}
+            {" já é inquestionável."}
             <br className="hidden lg:block" />
             <span className="text-primary">
               {" Tornamos ela"}
               <br className="md:hidden" />
-              {" inevit\u00e1vel."}
+              {" inevitável."}
             </span>
           </motion.h1>
 
@@ -57,9 +57,9 @@ export function HeroSection() {
             variants={fadeInUp}
             className="text-base md:text-lg lg:text-xl text-[#CCD6E0] leading-relaxed mb-10 md:mb-16 max-w-xl md:max-w-2xl lg:max-w-3xl font-normal"
           >
-            {"Entre o que sua empresa faz de verdade e o que o mercado consegue enxergar, existem oportunidades que ningu\u00e9m organizou e conex\u00f5es que ningu\u00e9m fez ainda. "}
+            {"Entre o que sua empresa faz de verdade e o que o mercado consegue enxergar, existem oportunidades que ninguém organizou e conexões que ninguém fez ainda. "}
             <span className="text-white font-medium">
-              {"N\u00f3s encontramos as duas coisas."}
+              {"Nós encontramos as duas coisas."}
             </span>
           </motion.p>
 
@@ -75,7 +75,7 @@ export function HeroSection() {
                 className="group relative inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-6 pr-2 py-2 md:pl-8 md:pr-2 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:shadow-primary/50 hover:-translate-y-1"
               >
                 <span className="text-sm md:text-base font-bold tracking-tight">
-                  {"Iniciar Diagn\u00f3stico CORTEX B2B\u2122"}
+                  {"Iniciar Diagnóstico CORTEX B2B™"}
                 </span>
                 <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 stroke-[2.5px]" />
@@ -89,7 +89,7 @@ export function HeroSection() {
             {/* Right side text */}
             <div className="hidden md:block max-w-[220px] lg:max-w-xs text-right">
               <p className="text-xs lg:text-sm text-[#F8F9FA] leading-relaxed font-light tracking-wide">
-                {"Experi\u00eancia acumulada em ecossistemas Google, Microsoft, Dell e TOTVS."}
+                {"Experiência acumulada em ecossistemas Google, Microsoft, Dell e TOTVS."}
               </p>
             </div>
           </motion.div>

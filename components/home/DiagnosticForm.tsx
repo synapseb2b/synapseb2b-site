@@ -9,11 +9,11 @@ import { fadeInUp } from '@/lib/animations'
 const WHATSAPP_NUMBER = '5531992878578'
 
 const QUESTIONS = [
-  'Se um cliente indicasse sua empresa para algu\u00e9m, o que ele diria?',
-  'Qual \u00e9 a maior venda que voc\u00ea j\u00e1 fez e por que ela aconteceu?',
-  'De onde vieram seus \u00faltimos 5 clientes?',
+  'Se um cliente indicasse sua empresa para alguém, o que ele diria?',
+  'Qual é a maior venda que você já fez e por que ela aconteceu?',
+  'De onde vieram seus últimos 5 clientes?',
   'O que sua empresa faz e para quem?',
-  'O que te trouxe at\u00e9 aqui?',
+  'O que te trouxe até aqui?',
 ]
 
 const inputClass =
@@ -34,7 +34,7 @@ export function DiagnosticForm() {
 
   function handleSubmit() {
     const msg = [
-      `*An\u00e1lise CORTEX B2B\u2122*`,
+      `*Análise CORTEX B2B™*`,
       ``,
       `*Nome:* ${nome}`,
       `*Empresa:* ${empresa}`,
@@ -66,7 +66,7 @@ export function DiagnosticForm() {
           Pronto. Suas respostas foram enviadas.
         </h3>
         <p className="text-white/60 text-sm leading-relaxed">
-          {"J\u00falio vai revisar e calibrar. Sua an\u00e1lise personalizada volta no mesmo dia."}
+          {"Júlio vai revisar e calibrar. Sua análise personalizada volta no mesmo dia."}
         </p>
       </motion.div>
     )
@@ -83,7 +83,7 @@ export function DiagnosticForm() {
       {/* Identification fields */}
       <div className="space-y-4 mb-10">
         <p className="text-primary text-[10px] font-bold uppercase tracking-widest mb-6">
-          Identifica\u00e7\u00e3o
+          Identificação
         </p>
         <input
           type="text"
@@ -111,7 +111,7 @@ export function DiagnosticForm() {
       {/* Questions */}
       <div className="space-y-8 mb-10">
         <p className="text-primary text-[10px] font-bold uppercase tracking-widest">
-          Perguntas estrat\u00e9gicas
+          Perguntas estratégicas
         </p>
         {QUESTIONS.map((q, i) => (
           <div key={i}>
@@ -140,7 +140,7 @@ export function DiagnosticForm() {
         className="w-full inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary-hover text-white py-4 rounded-full font-bold text-sm transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shadow-[0_0_30px_rgba(74,144,217,0.25)]"
       >
         <WhatsAppIcon size={18} />
-        Enviar para an\u00e1lise
+        Enviar para análise
       </button>
 
       {/* Trust */}
@@ -150,7 +150,7 @@ export function DiagnosticForm() {
           <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
         </svg>
         <span className="text-[11px] tracking-wide">
-          Suas respostas s\u00e3o confidenciais. An\u00e1lise personalizada no mesmo dia.
+          Suas respostas são confidenciais. Análise personalizada no mesmo dia.
         </span>
       </div>
     </motion.div>

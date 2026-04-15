@@ -8,7 +8,7 @@ import { SynapseBackground } from '@/components/ui/SynapseBackground'
 const milestones = [
   { year: '2005+', text: 'Google, Microsoft, Dell, TOTVS' },
   { year: '2023', text: '25 executivos, sede do Google em NY' },
-  { year: '2025', text: 'Synapse B2B, Engenharia de Receita\u2122' },
+  { year: '2025', text: 'Synapse B2B, Engenharia de Receita™' },
 ]
 
 export function AboutSection() {
@@ -28,7 +28,7 @@ export function AboutSection() {
             className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
           >
             <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              {"Quem est\u00e1 por tr\u00e1s"}
+              {"Quem está por trás"}
             </span>
           </motion.div>
 
@@ -40,7 +40,7 @@ export function AboutSection() {
                 variants={fadeInUp}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6"
               >
-                {"J\u00falio"}
+                {"Júlio"}
                 <br />
                 <span className="text-primary">Figueiredo.</span>
               </motion.h2>
@@ -59,7 +59,7 @@ export function AboutSection() {
               >
                 <Image
                   src="/image/julio-google-ny.jpeg"
-                  alt={"J\u00falio Figueiredo liderando executivos na sede do Google em Nova York"}
+                  alt={"Júlio Figueiredo liderando executivos na sede do Google em Nova York"}
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
@@ -71,7 +71,7 @@ export function AboutSection() {
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                   <p className="text-white/50 text-[11px] tracking-wide">
-                    {"Google NY, 2023 \u2014 25 executivos de TI"}
+                    {"Google NY, 2023 — 25 executivos de TI"}
                   </p>
                 </div>
               </motion.div>
@@ -82,19 +82,19 @@ export function AboutSection() {
               <motion.div variants={fadeInUp}>
                 <div className="space-y-8 text-white/50 text-base md:text-lg leading-relaxed">
                   <p>
-                    {"Duas d\u00e9cadas em ecossistemas como Google, Microsoft, Dell e TOTVS. N\u00e3o como vendedor. Como o profissional que sentava do lado do cliente e descobria junto o que ele ainda n\u00e3o enxergava."}
+                    {"Duas décadas em ecossistemas como Google, Microsoft, Dell e TOTVS. Não como vendedor. Como o profissional que sentava do lado do cliente e descobria junto o que ele ainda não enxergava."}
                   </p>
                   <p>
-                    {"Consultividade, criatividade e o olhar que conecta pontos que ningu\u00e9m mais conectou."}
+                    {"Consultividade, criatividade e o olhar que conecta pontos que ninguém mais conectou."}
                   </p>
                   <p>
-                    {"Em agosto de 2023, co-liderando 25 executivos de TI das maiores empresas do Brasil na sede do Google em Nova York, ficou claro que esses talentos tinham um destino maior. Mas ideia sem estrutura \u00e9 s\u00f3 inspira\u00e7\u00e3o."}
+                    {"Em agosto de 2023, co-liderando 25 executivos de TI das maiores empresas do Brasil na sede do Google em Nova York, ficou claro que esses talentos tinham um destino maior. Mas ideia sem estrutura é só inspiração."}
                   </p>
                   <p className="text-white/70">
                     {"Em 2025, a Synapse B2B saiu do papel. Com ela, a "}
-                    <span className="text-primary font-semibold">{"Engenharia de Receita\u2122"}</span>
+                    <span className="text-primary font-semibold">{"Engenharia de Receita™"}</span>
                     {" e o "}
-                    <span className="text-primary font-semibold">{"CORTEX B2B\u2122"}</span>
+                    <span className="text-primary font-semibold">{"CORTEX B2B™"}</span>
                     {"."}
                   </p>
                 </div>

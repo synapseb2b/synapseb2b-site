@@ -7,7 +7,7 @@ import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
 export function WhatsAppFloat() {
   return (
     <motion.a
-      href={getWhatsAppUrl('Ol\u00e1! Visitei o site da Synapse B2B e gostaria de conversar.')}
+      href={getWhatsAppUrl('Olá! Visitei o site da Synapse B2B e gostaria de conversar.')}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
