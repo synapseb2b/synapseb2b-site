@@ -50,15 +50,16 @@ export function DiagnosticForm() {
     if (step > 0) { setDirection(-1); setStep((s) => s - 1) }
   }
 
-  async function handleSubmit() {
-    // 1. Salva no Supabase
-    await submitDiagnostic({ name, email, answers })
-
-    // 2. Abre WhatsApp com as respostas formatadas
+  function handleSubmit() {
+    // 1. Abre WhatsApp imediatamente (síncrono — antes de qualquer await)
     const whatsappMsg = `*Diagn\u00f3stico CORTEX B2B\u2122*\n\n*Nome:* ${name}\n*Email:* ${email}\n\n${DIAGNOSTIC_QUESTIONS.map((q, i) => `*${i + 1}. ${q}*\n${answers[i]}`).join('\n\n')}`
     window.open(getWhatsAppUrl(whatsappMsg), '_blank')
 
+    // 2. Atualiza UI
     setSubmitted(true)
+
+    // 3. Salva no Supabase em background (não bloqueia o fluxo)
+    submitDiagnostic({ name, email, answers }).catch(console.error)
   }
 
   const progress = contactStep ? 100 : ((step + 1) / (totalSteps + 1)) * 100

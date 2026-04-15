@@ -34,13 +34,10 @@ export function ContactForm() {
   const [message, setMessage] = useState('')
   const [sent, setSent] = useState(false)
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
 
-    // 1. Salva no Supabase
-    await submitContact({ name, email, phone, company, size, interest, message })
-
-    // 2. Abre WhatsApp
+    // 1. Abre WhatsApp imediatamente (síncrono — antes de qualquer await)
     const whatsappText = [
       `*Contato via Site \u2014 Synapse B2B*`,
       ``,
@@ -56,7 +53,12 @@ export function ContactForm() {
       .join('\n')
 
     window.open(getWhatsAppUrl(whatsappText), '_blank')
+
+    // 2. Atualiza UI
     setSent(true)
+
+    // 3. Salva no Supabase em background (não bloqueia o fluxo)
+    submitContact({ name, email, phone, company, size, interest, message }).catch(console.error)
   }
 
   const inputClass =
