@@ -5,9 +5,8 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { useAnimatedCounter } from '@/hooks/useAnimatedCounter'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
-import { BIG_NUMBERS, TRUST_CLIENTS } from '@/lib/constants'
+import { BIG_NUMBERS } from '@/lib/constants'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
-import { LogoMarquee } from '@/components/ui/LogoMarquee'
 
 function CounterCard({
   value,
@@ -112,13 +111,6 @@ export function SocialProofSection() {
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
-        {/* Client logos marquee */}
-        <div className="mt-16 md:mt-20 pt-10 border-t border-white/[0.08]">
-          <p className="text-center text-[#CCD6E0] text-xs uppercase tracking-[0.2em] mb-8">
-            {"Empresas que fecharam a dist\u00e2ncia entre compet\u00eancia e receita."}
-          </p>
-          <LogoMarquee items={[...TRUST_CLIENTS]} speed={35} />
-        </div>
       </div>
     </section>
   )
