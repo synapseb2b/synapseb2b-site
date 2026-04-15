@@ -31,15 +31,15 @@ export function CTASection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-4xl mb-6"
           >
-            {"5 perguntas. "}
+            {"5 perguntas sobre o seu neg\u00f3cio. "}
             <span className="text-primary">{"Uma an\u00e1lise no mesmo dia."}</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="text-base md:text-lg text-white/60 leading-relaxed max-w-2xl"
+            className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl italic"
           >
-            {"Se voc\u00ea n\u00e3o consegue responder com clareza, \u00e9 aqui que sua receita est\u00e1 travando. Clareza que gera receita."}
+            {"Direto ao ponto. Clareza que gera receita."}
           </motion.p>
         </motion.div>
 
