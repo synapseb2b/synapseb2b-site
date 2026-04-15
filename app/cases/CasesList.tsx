@@ -43,6 +43,10 @@ export function CasesList() {
           >
             {"Empresas que redescobriram o pr\u00f3prio potencial com a Synapse B2B."}
           </motion.p>
+
+          <motion.div variants={fadeInUp} className="w-full mt-10">
+            <LogoMarquee items={[...TRUST_CLIENTS]} />
+          </motion.div>
         </motion.div>
 
         {/* Cases list */}
@@ -101,17 +105,6 @@ export function CasesList() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Clients marquee */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <LogoMarquee items={[...TRUST_CLIENTS]} />
         </motion.div>
 
         {/* CTA */}
