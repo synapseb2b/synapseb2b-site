@@ -24,6 +24,7 @@ export const NAV_ITEMS = [
   { label: 'O que entregamos', href: '/entregas' },
   { label: 'CORTEX B2B', href: '/cortex-b2b' },
   { label: 'Cases', href: '/cases' },
+  { label: 'Sobre', href: '/sobre' },
   { label: 'Contato', href: '/contato' },
 ] as const
 

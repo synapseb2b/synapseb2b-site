@@ -1,12 +1,18 @@
 import type { Metadata } from 'next'
 import { ContactForm } from './ContactForm'
+import { FAQSection } from '@/components/contato/FAQSection'
 
 export const metadata: Metadata = {
   title: 'Contato',
   description:
-    'Entre em contato com a Synapse B2B. Fale diretamente com Júlio Figueiredo sobre Engenharia de Receita para sua empresa.',
+    'Fale diretamente com Júlio Figueiredo, fundador da Synapse B2B. Formulário inteligente que envia direto para o WhatsApp. Mais respostas para perguntas frequentes sobre o método CORTEX B2B™.',
 }
 
 export default function ContatoPage() {
-  return <ContactForm />
+  return (
+    <>
+      <ContactForm />
+      <FAQSection />
+    </>
+  )
 }
