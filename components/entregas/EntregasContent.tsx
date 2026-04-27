@@ -147,7 +147,7 @@ export function EntregasContent() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="max-w-5xl"
+            className="max-w-6xl"
           >
             <motion.div
               variants={fadeInUp}
@@ -169,7 +169,7 @@ export function EntregasContent() {
 
             <motion.p
               variants={fadeInUp}
-              className="text-base md:text-lg text-white/65 leading-relaxed max-w-3xl"
+              className="text-base md:text-lg text-white/65 leading-relaxed max-w-4xl"
             >
               Três formas de contratar. Três profundidades de transformação. Um único método.
             </motion.p>

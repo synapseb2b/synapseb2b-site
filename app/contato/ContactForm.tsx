@@ -115,14 +115,14 @@ export function ContactForm() {
 
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-4xl mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6"
           >
             Vamos conversar sobre <span className="text-primary">sua receita.</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
-            className="text-base md:text-lg text-[#CCD6E0] leading-relaxed max-w-3xl"
+            className="text-base md:text-lg text-[#CCD6E0] leading-relaxed max-w-4xl"
           >
             {"Preencha o formulário abaixo. As informações vão direto para o WhatsApp de Júlio Figueiredo. Sem intermediários."}
           </motion.p>
