@@ -51,11 +51,11 @@ export function LensCard({
     >
       <div
         className={cn(
-          'relative h-full bg-gradient-to-br from-navy-900/50 to-navy-800/30 backdrop-blur-sm',
-          'border border-primary/15 rounded-2xl overflow-hidden',
+          'relative h-full bg-white/[0.02] backdrop-blur-sm',
+          'border border-white/[0.08] rounded-[2rem] overflow-hidden',
           'transition-all duration-500',
-          'hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(74,144,217,0.15)]',
-          isProcessing && 'border-primary/60 shadow-[0_8px_30px_rgba(74,144,217,0.25)]',
+          'hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)]',
+          isProcessing && 'border-primary/40 shadow-[0_8px_30px_rgba(74,144,217,0.18)]',
           variant === 'compact' ? 'p-6' : 'p-8 md:p-10'
         )}
       >

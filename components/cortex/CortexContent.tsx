@@ -164,25 +164,33 @@ export function CortexContent() {
             </motion.p>
           </motion.div>
 
-          {/* 5 Lens cards (compact preview) */}
+          {/* 5 Lens pills - preview elegante sem repetir o detalhamento abaixo */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-12"
+            className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-12"
           >
-            {LENSES.map((lens, i) => (
-              <LensCard
-                key={lens.number}
-                icon={lens.icon}
-                number={lens.number}
-                title={lens.title.replace('Lente d', 'L. d').replace('Lente da', 'L. da').replace('Lente do', 'L. do')}
-                frameworks={lens.frameworks.split('·').slice(0, 2).join('·')}
-                delay={0.2 + i * 0.08}
-                index={i}
-                variant="compact"
-              />
-            ))}
+            {LENSES.map((lens, i) => {
+              const Icon = lens.icon
+              const shortTitle = lens.title.replace(/^Lente d[oa] /, '')
+              return (
+                <motion.div
+                  key={lens.number}
+                  variants={fadeInUp}
+                  custom={i}
+                  className="group inline-flex items-center gap-2.5 px-5 py-3 rounded-full border border-primary/20 bg-primary/[0.05] backdrop-blur-sm hover:border-primary/50 hover:bg-primary/[0.1] transition-all duration-300"
+                >
+                  <span className="text-primary/70 text-[10px] font-bold tracking-widest font-heading">
+                    {lens.number}
+                  </span>
+                  <Icon className="w-4 h-4 text-primary" />
+                  <span className="text-white text-sm font-semibold tracking-tight">
+                    {shortTitle}
+                  </span>
+                </motion.div>
+              )
+            })}
           </motion.div>
 
           {/* Live indicator + CTA */}
@@ -254,7 +262,7 @@ export function CortexContent() {
               <motion.article
                 key={pillar.number}
                 variants={fadeInUp}
-                className="rounded-[2rem] border border-white/[0.06] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
+                className="rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
               >
                 <p className="text-primary/80 text-3xl font-bold font-heading mb-4">
                   {pillar.number}
@@ -346,7 +354,7 @@ export function CortexContent() {
             transition={{ duration: 0.7 }}
           >
             <div className="px-8 md:px-12 py-10 md:py-14 rounded-[2rem] border border-primary/20 bg-primary/[0.04] mb-12 backdrop-blur-sm">
-              <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-snug text-white tracking-tight">
+              <p className="text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-snug text-white tracking-tight">
                 Quem está dentro da operação não consegue ver o padrão.
                 <br />
                 <span className="text-primary">
