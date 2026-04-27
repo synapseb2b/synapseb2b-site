@@ -232,6 +232,26 @@ export function SobreContent() {
                   Estar naquele epicentro global me trouxe uma clareza irresistível.
                 </p>
               </div>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/juliofigueiredo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/[0.12] bg-white/[0.03] hover:border-primary/40 hover:bg-primary/[0.08] transition-all duration-300 group"
+              >
+                <svg
+                  className="w-4 h-4 text-primary"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                <span className="text-white/85 text-sm font-medium group-hover:text-white transition-colors">
+                  Conecte-se no LinkedIn
+                </span>
+              </a>
             </motion.div>
           </motion.div>
         </div>

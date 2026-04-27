@@ -24,7 +24,7 @@ export function CasesList() {
             className="max-w-5xl"
           >
             <motion.div variants={fadeInUp} className="mb-8">
-              <LiveBadge>Cases</LiveBadge>
+              <LiveBadge>Resultados</LiveBadge>
             </motion.div>
 
             <motion.h1
@@ -255,9 +255,12 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
               href={`https://${caseStudy.url}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-primary text-xs font-medium hover:text-accent-300 transition-colors"
+              className="block text-primary text-xs font-medium hover:text-accent-300 transition-colors leading-relaxed"
             >
-              Site entregue: {caseStudy.url} →
+              <span className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary">
+                Conheça o site da {caseStudy.company}
+              </span>{' '}
+              <span className="text-white/40">desenvolvido pela Synapse B2B →</span>
             </a>
           )}
         </div>
@@ -307,6 +310,20 @@ function CompactCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
             {caseStudy.testimonial.author}, {caseStudy.testimonial.role}
           </footer>
         </blockquote>
+      )}
+
+      {caseStudy.url && (
+        <a
+          href={`https://${caseStudy.url}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block mt-5 text-primary text-xs font-medium hover:text-accent-300 transition-colors leading-relaxed"
+        >
+          <span className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary">
+            Conheça o site da {caseStudy.company}
+          </span>{' '}
+          <span className="text-white/40">desenvolvido pela Synapse B2B →</span>
+        </a>
       )}
 
       {caseStudy.status === 'em-execucao' && (

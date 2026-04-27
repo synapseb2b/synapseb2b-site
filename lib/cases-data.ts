@@ -210,6 +210,32 @@ export const cases: CaseStudy[] = [
     },
   },
   {
+    slug: 'controllertech',
+    company: 'ControllerTech',
+    location: 'Sete Lagoas, MG',
+    tagline: 'Engenharia Financeira com Revenue Playbook.',
+    url: 'controllertech.vercel.app',
+    description:
+      'Operação de controladoria e BPO financeiro reposicionada com Revenue Playbook estruturado, Plano de Comunicação editorial e Kit de Organização Financeira como ativo comercial. Parceria ativada com Édison e o Ecossistema Giornata como canal de referenciação qualificada.',
+    result:
+      'Agenda lotada, contratado por dois negócios que conheceu dentro do ecossistema Synapse.',
+    metrics: [
+      { value: 'Sócio', label: 'Buscando por crescimento' },
+      { value: '2', label: 'Contratos via Ecossistema' },
+    ],
+  },
+  {
+    slug: 'your-office',
+    company: 'Your Office Business Center',
+    location: 'Alphaville e Lapa, SP',
+    tagline: '30 anos de pioneirismo ganhando vocabulário.',
+    status: 'em-execucao',
+    description:
+      'Mais de três décadas entregando algo que nenhum concorrente consegue replicar, em processo de reposicionamento para que o mercado compre no preço que esse valor merece. Ativos de valor extraordinário identificados e nomeados, com Customer Intimacy formalizada como diferencial defensável.',
+    result:
+      'Em execução: ativos de valor extraordinário formalizados, Customer Intimacy como território exclusivo, processo de aprovação reposicionado de operação interna para argumento de venda premium.',
+  },
+  {
     slug: 'thv-projetos',
     company: 'THV Projetos',
     location: 'Belo Horizonte, MG',
@@ -224,32 +250,6 @@ export const cases: CaseStudy[] = [
       author: 'Thiago Vieira',
       role: 'fundador THV Projetos',
     },
-  },
-  {
-    slug: 'your-office',
-    company: 'Your Office Business Center',
-    location: 'Alphaville e Lapa, SP',
-    tagline: '30 anos de pioneirismo ganhando vocabulário.',
-    status: 'em-execucao',
-    description:
-      'Mais de três décadas entregando algo que nenhum concorrente consegue replicar, em processo de reposicionamento para que o mercado compre no preço que esse valor merece. Ativos de valor extraordinário identificados e nomeados, com Customer Intimacy formalizada como diferencial defensável.',
-    result:
-      'Em execução: ativos de valor extraordinário formalizados, Customer Intimacy como território exclusivo, processo de aprovação reposicionado de operação interna para argumento de venda premium.',
-  },
-  {
-    slug: 'controllertech',
-    company: 'ControllerTech',
-    location: 'Sete Lagoas, MG',
-    tagline: 'Engenharia Financeira com Revenue Playbook.',
-    url: 'controllertech.vercel.app',
-    description:
-      'Operação de controladoria e BPO financeiro reposicionada com Revenue Playbook estruturado, Plano de Comunicação editorial e Kit de Organização Financeira como ativo comercial. Parceria ativada com Édison e o Ecossistema Giornata como canal de referenciação qualificada.',
-    result:
-      'Agenda lotada, contratado por dois negócios que conheceu dentro do ecossistema Synapse.',
-    metrics: [
-      { value: 'Sócio', label: 'Buscando por crescimento' },
-      { value: '2', label: 'Contratos via Ecossistema' },
-    ],
   },
   {
     slug: 'monteiro-interiores',

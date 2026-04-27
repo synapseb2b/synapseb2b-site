@@ -181,7 +181,7 @@ export function CasesCarousel() {
           href="/cases"
           className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:text-accent-300 transition-colors group"
         >
-          Ver todos os cases
+          Ver todos os resultados
           <ArrowRight
             size={14}
             className="group-hover:translate-x-1 transition-transform"

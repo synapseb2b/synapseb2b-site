@@ -49,8 +49,8 @@ export function generateJsonLd() {
           name: 'Brasil',
         },
         sameAs: [
-          'https://www.linkedin.com/in/juliofigueiredo',
-          'https://www.instagram.com/synapseb2b',
+          'https://www.linkedin.com/company/synapse-b2b',
+          'https://www.instagram.com/synapseb2b/',
         ],
       },
 
