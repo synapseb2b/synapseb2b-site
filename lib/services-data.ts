@@ -1,5 +1,6 @@
 export interface ServiceFeature {
   text: string
+  badge?: string
 }
 
 export interface Service {
@@ -9,6 +10,7 @@ export interface Service {
   description: string
   features: ServiceFeature[]
   cta: string
+  ctaHref?: string
   featured?: boolean
   note?: string
 }
@@ -17,48 +19,52 @@ export const services: Service[] = [
   {
     id: 'diagnostico',
     name: 'Diagnóstico CORTEX B2B™',
-    subtitle: 'Clareza em 30 dias',
+    subtitle: 'Em 30 dias, clareza',
     description:
-      'Leitura completa do sistema de receita da sua empresa. Maturidade comercial, lacunas de captura, posicionamento e perfil de cliente ideal processados pelo CORTEX B2B™.',
+      'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa. Assessment estratégico, sessão individual de 49 minutos e Relatório Cortex personalizado.',
     features: [
-      { text: 'Sessão individual com análise estratégica' },
-      { text: 'Relatório CORTEX B2B™ personalizado' },
+      { text: 'Assessment Cortex B2B™ pré-sessão' },
+      { text: 'Sessão individual de 49 minutos' },
+      { text: 'Relatório Cortex B2B™ personalizado' },
       { text: 'Plano de ação para 30 dias' },
     ],
     cta: 'Iniciar Diagnóstico',
-    note: 'Funciona como crédito para o Projeto Estratégico.',
+    ctaHref: '/#diagnostico',
+    note: 'Valor convertido em crédito integral no Projeto Estratégico se houver continuidade em até 30 dias.',
   },
   {
     id: 'projeto',
     name: 'Projeto Estratégico de Engenharia de Receita',
-    subtitle: 'Sistema completo em 3 a 5 semanas',
+    subtitle: 'Em 35 dias, sistema completo',
     description:
-      'Construção completa do sistema de receita. Cinco sessões individuais onde cada entrega é um ativo estratégico. Mais acompanhamento nos 90 dias seguintes.',
+      'Construção integral da arquitetura comercial em 5 sessões individuais e 6 ativos estratégicos entregues, com acompanhamento nos 90 dias seguintes para calibrar o sistema enquanto o mercado responde.',
     features: [
-      { text: 'Posicionamento e narrativa de valor' },
-      { text: 'Site estratégico de conversão' },
-      { text: 'Playbook comercial' },
-      { text: 'Plano de comunicação 90 dias' },
-      { text: 'Apresentação comercial' },
-      { text: 'Ferramentas estratégicas sob medida' },
-      { text: 'Acompanhamento pós-sprint (90 dias)' },
+      { text: '5 sessões individuais de 49 minutos' },
+      { text: '6 ativos estratégicos entregues' },
+      { text: '5 devolutivas construídas pelo Cortex B2B™' },
+      { text: '3 sessões de acompanhamento em 90 dias' },
+      { text: 'Variante para Ecossistemas (múltiplas linhas de receita)' },
     ],
     cta: 'Começar Projeto',
+    ctaHref: '/#diagnostico',
     featured: true,
-    note: 'Inclui participação sobre receita nova gerada. Resultado desde a primeira sessão.',
+    note: 'Pode incluir Skin in the Game (variável atrelada à receita nova gerada).',
   },
   {
     id: 'advisor',
-    name: 'Advisor de Receita',
-    subtitle: 'Crescimento contínuo pós-projeto',
+    name: 'Advisor Estratégico',
+    subtitle: 'Sparring contínuo',
     description:
-      'Quando o sistema começa a gerar resultado, novas alavancas aparecem. O Advisor existe para identificá-las: recalibrar o posicionamento conforme o mercado responde, otimizar os ativos que já estão rodando e garantir que cada ciclo de crescimento alimente o próximo.',
+      'O terceiro tempo da Engenharia de Receita. Sustenta o método em operação enquanto o mercado responde ao novo posicionamento. Para clientes que concluíram o Projeto e querem continuidade estendida.',
     features: [
-      { text: 'Sessões estratégicas recorrentes' },
-      { text: 'Revisão e otimização de ativos' },
-      { text: 'Monitoramento de métricas de receita' },
-      { text: 'Identificação de novas alavancas de crescimento' },
+      { text: 'Pacote mensal de horas de consultoria sparring' },
+      { text: 'Apoio na execução do Mapa de Receita' },
+      { text: 'Calibragem de cadência das ações de comunicação' },
+      { text: 'Sessões sob demanda para decisões importantes' },
+      { text: 'Acesso ao Cortex B2B™ para consultas direcionadas', badge: 'em breve' },
+      { text: 'Revisão de ativos comerciais quando aplicável' },
     ],
     cta: 'Conhecer o Advisor',
+    ctaHref: '/#diagnostico',
   },
 ]

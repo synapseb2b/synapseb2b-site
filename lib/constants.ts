@@ -1,29 +1,28 @@
 export const SITE_URL = 'https://synapseb2b.com'
 export const SITE_NAME = 'Synapse B2B'
 export const SITE_DESCRIPTION =
-  'Engenharia de Receita para empresas B2B de alta complexidade. Posicionamento, narrativa, processo comercial e ativos digitais integrados.'
+  'Engenharia de Receita para empresas B2B. Entre o que sua empresa faz de verdade e o que o mercado consegue enxergar, existem oportunidades que ninguem organizou e conexoes que ninguem fez ainda. Encontramos as duas coisas.'
 
 export const WHATSAPP_NUMBER = '553139586192'
 export const GA_ID = 'G-Y1HMBX253J'
 
 export const TRUST_CLIENTS = [
   'Mr. Job Hub',
-  'Giornata Empresas',
   'JB Soluttions',
-  'Controllertech',
+  'Giornata Empresas',
+  'ControllerTech',
   'Fast Club Run',
   'THV Projetos',
   'Monteiro Interiores',
+  'Your Office Business Center',
   'VH Health',
   'Exclusiva Engenharias',
-  'TOTTEC',
   'Way Sistemas',
 ] as const
 
 export const NAV_ITEMS = [
-  { label: 'Pilares', href: '#pilares' },
-  { label: 'O que entregamos', href: '#entregas' },
-  { label: 'CORTEX B2B', href: '#cortex' },
+  { label: 'O que entregamos', href: '/entregas' },
+  { label: 'CORTEX B2B', href: '/cortex-b2b' },
   { label: 'Cases', href: '/cases' },
   { label: 'Contato', href: '/contato' },
 ] as const
@@ -37,12 +36,19 @@ export const BIG_NUMBERS = [
   { value: 3, suffix: ' meses', label: 'Para atingir esses resultados' },
 ] as const
 
+// Diagnostic v6 - 3 perguntas conversacionais
 export const DIAGNOSTIC_QUESTIONS = [
-  'Se um cliente indicasse sua empresa para alguém, o que ele diria?',
-  'Qual é a maior venda que você já fez e por que ela aconteceu?',
-  'De onde vieram seus últimos 5 clientes?',
-  'O que sua empresa faz e para quem?',
-  'O que te trouxe até aqui?',
+  'O que a sua empresa faz e qual o faturamento mensal aproximado?',
+  'Hoje, como os seus clientes chegam até você?',
+  'O que te trouxe aqui hoje?',
+] as const
+
+export const FATURAMENTO_OPTIONS = [
+  'Abaixo de R$ 30.000',
+  'R$ 30.000 a R$ 50.000',
+  'R$ 50.000 a R$ 150.000',
+  'R$ 150.000 a R$ 300.000',
+  'Acima de R$ 300.000',
 ] as const
 
 export function getWhatsAppUrl(message: string) {

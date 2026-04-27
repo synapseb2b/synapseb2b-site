@@ -12,10 +12,10 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Synapse B2B. Todos os direitos reservados.
           </p>
         </div>
-        <nav className="flex items-center gap-8">
+        <nav className="flex flex-wrap items-center gap-x-8 gap-y-3">
           {[
-            { label: 'Pilares', href: '#pilares' },
-            { label: 'O que entregamos', href: '#entregas' },
+            { label: 'O que entregamos', href: '/entregas' },
+            { label: 'CORTEX B2B', href: '/cortex-b2b' },
             { label: 'Cases', href: '/cases' },
             { label: 'Contato', href: '/contato' },
           ].map((item) => (

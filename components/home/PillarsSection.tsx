@@ -10,19 +10,19 @@ const pillars = [
     number: '01',
     title: 'Tradução de Valor',
     description:
-      'A forma como sua empresa comunica o que faz não acompanha a profundidade do que entrega. Nós reconstruímos essa resposta. Extraímos a inteligência que já existe na operação e transformamos tudo em narrativa que o mercado entende, confia e paga o que vale.',
+      'A distância entre o que sua empresa entrega e o que o mercado entende custa receita todos os meses. Fechamos essa distância. O que antes era interpretado como mais uma opção passa a ser reconhecido pelo que de fato é, e o preço acompanha.',
   },
   {
     number: '02',
     title: 'Design de Receita',
     description:
-      'Entre o que sua empresa fatura hoje e o que deveria faturar, existe um gap mensurável. Ele aparece na base de clientes, nos segmentos adjacentes, na precificação e nas conexões que ninguém mapeou. Nosso trabalho é encontrar esse gap e construir a arquitetura para capturá-lo.',
+      'Receita gerada só por indicação tem teto. Quando a empresa atinge esse teto, a reação comum é culpar o comercial. O diagnóstico costuma ser outro: falta arquitetura. Quando o sistema existe, a receita para de depender de quem está de plantão e passa a depender de como o funil foi desenhado.',
   },
   {
     number: '03',
     title: 'Arquitetura Comercial',
     description:
-      'Posicionamento que diferencia, cliente ideal que qualifica, modelo de vendas que não depende de improviso e playbook que qualquer pessoa na operação consegue seguir. A fundação que substitui a inconstância por um sistema que gera resultado com consistência.',
+      'Conhecimento distribuído entre cabeça do fundador, experiência do time e relações com clientes precisa virar sistema consultável. Mapa de Receita, deck, site e plano de comunicação formam a camada onde esse conhecimento se formaliza. O que dependia de quem estivesse presente passa a estar disponível para qualquer pessoa da empresa.',
   },
 ]
 
@@ -118,12 +118,19 @@ export function PillarsSection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
           >
-            {"Competência técnica sem arquitetura"}
+            Competência existe no fundador, no time e no negócio.
             <br className="hidden md:block" />
             <span className="text-primary">
-              {"é potencial desperdiçado."}
+              Arquitetura é o que transforma competência em receita.
             </span>
           </motion.h2>
+
+          <motion.p
+            variants={fadeInUp}
+            className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-2xl"
+          >
+            Um método. Três camadas. Seis ativos em operação.
+          </motion.p>
         </motion.div>
 
         {/* Steps */}

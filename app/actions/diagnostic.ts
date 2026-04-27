@@ -10,6 +10,9 @@ const supabase = createClient(
 interface DiagnosticSubmission {
   name: string
   email: string
+  phone: string
+  company: string
+  faturamento: string
   answers: string[]
 }
 
@@ -18,11 +21,12 @@ export async function submitDiagnostic(data: DiagnosticSubmission) {
     const { error } = await supabase.from('diagnosticos').insert({
       nome: data.name,
       email: data.email,
+      telefone: data.phone,
+      empresa: data.company,
+      faturamento: data.faturamento,
       pergunta_1: data.answers[0] || '',
       pergunta_2: data.answers[1] || '',
       pergunta_3: data.answers[2] || '',
-      pergunta_4: data.answers[3] || '',
-      pergunta_5: data.answers[4] || '',
       criado_em: new Date().toISOString(),
     })
 

@@ -68,19 +68,28 @@ export function HeroSection() {
             variants={fadeInUp}
             className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-10"
           >
-            {/* CTA + micro-copy */}
+            {/* CTAs (primario + secundario) + micro-copy */}
             <div className="flex flex-col gap-3">
-              <a
-                href="#diagnostico"
-                className="group relative inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-6 pr-2 py-2 md:pl-8 md:pr-2 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:shadow-primary/50 hover:-translate-y-1"
-              >
-                <span className="text-sm md:text-base font-bold tracking-tight">
-                  {"Iniciar Diagnóstico CORTEX B2B™"}
-                </span>
-                <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 stroke-[2.5px]" />
-                </span>
-              </a>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <a
+                  href="#diagnostico"
+                  className="group relative inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-6 pr-2 py-2 md:pl-8 md:pr-2 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:shadow-primary/50 hover:-translate-y-1"
+                >
+                  <span className="text-sm md:text-base font-bold tracking-tight">
+                    {"Iniciar Diagnóstico CORTEX B2B™"}
+                  </span>
+                  <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 stroke-[2.5px]" />
+                  </span>
+                </a>
+                <a
+                  href="#resultados"
+                  className="group inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium px-4 py-3 rounded-full border border-white/[0.12] hover:border-white/[0.3] transition-all duration-300"
+                >
+                  Ver resultados reais
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
               <p className="text-[11px] text-white tracking-wide pl-1">
                 Direto ao Ponto. Clareza que gera receita.
               </p>

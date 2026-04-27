@@ -101,7 +101,14 @@ export function DeliverablesSection() {
                     )}>
                       <Check className="w-3 h-3" />
                     </div>
-                    <span className="text-white/50 text-sm leading-relaxed">{f.text}</span>
+                    <span className="text-white/60 text-sm leading-relaxed flex-1">
+                      {f.text}
+                      {f.badge && (
+                        <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-[9px] font-bold uppercase tracking-wider align-middle">
+                          {f.badge}
+                        </span>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>

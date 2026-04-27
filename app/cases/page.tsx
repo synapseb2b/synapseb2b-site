@@ -4,7 +4,7 @@ import { CasesList } from './CasesList'
 export const metadata: Metadata = {
   title: 'Cases',
   description:
-    'Resultados reais de empresas que decodificaram seu valor com a Synapse B2B. Cases de Engenharia de Receita.',
+    'Empresas que potencializaram o próprio potencial com a Synapse B2B. 11 cases de Engenharia de Receita aplicada.',
 }
 
 export default function CasesPage() {

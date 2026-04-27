@@ -1,12 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import { useAnimatedCounter } from '@/hooks/useAnimatedCounter'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { BIG_NUMBERS } from '@/lib/constants'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { CasesCarousel } from './CasesCarousel'
 
 function CounterCard({
   value,
@@ -35,12 +34,15 @@ function CounterCard({
 
 export function SocialProofSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-navy-900/30 border-t border-white/[0.06] overflow-hidden">
+    <section
+      id="resultados"
+      className="relative py-24 md:py-32 bg-navy-900/30 border-t border-white/[0.06] overflow-hidden"
+    >
       <SynapseBackground particleCount={25} connectionDistance={170} opacity={0.09} speed={0.2} />
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
         {/* Header */}
         <motion.div
-          className="flex flex-col items-center text-center mb-16 md:mb-24"
+          className="flex flex-col items-center text-center mb-16 md:mb-20"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -51,7 +53,7 @@ export function SocialProofSection() {
             className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
           >
             <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              Resultado Real
+              Resultados Reais
             </span>
           </motion.div>
 
@@ -59,20 +61,18 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
           >
-            {"De coworking a Hub de Negócios e Bem-Estar Corporativo."}
-            <br className="hidden md:block" />
-            <span className="text-primary">{"Em pouco mais de 3 meses."}</span>
+            Cases que <span className="text-primary">falam por si.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-2xl"
           >
-            {"Mr. Job Hub — Resultado real de um projeto de Engenharia de Receita."}
+            Mr. Job Hub &mdash; Resultado real de um projeto de Engenharia de Receita.
           </motion.p>
         </motion.div>
 
-        {/* Numbers Grid */}
+        {/* Numbers Grid - Mr Job hero case */}
         <motion.div
           className="grid grid-cols-2 lg:grid-cols-4"
           variants={staggerContainer}
@@ -95,22 +95,8 @@ export function SocialProofSection() {
           ))}
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-12 flex justify-center"
-        >
-          <Link
-            href="/cases"
-            className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:text-accent-300 transition-colors group"
-          >
-            Ver todos os cases
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
+        {/* Carrossel de cases adicionais (JB, Giornata, Marcato) */}
+        <CasesCarousel />
       </div>
     </section>
   )

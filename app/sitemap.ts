@@ -1,21 +1,26 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/constants'
-import { cases } from '@/lib/cases-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const caseUrls = cases.map((c) => ({
-    url: `${SITE_URL}/cases/${c.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
-
+  // Cases ficam todos na página /cases (sem páginas individuais)
   return [
     {
       url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
+    },
+    {
+      url: `${SITE_URL}/entregas`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/cortex-b2b`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/cases`,
@@ -29,6 +34,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    ...caseUrls,
   ]
 }

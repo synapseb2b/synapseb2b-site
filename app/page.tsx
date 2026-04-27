@@ -12,19 +12,33 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+
+      {/* Trust bar — logo abaixo do hero */}
       <section className="border-b border-white/[0.08] py-10">
         <div className="w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
           <p className="text-center text-[#CCD6E0] text-xs uppercase tracking-[0.2em] mb-8">
-            {"Empresas que fecharam a distância entre competência e receita."}
+            Empresas que potencializaram o próprio potencial com a Synapse B2B
           </p>
-          <LogoMarquee items={[...TRUST_CLIENTS]} speed={15} />
+          <LogoMarquee items={[...TRUST_CLIENTS]} speed={20} />
         </div>
       </section>
+
+      {/* 1. Resultados Reais (Mr Job hero + carrossel JB/Giornata/Marcato) */}
       <SocialProofSection />
-      <PillarsSection />
+
+      {/* 2. O Que Entregamos (Diagnóstico, Projeto, Advisor) — antes dos Pilares */}
       <DeliverablesSection />
+
+      {/* 3. Os Três Pilares */}
+      <PillarsSection />
+
+      {/* 4. CORTEX B2B */}
       <CortexSection />
+
+      {/* 5. Quem está por trás */}
       <AboutSection />
+
+      {/* 6. Direto ao Ponto / Diagnóstico */}
       <CTASection />
     </>
   )
