@@ -5,6 +5,7 @@ import { useAnimatedCounter } from '@/hooks/useAnimatedCounter'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { BIG_NUMBERS } from '@/lib/constants'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 import { CasesCarousel } from './CasesCarousel'
 
 function CounterCard({
@@ -48,13 +49,8 @@ export function SocialProofSection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
-          >
-            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              Resultados Reais
-            </span>
+          <motion.div variants={fadeInUp} className="mb-8">
+            <LiveBadge>Resultados Reais</LiveBadge>
           </motion.div>
 
           <motion.h2

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 import { services } from '@/lib/services-data'
 import { cn } from '@/lib/utils'
 import { getWhatsAppUrl } from '@/lib/constants'
@@ -31,13 +32,8 @@ export function DeliverablesSection() {
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
           >
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
-            >
-              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                O que entregamos
-              </span>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <LiveBadge>O que entregamos</LiveBadge>
             </motion.div>
 
             <motion.h2
@@ -45,7 +41,9 @@ export function DeliverablesSection() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-6xl"
             >
               Três formas de começar.{' '}
-              <span className="text-primary">Escolha a sua.</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+                Escolha a sua.
+              </span>
             </motion.h2>
           </motion.div>
         </div>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Languages, TrendingUp, ShieldCheck } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 
 interface Pillar {
   number: string
@@ -53,20 +54,18 @@ export function PillarsSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
-          >
-            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              Os Três Pilares
-            </span>
+          <motion.div variants={fadeInUp} className="mb-8">
+            <LiveBadge>Os Três Pilares</LiveBadge>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
           >
-            Três Pilares. <span className="text-primary">Um Método.</span>
+            Três Pilares.{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+              Um Método.
+            </span>
           </motion.h2>
 
           <motion.p

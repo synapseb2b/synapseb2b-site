@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 import { cn } from '@/lib/utils'
 
 interface AssetItem {
@@ -149,22 +150,18 @@ export function EntregasContent() {
             animate="visible"
             className="max-w-6xl"
           >
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
-            >
-              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                O que entregamos
-              </span>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <LiveBadge>O que entregamos</LiveBadge>
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8 max-w-7xl"
             >
-              O que fica nas mãos do
-              <br />
-              <span className="text-primary">cliente.</span>
+              O que fica nas mãos do{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+                cliente.
+              </span>
             </motion.h1>
 
             <motion.p

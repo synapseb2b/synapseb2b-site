@@ -6,6 +6,7 @@ import { ArrowRight, ExternalLink, MapPin, Quote } from 'lucide-react'
 import { highlightCases, secondaryCases, type CaseStudy } from '@/lib/cases-data'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 import { cn } from '@/lib/utils'
 
 export function CasesList() {
@@ -22,22 +23,18 @@ export function CasesList() {
             animate="visible"
             className="max-w-5xl"
           >
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
-            >
-              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                Cases
-              </span>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <LiveBadge>Cases</LiveBadge>
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8"
             >
-              Empresas que potencializaram
-              <br />
-              <span className="text-primary">o próprio potencial.</span>
+              Empresas que potencializaram{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+                o próprio potencial.
+              </span>
             </motion.h1>
 
             <motion.p

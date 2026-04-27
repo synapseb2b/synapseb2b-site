@@ -273,7 +273,7 @@ export function CortexContent() {
 
       {/* 5 Lenses deep dive */}
       <section className="relative py-24 md:py-32 overflow-hidden border-t border-white/[0.06]">
-        <NeuralNetworkBackground opacity={0.2} lineCount={15} nodeCount={10} particleCount={15} />
+        <NeuralNetworkBackground opacity={0.2} curveCount={12} nodeCount={10} />
 
         <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
           <motion.div
@@ -336,7 +336,7 @@ export function CortexContent() {
 
       {/* Closing statement + CTA */}
       <section className="relative py-24 md:py-32 border-t border-white/[0.06] overflow-hidden">
-        <NeuralNetworkBackground opacity={0.25} lineCount={20} nodeCount={12} particleCount={20} />
+        <NeuralNetworkBackground opacity={0.25} curveCount={15} nodeCount={12} />
 
         <div className="relative z-10 w-full max-w-[1100px] mx-auto px-6 md:px-12 text-center">
           <motion.div

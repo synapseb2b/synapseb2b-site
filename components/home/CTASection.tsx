@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { DiagnosticForm } from './DiagnosticForm'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 
 export function CTASection() {
   return (
@@ -18,13 +19,8 @@ export function CTASection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8 px-5 py-1.5 border border-primary/50 rounded-full text-primary inline-block"
-          >
-            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              Direto ao ponto
-            </span>
+          <motion.div variants={fadeInUp} className="mb-8">
+            <LiveBadge>Direto ao ponto</LiveBadge>
           </motion.div>
 
           <motion.h2
@@ -33,7 +29,9 @@ export function CTASection() {
           >
             3 perguntas sobre o seu negócio.
             <br />
-            <span className="text-primary">Uma leitura estratégica no mesmo dia.</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+              Uma leitura estratégica.
+            </span>
           </motion.h2>
 
           <motion.p

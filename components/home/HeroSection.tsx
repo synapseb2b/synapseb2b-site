@@ -25,11 +25,15 @@ export function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          {/* Badge */}
+          {/* Badge with live indicator */}
           <motion.div
             variants={fadeInUp}
-            className="mb-6 md:mb-8 inline-flex items-center gap-2 bg-white/[0.06] backdrop-blur-md border border-white/[0.08] px-4 py-2 rounded-full"
+            className="mb-6 md:mb-8 inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-md border border-white/[0.08] px-4 py-2 rounded-full"
           >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+            </span>
             <Sparkles className="w-3.5 h-3.5 text-primary fill-primary" />
             <span className="text-white text-xs md:text-sm font-medium tracking-wide">
               Engenharia de Receita&trade;

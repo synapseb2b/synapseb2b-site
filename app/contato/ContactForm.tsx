@@ -7,6 +7,7 @@ import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { getWhatsAppUrl } from '@/lib/constants'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { LiveBadge } from '@/components/ui/LiveBadge'
 
 const COMPANY_SIZES = [
   'Até 5 pessoas',
@@ -104,20 +105,18 @@ export function ContactForm() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
-          >
-            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              Contato
-            </span>
+          <motion.div variants={fadeInUp} className="mb-8">
+            <LiveBadge>Contato</LiveBadge>
           </motion.div>
 
           <motion.h1
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6"
           >
-            Vamos conversar sobre <span className="text-primary">sua receita.</span>
+            Vamos conversar sobre{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+              sua receita.
+            </span>
           </motion.h1>
 
           <motion.p
