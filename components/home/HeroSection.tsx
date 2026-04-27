@@ -39,7 +39,7 @@ export function HeroSection() {
           {/* H1 */}
           <motion.h1
             variants={fadeInLeft}
-            className="hero-headline max-w-5xl mb-6 md:mb-8"
+            className="hero-headline max-w-6xl mb-6 md:mb-8"
           >
             {"Sua competência"}
             <br className="md:hidden" />
@@ -55,7 +55,7 @@ export function HeroSection() {
           {/* H2 */}
           <motion.p
             variants={fadeInUp}
-            className="text-base md:text-lg lg:text-xl text-[#CCD6E0] leading-relaxed mb-10 md:mb-16 max-w-xl md:max-w-2xl lg:max-w-3xl font-normal"
+            className="text-base md:text-lg lg:text-xl text-[#CCD6E0] leading-relaxed mb-10 md:mb-16 max-w-xl md:max-w-3xl lg:max-w-4xl font-normal"
           >
             {"Entre o que sua empresa faz de verdade e o que o mercado consegue enxergar, existem oportunidades que ninguém organizou e conexões que ninguém fez ainda. "}
             <span className="text-white font-medium">

@@ -42,11 +42,10 @@ export function DeliverablesSection() {
 
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-6xl"
             >
-              {"Três formas de começar."}
-              <br className="hidden md:block" />
-              <span className="text-primary">{"Escolha a sua."}</span>
+              Três formas de começar.{' '}
+              <span className="text-primary">Escolha a sua.</span>
             </motion.h2>
           </motion.div>
         </div>

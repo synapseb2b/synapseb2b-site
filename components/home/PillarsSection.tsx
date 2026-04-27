@@ -1,105 +1,53 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { Languages, TrendingUp, ShieldCheck } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 
-const pillars = [
+interface Pillar {
+  number: string
+  icon: typeof Languages
+  title: string
+  description: string
+}
+
+const pillars: Pillar[] = [
   {
     number: '01',
+    icon: Languages,
     title: 'Tradução de Valor',
     description:
       'A distância entre o que sua empresa entrega e o que o mercado entende custa receita todos os meses. Fechamos essa distância. O que antes era interpretado como mais uma opção passa a ser reconhecido pelo que de fato é, e o preço acompanha.',
   },
   {
     number: '02',
+    icon: TrendingUp,
     title: 'Design de Receita',
     description:
       'Receita gerada só por indicação tem teto. Quando a empresa atinge esse teto, a reação comum é culpar o comercial. O diagnóstico costuma ser outro: falta arquitetura. Quando o sistema existe, a receita para de depender de quem está de plantão e passa a depender de como o funil foi desenhado.',
   },
   {
     number: '03',
-    title: 'Arquitetura Comercial',
+    icon: ShieldCheck,
+    title: 'Arsenal Estratégico',
     description:
-      'Conhecimento distribuído entre cabeça do fundador, experiência do time e relações com clientes precisa virar sistema consultável. Mapa de Receita, deck, site e plano de comunicação formam a camada onde esse conhecimento se formaliza. O que dependia de quem estivesse presente passa a estar disponível para qualquer pessoa da empresa.',
+      'Conhecimento distribuído entre cabeça do fundador, experiência do time e relações com clientes precisa virar sistema consultável. Mapa de Receita, deck, site e plano de comunicação formam o arsenal onde esse conhecimento se formaliza. O que dependia de quem estivesse presente passa a estar disponível para qualquer pessoa da empresa.',
   },
 ]
 
-function PillarItem({ step, index, activeStep, setActiveStep }: {
-  step: typeof pillars[0]
-  index: number
-  activeStep: number | null
-  setActiveStep: (i: number) => void
-}) {
-  const ref = useRef<HTMLDivElement>(null!)
-  const isInView = useInView(ref, { margin: '-40% 0px -40% 0px', amount: 0.5 })
-
-  useEffect(() => {
-    if (isInView) setActiveStep(index)
-  }, [isInView, index, setActiveStep])
-
-  const isActive = activeStep === index
-
-  return (
-    <div ref={ref} className="group">
-      <div className="w-full py-10 md:py-14 text-left transition-opacity duration-500">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-baseline">
-          {/* Label — only on first item */}
-          <div className="md:col-span-3">
-            {index === 0 && (
-              <span className={`text-xl md:text-2xl font-medium block transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/15'}`}>
-                Pilar
-              </span>
-            )}
-          </div>
-
-          {/* Number */}
-          <div className="md:col-span-1">
-            <span className={`text-xl md:text-2xl font-medium transition-colors duration-300 ${isActive ? 'text-primary' : 'text-white/15'}`}>
-              ({step.number})
-            </span>
-          </div>
-
-          {/* Content */}
-          <div className="md:col-span-8">
-            <h3 className={`text-3xl md:text-5xl font-medium transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/15'}`}>
-              {step.title}
-            </h3>
-
-            <AnimatePresence mode="wait">
-              {isActive && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                  animate={{ height: 'auto', opacity: 1, marginTop: 24 }}
-                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                  transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  className="overflow-hidden"
-                >
-                  <p className="text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl">
-                    {step.description}
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
-      <div className="w-full h-px bg-white/[0.06]" />
-    </div>
-  )
-}
-
 export function PillarsSection() {
-  const [activeStep, setActiveStep] = useState<number | null>(0)
-
   return (
-    <section id="pilares" className="relative py-24 md:py-32 bg-background-dark text-white border-t border-white/[0.06] overflow-hidden">
+    <section
+      id="pilares"
+      className="relative py-24 md:py-32 bg-background-dark text-white border-t border-white/[0.06] overflow-hidden"
+    >
       <SynapseBackground particleCount={30} connectionDistance={160} opacity={0.1} speed={0.2} />
+
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
         {/* Header */}
         <motion.div
-          className="flex flex-col items-center text-center mb-24"
+          className="flex flex-col items-center text-center mb-16 md:mb-20"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -110,42 +58,68 @@ export function PillarsSection() {
             className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
           >
             <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-              {"Os Três Pilares"}
+              Os Três Pilares
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
           >
-            Competência existe no fundador, no time e no negócio.
-            <br className="hidden md:block" />
-            <span className="text-primary">
-              Arquitetura é o que transforma competência em receita.
-            </span>
+            Três Pilares. <span className="text-primary">Um Método.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-2xl"
+            className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-3xl"
           >
-            Um método. Três camadas. Seis ativos em operação.
+            Competência existe no fundador, no time e no negócio. Arquitetura é o que transforma
+            competência em receita.
           </motion.p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="flex flex-col pb-32">
-          <div className="w-full h-px bg-white/[0.06]" />
-          {pillars.map((step, index) => (
-            <PillarItem
-              key={index}
-              step={step}
-              index={index}
-              activeStep={activeStep}
-              setActiveStep={setActiveStep}
-            />
-          ))}
-        </div>
+        {/* Cards Grid */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
+          {pillars.map((pillar) => {
+            const Icon = pillar.icon
+            return (
+              <motion.article
+                key={pillar.number}
+                variants={fadeInUp}
+                className="group relative rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-500"
+              >
+                {/* Number top */}
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-primary/70 text-5xl md:text-6xl font-bold font-heading leading-none tracking-tighter">
+                    {pillar.number}
+                  </span>
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary/15 group-hover:border-primary/40 transition-colors">
+                    <Icon size={22} />
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl lg:text-[1.6rem] font-bold text-white mb-5 tracking-tight leading-tight">
+                  {pillar.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-white/60 text-[0.95rem] md:text-base leading-relaxed">
+                  {pillar.description}
+                </p>
+
+                {/* Bottom accent line on hover */}
+                <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+              </motion.article>
+            )
+          })}
+        </motion.div>
       </div>
     </section>
   )

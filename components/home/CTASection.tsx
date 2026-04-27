@@ -29,18 +29,19 @@ export function CTASection() {
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-4xl mb-6"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-5xl mb-6"
           >
-            {"5 perguntas sobre o seu negócio."}
+            3 perguntas sobre o seu negócio.
             <br />
-            <span className="text-primary">{"Uma análise no mesmo dia."}</span>
+            <span className="text-primary">Uma leitura estratégica no mesmo dia.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl italic"
+            className="text-base md:text-lg text-white/65 leading-relaxed max-w-3xl"
           >
-            {"Direto ao ponto. Clareza que gera receita."}
+            Você responde em 5 minutos. Recebe uma análise estratégica inicial no mesmo dia útil,
+            sem compromisso de continuidade.
           </motion.p>
         </motion.div>
 

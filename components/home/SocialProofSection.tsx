@@ -59,14 +59,14 @@ export function SocialProofSection() {
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-5xl font-bold leading-tight text-white max-w-4xl tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white max-w-5xl tracking-tight"
           >
             Cases que <span className="text-primary">falam por si.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-2xl"
+            className="mt-6 text-base md:text-lg text-white/65 leading-relaxed max-w-3xl"
           >
             Mr. Job Hub &mdash; Resultado real de um projeto de Engenharia de Receita.
           </motion.p>

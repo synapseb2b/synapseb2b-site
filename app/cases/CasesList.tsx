@@ -20,7 +20,7 @@ export function CasesList() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="max-w-3xl"
+            className="max-w-5xl"
           >
             <motion.div
               variants={fadeInUp}
@@ -42,7 +42,7 @@ export function CasesList() {
 
             <motion.p
               variants={fadeInUp}
-              className="text-base md:text-lg text-white/65 leading-relaxed max-w-2xl"
+              className="text-base md:text-lg text-white/65 leading-relaxed max-w-4xl"
             >
               Cada case aqui é uma empresa que já tinha competência, talento e histórico. O que a
               Synapse fez foi construir a arquitetura que transformou esses ativos em posicionamento

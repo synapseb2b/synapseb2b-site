@@ -2,9 +2,43 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Brain, Eye, Network, Database, Zap } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
-import { SynapseBackground } from '@/components/ui/SynapseBackground'
+import { NeuralNetworkBackground } from '@/components/cortex/NeuralNetworkBackground'
+import { LensCard } from '@/components/cortex/LensCard'
+
+const HOME_LENSES = [
+  {
+    icon: Brain,
+    number: '01',
+    title: 'Fundador',
+    frameworks: 'Andragogia · Challenger Sale',
+  },
+  {
+    icon: Eye,
+    number: '02',
+    title: 'Neurociência',
+    frameworks: 'Damásio · Kahneman',
+  },
+  {
+    icon: Network,
+    number: '03',
+    title: 'Receita',
+    frameworks: 'Value-Based · SPICED · Bowtie',
+  },
+  {
+    icon: Database,
+    number: '04',
+    title: 'Comprador',
+    frameworks: 'JOLT Effect · Confiança',
+  },
+  {
+    icon: Zap,
+    number: '05',
+    title: 'Crescimento',
+    frameworks: 'Founder-Led · Flywheel · Nearbound',
+  },
+]
 
 export function CortexSection() {
   return (
@@ -12,72 +46,117 @@ export function CortexSection() {
       id="cortex"
       className="relative py-24 md:py-32 bg-background-dark text-white border-t border-white/[0.06] overflow-hidden"
     >
-      <SynapseBackground particleCount={35} connectionDistance={170} opacity={0.12} speed={0.25} />
+      {/* Background gradients */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div
+          className="absolute top-0 right-0 w-1/2 h-1/2 opacity-40"
+          style={{
+            background:
+              'radial-gradient(circle at 70% 30%, rgba(74,144,217,0.18) 0%, rgba(15,23,42,0) 60%)',
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-40"
+          style={{
+            background:
+              'radial-gradient(circle at 30% 70%, rgba(37,99,235,0.18) 0%, rgba(15,23,42,0) 60%)',
+          }}
+        />
+      </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+      {/* Neural network background */}
+      <NeuralNetworkBackground opacity={0.35} />
+
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
         <motion.div
-          className="flex flex-col items-center text-center"
+          className="flex flex-col items-center text-center mb-12 md:mb-16"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
+          {/* Badge with live indicator */}
           <motion.div
             variants={fadeInUp}
-            className="mb-8 px-5 py-1.5 border border-primary/50 rounded-full text-primary inline-block"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm"
           >
-            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+            </span>
+            <span className="text-[10px] md:text-xs text-primary/90 font-bold tracking-widest uppercase">
               Tecnologia Proprietária
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.02] text-white mb-6"
           >
-            Cada decisão opera com o
-            <br className="hidden md:block" />
-            <span className="text-primary"> CORTEX B2B™.</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+              CORTEX
+            </span>{' '}
+            <span className="text-white">B2B™</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="mt-10 text-base md:text-lg text-white/70 leading-relaxed max-w-3xl"
+            className="text-xl md:text-2xl text-white/75 max-w-3xl mx-auto leading-snug font-medium"
           >
-            O CORTEX B2B™ é o motor cognitivo proprietário que sustenta cada projeto da Synapse.
-            Processa cada sessão sob cinco lentes simultâneas: fundador, neurociência, receita,
-            comprador e crescimento. Carrega duas décadas de repertório acumulado em ecossistemas
-            como Google, Microsoft, Dell e TOTVS, integra mais de 30 frameworks especializados em
-            geração de receita e incorpora a inteligência estratégica de todos os projetos
-            anteriores.
+            Cinco lentes simultâneas. Um motor cognitivo.
           </motion.p>
+        </motion.div>
 
-          {/* Linha de fechamento — destaque */}
-          <motion.div
-            variants={fadeInUp}
-            className="mt-12 md:mt-16 max-w-3xl"
+        {/* 5 Lens cards */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-12"
+        >
+          {HOME_LENSES.map((lens, i) => (
+            <LensCard
+              key={lens.number}
+              icon={lens.icon}
+              number={lens.number}
+              title={lens.title}
+              frameworks={lens.frameworks}
+              delay={0.1 + i * 0.08}
+              index={i}
+              variant="compact"
+            />
+          ))}
+        </motion.div>
+
+        {/* Live ops indicator + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex flex-col items-center gap-6"
+        >
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-navy-900/50 border border-primary/20 backdrop-blur-sm">
+            <motion.span
+              animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-2 h-2 rounded-full bg-green-400"
+            />
+            <span className="text-xs text-white/65 tracking-wide">
+              Processando 30+ frameworks em paralelo
+            </span>
+          </div>
+
+          <Link
+            href="/cortex-b2b"
+            className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white pl-7 pr-2 py-2 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
           >
-            <div className="relative px-8 md:px-12 py-8 md:py-10 rounded-[2rem] border border-primary/20 bg-primary/[0.03]">
-              <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-snug text-white tracking-tight">
-                Quem está dentro da operação não consegue ver o padrão.
-                <br />
-                <span className="text-primary">Quem está fora, com o Cortex, enxerga.</span>
-              </p>
-            </div>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div variants={fadeInUp} className="mt-12">
-            <Link
-              href="/cortex-b2b"
-              className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white pl-7 pr-2 py-2 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
-            >
-              Conhecer o CORTEX B2B™
-              <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
-                <ArrowRight size={14} />
-              </span>
-            </Link>
-          </motion.div>
+            Conhecer o CORTEX B2B™
+            <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
+              <ArrowRight size={14} />
+            </span>
+          </Link>
         </motion.div>
       </div>
     </section>
