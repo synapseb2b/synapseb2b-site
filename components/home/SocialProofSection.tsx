@@ -57,7 +57,10 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white max-w-5xl tracking-tight"
           >
-            Cases que <span className="text-primary">falam por si.</span>
+            Resultados que{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
+              falam por si.
+            </span>
           </motion.h2>
 
           <motion.p

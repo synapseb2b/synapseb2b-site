@@ -145,7 +145,7 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <motion.article
       variants={fadeInUp}
-      className="rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 hover:border-primary/30 transition-all duration-300"
+      className="card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
     >
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
         {/* Left - heading + description */}
@@ -270,7 +270,7 @@ function CompactCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <motion.article
       variants={fadeInUp}
-      className="rounded-[2rem] border border-white/[0.06] bg-white/[0.02] p-7 md:p-8 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
+      className="card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-7 md:p-8 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div>

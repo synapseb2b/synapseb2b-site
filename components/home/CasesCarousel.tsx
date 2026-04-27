@@ -82,7 +82,7 @@ export function CasesCarousel() {
 
       {/* Card area */}
       <div className="relative">
-        <div className="relative min-h-[420px] md:min-h-[360px] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm">
+        <div className="card-shine relative min-h-[420px] md:min-h-[360px] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.article
               key={current.slug}

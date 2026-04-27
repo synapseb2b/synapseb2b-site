@@ -262,7 +262,7 @@ export function CortexContent() {
               <motion.article
                 key={pillar.number}
                 variants={fadeInUp}
-                className="rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
+                className="card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
               >
                 <p className="text-primary/80 text-3xl font-bold font-heading mb-4">
                   {pillar.number}

@@ -91,7 +91,7 @@ export function PillarsSection() {
               <motion.article
                 key={pillar.number}
                 variants={fadeInUp}
-                className="group relative rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-500"
+                className="card-shine group relative rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-10 hover:border-primary/30 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-500"
               >
                 {/* Number top */}
                 <div className="flex items-center justify-between mb-8">
@@ -113,8 +113,6 @@ export function PillarsSection() {
                   {pillar.description}
                 </p>
 
-                {/* Bottom accent line on hover */}
-                <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
               </motion.article>
             )
           })}

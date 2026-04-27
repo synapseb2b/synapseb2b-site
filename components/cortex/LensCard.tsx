@@ -51,8 +51,8 @@ export function LensCard({
     >
       <div
         className={cn(
-          'relative h-full bg-white/[0.02] backdrop-blur-sm',
-          'border border-white/[0.08] rounded-[2rem] overflow-hidden',
+          'card-shine relative h-full bg-white/[0.02] backdrop-blur-sm',
+          'border border-white/[0.08] rounded-[2rem]',
           'transition-all duration-500',
           'hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)]',
           isProcessing && 'border-primary/40 shadow-[0_8px_30px_rgba(74,144,217,0.18)]',

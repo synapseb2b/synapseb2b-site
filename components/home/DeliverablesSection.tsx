@@ -61,7 +61,7 @@ export function DeliverablesSection() {
               key={service.id}
               variants={fadeInUp}
               className={cn(
-                'relative rounded-[2rem] p-8 md:p-10 flex flex-col border transition-all duration-300',
+                'card-shine relative rounded-[2rem] p-8 md:p-10 flex flex-col border transition-all duration-300',
                 service.featured
                   ? 'bg-primary/[0.08] border-primary/30 scale-[1.02] shadow-2xl shadow-primary/10 z-10 mt-4'
                   : 'bg-white/[0.02] border-white/[0.08] hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)]'
