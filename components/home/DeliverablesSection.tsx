@@ -15,7 +15,7 @@ const SERVICE_WHATSAPP_MESSAGES: Record<string, string> = {
   projeto:
     'Olá, Júlio. Tenho interesse no Projeto Estratégico de Engenharia de Receita. Quero construir o sistema comercial da minha empresa.',
   advisor:
-    'Olá, Júlio. Tenho interesse no Advisor de Receita. Já tenho uma operação rodando e quero otimizar o crescimento.',
+    'Olá, Júlio. Tenho interesse no Advisor Estratégico. Já tenho uma operação rodando e quero otimizar o crescimento.',
 }
 
 export function DeliverablesSection() {

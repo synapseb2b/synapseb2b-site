@@ -1,4 +1,4 @@
-export interface CaseMetric {
+﻿export interface CaseMetric {
   value: string
   label: string
 }
@@ -52,7 +52,7 @@ export const cases: CaseStudy[] = [
     },
     assets: [
       'Matriz de Competências e Análise de Contexto',
-      'Matriz Cortex B2B™',
+      'Matriz CORTEX B2B™',
       'Mapa de Receita com 17 soluções em 3 categorias',
       'Plano de Comunicação 12 semanas (Instagram + TikTok + LinkedIn)',
       'Site Estratégico reconstruído',
@@ -85,7 +85,7 @@ export const cases: CaseStudy[] = [
     },
     assets: [
       'Matriz de Competências e Análise de Contexto',
-      'Matriz Cortex B2B™',
+      'Matriz CORTEX B2B™',
       'Mapa de Receita com 3 novas linhas',
       'Catálogo: 8 Fast Tracks + Mentoria em Grupo',
       'Assessment de Maturidade Financeira',
@@ -119,7 +119,7 @@ export const cases: CaseStudy[] = [
     },
     assets: [
       'Matriz de Competências e Análise de Contexto',
-      'Matriz Cortex B2B™',
+      'Matriz CORTEX B2B™',
       'Mapa de Receita estruturado',
       'Plano de Comunicação 90 dias',
       'Site Estratégico de Conversão',

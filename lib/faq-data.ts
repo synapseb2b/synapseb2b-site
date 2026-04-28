@@ -1,4 +1,4 @@
-export interface FAQItem {
+﻿export interface FAQItem {
   question: string
   answer: string
 }
@@ -17,12 +17,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Para quais empresas a Synapse B2B é indicada?',
     answer:
-      'A Synapse atende empresas B2B com competência técnica reconhecida e faturamento entre R$ 360 mil e R$ 3,6 milhões anuais. O fundador ou CEO precisa estar acessível, com poder de decisão direto. O ICP é construído para empresas que cresceram além de seus processos: tem cliente fiel, histórico de entregas consistentes, mas a comunicação e o posicionamento não acompanham a profundidade do que entregam.',
+      'A Synapse atende empresas B2B com competência técnica reconhecida e faturamento entre R$ 360 mil e R$ 3,6 milhões anuais. O fundador ou CEO precisa estar acessível, com poder de decisão direto. O ICP é construído para empresas que cresceram além de seus processos: têm clientes fiéis e histórico de entregas consistentes, mas a comunicação e o posicionamento não acompanham a profundidade do que entregam.',
   },
   {
     question: 'O que diferencia a Synapse B2B de uma consultoria ou agência tradicional?',
     answer:
-      'Consultoria boutique sênior tradicional atende corporativo acima de R$ 20M. Agências de marketing atendem qualquer tamanho mas não vendem método estratégico. A Synapse opera no espaço entre os dois, no Middle Market B2B, com método proprietário (Engenharia de Receita™) e tecnologia proprietária (CORTEX B2B™). Não vende relatórios. Entrega arquitetura comercial completa em 35 dias com 6 ativos estratégicos que continuam operando dentro da empresa após o projeto.',
+      'Consultoria boutique sênior tradicional atende corporativo acima de R$ 20M. Agências de marketing atendem qualquer tamanho, mas não vendem método estratégico. A Synapse opera no espaço entre os dois, no Middle Market B2B, com método proprietário (Engenharia de Receita™) e tecnologia proprietária (CORTEX B2B™). Não vende relatórios. Entrega arquitetura comercial completa em 35 dias com 6 ativos estratégicos que continuam operando dentro da empresa após o projeto.',
   },
   {
     question: 'Como funciona o Skin in the Game?',
@@ -32,7 +32,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Posso parcelar o pagamento do Projeto Estratégico?',
     answer:
-      'Sim. O Projeto Estratégico é pago em 2 parcelas iguais, com 30 dias de intervalo. A primeira parcela é devida na assinatura do contrato. A segunda parcela é devida no 30º dia, no momento em que a Sessão 3 é concluída com Posicionamento aprovado e Matriz Cortex validada. A Sessão 5 de entrega final é condicionada à confirmação da segunda parcela.',
+      'Sim. O Projeto Estratégico é pago em 2 parcelas iguais, com 30 dias de intervalo. A primeira parcela é devida na assinatura do contrato. A segunda parcela é devida no 30º dia, no momento em que a Sessão 3 é concluída com Posicionamento aprovado e Matriz CORTEX validada. A Sessão 5 de entrega final é condicionada à confirmação da segunda parcela.',
   },
   {
     question: 'O Diagnóstico vira crédito para o Projeto Estratégico?',
@@ -42,7 +42,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Vocês trabalham presencialmente ou remotamente?',
     answer:
-      'O Projeto Estratégico é conduzido em 5 sessões individuais de 49 minutos via videoconferência, em cadência de 35 dias. Sessões presenciais podem ocorrer em casos específicos, especialmente para o Projeto Ecossistemas onde envolvemos múltiplas linhas de receita e equipes operacionais. A maior parte da entrega acontece em formato digital via Cortex B2B™.',
+      'O Projeto Estratégico é conduzido em 5 sessões individuais de 49 minutos via videoconferência, em cadência de 35 dias. Sessões presenciais podem ocorrer em casos específicos, especialmente para o Projeto Ecossistemas, onde envolvemos múltiplas linhas de receita e equipes operacionais. A maior parte da entrega acontece em formato digital via CORTEX B2B™.',
   },
   {
     question: 'O que acontece após o Projeto Estratégico ser concluído?',

@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from './constants'
+﻿import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from './constants'
 import { FAQ_ITEMS } from './faq-data'
 import { cases } from './cases-data'
 
@@ -34,7 +34,7 @@ export function generateJsonLd() {
         founder: { '@id': `${SITE_URL}/#person` },
         knowsAbout: [
           'Engenharia de Receita',
-          'Posicionamento Estrategico B2B',
+          'Posicionamento Estratégico B2B',
           'Arquitetura Comercial',
           'Tradução de Valor',
           'Mapa de Receita',
@@ -98,7 +98,7 @@ export function generateJsonLd() {
           'Andragogia Aplicada',
           'Arquitetura Comercial B2B',
           'CORTEX B2B',
-          'Posicionamento Estrategico',
+          'Posicionamento Estratégico',
         ],
         alumniOf: [
           { '@type': 'Organization', name: 'Google' },
@@ -132,7 +132,7 @@ export function generateJsonLd() {
               '@type': 'Offer',
               name: 'Diagnóstico CORTEX B2B™',
               description:
-                'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa. Assessment + Sessão individual de 49 minutos + Relatório Cortex personalizado + Plano de ação para 30 dias.',
+                'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa. Assessment + Sessão individual de 49 minutos + Relatório CORTEX personalizado + Plano de ação para 30 dias.',
               url: `${SITE_URL}/entregas#diagnostico`,
               category: 'Diagnóstico',
             },

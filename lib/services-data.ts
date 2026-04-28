@@ -1,4 +1,4 @@
-export interface ServiceFeature {
+﻿export interface ServiceFeature {
   text: string
   badge?: string
 }
@@ -21,11 +21,11 @@ export const services: Service[] = [
     name: 'Diagnóstico CORTEX B2B™',
     subtitle: 'Em 30 dias, clareza',
     description:
-      'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa. Assessment estratégico, sessão individual de 49 minutos e Relatório Cortex personalizado.',
+      'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa. Assessment estratégico, sessão individual de 49 minutos e Relatório CORTEX personalizado.',
     features: [
-      { text: 'Assessment Cortex B2B™ pré-sessão' },
+      { text: 'Assessment CORTEX B2B™ pré-sessão' },
       { text: 'Sessão individual de 49 minutos' },
-      { text: 'Relatório Cortex B2B™ personalizado' },
+      { text: 'Relatório CORTEX B2B™ personalizado' },
       { text: 'Plano de ação para 30 dias' },
     ],
     cta: 'Iniciar Diagnóstico',
@@ -41,7 +41,7 @@ export const services: Service[] = [
     features: [
       { text: '5 sessões individuais de 49 minutos' },
       { text: '6 ativos estratégicos entregues' },
-      { text: '5 devolutivas construídas pelo Cortex B2B™' },
+      { text: '5 devolutivas construídas pelo CORTEX B2B™' },
       { text: '3 sessões de acompanhamento em 90 dias' },
       { text: 'Variante para Ecossistemas (múltiplas linhas de receita)' },
     ],
@@ -61,7 +61,7 @@ export const services: Service[] = [
       { text: 'Apoio na execução do Mapa de Receita' },
       { text: 'Calibragem de cadência das ações de comunicação' },
       { text: 'Sessões sob demanda para decisões importantes' },
-      { text: 'Acesso ao Cortex B2B™ para consultas direcionadas', badge: 'em breve' },
+      { text: 'Acesso ao CORTEX B2B™ para consultas direcionadas', badge: 'em breve' },
       { text: 'Revisão de ativos comerciais quando aplicável' },
     ],
     cta: 'Conhecer o Advisor',

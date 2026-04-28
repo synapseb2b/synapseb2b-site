@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -43,7 +43,7 @@ const PILLARS: Pillar[] = [
     number: '04',
     title: 'Padrões que operação interna não alcança',
     description:
-      'Quem está dentro da operação não consegue ver o padrão. Quem está fora com o Cortex, enxerga. É daí que sai o insight que muda o rumo do projeto.',
+      'Quem está dentro da operação não consegue ver o padrão. Quem está fora, com o CORTEX, enxerga. É daí que sai o insight que muda o rumo do projeto.',
   },
 ]
 
@@ -358,7 +358,7 @@ export function CortexContent() {
                 Quem está dentro da operação não consegue ver o padrão.
                 <br />
                 <span className="text-primary">
-                  Quem está fora, com o Cortex, enxerga.
+                  Quem está fora, com o CORTEX, enxerga.
                 </span>
               </p>
             </div>

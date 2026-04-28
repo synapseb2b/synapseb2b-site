@@ -33,7 +33,7 @@ const PROJECT_ASSETS: AssetItem[] = [
   },
   {
     icon: Compass,
-    title: 'Matriz de Engenharia de Receita Cortex B2B™',
+    title: 'Matriz de Engenharia de Receita CORTEX B2B™',
     description:
       'A operação comercial traduzida em sistema analisável, organizada em 6 módulos estratégicos. A arquitetura de receita fica visível em um só lugar, com gargalos nomeados e alavancas identificadas.',
   },
@@ -85,11 +85,11 @@ const PRODUCTS: ProductSection[] = [
     name: 'Diagnóstico CORTEX B2B™',
     subtitle: 'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa.',
     description:
-      'Um Assessment estratégico estruturado, uma sessão individual de 49 minutos de devolutiva e o Relatório Cortex personalizado com a leitura integral da arquitetura de receita atual. Mais um plano de ação para os próximos 30 dias que pode ser executado com ou sem a continuidade da Synapse.',
+      'Um Assessment estratégico estruturado, uma sessão individual de 49 minutos de devolutiva e o Relatório CORTEX personalizado com a leitura integral da arquitetura de receita atual. Mais um plano de ação para os próximos 30 dias, que pode ser executado com ou sem a continuidade da Synapse.',
     features: [
-      { text: 'Assessment Cortex B2B™ pré-sessão' },
+      { text: 'Assessment CORTEX B2B™ pré-sessão' },
       { text: 'Sessão individual de 49 minutos' },
-      { text: 'Relatório Cortex B2B™ personalizado' },
+      { text: 'Relatório CORTEX B2B™ personalizado' },
       { text: 'Plano de ação para 30 dias' },
     ],
     cta: 'Iniciar Diagnóstico',
@@ -106,7 +106,7 @@ const PRODUCTS: ProductSection[] = [
       'Construção integral da arquitetura comercial em 5 sessões individuais e 6 ativos estratégicos entregues, com acompanhamento nos 90 dias seguintes para calibrar o sistema enquanto o mercado responde.',
     features: [
       { text: '5 sessões individuais de 49 minutos' },
-      { text: '5 devolutivas construídas pelo Cortex B2B™' },
+      { text: '5 devolutivas construídas pelo CORTEX B2B™' },
       { text: '3 sessões de acompanhamento em 90 dias' },
       { text: 'Variante: Engenharia de Receita para Ecossistemas (múltiplas linhas de receita)' },
     ],
@@ -128,7 +128,7 @@ const PRODUCTS: ProductSection[] = [
       { text: 'Apoio direto na execução do Mapa de Receita' },
       { text: 'Calibragem de cadência das ações do Plano de Comunicação' },
       { text: 'Sessões sob demanda para decisões importantes do mês' },
-      { text: 'Acesso ao Cortex B2B™ para consultas direcionadas', badge: 'em breve' },
+      { text: 'Acesso ao CORTEX B2B™ para consultas direcionadas', badge: 'em breve' },
       { text: 'Revisão de ativos comerciais quando aplicável' },
     ],
     cta: 'Conhecer o Advisor',

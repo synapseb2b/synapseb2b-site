@@ -50,7 +50,7 @@ export function HeroSection() {
             {" já é inquestionável."}
             <br className="hidden lg:block" />
             <span className="text-primary">
-              {" Tornamos ela"}
+              {" Nós a tornamos"}
               <br className="md:hidden" />
               {" inevitável."}
             </span>
@@ -95,7 +95,7 @@ export function HeroSection() {
                 </a>
               </div>
               <p className="text-[11px] text-white tracking-wide pl-1">
-                Direto ao Ponto. Clareza que gera receita.
+                Direto ao ponto. Clareza que gera receita.
               </p>
             </div>
 
