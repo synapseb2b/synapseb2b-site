@@ -31,9 +31,9 @@ export function CasesList() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8"
             >
-              Empresas que potencializaram{' '}
+              Empresas que traduziram{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                o próprio potencial.
+                competência em receita.
               </span>
             </motion.h1>
 
@@ -327,10 +327,10 @@ function CompactCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
       )}
 
       {caseStudy.status === 'em-execucao' && (
-        <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30">
+        <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/30">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-primary text-[10px] font-bold uppercase tracking-wider">
-            Em execução
+            Projeto Estratégico de Engenharia de Receita em desenvolvimento
           </span>
         </div>
       )}

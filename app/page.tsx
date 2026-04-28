@@ -17,7 +17,7 @@ export default function HomePage() {
       <section className="border-b border-white/[0.08] py-10">
         <div className="w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
           <p className="text-center text-[#CCD6E0] text-xs uppercase tracking-[0.2em] mb-8">
-            Empresas que potencializaram o próprio potencial com a Synapse B2B
+            Empresas que traduziram competência em receita com a Synapse B2B
           </p>
           <LogoMarquee items={[...TRUST_CLIENTS]} speed={20} />
         </div>

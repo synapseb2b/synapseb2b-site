@@ -240,6 +240,7 @@ export const cases: CaseStudy[] = [
     company: 'THV Projetos',
     location: 'Belo Horizonte, MG',
     tagline: 'Orquestrador de ecossistema de obra.',
+    status: 'em-execucao',
     description:
       'Fluxo de clientes ancorado exclusivamente em referenciação orgânica expandido com canal ativo de prospecção B2B. Comunicação teórica que escondia cases pragmáticos substituída por narrativa de autoridade técnica focada em presença em obra. THV isolada como pilar gerador de referências para o ecossistema.',
     result:
