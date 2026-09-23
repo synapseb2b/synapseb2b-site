@@ -34,6 +34,18 @@ export function Footer() {
             <p className="text-white/30 text-xs mt-1.5">
               &copy; {new Date().getFullYear()} Synapse B2B. Todos os direitos reservados.
             </p>
+            <p className="text-white/30 text-xs mt-1.5">
+              {"Desenvolvido por "}
+              <a
+                href="https://reposiciona.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/50 hover:text-white/80 transition-colors"
+              >
+                Reposiciona
+              </a>
+              {" - Estratégia, conteúdo e ativos digitais"}
+            </p>
           </div>
 
           {/* Nav */}

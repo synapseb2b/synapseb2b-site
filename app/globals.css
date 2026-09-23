@@ -54,6 +54,13 @@ body {
   color: white;
 }
 
+/* Mobile: escala com a largura para a frase em destaque caber em uma linha (3 linhas no total). */
+@media (max-width: 767px) {
+  .hero-headline {
+    font-size: clamp(1.6rem, 7vw, 1.9rem);
+  }
+}
+
 .hero-subtext {
   font-size: clamp(1rem, 1.25vw, 1.25rem);
   line-height: 1.6;

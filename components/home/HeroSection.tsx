@@ -49,10 +49,8 @@ export function HeroSection() {
             <br className="md:hidden" />
             {" já é inquestionável."}
             <br className="hidden lg:block" />
-            <span className="text-primary">
-              {" Nós a tornamos"}
-              <br className="md:hidden" />
-              {" inevitável."}
+            <span className="text-primary block md:inline [text-wrap:balance]">
+              {" Nós a tornamos inevitável."}
             </span>
           </motion.h1>
 
