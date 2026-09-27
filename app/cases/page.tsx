@@ -4,7 +4,7 @@ import { CasesList } from './CasesList'
 export const metadata: Metadata = {
   title: 'Resultados',
   description:
-    'Empresas que traduziram competência em receita com a Synapse B2B. 11 resultados reais de Engenharia de Receita aplicada.',
+    'Conheça a atuação da SYNAPSE B2B na organização de ofertas, oportunidades comerciais e caminhos de receita em empresas de serviços, tecnologia e negócios B2B.',
 }
 
 export default function CasesPage() {

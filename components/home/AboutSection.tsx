@@ -8,7 +8,7 @@ import { SynapseBackground } from '@/components/ui/SynapseBackground'
 const milestones = [
   { year: '2005+', text: 'Google, Microsoft, Dell, TOTVS' },
   { year: '2023', text: '25 executivos, sede do Google em NY' },
-  { year: '2025', text: 'Synapse B2B, Engenharia de Receita™' },
+  { year: '2025', text: 'Fundação da SYNAPSE B2B' },
 ]
 
 export function AboutSection() {
@@ -49,7 +49,7 @@ export function AboutSection() {
                 variants={fadeInUp}
                 className="text-white/50 text-sm font-medium mb-8"
               >
-                Fundador da Synapse B2B
+                Fundador e Advisor de Receita
               </motion.p>
 
               {/* Photo — Google NY event */}
@@ -71,7 +71,7 @@ export function AboutSection() {
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                   <p className="text-white/50 text-[11px] tracking-wide">
-                    {"Google NY, 2023 — 25 executivos de TI"}
+                    {"Google NY, 2023 · 25 executivos de TI"}
                   </p>
                 </div>
               </motion.div>
@@ -82,20 +82,18 @@ export function AboutSection() {
               <motion.div variants={fadeInUp}>
                 <div className="space-y-8 text-white/50 text-base md:text-lg leading-relaxed">
                   <p>
-                    {"Duas décadas em ecossistemas como Google, Microsoft, Dell e TOTVS. Não como vendedor. Como o profissional que sentava do lado do cliente e descobria junto o que ele ainda não enxergava."}
+                    {"Duas décadas de atuação comercial B2B em ecossistemas como Google, Microsoft, Dell e TOTVS. Experiência em compreender negócios, desenvolver relacionamentos e conduzir oportunidades comerciais."}
                   </p>
                   <p>
-                    {"Consultividade, criatividade e o olhar que conecta pontos que ninguém mais conectou."}
+                    {"Na SYNAPSE, essa experiência está a serviço do fundador: entender o que trava a receita, escolher prioridades e orientar os próximos passos."}
                   </p>
                   <p>
-                    {"Em agosto de 2023, co-liderando 25 executivos de TI das maiores empresas do Brasil na sede do Google em Nova York, ficou claro que esses talentos tinham um destino maior. Mas ideia sem estrutura é só inspiração."}
+                    {"Em 2023, co-liderei uma comitiva de 25 executivos de TI na sede do Google em Nova York. Em 2025, fundei a SYNAPSE B2B para aplicar esse repertório junto a outros fundadores."}
                   </p>
                   <p className="text-white/70">
-                    {"Em 2025, a Synapse B2B saiu do papel. Com ela, a "}
-                    <span className="text-primary font-semibold">{"Engenharia de Receita™"}</span>
-                    {" e o "}
-                    <span className="text-primary font-semibold">{"CORTEX B2B™"}</span>
-                    {"."}
+                    {"Você trabalha diretamente comigo. O "}
+                    <span className="text-primary font-semibold">CORTEX B2B</span>
+                    {" apoia as análises; eu reviso as recomendações e defino as prioridades com você."}
                   </p>
                 </div>
 

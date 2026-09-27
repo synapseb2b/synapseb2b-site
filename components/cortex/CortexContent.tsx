@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -21,73 +21,18 @@ interface Pillar {
 }
 
 const PILLARS: Pillar[] = [
-  {
-    number: '01',
-    title: 'Repertório construído nos maiores ecossistemas B2B do mundo',
-    description:
-      'Duas décadas atuando na área comercial em Google, Microsoft, Dell e TOTVS, ecossistemas onde se aprende a vender contratos de alto valor para fundadores e CFOs. Você não contrata teoria, contrata decisão validada onde errar custa caro.',
-  },
-  {
-    number: '02',
-    title: 'Frameworks especializados em geração de receita',
-    description:
-      'Mais de 30 metodologias integradas em neurociência, positioning, economia comportamental e engenharia de crescimento. Cada decisão carrega a metodologia certa para a sua situação, não a mesma receita para todo mundo.',
-  },
-  {
-    number: '03',
-    title: 'Inteligência que não esquece',
-    description:
-      'O que foi dito na Sessão 1 permanece vivo quando construímos o Ativo 6. A Sessão 5 não é apenas mais profunda, é construída sobre tudo que veio antes. Memória estratégica entre projetos.',
-  },
-  {
-    number: '04',
-    title: 'Padrões que operação interna não alcança',
-    description:
-      'Quem está dentro da operação não consegue ver o padrão. Quem está fora, com o CORTEX, enxerga. É daí que sai o insight que muda o rumo do projeto.',
-  },
+  { number: '01', title: 'Contexto do seu negócio', description: 'Organização das informações compartilhadas pelo cliente: ofertas, compradores, canais, indicadores e desafios. A análise parte da realidade da empresa.' },
+  { number: '02', title: 'Referências para a análise', description: 'Repertório de negócios B2B e métodos de estratégia comercial apoiam a comparação de caminhos e a formulação de hipóteses.' },
+  { number: '03', title: 'Continuidade no acompanhamento', description: 'Registros de decisões e próximos passos ajudam a retomar o contexto nos encontros e a revisar o que avançou entre uma conversa e outra.' },
+  { number: '04', title: 'Revisão e responsabilidade', description: 'A inteligência artificial apoia a preparação das análises. Júlio confronta as recomendações com o contexto do negócio e define as prioridades com o fundador.' },
 ]
 
 const LENSES = [
-  {
-    icon: Brain,
-    number: '01',
-    title: 'Lente do Fundador',
-    description:
-      'Como o fundador adulto aprende, decide e comunica valor. O fundador técnico sabe entregar, raramente sabe comunicar o valor do que entrega.',
-    frameworks: 'Andragogia Aplicada · Challenger Sale · Dinâmica de Identidade',
-  },
-  {
-    icon: Eye,
-    number: '02',
-    title: 'Lente da Neurociência',
-    description:
-      'Como o cérebro do comprador filtra, ancora e justifica uma decisão. Arquitetura dual de processamento: emocional primeiro, racional depois.',
-    frameworks: 'Neurociência do Filtro Emocional (Damásio) · Behavioral Economics (Kahneman)',
-  },
-  {
-    icon: Network,
-    number: '03',
-    title: 'Lente da Receita',
-    description:
-      'Onde está o dinheiro que não está sendo capturado. Projeta arquitetura de captura de receita com métricas claras.',
-    frameworks: 'Value-Based Selling · SPICED · Bowtie Model · Science of Scaling',
-  },
-  {
-    icon: Database,
-    number: '04',
-    title: 'Lente do Comprador',
-    description:
-      'Como o comprador processa a decisão e o que precisa sentir para agir. Na faixa do ICP, o comprador é o próprio fundador ou fundador + validador mínimo.',
-    frameworks: 'JOLT Effect · Neurociência da Confiança',
-  },
-  {
-    icon: Zap,
-    number: '05',
-    title: 'Lente do Crescimento',
-    description:
-      'Qual alavanca é proporcional ao estágio real do negócio. A alavanca certa no momento certo.',
-    frameworks: 'Founder-Led Growth · Demand Creation · Flywheel Revenue Engine · Nearbound',
-  },
+  { icon: Brain, number: '01', title: 'Lente do Fundador', description: 'Quais são as prioridades, os limites e a capacidade de execução de quem conduz o negócio?', frameworks: 'Prioridades · Recursos · Responsabilidades' },
+  { icon: Eye, number: '02', title: 'Lente da Decisão', description: 'O que ajuda o comprador a decidir e quais dúvidas ou barreiras estão adiando a contratação?', frameworks: 'Critérios de compra · Risco percebido · Confiança' },
+  { icon: Network, number: '03', title: 'Lente da Receita', description: 'Como as ofertas, os canais e a carteira atual se conectam às oportunidades de gerar receita?', frameworks: 'Ofertas · Canais · Expansão na base' },
+  { icon: Database, number: '04', title: 'Lente do Comprador', description: 'Quem tem o problema que a empresa resolve, quem participa da compra e qual valor precisa perceber?', frameworks: 'Cliente prioritário · Necessidades · Valor econômico' },
+  { icon: Zap, number: '05', title: 'Lente do Crescimento', description: 'Qual próximo movimento faz sentido diante do estágio, das evidências e dos recursos do negócio?', frameworks: 'Novas oportunidades · Parcerias · Capacidade de execução' },
 ]
 
 export function CortexContent() {
@@ -132,7 +77,7 @@ export function CortexContent() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
               <span className="text-[10px] md:text-xs text-primary/90 font-bold tracking-widest uppercase">
-                Tecnologia Proprietária
+                Sistema interno de apoio estratégico
               </span>
             </motion.div>
 
@@ -150,17 +95,16 @@ export function CortexContent() {
               variants={fadeInUp}
               className="text-xl md:text-2xl text-white/75 max-w-4xl mx-auto leading-snug font-medium mb-6"
             >
-              Cinco lentes simultâneas. Um motor cognitivo.
+              Contexto, análise e continuidade para decidir melhor.
             </motion.p>
 
             <motion.p
               variants={fadeInUp}
               className="text-base md:text-lg text-white/55 max-w-3xl mx-auto leading-relaxed"
             >
-              O motor cognitivo proprietário que opera dentro de cada projeto da Synapse. Não é
-              template, não é Assessment. É um agente de inteligência que processa cada decisão sob
-              cinco lentes simultâneas, cruzando duas décadas de repertório com a inteligência
-              acumulada de todos os projetos anteriores.
+              O CORTEX B2B é o sistema interno que apoia a arquitetura e o acompanhamento
+              de receita da SYNAPSE. Reúne informações do negócio, referências e análises com
+              inteligência artificial. Júlio revisa as recomendações e conduz as decisões com o cliente.
             </motion.p>
           </motion.div>
 
@@ -204,18 +148,18 @@ export function CortexContent() {
               <motion.span
                 animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-2 h-2 rounded-full bg-green-400"
+                className="w-2 h-2 rounded-full bg-primary"
               />
               <span className="text-xs text-white/65 tracking-wide">
-                Processando 30+ frameworks em paralelo
+                IA como apoio. Júlio na condução estratégica.
               </span>
             </div>
 
             <Link
-              href="/#diagnostico"
+              href="/contato"
               className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white pl-7 pr-2 py-2 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
             >
-              Iniciar Diagnóstico CORTEX B2B™
+              Conversar com Júlio
               <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
                 <ArrowRight size={16} />
               </span>
@@ -239,7 +183,7 @@ export function CortexContent() {
               className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
             >
               <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                4 Sustentações
+                Como apoia o trabalho
               </span>
             </motion.div>
 
@@ -247,7 +191,7 @@ export function CortexContent() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white"
             >
-              O que o CORTEX <span className="text-primary">carrega.</span>
+              O que sustenta <span className="text-primary">a análise.</span>
             </motion.h2>
           </motion.div>
 
@@ -296,7 +240,7 @@ export function CortexContent() {
               className="mb-8 px-5 py-1.5 border border-primary/30 rounded-full text-primary inline-block"
             >
               <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">
-                5 Lentes Simultâneas
+                Cinco perspectivas de análise
               </span>
             </motion.div>
 
@@ -304,7 +248,7 @@ export function CortexContent() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6"
             >
-              Cada decisão processada
+              O seu negócio visto
               <br />
               <span className="text-primary">por cinco perspectivas.</span>
             </motion.h2>
@@ -313,8 +257,8 @@ export function CortexContent() {
               variants={fadeInUp}
               className="text-base md:text-lg text-white/60 leading-relaxed max-w-3xl"
             >
-              Quando uma sessão acaba, o que você viu foram 49 minutos. O que aconteceu por trás foi
-              o cruzamento dessas cinco lentes operando em paralelo.
+              Estas perspectivas ajudam a examinar o mesmo desafio por ângulos diferentes
+              antes de escolher as prioridades e orientar a execução.
             </motion.p>
           </motion.div>
 
@@ -355,19 +299,19 @@ export function CortexContent() {
           >
             <div className="px-8 md:px-12 py-10 md:py-14 rounded-[2rem] border border-primary/20 bg-primary/[0.04] mb-12 backdrop-blur-sm">
               <p className="text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-snug text-white tracking-tight">
-                Quem está dentro da operação não consegue ver o padrão.
+                A tecnologia amplia a capacidade de análise.
                 <br />
                 <span className="text-primary">
-                  Quem está fora, com o CORTEX, enxerga.
+                  A direção é construída com você.
                 </span>
               </p>
             </div>
 
             <Link
-              href="/#diagnostico"
+              href="/contato"
               className="group inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-8 pr-2 py-2 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
             >
-              Iniciar Diagnóstico CORTEX B2B™
+              Conversar com Júlio
               <span className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
                 <ArrowRight size={18} />
               </span>

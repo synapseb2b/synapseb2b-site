@@ -1,10 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Languages, TrendingUp, ShieldCheck } from 'lucide-react'
+import { Languages, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 import { LiveBadge } from '@/components/ui/LiveBadge'
+import { getWhatsAppUrl } from '@/lib/constants'
 
 interface Pillar {
   number: string
@@ -17,23 +18,23 @@ const pillars: Pillar[] = [
   {
     number: '01',
     icon: Languages,
-    title: 'Tradução de Valor',
+    title: 'Seu valor vira desconto.',
     description:
-      'A distância entre o que sua empresa entrega e o que o mercado entende custa receita todos os meses. Fechamos essa distância. O que antes era interpretado como mais uma opção passa a ser reconhecido pelo que de fato é, e o preço acompanha.',
+      'A empresa entrega bem, mas o comprador compara apenas preço. Trabalhamos a oferta, os clientes prioritários e os critérios que sustentam a decisão de compra.',
   },
   {
     number: '02',
     icon: TrendingUp,
-    title: 'Design de Receita',
+    title: 'Tudo depende de você.',
     description:
-      'Receita gerada só por indicação tem teto. Quando a empresa atinge esse teto, a reação comum é culpar o comercial. O diagnóstico costuma ser outro: falta arquitetura. Quando o sistema existe, a receita para de depender de quem está de plantão e passa a depender de como o funil foi desenhado.',
+      'As vendas dependem dos seus contatos e da sua presença em cada negociação. Organizamos canais, responsabilidades e uma rotina comercial que o time consiga seguir.',
   },
   {
     number: '03',
     icon: ShieldCheck,
-    title: 'Arsenal Estratégico',
+    title: 'Oportunidades ficam paradas.',
     description:
-      'Conhecimento distribuído entre cabeça do fundador, experiência do time e relações com clientes precisa virar sistema consultável. Mapa de Receita, deck, site e plano de comunicação formam o arsenal onde esse conhecimento se formaliza. O que dependia de quem estivesse presente passa a estar disponível para qualquer pessoa da empresa.',
+      'Novos serviços, parcerias e possibilidades na base de clientes competem pela sua atenção. Ajudamos a escolher o que vale testar e a definir a próxima ação para avançar.',
   },
 ]
 
@@ -55,16 +56,16 @@ export function PillarsSection() {
           viewport={{ once: true }}
         >
           <motion.div variants={fadeInUp} className="mb-8">
-            <LiveBadge>Os Três Pilares</LiveBadge>
+            <LiveBadge>Seu momento</LiveBadge>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
           >
-            Três Pilares.{' '}
+            O que está limitando{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-              Um Método.
+              sua receita hoje?
             </span>
           </motion.h2>
 
@@ -72,8 +73,8 @@ export function PillarsSection() {
             variants={fadeInUp}
             className="mt-6 text-base md:text-lg text-white/60 leading-relaxed max-w-3xl"
           >
-            Competência existe no fundador, no time e no negócio. Arquitetura é o que transforma
-            competência em receita.
+            Para empresas B2B que já têm clientes e precisam organizar o próximo passo comercial.
+            Você reconhece alguma destas situações?
           </motion.p>
         </motion.div>
 
@@ -112,6 +113,7 @@ export function PillarsSection() {
                 <p className="text-white/60 text-[0.95rem] md:text-base leading-relaxed">
                   {pillar.description}
                 </p>
+                <a href={getWhatsAppUrl(`Olá, Júlio. Identifiquei este desafio no site da SYNAPSE: ${pillar.title} Quero conversar sobre minha empresa.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-sm text-primary hover:text-accent-300">Esse é meu momento<ArrowRight size={14} /></a>
 
               </motion.article>
             )

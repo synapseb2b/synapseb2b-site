@@ -29,7 +29,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <p className="text-white/50 text-sm font-medium">
-              {"Synapse B2B — Engenharia de Receita™"}
+              {"SYNAPSE B2B · Arquitetura e acompanhamento estratégico de receita"}
             </p>
             <p className="text-white/30 text-xs mt-1.5">
               &copy; {new Date().getFullYear()} Synapse B2B. Todos os direitos reservados.
@@ -51,7 +51,7 @@ export function Footer() {
           {/* Nav */}
           <nav className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {[
-              { label: 'O que entregamos', href: '/entregas' },
+              { label: 'Como trabalhamos', href: '/entregas' },
               { label: 'CORTEX B2B', href: '/cortex-b2b' },
               { label: 'Resultados', href: '/cases' },
               { label: 'Sobre', href: '/sobre' },

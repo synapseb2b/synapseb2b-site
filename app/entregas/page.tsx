@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { EntregasContent } from '@/components/entregas/EntregasContent'
 
 export const metadata: Metadata = {
-  title: 'O que entregamos',
+  title: 'Arquitetura de Receita e Advisor de Receita',
   description:
-    'Três formas de contratar a Synapse B2B. Diagnóstico CORTEX B2B, Projeto Estratégico de Engenharia de Receita e Advisor Estratégico. Tudo sobre o método.',
+    'Organize as prioridades comerciais da sua empresa B2B com um projeto de Arquitetura de Receita ou acompanhamento recorrente como Advisor de Receita.',
 }
 
 export default function EntregasPage() {

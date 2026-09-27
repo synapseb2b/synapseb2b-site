@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -19,103 +19,24 @@ interface Chapter {
 
 const CHAPTERS: Chapter[] = [
   {
-    number: '01',
-    year: '2005-2023',
-    badge: 'Linha de frente',
-    title: 'Duas décadas no centro do B2B mais exigente do mundo.',
-    body: (
-      <>
-        <p>
-          Microsoft, Dell, TOTVS e Google. Não como vendedor. Como o profissional que sentava
-          do lado do cliente e descobria junto o que ele ainda não enxergava. Cada ecossistema
-          forçou uma disciplina específica.
-        </p>
-        <p>
-          Em Google, Challenger Sale e pensamento sistêmico aplicado a contas estratégicas. Em
-          Microsoft, arquitetura enterprise e escala. Em Dell, leitura de decisão financeira
-          corporativa em ciclos longos. Em TOTVS, a proximidade com a realidade da empresa
-          brasileira de médio porte, onde o fundador ainda decide sozinho.
-        </p>
-      </>
-    ),
+    number: '01', year: '2005+', badge: 'Experiência comercial',
+    title: 'Duas décadas de atuação em negócios B2B.',
+    body: <><p>Minha trajetória passa pelos ecossistemas Google, Microsoft, Dell e TOTVS, com atuação comercial, desenvolvimento de contas e relacionamento com decisores.</p><p>Esse trabalho exige compreender o negócio do cliente, avaliar o valor de uma solução e conduzir oportunidades com diferentes participantes e ciclos de decisão.</p></>,
   },
   {
-    number: '02',
-    year: 'Agosto 2023',
-    badge: 'O marco em NY',
-    title: 'Sede do Google, Nova York. Co-liderando 25 executivos C-Level do Brasil.',
-    body: (
-      <>
-        <p>
-          Estar naquele epicentro global me trouxe uma clareza irresistível: redirecionar meus
-          talentos e criar algo realmente novo para o B2B.
-        </p>
-        <p className="text-white/80 font-medium">
-          Mas ideia sem estrutura é só inspiração. Faltava o método.
-        </p>
-      </>
-    ),
+    number: '02', year: 'Agosto 2023', badge: 'Google, Nova York',
+    title: 'Uma comitiva de 25 executivos de TI.',
+    body: <><p>Co-liderei uma comitiva de 25 executivos de TI na sede do Google em Nova York. Uma experiência de troca sobre tecnologia, decisões de investimento e transformação dos negócios.</p><p>O aprendizado continua presente na forma como analiso oportunidades e converso com quem precisa decidir o próximo passo de uma empresa.</p></>,
   },
   {
-    number: '03',
-    year: '2023-2025',
-    badge: 'Preparação silenciosa',
-    title: 'Dois anos transformando experiência de trincheira em catálogo cognitivo.',
-    body: (
-      <>
-        <p>
-          Mergulhei na ciência do comportamento e conversão. Integrei neurociência e andragogia
-          a dezenas das principais metodologias globais — economia comportamental, design de
-          categoria, modelos científicos de escala e previsibilidade de receita.
-        </p>
-        <p>
-          Não para repetir o que já existia. Para construir algo novo. Esse arsenal viraria o
-          motor cognitivo da empresa que eu ainda não tinha fundado.
-        </p>
-      </>
-    ),
+    number: '03', year: '2025', badge: 'SYNAPSE B2B',
+    title: 'Experiência aplicada ao negócio do fundador.',
+    body: <><p>Fundei a SYNAPSE para ajudar empresas B2B a organizar oportunidades que ainda não se transformaram em receita. O trabalho conecta ofertas, compradores, canais e prioridades comerciais.</p><p>O CORTEX B2B apoia a organização do contexto e das análises. A revisão estratégica e a condução com o cliente são minhas.</p></>,
   },
   {
-    number: '04',
-    year: 'Julho 2025',
-    badge: 'Synapse B2B',
-    title: 'A arquitetura sai do papel. Engenharia de Receita™ e CORTEX B2B™.',
-    body: (
-      <>
-        <p>
-          A Synapse B2B foi fundada para operar a Engenharia de Receita através do CORTEX
-          B2B™, nosso agente cognitivo proprietário. O objetivo é cirúrgico:{' '}
-          <span className="text-white font-medium">
-            traduzir competência técnica em narrativa que o mercado entende, confia e compra.
-          </span>
-        </p>
-        <p>
-          Cada projeto opera com cinco lentes simultâneas: Fundador, Neurociência, Receita,
-          Comprador e Crescimento. A inteligência cumulativa não esquece — o que aparece na
-          Sessão 1 sustenta a Sessão 5.
-        </p>
-      </>
-    ),
-  },
-  {
-    number: '05',
-    year: 'Abril 2026',
-    badge: 'Marcato',
-    title: 'A extensão do método: autoridade visualmente incontestável.',
-    body: (
-      <>
-        <p>
-          Narrativas estratégicas e autoridades de alto valor não sobrevivem em palcos
-          amadores. Por isso fundei a Marcato em sociedade com Fred Carvalho, especialista com
-          30 anos de ofício no audiovisual.
-        </p>
-        <p>
-          Operamos um hub de produção com ênfase: estúdio multicâmera próprio + Engenharia de
-          Posicionamento. Excelência técnica encontra visão de negócios. Qualidade técnica
-          vira autoridade de mercado visualmente incontestável.
-        </p>
-      </>
-    ),
+    number: '04', year: 'Hoje', badge: 'Atuação direta',
+    title: 'Arquitetura e acompanhamento estratégico de receita.',
+    body: <><p>Atuo em projetos com escopo definido e como Advisor de Receita. Em ambos, o objetivo é tornar explícito o que merece atenção e o que precisa ser feito para avançar.</p><p>No acompanhamento recorrente, revisamos a execução, confrontamos hipóteses e ajustamos as prioridades conforme os resultados e a capacidade do negócio.</p></>,
   },
 ]
 
@@ -151,9 +72,9 @@ export function SobreContent() {
               variants={fadeInLeft}
               className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-10"
             >
-              Entre o que sua empresa faz e o que o mercado enxerga,{' '}
+              Ao lado de quem decide{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                existe um abismo.
+                o próximo passo do negócio.
               </span>
             </motion.h1>
 
@@ -162,13 +83,12 @@ export function SobreContent() {
               className="space-y-6 text-base md:text-lg text-white/65 leading-relaxed max-w-4xl"
             >
               <p>
-                Esse abismo destrói valor e receita todos os dias. A maior ameaça a negócios B2B
-                de alta complexidade não é a concorrência técnica, mas a incapacidade de
-                traduzir a própria excelência em percepção inquestionável.
+                A SYNAPSE B2B ajuda fundadores a melhorar e sistematizar a arquitetura de receita
+                de seus negócios, com análise, decisões e acompanhamento estratégico.
               </p>
               <p className="text-white/85 font-medium">
-                Fechar essa conta exige muito mais do que esforço heroico. Exige uma engenharia
-                cognitiva profunda.
+                Você trabalha diretamente com Júlio Figueiredo, do entendimento do desafio
+                à orientação dos próximos passos.
               </p>
             </motion.div>
           </motion.div>
@@ -223,13 +143,12 @@ export function SobreContent() {
               </h2>
               <div className="space-y-5 text-base md:text-lg text-white/65 leading-relaxed">
                 <p>
-                  Em agosto de 2023, na sede do Google em Nova York, eu vivia um marco.
-                  Co-liderar 25 executivos C-Level das maiores empresas do Brasil era a
-                  coroação de duas décadas de linha de frente comercial em ecossistemas como
-                  Microsoft, Dell, TOTVS e o próprio Google.
+                  Minha experiência comercial B2B combina desenvolvimento de contas, relacionamento
+                  com decisores e leitura de oportunidades em serviços e tecnologia. Na SYNAPSE,
+                  aplico esse repertório junto a fundadores que precisam organizar a geração de receita.
                 </p>
                 <p className="text-white/80">
-                  Estar naquele epicentro global me trouxe uma clareza irresistível.
+                  O trabalho começa por entender o seu negócio e escolher o que precisa avançar agora.
                 </p>
               </div>
 
@@ -278,7 +197,7 @@ export function SobreContent() {
             >
               De duas décadas em ecossistemas globais{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                à arquitetura cognitiva da Synapse.
+                à atuação junto ao fundador.
               </span>
             </motion.h2>
           </motion.div>
@@ -343,110 +262,23 @@ export function SobreContent() {
             <div className="card-shine px-8 md:px-12 py-12 md:py-16 rounded-[2rem] border border-primary/20 bg-primary/[0.04] backdrop-blur-sm mb-12">
               <Quote size={28} className="text-primary/50 mx-auto mb-6" />
               <p className="text-2xl md:text-3xl lg:text-[2.25rem] font-medium leading-snug text-white tracking-tight mb-8">
-                A complexidade do seu conhecimento só tem valor comercial quando é{' '}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                  decodificada e tangibilizada
-                </span>{' '}
-                para o tomador de decisão.
+                Seu próximo movimento comercial precisa de{' '}
+                <span className="text-primary">prioridade, responsável e acompanhamento.</span>
               </p>
               <p className="text-lg md:text-xl text-white/70 leading-snug font-medium">
-                Eu não empurro soluções corporativas.{' '}
-                <span className="text-white">
-                  Eu governo a inteligência do seu motor de receita e do seu posicionamento.
-                </span>
+                É assim que trabalhamos juntos: entendendo o negócio, escolhendo as ações e
+                revisando o que elas produzem.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* DUAL CTA - Synapse + Marcato */}
-      <section className="relative py-24 md:py-32 border-t border-white/[0.06] overflow-hidden">
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="text-center mb-16 md:mb-20"
-          >
-            <motion.div variants={fadeInUp} className="mb-8">
-              <LiveBadge>Próximo passo</LiveBadge>
-            </motion.div>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-4xl mx-auto"
-            >
-              Duas alavancas.{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                Uma arquitetura.
-              </span>
-            </motion.h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="grid md:grid-cols-2 gap-6 lg:gap-8"
-          >
-            {/* Synapse */}
-            <motion.div
-              variants={fadeInUp}
-              className="card-shine group rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-500"
-            >
-              <p className="text-primary text-[10px] font-bold tracking-widest uppercase mb-4">
-                Synapse B2B
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight mb-5">
-                Quer descobrir a alavanca invisível do seu negócio B2B?
-              </h3>
-              <p className="text-white/60 text-base leading-relaxed mb-8">
-                Engenharia de Receita aplicada com o CORTEX B2B™. Posicionamento, narrativa e
-                arquitetura comercial que transformam competência técnica em receita
-                previsível.
-              </p>
-              <Link
-                href="/#diagnostico"
-                className="group/link inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white pl-6 pr-2 py-2 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-0.5"
-              >
-                Iniciar Diagnóstico CORTEX B2B™
-                <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover/link:rotate-45 transition-transform">
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
-            </motion.div>
-
-            {/* Marcato */}
-            <motion.div
-              variants={fadeInUp}
-              className="card-shine group rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-500"
-            >
-              <p className="text-primary text-[10px] font-bold tracking-widest uppercase mb-4">
-                Marcato
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight mb-5">
-                A imagem da sua empresa não reflete o peso real da sua entrega?
-              </h3>
-              <p className="text-white/60 text-base leading-relaxed mb-8">
-                Hub de produção com ênfase. Estúdio multicâmera próprio em sociedade com Fred
-                Carvalho (30 anos em audiovisual) + Engenharia de Posicionamento. Autoridade
-                visualmente incontestável.
-              </p>
-              <a
-                href="https://marcatob2b.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/link inline-flex items-center gap-3 bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.12] hover:border-white/[0.3] pl-6 pr-2 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Conheça a Marcato
-                <span className="w-9 h-9 rounded-full bg-white/[0.08] flex items-center justify-center group-hover/link:rotate-45 transition-transform">
-                  <ArrowRight size={14} />
-                </span>
-              </a>
-            </motion.div>
-          </motion.div>
+      <section className="relative py-20 md:py-28 border-t border-white/[0.06]">
+        <div className="max-w-[900px] mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl text-white font-bold mb-6">Vamos olhar para <span className="text-primary">a sua receita?</span></h2>
+          <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">Uma conversa de 21 minutos, de fundador para fundador, para entender seu momento e avaliar como podemos trabalhar juntos.</p>
+          <Link href="/contato" className="inline-flex items-center gap-3 rounded-full bg-primary hover:bg-primary-hover px-7 py-4 text-white font-bold">Conversar com Júlio<ArrowRight size={18} /></Link>
         </div>
       </section>
     </>

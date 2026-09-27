@@ -54,10 +54,10 @@ body {
   color: white;
 }
 
-/* Mobile: escala com a largura para a frase em destaque caber em uma linha (3 linhas no total). */
+/* Mobile: título fluido para a mensagem de arquitetura de receita. */
 @media (max-width: 767px) {
   .hero-headline {
-    font-size: clamp(1.6rem, 7vw, 1.9rem);
+    font-size: clamp(2rem, 8vw, 3.25rem);
   }
 }
 
@@ -143,3 +143,6 @@ body {
 .group:hover .card-shine::after {
   width: 100%;
 }
+
+:focus-visible { outline: 2px solid var(--color-accent-300); outline-offset: 4px; }
+[id] { scroll-margin-top: 7rem; }

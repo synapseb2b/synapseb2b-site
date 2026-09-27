@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -12,31 +12,31 @@ const HOME_LENSES = [
     icon: Brain,
     number: '01',
     title: 'Fundador',
-    frameworks: 'Andragogia · Challenger Sale',
+    frameworks: 'Prioridades e capacidade de execução',
   },
   {
     icon: Eye,
     number: '02',
-    title: 'Neurociência',
-    frameworks: 'Damásio · Kahneman',
+    title: 'Decisão',
+    frameworks: 'Critérios e barreiras à compra',
   },
   {
     icon: Network,
     number: '03',
     title: 'Receita',
-    frameworks: 'Value-Based · SPICED · Bowtie',
+    frameworks: 'Ofertas, canais e oportunidades',
   },
   {
     icon: Database,
     number: '04',
     title: 'Comprador',
-    frameworks: 'JOLT Effect · Confiança',
+    frameworks: 'Necessidades e valor percebido',
   },
   {
     icon: Zap,
     number: '05',
     title: 'Crescimento',
-    frameworks: 'Founder-Led · Flywheel · Nearbound',
+    frameworks: 'Próximos movimentos do negócio',
   },
 ]
 
@@ -85,7 +85,7 @@ export function CortexSection() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <span className="text-[10px] md:text-xs text-primary/90 font-bold tracking-widest uppercase">
-              Tecnologia Proprietária
+              Inteligência de apoio à decisão
             </span>
           </motion.div>
 
@@ -103,11 +103,12 @@ export function CortexSection() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-white/75 max-w-3xl mx-auto leading-snug font-medium"
           >
-            Cinco lentes simultâneas. Um motor cognitivo.
+            Contexto organizado. Decisões acompanhadas.
           </motion.p>
         </motion.div>
 
-        {/* 5 Lens cards */}
+        <p className="text-center text-base md:text-lg text-white/65 leading-relaxed max-w-3xl mx-auto mb-12">O CORTEX reúne contexto, referências e análises para apoiar o trabalho da SYNAPSE. Júlio revisa as recomendações e decide as prioridades junto ao fundador.</p>
+        {/* Perspectivas de análise */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -141,10 +142,10 @@ export function CortexSection() {
             <motion.span
               animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-2 h-2 rounded-full bg-green-400"
+              className="w-2 h-2 rounded-full bg-primary"
             />
             <span className="text-xs text-white/65 tracking-wide">
-              Processando 30+ frameworks em paralelo
+              Análises apoiadas por IA e revisadas por Júlio
             </span>
           </div>
 

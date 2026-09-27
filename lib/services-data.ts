@@ -1,4 +1,6 @@
-﻿export interface ServiceFeature {
+import { getWhatsAppUrl } from './constants'
+
+export interface ServiceFeature {
   text: string
   badge?: string
 }
@@ -8,63 +10,46 @@ export interface Service {
   name: string
   subtitle: string
   description: string
+  outcome: string
   features: ServiceFeature[]
   cta: string
-  ctaHref?: string
-  featured?: boolean
-  note?: string
+  ctaHref: string
+  note: string
 }
 
 export const services: Service[] = [
   {
-    id: 'diagnostico',
-    name: 'Diagnóstico CORTEX B2B™',
-    subtitle: 'Em 30 dias, clareza',
+    id: 'arquitetura',
+    name: 'Arquitetura de Receita',
+    subtitle: 'Projeto com escopo definido',
     description:
-      'Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa. Assessment estratégico, sessão individual de 49 minutos e Relatório CORTEX personalizado.',
+      'Para quem precisa decidir onde concentrar o esforço comercial. Analisamos ofertas, clientes, canais e oportunidades para organizar o próximo movimento de receita do negócio.',
+    outcome: 'Você sai com prioridades definidas e um caminho claro de execução.',
     features: [
-      { text: 'Assessment CORTEX B2B™ pré-sessão' },
-      { text: 'Sessão individual de 49 minutos' },
-      { text: 'Relatório CORTEX B2B™ personalizado' },
-      { text: 'Plano de ação para 30 dias' },
+      { text: 'Leitura dos gargalos e das oportunidades de receita' },
+      { text: 'Definição de ofertas, compradores e canais prioritários' },
+      { text: 'Mapa de oportunidades, incluindo expansão na base e novas linhas de negócio' },
+      { text: 'Plano de ação com responsáveis, próximos passos e indicadores' },
     ],
-    cta: 'Iniciar Diagnóstico',
-    ctaHref: '/#diagnostico',
-    note: 'Valor convertido em crédito integral no Projeto Estratégico se houver continuidade em até 30 dias.',
-  },
-  {
-    id: 'projeto',
-    name: 'Projeto Estratégico de Engenharia de Receita',
-    subtitle: 'Em 35 dias, sistema completo',
-    description:
-      'Construção integral da arquitetura comercial em 5 sessões individuais e 6 ativos estratégicos entregues, com acompanhamento nos 90 dias seguintes para calibrar o sistema enquanto o mercado responde.',
-    features: [
-      { text: '5 sessões individuais de 49 minutos' },
-      { text: '6 ativos estratégicos entregues' },
-      { text: '5 devolutivas construídas pelo CORTEX B2B™' },
-      { text: '3 sessões de acompanhamento em 90 dias' },
-      { text: 'Variante para Ecossistemas (múltiplas linhas de receita)' },
-    ],
-    cta: 'Começar Projeto',
-    ctaHref: '/#diagnostico',
-    featured: true,
-    note: 'Pode incluir Skin in the Game (variável atrelada à receita nova gerada).',
+    cta: 'Organizar minha receita',
+    ctaHref: getWhatsAppUrl('Olá, Júlio. Quero conversar sobre a Arquitetura de Receita para minha empresa B2B.'),
+    note: 'Prazo, investimento e entregas definidos na proposta, conforme o desafio do negócio.',
   },
   {
     id: 'advisor',
-    name: 'Advisor Estratégico',
-    subtitle: 'Sparring contínuo',
+    name: 'Advisor de Receita',
+    subtitle: 'Acompanhamento estratégico recorrente',
     description:
-      'O terceiro tempo da Engenharia de Receita. Sustenta o método em operação enquanto o mercado responde ao novo posicionamento. Para clientes que concluíram o Projeto e querem continuidade estendida.',
+      'Para quem precisa de um interlocutor experiente ao lado do fundador. Júlio acompanha as decisões comerciais, orienta os responsáveis e revisa o que está avançando na geração de receita.',
+    outcome: 'Você tem direção e acompanhamento para transformar decisões em ações.',
     features: [
-      { text: 'Pacote mensal de horas de consultoria sparring' },
-      { text: 'Apoio na execução do Mapa de Receita' },
-      { text: 'Calibragem de cadência das ações de comunicação' },
-      { text: 'Sessões sob demanda para decisões importantes' },
-      { text: 'Acesso ao CORTEX B2B™ para consultas direcionadas', badge: 'em breve' },
-      { text: 'Revisão de ativos comerciais quando aplicável' },
+      { text: 'Encontros com o fundador para decidir as prioridades' },
+      { text: 'Orientação prática sobre o que fazer e como avançar' },
+      { text: 'Acompanhamento das ações, dos responsáveis e dos indicadores' },
+      { text: 'Revisão de oportunidades e ajustes conforme a resposta do mercado' },
     ],
-    cta: 'Conhecer o Advisor',
-    ctaHref: '/#diagnostico',
+    cta: 'Conversar sobre o Advisor',
+    ctaHref: getWhatsAppUrl('Olá, Júlio. Quero conversar sobre o Advisor de Receita para acompanhar as prioridades comerciais da minha empresa B2B.'),
+    note: 'Pode ser contratado diretamente. Frequência, dedicação e responsabilidades combinadas na proposta.',
   },
 ]

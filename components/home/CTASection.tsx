@@ -8,7 +8,7 @@ import { LiveBadge } from '@/components/ui/LiveBadge'
 
 export function CTASection() {
   return (
-    <section id="diagnostico" className="relative py-24 md:py-32 bg-background-dark text-white overflow-hidden border-t border-white/[0.06]">
+    <section id="conversa" className="relative py-24 md:py-32 bg-background-dark text-white overflow-hidden border-t border-white/[0.06]">
       <SynapseBackground particleCount={30} connectionDistance={160} opacity={0.1} speed={0.2} />
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
         {/* Header */}
@@ -27,10 +27,10 @@ export function CTASection() {
             variants={fadeInUp}
             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6"
           >
-            3 perguntas sobre o seu negócio.
+            Qual é o próximo movimento
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-              Uma leitura estratégica.
+              de receita da sua empresa?
             </span>
           </motion.h2>
 
@@ -38,11 +38,12 @@ export function CTASection() {
             variants={fadeInUp}
             className="text-base md:text-lg text-white/65 leading-relaxed max-w-4xl"
           >
-            Você responde em 5 minutos. Recebe uma análise estratégica inicial no mesmo dia útil,
-            sem compromisso de continuidade.
+            Na Sessão de Decodificação, conversamos sobre seu momento e avaliamos como a SYNAPSE
+            pode ajudar. São 21 minutos com Júlio Figueiredo, sem compromisso.
           </motion.p>
         </motion.div>
 
+        <span id="diagnostico" className="scroll-mt-32" />
         <div className="max-w-2xl mx-auto">
           <DiagnosticForm />
         </div>
