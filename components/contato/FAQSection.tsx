@@ -44,7 +44,7 @@ export function FAQSection() {
             variants={fadeInUp}
             className="text-base md:text-lg text-white/65 leading-relaxed max-w-3xl"
           >
-            As respostas curtas estão aqui. Se não encontrar a sua, use o formulário acima — Júlio
+            As respostas curtas estão aqui. Se não encontrar a sua, use o formulário acima. Júlio
             responde diretamente no WhatsApp.
           </motion.p>
         </motion.div>
