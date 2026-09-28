@@ -4,7 +4,7 @@ import { CortexContent } from '@/components/cortex/CortexContent'
 export const metadata: Metadata = {
   title: 'CORTEX B2B™',
   description:
-    'O motor cognitivo proprietário que opera dentro de cada projeto da Synapse. 5 lentes simultâneas, 30+ frameworks, duas décadas de repertório em ecossistemas Google, Microsoft, Dell e TOTVS.',
+    'Conheça o sistema interno que apoia as análises e o acompanhamento da SYNAPSE B2B, com inteligência artificial e revisão estratégica de Júlio Figueiredo.',
 }
 
 export default function CortexB2BPage() {

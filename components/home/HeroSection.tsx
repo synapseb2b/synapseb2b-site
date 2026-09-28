@@ -5,10 +5,11 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 import { fadeInUp, fadeInLeft, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 import { GradientOrbs } from '@/components/ui/GradientOrbs'
+import { SESSION_WHATSAPP_URL } from '@/lib/constants'
 
 export function HeroSection() {
   return (
-    <section className="relative h-screen min-h-[650px] w-full flex flex-col justify-center overflow-hidden bg-background-dark">
+    <section className="relative min-h-[700px] md:min-h-[760px] min-h-svh w-full flex flex-col justify-center overflow-hidden bg-background-dark">
       {/* Background gradient */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(74,144,217,0.12),transparent_70%)]" />
@@ -18,7 +19,7 @@ export function HeroSection() {
       <GradientOrbs count={3} opacity={0.05} />
       <SynapseBackground particleCount={50} connectionDistance={200} opacity={0.18} speed={0.3} />
 
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24 relative z-10 h-full flex flex-col justify-center pt-20">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col justify-center pt-36 pb-20">
         <motion.div
           className="w-full flex flex-col items-start"
           variants={staggerContainer}
@@ -35,8 +36,8 @@ export function HeroSection() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <Sparkles className="w-3.5 h-3.5 text-primary fill-primary" />
-            <span className="text-white text-xs md:text-sm font-medium tracking-wide">
-              Engenharia de Receita&trade;
+            <span className="text-white text-xs md:text-sm font-medium tracking-wide leading-relaxed">
+              Arquitetura e acompanhamento de receita B2B
             </span>
           </motion.div>
 
@@ -45,12 +46,9 @@ export function HeroSection() {
             variants={fadeInLeft}
             className="hero-headline max-w-6xl mb-6 md:mb-8"
           >
-            {"Sua competência"}
-            <br className="md:hidden" />
-            {" já é inquestionável."}
-            <br className="hidden lg:block" />
-            <span className="text-primary block md:inline [text-wrap:balance]">
-              {" Nós a tornamos inevitável."}
+            Toda empresa tem receita
+            <span className="text-primary block [text-wrap:balance]">
+              que não está sendo capturada.
             </span>
           </motion.h1>
 
@@ -59,9 +57,10 @@ export function HeroSection() {
             variants={fadeInUp}
             className="text-base md:text-lg lg:text-xl text-[#CCD6E0] leading-relaxed mb-10 md:mb-16 max-w-xl md:max-w-3xl lg:max-w-4xl font-normal"
           >
-            {"Entre o que sua empresa faz de verdade e o que o mercado consegue enxergar, existem oportunidades que ninguém organizou e conexões que ninguém fez ainda. "}
+            Ajudamos fundadores B2B a organizar ofertas, identificar oportunidades comerciais e
+            decidir onde concentrar esforços.{' '}
             <span className="text-white font-medium">
-              {"Nós encontramos as duas coisas."}
+              Com direção e acompanhamento para colocar as decisões em prática.
             </span>
           </motion.p>
 
@@ -74,11 +73,13 @@ export function HeroSection() {
             <div className="flex flex-col gap-3">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a
-                  href="#diagnostico"
+                  href={SESSION_WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-6 pr-2 py-2 md:pl-8 md:pr-2 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:shadow-primary/50 hover:-translate-y-1"
                 >
                   <span className="text-sm md:text-base font-bold tracking-tight">
-                    {"Iniciar Diagnóstico CORTEX B2B™"}
+                    {"Conversar com Júlio"}
                   </span>
                   <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 stroke-[2.5px]" />
@@ -92,8 +93,8 @@ export function HeroSection() {
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
-              <p className="text-[11px] text-white tracking-wide pl-1">
-                Direto ao ponto. Clareza que gera receita.
+              <p className="text-sm text-white/70 tracking-wide pl-1">
+                21 minutos, sem compromisso. De fundador para fundador.
               </p>
             </div>
 

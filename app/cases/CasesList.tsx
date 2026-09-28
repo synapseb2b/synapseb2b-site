@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, ExternalLink, MapPin, Quote } from 'lucide-react'
+import { ArrowRight, MapPin, Quote } from 'lucide-react'
 import { highlightCases, secondaryCases, type CaseStudy } from '@/lib/cases-data'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { SynapseBackground } from '@/components/ui/SynapseBackground'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { cn } from '@/lib/utils'
+import { SESSION_WHATSAPP_URL } from '@/lib/constants'
 
 export function CasesList() {
   return (
@@ -31,9 +32,9 @@ export function CasesList() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8"
             >
-              Empresas que traduziram{' '}
+              Decisões que organizam{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                competência em receita.
+                o caminho da receita.
               </span>
             </motion.h1>
 
@@ -41,10 +42,9 @@ export function CasesList() {
               variants={fadeInUp}
               className="text-base md:text-lg text-white/65 leading-relaxed max-w-4xl"
             >
-              Cada case aqui é uma empresa que já tinha competência, talento e histórico. O que a
-              Synapse fez foi construir a arquitetura que transformou esses ativos em posicionamento
-              reconhecível, sistema comercial estruturado e autoridade de mercado defensável. O que
-              muda entre um case e outro é o ponto de partida. O que não muda é o método.
+              Conheça a atuação da SYNAPSE na organização de ofertas, oportunidades e prioridades
+              comerciais. Cada caso apresenta o desafio, as decisões trabalhadas e o que foi
+              estruturado ou registrado no acompanhamento.
             </motion.p>
           </motion.div>
         </div>
@@ -89,7 +89,7 @@ export function CasesList() {
             viewport={{ once: true }}
             className="text-primary text-[10px] font-bold tracking-widest uppercase mb-12"
           >
-            Outras empresas operando com Engenharia de Receita
+            Outras aplicações da atuação estratégica
           </motion.p>
 
           <motion.div
@@ -118,18 +118,18 @@ export function CasesList() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
-              Sua empresa pode ser
+              O que precisa avançar
               <br />
-              <span className="text-primary">o próximo case.</span>
+              <span className="text-primary">na sua empresa?</span>
             </h2>
             <p className="text-white/60 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Em 30 dias sua empresa entende com precisão onde está deixando receita na mesa.
+              Converse com Júlio sobre suas oportunidades de receita e o que está impedindo o próximo passo.
             </p>
             <Link
-              href="/#diagnostico"
+              href={SESSION_WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               className="group inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-8 pr-2 py-2 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
             >
-              Iniciar Diagnóstico CORTEX B2B™
+              Conversar com Júlio
               <span className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
                 <ArrowRight size={18} />
               </span>
@@ -144,8 +144,9 @@ export function CasesList() {
 function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <motion.article
+      id={caseStudy.slug}
       variants={fadeInUp}
-      className="card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
+      className="scroll-mt-32 card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
     >
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
         {/* Left - heading + description */}
@@ -160,17 +161,6 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
                 {caseStudy.company}
               </h2>
             </div>
-            {caseStudy.url && (
-              <a
-                href={`https://${caseStudy.url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/30 hover:text-primary transition-colors mt-2"
-                aria-label={`Visitar ${caseStudy.company}`}
-              >
-                <ExternalLink size={18} />
-              </a>
-            )}
           </div>
 
           <p className="text-primary text-base md:text-lg font-medium mb-6 leading-snug">
@@ -183,9 +173,10 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
 
           <div className="rounded-2xl border border-primary/20 bg-primary/[0.04] p-5 md:p-6 mb-6">
             <p className="text-primary text-[10px] font-bold tracking-widest uppercase mb-2">
-              Resultado
+              {caseStudy.resultLabel || 'O que mudou'}
             </p>
             <p className="text-white/85 text-base leading-relaxed">{caseStudy.result}</p>
+            {caseStudy.context && <p className="mt-4 text-sm text-white/55 leading-relaxed">{caseStudy.context}</p>}
           </div>
 
           {caseStudy.testimonial && (
@@ -213,7 +204,7 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
                 caseStudy.metrics.length === 4
                   ? 'grid-cols-2'
                   : caseStudy.metrics.length === 3
-                  ? 'grid-cols-3'
+                  ? 'grid-cols-1 sm:grid-cols-3'
                   : 'grid-cols-2'
               )}
             >
@@ -225,19 +216,19 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
                   <p className="text-2xl md:text-3xl font-bold text-white tracking-tighter leading-none">
                     {m.value}
                   </p>
-                  <p className="text-white/40 text-[11px] mt-2 leading-tight">{m.label}</p>
+                  <p className="text-white/60 text-sm mt-2 leading-tight">{m.label}</p>
                 </div>
               ))}
             </div>
           )}
 
-          {caseStudy.assets && caseStudy.assets.length > 0 && (
+          {caseStudy.actions && caseStudy.actions.length > 0 && (
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
               <p className="text-primary text-[10px] font-bold tracking-widest uppercase mb-3">
-                Ativos entregues
+                Atuação estratégica
               </p>
               <ul className="space-y-2">
-                {caseStudy.assets.map((asset) => (
+                {caseStudy.actions.map((asset) => (
                   <li
                     key={asset}
                     className="text-white/55 text-sm leading-relaxed flex items-start gap-2"
@@ -249,20 +240,7 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
               </ul>
             </div>
           )}
-
-          {caseStudy.url && (
-            <a
-              href={`https://${caseStudy.url}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-primary text-xs font-medium hover:text-accent-300 transition-colors leading-relaxed"
-            >
-              <span className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary">
-                Conheça o site da {caseStudy.company}
-              </span>{' '}
-              <span className="text-white/40">desenvolvido pela Synapse B2B →</span>
-            </a>
-          )}
+          <a href={SESSION_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary text-sm hover:text-accent-300">Conversar sobre meu negócio<ArrowRight size={14} /></a>
         </div>
       </div>
     </motion.article>
@@ -272,8 +250,9 @@ function HighlightCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
 function CompactCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <motion.article
+      id={caseStudy.slug}
       variants={fadeInUp}
-      className="card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-7 md:p-8 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
+      className="scroll-mt-32 card-shine rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-7 md:p-8 hover:border-primary/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(74,144,217,0.12)] transition-all duration-300"
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div>
@@ -285,21 +264,13 @@ function CompactCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
             {caseStudy.company}
           </h3>
         </div>
-        {caseStudy.url && (
-          <a
-            href={`https://${caseStudy.url}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/25 hover:text-primary transition-colors mt-1"
-          >
-            <ExternalLink size={14} />
-          </a>
-        )}
       </div>
 
       <p className="text-primary text-sm font-medium mb-4 leading-snug">{caseStudy.tagline}</p>
 
       <p className="text-white/55 text-sm leading-relaxed mb-4">{caseStudy.description}</p>
+      <p className="text-white/75 text-sm leading-relaxed mb-5">{caseStudy.result}</p>
+      <a href={SESSION_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary text-sm hover:text-accent-300">Conversar sobre meu negócio<ArrowRight size={14} /></a>
 
       {caseStudy.testimonial && (
         <blockquote className="border-l-2 border-primary/30 pl-4 mt-4">
@@ -310,29 +281,6 @@ function CompactCaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
             {caseStudy.testimonial.author}, {caseStudy.testimonial.role}
           </footer>
         </blockquote>
-      )}
-
-      {caseStudy.url && (
-        <a
-          href={`https://${caseStudy.url}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block mt-5 text-primary text-xs font-medium hover:text-accent-300 transition-colors leading-relaxed"
-        >
-          <span className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary">
-            Conheça o site da {caseStudy.company}
-          </span>{' '}
-          <span className="text-white/40">desenvolvido pela Synapse B2B →</span>
-        </a>
-      )}
-
-      {caseStudy.status === 'em-execucao' && (
-        <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/30">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="text-primary text-[10px] font-bold uppercase tracking-wider">
-            Projeto Estratégico de Engenharia de Receita em desenvolvimento
-          </span>
-        </div>
       )}
     </motion.article>
   )

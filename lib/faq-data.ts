@@ -1,57 +1,43 @@
-﻿export interface FAQItem {
+export interface FAQItem {
   question: string
   answer: string
 }
 
-/**
- * FAQ estratégico Synapse B2B.
- * Otimizado para AEO (Answer Engine Optimization) — perguntas longas com respostas completas
- * que IAs como ChatGPT, Perplexity e Google AI Overview citam diretamente.
- */
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: 'Em quanto tempo recebo a análise estratégica inicial?',
-    answer:
-      'Após preencher o Diagnóstico CORTEX B2B™ no site, sua análise estratégica inicial volta no mesmo dia útil. Não há compromisso de continuidade. Você recebe uma leitura preliminar do gap entre o que sua empresa entrega e o que o mercado consegue enxergar, baseada nas três perguntas-chave.',
+    question: 'Para quem é a SYNAPSE B2B?',
+    answer: 'Para fundadores de empresas que vendem para outras empresas, já têm clientes e precisam organizar seu próximo movimento de receita. Atendemos desafios como dependência do fundador, ofertas pouco claras, concentração em indicações e oportunidades de expansão ainda sem uma atuação comercial definida.',
   },
   {
-    question: 'Para quais empresas a Synapse B2B é indicada?',
-    answer:
-      'A Synapse atende empresas B2B com competência técnica reconhecida e faturamento entre R$ 360 mil e R$ 3,6 milhões anuais. O fundador ou CEO precisa estar acessível, com poder de decisão direto. O ICP é construído para empresas que cresceram além de seus processos: têm clientes fiéis e histórico de entregas consistentes, mas a comunicação e o posicionamento não acompanham a profundidade do que entregam.',
+    question: 'O que é arquitetura de receita na prática?',
+    answer: 'É organizar o que a empresa vende, para quem vende, por quais canais e com qual processo comercial. O trabalho conecta essas decisões às oportunidades do negócio e a um plano de ação com prioridades, responsáveis e indicadores.',
   },
   {
-    question: 'O que diferencia a Synapse B2B de uma consultoria ou agência tradicional?',
-    answer:
-      'Consultoria boutique sênior tradicional atende corporativo acima de R$ 20M. Agências de marketing atendem qualquer tamanho, mas não vendem método estratégico. A Synapse opera no espaço entre os dois, no Middle Market B2B, com método proprietário (Engenharia de Receita™) e tecnologia proprietária (CORTEX B2B™). Não vende relatórios. Entrega arquitetura comercial completa em 35 dias com 6 ativos estratégicos que continuam operando dentro da empresa após o projeto.',
+    question: 'Qual a diferença entre Arquitetura de Receita e Advisor de Receita?',
+    answer: 'Arquitetura de Receita é um projeto com escopo e prazo definidos para analisar um desafio e organizar o caminho de execução. Advisor de Receita é o acompanhamento recorrente do fundador para priorizar ações, orientar os responsáveis e revisar os resultados. A indicação depende do momento da empresa.',
   },
   {
-    question: 'Como funciona o Skin in the Game?',
-    answer:
-      'O Skin in the Game é um mecanismo de compartilhamento de risco oferecido como variante na proposta do Projeto Estratégico. O cliente escolhe entre duas opções: pagamento integral fixo OU valor reduzido fixo + variável de 7% sobre receita nova líquida mensal acima da baseline pré-projeto, vigente por 7 meses a partir da Sprint 3. A Synapse só ganha mais quando o cliente ganha mais.',
+    question: 'Preciso fazer o projeto antes de contratar o Advisor?',
+    answer: 'Não. Se o desafio e as condições de execução já estiverem claros, o Advisor pode ser contratado diretamente. A conversa inicial ajuda a definir qual formato faz sentido.',
   },
   {
-    question: 'Posso parcelar o pagamento do Projeto Estratégico?',
-    answer:
-      'Sim. O Projeto Estratégico é pago em 2 parcelas iguais, com 30 dias de intervalo. A primeira parcela é devida na assinatura do contrato. A segunda parcela é devida no 30º dia, no momento em que a Sessão 3 é concluída com Posicionamento aprovado e Matriz CORTEX validada. A Sessão 5 de entrega final é condicionada à confirmação da segunda parcela.',
+    question: 'Quem executa as ações?',
+    answer: 'A SYNAPSE conduz a análise, as decisões e o acompanhamento estratégico previsto no contrato. A execução é realizada pelo fundador, pela equipe ou pelos fornecedores definidos para cada ação. Responsáveis e limites de atuação são combinados antes do início.',
   },
   {
-    question: 'O Diagnóstico vira crédito para o Projeto Estratégico?',
-    answer:
-      'Sim. O valor pago no Diagnóstico CORTEX B2B™ é convertido em crédito aplicável ao Projeto Estratégico em três faixas: 100% de crédito integral em até 30 dias após o Diagnóstico, 50% entre 31 e 90 dias, zero após 90 dias. Após 90 dias, o Diagnóstico permanece como produto completo por si próprio, sem conversão.',
+    question: 'Sites, marca e produção de conteúdo estão incluídos?',
+    answer: 'Essas entregas têm escopo e contratação próprios. Podem ser realizadas pela Reposiciona ou pelos fornecedores escolhidos pelo cliente. A SYNAPSE atua na arquitetura e no acompanhamento estratégico de receita.',
   },
   {
-    question: 'Vocês trabalham presencialmente ou remotamente?',
-    answer:
-      'O Projeto Estratégico é conduzido em 5 sessões individuais de 49 minutos via videoconferência, em cadência de 35 dias. Sessões presenciais podem ocorrer em casos específicos, especialmente para o Projeto Ecossistemas, onde envolvemos múltiplas linhas de receita e equipes operacionais. A maior parte da entrega acontece em formato digital via CORTEX B2B™.',
+    question: 'Como funcionam o investimento e o prazo?',
+    answer: 'A proposta define investimento, prazo, entregas e responsabilidades a partir do desafio e da dedicação necessária. No Advisor, também são definidos a frequência dos encontros e o escopo do acompanhamento recorrente.',
   },
   {
-    question: 'O que acontece após o Projeto Estratégico ser concluído?',
-    answer:
-      'O Projeto inclui 3 sessões de acompanhamento ao longo dos 90 dias seguintes para calibrar o sistema enquanto o mercado responde ao novo posicionamento. Para clientes que querem continuidade estendida além desse período, oferecemos o Advisor Estratégico — pacote mensal de horas de consultoria sparring para apoiar execução do Mapa de Receita, calibragem de cadência e decisões importantes do mês.',
+    question: 'Como funciona a primeira conversa?',
+    answer: 'A Sessão de Decodificação é uma conversa de 21 minutos com Júlio Figueiredo, sem compromisso. Serve para entender o momento do negócio e avaliar se a SYNAPSE pode ajudar. Você solicita o agendamento pelo WhatsApp e combina um horário disponível.',
   },
   {
-    question: 'O CORTEX B2B™ é uma plataforma SaaS que posso acessar?',
-    answer:
-      'Hoje, não. O CORTEX B2B™ é o motor cognitivo proprietário que opera dentro de cada projeto da Synapse, conduzido pelo Júlio Figueiredo. Não é template, não é Assessment self-service. Processa cada decisão sob 5 lentes simultâneas: Fundador, Neurociência, Receita, Comprador e Crescimento. O acesso direto via interface está em roadmap futuro como benefício do Advisor Estratégico.',
+    question: 'O CORTEX B2B é um software que vou contratar?',
+    answer: 'Hoje, o CORTEX B2B é o sistema interno de apoio ao trabalho da SYNAPSE. Reúne contexto, referências e análises com apoio de inteligência artificial. Júlio revisa as recomendações e define as prioridades com o cliente. O serviço contratado é a atuação estratégica descrita na proposta.',
   },
 ]

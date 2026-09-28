@@ -1,7 +1,7 @@
 export const SITE_URL = 'https://synapseb2b.com'
 export const SITE_NAME = 'Synapse B2B'
 export const SITE_DESCRIPTION =
-  'Engenharia de Receita para empresas B2B. Entre o que sua empresa faz de verdade e o que o mercado consegue enxergar, existem oportunidades que ninguem organizou e conexoes que ninguem fez ainda. Encontramos as duas coisas.'
+  'Arquitetura de Receita e Advisor de Receita para fundadores B2B. Organize ofertas, oportunidades e prioridades comerciais com acompanhamento direto de Júlio Figueiredo.'
 
 export const WHATSAPP_NUMBER = '553139586192'
 export const GA_ID = 'G-Y1HMBX253J'
@@ -11,7 +11,6 @@ export const TRUST_CLIENTS = [
   'JB Soluttions',
   'Giornata Empresas',
   'ControllerTech',
-  'Fast Club Run',
   'THV Projetos',
   'Monteiro Interiores',
   'Your Office Business Center',
@@ -21,7 +20,7 @@ export const TRUST_CLIENTS = [
 ] as const
 
 export const NAV_ITEMS = [
-  { label: 'O que entregamos', href: '/entregas' },
+  { label: 'Como trabalhamos', href: '/entregas' },
   { label: 'CORTEX B2B', href: '/cortex-b2b' },
   { label: 'Resultados', href: '/cases' },
   { label: 'Sobre', href: '/sobre' },
@@ -32,9 +31,8 @@ export const AUTHORITY_BRANDS = ['Google', 'Microsoft', 'Dell', 'TOTVS'] as cons
 
 export const BIG_NUMBERS = [
   { value: 100, suffix: '%', label: 'Ocupação Física' },
-  { value: 28, prefix: '+', suffix: '%', label: 'Faturamento Mensal' },
-  { value: 167, prefix: '+', suffix: '%', label: 'Eventos no Auditório' },
-  { value: 3, suffix: ' meses', label: 'Para atingir esses resultados' },
+  { value: 33, prefix: '+', suffix: '%', label: 'Base de endereços fiscais' },
+  { value: 7, suffix: '–8', label: 'Eventos mensais no auditório' },
 ] as const
 
 // Diagnostic v6 - 3 perguntas conversacionais
@@ -55,3 +53,7 @@ export const FATURAMENTO_OPTIONS = [
 export function getWhatsAppUrl(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 }
+
+export const SESSION_WHATSAPP_URL = getWhatsAppUrl(
+  'Olá, Júlio. Quero agendar uma Sessão de Decodificação de 21 minutos para conversar sobre a receita da minha empresa B2B.'
+)

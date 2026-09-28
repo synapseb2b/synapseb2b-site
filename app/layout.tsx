@@ -13,12 +13,12 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Engenharia de Receita`,
+    default: `${SITE_NAME} | Arquitetura de Receita`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    'engenharia de receita',
+    'arquitetura de receita',
     'consultoria B2B',
     'posicionamento estratégico',
     'vendas B2B',
@@ -26,10 +26,9 @@ export const metadata: Metadata = {
     'CORTEX B2B',
     'Synapse B2B',
     'consultoria de vendas',
-    'revenue engineering',
+    'advisor de receita',
     'go-to-market B2B',
     'consultoria estratégica',
-    'receita previsível',
     'playbook comercial',
     'narrativa de valor',
     'posicionamento de marca B2B',
@@ -58,22 +57,22 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Engenharia de Receita para empresas B2B`,
+    title: `${SITE_NAME} | Arquitetura de Receita para empresas B2B`,
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Synapse B2B - Engenharia de Receita',
+        url: '/image/logo-synapse.png',
+        width: 1344,
+        height: 768,
+        alt: 'Synapse B2B - Arquitetura de Receita',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | Engenharia de Receita`,
+    title: `${SITE_NAME} | Arquitetura de Receita`,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.jpg'],
+    images: ['/image/logo-synapse.png'],
   },
 }
 

@@ -57,9 +57,9 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white max-w-5xl tracking-tight"
           >
-            Resultados que{' '}
+            Oportunidades organizadas.{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-              falam por si.
+              Avanços na receita.
             </span>
           </motion.h2>
 
@@ -67,13 +67,13 @@ export function SocialProofSection() {
             variants={fadeInUp}
             className="mt-6 text-base md:text-lg text-white/65 leading-relaxed max-w-3xl"
           >
-            Mr. Job Hub &mdash; Resultado real de um projeto de Engenharia de Receita.
+            Mr. Job Hub: organização das linhas de receita, dos compradores e da atuação comercial.
           </motion.p>
         </motion.div>
 
         {/* Numbers Grid - Mr Job hero case */}
         <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 sm:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -82,7 +82,7 @@ export function SocialProofSection() {
           {BIG_NUMBERS.map((item, i) => (
             <div
               key={item.label}
-              className={`${i < BIG_NUMBERS.length - 1 ? 'lg:border-r border-white/[0.06]' : ''} ${i < 2 ? 'border-b lg:border-b-0 border-white/[0.06]' : ''}`}
+              className={`${i < BIG_NUMBERS.length - 1 ? 'sm:border-r border-b sm:border-b-0 border-white/[0.06]' : ''}`}
             >
               <CounterCard
                 value={item.value}
@@ -94,7 +94,8 @@ export function SocialProofSection() {
           ))}
         </motion.div>
 
-        {/* Carrossel de cases adicionais (JB, Giornata, Marcato) */}
+        <p className="text-center text-sm text-white/55 leading-relaxed mt-5 max-w-3xl mx-auto">Resultados registrados até março de 2026. Base fiscal: de 45 para aproximadamente 60 clientes entre setembro de 2025 e março de 2026. Eventos: de 2–3 para 7–8 por mês.</p>
+        {/* Outros casos de atuação estratégica */}
         <CasesCarousel />
       </div>
     </section>

@@ -2,12 +2,12 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { highlightCases } from '@/lib/cases-data'
 import { fadeInUp } from '@/lib/animations'
 
-// Carrossel mostra os 3 cases além do Mr Job (que está fixo acima)
+// Outros casos de atuação estratégica, além do Mr. Job destacado acima.
 const CAROUSEL_CASES = highlightCases.filter((c) => c.slug !== 'mr-job-hub')
 
 const AUTOPLAY_INTERVAL = 6000
@@ -73,11 +73,13 @@ export function CasesCarousel() {
       viewport={{ once: true, margin: '-60px' }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false) }}
       className="mt-16 md:mt-20"
     >
       {/* Intro */}
       <p className="text-center text-white/40 text-xs uppercase tracking-[0.2em] mb-8 md:mb-10">
-        Mais empresas operando com Engenharia de Receita
+        Outros negócios, diferentes decisões de receita
       </p>
 
       {/* Card area */}
@@ -91,7 +93,7 @@ export function CasesCarousel() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="absolute inset-0 p-8 md:p-12 lg:p-14 flex flex-col"
+              className="relative p-8 md:p-12 lg:p-14 flex flex-col"
             >
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div>
@@ -102,17 +104,6 @@ export function CasesCarousel() {
                     {current.company}
                   </h3>
                 </div>
-                {current.url && (
-                  <a
-                    href={`https://${current.url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/30 hover:text-primary transition-colors mt-1.5"
-                    aria-label={`Visitar ${current.company}`}
-                  >
-                    <ExternalLink size={18} />
-                  </a>
-                )}
               </div>
 
               <p className="text-primary/80 text-sm md:text-base font-medium mb-5">
@@ -123,16 +114,10 @@ export function CasesCarousel() {
                 {current.description}
               </p>
 
-              {current.testimonial && (
-                <blockquote className="border-l-2 border-primary/40 pl-5 mt-2">
-                  <p className="text-white/75 text-sm md:text-base italic leading-relaxed mb-2">
-                    &ldquo;{current.testimonial.quote}&rdquo;
-                  </p>
-                  <footer className="text-white/40 text-xs">
-                    {current.testimonial.author}, {current.testimonial.role}
-                  </footer>
-                </blockquote>
-              )}
+              <p className="text-white/80 text-base leading-relaxed mb-6">{current.result}</p>
+              <Link href={`/cases#${current.slug}`} className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:text-accent-300">
+                Ver a atuação neste caso<ArrowRight size={14} />
+              </Link>
             </motion.article>
           </AnimatePresence>
         </div>

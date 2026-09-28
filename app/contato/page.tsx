@@ -5,7 +5,7 @@ import { FAQSection } from '@/components/contato/FAQSection'
 export const metadata: Metadata = {
   title: 'Contato',
   description:
-    'Fale diretamente com Júlio Figueiredo, fundador da Synapse B2B. Formulário inteligente que envia direto para o WhatsApp. Mais respostas para perguntas frequentes sobre o método CORTEX B2B™.',
+    'Solicite uma conversa de 21 minutos com Júlio Figueiredo sobre Arquitetura de Receita e Advisor de Receita para sua empresa B2B.',
 }
 
 export default function ContatoPage() {
