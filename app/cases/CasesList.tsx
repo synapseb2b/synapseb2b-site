@@ -30,12 +30,10 @@ export function CasesList() {
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8"
+              className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8"
             >
-              Decisões que organizam{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                o caminho da receita.
-              </span>
+              <span className="inline lg:block">Decisões que organizam</span>{' '}
+              <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">o caminho da receita.</span>
             </motion.h1>
 
             <motion.p
@@ -117,10 +115,9 @@ export function CasesList() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
-              O que precisa avançar
-              <br />
-              <span className="text-primary">na sua empresa?</span>
+            <h2 className="text-balance text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+              <span className="inline lg:block">O que precisa avançar</span>{' '}
+              <span className="inline lg:block text-primary">na sua empresa?</span>
             </h2>
             <p className="text-white/60 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
               Converse com Júlio sobre suas oportunidades de receita e o que está impedindo o próximo passo.
@@ -129,7 +126,7 @@ export function CasesList() {
               href={SESSION_WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               className="group inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-8 pr-2 py-2 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
             >
-              Conversar com Júlio
+              Fazer a receita avançar
               <span className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
                 <ArrowRight size={18} />
               </span>

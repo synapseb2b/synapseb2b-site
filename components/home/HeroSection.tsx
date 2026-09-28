@@ -57,10 +57,10 @@ export function HeroSection() {
             variants={fadeInUp}
             className="text-base md:text-lg lg:text-xl text-[#CCD6E0] leading-relaxed mb-10 md:mb-16 max-w-xl md:max-w-3xl lg:max-w-4xl font-normal"
           >
-            Ajudamos fundadores B2B a organizar ofertas, identificar oportunidades comerciais e
-            decidir onde concentrar esforços.{' '}
+            Ajudamos fundadores de empresas B2B que já vendem a organizar ofertas, priorizar
+            oportunidades e decidir onde concentrar esforços{' '}
             <span className="text-white font-medium">
-              Com direção e acompanhamento para colocar as decisões em prática.
+              para fazer a receita avançar.
             </span>
           </motion.p>
 
@@ -79,7 +79,7 @@ export function HeroSection() {
                   className="group relative inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-6 pr-2 py-2 md:pl-8 md:pr-2 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:shadow-primary/50 hover:-translate-y-1"
                 >
                   <span className="text-sm md:text-base font-bold tracking-tight">
-                    {"Conversar com Júlio"}
+                    {"Fazer a receita avançar"}
                   </span>
                   <span className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 stroke-[2.5px]" />

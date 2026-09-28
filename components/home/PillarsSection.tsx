@@ -12,6 +12,7 @@ interface Pillar {
   icon: typeof Languages
   title: string
   description: string
+  whatsappTitle?: string
 }
 
 const pillars: Pillar[] = [
@@ -25,16 +26,18 @@ const pillars: Pillar[] = [
   {
     number: '02',
     icon: TrendingUp,
-    title: 'Tudo depende de você.',
+    title: 'As vendas precisam da sua presença.',
+    whatsappTitle: 'Tudo depende de você.',
     description:
       'As vendas dependem dos seus contatos e da sua presença em cada negociação. Organizamos canais, responsabilidades e uma rotina comercial que o time consiga seguir.',
   },
   {
     number: '03',
     icon: ShieldCheck,
-    title: 'Oportunidades ficam paradas.',
+    title: 'Sua receita oscila mais do que deveria.',
+    whatsappTitle: 'Oportunidades ficam paradas.',
     description:
-      'Novos serviços, parcerias e possibilidades na base de clientes competem pela sua atenção. Ajudamos a escolher o que vale testar e a definir a próxima ação para avançar.',
+      'Alguns meses avançam, outros travam, sem clareza do que fez a diferença. Isso traz insegurança às decisões de crescimento. A SYNAPSE ajuda a organizar a esteira, identificar padrões e construir uma cadência comercial mais consistente.',
   },
 ]
 
@@ -61,12 +64,10 @@ export function PillarsSection() {
 
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
+            className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl"
           >
-            O que está limitando{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-              sua receita hoje?
-            </span>
+            <span className="inline lg:block">O que está limitando</span>{' '}
+            <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">sua receita hoje?</span>
           </motion.h2>
 
           <motion.p
@@ -113,7 +114,7 @@ export function PillarsSection() {
                 <p className="text-white/60 text-[0.95rem] md:text-base leading-relaxed">
                   {pillar.description}
                 </p>
-                <a href={getWhatsAppUrl(`Olá, Júlio. Identifiquei este desafio no site da SYNAPSE: ${pillar.title} Quero conversar sobre minha empresa.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-sm text-primary hover:text-accent-300">Esse é meu momento<ArrowRight size={14} /></a>
+                <a href={getWhatsAppUrl(`Olá, Júlio. Identifiquei este desafio no site da SYNAPSE: ${pillar.whatsappTitle ?? pillar.title} Quero conversar sobre minha empresa.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-sm text-primary hover:text-accent-300">Esse é meu momento<ArrowRight size={14} /></a>
 
               </motion.article>
             )

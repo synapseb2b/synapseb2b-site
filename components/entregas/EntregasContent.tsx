@@ -10,9 +10,9 @@ import { SESSION_WHATSAPP_URL } from '@/lib/constants'
 
 const STEPS = [
   { title: 'Entender o negócio', description: 'Olhar para clientes, ofertas, canais e números disponíveis. Nomear o problema que merece atenção agora.' },
-  { title: 'Escolher as prioridades', description: 'Comparar as oportunidades e definir onde concentrar o esforço, considerando retorno possível e capacidade de execução.' },
-  { title: 'Definir a próxima ação', description: 'Combinar o que será feito, como, por quem e até quando. A equipe e os fornecedores recebem uma direção clara.' },
-  { title: 'Acompanhar e ajustar', description: 'No Advisor, revisar as ações e os indicadores com o fundador. Decidir o que manter, corrigir ou interromper.' },
+  { title: 'Escolher as prioridades', description: 'Formular hipóteses e escolher a mais relevante para testar, considerando os indicadores, o retorno possível e a capacidade de execução.' },
+  { title: 'Construir o próximo movimento', description: 'Estruturar a ação com a liderança, combinar responsabilidades e ajudar a colocá-la em prática dentro do escopo contratado.' },
+  { title: 'Acompanhar e aprender', description: 'No Advisor, cruzar o que foi feito com os indicadores e a resposta do mercado. Revisar as hipóteses e decidir o próximo movimento.' },
 ]
 
 export function EntregasContent() {
@@ -23,8 +23,9 @@ export function EntregasContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-6xl">
             <motion.div variants={fadeInUp} className="mb-8"><LiveBadge>Como trabalhamos</LiveBadge></motion.div>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8">
-              Clareza para decidir. <span className="text-primary">Direção para avançar.</span>
+            <motion.h1 variants={fadeInUp} className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-8">
+              <span className="inline lg:block">Clareza para decidir.</span>{' '}
+              <span className="inline lg:block text-primary">Direção para avançar.</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/70 leading-relaxed max-w-4xl">
               Um projeto para organizar a arquitetura de receita ou um Advisor para acompanhar as
@@ -64,18 +65,24 @@ export function EntregasContent() {
       </div>
       <section className="py-20 md:py-28 border-t border-white/[0.06] bg-navy-900/20">
         <div className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-10">Da análise à <span className="text-primary">ação acompanhada.</span></h2>
+          <h2 className="text-balance text-3xl md:text-5xl font-bold text-white tracking-tight mb-10">
+            <span className="inline lg:block">Da análise à</span>{' '}
+            <span className="inline lg:block text-primary">ação acompanhada.</span>
+          </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {STEPS.map((step, index) => <article key={step.title} className="rounded-[2rem] border border-white/[0.08] bg-white/[0.02] p-8"><p className="text-primary font-bold mb-4">0{index + 1}</p><h3 className="text-xl text-white font-bold mb-3">{step.title}</h3><p className="text-white/70 text-base leading-relaxed">{step.description}</p></article>)}
           </div>
-          <p className="mt-8 text-base text-white/65 leading-relaxed max-w-4xl">A SYNAPSE conduz a arquitetura e o acompanhamento estratégico contratado. A execução fica com os responsáveis definidos em cada ação: fundador, equipe ou fornecedores. Entregas digitais têm contratação própria e podem ser realizadas pela Reposiciona ou por parceiros escolhidos pelo cliente.</p>
+          <p className="mt-8 text-base text-white/65 leading-relaxed max-w-4xl">A SYNAPSE participa da construção, da ativação e do acompanhamento dos movimentos de receita, conforme o escopo contratado. As responsabilidades são combinadas em cada ação; a gestão da equipe permanece com o cliente. Entregas digitais têm contratação própria e podem ser realizadas pela Reposiciona ou por parceiros escolhidos pelo cliente.</p>
         </div>
       </section>
       <section className="relative py-20 md:py-28 border-t border-white/[0.06]">
         <div className="max-w-[900px] mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">Por onde começar <span className="text-primary">no seu negócio?</span></h2>
+          <h2 className="text-balance text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            <span className="inline lg:block">Por onde começar</span>{' '}
+            <span className="inline lg:block text-primary">no seu negócio?</span>
+          </h2>
           <p className="text-white/70 text-base md:text-lg mb-8 leading-relaxed">Conte seu momento em uma conversa de 21 minutos com Júlio. Juntos, avaliamos o desafio e o formato de trabalho adequado.</p>
-          <a href={SESSION_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-7 py-4 rounded-full font-bold bg-primary hover:bg-primary-hover text-white transition-colors">Conversar com Júlio<ArrowRight size={18} /></a>
+          <a href={SESSION_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-7 py-4 rounded-full font-bold bg-primary hover:bg-primary-hover text-white transition-colors">Fazer a receita avançar<ArrowRight size={18} /></a>
           <p className="mt-4 text-sm text-white/55">Sem compromisso. De fundador para fundador.</p>
         </div>
       </section>

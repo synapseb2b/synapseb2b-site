@@ -29,12 +29,10 @@ export function DeliverablesSection() {
 
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-6xl"
+              className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-6xl"
             >
-              Duas formas de avançar.{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                Um foco: sua receita.
-              </span>
+              <span className="inline lg:block">Duas formas de avançar.</span>{' '}
+              <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">Um foco: sua receita.</span>
             </motion.h2>
           </motion.div>
         </div>

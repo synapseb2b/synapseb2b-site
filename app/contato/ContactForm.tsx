@@ -13,8 +13,9 @@ export function ContactForm() {
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24">
         <motion.div className="flex flex-col items-center text-center mb-12 md:mb-16" variants={staggerContainer} initial="hidden" animate="visible">
           <motion.div variants={fadeInUp} className="mb-8"><LiveBadge>Primeira conversa</LiveBadge></motion.div>
-          <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6">
-            Vamos conversar sobre <span className="text-primary">sua receita.</span>
+          <motion.h1 variants={fadeInUp} className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6">
+            <span className="inline lg:block">Vamos conversar sobre</span>{' '}
+            <span className="inline lg:block text-primary">sua receita.</span>
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-base md:text-lg text-[#CCD6E0] leading-relaxed max-w-3xl">
             Uma Sessão de Decodificação de 21 minutos com Júlio Figueiredo para entender seu momento

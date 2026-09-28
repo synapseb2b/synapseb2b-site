@@ -23,8 +23,8 @@ export const services: Service[] = [
     name: 'Arquitetura de Receita',
     subtitle: 'Projeto com escopo definido',
     description:
-      'Para quem precisa decidir onde concentrar o esforço comercial. Analisamos ofertas, clientes, canais e oportunidades para organizar o próximo movimento de receita do negócio.',
-    outcome: 'Você sai com prioridades definidas e um caminho claro de execução.',
+      'A SYNAPSE analisa a esteira atual de receita, das ofertas aos canais e clientes, para identificar gargalos, formular hipóteses e priorizar o próximo movimento do negócio.',
+    outcome: 'Hipótese prioritária de evolução da receita, com critérios para testar, medir e decidir o próximo movimento.',
     features: [
       { text: 'Leitura dos gargalos e das oportunidades de receita' },
       { text: 'Definição de ofertas, compradores e canais prioritários' },
@@ -40,13 +40,13 @@ export const services: Service[] = [
     name: 'Advisor de Receita',
     subtitle: 'Acompanhamento estratégico recorrente',
     description:
-      'Para quem precisa de um interlocutor experiente ao lado do fundador. Júlio acompanha as decisões comerciais, orienta os responsáveis e revisa o que está avançando na geração de receita.',
-    outcome: 'Você tem direção e acompanhamento para transformar decisões em ações.',
+      'A SYNAPSE atua ao lado da liderança para transformar decisões de receita em movimentos concretos. A cada ciclo, cruzamos indicadores, revisamos hipóteses, definimos prioridades e ajudamos a estruturar e colocar em prática os próximos movimentos. A resposta do mercado alimenta a próxima decisão.',
+    outcome: 'Uma cadência contínua de decisão, ativação e aprendizado.',
     features: [
-      { text: 'Encontros com o fundador para decidir as prioridades' },
-      { text: 'Orientação prática sobre o que fazer e como avançar' },
-      { text: 'Acompanhamento das ações, dos responsáveis e dos indicadores' },
-      { text: 'Revisão de oportunidades e ajustes conforme a resposta do mercado' },
+      { text: 'Leitura conjunta dos indicadores e revisão das hipóteses' },
+      { text: 'Construção dos próximos movimentos com a liderança' },
+      { text: 'Apoio à ativação e acompanhamento do que foi colocado em prática' },
+      { text: 'Aprendizados do mercado para recalibrar a próxima decisão' },
     ],
     cta: 'Conversar sobre o Advisor',
     ctaHref: getWhatsAppUrl('Olá, Júlio. Quero conversar sobre o Advisor de Receita para acompanhar as prioridades comerciais da minha empresa B2B.'),

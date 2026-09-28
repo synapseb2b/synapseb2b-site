@@ -70,12 +70,10 @@ export function SobreContent() {
 
             <motion.h1
               variants={fadeInLeft}
-              className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-10"
+              className="text-balance text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-10"
             >
-              Ao lado de quem decide{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                o próximo passo do negócio.
-              </span>
+              <span className="inline lg:block">Ao lado de quem decide</span>{' '}
+              <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">o próximo passo do negócio.</span>
             </motion.h1>
 
             <motion.div
@@ -193,12 +191,10 @@ export function SobreContent() {
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white"
+              className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white"
             >
-              De duas décadas em ecossistemas globais{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-                à atuação junto ao fundador.
-              </span>
+              <span className="inline lg:block">De duas décadas em ecossistemas globais</span>{' '}
+              <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">à atuação junto ao fundador.</span>
             </motion.h2>
           </motion.div>
 
@@ -276,9 +272,12 @@ export function SobreContent() {
 
       <section className="relative py-20 md:py-28 border-t border-white/[0.06]">
         <div className="max-w-[900px] mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl text-white font-bold mb-6">Vamos olhar para <span className="text-primary">a sua receita?</span></h2>
+          <h2 className="text-balance text-3xl md:text-5xl text-white font-bold mb-6">
+            <span className="inline lg:block">Vamos olhar para</span>{' '}
+            <span className="inline lg:block text-primary">a sua receita?</span>
+          </h2>
           <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">Uma conversa de 21 minutos, de fundador para fundador, para entender seu momento e avaliar como podemos trabalhar juntos.</p>
-          <Link href="/contato" className="inline-flex items-center gap-3 rounded-full bg-primary hover:bg-primary-hover px-7 py-4 text-white font-bold">Conversar com Júlio<ArrowRight size={18} /></Link>
+          <Link href="/contato" className="inline-flex items-center gap-3 rounded-full bg-primary hover:bg-primary-hover px-7 py-4 text-white font-bold">Fazer a receita avançar<ArrowRight size={18} /></Link>
         </div>
       </section>
     </>

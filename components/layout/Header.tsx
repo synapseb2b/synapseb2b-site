@@ -62,7 +62,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="bg-primary hover:bg-primary-hover text-white rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50 whitespace-nowrap"
             >
-              Conversar com Júlio
+              Fazer a receita avançar
             </Link>
           </div>
 
@@ -127,7 +127,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="bg-primary text-white px-8 py-4 rounded-full text-lg font-bold shadow-[0_0_30px_rgba(74,144,217,0.4)]"
                 >
-                  Conversar com Júlio
+                  Fazer a receita avançar
                 </Link>
               </motion.div>
             </nav>

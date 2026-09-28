@@ -14,7 +14,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: 'Qual a diferença entre Arquitetura de Receita e Advisor de Receita?',
-    answer: 'Arquitetura de Receita é um projeto com escopo e prazo definidos para analisar um desafio e organizar o caminho de execução. Advisor de Receita é o acompanhamento recorrente do fundador para priorizar ações, orientar os responsáveis e revisar os resultados. A indicação depende do momento da empresa.',
+    answer: 'Arquitetura de Receita é um projeto com escopo e prazo definidos para construir uma hipótese prioritária de evolução da receita e os critérios para testá-la. No Advisor, a SYNAPSE atua com a liderança em ciclos de leitura de indicadores, revisão de hipóteses, decisão, ativação e aprendizado. A indicação depende do momento da empresa.',
   },
   {
     question: 'Preciso fazer o projeto antes de contratar o Advisor?',
@@ -22,7 +22,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: 'Quem executa as ações?',
-    answer: 'A SYNAPSE conduz a análise, as decisões e o acompanhamento estratégico previsto no contrato. A execução é realizada pelo fundador, pela equipe ou pelos fornecedores definidos para cada ação. Responsáveis e limites de atuação são combinados antes do início.',
+    answer: 'A SYNAPSE ajuda a construir, ativar e acompanhar os movimentos de receita dentro do escopo contratado. As responsabilidades são combinadas com o fundador, a equipe e os fornecedores em cada ação. A gestão hierárquica da equipe permanece com o cliente.',
   },
   {
     question: 'Sites, marca e produção de conteúdo estão incluídos?',

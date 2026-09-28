@@ -62,7 +62,7 @@ export function DiagnosticForm() {
           <WhatsAppIcon size={20} className="shrink-0" />
         </button>
         <p className="text-sm text-white/55 leading-relaxed">
-          O WhatsApp abre com sua mensagem pronta. Envie para combinar um horário com Júlio.
+          O WhatsApp abre com sua mensagem pronta. Envie para combinar um horário.
         </p>
         {prepared && (
           <div role="status" className="rounded-xl border border-primary/30 bg-primary/10 p-4 text-sm text-white/80 leading-relaxed">

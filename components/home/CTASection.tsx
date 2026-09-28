@@ -25,13 +25,10 @@ export function CTASection() {
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6"
+            className="text-balance text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] text-white max-w-6xl mb-6"
           >
-            Qual é o próximo movimento
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-              de receita da sua empresa?
-            </span>
+            <span className="inline lg:block">Qual é o próximo movimento</span>{' '}
+            <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">de receita da sua empresa?</span>
           </motion.h2>
 
           <motion.p
@@ -39,7 +36,7 @@ export function CTASection() {
             className="text-base md:text-lg text-white/65 leading-relaxed max-w-4xl"
           >
             Na Sessão de Decodificação, conversamos sobre seu momento e avaliamos como a SYNAPSE
-            pode ajudar. São 21 minutos com Júlio Figueiredo, sem compromisso.
+            pode ajudar a construir o próximo movimento de receita. São 21 minutos, sem compromisso.
           </motion.p>
         </motion.div>
 

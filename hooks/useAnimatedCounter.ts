@@ -12,7 +12,8 @@ export function useAnimatedCounter(
   target: number,
   duration: number = 2000,
 ) {
-  const [count, setCount] = useState(0)
+  // The real value is present during SSR and hydration; counting is visual only.
+  const [count, setCount] = useState(target)
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const hasAnimated = useRef(false)

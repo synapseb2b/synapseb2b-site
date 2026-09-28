@@ -23,7 +23,7 @@ interface Pillar {
 const PILLARS: Pillar[] = [
   { number: '01', title: 'Contexto do seu negócio', description: 'Organização das informações compartilhadas pelo cliente: ofertas, compradores, canais, indicadores e desafios. A análise parte da realidade da empresa.' },
   { number: '02', title: 'Referências para a análise', description: 'Repertório de negócios B2B e métodos de estratégia comercial apoiam a comparação de caminhos e a formulação de hipóteses.' },
-  { number: '03', title: 'Continuidade no acompanhamento', description: 'Registros de decisões e próximos passos ajudam a retomar o contexto nos encontros e a revisar o que avançou entre uma conversa e outra.' },
+  { number: '03', title: 'Continuidade no acompanhamento', description: 'O histórico de hipóteses, decisões e aprendizados mantém o contexto do trabalho. Novas informações apoiam a revisão do que foi colocado em prática e a preparação do próximo movimento.' },
   { number: '04', title: 'Revisão e responsabilidade', description: 'A inteligência artificial apoia a preparação das análises. Júlio confronta as recomendações com o contexto do negócio e define as prioridades com o fundador.' },
 ]
 
@@ -103,8 +103,9 @@ export function CortexContent() {
               className="text-base md:text-lg text-white/55 max-w-3xl mx-auto leading-relaxed"
             >
               O CORTEX B2B é o sistema interno que apoia a arquitetura e o acompanhamento
-              de receita da SYNAPSE. Reúne informações do negócio, referências e análises com
-              inteligência artificial. Júlio revisa as recomendações e conduz as decisões com o cliente.
+              de receita da SYNAPSE. Organiza contexto, hipóteses, decisões e aprendizados,
+              cruzando novas informações para preparar análises. As recomendações passam por
+              revisão estratégica antes das decisões com a liderança.
             </motion.p>
           </motion.div>
 
@@ -151,7 +152,7 @@ export function CortexContent() {
                 className="w-2 h-2 rounded-full bg-primary"
               />
               <span className="text-xs text-white/65 tracking-wide">
-                IA como apoio. Júlio na condução estratégica.
+                IA como apoio. SYNAPSE na condução estratégica.
               </span>
             </div>
 
@@ -159,7 +160,7 @@ export function CortexContent() {
               href="/contato"
               className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white pl-7 pr-2 py-2 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
             >
-              Conversar com Júlio
+              Fazer a receita avançar
               <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
                 <ArrowRight size={16} />
               </span>
@@ -189,9 +190,10 @@ export function CortexContent() {
 
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white"
+              className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white"
             >
-              O que sustenta <span className="text-primary">a análise.</span>
+              <span className="inline lg:block">O que sustenta</span>{' '}
+              <span className="inline lg:block text-primary">a análise.</span>
             </motion.h2>
           </motion.div>
 
@@ -246,11 +248,10 @@ export function CortexContent() {
 
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6"
+              className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6"
             >
-              O seu negócio visto
-              <br />
-              <span className="text-primary">por cinco perspectivas.</span>
+              <span className="inline lg:block">O seu negócio visto</span>{' '}
+              <span className="inline lg:block text-primary">por cinco perspectivas.</span>
             </motion.h2>
 
             <motion.p
@@ -311,7 +312,7 @@ export function CortexContent() {
               href="/contato"
               className="group inline-flex items-center gap-4 bg-primary hover:bg-primary-hover text-white pl-8 pr-2 py-2 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_30px_rgba(74,144,217,0.3)] hover:-translate-y-1"
             >
-              Conversar com Júlio
+              Fazer a receita avançar
               <span className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform">
                 <ArrowRight size={18} />
               </span>

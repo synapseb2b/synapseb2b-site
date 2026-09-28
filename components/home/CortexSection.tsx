@@ -107,7 +107,7 @@ export function CortexSection() {
           </motion.p>
         </motion.div>
 
-        <p className="text-center text-base md:text-lg text-white/65 leading-relaxed max-w-3xl mx-auto mb-12">O CORTEX reúne contexto, referências e análises para apoiar o trabalho da SYNAPSE. Júlio revisa as recomendações e decide as prioridades junto ao fundador.</p>
+        <p className="text-center text-base md:text-lg text-white/65 leading-relaxed max-w-3xl mx-auto mb-12">O CORTEX organiza o contexto do negócio, preserva hipóteses e decisões anteriores e cruza novas informações com os aprendizados do acompanhamento. Essas análises apoiam as próximas decisões da SYNAPSE com a liderança.</p>
         {/* Perspectivas de análise */}
         <motion.div
           variants={staggerContainer}
@@ -145,7 +145,7 @@ export function CortexSection() {
               className="w-2 h-2 rounded-full bg-primary"
             />
             <span className="text-xs text-white/65 tracking-wide">
-              Análises apoiadas por IA e revisadas por Júlio
+              Análises apoiadas por IA, com revisão estratégica
             </span>
           </div>
 

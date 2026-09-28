@@ -24,7 +24,8 @@ function CounterCard({
   return (
     <motion.div ref={ref} variants={fadeInUp} className="text-center py-10 md:py-14">
       <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tighter leading-none">
-        {prefix}{count}{suffix}
+        <span className="sr-only">{prefix}{value}{suffix}</span>
+        <span aria-hidden="true">{prefix}{count}{suffix}</span>
       </p>
       <p className="text-white/60 text-sm mt-3 tracking-wide font-light">
         {label}
@@ -55,12 +56,10 @@ export function SocialProofSection() {
 
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white max-w-5xl tracking-tight"
+            className="text-balance text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white max-w-5xl tracking-tight"
           >
-            Oportunidades organizadas.{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">
-              Avanços na receita.
-            </span>
+            <span className="inline lg:block">Oportunidades organizadas.</span>{' '}
+            <span className="inline lg:block bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-300 to-primary">Avanços na receita.</span>
           </motion.h2>
 
           <motion.p
